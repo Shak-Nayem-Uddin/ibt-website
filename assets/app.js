@@ -1,0 +1,642 @@
+/* Imam Bukhari Trust: public site runtime (router, i18n, themes, pages, cloud content). */
+(function () {
+  "use strict";
+  var IBT = window.IBT = {};
+  var DEF = null;          // bundled defaults (data/content.json)
+  var C = null;            // live content = defaults + published cloud overrides
+  var cloud = { db: null, user: null, assets: null, canEdit: false, uid: null, ready: false };
+  var CMS_KEYS = ["settings", "home", "chairman", "cells", "history", "institutions", "floors", "projects", "initiatives", "impact", "funds", "supportItems", "payment", "donateCopy", "registrations", "events", "news", "videos", "stories", "reports", "faqs", "ui"];
+  IBT.CMS_KEYS = CMS_KEYS;
+  var state = { lang: "bn", theme: "dark", route: "home", preview: false, drafts: {} };
+  IBT.state = state; IBT.cloud = cloud;
+
+  // ---------- utils ----------
+  var $ = function (s, r) { return (r || document).querySelector(s); };
+  var $$ = function (s, r) { return Array.prototype.slice.call((r || document).querySelectorAll(s)); };
+  function esc(s) { return String(s == null ? "" : s).replace(/[&<>"']/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]; }); }
+  function ls(k, v) { try { if (v === undefined) return localStorage.getItem(k); localStorage.setItem(k, v); } catch (e) { return null; } }
+  IBT.esc = esc;
+  function tr(o, lang) {
+    if (o == null) return "";
+    if (typeof o === "string") return o;
+    var l = lang || state.lang;
+    return o[l] || o.en || o.bn || "";
+  }
+  function isFallback(o) { return o && typeof o === "object" && !o[state.lang] && (o.en || o.bn); }
+  function T(o) { var s = esc(tr(o)); return isFallback(o) && state.lang === "ar" ? '<span lang="' + (o.en ? "en" : "bn") + '" dir="ltr">' + s + "</span>" : s; }
+  function U(k) { return T((C.ui || {})[k]) || k; }
+  function Uraw(k) { return tr((C.ui || {})[k]) || k; }
+  IBT.tr = tr; IBT.T = T; IBT.U = U;
+  function img(ref) {
+    if (!ref) return "";
+    if (ref.indexOf("asset:") === 0) return window.IBT_GAS ? window.IBT_GAS.assetUrl(ref.slice(6)) : "/_blob/" + ref.slice(6);
+    return ref;
+  }
+  IBT.img = img;
+  var LOC = { bn: "bn-BD", en: "en-GB", ar: "ar-SA" };
+  function num(n) { try { return new Intl.NumberFormat(LOC[state.lang]).format(n); } catch (e) { return String(n); } }
+  function money(n) { return "৳" + num(n); }
+  function digits(s) { s = String(s); if (state.lang === "bn") return s.replace(/\d/g, function (d) { return "০১২৩৪৫৬৭৮৯"[d]; }); if (state.lang === "ar") return s.replace(/\d/g, function (d) { return "٠١٢٣٤٥٦٧٨٩"[d]; }); return s; }
+  function parseDate(s) { if (!s) return null; var p = String(s).split("-"); if (p.length === 1) return new Date(+p[0], 0, 1); return new Date(+p[0], (+p[1] || 1) - 1, +p[2] || 1); }
+  function fdate(s, opt) {
+    var d = parseDate(s); if (!d || isNaN(d)) return esc(s || "");
+    var parts = String(s).split("-").length;
+    var o = opt || (parts === 1 ? { year: "numeric" } : parts === 2 ? { year: "numeric", month: "long" } : { year: "numeric", month: "long", day: "numeric" });
+    try { return new Intl.DateTimeFormat(LOC[state.lang], o).format(d); } catch (e) { return s; }
+  }
+  function hijri(s) {
+    var d = parseDate(s); if (!d) return "";
+    try { return new Intl.DateTimeFormat((state.lang === "en" ? "en" : state.lang === "bn" ? "bn" : "ar") + "-u-ca-islamic-umalqura", { day: "numeric", month: "long", year: "numeric" }).format(d); } catch (e) { return ""; }
+  }
+  IBT.fdate = fdate; IBT.num = num; IBT.hijri = hijri;
+  function toast(msg) { var t = $("#toast"); t.textContent = msg; t.classList.add("show"); clearTimeout(t._h); t._h = setTimeout(function () { t.classList.remove("show"); }, 2600); }
+  IBT.toast = toast;
+  function clone(o) { return JSON.parse(JSON.stringify(o)); }
+  IBT.clone = clone;
+  function find(list, id) { return (list || []).filter(function (x) { return x.id === id; })[0]; }
+
+  // ---------- icons ----------
+  var I = {
+    arrow: '<path d="M5 12h14M13 6l6 6-6 6"/>', play: '<path d="M8 5v14l11-7z" fill="currentColor" stroke="none"/>',
+    sun: '<circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/>',
+    moon: '<path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/>', menu: '<path d="M4 7h16M4 12h16M4 17h16"/>', x: '<path d="M6 6l12 12M18 6L6 18"/>',
+    search: '<circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/>', heart: '<path d="M12 21s-7-4.4-9.3-8.6C1.1 9.3 2.8 5.5 6.4 5.1 8.6 4.9 10.3 6 12 8c1.7-2 3.4-3.1 5.6-2.9 3.6.4 5.3 4.2 3.7 7.3C19 16.6 12 21 12 21z"/>',
+    research: '<circle cx="10" cy="10" r="6"/><path d="M20 20l-5.5-5.5M7 10h6M10 7v6"/>', education: '<path d="M2 9l10-5 10 5-10 5z"/><path d="M6 11v5c3 2 9 2 12 0v-5"/>',
+    dawah: '<path d="M4 5h16v10H8l-4 4z"/><path d="M8 9h8M8 12h5"/>', masjid: '<path d="M12 3c3 2 5 4 5 7H7c0-3 2-5 5-7z"/><path d="M5 21V10h14v11M3 21h18M10 21v-4a2 2 0 0 1 4 0v4"/><path d="M12 3V1"/>',
+    social: '<path d="M12 21s-7-4.4-9.3-8.6C1.1 9.3 2.8 5.5 6.4 5.1 8.6 4.9 10.3 6 12 8c1.7-2 3.4-3.1 5.6-2.9 3.6.4 5.3 4.2 3.7 7.3C19 16.6 12 21 12 21z"/>',
+    briefcase: '<rect x="3" y="7" width="18" height="13" rx="2"/><path d="M9 7V5h6v2M3 13h18"/>', family: '<circle cx="8" cy="7" r="3"/><circle cx="17" cy="9" r="2.5"/><path d="M2 21c0-4 3-7 6-7s6 3 6 7M13 21c0-3 2-5 4-5s4 2 4 5"/>',
+    women: '<circle cx="12" cy="7" r="4"/><path d="M5 21c0-5 3-8 7-8s7 3 7 8"/>', globe: '<circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3 3 15 0 18M12 3c-3 3-3 15 0 18"/>',
+    coin: '<circle cx="12" cy="12" r="9"/><path d="M15 9.5c-.5-1-1.6-1.5-3-1.5-1.7 0-3 .8-3 2s1.3 1.7 3 2 3 .8 3 2-1.3 2-3 2c-1.4 0-2.5-.5-3-1.5M12 6v12"/>',
+    facebook: '<path d="M14 8h3V4h-3a4 4 0 0 0-4 4v3H7v4h3v7h4v-7h3l1-4h-4V8z" fill="currentColor" stroke="none"/>', youtube: '<rect x="2" y="5" width="20" height="14" rx="4"/><path d="M10 9l5 3-5 3z" fill="currentColor"/>',
+    linkedin: '<rect x="3" y="3" width="18" height="18" rx="3"/><path d="M7 10v7M7 7v.01M11 17v-4a2 2 0 0 1 4 0v4M11 10v7"/>', x2: '<path d="M4 4l16 16M20 4L4 20"/>',
+    phone: '<path d="M5 3h4l2 5-3 2a12 12 0 0 0 6 6l2-3 5 2v4a2 2 0 0 1-2 2A17 17 0 0 1 3 5a2 2 0 0 1 2-2"/>', mail: '<rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/>',
+    pin: '<path d="M12 21s7-6 7-12a7 7 0 0 0-14 0c0 6 7 12 7 12z"/><circle cx="12" cy="9" r="2.5"/>', cal: '<rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/>',
+    ext: '<path d="M14 4h6v6M20 4l-9 9M19 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1h5"/>', copy: '<rect x="8" y="8" width="12" height="12" rx="2"/><path d="M16 8V5a1 1 0 0 0-1-1H5a1 1 0 0 0-1 1v10a1 1 0 0 0 1 1h3"/>',
+    doc: '<path d="M6 2h9l5 5v15H6z"/><path d="M14 2v6h6M9 13h8M9 17h8"/>', cube: '<path d="M12 2l9 5v10l-9 5-9-5V7z"/><path d="M12 22V12M21 7l-9 5-9-5"/>',
+    star8: '<path d="M12 1l2.6 6.4L21 6l-1.4 6.4L24 17l-6.4.6L12 23l-3-5.4L2 17l3.4-4.6L3 6l6.4 1.4z" fill="none"/>', gear: '<circle cx="12" cy="12" r="3"/><path d="M19 12a7 7 0 0 0-.1-1.2l2-1.6-2-3.4-2.4 1a7 7 0 0 0-2-1.2L14 3h-4l-.5 2.6a7 7 0 0 0-2 1.2l-2.4-1-2 3.4 2 1.6A7 7 0 0 0 5 12c0 .4 0 .8.1 1.2l-2 1.6 2 3.4 2.4-1a7 7 0 0 0 2 1.2L10 21h4l.5-2.6a7 7 0 0 0 2-1.2l2.4 1 2-3.4-2-1.6c.1-.4.1-.8.1-1.2z"/>',
+    qr: '<rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><path d="M14 14h3v3M21 14v7h-4M17 21h0"/>'
+  };
+  function icon(n, cls) { return '<svg class="i ' + (cls || "") + '" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">' + (I[n] || I.arrow) + "</svg>"; }
+  IBT.icon = icon;
+  var ARROW = icon("arrow", "flip-rtl");
+
+  // ---------- theme & language ----------
+  function applyTheme(t) {
+    state.theme = t; document.documentElement.setAttribute("data-theme", t);
+    var b = $("#themeBtn"); if (b) { b.innerHTML = icon(t === "dark" ? "sun" : "moon"); b.setAttribute("aria-label", Uraw(t === "dark" ? "theme_light" : "theme_dark")); }
+    if (IBT._scenes) IBT._scenes.forEach(function (s) { s && s.setTheme(t); });
+    if (C && state.route === "home" && $("#ringStage") && IBT._themeInit) { IBT._noscroll = true; renderMain(); }
+    IBT._themeInit = true;
+    var m = $('meta[name="theme-color"]'); if (m) m.content = t === "dark" ? "#06182A" : "#F4F7F1";
+  }
+  function applyLang(l) {
+    state.lang = l;
+    document.documentElement.lang = l; document.documentElement.dir = l === "ar" ? "rtl" : "ltr";
+    $$(".lang-switch button").forEach(function (b) { b.setAttribute("aria-pressed", b.dataset.l === l ? "true" : "false"); });
+  }
+  IBT.setLang = function (l) { ls("ibt_lang", l); applyLang(l); renderAll(); };
+  IBT.setTheme = function (t) { ls("ibt_theme", t); applyTheme(t); };
+
+  // ---------- chrome (header/footer) ----------
+  var NAV = [["home", "nav_home"], ["about", "nav_about"], ["institutions", "nav_institutions"], ["projects", "nav_projects"], ["initiatives", "nav_initiatives"], ["media", "nav_media"], ["news", "nav_news"], ["register", "nav_register"], ["transparency", "nav_transparency"], ["contact", "nav_contact"]];
+  function langSwitch() { return '<div class="lang-switch" role="group" aria-label="Language"><button data-l="bn" lang="bn">বাংলা</button><button data-l="en" lang="en">EN</button><button data-l="ar" lang="ar">عربي</button></div>'; }
+  function renderHeader() {
+    var S = C.settings, a = S.announcement || {};
+    var ann = (a.show && tr(a.text) && ls("ibt_ann_hide") !== tr(a.text)) ? '<div class="announce" id="announce"><a href="' + esc(a.link || "#register") + '"><span class="dot pulse" style="color:var(--accent);margin-inline-end:8px"></span>' + T(a.text) + '</a><button class="x" aria-label="' + Uraw("close") + '" data-act="hide-ann">×</button></div>' : "";
+    $("#chrome-top").innerHTML = ann +
+      '<header class="header"><div class="wrap"><div class="bar glass dense">' +
+      '<a class="brand" href="#home" aria-label="' + esc(tr(S.siteName)) + '"><span class="mark"></span><span class="bt"><b>' + T(S.siteName) + "</b><small>" + T(S.tagline) + "</small></span></a>" +
+      '<nav class="nav" aria-label="Main">' + NAV.slice(1, 8).map(function (n) { return '<a href="#' + n[0] + '" data-nav="' + n[0] + '">' + U(n[1]) + "</a>"; }).join("") + "</nav>" +
+      '<div class="hd-actions"><button class="icon-btn" id="searchBtn" aria-label="' + Uraw("search") + '">' + icon("search") + "</button>" + langSwitch() +
+      '<button class="icon-btn" id="themeBtn"></button>' + (cloud.canEdit ? '<a class="icon-btn" href="#admin" aria-label="' + Uraw("admin") + '" title="' + Uraw("admin") + '">' + icon("gear") + "</a>" : "") +
+      '<a class="btn primary sm donate-hd" href="#donate">' + icon("heart") + U("donate") + '</a><button class="icon-btn menu-btn" id="menuBtn" aria-label="' + Uraw("menu") + '">' + icon("menu") + "</button></div>" +
+      "</div></div></header>";
+    $("#drawer .panel").innerHTML = '<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px"><span class="brand"><span class="mark"></span><span class="bt"><b>' + T(S.siteName) + '</b></span></span><button class="icon-btn" data-act="close-drawer" aria-label="' + Uraw("close") + '">' + icon("x") + "</button></div>" + langSwitch() +
+      NAV.map(function (n) { return '<a class="nl" href="#' + n[0] + '">' + U(n[1]) + ARROW + "</a>"; }).join("") +
+      (cloud.canEdit ? '<a class="nl" href="#admin">' + U("admin") + icon("gear") + "</a>" : "") +
+      '<a class="btn primary" style="justify-content:center;margin-top:10px" href="#donate">' + icon("heart") + U("donate") + "</a>";
+    applyTheme(state.theme); applyLang(state.lang);
+    var si = $("#searchInput"); if (si) si.placeholder = Uraw("search_ph");
+    fitNav();
+    $("#mdonate").innerHTML = '<a class="btn primary" href="#donate">' + icon("heart") + U("donate") + "</a>";
+    document.documentElement.style.setProperty("--logo", 'url("' + new URL(img(S.logo), location.href).href + '")');
+    document.documentElement.style.setProperty("--logo-color", 'url("' + new URL(img(S.logoColor || S.logo), location.href).href + '")');
+  }
+  // Priority nav: hide trailing items that do not fit (they stay in the drawer)
+  function fitNav() {
+    var nav = $(".header .nav"); if (!nav) return;
+    var items = $$("a", nav); items.forEach(function (a) { a.style.display = ""; });
+    if (getComputedStyle(nav).display === "none") return;
+    for (var i = items.length - 1; i >= 0 && nav.scrollWidth > nav.clientWidth + 1; i--) items[i].style.display = "none";
+  }
+  window.addEventListener("resize", function () { clearTimeout(fitNav._t); fitNav._t = setTimeout(fitNav, 120); });
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(function () { fitNav(); });
+  function renderFooter() {
+    var S = C.settings, c = S.contact || {};
+    $("#chrome-bottom").innerHTML = '<footer class="footer"><div class="wrap"><div class="cols">' +
+      '<div><a class="brand" href="#home"><span class="mark"></span><span class="bt"><b>' + T(S.siteName) + "</b><small>" + T(S.motto) + '</small></span></a><p class="muted" style="margin-top:14px;max-width:340px">' + U("footer_note") + '</p><div class="socials">' + (S.social || []).map(function (s) { return '<a class="icon-btn" href="' + esc(s.url) + '" target="_blank" rel="noopener" aria-label="' + esc(s.name) + '">' + icon(s.icon === "x" ? "x2" : s.icon) + "</a>"; }).join("") + "</div></div>" +
+      "<div><h4>" + U("nav_about") + "</h4><ul>" + NAV.slice(1, 6).map(function (n) { return '<li><a href="#' + n[0] + '">' + U(n[1]) + "</a></li>"; }).join("") + '<li><a href="#chairman">' + U("chairman_title") + "</a></li></ul></div>" +
+      "<div><h4>" + U("related_sites") + "</h4><ul>" + (S.relatedSites || []).map(function (s) { return '<li><a href="' + esc(s.url) + '" target="_blank" rel="noopener">' + T(s.name) + "</a></li>"; }).join("") + '<li><a href="#transparency">' + U("nav_transparency") + "</a></li></ul></div>" +
+      "<div><h4>" + U("nav_contact") + '</h4><ul class="muted"><li style="display:flex;gap:8px">' + icon("pin") + "<span>" + T(c.office) + '</span></li><li style="display:flex;gap:8px">' + icon("phone") + '<span class="ltr">' + (c.phones || []).map(esc).join("<br>") + '</span></li><li style="display:flex;gap:8px">' + icon("mail") + '<span class="ltr">' + esc(c.email) + (c.email2 ? "<br>" + esc(c.email2) : "") + "</span></li></ul></div>" +
+      '</div><div class="bottom"><span>© ' + digits(new Date().getFullYear()) + " " + T(S.siteName) + " · " + esc(hijri(new Date().toISOString().slice(0, 10)).replace(/^.*?(\d{4}|[০-৯]{4}|[٠-٩]{4}).*$/, "$1")) + (state.lang === "en" ? " AH" : state.lang === "bn" ? " হি." : " هـ") + '</span><span>' + T(S.tagline) + "</span></div></div></footer>";
+  }
+
+  // ---------- page helpers ----------
+  function crumbs(items) { return '<nav class="crumbs" aria-label="Breadcrumb"><a href="#home">' + U("nav_home") + "</a>" + items.map(function (i) { return "<span>/</span>" + (i[1] ? '<a href="' + i[1] + '">' + i[0] + "</a>" : "<span>" + i[0] + "</span>"); }).join("") + "</nav>"; }
+  function pageHead(eyebrow, title, lead, cr) { return '<section class="page-hero"><div class="wrap">' + (cr || "") + (eyebrow ? '<div class="eyebrow">' + eyebrow + "</div>" : "") + '<h1 class="h-display rv">' + title + "</h1>" + (lead ? '<p class="lead rv" style="max-width:760px">' + lead + "</p>" : "") + "</div></section>"; }
+  function statusChip(s) { var map = { running: "", ongoing: "", construction: "gold", establishing: "gold", planned: "muted", proposed: "warn", done: "", progress: "gold" }; return '<span class="chip ' + (map[s] || "") + '"><span class="dot"></span>' + U("status_" + s) + "</span>"; }
+  function reviewNote(o) { return (o && o.review && cloud.canEdit) ? '<div class="pending">⚠ review: approval pending (visible to editors only)</div>' : ""; }
+  function regStatus(r) { var now = new Date(), o = parseDate(r.opens), c = parseDate(r.closes); if (c) c.setHours(23, 59, 59); if (o && now < o) return "soon"; if (c && now > c) return "closed"; return "open"; }
+  IBT.regStatus = regStatus;
+  function regChip(r) { var s = regStatus(r); return '<span class="chip ' + (s === "open" ? "" : s === "soon" ? "gold" : "muted") + '">' + (s === "open" ? '<span class="dot pulse"></span>' : "") + U("reg_" + s) + "</span>"; }
+  function vcard(v) {
+    return '<a class="vcard" href="https://www.youtube.com/watch?v=' + esc(v.youtubeId) + '" target="_blank" rel="noopener"><div class="vthumb"><div class="pattern"></div><div class="pl">' + icon("play") + '</div><div class="vt"><span>' + esc(v.channel || "") + "</span><span>YouTube ↗</span></div></div><div class=\"t\">" + T(v.title) + '</div><div class="s">' + esc(v.speaker || "") + "</div></a>";
+  }
+  function card(o) {
+    return '<a class="card glass" href="' + o.href + '"><div class="media">' + (o.image ? '<img loading="lazy" src="' + esc(img(o.image)) + '" alt="' + esc(o.alt || "") + '">' : "") + (o.chip || "") + '</div><div class="body"><h3>' + o.title + "</h3>" + (o.text ? "<p>" + o.text + "</p>" : "") + '<div class="foot"><span class="linkarrow">' + (o.cta || U("learn_more")) + ARROW + "</span>" + (o.meta || "") + "</div></div></a>";
+  }
+
+  // ---------- pages ----------
+  var P = {};
+  P.home = function () {
+    var H = C.home, S = C.settings;
+    var ins = C.institutions || [], regs = (C.registrations || []).filter(function (r) { return regStatus(r) === "open"; });
+    var news = (C.news || []).slice().sort(function (a, b) { return (b.date || "").localeCompare(a.date || ""); }).slice(0, 3);
+    var html = "";
+    var ringImgs = heroImages();
+    html += '<section class="hero hero-ring" id="hero"><div class="hero-bg" aria-hidden="true"><img id="heroBg" src="' + esc(img(ringImgs[0])) + '" alt=""></div><div class="shade"></div>' +
+      '<div class="wrap hero-grid"><div class="content glass dense rv"><div class="eyebrow">' + T(H.heroEyebrow) + '</div><h1 class="h-display">' + T(H.heroTitle) + '</h1><p class="lead">' + T(H.heroText) + '</p><div class="ctas"><button class="btn primary" data-story="' + esc(H.heroStory || "ibjmc") + '">' + icon("play") + T(H.heroCta1) + '</button><a class="btn" href="#donate">' + icon("heart") + T(H.heroCta2) + '</a></div><div class="meta"><span>' + icon("pin") + " " + T(S.contact.site) + "</span></div></div>" +
+      '<div class="ring-stage" id="ringStage" role="region" aria-roledescription="carousel" aria-label="' + esc(Uraw("design_gallery")) + '"><div class="ring" id="ring">' + ringImgs.map(function (src, i) { return '<figure class="rc" data-i="' + i + '"><img src="' + esc(img(src)) + '" alt="' + esc(Uraw("illustrative")) + " " + (i + 1) + '" draggable="false"' + (i > 3 ? ' loading="lazy"' : "") + "></figure>"; }).join("") + '</div><div class="ring-glow"></div><div class="ring-ctl"><button class="icon-btn" data-ring="-1" aria-label="' + Uraw("prev") + '">' + icon("arrow", "flip-l") + '</button><span class="chip muted">' + icon("cube") + " " + U("illustrative") + '</span><button class="icon-btn" data-ring="1" aria-label="' + Uraw("next") + '">' + icon("arrow") + "</button></div></div></div>" +
+      '<div class="scroll-cue" aria-hidden="true"></div></section>';
+    if (regs.length) html += '<section class="section tight"><div class="wrap"><div class="glass" style="padding:16px 18px;display:flex;gap:14px;align-items:center;flex-wrap:wrap"><span class="chip"><span class="dot pulse"></span>' + U("reg_open") + '</span><div style="display:flex;gap:10px;flex-wrap:wrap;flex:1">' + regs.slice(0, 4).map(function (r) { return '<a class="btn sm" style="white-space:normal;text-align:start" href="#reg-' + esc(r.id) + '">' + T(r.title) + "</a>"; }).join("") + '</div><a class="linkarrow" href="#register">' + U("view_all") + ARROW + "</a></div></div></section>";
+    html += '<section class="section"><div class="wrap split"><div class="rv"><div class="eyebrow">' + U("nav_about") + '</div><h2 class="h-section">' + T(H.aboutTitle) + '</h2><p class="lead">' + T(H.aboutText) + '</p><div class="glass" style="padding:18px;margin:18px 0"><div class="eyebrow" style="margin-bottom:6px">' + T(H.visionTitle) + '</div><p style="margin:0">' + T(H.visionText) + '</p></div><a class="linkarrow" href="#about">' + U("learn_more") + ARROW + '</a></div><div class="stack-photos rv"><div class="photo p1"><img loading="lazy" src="' + esc(img(H.aboutImage)) + '" alt=""></div><div class="photo p2"><img loading="lazy" src="img/event-gettogether.jpg" alt=""></div></div></div></section>';
+    html += '<section class="section" style="padding-top:0"><div class="wrap"><div class="sec-head"><div><div class="eyebrow">' + T(S.tagline) + '</div><h2 class="h-section">' + U("nav_initiatives") + '</h2></div></div><div class="bento">' + (H.pillars || []).map(function (p) { return '<a class="tile glass tilt rv" href="' + esc(p.link || "#initiatives") + '"><span class="sweep"></span><span class="ic">' + icon(p.icon) + "</span><h3>" + T(p.title) + "</h3><p>" + T(p.text) + '</p><span class="linkarrow" style="margin-top:auto">' + U("learn_more") + ARROW + "</span></a>"; }).join("") + "</div></div></section>";
+    html += '<section class="section" style="padding-top:0"><div class="wrap"><div class="spotlight rv"><img loading="lazy" src="' + esc(img(H.spotlightImage)) + '" alt=""><div class="in"><div><span class="chip gold" style="margin-bottom:12px">' + statusChip("construction") + '</span><h2 class="h-section" style="color:#fff">' + T(H.spotlightTitle) + '</h2><p style="color:rgba(242,245,247,.85);max-width:640px">' + T(H.spotlightText) + '</p><div class="ctas" style="display:flex;gap:10px;flex-wrap:wrap"><button class="btn primary" data-story="ibjmc">' + icon("play") + U("enter_story") + '</button><a class="btn" style="color:#fff" href="#project-ibjmc">' + U("tracker_title") + ARROW + '</a></div></div><div class="glass">' + floorSummary() + "</div></div></div></div></section>";
+    html += '<section class="section" style="padding-top:0"><div class="wrap"><div class="sec-head"><h2 class="h-section">' + U("nav_institutions") + '</h2><a class="linkarrow" href="#institutions">' + U("view_all") + ARROW + '</a></div><div class="grid g3">' + ins.slice(0, 6).map(function (i) { return card({ href: i.link || "#inst-" + i.id, image: i.image, title: T(i.name), text: T(i.summary), chip: statusChip(i.status) }); }).join("") + "</div></div></section>";
+    html += impactSection();
+    html += '<section class="section" style="padding-top:0"><div class="wrap"><div class="sec-head"><h2 class="h-section">' + U("latest_videos") + '</h2><a class="linkarrow" href="#media">' + U("view_all") + ARROW + '</a></div><div class="rail">' + (C.videos || []).slice(0, 8).map(vcard).join("") + "</div></div></section>";
+    html += '<section class="section" style="padding-top:0"><div class="wrap split rev"><div class="photo rv" style="aspect-ratio:4/5;max-height:560px"><img loading="lazy" src="' + esc(img(C.chairman.photo2 || C.chairman.photo)) + '" alt="' + esc(tr(C.chairman.name)) + '"></div><div class="rv"><div class="eyebrow">' + U("chairman_title") + '</div><h2 class="h-section">' + T(C.chairman.name) + '</h2><p class="lead">' + T(C.chairman.message).split(/[।.?؟]/).slice(0, 3).join(tr({ bn: "। ", en: ". ", ar: ". " })) + '…</p><a class="btn" href="#chairman">' + U("read_message") + ARROW + "</a></div></div></section>";
+    html += '<section class="section" style="padding-top:0"><div class="wrap"><div class="sec-head"><h2 class="h-section">' + U("latest_news") + '</h2><a class="linkarrow" href="#news">' + U("view_all") + ARROW + '</a></div><div class="grid g3">' + news.map(newsCard).join("") + "</div></div></section>";
+    var q = H.quote;
+    if (q) html += '<section class="section" style="padding-top:0"><div class="wrap"><div class="quote glass rv">' + starSvg() + "<blockquote>" + T(q.text) + "</blockquote><cite>" + T(q.ref) + "</cite>" + reviewNote(q) + '<div style="margin-top:22px"><a class="btn primary" href="#donate">' + icon("heart") + U("donate") + "</a></div></div></div></section>";
+    return html;
+  };
+  function heroImages() {
+    var H = C.home, list = state.theme === "dark" ? (H.heroGalleryNight || []) : (H.heroGallery || []);
+    if (!list.length) list = H.heroGallery || H.heroGalleryNight || [H.heroImage];
+    return list.slice(0, 12);
+  }
+  // 3D ring carousel built from IBT's real architectural renders (CSS 3D, no WebGL)
+  function mountRing(stage) {
+    var ring = $("#ring", stage), cards = $$(".rc", ring), n = cards.length; if (!n) return null;
+    var nomo = document.documentElement.classList.contains("nomotion");
+    var rtl = document.documentElement.dir === "rtl", dir = rtl ? -1 : 1;
+    var step = 360 / n, angle = 0, vel = 0, target = null, dragging = false, lastX = 0, hover = false, front = -1, raf = 0, running = false, last = 0, R = 0;
+    function layout() {
+      var w = stage.clientWidth, h = stage.clientHeight;
+      var cw = Math.min(560, Math.max(230, w * (w < 700 ? 0.66 : 0.62))), ch = cw * 0.64;
+      if (ch > h * 0.62) { ch = h * 0.62; cw = ch / 0.64; }
+      R = Math.round((cw / 2) / Math.tan(Math.PI / n) * 1.12);
+      stage.style.setProperty("--w", cw + "px"); stage.style.setProperty("--h", ch + "px");
+      cards.forEach(function (c, i) { c.style.transform = "rotateY(" + (i * step) + "deg) translateZ(" + R + "px)"; });
+      paint();
+    }
+    function norm(a) { a = a % 360; return a < 0 ? a + 360 : a; }
+    function paint() {
+      ring.style.transform = "translateZ(" + (-R) + "px) rotateX(-4deg) rotateY(" + (-angle * dir) + "deg)";
+      var best = -1, bestCos = -2;
+      cards.forEach(function (c, i) {
+        var rel = norm(i * step - angle * dir) * Math.PI / 180, cs = Math.cos(rel);
+        c.style.opacity = (0.18 + 0.82 * Math.max(0, (cs + 0.35) / 1.35)).toFixed(3);
+        c.style.filter = "brightness(" + (0.45 + 0.55 * Math.max(0, cs)).toFixed(3) + ") saturate(" + (0.6 + 0.4 * Math.max(0, cs)).toFixed(3) + ")";
+        c.style.zIndex = Math.round(cs * 100) + 100;
+        if (cs > bestCos) { bestCos = cs; best = i; }
+      });
+      if (best !== front) {
+        front = best; cards.forEach(function (c, i) { c.classList.toggle("front", i === best); });
+        var bg = $("#heroBg"); if (bg) { bg.style.opacity = "0"; setTimeout(function () { bg.src = cards[best].querySelector("img").src; bg.style.opacity = ""; }, 250); }
+      }
+    }
+    function frame(now) {
+      raf = 0; if (!running) return;
+      var dt = Math.min(50, now - (last || now)); last = now;
+      if (target !== null) { var d = target - angle; angle += d * Math.min(1, dt * 0.008); if (Math.abs(d) < 0.05) { angle = target; target = null; } }
+      else if (!dragging) { if (Math.abs(vel) > 0.002) { angle += vel * dt; vel *= 0.94; } else if (!hover && !nomo) angle += dt * 0.0075; }
+      paint(); raf = requestAnimationFrame(frame);
+    }
+    function start() { if (running) return; running = true; last = 0; raf = requestAnimationFrame(frame); }
+    function stop() { running = false; if (raf) cancelAnimationFrame(raf); raf = 0; }
+    function goTo(i) { var cur = angle, want = i * step; var d = norm(want - cur); if (d > 180) d -= 360; target = cur + d; vel = 0; start(); }
+    stage.addEventListener("pointerdown", function (e) { if (e.target.closest(".ring-ctl")) return; dragging = true; lastX = e.clientX; vel = 0; target = null; stage.setPointerCapture(e.pointerId); stage._moved = 0; });
+    stage.addEventListener("pointermove", function (e) { if (!dragging) return; var dx = e.clientX - lastX; lastX = e.clientX; stage._moved += Math.abs(dx); var dA = -dx * 0.25 * dir; angle += dA; vel = dA / 16; });
+    function up(e) { if (!dragging) return; dragging = false; if (stage._moved < 6) { var c = e.target.closest(".rc"); if (c) { var i = +c.dataset.i; if (i === front) { var L = $("#lightbox"); L.innerHTML = '<img src="' + esc(c.querySelector("img").src) + '" alt="">'; L.classList.add("open"); } else goTo(i); } } }
+    stage.addEventListener("pointerup", up); stage.addEventListener("pointercancel", up);
+    stage.addEventListener("pointerenter", function () { hover = true; }); stage.addEventListener("pointerleave", function () { hover = false; });
+    stage.addEventListener("click", function (e) { var b = e.target.closest("[data-ring]"); if (b) goTo(front + (+b.dataset.ring)); });
+    stage.addEventListener("keydown", function (e) { if (e.key === "ArrowRight") goTo(front + (rtl ? -1 : 1)); if (e.key === "ArrowLeft") goTo(front + (rtl ? 1 : -1)); });
+    stage.tabIndex = 0;
+    var io = new IntersectionObserver(function (es) { es[0].isIntersecting && !document.hidden ? start() : stop(); }, { threshold: 0.01 }); io.observe(stage);
+    function vis() { document.hidden ? stop() : start(); }
+    document.addEventListener("visibilitychange", vis);
+    var ro = new ResizeObserver(layout); ro.observe(stage);
+    layout(); start();
+    return { setTheme: function () { }, destroy: function () { stop(); io.disconnect(); ro.disconnect(); document.removeEventListener("visibilitychange", vis); } };
+  }
+  function starSvg() { return '<svg class="star" viewBox="0 0 100 100" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="1.2"><rect x="20" y="20" width="60" height="60"/><rect x="20" y="20" width="60" height="60" transform="rotate(45 50 50)"/><circle cx="50" cy="50" r="18"/><circle cx="50" cy="50" r="42"/></g></svg>'; }
+  function floorSummary() {
+    var F = C.floors || {};
+    function row(k) { var fl = F[k] || []; var done = fl.filter(function (f) { return f.status === "done"; }).length, prog = fl.filter(function (f) { return f.status === "progress"; }).length; return '<div style="margin-bottom:12px"><div style="display:flex;justify-content:space-between;font-weight:600"><span>' + U(k) + '</span><span class="faint" style="color:rgba(242,245,247,.7)">' + digits(done) + "/" + digits(fl.length) + '</span></div><div style="display:flex;gap:3px;margin-top:8px">' + fl.map(function (f) { return '<i title="' + esc(tr(f.label)) + '" style="flex:1;height:10px;border-radius:3px;' + (f.status === "done" ? "background:#68983C" : f.status === "progress" ? "background:#E0B252;box-shadow:0 0 8px #E0B252" : "border:1px dashed rgba(255,255,255,.4)") + '"></i>'; }).join("") + "</div></div>"; }
+    return '<div style="font-size:.85rem;color:rgba(242,245,247,.7);margin-bottom:10px">' + U("tracker_title") + " · " + U("as_of") + " " + fdate(F.asOf) + "</div>" + row("mosque") + row("academic");
+  }
+  function impactSection() {
+    var M = C.impact; if (!M) return "";
+    return '<section class="section" style="padding-top:0"><div class="wrap"><div class="sec-head"><div><div class="eyebrow">' + U("as_of") + " " + fdate(M.asOf) + '</div><h2 class="h-section">' + U("impact_title") + '</h2></div></div><div class="grid g3">' + (M.groups || []).map(function (g) { return '<div class="impact-group glass rv"><h3>' + T(g.title) + "</h3>" + (g.items || []).map(function (it) { return '<div class="stat"><b data-count="' + esc(it.value) + '" data-suffix="' + esc(it.suffix || "") + '">' + digits(0) + "</b><span>" + T(it.label) + "</span></div>"; }).join("") + "</div>"; }).join("") + '</div><div class="source-line"><span class="chip muted">' + U("source") + ": " + T(M.source) + "</span>" + (M.qualitative || []).map(function (q) { return '<span class="chip">' + T(q) + "</span>"; }).join("") + "</div></div></section>";
+  }
+  function newsCard(n) { return card({ href: "#news-" + n.id, image: n.image, title: T(n.title), text: T(n.summary), meta: '<span class="faint">' + fdate(n.date) + "</span>" }); }
+
+  P.about = function () {
+    var H = C.home;
+    return pageHead(U("nav_about"), T(H.aboutTitle), T(H.visionText), crumbs([[U("nav_about")]])) +
+      '<section class="section tight"><div class="wrap split"><div class="prose rv"><p>' + T(H.aboutText) + '</p><div class="glass" style="padding:20px;margin-top:16px"><div class="eyebrow">' + T(H.visionTitle) + "</div><p style='margin:0'>" + T(H.visionText) + '</p></div></div><div class="photo rv" style="aspect-ratio:4/3"><img src="' + esc(img("img/scholars-visit-group.jpg")) + '" alt=""></div></div></section>' +
+      '<section class="section tight"><div class="wrap"><h2 class="h-section">' + U("cells") + '</h2><div class="grid g4" style="margin-top:20px">' + (C.cells || []).map(function (c) { return '<a class="glass rv" style="padding:18px;color:var(--text);display:flex;flex-direction:column;gap:6px" href="' + esc(c.link || "#") + '"><b>' + T(c.name) + '</b><span class="muted" style="font-size:.93rem">' + T(c.text) + "</span></a>"; }).join("") + "</div></div></section>" +
+      '<section class="section tight"><div class="wrap split"><div><h2 class="h-section">' + U("history") + '</h2><div class="timeline" style="margin-top:20px">' + (C.history || []).map(function (h) { return '<div class="tl-item rv"><div class="d">' + fdate(h.date) + "</div><h4>" + T(h.title) + "</h4><p>" + T(h.text) + "</p></div>"; }).join("") + '</div></div><div class="glass rv" style="padding:24px;align-self:start"><div class="eyebrow">' + U("chairman_title") + '</div><div style="display:flex;gap:16px;align-items:center"><img src="' + esc(img(C.chairman.photo)) + '" alt="" style="width:84px;height:84px;border-radius:50%;object-fit:cover"><div><h3 style="margin:0">' + T(C.chairman.name) + '</h3><span class="muted">' + T(C.chairman.role) + '</span></div></div><a class="btn" style="margin-top:16px" href="#chairman">' + U("read_message") + ARROW + "</a></div></div></section>" +
+      faqSection();
+  };
+  function faqSection() { return '<section class="section tight"><div class="wrap"><h2 class="h-section">' + U("faq") + '</h2><div class="grid" style="margin-top:18px">' + (C.faqs || []).map(function (f) { return '<details class="glass rv" style="padding:16px 18px"><summary style="cursor:pointer;font-weight:600">' + T(f.q) + '</summary><p class="muted" style="margin:10px 0 0">' + T(f.a) + "</p></details>"; }).join("") + "</div></div></section>"; }
+
+  P.chairman = function () {
+    var M = C.chairman;
+    var links = (M.links || []).filter(function (l) { return l.url; });
+    return pageHead(U("chairman_title"), T(M.name), T(M.role), crumbs([[U("nav_about"), "#about"], [U("chairman_title")]])) +
+      '<section class="section tight"><div class="wrap split"><div class="photo rv" style="aspect-ratio:1"><img src="' + esc(img(M.photo)) + '" alt="' + esc(tr(M.name)) + '"></div><div class="prose rv"><p>' + T(M.bio) + '</p><div class="glass" style="padding:22px;margin-top:10px"><div class="eyebrow">' + U("message") + '</div><p style="margin:0;font-size:1.1rem">' + T(M.message) + "</p></div>" + reviewNote(M) +
+      (links.length ? '<div style="display:flex;gap:10px;margin-top:16px">' + links.map(function (l) { return '<a class="btn" href="' + esc(l.url) + '" target="_blank" rel="noopener">' + icon(l.name.toLowerCase()) + esc(l.name) + "</a>"; }).join("") + "</div>" : "") + "</div></div></section>" +
+      '<section class="section tight"><div class="wrap"><h2 class="h-section">' + U("videos") + '</h2><div class="rail" style="margin-top:16px">' + (C.videos || []).filter(function (v) { return /Elahi/i.test(v.speaker || "") || v.channel === "IBT"; }).map(vcard).join("") + "</div></div></section>";
+  };
+
+  P.institutions = function () {
+    return pageHead(U("nav_institutions"), U("nav_institutions"), T(C.home.visionText), crumbs([[U("nav_institutions")]])) +
+      '<section class="section tight"><div class="wrap grid g3">' + (C.institutions || []).map(function (i) { return card({ href: i.link || "#inst-" + i.id, image: i.image, title: T(i.name), text: T(i.summary), chip: statusChip(i.status) }); }).join("") + "</div></section>";
+  };
+  P.inst = function (id) {
+    var i = find(C.institutions, id); if (!i) return P.notfound();
+    var regs = (C.registrations || []).filter(function (r) { return (i.registrations || []).indexOf(r.id) > -1 || r.entity === i.id; });
+    var vids = (C.videos || []).filter(function (v) { return v.entity === i.id; });
+    var story = find(C.stories, i.id);
+    return pageHead(statusChip(i.status), T(i.name), T(i.summary) + (i.formerName ? '<br><span class="chip muted" style="margin-top:10px">' + T(i.formerName) + "</span>" : ""), crumbs([[U("nav_institutions"), "#institutions"], [T(i.name)]])) +
+      '<section class="section tight" style="padding-top:0"><div class="wrap"><div class="cover rv"><img src="' + esc(img(i.image)) + '" alt=""></div></div></section>' +
+      '<section class="section tight"><div class="wrap split" style="align-items:start"><div class="prose rv">' + (i.body ? "<p>" + T(i.body) + "</p>" : "") + reviewNote(i) + (story ? '<button class="btn primary" data-story="' + esc(story.id) + '">' + icon("play") + U("enter_story") + "</button> " : "") + (i.website ? '<a class="btn" href="' + esc(i.website) + '" target="_blank" rel="noopener">' + esc(i.website.replace(/^https?:\/\//, "").replace(/\/$/, "")) + icon("ext") + "</a>" : "") + '</div><div class="glass rv" style="padding:22px"><h3>' + U("features") + '</h3><ul class="check">' + (i.features || []).map(function (f) { return "<li>" + T(f) + "</li>"; }).join("") + "</ul></div></div></section>" +
+      ((i.programs || []).length ? '<section class="section tight"><div class="wrap"><h2 class="h-section">' + U("programs") + '</h2><div class="grid g2" style="margin-top:16px">' + i.programs.map(function (p) { return '<div class="glass rv" style="padding:18px"><b>' + T(p.name) + '</b><p class="muted" style="margin:6px 0 0">' + T(p.text) + "</p></div>"; }).join("") + "</div></div></section>" : "") +
+      (regs.length ? '<section class="section tight"><div class="wrap"><h2 class="h-section">' + U("nav_register") + '</h2><div class="grid" style="margin-top:16px">' + regs.map(regCard).join("") + "</div></div></section>" : "") +
+      (vids.length ? '<section class="section tight"><div class="wrap"><h2 class="h-section">' + U("videos") + '</h2><div class="rail" style="margin-top:16px">' + vids.map(vcard).join("") + "</div></div></section>" : "");
+  };
+
+  P.projects = function () {
+    return pageHead(U("nav_projects"), U("nav_projects"), "", crumbs([[U("nav_projects")]])) +
+      '<section class="section tight"><div class="wrap grid g2">' + (C.projects || []).filter(function (p) { return !p.hidden; }).map(function (p) { return card({ href: "#project-" + p.id, image: p.image, title: T(p.name), text: T(p.summary), chip: statusChip(p.status), meta: '<span class="faint">' + T(p.location) + "</span>" }); }).join("") + "</div></section>";
+  };
+  P.project = function (id) {
+    var p = find(C.projects, id); if (!p) return P.notfound();
+    var F = C.floors || {};
+    var html = pageHead(statusChip(p.status), T(p.name), T(p.summary), crumbs([[U("nav_projects"), "#projects"], [T(p.name)]])) +
+      '<section class="section tight" style="padding-top:0"><div class="wrap"><div class="cover rv"><img src="' + esc(img(p.image)) + '" alt=""><span class="chip muted" style="position:absolute;bottom:14px;inset-inline-start:14px;background:rgba(6,24,42,.6);color:#fff">' + U("illustrative") + "</span></div></div></section>" +
+      '<section class="section tight"><div class="wrap split" style="align-items:start"><div class="prose rv"><p>' + T(p.body) + "</p>" + reviewNote(p) + '<div style="display:flex;gap:10px;flex-wrap:wrap">' + (p.story ? '<button class="btn primary" data-story="' + esc(p.story) + '">' + icon("play") + U("enter_story") + "</button>" : "") + (p.fund ? '<a class="btn" href="#donate" data-fund="' + esc(p.fund) + '">' + icon("heart") + U("donate") + "</a>" : "") + '</div></div><div class="glass rv" style="padding:22px"><dl class="kv"><dt>' + U("location") + "</dt><dd>" + T(p.location) + "</dd><dt>" + U("status") + "</dt><dd>" + statusChip(p.status) + "</dd></dl>" + ((p.objectives || []).length ? '<h3 style="margin-top:18px">' + U("objectives") + '</h3><ul class="check">' + p.objectives.map(function (o) { return "<li>" + T(o) + "</li>"; }).join("") + "</ul>" : "") + "</div></div></section>";
+    if (p.tracker) {
+      html += '<section class="section tight" id="tracker"><div class="wrap"><div class="sec-head"><div><div class="eyebrow">' + U("as_of") + " " + fdate(F.asOf) + " · " + U("source") + ": " + T(F.source) + '</div><h2 class="h-section">' + U("tracker_title") + '</h2></div><span class="faint">' + U("tracker_hint") + '</span></div><div class="tracker"><div class="stage glass"><canvas id="trackerCanvas" aria-label="3D"></canvas><div class="legend"><span class="chip muted"><i class="sw st-done" style="width:10px;height:10px;border-radius:3px;display:inline-block"></i>' + U("status_done") + '</span><span class="chip muted"><i class="sw st-progress" style="width:10px;height:10px;border-radius:3px;display:inline-block"></i>' + U("status_progress") + '</span><span class="chip muted"><i class="sw st-planned" style="width:10px;height:10px;border-radius:3px;display:inline-block"></i>' + U("status_planned") + '</span></div><div class="tip glass dense" id="floorTip"></div><img id="trackerFallback" src="' + esc(img("img/render-campus.jpg")) + '" alt="" style="display:none;width:100%;height:100%;object-fit:cover;position:absolute;inset:0"></div><div class="glass"><div class="floor-list" id="floorList">' + floorList() + "</div></div></div>" + reviewNote(F) + "</div></section>";
+      var si = C.supportItems;
+      if (si) html += '<section class="section tight"><div class="wrap split" style="align-items:start"><div><h2 class="h-section">' + U("support_items") + '</h2><p class="faint">' + U("as_of") + " " + fdate(si.asOf) + '</p><a class="btn primary" href="#donate">' + icon("heart") + U("donate") + '</a></div><div class="glass" style="padding:8px 22px">' + (si.items || []).map(function (s) { return '<div class="support-row"><span>' + T(s.name) + "</span><b>" + (s.status === "done" ? '<span class="chip">' + U("completed") + "</span>" : money(s.amount)) + "</b></div>"; }).join("") + "</div></div></section>";
+    }
+    if ((p.design || []).length) html += '<section class="section tight"><div class="wrap"><div class="sec-head"><h2 class="h-section">' + U("design_gallery") + '</h2><span class="chip muted">' + icon("cube") + " " + U("illustrative") + '</span></div><div class="rail design-rail">' + p.design.map(function (g) { return '<figure class="photo" data-lightbox="' + esc(img(g)) + '" style="margin:0;aspect-ratio:16/10;cursor:zoom-in"><img loading="lazy" src="' + esc(img(g)) + '" alt="' + esc(U("illustrative").replace(/<[^>]+>/g, "")) + '"></figure>'; }).join("") + "</div></div></section>";
+    if ((p.gallery || []).length) html += '<section class="section tight"><div class="wrap"><h2 class="h-section">' + U("gallery") + '</h2><div class="masonry" style="margin-top:16px">' + p.gallery.map(function (g) { return '<figure data-lightbox="' + esc(img(g)) + '"><img loading="lazy" src="' + esc(img(g)) + '" alt=""></figure>'; }).join("") + "</div></div></section>";
+    return html;
+  };
+  function floorList() {
+    var F = C.floors || {};
+    return ["mosque", "academic"].map(function (k) { return '<div style="padding:6px 6px 2px;font-weight:700">' + U(k) + "</div>" + (F[k] || []).map(function (f, i) { return '<div class="floor-row" data-floor="' + k + ":" + i + '"><i class="sw st-' + esc(f.status) + '"></i><div><b>' + T(f.label) + "</b><small>" + T(f.use) + "</small></div>" + '<span class="faint">' + U("status_" + f.status) + "</span></div>"; }).join(""); }).join("");
+  }
+
+  P.initiatives = function () {
+    return pageHead(U("nav_initiatives"), U("nav_initiatives"), "", crumbs([[U("nav_initiatives")]])) +
+      '<section class="section tight"><div class="wrap grid g3">' + (C.initiatives || []).map(function (i) { return card({ href: "#init-" + i.id, image: i.image, title: T(i.name), text: T(i.summary) }); }).join("") + "</div></section>";
+  };
+  P.init = function (id) {
+    var i = find(C.initiatives, id); if (!i) return P.notfound();
+    var vids = (C.videos || []).filter(function (v) { return v.entity === i.id || v.topic === i.id; });
+    return pageHead(U("nav_initiatives"), T(i.name), T(i.summary), crumbs([[U("nav_initiatives"), "#initiatives"], [T(i.name)]])) +
+      '<section class="section tight"><div class="wrap split" style="align-items:start"><div class="prose rv"><p>' + T(i.body) + '</p><a class="btn primary" href="#donate">' + icon("heart") + U("donate") + '</a> <a class="btn" href="#register">' + U("nav_register") + ARROW + '</a></div><div class="photo rv" style="aspect-ratio:4/3"><img src="' + esc(img(i.image)) + '" alt=""></div></div></section>' +
+      (vids.length ? '<section class="section tight"><div class="wrap"><h2 class="h-section">' + U("videos") + '</h2><div class="rail" style="margin-top:16px">' + vids.map(vcard).join("") + "</div></div></section>" : "");
+  };
+
+  P.media = function () {
+    var topics = ["all", "ibt", "kulliya", "courses", "research"];
+    return pageHead(U("nav_media"), U("nav_media"), "", crumbs([[U("nav_media")]])) +
+      '<section class="section tight"><div class="wrap"><h2 class="h-section">' + U("documentaries") + '</h2><div class="grid g2" style="margin-top:16px">' + (C.stories || []).map(function (s) { return '<button class="card glass" style="text-align:start;padding:0;border:1px solid var(--glass-border);cursor:pointer;color:inherit" data-story="' + esc(s.id) + '"><div class="media" style="aspect-ratio:16/8"><img loading="lazy" src="' + esc(img(s.cover)) + '" alt=""><span class="chip gold">' + digits((s.chapters || []).length) + " " + U("chapter") + '</span></div><div class="body"><h3>' + T(s.title) + '</h3><span class="linkarrow">' + icon("play") + U("enter_story") + "</span></div></button>"; }).join("") + "</div></div></section>" +
+      '<section class="section tight"><div class="wrap"><div class="sec-head"><h2 class="h-section">' + U("videos") + '</h2><div class="tabs" id="vtabs">' + topics.map(function (t, i) { return '<button aria-pressed="' + (i === 0) + '" data-topic="' + t + '">' + (t === "all" ? U("all") : t === "ibt" ? "IBT" : t === "kulliya" ? tr({ bn: "কুল্লিয়াতুল কুরআন", en: "Kulliyatul Quran", ar: "كلية القرآن" }) : t === "courses" ? U("programs") : tr({ bn: "গবেষণা", en: "Research", ar: "البحث" })) + "</button>"; }).join("") + '</div></div><div class="grid g4" id="vgrid">' + (C.videos || []).map(function (v) { return '<div data-topic="' + esc(v.topic) + '">' + vcard(v) + "</div>"; }).join("") + '</div><div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:22px">' + (C.settings.youtubeChannels || []).map(function (y) { return '<a class="btn" href="' + esc(y.url) + '" target="_blank" rel="noopener">' + icon("youtube") + esc(y.name) + "</a>"; }).join("") + "</div></div></section>";
+  };
+
+  P.news = function () {
+    var ev = (C.events || []).slice().sort(function (a, b) { return a.date.localeCompare(b.date); }).filter(function (e) { return parseDate(e.date) >= new Date(new Date().toDateString()); });
+    return pageHead(U("nav_news"), U("nav_news"), "", crumbs([[U("nav_news")]])) +
+      '<section class="section tight"><div class="wrap"><h2 class="h-section">' + U("upcoming_events") + '</h2><div class="grid" style="margin-top:16px">' + (ev.length ? ev.map(eventRow).join("") : '<div class="empty glass">—</div>') + "</div></div></section>" +
+      '<section class="section tight"><div class="wrap"><h2 class="h-section">' + U("latest_news") + '</h2><div class="grid g3" style="margin-top:16px">' + (C.news || []).slice().sort(function (a, b) { return (b.date || "").localeCompare(a.date || ""); }).map(newsCard).join("") + "</div></div></section>";
+  };
+  function eventRow(e) {
+    var d = parseDate(e.date);
+    var day = d ? new Intl.DateTimeFormat(LOC[state.lang], { day: "numeric" }).format(d) : "", mon = d ? new Intl.DateTimeFormat(LOC[state.lang], { month: "short" }).format(d) : "";
+    var ics = "data:text/calendar;charset=utf-8," + encodeURIComponent("BEGIN:VCALENDAR\nVERSION:2.0\nBEGIN:VEVENT\nDTSTART:" + e.date.replace(/-/g, "") + "T" + (e.time || "09:00").replace(":", "") + "00\nSUMMARY:" + tr(e.title) + "\nLOCATION:" + tr(e.venue) + "\nEND:VEVENT\nEND:VCALENDAR");
+    return '<div class="ev glass rv"><div class="dt"><b>' + day + "</b><small>" + mon + '</small></div><div><b>' + T(e.title) + '</b><div class="muted" style="font-size:.92rem">' + icon("pin") + " " + T(e.venue) + " · " + digits(e.time || "") + '</div><div class="ev hj" style="padding:0;display:block">' + U("hijri") + ": " + esc(hijri(e.date)) + '</div></div><div style="display:flex;gap:8px">' + (e.registration ? '<a class="btn sm primary" href="#reg-' + esc(e.registration) + '">' + U("register_now") + "</a>" : "") + '<a class="btn sm" href="' + ics + '" target="_blank" rel="noopener">' + icon("cal") + "</a></div></div>";
+  }
+  P.newsItem = function (id) {
+    var n = find(C.news, id); if (!n) return P.notfound();
+    return pageHead(fdate(n.date) + " · " + esc(hijri(n.date)), T(n.title), "", crumbs([[U("nav_news"), "#news"], [T(n.title)]])) +
+      '<section class="section tight" style="padding-top:0"><div class="wrap"><div class="cover"><img src="' + esc(img(n.image)) + '" alt=""></div><div class="prose" style="margin-top:24px"><p class="lead">' + T(n.summary) + "</p>" + (n.body ? "<p>" + T(n.body) + "</p>" : "") + reviewNote(n) + "</div></div></section>";
+  };
+
+  function regCard(r) {
+    var st = regStatus(r);
+    return '<div class="reg glass rv"><div class="media"><img loading="lazy" src="' + esc(img(r.image)) + '" alt=""></div><div class="body"><div style="display:flex;gap:8px;flex-wrap:wrap">' + regChip(r) + '<span class="chip muted">' + esc(r.type) + '</span></div><h3 style="margin:0">' + T(r.title) + '</h3><p class="muted" style="margin:0">' + T(r.text) + '</p><div class="meta"><span>' + icon("cal") + " " + U("closes") + ": " + fdate(r.closes) + "</span><span>" + icon("pin") + " " + T(r.venue) + "</span><span>" + U("fee") + ": " + T(r.fee) + '</span></div><div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:4px"><a class="btn sm ' + (st === "open" ? "primary" : "") + '" href="#reg-' + esc(r.id) + '">' + (st === "open" ? U("register_now") : U("learn_more")) + ARROW + "</a></div></div></div>";
+  }
+  P.register = function () {
+    var regs = (C.registrations || []).slice().sort(function (a, b) { var o = { open: 0, soon: 1, closed: 2 }; return o[regStatus(a)] - o[regStatus(b)]; });
+    return pageHead(U("nav_register"), U("nav_register"), "", crumbs([[U("nav_register")]])) + '<section class="section tight"><div class="wrap grid">' + regs.map(regCard).join("") + "</div></section>";
+  };
+  P.reg = function (id) {
+    var r = find(C.registrations, id) || (C.registrations || []).filter(function (x) { return x.slug === id; })[0]; if (!r) return P.notfound();
+    var st = regStatus(r);
+    var share = location.href.split("#")[0] + "#r-" + (r.slug || r.id);
+    var action = "";
+    if (st === "open") {
+      if (r.mode !== "native" && r.formUrl) action = '<a class="btn primary" href="' + esc(prefill(r)) + '" target="_blank" rel="noopener">' + U("open_form") + icon("ext") + '</a><p class="faint" style="margin-top:10px">Google Forms</p>';
+      else action = (r.mode !== "native" ? '<div class="notice info" style="margin-bottom:14px">' + U("form_pending") + "</div>" : "") + submitForm("registration", r.id, [["name", "text", true], ["phone", "tel", true], ["email", "email", false], ["message", "textarea", false]]);
+    } else action = '<div class="notice info">' + U("reg_" + st) + (st === "soon" ? " · " + U("opens") + ": " + fdate(r.opens) : "") + "</div>";
+    return pageHead(regChip(r), T(r.title), T(r.text), crumbs([[U("nav_register"), "#register"], [T(r.title)]])) +
+      '<section class="section tight" style="padding-top:0"><div class="wrap split" style="align-items:start"><div class="glass" style="padding:24px"><dl class="kv"><dt>' + U("opens") + "</dt><dd>" + fdate(r.opens) + "</dd><dt>" + U("closes") + "</dt><dd>" + fdate(r.closes) + (st === "open" ? ' <span class="countdown" data-until="' + esc(r.closes) + '"></span>' : "") + "</dd><dt>" + U("venue") + "</dt><dd>" + T(r.venue) + "</dd><dt>" + U("fee") + "</dt><dd>" + T(r.fee) + '</dd></dl><hr style="border:0;border-top:1px solid var(--line);margin:18px 0">' + action + '</div><div><div class="photo" style="aspect-ratio:16/10"><img src="' + esc(img(r.image)) + '" alt=""></div><div class="glass" style="padding:18px;margin-top:16px;display:flex;gap:16px;align-items:center;flex-wrap:wrap"><div class="qr" id="qrBox" data-url="' + esc(share) + '"></div><div style="flex:1;min-width:200px"><b>' + U("share_link") + '</b><div class="faint ltr" style="word-break:break-all;margin:6px 0">' + esc(share) + '</div><button class="btn sm" data-copy="' + esc(share) + '">' + icon("copy") + U("copy") + "</button></div></div></div></div></section>";
+  };
+  function prefill(r) {
+    var u = r.formUrl || ""; if (!u) return "";
+    var map = r.prefill || {}; var q = [];
+    Object.keys(map).forEach(function (entry) { var v = map[entry]; v = v === "{lang}" ? state.lang : v === "{source}" ? "website" : v === "{title}" ? tr(r.title) : v; q.push(encodeURIComponent(entry) + "=" + encodeURIComponent(v)); });
+    q.push("utm_source=website");
+    return u + (u.indexOf("?") > -1 ? "&" : "?") + q.join("&");
+  }
+  function submitForm(kind, ref, fields) {
+    return '<form class="form" data-submit="' + kind + '" data-ref="' + esc(ref || "") + '">' + fields.map(function (f) {
+      var id = "f_" + kind + "_" + f[0];
+      var input = f[1] === "textarea" ? '<textarea class="input" id="' + id + '" name="' + f[0] + '"' + (f[2] ? " required" : "") + "></textarea>" : f[1] === "select" ? '<select class="input" id="' + id + '" name="' + f[0] + '">' + f[3].map(function (o) { return '<option value="' + esc(o[0]) + '">' + o[1] + "</option>"; }).join("") + "</select>" : '<input class="input" id="' + id + '" name="' + f[0] + '" type="' + f[1] + '"' + (f[2] ? " required" : "") + (f[1] === "tel" ? ' dir="ltr" inputmode="tel"' : "") + ">";
+      return '<div class="field"><label for="' + id + '">' + U(f[4] || f[0]) + (f[2] ? " *" : "") + "</label>" + input + "</div>";
+    }).join("") + '<button class="btn primary" type="submit">' + U("submit") + '</button><div class="out" aria-live="polite"></div></form>';
+  }
+
+  P.donate = function () {
+    var funds = C.funds || [], pay = C.payment || {}, D = C.donateCopy || {};
+    var f0 = state.fund || (funds[0] && funds[0].id);
+    var html = pageHead(U("donate"), tr({ bn: "আপনার সাদাকাহ, স্থায়ী কল্যাণ", en: "Your sadaqah, a lasting good", ar: "صدقتك خيرٌ باقٍ" }), T(D.transparency), crumbs([[U("donate")]]));
+    html += '<section class="section tight" style="padding-top:0"><div class="wrap split" style="align-items:start"><div class="glass donate-box rv" id="donateBox"><h2 style="font-size:1.3rem">' + U("choose_fund") + '</h2><div class="fund-grid" role="group">' + funds.map(function (f) { return '<button class="fund-opt" aria-pressed="' + (f.id === f0) + '" data-fund-pick="' + esc(f.id) + '">' + T(f.name) + "</button>"; }).join("") + '</div><div id="fundDesc" class="muted" style="margin:14px 0"></div><div style="display:flex;gap:12px;align-items:center;flex-wrap:wrap;margin-bottom:14px"><div class="seg" role="group"><button aria-pressed="true" data-freq="once">' + U("one_time") + '</button><button aria-pressed="false" data-freq="monthly">' + U("monthly") + '</button></div></div><div class="amts" id="amts"></div><div class="field" style="margin-top:12px"><label for="amt">' + U("amount") + '</label><input class="input" id="amt" type="number" min="10" inputmode="numeric" dir="ltr"></div><div class="notice info" style="margin-top:14px">' + (pay.gatewayLive ? "" : U("gateway_soon")) + '</div><div id="autopay" class="glass" style="padding:14px;margin-top:12px;display:none"><b>' + U("autopay_title") + '</b><p class="muted" style="margin:6px 0 0;font-size:.93rem">' + U("autopay_text") + '</p></div></div><div class="grid rv"><h2 style="font-size:1.3rem;margin:0">' + U("pay_channels") + "</h2>" +
+      (pay.channels || []).filter(function (c) { return c.show; }).map(function (c) { var col = { bkash: "#e2136e", nagad: "#f7941d", rocket: "#8c3494", bank: "#0b5d3b" }[c.type] || "#334"; return '<div class="channel glass"><div class="logo" style="background:' + col + '">' + esc(c.type.toUpperCase().slice(0, 5)) + '</div><div><b>' + T(c.name) + '</b><div class="num">' + esc(c.number) + '</div><div class="faint">' + T(c.note) + '</div></div><button class="icon-btn" data-copy="' + esc(c.number.replace(/\s/g, "")) + '" aria-label="' + Uraw("copy") + '">' + icon("copy") + "</button></div>"; }).join("") + reviewNote(pay) + "</div></div></section>";
+    html += '<section class="section tight"><div class="wrap split" style="align-items:start"><div class="glass rv" style="padding:24px"><h2 style="font-size:1.3rem">' + U("report_donation") + '</h2><p class="muted">' + U("report_donation_text") + "</p>" + submitForm("donation", "", [["name", "text", true], ["phone", "tel", true], ["amount", "number", true, null, "amount"], ["channel", "select", true, (pay.channels || []).map(function (c) { return [c.type, tr(c.name)]; }), "channel"], ["txn", "text", true, null, "txn_id"], ["date", "date", true], ["fund", "select", true, funds.map(function (f) { return [f.id, tr(f.name)]; }), "choose_fund"]]) + '</div><div class="grid">' + (D.motivations || []).map(function (m) { return '<div class="glass rv" style="padding:20px"><h3 style="font-size:1.1rem">' + T(m.title) + '</h3><p style="margin:0">' + T(m.text) + '</p><cite class="faint" style="font-style:normal">' + T(m.ref) + "</cite></div>"; }).join("") + reviewNote(D) + "</div></div></section>";
+    var si = C.supportItems;
+    if (si) html += '<section class="section tight"><div class="wrap"><h2 class="h-section">' + U("support_items") + '</h2><div class="grid g3" style="margin-top:16px">' + (si.items || []).map(function (s) { return '<div class="glass rv" style="padding:18px;display:flex;justify-content:space-between;gap:10px;align-items:center"><span>' + T(s.name) + "</span><b>" + (s.status === "done" ? '<span class="chip">' + U("completed") + "</span>" : money(s.amount)) + "</b></div>"; }).join("") + '</div><p class="faint" style="margin-top:12px">' + U("as_of") + " " + fdate(si.asOf) + "</p></div></section>";
+    return html;
+  };
+  function wireDonate() {
+    var funds = C.funds || []; if (!$("#donateBox")) return;
+    var cur = state.fund || (funds[0] && funds[0].id), freq = "once";
+    function upd() {
+      var f = find(funds, cur) || funds[0]; if (!f) return;
+      $$("[data-fund-pick]").forEach(function (b) { b.setAttribute("aria-pressed", b.dataset.fundPick === cur ? "true" : "false"); });
+      $("#fundDesc").innerHTML = T(f.text);
+      $("#amts").innerHTML = (f.suggested || []).map(function (a) { return '<button data-amt="' + a + '" aria-pressed="false">' + money(a) + "</button>"; }).join("");
+      $("#autopay").style.display = freq === "monthly" ? "block" : "none";
+    }
+    $("#donateBox").addEventListener("click", function (e) {
+      var b = e.target.closest("[data-fund-pick]"); if (b) { cur = b.dataset.fundPick; state.fund = cur; upd(); }
+      var q = e.target.closest("[data-freq]"); if (q) { freq = q.dataset.freq; $$("[data-freq]").forEach(function (x) { x.setAttribute("aria-pressed", x === q ? "true" : "false"); }); upd(); }
+      var a = e.target.closest("[data-amt]"); if (a) { $$("[data-amt]").forEach(function (x) { x.setAttribute("aria-pressed", x === a ? "true" : "false"); }); $("#amt").value = a.dataset.amt; }
+    });
+    upd();
+  }
+
+  P.transparency = function () {
+    return pageHead(U("nav_transparency"), tr({ bn: "স্বচ্ছতা, জবাবদিহিতা ও প্রাতিষ্ঠানিক দায়বদ্ধতা", en: "Transparency, accountability & institutional responsibility", ar: "الشفافية والمساءلة والمسؤولية المؤسسية" }), T((C.donateCopy || {}).transparency), crumbs([[U("nav_transparency")]])) +
+      impactSection() +
+      '<section class="section tight"><div class="wrap"><h2 class="h-section">' + U("reports") + '</h2><div class="grid g2" style="margin-top:16px">' + (C.reports || []).map(function (r) { return '<div class="glass rv" style="padding:18px;display:flex;gap:14px;align-items:center"><span class="icon-btn" style="flex:none">' + icon("doc") + '</span><div style="flex:1"><b>' + T(r.title) + '</b><div class="faint">' + digits(r.year) + " · " + esc(r.type) + "</div></div>" + (r.url ? '<a class="btn sm" href="' + esc(img(r.url)) + '" target="_blank" rel="noopener">PDF ' + icon("ext") + "</a>" : '<span class="chip muted">' + T(r.note) + "</span>") + "</div>"; }).join("") + "</div></div></section>";
+  };
+
+  P.contact = function () {
+    var c = C.settings.contact;
+    return pageHead(U("nav_contact"), U("contact_form"), "", crumbs([[U("nav_contact")]])) +
+      '<section class="section tight" style="padding-top:0"><div class="wrap split" style="align-items:start"><div class="glass rv" style="padding:24px">' + submitForm("contact", "", [["name", "text", true], ["phone", "tel", false], ["email", "email", false], ["message", "textarea", true]]) + '</div><div class="grid rv"><div class="glass" style="padding:20px"><h3>' + U("office") + '</h3><p class="muted">' + T(c.office) + '</p><p class="muted">' + T(c.hours) + '</p></div><div class="glass" style="padding:20px"><h3>' + U("project_site") + '</h3><p class="muted">' + T(c.site) + '</p><a class="btn sm" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=New+Dhaka+City+Palashpur+Dhaka+Mawa+Expressway">' + icon("pin") + " Google Maps" + icon("ext") + '</a></div><div class="glass" style="padding:20px"><div class="ltr" style="display:grid;gap:6px">' + (c.phones || []).map(function (p) { return "<span>" + icon("phone") + " " + esc(p) + "</span>"; }).join("") + "<span>" + icon("mail") + " " + esc(c.email) + "</span>" + (c.email2 ? "<span>" + icon("mail") + " " + esc(c.email2) + "</span>" : "") + '</div><div class="socials" style="margin-top:12px">' + (C.settings.social || []).map(function (s) { return '<a class="btn sm" href="' + esc(s.url) + '" target="_blank" rel="noopener">' + icon(s.icon === "x" ? "x2" : s.icon) + esc(s.name) + "</a>"; }).join("") + "</div></div></div></div></section>";
+  };
+  P.notfound = function () { return pageHead("404", tr({ bn: "পেজটি পাওয়া যায়নি", en: "Page not found", ar: "الصفحة غير موجودة" }), '<a class="btn" href="#home">' + U("nav_home") + "</a>"); };
+  P.admin = function () {
+    if (!window.IBTAdmin) return pageHead("", "Admin", "Loading…");
+    return '<div id="adminRoot"></div>';
+  };
+
+  // ---------- story mode ----------
+  var storyIdx = 0, storyCur = null;
+  IBT.openStory = function (id) {
+    var s = find(C.stories, id); if (!s) return;
+    storyCur = s; storyIdx = Math.min(+ls("ibt_story_" + id) || 0, (s.chapters || []).length - 1);
+    var el = $("#story");
+    el.innerHTML = '<aside class="rail-ch"><h3>' + T(s.title) + "</h3>" + s.chapters.map(function (c, i) { return '<button data-ch="' + i + '"><span class="n">' + digits(i + 1) + '</span><span class="t">' + T(c.title) + "</span></button>"; }).join("") + '</aside><div class="stage">' + s.chapters.map(function (c, i) { return '<div class="slide" data-slide="' + i + '"><img src="' + esc(img(c.image)) + '" alt=""><div class="cap glass dense"><div class="num">' + U("chapter") + " " + digits(i + 1) + " / " + digits(s.chapters.length) + "</div><h2>" + T(c.title) + "</h2><p>" + T(c.text) + "</p>" + (c.video ? '<a class="btn sm" style="color:#fff;background:rgba(255,255,255,.1)" target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=' + esc(c.video) + (c.start ? "&t=" + (+c.start) + "s" : "") + '">' + icon("youtube") + U("watch_youtube") + (c.start ? " · " + U("watch_from") + " " + digits(Math.floor(c.start / 60) + ":" + ("0" + c.start % 60).slice(-2)) : "") + "</a>" : "") + "</div></div>"; }).join("") +
+      '<div class="viz"><span class="chip gold">' + T(s.title) + '</span></div><div class="ctrl"><button class="btn sm" data-sp="-1">' + U("prev") + '</button><div class="prog"><i></i></div><button class="btn sm" data-sp="1">' + U("next") + '</button></div><div class="x"><button class="icon-btn" data-act="close-story" aria-label="' + Uraw("close") + '">' + icon("x") + "</button></div></div>";
+    el.classList.add("open"); el.setAttribute("aria-hidden", "false"); document.body.style.overflow = "hidden";
+    storyGo(storyIdx); $("[data-act=close-story]", el).focus();
+  };
+  function storyGo(i) {
+    var s = storyCur; if (!s) return; var n = s.chapters.length; storyIdx = Math.max(0, Math.min(n - 1, i));
+    $$("#story .slide").forEach(function (sl, k) { sl.classList.toggle("on", k === storyIdx); });
+    $$("#story [data-ch]").forEach(function (b, k) { b.setAttribute("aria-current", k === storyIdx ? "true" : "false"); });
+    $("#story .prog i").style.width = ((storyIdx + 1) / n * 100) + "%";
+    ls("ibt_story_" + s.id, String(storyIdx));
+  }
+  function closeStory() { var el = $("#story"); el.classList.remove("open"); el.setAttribute("aria-hidden", "true"); el.innerHTML = ""; document.body.style.overflow = ""; storyCur = null; }
+
+  // ---------- search ----------
+  function searchIndex() {
+    var out = [];
+    (C.institutions || []).forEach(function (i) { out.push([tr(i.name), tr(i.summary), i.link || "#inst-" + i.id]); });
+    (C.projects || []).forEach(function (i) { out.push([tr(i.name), tr(i.summary), "#project-" + i.id]); });
+    (C.initiatives || []).forEach(function (i) { out.push([tr(i.name), tr(i.summary), "#init-" + i.id]); });
+    (C.registrations || []).forEach(function (i) { out.push([tr(i.title), tr(i.text), "#reg-" + i.id]); });
+    (C.news || []).forEach(function (i) { out.push([tr(i.title), tr(i.summary), "#news-" + i.id]); });
+    (C.videos || []).forEach(function (v) { out.push([tr(v.title), "YouTube · " + (v.channel || ""), "https://www.youtube.com/watch?v=" + v.youtubeId]); });
+    (C.funds || []).forEach(function (f) { out.push([tr(f.name), tr(f.text), "#donate"]); });
+    return out;
+  }
+  function doSearch(q) {
+    q = q.trim().toLowerCase(); var res = $("#searchRes");
+    if (!q) { res.innerHTML = ""; return; }
+    var hits = searchIndex().filter(function (r) { return (r[0] + " " + r[1]).toLowerCase().indexOf(q) > -1; }).slice(0, 20);
+    res.innerHTML = hits.length ? hits.map(function (h) { var ext = h[2].indexOf("http") === 0; return '<a href="' + esc(h[2]) + '"' + (ext ? ' target="_blank" rel="noopener"' : "") + "><b>" + esc(h[0]) + "</b><small>" + esc(h[1].slice(0, 120)) + "</small></a>"; }).join("") : '<div class="empty">' + U("no_results") + "</div>";
+  }
+
+  // ---------- router ----------
+  var scenes = IBT._scenes = [];
+  function route() {
+    if (!C) return;
+    var h = (location.hash || "#home").slice(1) || "home";
+    if (h.indexOf("r-") === 0) { var r = (C.registrations || []).filter(function (x) { return x.slug === h.slice(2) || x.id === h.slice(2); })[0]; if (r) { location.replace("#reg-" + r.id); return; } }
+    if (h.indexOf("story-") === 0) { IBT.openStory(h.slice(6)); return; }
+    if (h === "hero" || h === "tracker" || h === "main") return;
+    state.route = h; renderMain();
+  }
+  function renderMain() {
+    scenes.forEach(function (s) { s && s.destroy && s.destroy(); }); scenes.length = 0;
+    var h = state.route, html;
+    var m = h.match(/^(inst|project|init|news|reg)-(.+)$/);
+    if (m) html = (m[1] === "news" ? P.newsItem : P[m[1]])(m[2]);
+    else html = (P[h] || P.notfound)();
+    var main = $("#main"); main.innerHTML = html;
+    $$(".nav a").forEach(function (a) { a.classList.toggle("active", h.indexOf(a.dataset.nav) === 0 || (a.dataset.nav === "institutions" && h.indexOf("inst-") === 0) || (a.dataset.nav === "projects" && h.indexOf("project-") === 0) || (a.dataset.nav === "initiatives" && h.indexOf("init-") === 0) || (a.dataset.nav === "register" && h.indexOf("reg-") === 0)); });
+    if (!IBT._noscroll) window.scrollTo({ top: 0, behavior: "instant" in window ? "instant" : "auto" });
+    IBT._noscroll = false;
+    $("#drawer").classList.remove("open");
+    afterRender();
+    var titles = { home: "", donate: Uraw("donate") }; document.title = tr(C.settings.siteName) + (h !== "home" ? " · " + (($("h1") || {}).textContent || titles[h] || "") : " · " + tr(C.settings.tagline));
+    if (h === "admin" && window.IBTAdmin) window.IBTAdmin.render($("#adminRoot"));
+  }
+  function renderAll() { renderHeader(); renderFooter(); IBT._noscroll = true; renderMain(); }
+  IBT.rerender = renderAll;
+
+  function afterRender() {
+    // reveal + counters
+    var nomo = document.documentElement.classList.contains("nomotion");
+    var io = ("IntersectionObserver" in window && !nomo) ? new IntersectionObserver(function (es) { es.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target); countIn(e.target); } }); }, { threshold: 0.12 }) : null;
+    $$(".rv").forEach(function (el) { if (io) io.observe(el); else { el.classList.add("in"); countIn(el); } });
+    // tilt
+    if (!nomo && matchMedia("(hover:hover)").matches) $$(".tilt").forEach(function (el) {
+      el.addEventListener("pointermove", function (e) { var r = el.getBoundingClientRect(); var x = (e.clientX - r.left) / r.width - 0.5, y = (e.clientY - r.top) / r.height - 0.5; el.style.transform = "perspective(800px) rotateY(" + (x * 8) + "deg) rotateX(" + (-y * 8) + "deg) translateZ(6px)"; });
+      el.addEventListener("pointerleave", function () { el.style.transform = ""; });
+    });
+    // 3D hero
+    var rs = $("#ringStage"); if (rs) { var rg = mountRing(rs); if (rg) scenes.push(rg); }
+    var tc = $("#trackerCanvas");
+    if (tc) {
+      var s2 = window.IBT3D && !document.documentElement.classList.contains("lowfx") ? window.IBT3D.mount(tc, { mode: "tracker", floors: C.floors, theme: state.theme, night: state.theme === "dark", onPick: showFloor }) : null;
+      if (s2) scenes.push(s2); else { tc.remove(); $("#trackerFallback").style.display = "block"; }
+    }
+    wireDonate();
+    var qb = $("#qrBox"); if (qb) makeQR(qb);
+    $$(".countdown").forEach(function (el) { var d = parseDate(el.dataset.until); d.setHours(23, 59, 59); var days = Math.ceil((d - new Date()) / 864e5); el.textContent = "· " + digits(days) + " " + tr({ bn: "দিন বাকি", en: "days left", ar: "يومًا متبقيًا" }); });
+  }
+  function allDone() { var F = C.floors || {}; function m(a) { return (a || []).map(function (f) { return { status: "done", label: f.label }; }); } return { mosque: m(F.mosque), academic: m(F.academic) }; }
+  function showFloor(kind, idx) {
+    var f = ((C.floors || {})[kind] || [])[idx]; if (!f) return;
+    var tip = $("#floorTip"); tip.innerHTML = "<b>" + U(kind) + " · " + T(f.label) + '</b><div class="muted">' + T(f.use) + '</div><div style="margin-top:6px">' + statusChip(f.status) + "</div>"; tip.classList.add("show");
+    $$(".floor-row").forEach(function (r) { r.classList.toggle("sel", r.dataset.floor === kind + ":" + idx); });
+    var row = $('.floor-row[data-floor="' + kind + ":" + idx + '"]'); if (row) row.scrollIntoView({ block: "nearest", behavior: "smooth" });
+  }
+  function countIn(root) {
+    $$("[data-count]", root).forEach(function (el) {
+      if (el._done) return; el._done = true;
+      var to = parseFloat(el.dataset.count) || 0, suf = el.dataset.suffix || "", t0 = performance.now(), dur = document.documentElement.classList.contains("nomotion") ? 1 : 1400;
+      (function step(now) { var p = Math.min(1, (now - t0) / dur), v = Math.round(to * (1 - Math.pow(1 - p, 3))); el.textContent = num(v) + suf; if (p < 1) requestAnimationFrame(step); })(t0);
+    });
+  }
+  function makeQR(box) {
+    function draw() { try { box.innerHTML = ""; new window.QRCode(box, { text: box.dataset.url, width: 128, height: 128, correctLevel: window.QRCode.CorrectLevel.M }); } catch (e) { box.style.display = "none"; } }
+    if (window.QRCode) return draw();
+    var sc = document.createElement("script"); sc.src = "https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"; sc.onload = draw; sc.onerror = function () { box.style.display = "none"; }; document.head.appendChild(sc);
+  }
+
+  // ---------- events ----------
+  document.addEventListener("click", function (e) {
+    var t = e.target;
+    var st = t.closest("[data-story]"); if (st) { e.preventDefault(); IBT.openStory(st.dataset.story); return; }
+    var lb = t.closest("[data-lightbox]"); if (lb) { var L = $("#lightbox"); L.innerHTML = '<img src="' + esc(lb.dataset.lightbox) + '" alt="">'; L.classList.add("open"); return; }
+    if (t.closest("#lightbox")) { $("#lightbox").classList.remove("open"); return; }
+    var ch = t.closest("#story [data-ch]"); if (ch) { storyGo(+ch.dataset.ch); return; }
+    var sp = t.closest("#story [data-sp]"); if (sp) { storyGo(storyIdx + (+sp.dataset.sp)); return; }
+    if (t.closest("[data-act=close-story]")) { closeStory(); if (location.hash.indexOf("#story-") === 0) history.replaceState(null, "", "#" + state.route); return; }
+    var lb2 = t.closest(".lang-switch button"); if (lb2) { IBT.setLang(lb2.dataset.l); return; }
+    if (t.closest("#themeBtn")) { IBT.setTheme(state.theme === "dark" ? "light" : "dark"); return; }
+    if (t.closest("#menuBtn")) { $("#drawer").classList.add("open"); return; }
+    if (t.closest("[data-act=close-drawer]") || t.closest("#drawer .scrim")) { $("#drawer").classList.remove("open"); return; }
+    if (t.closest("#drawer a")) { $("#drawer").classList.remove("open"); }
+    if (t.closest("#searchBtn")) { $("#search").classList.add("open"); setTimeout(function () { $("#searchInput").focus(); }, 30); return; }
+    if (t === $("#search")) { $("#search").classList.remove("open"); return; }
+    if (t.closest("#search a")) $("#search").classList.remove("open");
+    if (t.closest("[data-act=hide-ann]")) { ls("ibt_ann_hide", tr(C.settings.announcement.text)); $("#announce").remove(); return; }
+    var cp = t.closest("[data-copy]"); if (cp) { e.preventDefault(); var txt = cp.dataset.copy; (navigator.clipboard && navigator.clipboard.writeText ? navigator.clipboard.writeText(txt) : Promise.reject()).then(function () { toast(Uraw("copied") + ": " + txt); }, function () { toast(txt); }); return; }
+    var fr = t.closest("[data-floor]"); if (fr) { var p = fr.dataset.floor.split(":"); showFloor(p[0], +p[1]); scenes.forEach(function (s) { s.setSelected && s.setSelected(p[0], +p[1]); }); return; }
+    var vt = t.closest("#vtabs [data-topic]"); if (vt) { $$("#vtabs button").forEach(function (b) { b.setAttribute("aria-pressed", b === vt ? "true" : "false"); }); $$("#vgrid > div").forEach(function (d) { d.style.display = vt.dataset.topic === "all" || d.dataset.topic === vt.dataset.topic ? "" : "none"; }); return; }
+    var df = t.closest("a[data-fund]"); if (df) state.fund = df.dataset.fund;
+  });
+  document.addEventListener("keydown", function (e) {
+    if (e.key === "Escape") { if ($("#story").classList.contains("open")) closeStory(); $("#search").classList.remove("open"); $("#drawer").classList.remove("open"); $("#lightbox").classList.remove("open"); }
+    if ($("#story").classList.contains("open")) { var rtl = state.lang === "ar"; if (e.key === "ArrowRight") storyGo(storyIdx + (rtl ? -1 : 1)); if (e.key === "ArrowLeft") storyGo(storyIdx + (rtl ? 1 : -1)); }
+    if ((e.key === "k" && (e.ctrlKey || e.metaKey)) || (e.key === "/" && !/input|textarea|select/i.test(document.activeElement.tagName))) { e.preventDefault(); $("#search").classList.add("open"); $("#searchInput").focus(); }
+  });
+  document.addEventListener("input", function (e) { if (e.target.id === "searchInput") doSearch(e.target.value); });
+  document.addEventListener("submit", function (e) {
+    var f = e.target.closest("form[data-submit]"); if (!f) return; e.preventDefault();
+    var out = $(".out", f), data = {}; new FormData(f).forEach(function (v, k) { data[k] = String(v).slice(0, 2000); });
+    var btn = $("button[type=submit]", f); btn.disabled = true;
+    IBT.submit(f.dataset.submit, f.dataset.ref, data).then(function () { out.innerHTML = '<div class="notice ok">' + U("sent_ok") + "</div>"; f.reset(); }, function () {
+      var c = C.settings.contact; out.innerHTML = '<div class="notice err">' + U("send_fail") + '<div class="ltr" style="margin-top:6px">' + (c.phones || []).map(esc).join(" · ") + " · " + esc(c.email) + "</div></div>";
+    }).then(function () { btn.disabled = false; });
+  });
+  window.addEventListener("hashchange", route);
+  window.addEventListener("scroll", function () { var h = $(".header"); if (h) h.style.paddingTop = window.scrollY > 30 ? "6px" : "10px"; }, { passive: true });
+
+  // ---------- cloud (claude artifact runtime) ----------
+  IBT.submit = function (kind, ref, data) {
+    if (!cloud.db || !cloud.uid) return Promise.reject(new Error("offline"));
+    var docRef = cloud.db.doc("submissions/" + cloud.uid);
+    var item = { id: Date.now().toString(36) + Math.random().toString(36).slice(2, 6), kind: kind, ref: ref || "", data: data, lang: state.lang, at: new Date().toISOString(), status: "new" };
+    return docRef.get().then(function (snap) {
+      var body = snap.exists ? IBT.clone(snap.data()) : { items: [] };
+      body.items = (body.items || []).concat([item]).slice(-200);
+      return docRef.set(body);
+    });
+  };
+  function mergeCloud(docs) {
+    var merged = clone(DEF);
+    CMS_KEYS.forEach(function (k) { if (docs[k] && docs[k].data !== undefined) merged[k] = docs[k].data; });
+    if (state.preview) CMS_KEYS.forEach(function (k) { if (state.drafts[k] && state.drafts[k].data !== undefined) merged[k] = state.drafts[k].data; });
+    C = merged; IBT.C = C;
+  }
+  IBT.getContent = function () { return C; };
+  IBT.refreshAuth = function () { try { cloud.canEdit = !!(cloud.user && cloud.user.canEdit()); } catch (e) { cloud.canEdit = false; } return Promise.resolve(cloud.user && cloud.user.id ? cloud.user.id() : null).then(function (id) { cloud.uid = id || cloud.uid; renderHeader(); }); };
+  IBT.getDefaults = function () { return DEF; };
+  IBT.published = {};
+  IBT.applyCloud = function () { mergeCloud(IBT.published); if (state.route === "admin") { renderHeader(); renderFooter(); } else renderAll(); };
+  function initCloud() {
+    if (!window.claude || typeof window.claude.use !== "function") return;
+    var timer = setTimeout(function () { cloud.ready = true; }, 10000);
+    Promise.all([window.claude.use("db"), window.claude.use("user"), window.claude.use("assets")]).then(function (r) {
+      cloud.db = r[0]; cloud.user = r[1]; cloud.assets = r[2];
+      if (cloud.user) {
+        try { cloud.canEdit = !!cloud.user.canEdit(); } catch (e) { cloud.canEdit = false; }
+        Promise.resolve(cloud.user.id && cloud.user.id()).then(function (id) { cloud.uid = id || null; }, function () { });
+      }
+      if (!cloud.db) { clearTimeout(timer); if (cloud.canEdit) renderAll(); return; }
+      var first = true;
+      cloud.db.collection("cms").onSnapshot(function (snap) {
+        var docs = {}; snap.docs.forEach(function (d) { if (d.exists) docs[d.id] = d.data(); });
+        IBT.published = docs; clearTimeout(timer); cloud.ready = true;
+        if (Object.keys(docs).length || first || cloud.canEdit) { mergeCloud(docs); if (state.route !== "admin" || first) renderAll(); else { renderHeader(); renderFooter(); } }
+        first = false;
+        if (window.IBTAdmin && window.IBTAdmin.onPublished) window.IBTAdmin.onPublished(docs);
+      }, function () { clearTimeout(timer); if (cloud.canEdit) renderAll(); });
+    }, function () { clearTimeout(timer); });
+  }
+
+  // ---------- boot ----------
+  function boot(def) {
+    DEF = def; C = clone(def); IBT.C = C;
+    var nomo = matchMedia("(prefers-reduced-motion: reduce)").matches; if (nomo) document.documentElement.classList.add("nomotion");
+    if (window.IBT3D && window.IBT3D.lowEnd()) document.documentElement.classList.add("lowfx");
+    var l = ls("ibt_lang") || (C.settings.defaultLang || "bn");
+    var t = ls("ibt_theme") || (matchMedia("(prefers-color-scheme: light)").matches ? "light" : (C.settings.defaultTheme || "dark"));
+    state.lang = ["bn", "en", "ar"].indexOf(l) > -1 ? l : "bn"; state.theme = t === "light" ? "light" : "dark";
+    applyLang(state.lang); applyTheme(state.theme);
+    renderHeader(); renderFooter();
+    route();
+    initCloud();
+  }
+  fetch("data/content.json").then(function (r) { return r.json(); }).then(boot, function () {
+    $("#main").innerHTML = '<div class="wrap section"><h1>Imam Bukhari Trust</h1><p>Content could not be loaded. Please refresh.</p></div>';
+  });
+})();

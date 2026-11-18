@@ -1,0 +1,3519 @@
+{
+ "meta": {
+  "version": "proto-1.0",
+  "contentAsOf": "2026-11-19",
+  "notes": "Default content built from the IBT Catalog 2026, the official English deck, imambukharitrust.com and kulliyatulquran.com. Items marked review=true need management approval."
+ },
+ "settings": {
+  "siteName": {
+   "bn": "ইমাম বুখারী ট্রাস্ট",
+   "en": "Imam Bukhari Trust",
+   "ar": "وقف الإمام البخاري"
+  },
+  "shortName": "IBT",
+  "tagline": {
+   "bn": "ঈমান · ইলম · খিদমাহ",
+   "en": "Faith · Knowledge · Service",
+   "ar": "إيمانٌ · علمٌ · خدمة"
+  },
+  "motto": {
+   "bn": "সুন্নাহর মহিমায়, ইসলামের অগ্রযাত্রায় একসাথে",
+   "en": "Together in the advancement of Islam, in the light of the Sunnah",
+   "ar": "معًا في مسيرة الإسلام على نور السنة"
+  },
+  "logo": "img/logo-mark.png",
+  "logoColor": "img/logo-color-mark.png",
+  "defaultLang": "bn",
+  "defaultTheme": "dark",
+  "announcement": {
+   "show": true,
+   "text": {
+    "bn": "রেজিস্ট্রেশন চলছে: কুল্লিয়াতুল কুরআন সেশন ২০২৭ ভর্তি ও বিভিন্ন কোর্স",
+    "en": "Registrations open: Kulliyatul Quran Session 2027 admissions and courses",
+    "ar": "التسجيل مفتوح: القبول في كلية القرآن لعام 2027 والدورات"
+   },
+   "link": "#register"
+  },
+  "contact": {
+   "phones": [
+    "+880 1852-808554",
+    "+880 1898-940943"
+   ],
+   "email": "bukharimasjid.bd@gmail.com",
+   "email2": "info@imambukharimasjid.org",
+   "office": {
+    "bn": "হাউস ১৭ (১ম তলা), রোড ৬/এ, সেক্টর ৫, উত্তরা, ঢাকা ১২৩০",
+    "en": "House 17 (1st Floor), Road 6/A, Sector 5, Uttara, Dhaka 1230",
+    "ar": "منزل 17، الطريق 6/أ، القطاع 5، أُتّرا، دكا 1230"
+   },
+   "site": {
+    "bn": "নিউ ঢাকা সিটি, পলাশপুর, ঢাকা–মাওয়া এক্সপ্রেসওয়ে সংলগ্ন, ঢাকা",
+    "en": "New Dhaka City, Palashpur, adjacent to the Dhaka–Mawa Expressway, Dhaka",
+    "ar": "مدينة دكا الجديدة، بلاشبور، بجوار طريق دكا–ماوا السريع، دكا"
+   },
+   "hours": {
+    "bn": "শনি–বৃহস্পতি, সকাল ৯টা–বিকাল ৫টা",
+    "en": "Saturday–Thursday, 9 am–5 pm",
+    "ar": "السبت–الخميس، 9 صباحًا–5 مساءً"
+   }
+  },
+  "social": [
+   {
+    "name": "Facebook",
+    "url": "https://www.facebook.com/imambukharitrustbd",
+    "icon": "facebook"
+   },
+   {
+    "name": "YouTube",
+    "url": "https://www.youtube.com/@ImamBukhariTrustOfficial",
+    "icon": "youtube"
+   },
+   {
+    "name": "LinkedIn",
+    "url": "https://www.linkedin.com/company/imam-bukhari-trust",
+    "icon": "linkedin"
+   },
+   {
+    "name": "X",
+    "url": "https://twitter.com/ImamBukhTrust",
+    "icon": "x"
+   }
+  ],
+  "relatedSites": [
+   {
+    "name": {
+     "bn": "কুল্লিয়াতুল কুরআন",
+     "en": "Kulliyatul Quran",
+     "ar": "كلية القرآن"
+    },
+    "url": "https://kulliyatulquran.com/"
+   },
+   {
+    "name": {
+     "bn": "সুন্নাহ কনফারেন্স",
+     "en": "Sunnah Conference",
+     "ar": "مؤتمر السنة"
+    },
+    "url": "https://conference.kulliyatulquran.com"
+   },
+   {
+    "name": {
+     "bn": "কুল্লিয়াতুল কুরআন ফেসবুক",
+     "en": "Kulliyatul Quran Facebook",
+     "ar": "فيسبوك كلية القرآن"
+    },
+    "url": "https://www.facebook.com/kulliyatulquran"
+   },
+   {
+    "name": {
+     "bn": "কুল্লিয়াতুল কুরআন ইউটিউব",
+     "en": "Kulliyatul Quran YouTube",
+     "ar": "يوتيوب كلية القرآن"
+    },
+    "url": "https://www.youtube.com/@kulliyatulquranbd9275"
+   }
+  ],
+  "youtubeChannels": [
+   {
+    "name": "IBT Official",
+    "channelId": "UCm8It2AWLRt3N22-fL89K_w",
+    "url": "https://www.youtube.com/@ImamBukhariTrustOfficial"
+   },
+   {
+    "name": "Kulliyatul Quran",
+    "channelId": "UCBTHMWdAFuQ5ynEryDIWdRw",
+    "url": "https://www.youtube.com/@kulliyatulquranbd9275"
+   }
+  ]
+ },
+ "home": {
+  "heroEyebrow": {
+   "bn": "২০১৭ সাল থেকে · ঢাকা, বাংলাদেশ",
+   "en": "Since 2017 · Dhaka, Bangladesh",
+   "ar": "منذ 2017 · دكا، بنغلاديش"
+  },
+  "heroTitle": {
+   "bn": "ঈমান, ইলম ও খিদমাহর মাধ্যমে একটি জ্ঞানভিত্তিক সমাজ গড়ার পথে",
+   "en": "Building a knowledge-based society through faith, knowledge and service",
+   "ar": "نحو مجتمعٍ قائمٍ على المعرفة بالإيمان والعلم والخدمة"
+  },
+  "heroText": {
+   "bn": "ইমাম বুখারী ট্রাস্ট কুরআন ও বিশুদ্ধ সুন্নাহর আলোকে গবেষণাভিত্তিক শিক্ষা, দাওয়াহ, মাসজিদকেন্দ্রিক দ্বীনি কমিউনিটি ও সমাজকল্যাণে কাজ করছে।",
+   "en": "Imam Bukhari Trust works in research-based education, Dawah, masjid-centred community building and social welfare, guided by the Qur'an and the authentic Sunnah.",
+   "ar": "يعمل وقف الإمام البخاري في التعليم القائم على البحث والدعوة وبناء مجتمعٍ متمحورٍ حول المسجد والعمل الاجتماعي، على هدي القرآن والسنة الصحيحة."
+  },
+  "heroCta1": {
+   "bn": "আমাদের গল্প দেখুন",
+   "en": "Watch our story",
+   "ar": "شاهد قصتنا"
+  },
+  "heroCta2": {
+   "bn": "মাসজিদ নির্মাণে অংশ নিন",
+   "en": "Support the Masjid",
+   "ar": "ساهم في بناء المسجد"
+  },
+  "heroImage": "img/design-night-1.jpg",
+  "heroGalleryNight": [
+   "img/design-night-1.jpg",
+   "img/design-night-2.jpg",
+   "img/design-night-3.jpg",
+   "img/design-front.jpg",
+   "img/design-aerial.jpg",
+   "img/design-portal.jpg",
+   "img/design-courtyard.jpg",
+   "img/design-landscape.jpg"
+  ],
+  "heroGallery": [
+   "img/design-front.jpg",
+   "img/design-side.jpg",
+   "img/design-aerial.jpg",
+   "img/design-portal.jpg",
+   "img/design-entrance.jpg",
+   "img/design-courtyard.jpg",
+   "img/design-plaza.jpg",
+   "img/design-landscape.jpg",
+   "img/design-night-1.jpg"
+  ],
+  "heroStory": "ibjmc",
+  "aboutTitle": {
+   "bn": "ইমাম বুখারী ট্রাস্ট সম্পর্কে",
+   "en": "About Imam Bukhari Trust",
+   "ar": "عن وقف الإمام البخاري"
+  },
+  "aboutText": {
+   "bn": "ইমাম বুখারী ট্রাস্ট একটি বহুমুখী ইসলামী উদ্যোগ। ব্যাপক ও সর্বাঙ্গীণ কার্যক্রমের মাধ্যমে আজকের ফিতনাহ-সংকুল বিশ্বে প্রকৃত ইসলামের শিক্ষা ছড়িয়ে দেওয়া, ইসলামের ব্যবহারিক প্রয়োগ আরও দৃশ্যমান করে প্রতিটি প্রজন্মের কাছে ইসলামকে প্রাসঙ্গিক রাখা এবং কুরআন-সুন্নাহর পথনির্দেশনায় মুসলিম জীবনে সমৃদ্ধি আনাই আমাদের লক্ষ্য। ১ অক্টোবর ২০১৭ সালে ধলেশ্বরী নদীর তীরে আনুষ্ঠানিক কার্যক্রম শুরু হয়।",
+   "en": "Imam Bukhari Trust is a multi-dimensional Islamic initiative. Through broad and integrated work, it spreads the true teachings of Islam in today's world of fitnah, makes the practice of Islam more visible so that it stays relevant to every generation, and helps Muslim life flourish under the guidance of the Qur'an and Sunnah. Formal operations began on 1 October 2017 on the bank of the Dhaleshwari River.",
+   "ar": "وقف الإمام البخاري مبادرة إسلامية متعددة الجوانب، تعمل من خلال برامج شاملة على نشر تعاليم الإسلام الصحيحة في عالمٍ كثرت فيه الفتن، وإبراز التطبيق العملي للإسلام ليبقى حاضرًا في حياة كل جيل، وإثراء حياة المسلمين بهدي القرآن والسنة. بدأ الوقف أعماله رسميًا في 1 أكتوبر 2017 على ضفاف نهر دهاليشوري."
+  },
+  "aboutImage": "img/chairman-speech.jpg",
+  "visionTitle": {
+   "bn": "আমাদের স্বপ্ন",
+   "en": "Our vision",
+   "ar": "رؤيتنا"
+  },
+  "visionText": {
+   "bn": "এমন একটি জ্ঞানভিত্তিক সমাজ, যেখানে শিক্ষা, গবেষণা, গবেষণাভিত্তিক দাওয়াহ এবং সামাজিক ও শিক্ষামূলক উদ্যোগ কুরআন ও সুন্নাহর সঠিক বোঝাপড়া, প্রয়োগ ও নৈতিকতার দিকে জাতিকে এগিয়ে নেবে।",
+   "en": "A knowledge-based society where education, research, research-based Dawah and social and educational initiatives move the nation toward the correct understanding, practice and morality of the Qur'an and Sunnah.",
+   "ar": "مجتمعٌ قائمٌ على المعرفة، يكون فيه التعليم والبحث والدعوة القائمة على البحث والمبادرات الاجتماعية والتعليمية سبيلًا لنهوض الأمة نحو الفهم الصحيح للقرآن والسنة وتطبيقهما والتخلق بأخلاقهما."
+  },
+  "pillars": [
+   {
+    "icon": "research",
+    "title": {
+     "bn": "গবেষণা",
+     "en": "Research",
+     "ar": "البحث"
+    },
+    "text": {
+     "bn": "সমকালীন বিষয়ে কুরআন-সুন্নাহভিত্তিক গবেষণা, সেমিনার ও নীতিনির্ধারণী সংলাপ।",
+     "en": "Qur'an-and-Sunnah-based research on contemporary issues, seminars and policy dialogue.",
+     "ar": "بحوث في القضايا المعاصرة على ضوء الكتاب والسنة، وندوات وحوار في السياسات."
+    },
+    "link": "#init-research"
+   },
+   {
+    "icon": "education",
+    "title": {
+     "bn": "ইসলামী শিক্ষা",
+     "en": "Islamic Education",
+     "ar": "التعليم الإسلامي"
+    },
+    "text": {
+     "bn": "শিশু থেকে উচ্চশিক্ষা পর্যন্ত বিশুদ্ধ আকীদাভিত্তিক ও আরবি ভাষাকেন্দ্রিক শিক্ষা।",
+     "en": "Authentic, Arabic-centred Islamic education from childhood to higher studies.",
+     "ar": "تعليم إسلامي أصيل محوره اللغة العربية من الطفولة إلى الدراسات العليا."
+    },
+    "link": "#institutions"
+   },
+   {
+    "icon": "dawah",
+    "title": {
+     "bn": "দাওয়াহ",
+     "en": "Dawah",
+     "ar": "الدعوة"
+    },
+    "text": {
+     "bn": "সাপ্তাহিক হালাকা, প্রশ্নোত্তর, কোর্স ও ডিজিটাল দাওয়াহর মাধ্যমে ইলম পৌঁছে দেওয়া।",
+     "en": "Weekly halaqa, Q&A, courses and digital Dawah that bring knowledge to people.",
+     "ar": "حلقات أسبوعية وأسئلة وأجوبة ودورات ودعوة رقمية لإيصال العلم إلى الناس."
+    },
+    "link": "#init-dawah"
+   },
+   {
+    "icon": "masjid",
+    "title": {
+     "bn": "মাসজিদ কমপ্লেক্স",
+     "en": "Masjid Complex",
+     "ar": "مجمع المسجد"
+    },
+    "text": {
+     "bn": "মাসজিদ আন-নববীর আদলে মাসজিদকেন্দ্রিক দ্বীনি কমিউনিটি গড়ে তোলা।",
+     "en": "Building a masjid-centred community in the light of Masjid an-Nabawi.",
+     "ar": "بناء مجتمعٍ إيماني متمحورٍ حول المسجد على هدي المسجد النبوي."
+    },
+    "link": "#project-ibjmc"
+   },
+   {
+    "icon": "social",
+    "title": {
+     "bn": "সমাজকল্যাণ",
+     "en": "Social Development",
+     "ar": "التنمية الاجتماعية"
+    },
+    "text": {
+     "bn": "ত্রাণ, পুনর্বাসন, কুরবানি, ইফতার ও শীতবস্ত্রের মাধ্যমে ইসলামের সৌন্দর্য দৃশ্যমান করা।",
+     "en": "Relief, rehabilitation, Qurbani, iftar and winter support that make the beauty of Islam visible.",
+     "ar": "إغاثة وإعادة تأهيل وأضاحٍ وإفطار وكسوة شتاء تُظهر جمال الإسلام."
+    },
+    "link": "#init-welfare"
+   }
+  ],
+  "spotlightTitle": {
+   "bn": "ইমাম বুখারী জামে মাসজিদ কমপ্লেক্স",
+   "en": "Imam Bukhari Jame Masjid Complex",
+   "ar": "مجمع جامع الإمام البخاري"
+  },
+  "spotlightText": {
+   "bn": "“আল্লাহর কাছে সবচেয়ে প্রিয় স্থান মাসজিদ”, আর মদীনায় এসে রাসূলুল্লাহ ﷺ সর্বপ্রথম মাসজিদ নির্মাণের কাজে হাত দিয়েছিলেন। এই অনুপ্রেরণায় মাসজিদ আন-নববীর আদলে, সুন্নাহর আলোকে একটি উদ্ভাসিত দ্বীনি কমিউনিটি গড়ার লক্ষ্যে এই কমপ্লেক্সের নির্মাণ চলছে। এটি হবে দাওয়াহ, শিক্ষা, সেবা ও তারবিয়াহসহ সব দ্বীনি কার্যক্রমের কেন্দ্র, ইনশাআল্লাহ।",
+   "en": "“The most beloved places to Allah are the masjids”, and on arriving in Madinah the Messenger of Allah ﷺ first set about building a masjid. In that spirit the complex is being built to grow a radiant community around the masjid, in the light of Masjid an-Nabawi and the Sunnah. It will be the centre of Dawah, education, service and tarbiyah, in sha Allah.",
+   "ar": "«أحب البلاد إلى الله مساجدها»، وأول ما بدأ به رسول الله ﷺ في المدينة بناء المسجد. وعلى هذا الهدي يُشيَّد المجمع لبناء مجتمعٍ إيمانيٍّ مشرقٍ حول المسجد على هدي المسجد النبوي والسنة، ليكون مركزًا للدعوة والتعليم والخدمة والتربية بإذن الله."
+  },
+  "spotlightImage": "img/design-masjid-front.jpg",
+  "quote": {
+   "text": {
+    "bn": "“যে ব্যক্তি আল্লাহর সন্তুষ্টির জন্য একটি মাসজিদ নির্মাণ করে, আল্লাহ তার জন্য জান্নাতে অনুরূপ একটি ঘর নির্মাণ করেন।”",
+    "en": "“Whoever builds a masjid seeking the pleasure of Allah, Allah will build for him a house like it in Paradise.”",
+    "ar": ""
+   },
+   "ref": {
+    "bn": "সহীহ বুখারী ৪৫০; সহীহ মুসলিম ৫৩৩",
+    "en": "Sahih al-Bukhari 450; Sahih Muslim 533",
+    "ar": "صحيح البخاري 450؛ صحيح مسلم 533"
+   },
+   "review": true
+  }
+ },
+ "chairman": {
+  "name": {
+   "bn": "প্রফেসর ড. মোহাম্মদ মানজুরে ইলাহী",
+   "en": "Prof. Dr. Mohammad Manzur-e-Elahi",
+   "ar": "الأستاذ الدكتور محمد منظور إلهي"
+  },
+  "role": {
+   "bn": "প্রতিষ্ঠাতা ও চেয়ারম্যান, ইমাম বুখারী ট্রাস্ট",
+   "en": "Founder & Chairman, Imam Bukhari Trust",
+   "ar": "المؤسس ورئيس مجلس الإدارة، وقف الإمام البخاري"
+  },
+  "photo": "img/chairman.jpg",
+  "photo2": "img/chairman-speech.jpg",
+  "bio": {
+   "bn": "অধ্যাপক ড. মোহাম্মদ মানজুরে ইলাহী একাধারে গবেষক, শিক্ষাবিদ, ইসলামিক স্কলার ও লেখক। তিনি একজন দা‘ঈ ইলাল্লাহ এবং সুপরিচিত মিডিয়া ব্যক্তিত্ব; ইসলামী গবেষণা, দাওয়াহ কার্যক্রম ও গণমাধ্যমে ইসলামী আলোচনার মাধ্যমে তিনি জাতীয় ও আন্তর্জাতিক অঙ্গনে পরিচিত। বর্তমানে তিনি জাতীয় বিশ্ববিদ্যালয়ের ইসলামিক স্টাডিজ বিভাগের অধ্যাপক। তিনি মদীনা ইসলামী বিশ্ববিদ্যালয় থেকে কৃতিত্বের সাথে ব্যাচেলর, মাস্টার্স ও পিএইচডি ডিগ্রি অর্জন করেন এবং সেখান থেকে পিএইচডি অর্জনকারী প্রথম বাংলাদেশি নাগরিক। বিশুদ্ধ ও বস্তুনিষ্ঠ ইসলামী শিক্ষা সবার কাছে পৌঁছে দিতে তিনি কুল্লিয়াতুল কুরআনিল কারীম ওয়াদ-দিরাসাতিল ইসলামিয়্যাহ ও তাইবাহ একাডেমি প্রতিষ্ঠা করেন।",
+   "en": "Prof. Dr. Mohammad Manzur-e-Elahi is a researcher, educationist, Islamic scholar and author. A da'i and a well-known media personality, he is known nationally and internationally for his research, Dawah and Islamic programmes in the media. He is a Professor in the Department of Islamic Studies at National University. He earned his Bachelor's, Master's and PhD with distinction from the Islamic University of Madinah, and is the first Bangladeshi citizen to receive a PhD from that university. To bring authentic, objective Islamic education to everyone, he founded Kulliyatul Quranil Kareem wad-Dirasatil Islamiyyah and Taibah Academy.",
+   "ar": "الأستاذ الدكتور محمد منظور إلهي باحثٌ ومربٍّ وعالمٌ ومؤلف، وداعيةٌ إلى الله وشخصيةٌ إعلامية معروفة على المستويين الوطني والدولي من خلال البحث العلمي والدعوة والبرامج الإسلامية في وسائل الإعلام. يعمل أستاذًا في قسم الدراسات الإسلامية بالجامعة الوطنية في بنغلاديش. حصل على البكالوريوس والماجستير والدكتوراه بتفوق من الجامعة الإسلامية بالمدينة المنورة، وهو أول مواطن بنغلاديشي يحصل على الدكتوراه منها. أسس كلية القرآن الكريم والدراسات الإسلامية وأكاديمية طيبة لإيصال العلم الشرعي الأصيل إلى الجميع."
+  },
+  "message": {
+   "bn": "১৫ কোটিরও বেশি মুসলিমের এই দেশে কতজন প্রকৃতপক্ষে ইসলাম অনুশীলন করেন? ওয়াক্তিয়া সালাত আর জুমুআর সালাতে মুসল্লির বিশাল ব্যবধান আমাদের কী বার্তা দেয়? ডিজিটাল ফিতনার মধ্যে বেড়ে ওঠা তরুণ প্রজন্মের জন্য আমাদের কি কোনো সুসংগঠিত দাওয়াহ কৌশল আছে? এই প্রশ্নগুলো কঠিন, কিন্তু এড়িয়ে যাওয়ার সুযোগ নেই। এই বাস্তবতা সামনে রেখেই ইমাম বুখারী ট্রাস্ট একটি সুন্নাহভিত্তিক, প্রজ্ঞাসম্পন্ন ও দীর্ঘমেয়াদি দাওয়াহ-ভিশন নিয়ে কাজ করছে, যাতে ইসলাম শুধু পরিচয়পত্রে নয়, জীবনে ফিরে আসে, বিইযনিল্লাহ।",
+   "en": "In this country of more than 150 million Muslims, how many truly practise Islam? What does the gap between the daily prayers and the Jumu'ah congregation tell us? Do we have an organised Dawah strategy for a young generation growing up amid digital fitnah? These questions are hard, but we cannot avoid them. With this reality in view, Imam Bukhari Trust works with a Sunnah-based, wise and long-term Dawah vision, so that Islam returns not only to identity cards but to life itself, by the permission of Allah.",
+   "ar": "في بلادنا أكثر من مئة وخمسين مليون مسلم، فكم منهم يمارس الإسلام حقًّا؟ وماذا يخبرنا الفارق الكبير بين المصلين في الصلوات اليومية وصلاة الجمعة؟ وهل لدينا استراتيجية دعوية منظمة لجيلٍ ينشأ وسط الفتن الرقمية؟ إنها أسئلة صعبة لا مفر منها. ومن هذا الواقع ينطلق وقف الإمام البخاري برؤيةٍ دعويةٍ سُنّيةٍ حكيمةٍ طويلة المدى، ليعود الإسلام إلى الحياة لا إلى بطاقات الهوية فحسب، بإذن الله."
+  },
+  "links": [
+   {
+    "name": "Facebook",
+    "url": ""
+   },
+   {
+    "name": "YouTube",
+    "url": ""
+   }
+  ],
+  "review": true
+ },
+ "cells": [
+  {
+   "name": {
+    "bn": "ইমাম বুখারী জামে মাসজিদ কমপ্লেক্স",
+    "en": "Imam Bukhari Jame Masjid Complex",
+    "ar": "مجمع جامع الإمام البخاري"
+   },
+   "text": {
+    "bn": "মাসজিদকেন্দ্রিক দ্বীনি কমিউনিটির প্রাণকেন্দ্র (নির্মাণাধীন)।",
+    "en": "The heart of the masjid-centred community (under construction).",
+    "ar": "قلب المجتمع المتمحور حول المسجد (قيد الإنشاء)."
+   },
+   "link": "#project-ibjmc"
+  },
+  {
+   "name": {
+    "bn": "কুল্লিয়াতুল কুরআনিল কারীম ওয়াদ-দিরাসাতিল ইসলামিয়্যাহ",
+    "en": "Kulliyatul Quranil Kareem wad-Dirasatil Islamiyyah",
+    "ar": "كلية القرآن الكريم والدراسات الإسلامية"
+   },
+   "text": {
+    "bn": "উচ্চতর ইসলামী শিক্ষা, গবেষণা ও দাওয়াহ (স্থায়ী ক্যাম্পাস নির্মাণাধীন)।",
+    "en": "Higher Islamic education, research and Dawah (permanent campus under construction).",
+    "ar": "تعليم إسلامي عالٍ وبحث ودعوة (الحرم الدائم قيد الإنشاء)."
+   },
+   "link": "#inst-kulliyatul-quran"
+  },
+  {
+   "name": {
+    "bn": "কুল্লিয়াতুল কুরআন মডেল মাদরাসা ও ইভিনিং মাদরাসা",
+    "en": "Kulliyatul Quran Model Madrasa & Evening Madrasa",
+    "ar": "مدرسة كلية القرآن النموذجية والمدرسة المسائية"
+   },
+   "text": {
+    "bn": "শৈশব থেকেই জ্ঞান, আদব ও নৈতিকতায় গড়ে ওঠা প্রজন্ম।",
+    "en": "A generation raised in knowledge, adab and character from childhood.",
+    "ar": "جيلٌ ينشأ على العلم والأدب والأخلاق منذ الصغر."
+   },
+   "link": "#inst-model-madrasa"
+  },
+  {
+   "name": {
+    "bn": "দাওয়াহ ও ইভেন্ট সেল",
+    "en": "Dawah & Event Cell",
+    "ar": "خلية الدعوة والفعاليات"
+   },
+   "text": {
+    "bn": "হালাকা, প্রশ্নোত্তর, কোর্স, কর্মশালা ও অনুষ্ঠান।",
+    "en": "Halaqa, Q&A, courses, workshops and events.",
+    "ar": "الحلقات والأسئلة والدورات وورش العمل والفعاليات."
+   },
+   "link": "#init-dawah"
+  },
+  {
+   "name": {
+    "bn": "সামাজিক কল্যাণ ও সেবামূলক দাওয়াহ সেল",
+    "en": "Social Welfare & Service-Dawah Cell",
+    "ar": "خلية الرعاية الاجتماعية والدعوة بالخدمة"
+   },
+   "text": {
+    "bn": "ত্রাণ, ইফতার, শীতবস্ত্র, কুরবানি ও চিকিৎসা সহায়তা।",
+    "en": "Relief, iftar, winter clothes, Qurbani and medical support.",
+    "ar": "الإغاثة والإفطار وكسوة الشتاء والأضاحي والدعم الطبي."
+   },
+   "link": "#init-welfare"
+  },
+  {
+   "name": {
+    "bn": "ডিজিটাল কনটেন্ট ও কমিউনিকেশন সেল",
+    "en": "Digital Content & Communication Cell",
+    "ar": "خلية المحتوى الرقمي والتواصل"
+   },
+   "text": {
+    "bn": "ভিডিও, সোশ্যাল মিডিয়া, প্রকাশনা ও স্টুডিও।",
+    "en": "Video, social media, publications and the studio.",
+    "ar": "الفيديو ووسائل التواصل والنشر والاستوديو."
+   },
+   "link": "#init-digital"
+  },
+  {
+   "name": {
+    "bn": "ইমাম বুখারী আবাসন ও কমিউনিটি বিল্ডিং",
+    "en": "Imam Bukhari Housing & Community Building",
+    "ar": "إسكان الإمام البخاري وبناء المجتمع"
+   },
+   "text": {
+    "bn": "মাসজিদকে ঘিরে দ্বীনদার পরিবারের কমিউনিটি (দানের তহবিল থেকে আলাদা)।",
+    "en": "A community of practising families around the masjid (separate from donation funds).",
+    "ar": "مجتمعٌ من الأسر الملتزمة حول المسجد (منفصل عن أموال التبرعات)."
+   },
+   "link": "#init-community"
+  },
+  {
+   "name": {
+    "bn": "ফোরাম ফর স্ট্র্যাটেজিক ডায়ালগ (FSD)",
+    "en": "Forum for Strategic Dialogue (FSD)",
+    "ar": "منتدى الحوار الاستراتيجي"
+   },
+   "text": {
+    "bn": "ইমাম বুখারী ট্রাস্টের পৃষ্ঠপোষকতায় গবেষণা, নীতি-প্রস্তাব ও কৌশলগত পরিকল্পনার প্ল্যাটফর্ম।",
+    "en": "A platform for research, policy proposals and strategic planning under the patronage of IBT.",
+    "ar": "منصة للبحث ومقترحات السياسات والتخطيط الاستراتيجي برعاية الوقف."
+   },
+   "link": "#init-research"
+  }
+ ],
+ "history": [
+  {
+   "date": "2017-10-01",
+   "title": {
+    "bn": "আনুষ্ঠানিক কার্যক্রম শুরু",
+    "en": "Formal operations begin",
+    "ar": "بدء الأعمال رسميًا"
+   },
+   "text": {
+    "bn": "ধলেশ্বরী নদীর তীরে পলাশপুরে ইমাম বুখারী ট্রাস্টের যাত্রা শুরু।",
+    "en": "Imam Bukhari Trust begins its work at Palashpur, on the bank of the Dhaleshwari.",
+    "ar": "انطلاق وقف الإمام البخاري في بلاشبور على ضفاف نهر دهاليشوري."
+   }
+  },
+  {
+   "date": "2021",
+   "title": {
+    "bn": "কুল্লিয়াতুল কুরআন প্রতিষ্ঠা",
+    "en": "Kulliyatul Quran founded",
+    "ar": "تأسيس كلية القرآن"
+   },
+   "text": {
+    "bn": "২০২১ খ্রি. / ১৪৪২ হি. উচ্চতর ইসলামী শিক্ষা ও গবেষণা প্রতিষ্ঠান হিসেবে যাত্রা।",
+    "en": "Founded in 2021 / 1442 AH as a higher Islamic education and research institution.",
+    "ar": "تأسست عام 2021م / 1442هـ مؤسسةً للتعليم الإسلامي العالي والبحث."
+   }
+  },
+  {
+   "date": "2022-07",
+   "title": {
+    "bn": "উত্তরায় ক্লাস শুরু",
+    "en": "Classes begin in Uttara",
+    "ar": "بدء الدراسة في أُتّرا"
+   },
+   "text": {
+    "bn": "অস্থায়ী ক্যাম্পাসে আরবি ভাষা ও সানাবিয়্যাহ ক্লাস শুরু।",
+    "en": "Arabic language and Sanabiyyah classes begin at the temporary campus.",
+    "ar": "بدء دروس اللغة العربية والمرحلة الثانوية في الحرم المؤقت."
+   }
+  },
+  {
+   "date": "2023",
+   "title": {
+    "bn": "নির্মাণকাজের উদ্বোধন",
+    "en": "Construction inaugurated",
+    "ar": "افتتاح أعمال البناء"
+   },
+   "text": {
+    "bn": "ইমাম বুখারী জামে মাসজিদ ও একাডেমিক ক্যাম্পাসের নির্মাণকাজের শুভ উদ্বোধন।",
+    "en": "Construction of the Jame Masjid and academic campus is inaugurated.",
+    "ar": "افتتاح أعمال بناء الجامع والحرم الأكاديمي."
+   }
+  },
+  {
+   "date": "2024",
+   "title": {
+    "bn": "পাইলিং ও সুন্নাহ কনফারেন্স",
+    "en": "Piling and the Sunnah Conference",
+    "ar": "الخوازيق ومؤتمر السنة"
+   },
+   "text": {
+    "bn": "২২৫টি পাইলের কাজ শুরু; আন্তর্জাতিক সুন্নাহ কনফারেন্স বাংলাদেশ ২০২৪ আয়োজন।",
+    "en": "Work on 225 piles begins; the international Sunnah Conference Bangladesh 2024 is held.",
+    "ar": "بدء تنفيذ 225 خازوقًا؛ وانعقاد مؤتمر السنة الدولي في بنغلاديش 2024."
+   }
+  },
+  {
+   "date": "2026-02",
+   "title": {
+    "bn": "প্রথম ছাদ ঢালাই সম্পন্ন",
+    "en": "First roof slab completed",
+    "ar": "اكتمال صب السقف الأول"
+   },
+   "text": {
+    "bn": "২২৫টি পাইল ও মাসজিদের প্রথম ছাদ ঢালাই সম্পন্ন, আলহামদুলিল্লাহ। নির্মাণাধীন মাসজিদে প্রথম সালাত আদায়।",
+    "en": "225 piles and the masjid's first roof slab completed, alhamdulillah. The first prayer is held in the masjid under construction.",
+    "ar": "اكتمال 225 خازوقًا وصب السقف الأول للمسجد، والحمد لله. وإقامة أول صلاة في المسجد قيد الإنشاء."
+   }
+  }
+ ],
+ "institutions": [
+  {
+   "id": "ibjmc",
+   "type": "masjid",
+   "status": "construction",
+   "name": {
+    "bn": "ইমাম বুখারী জামে মাসজিদ কমপ্লেক্স",
+    "en": "Imam Bukhari Jame Masjid Complex",
+    "ar": "مجمع جامع الإمام البخاري"
+   },
+   "summary": {
+    "bn": "মাসজিদ আন-নববীর আদলে মাসজিদকেন্দ্রিক দ্বীনি কমিউনিটির কেন্দ্র (নির্মাণাধীন)।",
+    "en": "The centre of a masjid-centred community modelled on Masjid an-Nabawi (under construction).",
+    "ar": "مركزٌ لمجتمعٍ متمحورٍ حول المسجد على هدي المسجد النبوي (قيد الإنشاء)."
+   },
+   "image": "img/render-mosque.jpg",
+   "link": "#project-ibjmc",
+   "features": [
+    {
+     "bn": "সুন্নাহভিত্তিক প্রতিষ্ঠান: মাসজিদুল হারামের আদলে পরিকল্পনা ও নির্মাণ",
+     "en": "A Sunnah-based institution, planned in the spirit of Masjid al-Haram",
+     "ar": "مؤسسة على السنة، مخططة على هدي المسجد الحرام"
+    },
+    {
+     "bn": "দ্বীনি শিক্ষা: স্কলারদের সাহচর্যে দ্বীন শেখার সুযোগ",
+     "en": "Learning the deen in the company of scholars",
+     "ar": "تعلم الدين في صحبة العلماء"
+    },
+    {
+     "bn": "আন্তর্জাতিক মানের লাইব্রেরি: মাসজিদ আন-নববীর আদলে সমৃদ্ধ পাঠাগার",
+     "en": "An international-standard library modelled on Masjid an-Nabawi's",
+     "ar": "مكتبة بمستوى دولي على غرار مكتبة المسجد النبوي"
+    },
+    {
+     "bn": "আধুনিক প্রযুক্তির দাওয়াহ সেন্টার ও রেকর্ডিং স্টুডিও",
+     "en": "A technology-enabled Dawah centre and recording studio",
+     "ar": "مركز دعوة ومرسم تسجيل بتقنيات حديثة"
+    },
+    {
+     "bn": "তাহফীযুল কুরআন, শিশু ও বয়স্ক শিক্ষা",
+     "en": "Tahfiz al-Qur'an and learning for children and adults",
+     "ar": "تحفيظ القرآن وتعليم الصغار والكبار"
+    },
+    {
+     "bn": "ভাষা শিক্ষাকেন্দ্র, কর্মশালা, সেমিনার ও সিম্পোজিয়াম",
+     "en": "Language centre, workshops, seminars and symposia",
+     "ar": "مركز لغات وورش وندوات"
+    },
+    {
+     "bn": "বোনদের জন্য সালাত ও হালাকায় অংশগ্রহণের সুব্যবস্থা",
+     "en": "Proper facilities for sisters to join prayers and halaqas",
+     "ar": "مرافق مناسبة للأخوات للصلاة والحلقات"
+    },
+    {
+     "bn": "সুন্নাহ অনুযায়ী বিবাহ ও ওয়ালিমা আয়োজনের ব্যবস্থা",
+     "en": "Facilities for marriages and walimas according to the Sunnah",
+     "ar": "تيسير عقود الزواج والولائم على السنة"
+    }
+   ]
+  },
+  {
+   "id": "kulliyatul-quran",
+   "type": "higher",
+   "status": "running",
+   "name": {
+    "bn": "কুল্লিয়াতুল কুরআনিল কারীম ওয়াদ-দিরাসাতিল ইসলামিয়্যাহ",
+    "en": "Kulliyatul Quranil Kareem wad-Dirasatil Islamiyyah",
+    "ar": "كلية القرآن الكريم والدراسات الإسلامية"
+   },
+   "summary": {
+    "bn": "মদীনা বিশ্ববিদ্যালয়ের আদলে বিশুদ্ধ আকীদাভিত্তিক উচ্চতর ইসলামী শিক্ষা, গবেষণা ও দাওয়াহ প্রতিষ্ঠান।",
+    "en": "A higher Islamic education, research and Dawah institution on sound creed, modelled on the University of Madinah.",
+    "ar": "مؤسسة للتعليم الإسلامي العالي والبحث والدعوة على العقيدة الصحيحة، على غرار الجامعة الإسلامية بالمدينة."
+   },
+   "image": "img/halaqa-class.jpg",
+   "body": {
+    "bn": "২০২১ খ্রি. / ১৪৪২ হি. প্রতিষ্ঠিত কুল্লিয়াতুল কুরআন ইমাম বুখারী ট্রাস্টের একটি একাডেমিক উদ্যোগ। এখানে উচ্চমাধ্যমিক (সানাবিয়্যাহ), ব্যাচেলর (কুল্লিয়া) ও মাস্টার্স পর্যায়ের শিক্ষা দেওয়া হবে। ঢাকার উত্তরায় অস্থায়ী ক্যাম্পাসে শিক্ষা কার্যক্রম চলমান; স্থায়ী ক্যাম্পাসের নির্মাণকাজ চলছে নিউ ঢাকা সিটি, পলাশপুরে।",
+    "en": "Founded in 2021 / 1442 AH, Kulliyatul Quran is an academic initiative of Imam Bukhari Trust offering higher-secondary (Sanabiyyah), bachelor's (Kulliya) and master's level education. Classes run at a temporary campus in Uttara, Dhaka, while the permanent campus is being built at New Dhaka City, Palashpur.",
+    "ar": "كلية القرآن مبادرة أكاديمية لوقف الإمام البخاري تأسست عام 2021م / 1442هـ، وتقدم التعليم في المرحلة الثانوية (السنابية) والبكالوريوس (الكلية) والماجستير. تجري الدراسة في حرمٍ مؤقت في أُتّرا بدكا، ويُبنى الحرم الدائم في مدينة دكا الجديدة."
+   },
+   "features": [
+    {
+     "bn": "মদীনা, আল-আযহারসহ শীর্ষ ইসলামী বিশ্ববিদ্যালয় থেকে ডিগ্রিপ্রাপ্ত শিক্ষকদের পাঠদান",
+     "en": "Teachers with degrees from Madinah, al-Azhar and other leading Islamic universities",
+     "ar": "أساتذة متخرجون في المدينة والأزهر وغيرهما من الجامعات الإسلامية الكبرى"
+    },
+    {
+     "bn": "আরবি ভাষায় দক্ষতা: বিদেশের নামকরা বিশ্ববিদ্যালয়ে উচ্চশিক্ষার প্রস্তুতি",
+     "en": "Arabic proficiency that prepares students for leading universities abroad",
+     "ar": "إتقان العربية استعدادًا للدراسة في الجامعات العالمية"
+    },
+    {
+     "bn": "আন্তর্জাতিক বিশ্ববিদ্যালয়ের সাথে একাডেমিক ইকুইভ্যালেন্স",
+     "en": "Academic equivalence with international universities",
+     "ar": "معادلة أكاديمية مع جامعات دولية"
+    },
+    {
+     "bn": "সৌদি আরব, মিশর, মালয়েশিয়া, মরক্কো ও ইন্দোনেশিয়ায় স্কলারশিপের প্রস্তুতি ও সহায়তা",
+     "en": "Preparation and support for scholarships in Saudi Arabia, Egypt, Malaysia, Morocco and Indonesia",
+     "ar": "إعداد ودعم للمنح في السعودية ومصر وماليزيا والمغرب وإندونيسيا"
+    },
+    {
+     "bn": "আরবি, ইংরেজি ও বাংলায় সমৃদ্ধ ফিজিক্যাল ও ডিজিটাল লাইব্রেরি",
+     "en": "A physical and digital library in Arabic, English and Bangla",
+     "ar": "مكتبة ورقية ورقمية بالعربية والإنجليزية والبنغالية"
+    },
+    {
+     "bn": "নারীদের জন্য পৃথক উচ্চশিক্ষার ব্যবস্থা",
+     "en": "Separate higher-education arrangements for women",
+     "ar": "ترتيبات منفصلة لتعليم المرأة العالي"
+    }
+   ],
+   "programs": [
+    {
+     "name": {
+      "bn": "কুল্লিয়া (ব্যাচেলর ইন ইসলামিক স্টাডিজ)",
+      "en": "Kulliya (Bachelor in Islamic Studies)",
+      "ar": "الكلية (بكالوريوس الدراسات الإسلامية)"
+     },
+     "text": {
+      "bn": "যোগ্যতা: সানাবিয়্যাহ, আলিম বা এইচএসসি পাস।",
+      "en": "Entry: Sanabiyyah, Alim or HSC.",
+      "ar": "شرط القبول: السنابية أو العالم أو الثانوية العامة."
+     }
+    },
+    {
+     "name": {
+      "bn": "সানাবিয়্যাহ (উচ্চমাধ্যমিক)",
+      "en": "Sanabiyyah (Higher Secondary)",
+      "ar": "السنابية (المرحلة الثانوية)"
+     },
+     "text": {
+      "bn": "যোগ্যতা: দাখিল, মিশকাত বা এসএসসি পাস। এসএসসি পাসদের জন্য আগে আরবি ভাষা কোর্স।",
+      "en": "Entry: Dakhil, Mishkat or SSC. SSC students first take the Arabic language courses.",
+      "ar": "شرط القبول: الداخل أو المشكاة أو الشهادة المتوسطة، ويسبقها مقرر اللغة العربية لحملة الشهادة المتوسطة."
+     }
+    },
+    {
+     "name": {
+      "bn": "একাডেমিক আরবি ভাষা কোর্স",
+      "en": "Academic Arabic Language Course",
+      "ar": "دورة اللغة العربية للأغراض الأكاديمية"
+     },
+     "text": {
+      "bn": "দাওরাতুল লুগাতিল আরাবিয়্যাহ লিল-আগরাদিল আকাদিমিয়্যাহ।",
+      "en": "Offered by the institute's Arabic Language Institute.",
+      "ar": "تقدمها معهد اللغة العربية التابع للكلية."
+     }
+    },
+    {
+     "name": {
+      "bn": "জেনারেল আরবি ভাষা কোর্স",
+      "en": "General Arabic Language Course",
+      "ar": "دورة اللغة العربية العامة"
+     },
+     "text": {
+      "bn": "সাধারণ শিক্ষার্থী ও ইংরেজি মাধ্যমের শিক্ষার্থীদের জন্য।",
+      "en": "For general learners and English-medium students.",
+      "ar": "للدارسين عمومًا وطلاب المدارس الإنجليزية."
+     }
+    }
+   ],
+   "website": "https://kulliyatulquran.com/",
+   "registrations": [
+    "kq-admission-2027"
+   ]
+  },
+  {
+   "id": "model-madrasa",
+   "type": "school",
+   "status": "running",
+   "name": {
+    "bn": "কুল্লিয়াতুল কুরআন মডেল মাদরাসা",
+    "en": "Kulliyatul Quran Model Madrasa",
+    "ar": "مدرسة كلية القرآن النموذجية"
+   },
+   "formerName": {
+    "bn": "পূর্বনাম: দারুল হাদীস অ্যারাবিক মাদরাসা",
+    "en": "Formerly: Darul Hadith Arabic Madrasa",
+    "ar": "الاسم السابق: مدرسة دار الحديث العربية"
+   },
+   "summary": {
+    "bn": "শৈশব থেকেই জ্ঞান, আদব ও নৈতিকতায় ইসলামকে ধারণ করা একটি প্রজন্ম গড়ার মাদরাসা; সাথে ইভিনিং মাদরাসা।",
+    "en": "A madrasa that raises children to hold Islam through knowledge, adab and character, with an Evening Madrasa.",
+    "ar": "مدرسة تربي الأطفال على حمل الإسلام علمًا وأدبًا وخلقًا، ومعها مدرسة مسائية."
+   },
+   "image": "img/model-madrasa.jpg",
+   "body": {
+    "bn": "বাংলাদেশে দ্বীনের অগ্রযাত্রাকে টেকসই করতে শৈশব থেকেই এমন এক প্রজন্ম প্রয়োজন, যারা ইসলামকে কেবল আবেগে নয়, বরং জ্ঞান, আদব ও নৈতিকতায় ধারণ করবে। আধুনিক শিক্ষার চ্যালেঞ্জ ও ডিজিটাল ফিতনার ভিড়ে শিশুদের সঠিক তারবিয়াহ ও কুরআনি মূল্যবোধের সাথে সংযোগ ক্রমেই দুর্বল হয়ে পড়ছে। এই শূন্যতা পূরণে আমরা এমন একটি সমন্বিত কারিকুলাম ও পরিবেশ নিশ্চিত করছি, যেখানে শিশুরা সুন্নাহভিত্তিক শিষ্টাচার ও দ্বীনি আমানতদারিতার সাথে বেড়ে উঠবে।",
+    "en": "To make the progress of the deen in Bangladesh lasting, we need a generation that holds Islam not only through emotion but through knowledge, adab and character, from childhood. Amid the challenges of modern schooling and digital fitnah, children's link with proper tarbiyah and Qur'anic values keeps weakening. To fill this gap we provide an integrated curriculum and environment where children grow up with Sunnah-based manners and a sense of trust toward the deen.",
+    "ar": "لكي يدوم تقدم الدين في بنغلاديش لا بد من جيلٍ يحمل الإسلام علمًا وأدبًا وخلقًا لا عاطفةً فحسب. ومع تحديات التعليم الحديث والفتن الرقمية تضعف صلة الأطفال بالتربية الصحيحة وقيم القرآن، لذا نوفر منهجًا متكاملًا وبيئة ينشأ فيها الأطفال على آداب السنة والأمانة الدينية."
+   },
+   "features": [
+    {
+     "bn": "কুরআন, হিফয ও তা‘লীমুল কুরআন",
+     "en": "Qur'an, Hifz and Ta'limul Quran",
+     "ar": "القرآن والتحفيظ وتعليم القرآن"
+    },
+    {
+     "bn": "আরবি, ইংরেজি ও বাংলা ভাষায় গুরুত্ব",
+     "en": "Emphasis on Arabic, English and Bangla",
+     "ar": "عناية باللغات العربية والإنجليزية والبنغالية"
+    },
+    {
+     "bn": "ইসলামী শিক্ষা, গণিত, বিজ্ঞান ও সামাজিক বিজ্ঞান",
+     "en": "Islamic studies, mathematics, science and social science",
+     "ar": "التربية الإسلامية والرياضيات والعلوم والدراسات الاجتماعية"
+    },
+    {
+     "bn": "সুন্নাহভিত্তিক তারবিয়াহ ও সহশিক্ষা কার্যক্রম",
+     "en": "Sunnah-based tarbiyah and co-curricular activities",
+     "ar": "تربية على السنة وأنشطة لا صفية"
+    },
+    {
+     "bn": "ইভিনিং মাদরাসা: স্কুলগামী শিশুদের জন্য সন্ধ্যাকালীন দ্বীনি শিক্ষা",
+     "en": "Evening Madrasa: evening Islamic classes for school-going children",
+     "ar": "المدرسة المسائية: تعليم ديني مسائي لتلاميذ المدارس"
+    }
+   ],
+   "registrations": [
+    "model-madrasa-2027"
+   ],
+   "review": true
+  },
+  {
+   "id": "after-school",
+   "type": "school",
+   "status": "running",
+   "name": {
+    "bn": "কুল্লিয়াতুল কুরআন আফটার স্কুল",
+    "en": "Kulliyatul Quran After School",
+    "ar": "برنامج كلية القرآن بعد المدرسة"
+   },
+   "summary": {
+    "bn": "সাধারণ স্কুলে পড়া শিশুদের জন্য স্কুলের পর কুরআন, আরবি ও ইসলামী আদব শিক্ষা।",
+    "en": "Qur'an, Arabic and Islamic manners after school hours for children in general schools.",
+    "ar": "تعليم القرآن والعربية والآداب الإسلامية بعد الدوام لأطفال المدارس العامة."
+   },
+   "image": "img/program-women-children.jpg",
+   "body": {
+    "bn": "যেসব শিশু সাধারণ বা ইংরেজি মাধ্যম স্কুলে পড়ে, তাদের জন্য স্কুলের পর নির্ধারিত সময়ে কুরআন তিলাওয়াত, হিফয, আরবি ভাষা, আকীদা, সীরাহ ও দৈনন্দিন সুন্নাহ শেখানোর কার্যক্রম। বয়সভিত্তিক ব্যাচ, সময়সূচি ও ফি বিস্তারিত রেজিস্ট্রেশন পেজে।",
+    "en": "For children in general or English-medium schools: Qur'an recitation, hifz, Arabic, aqeedah, seerah and everyday Sunnah, taught at set times after school. Age groups, timings and fees are on the registration page.",
+    "ar": "لأطفال المدارس العامة ومدارس اللغة الإنجليزية: تلاوة القرآن وحفظه والعربية والعقيدة والسيرة والسنن اليومية في أوقات محددة بعد المدرسة. الفئات العمرية والمواعيد والرسوم في صفحة التسجيل."
+   },
+   "features": [
+    {
+     "bn": "বয়সভিত্তিক ছোট ব্যাচ",
+     "en": "Small age-based batches",
+     "ar": "مجموعات صغيرة حسب العمر"
+    },
+    {
+     "bn": "কুরআন তিলাওয়াত ও হিফয",
+     "en": "Qur'an recitation and hifz",
+     "ar": "التلاوة والتحفيظ"
+    },
+    {
+     "bn": "আরবি ভাষার ভিত্তি",
+     "en": "Foundations of Arabic",
+     "ar": "أساسيات العربية"
+    },
+    {
+     "bn": "আকীদা, সীরাহ ও আদব",
+     "en": "Aqeedah, seerah and adab",
+     "ar": "العقيدة والسيرة والآداب"
+    }
+   ],
+   "registrations": [
+    "after-school-2027"
+   ],
+   "review": true
+  },
+  {
+   "id": "courses",
+   "type": "courses",
+   "status": "running",
+   "name": {
+    "bn": "কোর্সসমূহ",
+    "en": "Courses",
+    "ar": "الدورات"
+   },
+   "summary": {
+    "bn": "আরবি ভাষা, ডিপ্লোমা-সার্টিফিকেট এবং ব্যবহারিক ইসলামী প্রশিক্ষণ কোর্স।",
+    "en": "Arabic language, diploma and certificate courses, and practical Islamic training.",
+    "ar": "دورات اللغة العربية والدبلومات والشهادات والتدريب الإسلامي العملي."
+   },
+   "image": "img/program-corporate.jpg",
+   "body": {
+    "bn": "কুল্লিয়াতুল কুরআন ও ইমাম বুখারী ট্রাস্টের কোর্সগুলোতে আরবি ভাষা থেকে শুরু করে সালাত, হজ্জ-উমরাহ, যাকাত হিসাব, প্যারেন্টিং এবং মৃতের গোসল-কাফন-দাফনের মতো ব্যবহারিক বিষয় শেখানো হয়।",
+    "en": "Courses at Kulliyatul Quran and Imam Bukhari Trust range from Arabic language to practical subjects such as salah, Hajj and Umrah, zakat calculation, parenting and the ghusl, kafan and burial of the deceased.",
+    "ar": "تتنوع دورات كلية القرآن ووقف الإمام البخاري من اللغة العربية إلى الموضوعات العملية كالصلاة والحج والعمرة وحساب الزكاة والتربية الأسرية وتغسيل الميت وتكفينه ودفنه."
+   },
+   "programs": [
+    {
+     "name": {
+      "bn": "২ মাসের নিবিড় আরবি কোর্স (দাখিল পরীক্ষার্থীদের জন্য)",
+      "en": "2-month intensive Arabic (for Dakhil candidates)",
+      "ar": "دورة عربية مكثفة لشهرين (لطلاب الداخل)"
+     },
+     "text": {
+      "bn": "চলমান",
+      "en": "Ongoing",
+      "ar": "جارية"
+     }
+    },
+    {
+     "name": {
+      "bn": "জেনারেল ও একাডেমিক আরবি ভাষা কোর্স",
+      "en": "General and Academic Arabic courses",
+      "ar": "دورات العربية العامة والأكاديمية"
+     },
+     "text": {
+      "bn": "এক বছর মেয়াদি",
+      "en": "One year each",
+      "ar": "مدة كل منها عام"
+     }
+    },
+    {
+     "name": {
+      "bn": "ফিকহুস সালাত ও ফিকহুস সিয়াম",
+      "en": "Fiqh of Salah and Fiqh of Fasting",
+      "ar": "فقه الصلاة وفقه الصيام"
+     },
+     "text": {
+      "bn": "সংক্ষিপ্ত কোর্স",
+      "en": "Short courses",
+      "ar": "دورات قصيرة"
+     }
+    },
+    {
+     "name": {
+      "bn": "হজ্জ ও উমরাহ প্রশিক্ষণ",
+      "en": "Hajj and Umrah training",
+      "ar": "تدريب الحج والعمرة"
+     },
+     "text": {
+      "bn": "প্রতি বছর হজ্জের আগে",
+      "en": "Every year before Hajj",
+      "ar": "سنويًا قبل الحج"
+     }
+    },
+    {
+     "name": {
+      "bn": "যাকাত হিসাব ও ব্যবসায় যাকাত কর্মশালা",
+      "en": "Zakat calculation and Zakat on business workshop",
+      "ar": "ورشة حساب الزكاة وزكاة التجارة"
+     },
+     "text": {
+      "bn": "ব্যবসায়ী ও পেশাজীবীদের জন্য",
+      "en": "For business people and professionals",
+      "ar": "لرجال الأعمال والمهنيين"
+     }
+    },
+    {
+     "name": {
+      "bn": "প্যারেন্টিং ও পারিবারিক সমস্যা ব্যবস্থাপনা",
+      "en": "Parenting and family problem management",
+      "ar": "التربية الأسرية وحل المشكلات الأسرية"
+     },
+     "text": {
+      "bn": "কর্মশালা",
+      "en": "Workshops",
+      "ar": "ورش عمل"
+     }
+    },
+    {
+     "name": {
+      "bn": "মৃতের গোসল, কাফন ও দাফন প্রশিক্ষণ",
+      "en": "Ghusl, kafan and burial training",
+      "ar": "تدريب على تغسيل الميت وتكفينه ودفنه"
+     },
+     "text": {
+      "bn": "নারী ও পুরুষের জন্য আলাদা সেশন",
+      "en": "Separate sessions for men and women",
+      "ar": "جلسات منفصلة للرجال والنساء"
+     }
+    },
+    {
+     "name": {
+      "bn": "ডিপ্লোমা ও সার্টিফিকেট কোর্স",
+      "en": "Diploma and certificate courses",
+      "ar": "دبلومات وشهادات"
+     },
+     "text": {
+      "bn": "বিভিন্ন বিষয়ে",
+      "en": "Various subjects",
+      "ar": "في موضوعات متعددة"
+     }
+    }
+   ],
+   "registrations": [
+    "arabic-intensive",
+    "hajj-course-2027"
+   ]
+  },
+  {
+   "id": "teachers-training",
+   "type": "training",
+   "status": "establishing",
+   "name": {
+    "bn": "টিচার্স ট্রেনিং ইনস্টিটিউট",
+    "en": "Teachers Training Institute",
+    "ar": "معهد تدريب المعلمين"
+   },
+   "summary": {
+    "bn": "ইমাম ও শিক্ষকদের জ্ঞান, নেতৃত্ব, পাঠদান পদ্ধতি ও কমিউনিটি এনগেজমেন্টে দক্ষ করে গড়ে তোলা।",
+    "en": "Training imams and teachers in scholarship, leadership, teaching methods and community engagement.",
+    "ar": "إعداد الأئمة والمعلمين علمًا وقيادةً وطرقَ تدريسٍ وتواصلًا مع المجتمع."
+   },
+   "image": "img/sunnah-conference-2024.jpg",
+   "body": {
+    "bn": "সমাজের জন্য জ্ঞানী, দক্ষ ও দূরদর্শী নেতৃত্ব গড়তে ইমাম ও শিক্ষক প্রশিক্ষণ ইনস্টিটিউট প্রতিষ্ঠা করা হচ্ছে। ইতোমধ্যে টিচার্স ট্রেনিং কোর্স চলছে; যেমন ১৪ নভেম্বর ২০২৬-এ অনুষ্ঠিত দিনব্যাপী কর্মশালা “Effective Teaching: Integrating Modern and Islamic Perspectives”।",
+    "en": "The Imam and Teachers Training Institute is being established to develop knowledgeable, skilled and visionary leaders for the community. The Teachers Training Course is already running, for example the day-long workshop “Effective Teaching: Integrating Modern and Islamic Perspectives” held on 14 November 2026.",
+    "ar": "يُنشأ معهد تدريب الأئمة والمعلمين لإعداد قيادات عالمة ماهرة بعيدة النظر للمجتمع. وتجري حاليًا دورة تدريب المعلمين، ومنها ورشة «التدريس الفعّال: الدمج بين المنظورين الحديث والإسلامي» في 14 نوفمبر 2026."
+   },
+   "features": [
+    {
+     "bn": "কার্যকর পাঠদান পদ্ধতি",
+     "en": "Effective teaching methods",
+     "ar": "طرق التدريس الفعال"
+    },
+    {
+     "bn": "ইমামতি ও খুতবা প্রশিক্ষণ",
+     "en": "Imamate and khutbah training",
+     "ar": "تدريب الإمامة والخطابة"
+    },
+    {
+     "bn": "শ্রেণিকক্ষ ব্যবস্থাপনা ও মূল্যায়ন",
+     "en": "Classroom management and assessment",
+     "ar": "إدارة الصف والتقويم"
+    },
+    {
+     "bn": "দা‘ঈ প্রশিক্ষণ কর্মসূচি",
+     "en": "Da'i training programme",
+     "ar": "برنامج إعداد الدعاة"
+    }
+   ],
+   "registrations": [
+    "teachers-training"
+   ]
+  }
+ ],
+ "floors": {
+  "asOf": "2026-02-15",
+  "source": {
+   "bn": "IBT ক্যাটালগ ২০২৬",
+   "en": "IBT Catalog 2026",
+   "ar": "كتيّب الوقف 2026"
+  },
+  "note": {
+   "bn": "তথ্য হালনাগাদ করতে অ্যাডমিন প্যানেল ব্যবহার করুন।",
+   "en": "Update from the admin panel as work progresses.",
+   "ar": "تُحدَّث البيانات من لوحة الإدارة."
+  },
+  "mosque": [
+   {
+    "label": {
+     "bn": "ফাউন্ডেশন ও পাইলিং",
+     "en": "Foundation & piling",
+     "ar": "الأساسات والخوازيق"
+    },
+    "use": {
+     "bn": "৬৭টি পাইল",
+     "en": "67 piles",
+     "ar": "67 خازوقًا"
+    },
+    "status": "done"
+   },
+   {
+    "label": {
+     "bn": "নিচতলা",
+     "en": "Ground floor",
+     "ar": "الطابق الأرضي"
+    },
+    "use": {
+     "bn": "মহিলা মাসজিদ ও ওযুখানা",
+     "en": "Sisters' prayer area & wudu",
+     "ar": "مصلى النساء والمتوضأ"
+    },
+    "status": "done"
+   },
+   {
+    "label": {
+     "bn": "১ম তলা",
+     "en": "1st floor",
+     "ar": "الطابق الأول"
+    },
+    "use": {
+     "bn": "মূল মাসজিদ",
+     "en": "Main prayer hall",
+     "ar": "قاعة الصلاة"
+    },
+    "status": "progress"
+   },
+   {
+    "label": {
+     "bn": "২য় তলা",
+     "en": "2nd floor",
+     "ar": "الطابق الثاني"
+    },
+    "use": {
+     "bn": "মাসজিদ ও ই‘তিকাফ",
+     "en": "Prayer hall & i'tikaf",
+     "ar": "الصلاة والاعتكاف"
+    },
+    "status": "planned"
+   },
+   {
+    "label": {
+     "bn": "৩য় তলা",
+     "en": "3rd floor",
+     "ar": "الطابق الثالث"
+    },
+    "use": {
+     "bn": "মাসজিদ",
+     "en": "Prayer hall",
+     "ar": "قاعة الصلاة"
+    },
+    "status": "planned"
+   },
+   {
+    "label": {
+     "bn": "৪র্থ তলা",
+     "en": "4th floor",
+     "ar": "الطابق الرابع"
+    },
+    "use": {
+     "bn": "মাসজিদ ও খাদেম কক্ষ",
+     "en": "Prayer hall & khadim room",
+     "ar": "الصلاة وغرفة الخادم"
+    },
+    "status": "planned"
+   },
+   {
+    "label": {
+     "bn": "৫ম তলা",
+     "en": "5th floor",
+     "ar": "الطابق الخامس"
+    },
+    "use": {
+     "bn": "লাইব্রেরি, ইমাম কক্ষ",
+     "en": "Library & imam's room",
+     "ar": "المكتبة وغرفة الإمام"
+    },
+    "status": "planned"
+   },
+   {
+    "label": {
+     "bn": "৬ষ্ঠ তলা",
+     "en": "6th floor",
+     "ar": "الطابق السادس"
+    },
+    "use": {
+     "bn": "ডাইনিং ও ছাদ-বারান্দা",
+     "en": "Dining & terrace",
+     "ar": "قاعة الطعام والشرفة"
+    },
+    "status": "planned"
+   }
+  ],
+  "academic": [
+   {
+    "label": {
+     "bn": "ফাউন্ডেশন ও পাইলিং",
+     "en": "Foundation & piling",
+     "ar": "الأساسات والخوازيق"
+    },
+    "use": {
+     "bn": "১৫৮টি পাইল",
+     "en": "158 piles",
+     "ar": "158 خازوقًا"
+    },
+    "status": "progress"
+   },
+   {
+    "label": {
+     "bn": "নিচতলা",
+     "en": "Ground floor",
+     "ar": "الطابق الأرضي"
+    },
+    "use": {
+     "bn": "অভিভাবক কক্ষ, ডিসপ্লে, ক্যান্টিন",
+     "en": "Parents' lounge, display, canteen",
+     "ar": "استراحة أولياء الأمور والمعرض والمقصف"
+    },
+    "status": "planned"
+   },
+   {
+    "label": {
+     "bn": "১ম তলা",
+     "en": "1st floor",
+     "ar": "الطابق الأول"
+    },
+    "use": {
+     "bn": "কনফারেন্স ও প্রশাসন",
+     "en": "Conference & administration",
+     "ar": "المؤتمرات والإدارة"
+    },
+    "status": "planned"
+   },
+   {
+    "label": {
+     "bn": "২য় তলা",
+     "en": "2nd floor",
+     "ar": "الطابق الثاني"
+    },
+    "use": {
+     "bn": "শ্রেণিকক্ষ",
+     "en": "Classrooms",
+     "ar": "فصول"
+    },
+    "status": "planned"
+   },
+   {
+    "label": {
+     "bn": "৩য় তলা",
+     "en": "3rd floor",
+     "ar": "الطابق الثالث"
+    },
+    "use": {
+     "bn": "শ্রেণিকক্ষ ও লাইব্রেরি",
+     "en": "Classrooms & library",
+     "ar": "فصول ومكتبة"
+    },
+    "status": "planned"
+   },
+   {
+    "label": {
+     "bn": "৪র্থ তলা",
+     "en": "4th floor",
+     "ar": "الطابق الرابع"
+    },
+    "use": {
+     "bn": "শ্রেণিকক্ষ",
+     "en": "Classrooms",
+     "ar": "فصول"
+    },
+    "status": "planned"
+   },
+   {
+    "label": {
+     "bn": "৫ম তলা",
+     "en": "5th floor",
+     "ar": "الطابق الخامس"
+    },
+    "use": {
+     "bn": "শ্রেণিকক্ষ",
+     "en": "Classrooms",
+     "ar": "فصول"
+    },
+    "status": "planned"
+   },
+   {
+    "label": {
+     "bn": "৬ষ্ঠ তলা",
+     "en": "6th floor",
+     "ar": "الطابق السادس"
+    },
+    "use": {
+     "bn": "শ্রেণিকক্ষ",
+     "en": "Classrooms",
+     "ar": "فصول"
+    },
+    "status": "planned"
+   },
+   {
+    "label": {
+     "bn": "৭ম তলা",
+     "en": "7th floor",
+     "ar": "الطابق السابع"
+    },
+    "use": {
+     "bn": "শ্রেণিকক্ষ",
+     "en": "Classrooms",
+     "ar": "فصول"
+    },
+    "status": "planned"
+   },
+   {
+    "label": {
+     "bn": "৮ম তলা",
+     "en": "8th floor",
+     "ar": "الطابق الثامن"
+    },
+    "use": {
+     "bn": "শ্রেণিকক্ষ",
+     "en": "Classrooms",
+     "ar": "فصول"
+    },
+    "status": "planned"
+   },
+   {
+    "label": {
+     "bn": "৯ম তলা",
+     "en": "9th floor",
+     "ar": "الطابق التاسع"
+    },
+    "use": {
+     "bn": "শ্রেণিকক্ষ",
+     "en": "Classrooms",
+     "ar": "فصول"
+    },
+    "status": "planned"
+   }
+  ],
+  "review": true
+ },
+ "projects": [
+  {
+   "id": "ibjmc",
+   "category": "infrastructure",
+   "status": "ongoing",
+   "name": {
+    "bn": "ইমাম বুখারী জামে মাসজিদ ও একাডেমিক ক্যাম্পাস",
+    "en": "Imam Bukhari Jame Masjid & Academic Campus",
+    "ar": "جامع الإمام البخاري والحرم الأكاديمي"
+   },
+   "location": {
+    "bn": "নিউ ঢাকা সিটি, পলাশপুর, ঢাকা–মাওয়া এক্সপ্রেসওয়ে সংলগ্ন, ঢাকা",
+    "en": "New Dhaka City, Palashpur, by the Dhaka–Mawa Expressway, Dhaka",
+    "ar": "مدينة دكا الجديدة، بلاشبور، بجوار طريق دكا–ماوا السريع"
+   },
+   "summary": {
+    "bn": "ধলেশ্বরী নদীর তীরে মাসজিদ কমপ্লেক্স ও কুল্লিয়াতুল কুরআনের স্থায়ী একাডেমিক ক্যাম্পাস নির্মাণ।",
+    "en": "Building the masjid complex and Kulliyatul Quran's permanent academic campus on the bank of the Dhaleshwari.",
+    "ar": "بناء مجمع المسجد والحرم الأكاديمي الدائم لكلية القرآن على ضفاف نهر دهاليشوري."
+   },
+   "image": "img/design-side.jpg",
+   "body": {
+    "bn": "জমি ক্রয় ও রেজিস্ট্রেশন, নির্মাণ অনুমোদন, মাটি পরীক্ষা, স্থাপত্য নকশা ও প্রাক-নির্মাণ কাজ সম্পন্ন হয়েছে। ২২৫টি পাইল এবং মাসজিদের প্রথম ছাদ ঢালাই সম্পন্ন হয়েছে, আলহামদুলিল্লাহ। প্রকল্পটি জিরো পয়েন্ট থেকে প্রায় ১৫ কিমি, বাবুবাজার ব্রিজ থেকে প্রায় ৮ কিমি দূরে।",
+    "en": "Land purchase and registration, construction approval, soil testing, architectural design and pre-construction work are complete. All 225 piles and the masjid's first roof slab have been completed, alhamdulillah. The site is about 15 km from Zero Point and about 8 km from Babubazar Bridge.",
+    "ar": "اكتمل شراء الأرض وتسجيلها، والحصول على ترخيص البناء، وفحص التربة، والتصميم المعماري، وأعمال ما قبل البناء. واكتمل تنفيذ 225 خازوقًا وصب السقف الأول للمسجد، والحمد لله. يبعد الموقع نحو 15 كم عن النقطة الصفرية ونحو 8 كم عن جسر بابوبازار."
+   },
+   "objectives": [
+    {
+     "bn": "মাসজিদ আন-নববীর আদলে মাসজিদকেন্দ্রিক জ্ঞানভিত্তিক কমিউনিটি",
+     "en": "A knowledge-based, masjid-centred community on the model of Masjid an-Nabawi",
+     "ar": "مجتمع معرفي متمحور حول المسجد على هدي المسجد النبوي"
+    },
+    {
+     "bn": "কুল্লিয়াতুল কুরআনের স্থায়ী ক্যাম্পাস",
+     "en": "A permanent campus for Kulliyatul Quran",
+     "ar": "حرم دائم لكلية القرآن"
+    },
+    {
+     "bn": "আবাসিক স্কলার: কমিউনিটির জন্য সার্বক্ষণিক দ্বীনি অভিভাবক",
+     "en": "Resident scholars as the community's ongoing guides",
+     "ar": "علماء مقيمون مرشدون دائمون للمجتمع"
+    },
+    {
+     "bn": "নারী ও শিশুদের জন্য উন্নত সুবিধা",
+     "en": "Excellent facilities for women and children",
+     "ar": "مرافق متميزة للنساء والأطفال"
+    }
+   ],
+   "design": [
+    "img/design-front.jpg",
+    "img/design-night-1.jpg",
+    "img/design-aerial.jpg",
+    "img/design-portal.jpg",
+    "img/design-entrance.jpg",
+    "img/design-courtyard.jpg",
+    "img/design-plaza.jpg",
+    "img/design-colonnade.jpg",
+    "img/design-landscape.jpg",
+    "img/design-night-2.jpg",
+    "img/design-street.jpg",
+    "img/design-aerial-2.jpg",
+    "img/design-masjid-front.jpg",
+    "img/design-night-3.jpg",
+    "img/design-corner.jpg"
+   ],
+   "gallery": [
+    "img/site-signboard.jpg",
+    "img/construction-piling.jpg",
+    "img/construction-formwork.jpg",
+    "img/construction-structure.jpg",
+    "img/first-prayer.jpg",
+    "img/scholars-visit.jpg",
+    "img/scholars-visit-group.jpg"
+   ],
+   "tracker": true,
+   "story": "ibjmc",
+   "fund": "mosque"
+  },
+  {
+   "id": "model-village",
+   "category": "social",
+   "status": "proposed",
+   "name": {
+    "bn": "মডেল ভিলেজ প্রকল্প",
+    "en": "Model Village Project",
+    "ar": "مشروع القرية النموذجية"
+   },
+   "location": {
+    "bn": "পাইলট গ্রাম নির্বাচন প্রক্রিয়াধীন",
+    "en": "Pilot village to be selected",
+    "ar": "اختيار القرية التجريبية قيد الدراسة"
+   },
+   "summary": {
+    "bn": "“দ্বীন, মর্যাদা ও টেকসই জীবিকায় গ্রাম গড়ি”: ত্রাণ থেকে আত্মনির্ভর ইসলামী কমিউনিটির পথে।",
+    "en": "“Building villages with deen, dignity and sustainability”: from relief to a self-reliant Islamic community.",
+    "ar": "«قرى بالدين والكرامة والاستدامة»: من الإغاثة إلى مجتمع إسلامي مكتفٍ بذاته."
+   },
+   "image": "img/relief-flood-2.jpg",
+   "body": {
+    "bn": "প্রস্তাবিত পর্যায়। একটি পাইলট গ্রামে স্বল্পমেয়াদে জরুরি সহায়তা, মধ্যমেয়াদে মাছ চাষ, ক্ষুদ্র ব্যবসা ও বৃক্ষরোপণের মতো আয়বর্ধক প্রকল্প এবং দীর্ঘমেয়াদে আত্মনির্ভর দ্বীনি কমিউনিটি গড়ার পরিকল্পনা।",
+    "en": "Proposal stage. In one pilot village: immediate relief in the short term; income projects such as fish farming, small businesses and tree planting in the medium term; and a self-reliant Islamic community in the long term.",
+    "ar": "مرحلة المقترح. في قرية تجريبية: إغاثة عاجلة على المدى القصير، ومشروعات مدرّة للدخل كتربية الأسماك والمشروعات الصغيرة والتشجير على المدى المتوسط، ومجتمع إسلامي مكتفٍ بذاته على المدى الطويل."
+   },
+   "review": true,
+   "hidden": false
+  }
+ ],
+ "initiatives": [
+  {
+   "id": "dawah",
+   "icon": "dawah",
+   "image": "img/halaqa-class.jpg",
+   "name": {
+    "bn": "দাওয়াহ ও হালাকা",
+    "en": "Dawah & Halaqa",
+    "ar": "الدعوة والحلقات"
+   },
+   "summary": {
+    "bn": "সাপ্তাহিক ইলমী মজলিস, প্রশ্নোত্তর, সিরিজ প্রোগ্রাম ও পডকাস্ট।",
+    "en": "Weekly ilmi majlis, Q&A, series programmes and podcasts.",
+    "ar": "مجلس علمي أسبوعي وأسئلة وأجوبة وبرامج متسلسلة وبودكاست."
+   },
+   "body": {
+    "bn": "নিয়মিত সাপ্তাহিক ইলমী মজলিস সশরীরে এবং Zoom, YouTube ও Facebook-এ সম্প্রচারিত হয়। সাপ্তাহিক প্রশ্নোত্তর সেশনে মানুষ কুরআন-সুন্নাহর আলোকে বাস্তব জীবনের প্রশ্নের উত্তর পান।",
+    "en": "The weekly ilmi majlis is held in person and broadcast on Zoom, YouTube and Facebook. In the weekly Q&A sessions people get answers to real-life questions in the light of the Qur'an and Sunnah.",
+    "ar": "يُعقد المجلس العلمي الأسبوعي حضوريًا ويُبث عبر زوم ويوتيوب وفيسبوك، وفي جلسات الأسئلة الأسبوعية يجد الناس أجوبة لأسئلة حياتهم على ضوء الكتاب والسنة."
+   }
+  },
+  {
+   "id": "practical",
+   "icon": "education",
+   "image": "img/program-corporate.jpg",
+   "name": {
+    "bn": "বাস্তবমুখী ইসলামী প্রশিক্ষণ",
+    "en": "Practical Islamic Training",
+    "ar": "التدريب الإسلامي العملي"
+   },
+   "summary": {
+    "bn": "সালাত, হজ্জ-উমরাহ, যাকাত হিসাব, প্যারেন্টিং, মৃতের গোসল-কাফন-দাফন।",
+    "en": "Salah, Hajj and Umrah, zakat calculation, parenting, ghusl, kafan and burial.",
+    "ar": "الصلاة والحج والعمرة وحساب الزكاة والتربية وتغسيل الميت وتكفينه ودفنه."
+   },
+   "body": {
+    "bn": "ইসলামকে শুধু তাত্ত্বিক নসীহতে সীমাবদ্ধ না রেখে, নবী ﷺ-এর আদর্শ অনুসরণ করে ব্যবহারিক শিক্ষা দেওয়া হয়, যাতে মুসলিম পরিবার শান্তিপূর্ণ ও কল্যাণময় হয়।",
+    "en": "Rather than keeping Islam to theory, we teach its practice following the example of the Prophet ﷺ, so that Muslim families can live in peace and goodness.",
+    "ar": "لا نقتصر على الوعظ النظري، بل نعلّم التطبيق العملي على هدي النبي ﷺ لتنعم الأسرة المسلمة بالسكينة والخير."
+   }
+  },
+  {
+   "id": "corporate",
+   "icon": "briefcase",
+   "image": "img/program-corporate.jpg",
+   "name": {
+    "bn": "কর্পোরেট ও পেশাজীবী প্রশিক্ষণ",
+    "en": "Corporate & Professional Training",
+    "ar": "تدريب الموظفين والمهنيين"
+   },
+   "summary": {
+    "bn": "কর্মজীবনে ইসলাম চর্চা, যাকাত ব্যবস্থাপনা ও সম্পদ-পরিশুদ্ধি।",
+    "en": "Practising Islam at work, zakat management and purifying wealth.",
+    "ar": "ممارسة الإسلام في بيئة العمل وإدارة الزكاة وتطهير المال."
+   },
+   "body": {
+    "bn": "বহু মুসলিম কর্মজীবী দীর্ঘ সময় কর্পোরেট পরিবেশে কাটান, যেখানে সময়ের চাপ ও নানা প্রলোভনের মাঝে ইসলাম আঁকড়ে থাকা কঠিন। এই প্রশিক্ষণে সেক্যুলার কর্মপরিবেশেও ইসলাম চর্চার ব্যবহারিক দিকনির্দেশনা দেওয়া হয়।",
+    "en": "Many Muslims spend long hours in corporate settings where time pressure and temptation make holding on to Islam hard. This training gives practical guidance for practising Islam even in secular workplaces.",
+    "ar": "يقضي كثير من المسلمين ساعات طويلة في بيئات العمل حيث يصعب التمسك بالدين بين ضغط الوقت والمغريات، ويقدم هذا التدريب إرشادًا عمليًا لممارسة الإسلام فيها."
+   }
+  },
+  {
+   "id": "family",
+   "icon": "family",
+   "image": "img/program-women-children.jpg",
+   "name": {
+    "bn": "শক্তিশালী পরিবার, সফল প্রজন্ম",
+    "en": "Strong Families, Successful Generations",
+    "ar": "أسرٌ قوية وأجيالٌ ناجحة"
+   },
+   "summary": {
+    "bn": "পরিবারভিত্তিক কার্যক্রম, বিবাহ পরামর্শ এবং তরুণদের নেতৃত্ব ও চরিত্র গঠন।",
+    "en": "Family programmes, marriage counselling, and leadership and character training for youth.",
+    "ar": "برامج أسرية واستشارات زواج وتدريب الشباب على القيادة وبناء الشخصية."
+   },
+   "body": {
+    "bn": "মুসলিম পরিবার উম্মাহর ভিত্তি এবং তরুণরা তার ভবিষ্যৎ। পরিবারভিত্তিক ইসলামী কার্যক্রম, বিবাহ পরামর্শ এবং নৈতিক ও আত্মিক প্রশিক্ষণের মাধ্যমে পরিবারগুলোকে সুদৃঢ় করা হচ্ছে।",
+    "en": "Muslim families are the foundation of the Ummah and the young are its future. Families are strengthened through family-based programmes, marriage counselling and moral and spiritual training.",
+    "ar": "الأسرة المسلمة أساس الأمة والشباب مستقبلها، ونقوّي الأسر عبر البرامج الأسرية واستشارات الزواج والتدريب الأخلاقي والروحي."
+   }
+  },
+  {
+   "id": "women",
+   "icon": "women",
+   "image": "img/program-women.jpg",
+   "name": {
+    "bn": "নারীদের জন্য বিশেষ গুরুত্ব",
+    "en": "Special Focus on Women",
+    "ar": "عناية خاصة بالمرأة"
+   },
+   "summary": {
+    "bn": "বোনদের জন্য হালাকা, প্রশ্নোত্তর, মানসিক স্বাস্থ্য ও ব্যবহারিক প্রশিক্ষণ।",
+    "en": "Halaqas, Q&A, mental health and practical training for sisters.",
+    "ar": "حلقات وأسئلة وصحة نفسية وتدريب عملي للأخوات."
+   },
+   "body": {
+    "bn": "নারীদের হাত ধরেই পরিবার গড়ে ওঠে। তাঁদের বিশুদ্ধ ইসলামী জ্ঞান অর্জন ও ফিতনাহ থেকে সুরক্ষায় বিশেষভাবে পরিকল্পিত কর্মসূচি নেওয়া হয়েছে, যার অনেকগুলো ইতোমধ্যে সফলভাবে সম্পন্ন হয়েছে।",
+    "en": "Families are built by women. Programmes designed specially for women help them gain authentic Islamic knowledge and protection from fitnah; many have already been completed.",
+    "ar": "بالمرأة تُبنى الأسرة، وقد أُعدت برامج خاصة تعينها على تحصيل العلم الشرعي الأصيل والوقاية من الفتن، وقد أُنجز كثير منها."
+   }
+  },
+  {
+   "id": "research",
+   "icon": "research",
+   "image": "img/sunnah-conference-2024.jpg",
+   "name": {
+    "bn": "ইসলামী গবেষণা ও নীতিনির্ধারণী অংশগ্রহণ",
+    "en": "Islamic Research & Policy Engagement",
+    "ar": "البحث الإسلامي والمشاركة في السياسات"
+   },
+   "summary": {
+    "bn": "FSD, সুন্নাহ কনফারেন্স, “সুন্নাহর প্রামাণিকতা” আন্তর্জাতিক সেমিনার।",
+    "en": "FSD, the Sunnah Conference and the international seminar on “The Authenticity of the Sunnah”.",
+    "ar": "منتدى الحوار الاستراتيجي ومؤتمر السنة وندوة «حجية السنة» الدولية."
+   },
+   "body": {
+    "bn": "ইমাম বুখারী ট্রাস্টের পৃষ্ঠপোষকতায় Forum for Strategic Dialogue (FSD) গড়ে উঠেছে, যা গবেষণা, নীতি-প্রস্তাব, কৌশলগত পরিকল্পনা ও জনসচেতনতার মাধ্যমে কাজ করছে। “সুন্নাহর প্রামাণিকতা” বিষয়ে আন্তর্জাতিক সেমিনার আয়োজিত হয়েছে এবং সংবিধান সংশোধন কমিটির সাথে বৈঠক করে লিখিত পরামর্শ দেওয়া হয়েছে। National Dawah Strategy Blueprint প্রণয়ন চলছে।",
+    "en": "Under the patronage of Imam Bukhari Trust, the Forum for Strategic Dialogue (FSD) works through research, policy proposals, strategic planning and public awareness. An international seminar on “The Authenticity of the Sunnah” has been held, written recommendations were given to the constitution reform committee, and a National Dawah Strategy Blueprint is being prepared.",
+    "ar": "برعاية الوقف نشأ منتدى الحوار الاستراتيجي الذي يعمل بالبحث ومقترحات السياسات والتخطيط الاستراتيجي والتوعية، وقد عُقدت ندوة دولية عن «حجية السنة»، وقُدمت توصيات مكتوبة للجنة تعديل الدستور، ويجري إعداد مخطط الاستراتيجية الوطنية للدعوة."
+   }
+  },
+  {
+   "id": "nonmuslim",
+   "icon": "globe",
+   "image": "img/event-gettogether.jpg",
+   "name": {
+    "bn": "অমুসলিমদের প্রতি দাওয়াহ",
+    "en": "Dawah to Non-Muslims",
+    "ar": "دعوة غير المسلمين"
+   },
+   "summary": {
+    "bn": "প্রজ্ঞা ও সদাচরণের সাথে ইসলামের সৌন্দর্য ও সত্যতা তুলে ধরা।",
+    "en": "Presenting the beauty and truth of Islam with wisdom and kindness.",
+    "ar": "عرض جمال الإسلام وصدقه بالحكمة والإحسان."
+   },
+   "body": {
+    "bn": "ভুল ধারণা দূর করা, ইসলামের সঠিক দৃষ্টিভঙ্গি উপস্থাপন এবং সত্যের আহ্বানে উদ্বুদ্ধ করতে লক্ষ্যভিত্তিক দাওয়াহ কার্যক্রম।",
+    "en": "Targeted Dawah that clears misconceptions, presents Islam's view correctly and invites people to the truth.",
+    "ar": "دعوة موجهة لإزالة الشبهات وعرض الإسلام عرضًا صحيحًا والدعوة إلى الحق."
+   }
+  },
+  {
+   "id": "economy",
+   "icon": "coin",
+   "image": "img/program-corporate.jpg",
+   "name": {
+    "bn": "আর্থিক ক্ষমতায়ন ও হালাল অর্থনীতি",
+    "en": "Economic Empowerment & Halal Economy",
+    "ar": "التمكين الاقتصادي والاقتصاد الحلال"
+   },
+   "summary": {
+    "bn": "হালাল ব্যবসা প্রশিক্ষণ, পুনর্বাসন ও ব্যবসায় যাকাত ব্যবস্থাপনা।",
+    "en": "Halal business training, rehabilitation and zakat management for businesses.",
+    "ar": "تدريب على التجارة الحلال وإعادة التأهيل وإدارة زكاة الشركات."
+   },
+   "body": {
+    "bn": "হালাল ব্যবসা গড়ে তুলতে প্রশিক্ষণ ও পরামর্শ, পুনর্বাসনের ব্যবস্থা, এবং কর্মশালার মাধ্যমে ব্যবসায়িক প্রতিষ্ঠানগুলোকে যাকাত ব্যবস্থাপনা ও সম্পদ-পরিশুদ্ধিতে দিকনির্দেশনা দেওয়া হয়।",
+    "en": "Training and advice for building halal businesses, rehabilitation support, and workshops guiding businesses on zakat management and purifying wealth.",
+    "ar": "تدريب واستشارات لبناء تجارة حلال، ودعم لإعادة التأهيل، وورش لإرشاد الشركات في إدارة الزكاة وتطهير المال."
+   }
+  },
+  {
+   "id": "digital",
+   "icon": "play",
+   "image": "img/chairman-speech.jpg",
+   "name": {
+    "bn": "ডিজিটাল প্রকাশনা ও দাওয়াহ",
+    "en": "Digital Publication & Dawah",
+    "ar": "النشر والدعوة الرقمية"
+   },
+   "summary": {
+    "bn": "ভিডিও, গবেষণা, প্রবন্ধ, বই এবং উন্নত প্রযুক্তির স্টুডিও।",
+    "en": "Video, research, articles, books and a high-tech studio.",
+    "ar": "فيديو وبحوث ومقالات وكتب واستوديو حديث."
+   },
+   "body": {
+    "bn": "সোশ্যাল মিডিয়া ও ডিজিটাল মাধ্যম ব্যবহার করে সঠিক ইসলামী শিক্ষা ছড়ানো এখন সময়ের দাবি। অসংখ্য ইসলামী কনটেন্ট প্রচারিত হয়েছে এবং একটি উন্নত প্রযুক্তির স্টুডিও তৈরির কাজ চলছে।",
+    "en": "Spreading authentic Islamic teaching through social and digital media is a need of our time. A great deal of content has been published and a high-tech studio is being built.",
+    "ar": "نشر العلم الصحيح عبر وسائل التواصل والإعلام الرقمي ضرورة العصر، وقد نُشر محتوى كثير ويجري إنشاء استوديو بتقنيات متقدمة."
+   }
+  },
+  {
+   "id": "welfare",
+   "icon": "social",
+   "image": "img/relief-flood-1.jpg",
+   "name": {
+    "bn": "সামাজিক কল্যাণমূলক কর্মসূচি",
+    "en": "Social Welfare Programmes",
+    "ar": "برامج الرعاية الاجتماعية"
+   },
+   "summary": {
+    "bn": "খাদ্য ও শীতবস্ত্র, ইফতার, বন্যা ত্রাণ, চিকিৎসা সেবা, বৃক্ষরোপণ।",
+    "en": "Food and winter clothes, iftar, flood relief, medical support, tree planting.",
+    "ar": "الغذاء وكسوة الشتاء والإفطار وإغاثة الفيضانات والدعم الطبي والتشجير."
+   },
+   "body": {
+    "bn": "সুন্নাহভিত্তিক সমাজকল্যাণমূলক কার্যক্রম: খাদ্য ও শীতবস্ত্র বিতরণ, অসচ্ছলদের জন্য ইফতার, বন্যার্তদের সহায়তা, অসহায়দের চিকিৎসা সেবা, বৃক্ষরোপণ, আলেমদের স্বাস্থ্যসেবা ও দরিদ্রদের জন্য সাদাকাহ। লক্ষ্য আল্লাহর সন্তুষ্টি অর্জন এবং ইসলামের সৌন্দর্য মানুষের সামনে তুলে ধরা।",
+    "en": "Sunnah-based welfare: food and winter-clothes distribution, iftar for those in need, flood relief, medical care for the helpless, tree planting, healthcare for scholars and sadaqah for the poor, seeking Allah's pleasure and showing people the beauty of Islam.",
+    "ar": "عمل اجتماعي على السنة: توزيع الغذاء وكسوة الشتاء، وإفطار المحتاجين، وإغاثة المنكوبين بالفيضانات، وعلاج الضعفاء، والتشجير، والرعاية الصحية للعلماء، والصدقة على الفقراء، ابتغاء مرضاة الله وإظهارًا لجمال الإسلام."
+   }
+  },
+  {
+   "id": "community",
+   "icon": "masjid",
+   "image": "img/event-gettogether.jpg",
+   "name": {
+    "bn": "দ্বীনি কমিউনিটি গঠন",
+    "en": "Building a Dīnī Community",
+    "ar": "بناء المجتمع الإيماني"
+   },
+   "summary": {
+    "bn": "ফ্যামিলি গেট-টুগেদার, ইফতার প্রোগ্রাম ও মাসজিদকেন্দ্রিক কমিউনিটি ভিশন।",
+    "en": "Family get-togethers, iftar programmes and the masjid-centred community vision.",
+    "ar": "لقاءات عائلية وبرامج إفطار ورؤية مجتمع حول المسجد."
+   },
+   "body": {
+    "bn": "সমর্থক পরিবারগুলোর বার্ষিক গেট-টুগেদার, ইফতার মাহফিল এবং মাসজিদকে ঘিরে দ্বীনদার পরিবারের কমিউনিটি গড়ার উদ্যোগ। আবাসন সংক্রান্ত তথ্য দানের তহবিল থেকে সম্পূর্ণ আলাদা।",
+    "en": "Annual get-togethers for supporting families, iftar gatherings and the effort to build a community of practising families around the masjid. Housing information is kept fully separate from donation funds.",
+    "ar": "لقاءات سنوية للأسر الداعمة، وموائد إفطار، ومسعى لبناء مجتمع من الأسر الملتزمة حول المسجد، مع فصل معلومات السكن تمامًا عن أموال التبرعات."
+   }
+  }
+ ],
+ "impact": {
+  "asOf": "2026-02-15",
+  "source": {
+   "bn": "IBT ক্যাটালগ ২০২৬",
+   "en": "IBT Catalog 2026",
+   "ar": "كتيّب الوقف 2026"
+  },
+  "groups": [
+   {
+    "title": {
+     "bn": "শিক্ষা, দাওয়াহ ও প্রশিক্ষণ",
+     "en": "Education, Dawah & Training",
+     "ar": "التعليم والدعوة والتدريب"
+    },
+    "items": [
+     {
+      "value": "16800",
+      "suffix": "",
+      "label": {
+       "bn": "ঘণ্টা কুরআন-সুন্নাহভিত্তিক লেকচার ও দারস",
+       "en": "hours of Qur'an-and-Sunnah lectures and dars",
+       "ar": "ساعة من الدروس والمحاضرات"
+      }
+     },
+     {
+      "value": "340",
+      "suffix": "+",
+      "label": {
+       "bn": "জন ইসলামিক শর্ট-কোর্স সম্পন্ন",
+       "en": "completed Islamic short courses",
+       "ar": "أتموا دورات قصيرة"
+      }
+     },
+     {
+      "value": "18",
+      "suffix": "",
+      "label": {
+       "bn": "জন সানাবিয়্যাহ সম্পন্ন",
+       "en": "completed Sanabiyyah",
+       "ar": "أتموا المرحلة الثانوية"
+      }
+     },
+     {
+      "value": "6",
+      "suffix": "",
+      "label": {
+       "bn": "জন আন্তর্জাতিক বিশ্ববিদ্যালয়ে ভর্তি",
+       "en": "admitted to international universities",
+       "ar": "قُبلوا في جامعات دولية"
+      }
+     },
+     {
+      "value": "50",
+      "suffix": "",
+      "label": {
+       "bn": "জন কর্পোরেট/পেশাজীবী প্রশিক্ষিত",
+       "en": "corporate professionals trained",
+       "ar": "مهنيًا تلقوا التدريب"
+      }
+     }
+    ]
+   },
+   {
+    "title": {
+     "bn": "সামাজিক কল্যাণ",
+     "en": "Social Welfare",
+     "ar": "الرعاية الاجتماعية"
+    },
+    "items": [
+     {
+      "value": "400",
+      "suffix": "+",
+      "label": {
+       "bn": "পরিবার শীতবস্ত্র সহায়তা পেয়েছে",
+       "en": "families received winter clothes",
+       "ar": "أسرة تلقت كسوة الشتاء"
+      }
+     },
+     {
+      "value": "300",
+      "suffix": "+",
+      "label": {
+       "bn": "দরিদ্র পরিবার ইফতার/খাদ্য সহায়তা পেয়েছে",
+       "en": "poor families received iftar or food",
+       "ar": "أسرة فقيرة تلقت إفطارًا أو غذاءً"
+      }
+     },
+     {
+      "value": "100",
+      "suffix": "+",
+      "label": {
+       "bn": "বন্যার্ত পরিবার সহায়তা পেয়েছে",
+       "en": "flood-affected families supported",
+       "ar": "أسرة منكوبة بالفيضان"
+      }
+     },
+     {
+      "value": "90",
+      "suffix": "+",
+      "label": {
+       "bn": "পরিবার কুরবানির গোশত পেয়েছে",
+       "en": "families received Qurbani meat",
+       "ar": "أسرة تلقت لحوم الأضاحي"
+      }
+     },
+     {
+      "value": "20",
+      "suffix": "+",
+      "label": {
+       "bn": "চিকিৎসা সেবা প্রদান",
+       "en": "medical support cases",
+       "ar": "حالة دعم طبي"
+      }
+     }
+    ]
+   },
+   {
+    "title": {
+     "bn": "ডিজিটাল দাওয়াহ ও কমিউনিটি",
+     "en": "Digital Dawah & Community",
+     "ar": "الدعوة الرقمية والمجتمع"
+    },
+    "items": [
+     {
+      "value": "30",
+      "suffix": "M+",
+      "label": {
+       "bn": "ফেসবুকে কনটেন্ট ভিউ",
+       "en": "content views on Facebook",
+       "ar": "مشاهدة على فيسبوك"
+      }
+     },
+     {
+      "value": "232",
+      "suffix": "K+",
+      "label": {
+       "bn": "ইউটিউবে কনটেন্ট ভিউ",
+       "en": "content views on YouTube",
+       "ar": "مشاهدة على يوتيوب"
+      }
+     },
+     {
+      "value": "660",
+      "suffix": "+",
+      "label": {
+       "bn": "ইসলামিক ভিডিও/ডিজিটাল কনটেন্ট",
+       "en": "Islamic videos and digital content",
+       "ar": "فيديو ومحتوى رقمي"
+      }
+     },
+     {
+      "value": "16",
+      "suffix": "",
+      "label": {
+       "bn": "সক্রিয় WhatsApp দ্বীনি কমিউনিটি গ্রুপ",
+       "en": "active WhatsApp community groups",
+       "ar": "مجموعة واتساب نشطة"
+      }
+     },
+     {
+      "value": "42",
+      "suffix": "",
+      "label": {
+       "bn": "পরিবার কমিউনিটি ভিশনের আওতায় যুক্ত",
+       "en": "families joined the community vision",
+       "ar": "أسرة انضمت إلى رؤية المجتمع"
+      }
+     }
+    ]
+   }
+  ],
+  "qualitative": [
+   {
+    "bn": "১টি আন্তর্জাতিক সেমিনার: “সুন্নাহর প্রামাণিকতা”",
+    "en": "1 international seminar: “The Authenticity of the Sunnah”",
+    "ar": "ندوة دولية: «حجية السنة»"
+   },
+   {
+    "bn": "সংবিধান কমিটিতে লিখিত ইনপুট",
+    "en": "Written input to the constitution committee",
+    "ar": "مساهمة مكتوبة للجنة الدستور"
+   },
+   {
+    "bn": "৩টি বৃহৎ দ্বীনি ফ্যামিলি গেট-টুগেদার ও ৪টি ইফতার প্রোগ্রাম",
+    "en": "3 large family get-togethers and 4 iftar programmes",
+    "ar": "3 لقاءات عائلية كبرى و4 برامج إفطار"
+   },
+   {
+    "bn": "National Dawah Strategy Blueprint প্রণয়ন (চলমান)",
+    "en": "National Dawah Strategy Blueprint (in progress)",
+    "ar": "مخطط الاستراتيجية الوطنية للدعوة (قيد الإعداد)"
+   }
+  ]
+ },
+ "funds": [
+  {
+   "id": "mosque",
+   "head": "Mosque",
+   "featured": true,
+   "image": "img/render-mosque.jpg",
+   "name": {
+    "bn": "মাসজিদ নির্মাণ তহবিল",
+    "en": "Masjid Construction Fund",
+    "ar": "صندوق بناء المسجد"
+   },
+   "text": {
+    "bn": "ইমাম বুখারী জামে মাসজিদ কমপ্লেক্সের নির্মাণ। এটি এক সাদাকায়ে জারিয়াহ।",
+    "en": "Building the Imam Bukhari Jame Masjid Complex: a continuing charity (sadaqah jariyah).",
+    "ar": "بناء مجمع جامع الإمام البخاري، صدقة جارية."
+   },
+   "suggested": [
+    1000,
+    5000,
+    35000,
+    100000
+   ]
+  },
+  {
+   "id": "academy",
+   "head": "Academy Fund",
+   "featured": true,
+   "image": "img/render-academic.jpg",
+   "name": {
+    "bn": "একাডেমিক ভবন তহবিল",
+    "en": "Academic Building Fund",
+    "ar": "صندوق المبنى الأكاديمي"
+   },
+   "text": {
+    "bn": "কুল্লিয়াতুল কুরআনের স্থায়ী একাডেমিক ভবন: শ্রেণিকক্ষ, লাইব্রেরি ও দাওয়াহ সেন্টার।",
+    "en": "Kulliyatul Quran's permanent academic building: classrooms, library and Dawah centre.",
+    "ar": "المبنى الأكاديمي الدائم لكلية القرآن: الفصول والمكتبة ومركز الدعوة."
+   },
+   "suggested": [
+    1000,
+    5000,
+    25000,
+    150000
+   ]
+  },
+  {
+   "id": "sadaqah",
+   "head": "Sadaqa",
+   "featured": true,
+   "image": "img/event-gettogether.jpg",
+   "name": {
+    "bn": "সাধারণ সাদাকাহ তহবিল",
+    "en": "General Sadaqah Fund",
+    "ar": "صندوق الصدقة العامة"
+   },
+   "text": {
+    "bn": "যেখানে প্রয়োজন সবচেয়ে বেশি, সেখানে ট্রাস্টের সব দ্বীনি কার্যক্রমে ব্যয় হবে।",
+    "en": "Used across all of the Trust's work, wherever the need is greatest.",
+    "ar": "يُصرف في جميع أعمال الوقف حيث الحاجة أشد."
+   },
+   "suggested": [
+    500,
+    1000,
+    5000,
+    10000
+   ]
+  },
+  {
+   "id": "zakat",
+   "head": "Zakat",
+   "featured": true,
+   "image": "img/relief-flood-1.jpg",
+   "name": {
+    "bn": "যাকাত তহবিল",
+    "en": "Zakat Fund",
+    "ar": "صندوق الزكاة"
+   },
+   "text": {
+    "bn": "সম্পূর্ণ আলাদা হিসাবে রাখা হয় এবং শরীয়াহসম্মত খাতে ব্যয় হয় (আলেমগণের অনুমোদিত নীতিমালা অনুযায়ী)।",
+    "en": "Kept fully separate and spent only on eligible categories, under a policy approved by scholars.",
+    "ar": "يُحفظ في حساب مستقل ويُصرف في مصارفه الشرعية وفق سياسة يقرها العلماء."
+   },
+   "suggested": [
+    1000,
+    5000,
+    10000,
+    50000
+   ]
+  },
+  {
+   "id": "monthly",
+   "head": "Monthly",
+   "featured": false,
+   "image": "img/scholars-visit-group.jpg",
+   "name": {
+    "bn": "মাসিক দাতা সদস্য",
+    "en": "Monthly Donor Membership",
+    "ar": "عضوية المتبرع الشهري"
+   },
+   "text": {
+    "bn": "প্রতি মাসে নির্দিষ্ট অবদান রেখে ট্রাস্টের নিয়মিত কাজের ভিত মজবুত করুন।",
+    "en": "Strengthen the Trust's regular work with a fixed monthly contribution.",
+    "ar": "ادعم أعمال الوقف المنتظمة بمساهمة شهرية ثابتة."
+   },
+   "suggested": [
+    500,
+    1000,
+    2000,
+    5000
+   ]
+  },
+  {
+   "id": "kulliya",
+   "head": "Kulliya",
+   "featured": false,
+   "image": "img/halaqa-class.jpg",
+   "name": {
+    "bn": "কুল্লিয়াতুল কুরআন তহবিল",
+    "en": "Kulliyatul Quran Fund",
+    "ar": "صندوق كلية القرآن"
+   },
+   "text": {
+    "bn": "শিক্ষার্থী বৃত্তি, শিক্ষক ও শিক্ষা কার্যক্রম (মডেল মাদরাসা ও আফটার স্কুলসহ)।",
+    "en": "Student scholarships, teachers and academic programmes (including the Model Madrasa and After School).",
+    "ar": "منح الطلاب والمعلمين والبرامج التعليمية (ومنها المدرسة النموذجية وبرنامج ما بعد المدرسة)."
+   },
+   "suggested": [
+    1000,
+    3000,
+    6000,
+    12000
+   ]
+  },
+  {
+   "id": "social",
+   "head": "Social Development",
+   "featured": false,
+   "image": "img/relief-flood-2.jpg",
+   "name": {
+    "bn": "সমাজকল্যাণ তহবিল",
+    "en": "Social Welfare Fund",
+    "ar": "صندوق الرعاية الاجتماعية"
+   },
+   "text": {
+    "bn": "ত্রাণ, ইফতার, শীতবস্ত্র, চিকিৎসা ও পুনর্বাসন।",
+    "en": "Relief, iftar, winter clothes, medical care and rehabilitation.",
+    "ar": "الإغاثة والإفطار وكسوة الشتاء والعلاج وإعادة التأهيل."
+   },
+   "suggested": [
+    500,
+    1000,
+    3000,
+    10000
+   ]
+  },
+  {
+   "id": "dawah",
+   "head": "Da'wa & Events",
+   "featured": false,
+   "image": "img/chairman-speech.jpg",
+   "name": {
+    "bn": "দাওয়াহ ও ইভেন্ট তহবিল",
+    "en": "Dawah & Events Fund",
+    "ar": "صندوق الدعوة والفعاليات"
+   },
+   "text": {
+    "bn": "হালাকা, কোর্স, কর্মশালা ও ডিজিটাল দাওয়াহ।",
+    "en": "Halaqas, courses, workshops and digital Dawah.",
+    "ar": "الحلقات والدورات والورش والدعوة الرقمية."
+   },
+   "suggested": [
+    500,
+    1000,
+    5000,
+    10000
+   ]
+  },
+  {
+   "id": "research",
+   "head": "Research",
+   "featured": false,
+   "image": "img/sunnah-conference-2024.jpg",
+   "name": {
+    "bn": "গবেষণা তহবিল",
+    "en": "Research Fund",
+    "ar": "صندوق البحث العلمي"
+   },
+   "text": {
+    "bn": "গবেষণা, সেমিনার ও প্রকাশনা।",
+    "en": "Research, seminars and publications.",
+    "ar": "البحث والندوات والنشر."
+   },
+   "suggested": [
+    1000,
+    5000,
+    10000,
+    25000
+   ]
+  }
+ ],
+ "supportItems": {
+  "asOf": "2026-02-15",
+  "items": [
+   {
+    "name": {
+     "bn": "২২৫টি পাইল নির্মাণ",
+     "en": "Construction of 225 piles",
+     "ar": "تنفيذ 225 خازوقًا"
+    },
+    "amount": 0,
+    "status": "done"
+   },
+   {
+    "name": {
+     "bn": "মাসজিদের প্রথম ছাদ ঢালাই",
+     "en": "The masjid's first roof slab",
+     "ar": "صب السقف الأول للمسجد"
+    },
+    "amount": 0,
+    "status": "done"
+   },
+   {
+    "name": {
+     "bn": "একজন মুসল্লির জায়গা",
+     "en": "Space for one musalli",
+     "ar": "مكان مصلٍّ واحد"
+    },
+    "amount": 35000,
+    "status": "open"
+   },
+   {
+    "name": {
+     "bn": "প্রতি বর্গফুট নির্মাণ",
+     "en": "One square foot of construction",
+     "ar": "قدم مربع من البناء"
+    },
+    "amount": 3200,
+    "status": "open"
+   },
+   {
+    "name": {
+     "bn": "একটি ওযুখানা",
+     "en": "One wudu (ablution) point",
+     "ar": "موضع وضوء واحد"
+    },
+    "amount": 15000,
+    "status": "open"
+   },
+   {
+    "name": {
+     "bn": "১০০ ব্যাগ সিমেন্ট",
+     "en": "100 bags of cement",
+     "ar": "100 كيس إسمنت"
+    },
+    "amount": 51000,
+    "status": "open"
+   },
+   {
+    "name": {
+     "bn": "২,০০০ ইট",
+     "en": "2,000 bricks",
+     "ar": "2000 طوبة"
+    },
+    "amount": 26000,
+    "status": "open"
+   },
+   {
+    "name": {
+     "bn": "এক টন রড",
+     "en": "One ton of steel rod",
+     "ar": "طن من حديد التسليح"
+    },
+    "amount": 93000,
+    "status": "open"
+   },
+   {
+    "name": {
+     "bn": "একটি শ্রেণিকক্ষ",
+     "en": "One classroom",
+     "ar": "فصل دراسي"
+    },
+    "amount": 1500000,
+    "status": "open"
+   },
+   {
+    "name": {
+     "bn": "দাওয়াহ সেন্টার",
+     "en": "The Dawah centre",
+     "ar": "مركز الدعوة"
+    },
+    "amount": 5000000,
+    "status": "open"
+   },
+   {
+    "name": {
+     "bn": "মাসজিদের প্রতি ছাদ ঢালাই",
+     "en": "Each roof slab of the masjid",
+     "ar": "صب كل سقف للمسجد"
+    },
+    "amount": 5580000,
+    "status": "open"
+   }
+  ]
+ },
+ "payment": {
+  "channels": [
+   {
+    "type": "bkash",
+    "name": {
+     "bn": "বিকাশ (মার্চেন্ট)",
+     "en": "bKash (Merchant)",
+     "ar": "بيكاش (تاجر)"
+    },
+    "number": "01852-808554",
+    "note": {
+     "bn": "“Payment” অপশন ব্যবহার করুন। শীঘ্রই অনলাইন পেমেন্ট ও মাসিক অটো-পে।",
+     "en": "Use the “Payment” option. Online checkout and monthly auto-pay coming soon.",
+     "ar": "استخدم خيار «الدفع». الدفع الإلكتروني والخصم الشهري التلقائي قريبًا."
+    },
+    "show": true
+   },
+   {
+    "type": "nagad",
+    "name": {
+     "bn": "নগদ (পার্সোনাল)",
+     "en": "Nagad (Personal)",
+     "ar": "نقد (شخصي)"
+    },
+    "number": "01306-746437",
+    "note": {
+     "bn": "“Send Money” করুন",
+     "en": "Use “Send Money”",
+     "ar": "استخدم «إرسال المال»"
+    },
+    "show": true
+   },
+   {
+    "type": "rocket",
+    "name": {
+     "bn": "রকেট (পার্সোনাল)",
+     "en": "Rocket (Personal)",
+     "ar": "روكيت (شخصي)"
+    },
+    "number": "01306-746437",
+    "note": {
+     "bn": "“Send Money” করুন",
+     "en": "Use “Send Money”",
+     "ar": "استخدم «إرسال المال»"
+    },
+    "show": true
+   },
+   {
+    "type": "bank",
+    "name": {
+     "bn": "ব্যাংক একাউন্ট",
+     "en": "Bank account",
+     "ar": "حساب بنكي"
+    },
+    "number": "2050 2230 2018 75016",
+    "note": {
+     "bn": "IMAM BUKHARY JAME MOSJID COMPLEX, BANGLADESH · Islami Bank Bangladesh Ltd., VIP Road Br., Dhaka · SWIFT: IBBLBDDH223 · Routing: 125276856",
+     "en": "IMAM BUKHARY JAME MOSJID COMPLEX, BANGLADESH · Islami Bank Bangladesh Ltd., VIP Road Branch, Dhaka · SWIFT: IBBLBDDH223 · Routing: 125276856",
+     "ar": "IMAM BUKHARY JAME MOSJID COMPLEX, BANGLADESH · بنك إسلامي بنغلاديش، فرع طريق VIP، دكا · SWIFT: IBBLBDDH223"
+    },
+    "show": true
+   }
+  ],
+  "gatewayLive": false,
+  "autopayLive": false,
+  "review": true
+ },
+ "donateCopy": {
+  "motivations": [
+   {
+    "title": {
+     "bn": "জান্নাতে আপনার জন্য একটি ঘর",
+     "en": "A house for you in Paradise",
+     "ar": "بيتٌ لك في الجنة"
+    },
+    "text": {
+     "bn": "রাসূলুল্লাহ ﷺ বলেছেন: “যে ব্যক্তি আল্লাহর জন্য একটি মাসজিদ নির্মাণ করে, আল্লাহ তার জন্য জান্নাতে একটি ঘর নির্মাণ করেন।”",
+     "en": "The Prophet ﷺ said: “Whoever builds a masjid for Allah, Allah will build for him a house in Paradise.”",
+     "ar": ""
+    },
+    "ref": {
+     "bn": "সহীহ বুখারী ৪৫০; সহীহ মুসলিম ৫৩৩",
+     "en": "Sahih al-Bukhari 450; Sahih Muslim 533",
+     "ar": "صحيح البخاري 450؛ صحيح مسلم 533"
+    }
+   },
+   {
+    "title": {
+     "bn": "পিতামাতার জন্য স্থায়ী সওয়াব",
+     "en": "Lasting reward for your parents",
+     "ar": "أجرٌ دائمٌ لوالديك"
+    },
+    "text": {
+     "bn": "রাসূলুল্লাহ ﷺ বলেছেন: “মানুষ মারা গেলে তার সব আমল বন্ধ হয়ে যায়, তিনটি ছাড়া: সাদাকায়ে জারিয়াহ, উপকারী ইলম, অথবা নেক সন্তান যে তার জন্য দু‘আ করে।”",
+     "en": "The Prophet ﷺ said: “When a person dies, his deeds come to an end except for three: a continuing charity, beneficial knowledge, or a righteous child who prays for him.”",
+     "ar": ""
+    },
+    "ref": {
+     "bn": "সহীহ মুসলিম ১৬৩১",
+     "en": "Sahih Muslim 1631",
+     "ar": "صحيح مسلم 1631"
+    }
+   },
+   {
+    "title": {
+     "bn": "সওয়াবের বীজ বপন করুন",
+     "en": "Sow a seed of reward",
+     "ar": "ازرع بذرة الأجر"
+    },
+    "text": {
+     "bn": "আল্লাহর পথে যারা ব্যয় করে, তাদের উদাহরণ একটি শস্যদানার মতো, যা থেকে সাতটি শীষ জন্মায়, প্রতিটি শীষে একশত দানা।",
+     "en": "Those who spend in the way of Allah are like a grain that grows seven ears, with a hundred grains in each ear.",
+     "ar": ""
+    },
+    "ref": {
+     "bn": "সূরা আল-বাকারা ২:২৬১",
+     "en": "Surah al-Baqarah 2:261",
+     "ar": "سورة البقرة 2:261"
+    }
+   }
+  ],
+  "transparency": {
+   "bn": "প্রতিটি দান নির্দিষ্ট তহবিলের হিসাবে আলাদাভাবে লিপিবদ্ধ হয়। যাকাত, সাদাকাহ ও প্রকল্পভিত্তিক দান কখনো মেশানো হয় না। প্রতিটি দানের জন্য রসিদ দেওয়া হয় এবং বার্ষিক প্রতিবেদনে হিসাব প্রকাশ করা হয়।",
+   "en": "Every donation is recorded separately against its fund. Zakat, sadaqah and project donations are never mixed. Every donation receives a receipt, and accounts are published in the annual report.",
+   "ar": "تُسجَّل كل تبرعة في حساب صندوقها مستقلةً، ولا تُخلط الزكاة بالصدقة ولا بتبرعات المشاريع، ولكل تبرعٍ إيصال، وتُنشر الحسابات في التقرير السنوي."
+  },
+  "review": true
+ },
+ "registrations": [
+  {
+   "id": "kq-admission-2027",
+   "type": "admission",
+   "entity": "kulliyatul-quran",
+   "image": "img/halaqa-class.jpg",
+   "title": {
+    "bn": "কুল্লিয়াতুল কুরআন ভর্তি: সেশন ২০২৭ (সানাবিয়্যাহ ও কুল্লিয়া)",
+    "en": "Kulliyatul Quran admission: Session 2027 (Sanabiyyah & Kulliya)",
+    "ar": "القبول في كلية القرآن: العام الدراسي 2027 (السنابية والكلية)"
+   },
+   "text": {
+    "bn": "দাখিল/এসএসসি বা আলিম/এইচএসসি উত্তীর্ণ শিক্ষার্থীদের জন্য। ভর্তি পরীক্ষা, পূর্ণকালীন অধ্যয়ন ও আবাসিক সুবিধা।",
+    "en": "For students who have passed Dakhil/SSC or Alim/HSC. Admission test, full-time study and residential facilities.",
+    "ar": "لخريجي الداخل/الثانوية المتوسطة أو العالم/الثانوية العامة. اختبار قبول ودراسة بدوام كامل وسكن طلابي."
+   },
+   "opens": "2026-11-01",
+   "closes": "2027-01-15",
+   "mode": "link",
+   "formUrl": "",
+   "fee": {
+    "bn": "ফরম ফি প্রযোজ্য",
+    "en": "Form fee applies",
+    "ar": "توجد رسوم استمارة"
+   },
+   "venue": {
+    "bn": "উত্তরা ক্যাম্পাস, ঢাকা",
+    "en": "Uttara campus, Dhaka",
+    "ar": "حرم أُتّرا، دكا"
+   },
+   "slug": "kq-2027"
+  },
+  {
+   "id": "model-madrasa-2027",
+   "type": "admission",
+   "entity": "model-madrasa",
+   "image": "img/model-madrasa.jpg",
+   "title": {
+    "bn": "কুল্লিয়াতুল কুরআন মডেল মাদরাসা: ভর্তি ২০২৭",
+    "en": "Kulliyatul Quran Model Madrasa: admission 2027",
+    "ar": "مدرسة كلية القرآن النموذجية: القبول 2027"
+   },
+   "text": {
+    "bn": "শিশু শ্রেণি থেকে বিভিন্ন শ্রেণিতে ভর্তি। আসন সীমিত।",
+    "en": "Admission from the early years upward. Limited seats.",
+    "ar": "القبول من مرحلة الطفولة المبكرة فما فوق. المقاعد محدودة."
+   },
+   "opens": "2026-11-01",
+   "closes": "2026-12-31",
+   "mode": "link",
+   "formUrl": "",
+   "fee": {
+    "bn": "বিস্তারিত অফিসে",
+    "en": "Details at the office",
+    "ar": "التفاصيل في المكتب"
+   },
+   "venue": {
+    "bn": "উত্তরা, ঢাকা",
+    "en": "Uttara, Dhaka",
+    "ar": "أُتّرا، دكا"
+   },
+   "slug": "madrasa-2027"
+  },
+  {
+   "id": "after-school-2027",
+   "type": "course",
+   "entity": "after-school",
+   "image": "img/program-women-children.jpg",
+   "title": {
+    "bn": "কুল্লিয়াতুল কুরআন আফটার স্কুল: নতুন ব্যাচ",
+    "en": "Kulliyatul Quran After School: new batch",
+    "ar": "برنامج ما بعد المدرسة: دفعة جديدة"
+   },
+   "text": {
+    "bn": "স্কুলগামী শিশুদের জন্য কুরআন, আরবি ও আদব।",
+    "en": "Qur'an, Arabic and adab for school-going children.",
+    "ar": "القرآن والعربية والآداب لتلاميذ المدارس."
+   },
+   "opens": "2026-11-01",
+   "closes": "2027-01-31",
+   "mode": "link",
+   "formUrl": "",
+   "fee": {
+    "bn": "মাসিক ফি",
+    "en": "Monthly fee",
+    "ar": "رسوم شهرية"
+   },
+   "venue": {
+    "bn": "উত্তরা, ঢাকা",
+    "en": "Uttara, Dhaka",
+    "ar": "أُتّرا، دكا"
+   },
+   "slug": "after-school"
+  },
+  {
+   "id": "arabic-intensive",
+   "type": "course",
+   "entity": "courses",
+   "image": "img/program-corporate.jpg",
+   "title": {
+    "bn": "২ মাসের নিবিড় আরবি ভাষা কোর্স",
+    "en": "2-month intensive Arabic course",
+    "ar": "دورة عربية مكثفة لشهرين"
+   },
+   "text": {
+    "bn": "দাখিল পরীক্ষার্থী ও আরবি ভাষায় ভিত্তি গড়তে আগ্রহীদের জন্য।",
+    "en": "For Dakhil candidates and anyone building a foundation in Arabic.",
+    "ar": "لطلاب الداخل ولكل من يريد تأسيسًا في العربية."
+   },
+   "opens": "2026-11-10",
+   "closes": "2026-12-20",
+   "mode": "link",
+   "formUrl": "",
+   "fee": {
+    "bn": "কোর্স ফি প্রযোজ্য",
+    "en": "Course fee applies",
+    "ar": "توجد رسوم"
+   },
+   "venue": {
+    "bn": "উত্তরা ক্যাম্পাস",
+    "en": "Uttara campus",
+    "ar": "حرم أُتّرا"
+   },
+   "slug": "arabic-2m"
+  },
+  {
+   "id": "hajj-course-2027",
+   "type": "course",
+   "entity": "courses",
+   "image": "img/scholars-visit-group.jpg",
+   "title": {
+    "bn": "হজ্জ ও উমরাহ প্রশিক্ষণ কোর্স ২০২৭",
+    "en": "Hajj & Umrah training course 2027",
+    "ar": "دورة الحج والعمرة 2027"
+   },
+   "text": {
+    "bn": "হজ্জযাত্রীদের জন্য সুন্নাহভিত্তিক ব্যবহারিক প্রশিক্ষণ।",
+    "en": "Sunnah-based practical training for pilgrims.",
+    "ar": "تدريب عملي على السنة للحجاج."
+   },
+   "opens": "2027-02-01",
+   "closes": "2027-04-15",
+   "mode": "link",
+   "formUrl": "",
+   "fee": {
+    "bn": "ফ্রি",
+    "en": "Free",
+    "ar": "مجاني"
+   },
+   "venue": {
+    "bn": "অনলাইন ও সশরীরে",
+    "en": "Online and in person",
+    "ar": "عن بُعد وحضوريًا"
+   },
+   "slug": "hajj-2027"
+  },
+  {
+   "id": "teachers-training",
+   "type": "training",
+   "entity": "teachers-training",
+   "image": "img/sunnah-conference-2024.jpg",
+   "title": {
+    "bn": "টিচার্স ট্রেনিং: Effective Teaching (পরবর্তী ব্যাচ)",
+    "en": "Teachers Training: Effective Teaching (next batch)",
+    "ar": "تدريب المعلمين: التدريس الفعّال (الدفعة القادمة)"
+   },
+   "text": {
+    "bn": "মাদরাসা ও স্কুল শিক্ষকদের জন্য দিনব্যাপী কর্মশালা: আধুনিক ও ইসলামী দৃষ্টিভঙ্গির সমন্বয়।",
+    "en": "A day-long workshop for madrasa and school teachers, integrating modern and Islamic perspectives.",
+    "ar": "ورشة ليوم كامل لمعلمي المدارس، تجمع بين المنظورين الحديث والإسلامي."
+   },
+   "opens": "2026-12-01",
+   "closes": "2027-01-20",
+   "mode": "link",
+   "formUrl": "",
+   "fee": {
+    "bn": "নিবন্ধন ফি প্রযোজ্য",
+    "en": "Registration fee applies",
+    "ar": "توجد رسوم تسجيل"
+   },
+   "venue": {
+    "bn": "ঢাকা",
+    "en": "Dhaka",
+    "ar": "دكا"
+   },
+   "slug": "teachers"
+  },
+  {
+   "id": "volunteer",
+   "type": "volunteer",
+   "entity": "",
+   "image": "img/event-gettogether.jpg",
+   "title": {
+    "bn": "স্বেচ্ছাসেবক হিসেবে যুক্ত হোন",
+    "en": "Join as a volunteer",
+    "ar": "انضم متطوعًا"
+   },
+   "text": {
+    "bn": "ইভেন্ট, ত্রাণ, ডিজিটাল দাওয়াহ ও প্রশাসনিক কাজে আপনার সময় ও দক্ষতা দিন।",
+    "en": "Give your time and skills to events, relief, digital Dawah and administration.",
+    "ar": "قدّم وقتك ومهاراتك في الفعاليات والإغاثة والدعوة الرقمية والإدارة."
+   },
+   "opens": "2026-01-01",
+   "closes": "2027-12-31",
+   "mode": "native",
+   "formUrl": "",
+   "fee": {
+    "bn": "—",
+    "en": "—",
+    "ar": "—"
+   },
+   "venue": {
+    "bn": "ঢাকা ও সারাদেশ",
+    "en": "Dhaka and nationwide",
+    "ar": "دكا وجميع أنحاء البلاد"
+   },
+   "slug": "volunteer"
+  }
+ ],
+ "events": [
+  {
+   "date": "2026-11-21",
+   "time": "17:00",
+   "title": {
+    "bn": "সাপ্তাহিক ইলমী মজলিস",
+    "en": "Weekly ilmi majlis",
+    "ar": "المجلس العلمي الأسبوعي"
+   },
+   "venue": {
+    "bn": "উত্তরা ও অনলাইন",
+    "en": "Uttara and online",
+    "ar": "أُتّرا وعن بُعد"
+   },
+   "type": "halaqa",
+   "registration": ""
+  },
+  {
+   "date": "2026-11-28",
+   "time": "17:00",
+   "title": {
+    "bn": "সাপ্তাহিক ইলমী মজলিস",
+    "en": "Weekly ilmi majlis",
+    "ar": "المجلس العلمي الأسبوعي"
+   },
+   "venue": {
+    "bn": "উত্তরা ও অনলাইন",
+    "en": "Uttara and online",
+    "ar": "أُتّرا وعن بُعد"
+   },
+   "type": "halaqa",
+   "registration": ""
+  },
+  {
+   "date": "2026-12-05",
+   "time": "20:30",
+   "title": {
+    "bn": "প্রশ্নোত্তর সেশন (অনলাইন)",
+    "en": "Q&A session (online)",
+    "ar": "جلسة أسئلة وأجوبة (عن بُعد)"
+   },
+   "venue": {
+    "bn": "Zoom ও Facebook Live",
+    "en": "Zoom and Facebook Live",
+    "ar": "زوم وبث فيسبوك"
+   },
+   "type": "qa",
+   "registration": ""
+  },
+  {
+   "date": "2027-01-20",
+   "time": "09:00",
+   "title": {
+    "bn": "টিচার্স ট্রেনিং: Effective Teaching",
+    "en": "Teachers Training: Effective Teaching",
+    "ar": "تدريب المعلمين: التدريس الفعّال"
+   },
+   "venue": {
+    "bn": "ঢাকা",
+    "en": "Dhaka",
+    "ar": "دكا"
+   },
+   "type": "training",
+   "registration": "teachers-training"
+  }
+ ],
+ "news": [
+  {
+   "id": "first-prayer",
+   "date": "2026-02-10",
+   "image": "img/first-prayer.jpg",
+   "title": {
+    "bn": "নির্মাণাধীন মাসজিদে প্রথম সালাত",
+    "en": "First prayer in the masjid under construction",
+    "ar": "أول صلاة في المسجد قيد الإنشاء"
+   },
+   "summary": {
+    "bn": "প্রথম ছাদ ঢালাইয়ের পর নির্মাণাধীন ইমাম বুখারী জামে মাসজিদে প্রথমবারের মতো জামাআতে সালাত আদায় করা হয়েছে, আলহামদুলিল্লাহ।",
+    "en": "After the first roof slab was cast, the first congregational prayer was held in the Imam Bukhari Jame Masjid, alhamdulillah.",
+    "ar": "بعد صب السقف الأول أُقيمت أول صلاة جماعة في جامع الإمام البخاري، والحمد لله."
+   },
+   "review": true
+  },
+  {
+   "id": "scholars-visit",
+   "date": "2026-01-20",
+   "image": "img/scholars-visit.jpg",
+   "title": {
+    "bn": "নির্মাণাধীন মাসজিদ পরিদর্শনে সম্মানিত স্কলারগণ",
+    "en": "Respected scholars visit the masjid site",
+    "ar": "علماء أفاضل يزورون موقع المسجد"
+   },
+   "summary": {
+    "bn": "দেশের সম্মানিত আলেমগণ ইমাম বুখারী জামে মাসজিদ ও একাডেমিক ক্যাম্পাসের নির্মাণকাজ পরিদর্শন করেন এবং দু‘আ করেন।",
+    "en": "Respected scholars visited the construction of the Jame Masjid and academic campus and made du'a.",
+    "ar": "زار علماء أفاضل موقع بناء الجامع والحرم الأكاديمي ودعوا بالخير."
+   },
+   "review": true
+  },
+  {
+   "id": "teachers-workshop",
+   "date": "2026-11-14",
+   "image": "img/sunnah-conference-2024.jpg",
+   "title": {
+    "bn": "দিনব্যাপী শিক্ষক প্রশিক্ষণ কর্মশালা সম্পন্ন",
+    "en": "Day-long teacher training workshop held",
+    "ar": "انعقاد ورشة تدريب المعلمين"
+   },
+   "summary": {
+    "bn": "“Effective Teaching: Integrating Modern and Islamic Perspectives” শীর্ষক কর্মশালায় প্রফেসর ড. মোহাম্মদ মানজুরে ইলাহী সেশন পরিচালনা করেন।",
+    "en": "Prof. Dr. Mohammad Manzur-e-Elahi led sessions at the workshop “Effective Teaching: Integrating Modern and Islamic Perspectives”.",
+    "ar": "قاد الأستاذ الدكتور محمد منظور إلهي جلسات ورشة «التدريس الفعال: الدمج بين المنظورين الحديث والإسلامي»."
+   },
+   "review": true
+  },
+  {
+   "id": "flood-relief",
+   "date": "2024-09-01",
+   "image": "img/relief-flood-1.jpg",
+   "title": {
+    "bn": "বন্যার্তদের পাশে ইমাম বুখারী ট্রাস্ট",
+    "en": "Imam Bukhari Trust stands by flood victims",
+    "ar": "الوقف إلى جانب منكوبي الفيضانات"
+   },
+   "summary": {
+    "bn": "বন্যাকবলিত এলাকায় নৌকায় করে খাদ্য ও জরুরি সামগ্রী পৌঁছে দেওয়া হয়।",
+    "en": "Food and emergency supplies were delivered by boat to flood-hit areas.",
+    "ar": "إيصال الغذاء والمستلزمات العاجلة بالقوارب إلى المناطق المنكوبة."
+   },
+   "review": true
+  },
+  {
+   "id": "sunnah-conf",
+   "date": "2024-06-01",
+   "image": "img/sunnah-conference-2024.jpg",
+   "title": {
+    "bn": "সুন্নাহ কনফারেন্স বাংলাদেশ ২০২৪",
+    "en": "Sunnah Conference Bangladesh 2024",
+    "ar": "مؤتمر السنة في بنغلاديش 2024"
+   },
+   "summary": {
+    "bn": "“সুন্নাহর প্রামাণিকতা ও সংরক্ষণ” বিষয়ে দেশি-বিদেশি গবেষক ও শিক্ষাবিদদের অংশগ্রহণে আন্তর্জাতিক কনফারেন্স।",
+    "en": "An international conference on the authenticity and preservation of the Sunnah with researchers and academics from home and abroad.",
+    "ar": "مؤتمر دولي عن حجية السنة وحفظها بمشاركة باحثين وأكاديميين من الداخل والخارج."
+   },
+   "review": true
+  }
+ ],
+ "videos": [
+  {
+   "youtubeId": "C-g--nnudKU",
+   "title": {
+    "bn": "এক নজরে ইমাম বুখারী ট্রাস্ট",
+    "en": "Imam Bukhari Trust at a glance",
+    "ar": "وقف الإمام البخاري في لمحة"
+   },
+   "topic": "ibt",
+   "channel": "IBT",
+   "entity": "ibjmc"
+  },
+  {
+   "youtubeId": "LFhTlxXXcQ8",
+   "title": {
+    "bn": "যে স্বপ্ন বুকে নিয়ে যাত্রা শুরু করেছিল কুল্লিয়াতুল কুরআন",
+    "en": "The dream with which Kulliyatul Quran began",
+    "ar": "الحلم الذي انطلقت به كلية القرآن"
+   },
+   "topic": "kulliya",
+   "channel": "Kulliyatul Quran",
+   "entity": "kulliyatul-quran",
+   "speaker": "Prof. Dr. Mohammad Manzur-e-Elahi"
+  },
+  {
+   "youtubeId": "u42dSG1ojQI",
+   "title": {
+    "bn": "কুল্লিয়াতুল কুরআনের লক্ষ্য, উদ্দেশ্য ও ছাত্রদের প্রতি নাসীহা",
+    "en": "Kulliyatul Quran's aims and advice to students",
+    "ar": "أهداف كلية القرآن ونصيحة للطلاب"
+   },
+   "topic": "kulliya",
+   "channel": "Kulliyatul Quran",
+   "entity": "kulliyatul-quran"
+  },
+  {
+   "youtubeId": "41kY5uKj5tc",
+   "title": {
+    "bn": "গুরুত্বপূর্ণ দিকনির্দেশনা ও নাসীহা: প্রফেসর ড. মোহাম্মদ অলী উল্যাহ",
+    "en": "Guidance and advice: Prof. Dr. Mohammad Oliullah",
+    "ar": "توجيهات ونصائح: أ.د. محمد ولي الله"
+   },
+   "topic": "kulliya",
+   "channel": "Kulliyatul Quran",
+   "entity": "kulliyatul-quran"
+  },
+  {
+   "youtubeId": "J0WR-qV5Omg",
+   "title": {
+    "bn": "সুন্নাহ কনফারেন্স বাংলাদেশ ২০২৪",
+    "en": "Sunnah Conference Bangladesh 2024",
+    "ar": "مؤتمر السنة في بنغلاديش 2024"
+   },
+   "topic": "research",
+   "channel": "Kulliyatul Quran",
+   "entity": "research"
+  },
+  {
+   "youtubeId": "nU09L0hWldI",
+   "title": {
+    "bn": "আল্ট্রা পদ্ধতিতে ২ মাসে আরবি ভাষা কোর্স",
+    "en": "Arabic in 2 months with the Ultra method",
+    "ar": "العربية في شهرين بطريقة الألترا"
+   },
+   "topic": "courses",
+   "channel": "Kulliyatul Quran",
+   "entity": "courses",
+   "speaker": "Prof. Dr. Mohammad Manzur-e-Elahi"
+  },
+  {
+   "youtubeId": "tRIv-YZPLLo",
+   "title": {
+    "bn": "অ্যারাবিক ডিপ্লোমা কোর্স: আরব ও ইসলামী বিশ্ববিদ্যালয়ে ভর্তির জন্য",
+    "en": "Arabic Diploma course for admission to Arab and Islamic universities",
+    "ar": "دبلوم اللغة العربية للالتحاق بالجامعات العربية والإسلامية"
+   },
+   "topic": "courses",
+   "channel": "Kulliyatul Quran",
+   "entity": "courses"
+  },
+  {
+   "youtubeId": "0HUA17Zek58",
+   "title": {
+    "bn": "সানাবিয়্যাহ ও আলিম স্তরে ভর্তি শুরু",
+    "en": "Sanabiyyah and Alim admissions open",
+    "ar": "بدء القبول في السنابية والعالم"
+   },
+   "topic": "kulliya",
+   "channel": "Kulliyatul Quran",
+   "entity": "kulliyatul-quran",
+   "speaker": "Dr. Muhammad Saifullah"
+  },
+  {
+   "youtubeId": "8nMIfc2xoyE",
+   "title": {
+    "bn": "আন্তর্জাতিক ইসলামী বিশ্ববিদ্যালয় ভর্তি প্রস্তুতি কর্মশালা",
+    "en": "Workshop on admission to international Islamic universities",
+    "ar": "ورشة الاستعداد للالتحاق بالجامعات الإسلامية الدولية"
+   },
+   "topic": "courses",
+   "channel": "Kulliyatul Quran",
+   "entity": "courses"
+  },
+  {
+   "youtubeId": "nmqatOZpe6Q",
+   "title": {
+    "bn": "দাখিল ফলপ্রার্থীদের জন্য বিশেষ আরবি ভাষা কোর্স",
+    "en": "Special Arabic course for Dakhil candidates",
+    "ar": "دورة عربية خاصة لطلاب الداخل"
+   },
+   "topic": "courses",
+   "channel": "Kulliyatul Quran",
+   "entity": "courses"
+  },
+  {
+   "youtubeId": "aIpzvGC-9r0",
+   "title": {
+    "bn": "সানাবিয়্যাহ (আলিম) ক্লাস: শাইখ সালেম আল-আজহারী",
+    "en": "Sanabiyyah (Alim) class: Shaikh Salem al-Azhari",
+    "ar": "درس السنابية: الشيخ سالم الأزهري"
+   },
+   "topic": "kulliya",
+   "channel": "Kulliyatul Quran",
+   "entity": "kulliyatul-quran"
+  },
+  {
+   "youtubeId": "15hOaC8ipp8",
+   "title": {
+    "bn": "সানাবিয়্যাহ কোর্সে ভর্তি চলছে",
+    "en": "Sanabiyyah admissions are open",
+    "ar": "القبول في السنابية مفتوح"
+   },
+   "topic": "kulliya",
+   "channel": "Kulliyatul Quran",
+   "entity": "kulliyatul-quran",
+   "speaker": "Prof. Dr. Mohammad Manzur-e-Elahi"
+  }
+ ],
+ "stories": [
+  {
+   "id": "ibjmc",
+   "entity": "ibjmc",
+   "title": {
+    "bn": "স্বপ্ন থেকে মাসজিদকেন্দ্রিক কমিউনিটি",
+    "en": "From a dream to a masjid-centred community",
+    "ar": "من الحلم إلى مجتمعٍ حول المسجد"
+   },
+   "cover": "img/design-night-1.jpg",
+   "chapters": [
+    {
+     "title": {
+      "bn": "স্বপ্ন",
+      "en": "The dream",
+      "ar": "الحلم"
+     },
+     "image": "img/render-campus.jpg",
+     "video": "C-g--nnudKU",
+     "start": 0,
+     "text": {
+      "bn": "মাসজিদ আন-নববীর আদলে, সুন্নাহর আলোকে একটি উদ্ভাসিত দ্বীনি কমিউনিটি, যার কেন্দ্রে থাকবে মাসজিদ, ইলম ও খিদমাহ।",
+      "en": "A radiant community in the light of the Sunnah and Masjid an-Nabawi, with the masjid, knowledge and service at its heart.",
+      "ar": "مجتمعٌ إيمانيٌّ مشرق على هدي السنة والمسجد النبوي، في قلبه المسجد والعلم والخدمة."
+     }
+    },
+    {
+     "title": {
+      "bn": "ভূমি ও অবস্থান",
+      "en": "The land",
+      "ar": "الأرض والموقع"
+     },
+     "image": "img/site-signboard.jpg",
+     "text": {
+      "bn": "ঢাকা–মাওয়া এক্সপ্রেসওয়ে সংলগ্ন নিউ ঢাকা সিটিতে, ধলেশ্বরী নদীর তীরে জমি ক্রয় ও রেজিস্ট্রেশন সম্পন্ন।",
+      "en": "Land at New Dhaka City by the Dhaka–Mawa Expressway, on the Dhaleshwari, was purchased and registered.",
+      "ar": "شراء الأرض وتسجيلها في مدينة دكا الجديدة بجوار طريق دكا–ماوا على ضفاف نهر دهاليشوري."
+     }
+    },
+    {
+     "title": {
+      "bn": "নকশা",
+      "en": "The design",
+      "ar": "التصميم"
+     },
+     "image": "img/design-front.jpg",
+     "text": {
+      "bn": "মাসজিদ ভবন, একাডেমিক ভবন, লাইব্রেরি, দাওয়াহ সেন্টার ও নারীদের জন্য পৃথক সুবিধার স্থাপত্য পরিকল্পনা। (স্থাপত্য ভিজ্যুয়ালাইজেশন)",
+      "en": "Architectural plans for the masjid, academic building, library, Dawah centre and separate facilities for women. (Architectural visualisation)",
+      "ar": "مخططات معمارية للمسجد والمبنى الأكاديمي والمكتبة ومركز الدعوة ومرافق خاصة بالنساء. (تصور معماري)"
+     }
+    },
+    {
+     "title": {
+      "bn": "ভিত্তি: ২২৫টি পাইল",
+      "en": "Foundations: 225 piles",
+      "ar": "الأساسات: 225 خازوقًا"
+     },
+     "image": "img/construction-piling.jpg",
+     "text": {
+      "bn": "২০২৪ সালে পাইলিং শুরু হয়ে ২২৫টি পাইলের কাজ সম্পন্ন হয়েছে, আলহামদুলিল্লাহ।",
+      "en": "Piling began in 2024 and all 225 piles have been completed, alhamdulillah.",
+      "ar": "بدأت أعمال الخوازيق عام 2024 واكتمل 225 خازوقًا، والحمد لله."
+     }
+    },
+    {
+     "title": {
+      "bn": "কাঠামো উঠছে",
+      "en": "The structure rises",
+      "ar": "ارتفاع الهيكل"
+     },
+     "image": "img/construction-formwork.jpg",
+     "text": {
+      "bn": "মাসজিদের প্রথম ছাদ ঢালাই সম্পন্ন; একাডেমিক ভবনের ভিত্তির কাজ চলমান।",
+      "en": "The masjid's first roof slab is complete; work on the academic building's foundation continues.",
+      "ar": "اكتمل صب السقف الأول للمسجد، وتتواصل أعمال أساسات المبنى الأكاديمي."
+     }
+    },
+    {
+     "title": {
+      "bn": "প্রথম সালাত",
+      "en": "The first prayer",
+      "ar": "أول صلاة"
+     },
+     "image": "img/first-prayer.jpg",
+     "text": {
+      "bn": "নির্মাণাধীন মাসজিদে প্রথমবারের মতো জামাআতে সালাত, এক আবেগঘন মুহূর্ত।",
+      "en": "The first congregational prayer in the masjid under construction: a moving moment.",
+      "ar": "أول صلاة جماعة في المسجد قيد الإنشاء، لحظة مؤثرة."
+     }
+    },
+    {
+     "title": {
+      "bn": "স্কলারদের পরিদর্শন",
+      "en": "Scholars visit",
+      "ar": "زيارة العلماء"
+     },
+     "image": "img/scholars-visit.jpg",
+     "text": {
+      "bn": "দেশের সম্মানিত আলেমগণ নির্মাণকাজ পরিদর্শন করে দু‘আ ও পরামর্শ দেন।",
+      "en": "Respected scholars visited the site and offered du'a and advice.",
+      "ar": "زار علماء أفاضل الموقع ودعوا وقدّموا نصائحهم."
+     }
+    },
+    {
+     "title": {
+      "bn": "সামনের পথ",
+      "en": "The road ahead",
+      "ar": "الطريق إلى الأمام"
+     },
+     "image": "img/design-night-2.jpg",
+     "text": {
+      "bn": "২০২৭–২০২৮ সালের মধ্যে বাকি কাজ সম্পন্ন করার লক্ষ্য। আপনার সাদাকাহ এই যাত্রার অংশ হতে পারে।",
+      "en": "The goal is to complete the remaining work in 2027–2028. Your sadaqah can be part of this journey.",
+      "ar": "الهدف إتمام بقية الأعمال خلال 2027–2028، ويمكن لصدقتك أن تكون جزءًا من هذه المسيرة."
+     }
+    }
+   ]
+  },
+  {
+   "id": "kulliyatul-quran",
+   "entity": "kulliyatul-quran",
+   "title": {
+    "bn": "আগামীর স্কলার গড়ার পথে",
+    "en": "Cultivating the scholars of tomorrow",
+    "ar": "نحو إعداد علماء الغد"
+   },
+   "cover": "img/halaqa-class.jpg",
+   "chapters": [
+    {
+     "title": {
+      "bn": "প্রতিষ্ঠা",
+      "en": "Founding",
+      "ar": "التأسيس"
+     },
+     "image": "img/chairman-speech.jpg",
+     "video": "LFhTlxXXcQ8",
+     "start": 0,
+     "text": {
+      "bn": "২০২১ খ্রি. / ১৪৪২ হি. যে স্বপ্ন নিয়ে কুল্লিয়াতুল কুরআনের যাত্রা শুরু।",
+      "en": "The dream with which Kulliyatul Quran began in 2021 / 1442 AH.",
+      "ar": "الحلم الذي انطلقت به كلية القرآن عام 2021م / 1442هـ."
+     }
+    },
+    {
+     "title": {
+      "bn": "আরবি-কেন্দ্রিক শিক্ষা",
+      "en": "Arabic-first learning",
+      "ar": "التعليم المرتكز على العربية"
+     },
+     "image": "img/halaqa-class.jpg",
+     "video": "tRIv-YZPLLo",
+     "start": 0,
+     "text": {
+      "bn": "বিদেশে উচ্চশিক্ষার প্রধান বাধা আরবি ভাষা। তাই কারিকুলামের কেন্দ্রে আরবি।",
+      "en": "Arabic is the main barrier to higher study abroad, so it sits at the centre of the curriculum.",
+      "ar": "اللغة العربية أكبر عائق أمام الدراسة في الخارج، لذا جُعلت محور المنهج."
+     }
+    },
+    {
+     "title": {
+      "bn": "গবেষণা ও কনফারেন্স",
+      "en": "Research & conference",
+      "ar": "البحث والمؤتمر"
+     },
+     "image": "img/sunnah-conference-2024.jpg",
+     "video": "J0WR-qV5Omg",
+     "start": 0,
+     "text": {
+      "bn": "সায়েন্টিফিক রিসার্চ সেন্টার ও আন্তর্জাতিক সুন্নাহ কনফারেন্স ২০২৪।",
+      "en": "The Scientific Research Centre and the international Sunnah Conference 2024.",
+      "ar": "مركز البحث العلمي ومؤتمر السنة الدولي 2024."
+     }
+    },
+    {
+     "title": {
+      "bn": "বিশ্ব পর্যায়ের পথ",
+      "en": "Pathways abroad",
+      "ar": "طريق إلى الجامعات العالمية"
+     },
+     "image": "img/scholars-visit-group.jpg",
+     "video": "8nMIfc2xoyE",
+     "start": 0,
+     "text": {
+      "bn": "ইতোমধ্যে ৬ জন শিক্ষার্থী আন্তর্জাতিক বিশ্ববিদ্যালয়ে উচ্চশিক্ষায় ভর্তি হয়েছেন।",
+      "en": "Six students have already been admitted to international universities.",
+      "ar": "قُبل ستة طلاب حتى الآن في جامعات دولية."
+     }
+    }
+   ]
+  }
+ ],
+ "reports": [
+  {
+   "title": {
+    "bn": "ইমাম বুখারী ট্রাস্ট ক্যাটালগ ২০২৬",
+    "en": "Imam Bukhari Trust Catalog 2026",
+    "ar": "كتيّب وقف الإمام البخاري 2026"
+   },
+   "type": "publication",
+   "year": "2026",
+   "url": "",
+   "note": {
+    "bn": "শীঘ্রই ডাউনলোড",
+    "en": "Download coming soon",
+    "ar": "التحميل قريبًا"
+   }
+  },
+  {
+   "title": {
+    "bn": "বার্ষিক প্রতিবেদন ২০২৫",
+    "en": "Annual Report 2025",
+    "ar": "التقرير السنوي 2025"
+   },
+   "type": "annual",
+   "year": "2025",
+   "url": "",
+   "note": {
+    "bn": "প্রস্তুত হচ্ছে",
+    "en": "In preparation",
+    "ar": "قيد الإعداد"
+   }
+  },
+  {
+   "title": {
+    "bn": "নির্মাণ অগ্রগতি প্রতিবেদন",
+    "en": "Construction progress report",
+    "ar": "تقرير تقدم البناء"
+   },
+   "type": "progress",
+   "year": "2026",
+   "url": "",
+   "note": {
+    "bn": "অনুমোদনের অপেক্ষায়",
+    "en": "Awaiting approval",
+    "ar": "بانتظار الاعتماد"
+   }
+  },
+  {
+   "title": {
+    "bn": "অডিট রিপোর্ট",
+    "en": "Audit report",
+    "ar": "تقرير التدقيق"
+   },
+   "type": "audit",
+   "year": "2025",
+   "url": "",
+   "note": {
+    "bn": "অডিট প্রক্রিয়াধীন",
+    "en": "Audit in progress",
+    "ar": "التدقيق جارٍ"
+   }
+  }
+ ],
+ "faqs": [
+  {
+   "q": {
+    "bn": "আমার দান কোন খাতে ব্যয় হবে তা কীভাবে নিশ্চিত হবো?",
+    "en": "How can I be sure my donation goes to the fund I choose?",
+    "ar": "كيف أتأكد أن تبرعي يذهب إلى الصندوق الذي اخترته؟"
+   },
+   "a": {
+    "bn": "প্রতিটি দান নির্বাচিত তহবিলের হিসাবে আলাদাভাবে লিপিবদ্ধ হয় এবং আপনি রসিদ পান। যাকাত সম্পূর্ণ পৃথক হিসাবে রাখা হয়।",
+    "en": "Every donation is recorded against the fund you choose and you receive a receipt. Zakat is kept in a completely separate account.",
+    "ar": "تُسجَّل كل تبرعة في حساب الصندوق المختار وتتلقى إيصالًا، وتُحفظ الزكاة في حساب مستقل تمامًا."
+   }
+  },
+  {
+   "q": {
+    "bn": "আমি কি প্রতি মাসে নিয়মিত দান করতে পারি?",
+    "en": "Can I give every month?",
+    "ar": "هل يمكنني التبرع شهريًا؟"
+   },
+   "a": {
+    "bn": "হ্যাঁ, মাসিক দাতা সদস্য হতে পারেন। শীঘ্রই বিকাশ অটো-পে চালু হবে, তখন প্রতি মাসে স্বয়ংক্রিয়ভাবে দান হবে।",
+    "en": "Yes, you can become a monthly donor member. bKash auto-pay is coming soon, so your gift will go through automatically each month.",
+    "ar": "نعم، يمكنك أن تصبح عضوًا متبرعًا شهريًا، وسيتوفر قريبًا الخصم التلقائي عبر بيكاش."
+   }
+  },
+  {
+   "q": {
+    "bn": "কুল্লিয়াতুল কুরআনে ভর্তির যোগ্যতা কী?",
+    "en": "What are the entry requirements for Kulliyatul Quran?",
+    "ar": "ما شروط القبول في كلية القرآن؟"
+   },
+   "a": {
+    "bn": "সানাবিয়্যাহর জন্য দাখিল, মিশকাত বা এসএসসি পাস; কুল্লিয়ার জন্য সানাবিয়্যাহ, আলিম বা এইচএসসি পাস। ভর্তি পরীক্ষা ও পূর্ণকালীন উপস্থিতি আবশ্যক।",
+    "en": "For Sanabiyyah: Dakhil, Mishkat or SSC. For Kulliya: Sanabiyyah, Alim or HSC. An entrance exam and full-time attendance are required.",
+    "ar": "للسنابية: الداخل أو المشكاة أو الثانوية المتوسطة. وللكلية: السنابية أو العالم أو الثانوية العامة، مع اختبار قبول ودوام كامل."
+   }
+  },
+  {
+   "q": {
+    "bn": "মাসজিদের প্রকল্প এলাকায় কীভাবে যাবো?",
+    "en": "How do I get to the masjid site?",
+    "ar": "كيف أصل إلى موقع المسجد؟"
+   },
+   "a": {
+    "bn": "ঢাকা–মাওয়া এক্সপ্রেসওয়ে ধরে নিউ ঢাকা সিটি, পলাশপুর। জিরো পয়েন্ট থেকে প্রায় ১৫ কিমি। পরিদর্শনের আগে অফিসে যোগাযোগ করুন।",
+    "en": "Take the Dhaka–Mawa Expressway to New Dhaka City, Palashpur, about 15 km from Zero Point. Please contact the office before visiting.",
+    "ar": "عبر طريق دكا–ماوا السريع إلى مدينة دكا الجديدة في بلاشبور، على بعد نحو 15 كم من النقطة الصفرية. يرجى التواصل مع المكتب قبل الزيارة."
+   }
+  }
+ ],
+ "ui": {
+  "nav_home": {
+   "bn": "হোম",
+   "en": "Home",
+   "ar": "الرئيسية"
+  },
+  "nav_about": {
+   "bn": "আমাদের সম্পর্কে",
+   "en": "About",
+   "ar": "من نحن"
+  },
+  "nav_institutions": {
+   "bn": "প্রতিষ্ঠানসমূহ",
+   "en": "Institutions",
+   "ar": "المؤسسات"
+  },
+  "nav_projects": {
+   "bn": "প্রকল্প",
+   "en": "Projects",
+   "ar": "المشاريع"
+  },
+  "nav_initiatives": {
+   "bn": "উদ্যোগ",
+   "en": "Initiatives",
+   "ar": "المبادرات"
+  },
+  "nav_media": {
+   "bn": "মিডিয়া",
+   "en": "Media",
+   "ar": "الإعلام"
+  },
+  "nav_news": {
+   "bn": "সংবাদ ও ইভেন্ট",
+   "en": "News & Events",
+   "ar": "الأخبار والفعاليات"
+  },
+  "nav_register": {
+   "bn": "রেজিস্ট্রেশন",
+   "en": "Registration",
+   "ar": "التسجيل"
+  },
+  "nav_transparency": {
+   "bn": "স্বচ্ছতা",
+   "en": "Transparency",
+   "ar": "الشفافية"
+  },
+  "nav_contact": {
+   "bn": "যোগাযোগ",
+   "en": "Contact",
+   "ar": "اتصل بنا"
+  },
+  "donate": {
+   "bn": "দান করুন",
+   "en": "Donate",
+   "ar": "تبرّع"
+  },
+  "learn_more": {
+   "bn": "আরও জানুন",
+   "en": "Learn more",
+   "ar": "اعرف المزيد"
+  },
+  "view_all": {
+   "bn": "সব দেখুন",
+   "en": "View all",
+   "ar": "عرض الكل"
+  },
+  "enter_story": {
+   "bn": "গল্পে প্রবেশ করুন",
+   "en": "Enter the story",
+   "ar": "ادخل القصة"
+  },
+  "register_now": {
+   "bn": "রেজিস্ট্রেশন করুন",
+   "en": "Register now",
+   "ar": "سجّل الآن"
+  },
+  "reg_open": {
+   "bn": "রেজিস্ট্রেশন চলছে",
+   "en": "Registration open",
+   "ar": "التسجيل مفتوح"
+  },
+  "reg_closed": {
+   "bn": "রেজিস্ট্রেশন বন্ধ",
+   "en": "Registration closed",
+   "ar": "التسجيل مغلق"
+  },
+  "reg_soon": {
+   "bn": "শীঘ্রই শুরু",
+   "en": "Opening soon",
+   "ar": "يفتح قريبًا"
+  },
+  "closes": {
+   "bn": "শেষ তারিখ",
+   "en": "Closes",
+   "ar": "آخر موعد"
+  },
+  "opens": {
+   "bn": "শুরু",
+   "en": "Opens",
+   "ar": "يبدأ"
+  },
+  "as_of": {
+   "bn": "যে তারিখ অনুযায়ী",
+   "en": "As of",
+   "ar": "حتى تاريخ"
+  },
+  "source": {
+   "bn": "সূত্র",
+   "en": "Source",
+   "ar": "المصدر"
+  },
+  "status_running": {
+   "bn": "চলমান",
+   "en": "Running",
+   "ar": "قائمة"
+  },
+  "status_construction": {
+   "bn": "নির্মাণাধীন",
+   "en": "Under construction",
+   "ar": "قيد الإنشاء"
+  },
+  "status_establishing": {
+   "bn": "প্রতিষ্ঠাধীন",
+   "en": "Being established",
+   "ar": "قيد التأسيس"
+  },
+  "status_planned": {
+   "bn": "পরিকল্পিত",
+   "en": "Planned",
+   "ar": "مخطط"
+  },
+  "status_ongoing": {
+   "bn": "চলমান",
+   "en": "Ongoing",
+   "ar": "جارٍ"
+  },
+  "status_proposed": {
+   "bn": "প্রস্তাবিত",
+   "en": "Proposed",
+   "ar": "مقترح"
+  },
+  "status_done": {
+   "bn": "সম্পন্ন",
+   "en": "Complete",
+   "ar": "مكتمل"
+  },
+  "status_progress": {
+   "bn": "কাজ চলছে",
+   "en": "In progress",
+   "ar": "قيد التنفيذ"
+  },
+  "impact_title": {
+   "bn": "এক নজরে আমাদের কাজ",
+   "en": "Our work at a glance",
+   "ar": "أعمالنا في لمحة"
+  },
+  "latest_videos": {
+   "bn": "সর্বশেষ ভিডিও",
+   "en": "Latest videos",
+   "ar": "أحدث الفيديوهات"
+  },
+  "watch_youtube": {
+   "bn": "YouTube-এ দেখুন",
+   "en": "Watch on YouTube",
+   "ar": "شاهد على يوتيوب"
+  },
+  "tracker_title": {
+   "bn": "নির্মাণ অগ্রগতি",
+   "en": "Construction progress",
+   "ar": "تقدم البناء"
+  },
+  "tracker_hint": {
+   "bn": "৩D মডেলে কোনো তলায় ক্লিক করুন",
+   "en": "Click a floor on the 3D model",
+   "ar": "انقر على طابق في النموذج ثلاثي الأبعاد"
+  },
+  "mosque": {
+   "bn": "মাসজিদ ভবন",
+   "en": "Masjid building",
+   "ar": "مبنى المسجد"
+  },
+  "academic": {
+   "bn": "একাডেমিক ভবন",
+   "en": "Academic building",
+   "ar": "المبنى الأكاديمي"
+  },
+  "choose_fund": {
+   "bn": "তহবিল নির্বাচন করুন",
+   "en": "Choose a fund",
+   "ar": "اختر الصندوق"
+  },
+  "amount": {
+   "bn": "পরিমাণ (৳)",
+   "en": "Amount (৳)",
+   "ar": "المبلغ (৳)"
+  },
+  "one_time": {
+   "bn": "এককালীন",
+   "en": "One-time",
+   "ar": "مرة واحدة"
+  },
+  "monthly": {
+   "bn": "মাসিক",
+   "en": "Monthly",
+   "ar": "شهري"
+  },
+  "pay_channels": {
+   "bn": "দানের মাধ্যম",
+   "en": "Ways to give",
+   "ar": "طرق التبرع"
+  },
+  "report_donation": {
+   "bn": "দান করেছেন? জানিয়ে দিন",
+   "en": "Already donated? Let us know",
+   "ar": "تبرعت؟ أخبرنا"
+  },
+  "report_donation_text": {
+   "bn": "বিকাশ, নগদ, রকেট বা ব্যাংকে দান করে থাকলে তথ্য দিন; আমরা রসিদ পাঠিয়ে দেবো।",
+   "en": "If you gave by bKash, Nagad, Rocket or bank, send us the details and we will send your receipt.",
+   "ar": "إن تبرعت عبر بيكاش أو نقد أو روكيت أو البنك فأرسل التفاصيل وسنرسل لك الإيصال."
+  },
+  "name": {
+   "bn": "নাম",
+   "en": "Name",
+   "ar": "الاسم"
+  },
+  "phone": {
+   "bn": "মোবাইল",
+   "en": "Mobile",
+   "ar": "الجوال"
+  },
+  "email": {
+   "bn": "ইমেইল",
+   "en": "Email",
+   "ar": "البريد الإلكتروني"
+  },
+  "message": {
+   "bn": "বার্তা",
+   "en": "Message",
+   "ar": "الرسالة"
+  },
+  "txn_id": {
+   "bn": "ট্রানজেকশন আইডি / রেফারেন্স",
+   "en": "Transaction ID / reference",
+   "ar": "رقم العملية / المرجع"
+  },
+  "channel": {
+   "bn": "মাধ্যম",
+   "en": "Channel",
+   "ar": "الوسيلة"
+  },
+  "date": {
+   "bn": "তারিখ",
+   "en": "Date",
+   "ar": "التاريخ"
+  },
+  "submit": {
+   "bn": "জমা দিন",
+   "en": "Submit",
+   "ar": "إرسال"
+  },
+  "sent_ok": {
+   "bn": "ধন্যবাদ! আপনার তথ্য জমা হয়েছে।",
+   "en": "Thank you! Your details have been received.",
+   "ar": "شكرًا! تم استلام بياناتك."
+  },
+  "send_fail": {
+   "bn": "এই মুহূর্তে জমা দেওয়া যাচ্ছে না। অনুগ্রহ করে ফোন বা ইমেইলে যোগাযোগ করুন।",
+   "en": "We could not submit right now. Please contact us by phone or email.",
+   "ar": "تعذّر الإرسال الآن. يرجى التواصل هاتفيًا أو بالبريد."
+  },
+  "copy": {
+   "bn": "কপি",
+   "en": "Copy",
+   "ar": "نسخ"
+  },
+  "copied": {
+   "bn": "কপি হয়েছে",
+   "en": "Copied",
+   "ar": "تم النسخ"
+  },
+  "gateway_soon": {
+   "bn": "অনলাইন পেমেন্ট গেটওয়ে শীঘ্রই চালু হচ্ছে। এখন নিচের যেকোনো মাধ্যমে দান করুন।",
+   "en": "The online payment gateway is launching soon. For now, please give through any channel below.",
+   "ar": "بوابة الدفع الإلكتروني قريبًا. تبرّع الآن عبر إحدى الوسائل أدناه."
+  },
+  "autopay_title": {
+   "bn": "বিকাশ অটো-পে (শীঘ্রই)",
+   "en": "bKash auto-pay (coming soon)",
+   "ar": "الخصم التلقائي عبر بيكاش (قريبًا)"
+  },
+  "autopay_text": {
+   "bn": "একবার বিকাশ অ্যাকাউন্ট যুক্ত করলেই প্রতি মাসে নির্ধারিত দিনে স্বয়ংক্রিয়ভাবে দান হবে। যেকোনো সময় বন্ধ করা যাবে।",
+   "en": "Link your bKash account once and your gift goes through automatically on your chosen day each month. Stop any time.",
+   "ar": "اربط حساب بيكاش مرة واحدة ليُخصم تبرعك تلقائيًا في يومٍ تختاره كل شهر، ويمكنك الإيقاف متى شئت."
+  },
+  "support_items": {
+   "bn": "নির্মাণকাজে সহযোগিতার খাতসমূহ",
+   "en": "Ways to support the construction",
+   "ar": "أبواب المساهمة في البناء"
+  },
+  "completed": {
+   "bn": "সম্পন্ন, আলহামদুলিল্লাহ",
+   "en": "Completed, alhamdulillah",
+   "ar": "اكتمل، والحمد لله"
+  },
+  "gallery": {
+   "bn": "গ্যালারি",
+   "en": "Gallery",
+   "ar": "معرض الصور"
+  },
+  "objectives": {
+   "bn": "লক্ষ্যসমূহ",
+   "en": "Objectives",
+   "ar": "الأهداف"
+  },
+  "features": {
+   "bn": "বৈশিষ্ট্যসমূহ",
+   "en": "Features",
+   "ar": "المميزات"
+  },
+  "programs": {
+   "bn": "প্রোগ্রামসমূহ",
+   "en": "Programmes",
+   "ar": "البرامج"
+  },
+  "location": {
+   "bn": "অবস্থান",
+   "en": "Location",
+   "ar": "الموقع"
+  },
+  "status": {
+   "bn": "অবস্থা",
+   "en": "Status",
+   "ar": "الحالة"
+  },
+  "chapter": {
+   "bn": "অধ্যায়",
+   "en": "Chapter",
+   "ar": "الفصل"
+  },
+  "close": {
+   "bn": "বন্ধ করুন",
+   "en": "Close",
+   "ar": "إغلاق"
+  },
+  "next": {
+   "bn": "পরবর্তী",
+   "en": "Next",
+   "ar": "التالي"
+  },
+  "prev": {
+   "bn": "পূর্ববর্তী",
+   "en": "Previous",
+   "ar": "السابق"
+  },
+  "upcoming_events": {
+   "bn": "আসন্ন ইভেন্ট",
+   "en": "Upcoming events",
+   "ar": "الفعاليات القادمة"
+  },
+  "latest_news": {
+   "bn": "সর্বশেষ সংবাদ",
+   "en": "Latest news",
+   "ar": "آخر الأخبار"
+  },
+  "documentaries": {
+   "bn": "ডকুমেন্টারি",
+   "en": "Documentaries",
+   "ar": "الأفلام الوثائقية"
+  },
+  "videos": {
+   "bn": "ভিডিও",
+   "en": "Videos",
+   "ar": "الفيديوهات"
+  },
+  "all": {
+   "bn": "সব",
+   "en": "All",
+   "ar": "الكل"
+  },
+  "reports": {
+   "bn": "প্রতিবেদন ও প্রকাশনা",
+   "en": "Reports & publications",
+   "ar": "التقارير والمنشورات"
+  },
+  "cells": {
+   "bn": "আমাদের সেল ও বিভাগ",
+   "en": "Our cells & departments",
+   "ar": "خلايانا وأقسامنا"
+  },
+  "history": {
+   "bn": "আমাদের পথচলা",
+   "en": "Our journey",
+   "ar": "مسيرتنا"
+  },
+  "chairman_title": {
+   "bn": "প্রতিষ্ঠাতা ও চেয়ারম্যান",
+   "en": "Founder & Chairman",
+   "ar": "المؤسس والرئيس"
+  },
+  "read_message": {
+   "bn": "পূর্ণ বার্তা পড়ুন",
+   "en": "Read the full message",
+   "ar": "اقرأ الرسالة كاملة"
+  },
+  "faq": {
+   "bn": "সচরাচর জিজ্ঞাসা",
+   "en": "Frequently asked questions",
+   "ar": "الأسئلة الشائعة"
+  },
+  "contact_form": {
+   "bn": "আমাদের লিখুন",
+   "en": "Write to us",
+   "ar": "راسلنا"
+  },
+  "office": {
+   "bn": "অফিস",
+   "en": "Office",
+   "ar": "المكتب"
+  },
+  "project_site": {
+   "bn": "প্রকল্প এলাকা",
+   "en": "Project site",
+   "ar": "موقع المشروع"
+  },
+  "follow": {
+   "bn": "আমাদের অনুসরণ করুন",
+   "en": "Follow us",
+   "ar": "تابعنا"
+  },
+  "related_sites": {
+   "bn": "সংশ্লিষ্ট প্রতিষ্ঠান",
+   "en": "Related sites",
+   "ar": "مواقع ذات صلة"
+  },
+  "theme_light": {
+   "bn": "লাইট মোড",
+   "en": "Light mode",
+   "ar": "الوضع الفاتح"
+  },
+  "theme_dark": {
+   "bn": "ডার্ক মোড",
+   "en": "Dark mode",
+   "ar": "الوضع الداكن"
+  },
+  "illustrative": {
+   "bn": "স্থাপত্য ভিজ্যুয়ালাইজেশন",
+   "en": "Architectural visualisation",
+   "ar": "تصور معماري"
+  },
+  "footer_note": {
+   "bn": "কুরআন ও বিশুদ্ধ সুন্নাহর আলোকে শিক্ষা, দাওয়াহ ও সমাজকল্যাণ।",
+   "en": "Education, Dawah and social welfare in the light of the Qur'an and authentic Sunnah.",
+   "ar": "تعليم ودعوة ورعاية اجتماعية على هدي القرآن والسنة الصحيحة."
+  },
+  "open_form": {
+   "bn": "ফর্ম খুলুন",
+   "en": "Open the form",
+   "ar": "افتح الاستمارة"
+  },
+  "form_pending": {
+   "bn": "ফর্মের লিংক শীঘ্রই যুক্ত হবে। আগ্রহী হলে নিচে তথ্য দিন, আমরা যোগাযোগ করবো।",
+   "en": "The form link will be added soon. If you are interested, leave your details below and we will contact you.",
+   "ar": "سيُضاف رابط الاستمارة قريبًا. اترك بياناتك وسنتواصل معك."
+  },
+  "share_link": {
+   "bn": "শেয়ার লিংক ও QR",
+   "en": "Share link & QR",
+   "ar": "رابط المشاركة ورمز QR"
+  },
+  "fee": {
+   "bn": "ফি",
+   "en": "Fee",
+   "ar": "الرسوم"
+  },
+  "venue": {
+   "bn": "স্থান",
+   "en": "Venue",
+   "ar": "المكان"
+  },
+  "search": {
+   "bn": "অনুসন্ধান",
+   "en": "Search",
+   "ar": "بحث"
+  },
+  "search_ph": {
+   "bn": "প্রকল্প, কোর্স, ভিডিও খুঁজুন…",
+   "en": "Search projects, courses, videos…",
+   "ar": "ابحث في المشاريع والدورات والفيديوهات…"
+  },
+  "no_results": {
+   "bn": "কিছু পাওয়া যায়নি",
+   "en": "No results",
+   "ar": "لا نتائج"
+  },
+  "translation_pending": {
+   "bn": "এই অংশের অনুবাদ পর্যালোচনাধীন",
+   "en": "Translation of this section is under review",
+   "ar": "ترجمة هذا القسم قيد المراجعة"
+  },
+  "hijri": {
+   "bn": "হিজরি",
+   "en": "Hijri",
+   "ar": "هجري"
+  },
+  "skip": {
+   "bn": "মূল কনটেন্টে যান",
+   "en": "Skip to content",
+   "ar": "انتقل إلى المحتوى"
+  },
+  "menu": {
+   "bn": "মেনু",
+   "en": "Menu",
+   "ar": "القائمة"
+  },
+  "watch_from": {
+   "bn": "থেকে দেখুন",
+   "en": "Watch from",
+   "ar": "شاهد من"
+  },
+  "admin": {
+   "bn": "অ্যাডমিন",
+   "en": "Admin",
+   "ar": "الإدارة"
+  },
+  "design_gallery": {
+   "bn": "স্থাপত্য নকশা",
+   "en": "Architectural design",
+   "ar": "التصميم المعماري"
+  }
+ }
+}
