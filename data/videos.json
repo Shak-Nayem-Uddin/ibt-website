@@ -407,20 +407,22 @@
 ],
 "videos": [
 {
-"id": "8MlFKh__zNg",
-"title": "মিস করবেন না! শাইখদের সান্নিধ্যে একটি দিন | IBT ৪র্থ গেট টুগেদার ২০২৬",
-"channel": "ibt",
-"kind": "video",
-"approx": "2026-11",
-"playlists": []
-},
-{
 "id": "CtiOTsnWpLo",
 "title": "দ্বীনদারির আড়ালেও কি অহংকার থাকতে পারে? - দ্বীনি জ্ঞান ও আমলে আত্মগর্ব, অন্যকে তুচ্ছজ্ঞান, সংশোধনে অ",
 "channel": "ibt",
 "kind": "live",
 "approx": "2026-11",
-"playlists": []
+"playlists": [],
+"date": "2026-11-15"
+},
+{
+"id": "8MlFKh__zNg",
+"title": "মিস করবেন না! শাইখদের সান্নিধ্যে একটি দিন | IBT ৪র্থ গেট টুগেদার ২০২৬",
+"channel": "ibt",
+"kind": "video",
+"approx": "2026-11",
+"playlists": [],
+"date": "2026-10-31"
 },
 {
 "id": "XE3YWEjN3Cw",
@@ -428,7 +430,8 @@
 "channel": "ibt",
 "kind": "live",
 "approx": "2026-11",
-"playlists": []
+"playlists": [],
+"date": "2026-10-30"
 },
 {
 "id": "ViHzrqAKvO8",
@@ -436,47 +439,8 @@
 "channel": "ibt",
 "kind": "video",
 "approx": "2026-10",
-"playlists": []
-},
-{
-"id": "GW_HDHAsbyM",
-"title": "ইমাম বুখারী ট্রাস্ট এর একাডেমিক ভবনের পাইল ক্যাপ ঢালাই কার্যক্রম চলমান",
-"channel": "ibt",
-"kind": "video",
-"approx": "2026-10",
-"playlists": [
-"PLPoR2UQBlssIAt2c7RNbZDSF6zI0x1VYf"
-]
-},
-{
-"id": "g9lRiceVtBY",
-"title": "ইমাম বুখারী ট্রাস্ট সামাজিক জনকল্যাণমূলক কাজের খন্ডচিত্র",
-"channel": "ibt",
-"kind": "video",
-"approx": "2026-10",
-"playlists": [
-"PLPoR2UQBlssIAt2c7RNbZDSF6zI0x1VYf"
-]
-},
-{
-"id": "wuZiphCga3U",
-"title": "Ask Dr Monzur E Elahi (Episode 26)",
-"channel": "ibt",
-"kind": "video",
-"approx": "2026-10",
-"playlists": [
-"PLPoR2UQBlssIwEXGdNmCGMqx2MU7T6Ezv"
-]
-},
-{
-"id": "kWOxl0pRC2w",
-"title": "Ask Dr Monzur E Elahi (Episode 27)",
-"channel": "ibt",
-"kind": "video",
-"approx": "2026-10",
-"playlists": [
-"PLPoR2UQBlssIwEXGdNmCGMqx2MU7T6Ezv"
-]
+"playlists": [],
+"date": "2026-10-25"
 },
 {
 "id": "z0DprO8RsLY",
@@ -484,7 +448,8 @@
 "channel": "ibt",
 "kind": "live",
 "approx": "2026-10",
-"playlists": []
+"playlists": [],
+"date": "2026-10-23"
 },
 {
 "id": "bC2OHQAfm6g",
@@ -494,7 +459,8 @@
 "approx": "2026-10",
 "playlists": [
 "PLPoR2UQBlssIwEXGdNmCGMqx2MU7T6Ezv"
-]
+],
+"date": "2026-10-22"
 },
 {
 "id": "crIob-9EVNE",
@@ -504,7 +470,8 @@
 "approx": "2026-10",
 "playlists": [
 "PLPoR2UQBlssIHK2FmgHitpjKuz7uoH-GI"
-]
+],
+"date": "2026-10-16"
 },
 {
 "id": "OtOFyMT0LIw",
@@ -514,7 +481,41 @@
 "approx": "2026-10",
 "playlists": [
 "PLPoR2UQBlssIHK2FmgHitpjKuz7uoH-GI"
-]
+],
+"date": "2026-10-09"
+},
+{
+"id": "GW_HDHAsbyM",
+"title": "ইমাম বুখারী ট্রাস্ট এর একাডেমিক ভবনের পাইল ক্যাপ ঢালাই কার্যক্রম চলমান",
+"channel": "ibt",
+"kind": "video",
+"approx": "2026-10",
+"playlists": [
+"PLPoR2UQBlssIAt2c7RNbZDSF6zI0x1VYf"
+],
+"date": "2026-10-08"
+},
+{
+"id": "g9lRiceVtBY",
+"title": "ইমাম বুখারী ট্রাস্ট সামাজিক জনকল্যাণমূলক কাজের খন্ডচিত্র",
+"channel": "ibt",
+"kind": "video",
+"approx": "2026-10",
+"playlists": [
+"PLPoR2UQBlssIAt2c7RNbZDSF6zI0x1VYf"
+],
+"date": "2026-10-08"
+},
+{
+"id": "wuZiphCga3U",
+"title": "Ask Dr Monzur E Elahi (Episode 26)",
+"channel": "ibt",
+"kind": "video",
+"approx": "2026-10",
+"playlists": [
+"PLPoR2UQBlssIwEXGdNmCGMqx2MU7T6Ezv"
+],
+"date": "2026-10-08"
 },
 {
 "id": "TTxSrE4nxMA",
@@ -524,7 +525,19 @@
 "approx": "2026-10",
 "playlists": [
 "PLPoR2UQBlssIHK2FmgHitpjKuz7uoH-GI"
-]
+],
+"date": "2026-10-02"
+},
+{
+"id": "kWOxl0pRC2w",
+"title": "Ask Dr Monzur E Elahi (Episode 27)",
+"channel": "ibt",
+"kind": "video",
+"approx": "2026-10",
+"playlists": [
+"PLPoR2UQBlssIwEXGdNmCGMqx2MU7T6Ezv"
+],
+"date": "2026-09-28"
 },
 {
 "id": "6nztljg2INg",
@@ -534,7 +547,8 @@
 "approx": "2026-10",
 "playlists": [
 "PLPoR2UQBlssIHK2FmgHitpjKuz7uoH-GI"
-]
+],
+"date": "2026-09-24"
 },
 {
 "id": "nxhIoTqZFW0",
@@ -2817,79 +2831,6 @@
 ]
 },
 {
-"id": "41kY5uKj5tc",
-"title": "কুল্লিয়াতুল কুরআন গুরুত্বপূর্ণ দিকনির্দেশনা ও নাসীহা  - প্রফেসর ড  মোহাম্মদ অলী উল্যাহ",
-"channel": "kq",
-"kind": "video",
-"approx": "2025-11",
-"playlists": [
-"PLJ08WrbxyTXTbo2Vb8krr1j102dIwuLn_"
-]
-},
-{
-"id": "u42dSG1ojQI",
-"title": "কুল্লিয়াতুল কুরআন এর লক্ষ্য, উদ্দেশ্য ও ছাত্রদের প্রতি নাসীহা",
-"channel": "kq",
-"kind": "video",
-"approx": "2025-11",
-"playlists": [
-"PLJ08WrbxyTXTHWQ8M7Pr6pCFTV3e03Z0Q"
-]
-},
-{
-"id": "0HUA17Zek58",
-"title": "“কুল্লিয়াতুল কুরআনে সানাবিয়্যাহ ও আলিম স্তরে ভর্তি শুরু” -   Dr muhammad Saifullah",
-"channel": "kq",
-"kind": "video",
-"approx": "2025-11",
-"playlists": [
-"PLJ08WrbxyTXSoDIJuanby2tkfCEcdk2xE",
-"PLJ08WrbxyTXSzxp980zzL9_bawjtzXGNa"
-]
-},
-{
-"id": "LFhTlxXXcQ8",
-"title": "\"যে স্বপ্ন বুকে নিয়ে যাত্রা শুরু করেছিল কুল্লিয়াতুল কুরআন\"  - Dr. Mohammad Monzur E Elahi",
-"channel": "kq",
-"kind": "video",
-"approx": "2025-11",
-"playlists": [
-"PLJ08WrbxyTXTHWQ8M7Pr6pCFTV3e03Z0Q"
-]
-},
-{
-"id": "nU09L0hWldI",
-"title": "আল্ট্রা পদ্ধতিতে ২ মাসে আরবি ভাষা কোর্স - Dr. Mohammad Monzur E Elahi",
-"channel": "kq",
-"kind": "video",
-"approx": "2025-11",
-"playlists": [
-"PLJ08WrbxyTXSoDIJuanby2tkfCEcdk2xE",
-"PLJ08WrbxyTXTHWQ8M7Pr6pCFTV3e03Z0Q"
-]
-},
-{
-"id": "tRIv-YZPLLo",
-"title": "অ্যারাবিক ডিপ্লোমা কোর্স- Arabic Language Course for Enrolling in Arabic & Islamic Universities",
-"channel": "kq",
-"kind": "video",
-"approx": "2025-11",
-"playlists": [
-"PLJ08WrbxyTXSoDIJuanby2tkfCEcdk2xE",
-"PLJ08WrbxyTXTHWQ8M7Pr6pCFTV3e03Z0Q"
-]
-},
-{
-"id": "J0WR-qV5Omg",
-"title": "সুন্নাহ কনফারেন্স বাংলাদেশ ২০২৪",
-"channel": "kq",
-"kind": "video",
-"approx": "2025-11",
-"playlists": [
-"PLJ08WrbxyTXQy4Ifmd9WJWbKmPcEA3-oo"
-]
-},
-{
 "id": "FdXPWBd2mko",
 "title": "এআই ও ডিজিটাল যুগে মুসলিমের নৈতিকতা: সুযোগ, বিপদ ও দায়িত্ব",
 "channel": "ibt",
@@ -2954,6 +2895,86 @@
 "kind": "live",
 "approx": "2025-11",
 "playlists": []
+},
+{
+"id": "41kY5uKj5tc",
+"title": "কুল্লিয়াতুল কুরআন গুরুত্বপূর্ণ দিকনির্দেশনা ও নাসীহা  - প্রফেসর ড  মোহাম্মদ অলী উল্যাহ",
+"channel": "kq",
+"kind": "video",
+"approx": "2025-11",
+"playlists": [
+"PLJ08WrbxyTXTbo2Vb8krr1j102dIwuLn_"
+],
+"date": "2025-10-11"
+},
+{
+"id": "u42dSG1ojQI",
+"title": "কুল্লিয়াতুল কুরআন এর লক্ষ্য, উদ্দেশ্য ও ছাত্রদের প্রতি নাসীহা",
+"channel": "kq",
+"kind": "video",
+"approx": "2025-11",
+"playlists": [
+"PLJ08WrbxyTXTHWQ8M7Pr6pCFTV3e03Z0Q"
+],
+"date": "2025-08-07"
+},
+{
+"id": "0HUA17Zek58",
+"title": "“কুল্লিয়াতুল কুরআনে সানাবিয়্যাহ ও আলিম স্তরে ভর্তি শুরু” -   Dr muhammad Saifullah",
+"channel": "kq",
+"kind": "video",
+"approx": "2025-11",
+"playlists": [
+"PLJ08WrbxyTXSoDIJuanby2tkfCEcdk2xE",
+"PLJ08WrbxyTXSzxp980zzL9_bawjtzXGNa"
+],
+"date": "2025-07-26"
+},
+{
+"id": "LFhTlxXXcQ8",
+"title": "\"যে স্বপ্ন বুকে নিয়ে যাত্রা শুরু করেছিল কুল্লিয়াতুল কুরআন\"  - Dr. Mohammad Monzur E Elahi",
+"channel": "kq",
+"kind": "video",
+"approx": "2025-11",
+"playlists": [
+"PLJ08WrbxyTXTHWQ8M7Pr6pCFTV3e03Z0Q"
+],
+"date": "2025-06-30"
+},
+{
+"id": "nU09L0hWldI",
+"title": "আল্ট্রা পদ্ধতিতে ২ মাসে আরবি ভাষা কোর্স - Dr. Mohammad Monzur E Elahi",
+"channel": "kq",
+"kind": "video",
+"approx": "2025-11",
+"playlists": [
+"PLJ08WrbxyTXSoDIJuanby2tkfCEcdk2xE",
+"PLJ08WrbxyTXTHWQ8M7Pr6pCFTV3e03Z0Q"
+],
+"date": "2025-05-21"
+},
+{
+"id": "tRIv-YZPLLo",
+"title": "অ্যারাবিক ডিপ্লোমা কোর্স- Arabic Language Course for Enrolling in Arabic & Islamic Universities",
+"channel": "kq",
+"kind": "video",
+"approx": "2025-11",
+"playlists": [
+"PLJ08WrbxyTXSoDIJuanby2tkfCEcdk2xE",
+"PLJ08WrbxyTXTHWQ8M7Pr6pCFTV3e03Z0Q"
+],
+"date": "2025-01-07"
+},
+{
+"id": "J0WR-qV5Omg",
+"title": "সুন্নাহ কনফারেন্স বাংলাদেশ ২০২৪",
+"channel": "kq",
+"kind": "video",
+"approx": "2025-11",
+"playlists": [
+"PLJ08WrbxyTXQy4Ifmd9WJWbKmPcEA3-oo"
+],
+"date": "2025-01-06"
 },
 {
 "id": "Ix7dTW-tCC8",
@@ -3066,7 +3087,8 @@
 "playlists": [
 "PLJ08WrbxyTXSoDIJuanby2tkfCEcdk2xE",
 "PLJ08WrbxyTXTHWQ8M7Pr6pCFTV3e03Z0Q"
-]
+],
+"date": "2024-06-16"
 },
 {
 "id": "15hOaC8ipp8",
@@ -3077,7 +3099,8 @@
 "playlists": [
 "PLJ08WrbxyTXQ27Hx0G8Em1Rudqj4k2o0f",
 "PLJ08WrbxyTXTHWQ8M7Pr6pCFTV3e03Z0Q"
-]
+],
+"date": "2024-05-09"
 },
 {
 "id": "nmqatOZpe6Q",
@@ -3087,7 +3110,8 @@
 "approx": "2024-11",
 "playlists": [
 "PLJ08WrbxyTXTHWQ8M7Pr6pCFTV3e03Z0Q"
-]
+],
+"date": "2024-03-12"
 },
 {
 "id": "8nMIfc2xoyE",
@@ -3098,45 +3122,8 @@
 "playlists": [
 "PLJ08WrbxyTXQdkckRzxQafSKsJMj4THfb",
 "PLJ08WrbxyTXR3btscJsJI8dUb2nAxw7Tu"
-]
-},
-{
-"id": "aIpzvGC-9r0",
-"title": "সানাবিয়্যাহ (আলিম) ক্লাস -  শাইখ সালেম আল আজহারী",
-"channel": "kq",
-"kind": "video",
-"approx": "2023-11",
-"playlists": [
-"PLJ08WrbxyTXTwU87WuHVUJOfeH-mMn9Ew"
-]
-},
-{
-"id": "hnw4b0SsAUg",
-"title": "কুলিয়াতুল কুরআন-এর দুটি গুরুত্বপূর্ণ কোর্স  সানাবিয়্যাহ (আলিম) + অ্যারাবিক - Dr.Muhammad Saifullah",
-"channel": "kq",
-"kind": "video",
-"approx": "2023-11",
-"playlists": [
-"PLJ08WrbxyTXSzxp980zzL9_bawjtzXGNa"
-]
-},
-{
-"id": "2cfnyM1IPvo",
-"title": "‘দাখিল ফলপ্রার্থীদের জন্য বিশেষ আরবি ভাষা কোর্স’।। Dr. Mohammad Monzur-E-Elahi",
-"channel": "kq",
-"kind": "video",
-"approx": "2023-11",
-"playlists": []
-},
-{
-"id": "aNKkJymmS60",
-"title": "শিক্ষার্থীদের উদ্দেশ্যে নাসীহাহ ।। Dr. Mohammad Monzur-E-Elahi",
-"channel": "kq",
-"kind": "video",
-"approx": "2023-11",
-"playlists": [
-"PLJ08WrbxyTXTHWQ8M7Pr6pCFTV3e03Z0Q"
-]
+],
+"date": "2023-11-15"
 },
 {
 "id": "whhZw6nHZGY",
@@ -3257,6 +3244,48 @@
 "kind": "video",
 "approx": "2023-11",
 "playlists": []
+},
+{
+"id": "aIpzvGC-9r0",
+"title": "সানাবিয়্যাহ (আলিম) ক্লাস -  শাইখ সালেম আল আজহারী",
+"channel": "kq",
+"kind": "video",
+"approx": "2023-11",
+"playlists": [
+"PLJ08WrbxyTXTwU87WuHVUJOfeH-mMn9Ew"
+],
+"date": "2023-07-22"
+},
+{
+"id": "hnw4b0SsAUg",
+"title": "কুলিয়াতুল কুরআন-এর দুটি গুরুত্বপূর্ণ কোর্স  সানাবিয়্যাহ (আলিম) + অ্যারাবিক - Dr.Muhammad Saifullah",
+"channel": "kq",
+"kind": "video",
+"approx": "2023-11",
+"playlists": [
+"PLJ08WrbxyTXSzxp980zzL9_bawjtzXGNa"
+],
+"date": "2023-07-12"
+},
+{
+"id": "2cfnyM1IPvo",
+"title": "‘দাখিল ফলপ্রার্থীদের জন্য বিশেষ আরবি ভাষা কোর্স’।। Dr. Mohammad Monzur-E-Elahi",
+"channel": "kq",
+"kind": "video",
+"approx": "2023-11",
+"playlists": [],
+"date": "2023-06-18"
+},
+{
+"id": "aNKkJymmS60",
+"title": "শিক্ষার্থীদের উদ্দেশ্যে নাসীহাহ ।। Dr. Mohammad Monzur-E-Elahi",
+"channel": "kq",
+"kind": "video",
+"approx": "2023-11",
+"playlists": [
+"PLJ08WrbxyTXTHWQ8M7Pr6pCFTV3e03Z0Q"
+],
+"date": "2023-06-14"
 },
 {
 "id": "kmiBO4MbBsc",
