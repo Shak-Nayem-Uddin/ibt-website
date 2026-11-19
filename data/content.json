@@ -28,19 +28,19 @@
   "announcement": {
    "show": true,
    "text": {
-    "bn": "রেজিস্ট্রেশন চলছে: কুল্লিয়াতুল কুরআন সেশন ২০২৭ ভর্তি ও বিভিন্ন কোর্স",
-    "en": "Registrations open: Kulliyatul Quran Session 2027 admissions and courses",
-    "ar": "التسجيل مفتوح: القبول في كلية القرآن لعام 2027 والدورات"
+    "bn": "জেনারেল আরবি ভাষা কোর্সে ভর্তি চলছে · অনলাইনে আবেদন করুন",
+    "en": "General Arabic Language Course: admission open · apply online",
+    "ar": "دورة اللغة العربية العامة: القبول مفتوح · قدّم إلكترونيًا"
    },
-   "link": "#register"
+   "link": "#reg-kq-general-arabic"
   },
   "contact": {
    "phones": [
     "+880 1852-808554",
-    "+880 1898-940943"
+    "+880 1306-746437"
    ],
    "email": "bukharimasjid.bd@gmail.com",
-   "email2": "info@imambukharimasjid.org",
+   "email2": "",
    "office": {
     "bn": "হাউস ১৭ (১ম তলা), রোড ৬/এ, সেক্টর ৫, উত্তরা, ঢাকা ১২৩০",
     "en": "House 17 (1st Floor), Road 6/A, Sector 5, Uttara, Dhaka 1230",
@@ -52,9 +52,9 @@
     "ar": "مدينة دكا الجديدة، بلاشبور، بجوار طريق دكا–ماوا السريع، دكا"
    },
    "hours": {
-    "bn": "শনি–বৃহস্পতি, সকাল ৯টা–বিকাল ৫টা",
-    "en": "Saturday–Thursday, 9 am–5 pm",
-    "ar": "السبت–الخميس، 9 صباحًا–5 مساءً"
+    "bn": "অফিস: শনি–বৃহস্পতি, সকাল ৯টা–বিকাল ৫টা",
+    "en": "Office: Saturday–Thursday, 9 am–5 pm",
+    "ar": "المكتب: السبت–الخميس، 9 صباحًا–5 مساءً"
    }
   },
   "social": [
@@ -65,44 +65,18 @@
    },
    {
     "name": "YouTube",
-    "url": "https://www.youtube.com/@ImamBukhariTrustOfficial",
+    "url": "https://www.youtube.com/channel/UCm8It2AWLRt3N22-fL89K_w",
     "icon": "youtube"
-   },
-   {
-    "name": "LinkedIn",
-    "url": "https://www.linkedin.com/company/imam-bukhari-trust",
-    "icon": "linkedin"
-   },
-   {
-    "name": "X",
-    "url": "https://twitter.com/ImamBukhTrust",
-    "icon": "x"
    }
   ],
   "relatedSites": [
    {
     "name": {
-     "bn": "কুল্লিয়াতুল কুরআন",
-     "en": "Kulliyatul Quran",
-     "ar": "كلية القرآن"
+     "bn": "কুল্লিয়াতুল কুরআন ওয়েবসাইট",
+     "en": "Kulliyatul Quran website",
+     "ar": "موقع كلية القرآن"
     },
-    "url": "https://kulliyatulquran.com/"
-   },
-   {
-    "name": {
-     "bn": "সুন্নাহ কনফারেন্স",
-     "en": "Sunnah Conference",
-     "ar": "مؤتمر السنة"
-    },
-    "url": "https://conference.kulliyatulquran.com"
-   },
-   {
-    "name": {
-     "bn": "কুল্লিয়াতুল কুরআন ফেসবুক",
-     "en": "Kulliyatul Quran Facebook",
-     "ar": "فيسبوك كلية القرآن"
-    },
-    "url": "https://www.facebook.com/kulliyatulquran"
+    "url": "https://www.kulliyatulquran.com/"
    },
    {
     "name": {
@@ -110,19 +84,27 @@
      "en": "Kulliyatul Quran YouTube",
      "ar": "يوتيوب كلية القرآن"
     },
-    "url": "https://www.youtube.com/@kulliyatulquranbd9275"
+    "url": "https://www.youtube.com/@kulliyatulquranbd"
+   },
+   {
+    "name": {
+     "bn": "পুরনো ওয়েবসাইট",
+     "en": "Previous website",
+     "ar": "الموقع السابق"
+    },
+    "url": "https://www.imambukharitrust.com/"
    }
   ],
   "youtubeChannels": [
    {
-    "name": "IBT Official",
+    "name": "Imam Bukhari Trust",
     "channelId": "UCm8It2AWLRt3N22-fL89K_w",
-    "url": "https://www.youtube.com/@ImamBukhariTrustOfficial"
+    "url": "https://www.youtube.com/channel/UCm8It2AWLRt3N22-fL89K_w"
    },
    {
-    "name": "Kulliyatul Quran",
+    "name": "Kulliyatul Quran BD",
     "channelId": "UCBTHMWdAFuQ5ynEryDIWdRw",
-    "url": "https://www.youtube.com/@kulliyatulquranbd9275"
+    "url": "https://www.youtube.com/@kulliyatulquranbd"
    }
   ]
  },
@@ -153,6 +135,62 @@
    "ar": "ساهم في بناء المسجد"
   },
   "heroImage": "img/design-night-1.jpg",
+  "heroSlides": [
+   {
+    "image": "img/design-night-1.jpg",
+    "caption": {
+     "bn": "ইমাম বুখারী জামে মাসজিদ কমপ্লেক্স · স্থাপত্য নকশা",
+     "en": "Imam Bukhari Jame Masjid Complex · architectural design",
+     "ar": "مجمع جامع الإمام البخاري · التصميم المعماري"
+    },
+    "kind": "design"
+   },
+   {
+    "image": "img/first-prayer.jpg",
+    "caption": {
+     "bn": "নির্মাণাধীন মাসজিদে সালাত",
+     "en": "Prayer in the masjid under construction",
+     "ar": "الصلاة في المسجد قيد الإنشاء"
+    },
+    "kind": "photo"
+   },
+   {
+    "image": "img/design-aerial.jpg",
+    "caption": {
+     "bn": "মাসজিদ ও একাডেমিক ক্যাম্পাস · স্থাপত্য নকশা",
+     "en": "Masjid and academic campus · architectural design",
+     "ar": "المسجد والحرم الأكاديمي · التصميم المعماري"
+    },
+    "kind": "design"
+   },
+   {
+    "image": "img/winter-2024-distribution.jpg",
+    "caption": {
+     "bn": "শীতবস্ত্র বিতরণ প্রকল্প ২০২৪",
+     "en": "Winter clothing distribution 2024",
+     "ar": "توزيع كسوة الشتاء 2024"
+    },
+    "kind": "photo"
+   },
+   {
+    "image": "img/halaqa-class.jpg",
+    "caption": {
+     "bn": "কুল্লিয়াতুল কুরআনে ক্লাস",
+     "en": "A class at Kulliyatul Quran",
+     "ar": "درس في كلية القرآن"
+    },
+    "kind": "photo"
+   },
+   {
+    "image": "img/construction-structure.jpg",
+    "caption": {
+     "bn": "নির্মাণকাজ, নিউ ঢাকা সিটি",
+     "en": "Construction at New Dhaka City",
+     "ar": "أعمال البناء في مدينة دكا الجديدة"
+    },
+    "kind": "photo"
+   }
+  ],
   "heroGalleryNight": [
    "img/design-night-1.jpg",
    "img/design-night-2.jpg",
@@ -209,7 +247,8 @@
      "en": "Qur'an-and-Sunnah-based research on contemporary issues, seminars and policy dialogue.",
      "ar": "بحوث في القضايا المعاصرة على ضوء الكتاب والسنة، وندوات وحوار في السياسات."
     },
-    "link": "#init-research"
+    "link": "#init-research",
+    "image": "img/sunnah-conference-2024.jpg"
    },
    {
     "icon": "education",
@@ -223,7 +262,8 @@
      "en": "Authentic, Arabic-centred Islamic education from childhood to higher studies.",
      "ar": "تعليم إسلامي أصيل محوره اللغة العربية من الطفولة إلى الدراسات العليا."
     },
-    "link": "#institutions"
+    "link": "#institutions",
+    "image": "img/halaqa-class.jpg"
    },
    {
     "icon": "dawah",
@@ -237,7 +277,8 @@
      "en": "Weekly halaqa, Q&A, courses and digital Dawah that bring knowledge to people.",
      "ar": "حلقات أسبوعية وأسئلة وأجوبة ودورات ودعوة رقمية لإيصال العلم إلى الناس."
     },
-    "link": "#init-dawah"
+    "link": "#init-dawah",
+    "image": "img/chairman-speech.jpg"
    },
    {
     "icon": "masjid",
@@ -251,7 +292,8 @@
      "en": "Building a masjid-centred community in the light of Masjid an-Nabawi.",
      "ar": "بناء مجتمعٍ إيماني متمحورٍ حول المسجد على هدي المسجد النبوي."
     },
-    "link": "#project-ibjmc"
+    "link": "#project-ibjmc",
+    "image": "img/first-prayer.jpg"
    },
    {
     "icon": "social",
@@ -265,7 +307,8 @@
      "en": "Relief, rehabilitation, Qurbani, iftar and winter support that make the beauty of Islam visible.",
      "ar": "إغاثة وإعادة تأهيل وأضاحٍ وإفطار وكسوة شتاء تُظهر جمال الإسلام."
     },
-    "link": "#init-welfare"
+    "link": "#init-welfare",
+    "image": "img/winter-2024-distribution.jpg"
    }
   ],
   "spotlightTitle": {
@@ -291,6 +334,46 @@
     "ar": "صحيح البخاري 450؛ صحيح مسلم 533"
    },
    "review": true
+  },
+  "facts": [
+   {
+    "value": "2017",
+    "plain": true,
+    "label": {
+     "bn": "সালে আনুষ্ঠানিক যাত্রা শুরু",
+     "en": "formal work began",
+     "ar": "انطلاق العمل رسميًا"
+    }
+   },
+   {
+    "value": "225",
+    "label": {
+     "bn": "পাইলের কাজ সম্পন্ন (মাসজিদ ও একাডেমিক ভবন)",
+     "en": "piles completed (masjid & academic building)",
+     "ar": "خازوقًا مكتملًا (المسجد والمبنى الأكاديمي)"
+    }
+   },
+   {
+    "value": "16800",
+    "label": {
+     "bn": "ঘণ্টা কুরআন-সুন্নাহভিত্তিক লেকচার ও দারস",
+     "en": "hours of Qur'an-and-Sunnah lectures",
+     "ar": "ساعة من الدروس والمحاضرات"
+    }
+   },
+   {
+    "value": "6",
+    "label": {
+     "bn": "জন শিক্ষার্থী আন্তর্জাতিক বিশ্ববিদ্যালয়ে উচ্চশিক্ষায়",
+     "en": "students admitted to international universities",
+     "ar": "طلاب قُبلوا في جامعات دولية"
+    }
+   }
+  ],
+  "factsSource": {
+   "bn": "সূত্র: IBT ক্যাটালগ ২০২৬",
+   "en": "Source: IBT Catalog 2026",
+   "ar": "المصدر: كتيّب الوقف 2026"
   }
  },
  "chairman": {
@@ -300,9 +383,9 @@
    "ar": "الأستاذ الدكتور محمد منظور إلهي"
   },
   "role": {
-   "bn": "প্রতিষ্ঠাতা ও চেয়ারম্যান, ইমাম বুখারী ট্রাস্ট",
-   "en": "Founder & Chairman, Imam Bukhari Trust",
-   "ar": "المؤسس ورئيس مجلس الإدارة، وقف الإمام البخاري"
+   "bn": "চেয়ারম্যান, ইমাম বুখারী ট্রাস্ট · প্রতিষ্ঠাতা, কুল্লিয়াতুল কুরআন",
+   "en": "Chairman, Imam Bukhari Trust · Founder, Kulliyatul Quran",
+   "ar": "رئيس وقف الإمام البخاري · مؤسس كلية القرآن"
   },
   "photo": "img/chairman.jpg",
   "photo2": "img/chairman-speech.jpg",
@@ -312,10 +395,11 @@
    "ar": "الأستاذ الدكتور محمد منظور إلهي باحثٌ ومربٍّ وعالمٌ ومؤلف، وداعيةٌ إلى الله وشخصيةٌ إعلامية معروفة على المستويين الوطني والدولي من خلال البحث العلمي والدعوة والبرامج الإسلامية في وسائل الإعلام. يعمل أستاذًا في قسم الدراسات الإسلامية بالجامعة الوطنية في بنغلاديش. حصل على البكالوريوس والماجستير والدكتوراه بتفوق من الجامعة الإسلامية بالمدينة المنورة، وهو أول مواطن بنغلاديشي يحصل على الدكتوراه منها. أسس كلية القرآن الكريم والدراسات الإسلامية وأكاديمية طيبة لإيصال العلم الشرعي الأصيل إلى الجميع."
   },
   "message": {
-   "bn": "১৫ কোটিরও বেশি মুসলিমের এই দেশে কতজন প্রকৃতপক্ষে ইসলাম অনুশীলন করেন? ওয়াক্তিয়া সালাত আর জুমুআর সালাতে মুসল্লির বিশাল ব্যবধান আমাদের কী বার্তা দেয়? ডিজিটাল ফিতনার মধ্যে বেড়ে ওঠা তরুণ প্রজন্মের জন্য আমাদের কি কোনো সুসংগঠিত দাওয়াহ কৌশল আছে? এই প্রশ্নগুলো কঠিন, কিন্তু এড়িয়ে যাওয়ার সুযোগ নেই। এই বাস্তবতা সামনে রেখেই ইমাম বুখারী ট্রাস্ট একটি সুন্নাহভিত্তিক, প্রজ্ঞাসম্পন্ন ও দীর্ঘমেয়াদি দাওয়াহ-ভিশন নিয়ে কাজ করছে, যাতে ইসলাম শুধু পরিচয়পত্রে নয়, জীবনে ফিরে আসে, বিইযনিল্লাহ।",
-   "en": "In this country of more than 150 million Muslims, how many truly practise Islam? What does the gap between the daily prayers and the Jumu'ah congregation tell us? Do we have an organised Dawah strategy for a young generation growing up amid digital fitnah? These questions are hard, but we cannot avoid them. With this reality in view, Imam Bukhari Trust works with a Sunnah-based, wise and long-term Dawah vision, so that Islam returns not only to identity cards but to life itself, by the permission of Allah.",
-   "ar": "في بلادنا أكثر من مئة وخمسين مليون مسلم، فكم منهم يمارس الإسلام حقًّا؟ وماذا يخبرنا الفارق الكبير بين المصلين في الصلوات اليومية وصلاة الجمعة؟ وهل لدينا استراتيجية دعوية منظمة لجيلٍ ينشأ وسط الفتن الرقمية؟ إنها أسئلة صعبة لا مفر منها. ومن هذا الواقع ينطلق وقف الإمام البخاري برؤيةٍ دعويةٍ سُنّيةٍ حكيمةٍ طويلة المدى، ليعود الإسلام إلى الحياة لا إلى بطاقات الهوية فحسب، بإذن الله."
+   "bn": "২০১৭ সালে ইমাম বুখারী ট্রাস্ট শিক্ষা, সমাজ উন্নয়ন ও দীনি কার্যক্রমকে সামনে রেখে প্রতিষ্ঠিত হয়। এর সর্বপ্রথম প্রকল্প হলো ইমাম বুখারী জামে মাসজিদ কমপ্লেক্স বাংলাদেশ এবং দ্বিতীয় প্রকল্প হলো কুল্লিয়াতুল কুরআনিল কারীমসহ একগুচ্ছ একাডেমিক কার্যক্রম। জ্ঞানার্জন ও জ্ঞানের সাধনা এবং জ্ঞান বিতরণই একটি জাতির সমৃদ্ধির প্রধান কারণ; তাই শিক্ষার্জন ও শিক্ষাদান মুসলিম জাতির সবচেয়ে বড় অগ্রাধিকার। পাশাপাশি সমাজের সকল বয়সী অবহেলিত-বঞ্চিত মানুষদের পাশে দাঁড়ানো আমাদের নৈতিক ও মানবিক কর্তব্য। আমরা আশা করছি, মুসলিম সমাজের ভাই-বোনেরা এই মহান কাজে এগিয়ে আসবেন, অংশগ্রহণ করবেন এবং সাহায্যের হাত বাড়িয়ে দেবেন। আল্লাহ আমাদের সকল প্রচেষ্টা কবুল করুন।",
+   "en": "Imam Bukhari Trust was founded in 2017 with education, social development and religious work in view. Its first project is the Imam Bukhari Jame Masjid Complex Bangladesh, and its second is a group of academic programmes including Kulliyatul Quranil Kareem. Seeking, pursuing and spreading knowledge is the main cause of a nation's prosperity, so learning and teaching are the Muslim community's highest priority. Standing beside the neglected and deprived of every age is also our moral and human duty. We hope our brothers and sisters will come forward, take part and lend a helping hand in this great work. May Allah accept all our efforts.",
+   "ar": "تأسس وقف الإمام البخاري عام 2017 واضعًا نصب عينيه التعليم والتنمية الاجتماعية والعمل الدعوي. وأول مشروعاته مجمع جامع الإمام البخاري في بنغلاديش، والثاني مجموعة من البرامج الأكاديمية منها كلية القرآن الكريم. إن طلب العلم والاجتهاد فيه ونشره هو السبب الأول لنهضة الأمم، ولذا فالتعلم والتعليم أولى أولويات الأمة المسلمة. كما أن الوقوف إلى جانب المحرومين من كل الأعمار واجب أخلاقي وإنساني. ونرجو أن يتقدم الإخوة والأخوات للمشاركة في هذا العمل العظيم ومدّ يد العون. تقبّل الله منا جميعًا."
   },
+  "messageSource": "https://www.imambukharitrust.com/chairman-message",
   "links": [
    {
     "name": "Facebook",
@@ -443,10 +527,11 @@
     "ar": "بدء الأعمال رسميًا"
    },
    "text": {
-    "bn": "ধলেশ্বরী নদীর তীরে পলাশপুরে ইমাম বুখারী ট্রাস্টের যাত্রা শুরু।",
-    "en": "Imam Bukhari Trust begins its work at Palashpur, on the bank of the Dhaleshwari.",
-    "ar": "انطلاق وقف الإمام البخاري في بلاشبور على ضفاف نهر دهاليشوري."
-   }
+    "bn": "ধলেশ্বরী নদীর তীরবর্তী পলাশপুরে ইমাম বুখারী ট্রাস্টের আনুষ্ঠানিক কার্যক্রম শুরু।",
+    "en": "Imam Bukhari Trust formally begins its work at Palashpur, on the bank of the Dhaleshwari.",
+    "ar": "بدء أعمال وقف الإمام البخاري رسميًا في بلاشبور على ضفاف نهر دهاليشوري."
+   },
+   "source": "imambukharitrust.com"
   },
   {
    "date": "2021",
@@ -456,10 +541,11 @@
     "ar": "تأسيس كلية القرآن"
    },
    "text": {
-    "bn": "২০২১ খ্রি. / ১৪৪২ হি. উচ্চতর ইসলামী শিক্ষা ও গবেষণা প্রতিষ্ঠান হিসেবে যাত্রা।",
-    "en": "Founded in 2021 / 1442 AH as a higher Islamic education and research institution.",
+    "bn": "২০২১ খ্রি. / ১৪৪২ হি. উচ্চতর ইসলামী শিক্ষা ও গবেষণা প্রতিষ্ঠান হিসেবে স্থাপিত।",
+    "en": "Established in 2021 / 1442 AH as a higher Islamic education and research institution.",
     "ar": "تأسست عام 2021م / 1442هـ مؤسسةً للتعليم الإسلامي العالي والبحث."
-   }
+   },
+   "source": "kulliyatulquran.com"
   },
   {
    "date": "2022-07",
@@ -469,49 +555,53 @@
     "ar": "بدء الدراسة في أُتّرا"
    },
    "text": {
-    "bn": "অস্থায়ী ক্যাম্পাসে আরবি ভাষা ও সানাবিয়্যাহ ক্লাস শুরু।",
-    "en": "Arabic language and Sanabiyyah classes begin at the temporary campus.",
-    "ar": "بدء دروس اللغة العربية والمرحلة الثانوية في الحرم المؤقت."
-   }
+    "bn": "অস্থায়ী ক্যাম্পাসে আরবি ভাষা ও সানাবিয়্যাহ পর্যায়ের ক্লাস শুরু।",
+    "en": "Arabic language and Sanabiyyah classes begin at the temporary campus in Uttara.",
+    "ar": "بدء دروس اللغة العربية والمرحلة الثانوية في الحرم المؤقت بأُتّرا."
+   },
+   "source": "imambukharitrust.com"
   },
   {
-   "date": "2023",
+   "date": "2023-01",
    "title": {
-    "bn": "নির্মাণকাজের উদ্বোধন",
-    "en": "Construction inaugurated",
-    "ar": "افتتاح أعمال البناء"
+    "bn": "স্থায়ী ক্যাম্পাসের কাজ শুরু",
+    "en": "Work on the permanent campus begins",
+    "ar": "بدء العمل في الحرم الدائم"
    },
    "text": {
-    "bn": "ইমাম বুখারী জামে মাসজিদ ও একাডেমিক ক্যাম্পাসের নির্মাণকাজের শুভ উদ্বোধন।",
-    "en": "Construction of the Jame Masjid and academic campus is inaugurated.",
-    "ar": "افتتاح أعمال بناء الجامع والحرم الأكاديمي."
-   }
+    "bn": "নিউ ঢাকা সিটিতে কুল্লিয়াতুল কুরআনের স্থায়ী ক্যাম্পাসের কাজ শুরু।",
+    "en": "Work begins on Kulliyatul Quran's permanent campus at New Dhaka City.",
+    "ar": "بدء العمل في الحرم الدائم لكلية القرآن في مدينة دكا الجديدة."
+   },
+   "source": "imambukharitrust.com"
   },
   {
    "date": "2024",
    "title": {
-    "bn": "পাইলিং ও সুন্নাহ কনফারেন্স",
-    "en": "Piling and the Sunnah Conference",
-    "ar": "الخوازيق ومؤتمر السنة"
+    "bn": "পাইলিং ও সুন্নাহ কনফারেন্স বাংলাদেশ ২০২৪",
+    "en": "Piling and Sunnah Conference Bangladesh 2024",
+    "ar": "الخوازيق ومؤتمر السنة في بنغلاديش 2024"
    },
    "text": {
-    "bn": "২২৫টি পাইলের কাজ শুরু; আন্তর্জাতিক সুন্নাহ কনফারেন্স বাংলাদেশ ২০২৪ আয়োজন।",
-    "en": "Work on 225 piles begins; the international Sunnah Conference Bangladesh 2024 is held.",
-    "ar": "بدء تنفيذ 225 خازوقًا؛ وانعقاد مؤتمر السنة الدولي في بنغلاديش 2024."
-   }
+    "bn": "মাসজিদ ও একাডেমিক ভবনের পাইলিং শুরু; সুন্নাহ কনফারেন্স বাংলাদেশ ২০২৪ আয়োজন।",
+    "en": "Piling begins for the masjid and academic building; Sunnah Conference Bangladesh 2024 is held.",
+    "ar": "بدء أعمال الخوازيق للمسجد والمبنى الأكاديمي، وانعقاد مؤتمر السنة في بنغلاديش 2024."
+   },
+   "source": "IBT Catalog 2026 · YouTube"
   },
   {
-   "date": "2026-02",
+   "date": "2026",
    "title": {
-    "bn": "প্রথম ছাদ ঢালাই সম্পন্ন",
-    "en": "First roof slab completed",
-    "ar": "اكتمال صب السقف الأول"
+    "bn": "মাসজিদের কাঠামো উঠছে",
+    "en": "The masjid structure rises",
+    "ar": "ارتفاع هيكل المسجد"
    },
    "text": {
-    "bn": "২২৫টি পাইল ও মাসজিদের প্রথম ছাদ ঢালাই সম্পন্ন, আলহামদুলিল্লাহ। নির্মাণাধীন মাসজিদে প্রথম সালাত আদায়।",
-    "en": "225 piles and the masjid's first roof slab completed, alhamdulillah. The first prayer is held in the masjid under construction.",
-    "ar": "اكتمال 225 خازوقًا وصب السقف الأول للمسجد، والحمد لله. وإقامة أول صلاة في المسجد قيد الإنشاء."
-   }
+    "bn": "২২৫টি পাইল ও মাসজিদের ছাদ ঢালাই সম্পন্ন; নির্মাণাধীন মাসজিদে সালাত শুরু; একাডেমিক ভবনের পাইল ক্যাপ ঢালাই চলমান।",
+    "en": "All 225 piles and the masjid's roof slabs are cast; prayers begin in the masjid under construction; pile-cap casting for the academic building is under way.",
+    "ar": "اكتمال 225 خازوقًا وصب أسقف المسجد، وبدء الصلاة في المسجد قيد الإنشاء، ويجري صب رؤوس الخوازيق للمبنى الأكاديمي."
+   },
+   "source": "IBT Catalog 2026 · YouTube"
   }
  ],
  "institutions": [
@@ -956,11 +1046,11 @@
   }
  ],
  "floors": {
-  "asOf": "2026-02-15",
+  "asOf": "2026-10",
   "source": {
-   "bn": "IBT ক্যাটালগ ২০২৬",
-   "en": "IBT Catalog 2026",
-   "ar": "كتيّب الوقف 2026"
+   "bn": "IBT ক্যাটালগ ২০২৬ ও নির্মাণ অগ্রগতির ভিডিও",
+   "en": "IBT Catalog 2026 and construction-progress videos",
+   "ar": "كتيّب الوقف 2026 ومقاطع تقدم البناء"
   },
   "note": {
    "bn": "তথ্য হালনাগাদ করতে অ্যাডমিন প্যানেল ব্যবহার করুন।",
@@ -1005,7 +1095,7 @@
      "en": "Main prayer hall",
      "ar": "قاعة الصلاة"
     },
-    "status": "progress"
+    "status": "done"
    },
    {
     "label": {
@@ -1081,9 +1171,9 @@
      "ar": "الأساسات والخوازيق"
     },
     "use": {
-     "bn": "১৫৮টি পাইল",
-     "en": "158 piles",
-     "ar": "158 خازوقًا"
+     "bn": "১৫৮টি পাইল · পাইল ক্যাপ ঢালাই চলমান",
+     "en": "158 piles · pile caps being cast",
+     "ar": "158 خازوقًا · صب رؤوس الخوازيق جارٍ"
     },
     "status": "progress"
    },
@@ -1098,7 +1188,7 @@
      "en": "Parents' lounge, display, canteen",
      "ar": "استراحة أولياء الأمور والمعرض والمقصف"
     },
-    "status": "planned"
+    "status": "progress"
    },
    {
     "label": {
@@ -1242,9 +1332,9 @@
    },
    "image": "img/design-side.jpg",
    "body": {
-    "bn": "জমি ক্রয় ও রেজিস্ট্রেশন, নির্মাণ অনুমোদন, মাটি পরীক্ষা, স্থাপত্য নকশা ও প্রাক-নির্মাণ কাজ সম্পন্ন হয়েছে। ২২৫টি পাইল এবং মাসজিদের প্রথম ছাদ ঢালাই সম্পন্ন হয়েছে, আলহামদুলিল্লাহ। প্রকল্পটি জিরো পয়েন্ট থেকে প্রায় ১৫ কিমি, বাবুবাজার ব্রিজ থেকে প্রায় ৮ কিমি দূরে।",
-    "en": "Land purchase and registration, construction approval, soil testing, architectural design and pre-construction work are complete. All 225 piles and the masjid's first roof slab have been completed, alhamdulillah. The site is about 15 km from Zero Point and about 8 km from Babubazar Bridge.",
-    "ar": "اكتمل شراء الأرض وتسجيلها، والحصول على ترخيص البناء، وفحص التربة، والتصميم المعماري، وأعمال ما قبل البناء. واكتمل تنفيذ 225 خازوقًا وصب السقف الأول للمسجد، والحمد لله. يبعد الموقع نحو 15 كم عن النقطة الصفرية ونحو 8 كم عن جسر بابوبازار."
+    "bn": "জমি ক্রয় ও রেজিস্ট্রেশন, নির্মাণ অনুমোদন, মাটি পরীক্ষা, স্থাপত্য নকশা ও প্রাক-নির্মাণ কাজ সম্পন্ন হয়েছে। ২২৫টি পাইল এবং মাসজিদের ছাদ ঢালাই সম্পন্ন হয়েছে, আলহামদুলিল্লাহ; একাডেমিক ভবনের পাইল ক্যাপ ঢালাই চলমান। মাসজিদ ভবন: বি+জি+৫, প্রায় ৬১,২৯৪ বর্গফুট, মোট নামাজের স্থান ২০,৭৪১ বর্গফুট। একাডেমিক ভবন: বি+জি+৯, প্রায় ১,৮০,৭৯৯ বর্গফুট, ৭০টি শ্রেণিকক্ষ, ২,১০০ শিক্ষার্থীর ধারণক্ষমতা। প্রকল্পটি জিরো পয়েন্ট থেকে প্রায় ১৫ কিমি দূরে।",
+    "en": "Land purchase and registration, construction approval, soil testing, architectural design and pre-construction work are complete. All 225 piles and the masjid's roof slabs have been cast, alhamdulillah, and pile caps for the academic building are being cast. Masjid building: B+G+5, about 61,294 sq ft, with 20,741 sq ft of prayer space. Academic building: B+G+9, about 180,799 sq ft, 70 classrooms for 2,100 students. The site is about 15 km from Zero Point.",
+    "ar": "اكتمل شراء الأرض وتسجيلها، والحصول على ترخيص البناء، وفحص التربة، والتصميم المعماري، وأعمال ما قبل البناء. واكتمل تنفيذ 225 خازوقًا وصب أسقف المسجد، والحمد لله، ويجري صب رؤوس الخوازيق للمبنى الأكاديمي. مبنى المسجد: قبو وأرضي وخمسة طوابق بنحو 61,294 قدمًا مربعًا ومساحة صلاة 20,741 قدمًا مربعًا. المبنى الأكاديمي: قبو وأرضي وتسعة طوابق بنحو 180,799 قدمًا مربعًا و70 فصلًا تتسع لـ2,100 طالب. يبعد الموقع نحو 15 كم عن النقطة الصفرية."
    },
    "objectives": [
     {
@@ -1286,6 +1376,7 @@
     "img/design-corner.jpg"
    ],
    "gallery": [
+    "img/flood-2024-rehab-feni.jpg",
     "img/site-signboard.jpg",
     "img/construction-piling.jpg",
     "img/construction-formwork.jpg",
@@ -2052,15 +2143,30 @@
    {
     "type": "bkash",
     "name": {
-     "bn": "বিকাশ (মার্চেন্ট)",
-     "en": "bKash (Merchant)",
-     "ar": "بيكاش (تاجر)"
+     "bn": "বিকাশ ১ (মার্চেন্ট)",
+     "en": "bKash 1 (Merchant)",
+     "ar": "بيكاش 1 (تاجر)"
+    },
+    "number": "01898-940943",
+    "note": {
+     "bn": "বিকাশ অ্যাপে “Payment” অপশন ব্যবহার করুন",
+     "en": "Use the “Payment” option in the bKash app",
+     "ar": "استخدم خيار «Payment» في تطبيق بيكاش"
+    },
+    "show": true
+   },
+   {
+    "type": "bkash",
+    "name": {
+     "bn": "বিকাশ ২ (মার্চেন্ট)",
+     "en": "bKash 2 (Merchant)",
+     "ar": "بيكاش 2 (تاجر)"
     },
     "number": "01852-808554",
     "note": {
-     "bn": "“Payment” অপশন ব্যবহার করুন। শীঘ্রই অনলাইন পেমেন্ট ও মাসিক অটো-পে।",
-     "en": "Use the “Payment” option. Online checkout and monthly auto-pay coming soon.",
-     "ar": "استخدم خيار «الدفع». الدفع الإلكتروني والخصم الشهري التلقائي قريبًا."
+     "bn": "বিকাশ অ্যাপে “Payment” অপশন ব্যবহার করুন",
+     "en": "Use the “Payment” option in the bKash app",
+     "ar": "استخدم خيار «Payment» في تطبيق بيكاش"
     },
     "show": true
    },
@@ -2097,22 +2203,23 @@
    {
     "type": "bank",
     "name": {
-     "bn": "ব্যাংক একাউন্ট",
-     "en": "Bank account",
-     "ar": "حساب بنكي"
+     "bn": "ইসলামী ব্যাংক বাংলাদেশ লিমিটেড",
+     "en": "Islami Bank Bangladesh Ltd.",
+     "ar": "بنك إسلامي بنغلاديش المحدود"
     },
     "number": "2050 2230 2018 75016",
     "note": {
-     "bn": "IMAM BUKHARY JAME MOSJID COMPLEX, BANGLADESH · Islami Bank Bangladesh Ltd., VIP Road Br., Dhaka · SWIFT: IBBLBDDH223 · Routing: 125276856",
-     "en": "IMAM BUKHARY JAME MOSJID COMPLEX, BANGLADESH · Islami Bank Bangladesh Ltd., VIP Road Branch, Dhaka · SWIFT: IBBLBDDH223 · Routing: 125276856",
-     "ar": "IMAM BUKHARY JAME MOSJID COMPLEX, BANGLADESH · بنك إسلامي بنغلاديش، فرع طريق VIP، دكا · SWIFT: IBBLBDDH223"
+     "bn": "হিসাবের নাম: IMAM BUKHARI JAME MASJID COMPLEX, BANGLADESH · ভিআইপি রোড শাখা, ঢাকা · SWIFT: IBBLBDDH223 · রাউটিং: 125276856",
+     "en": "Account name: IMAM BUKHARI JAME MASJID COMPLEX, BANGLADESH · VIP Road Branch, Dhaka · SWIFT: IBBLBDDH223 · Routing: 125276856",
+     "ar": "اسم الحساب: IMAM BUKHARI JAME MASJID COMPLEX, BANGLADESH · فرع طريق VIP، دكا · SWIFT: IBBLBDDH223 · رقم التوجيه: 125276856"
     },
     "show": true
    }
   ],
   "gatewayLive": false,
   "autopayLive": false,
-  "review": true
+  "review": false,
+  "source": "https://www.facebook.com/imambukharitrustbd"
  },
  "donateCopy": {
   "motivations": [
@@ -2169,377 +2276,819 @@
    }
   ],
   "transparency": {
-   "bn": "প্রতিটি দান নির্দিষ্ট তহবিলের হিসাবে আলাদাভাবে লিপিবদ্ধ হয়। যাকাত, সাদাকাহ ও প্রকল্পভিত্তিক দান কখনো মেশানো হয় না। প্রতিটি দানের জন্য রসিদ দেওয়া হয় এবং বার্ষিক প্রতিবেদনে হিসাব প্রকাশ করা হয়।",
-   "en": "Every donation is recorded separately against its fund. Zakat, sadaqah and project donations are never mixed. Every donation receives a receipt, and accounts are published in the annual report.",
-   "ar": "تُسجَّل كل تبرعة في حساب صندوقها مستقلةً، ولا تُخلط الزكاة بالصدقة ولا بتبرعات المشاريع، ولكل تبرعٍ إيصال، وتُنشر الحسابات في التقرير السنوي."
+   "bn": "দান করার সময় খাত (তহবিল) বেছে নিন। দান জানানোর ফরমে খাত ও ট্রানজেকশন আইডি দিলে হিসাব বিভাগ সেই খাতে লিপিবদ্ধ করে।",
+   "en": "Choose a fund when you give. When you report your donation with the fund and transaction ID, the accounts team records it against that fund.",
+   "ar": "اختر الصندوق عند التبرع. وعند إبلاغنا بالتبرع مع الصندوق ورقم العملية، يسجله قسم الحسابات في ذلك الصندوق."
   },
   "review": true
  },
  "registrations": [
   {
-   "id": "kq-admission-2027",
-   "type": "admission",
-   "entity": "kulliyatul-quran",
-   "image": "img/halaqa-class.jpg",
-   "title": {
-    "bn": "কুল্লিয়াতুল কুরআন ভর্তি: সেশন ২০২৭ (সানাবিয়্যাহ ও কুল্লিয়া)",
-    "en": "Kulliyatul Quran admission: Session 2027 (Sanabiyyah & Kulliya)",
-    "ar": "القبول في كلية القرآن: العام الدراسي 2027 (السنابية والكلية)"
-   },
-   "text": {
-    "bn": "দাখিল/এসএসসি বা আলিম/এইচএসসি উত্তীর্ণ শিক্ষার্থীদের জন্য। ভর্তি পরীক্ষা, পূর্ণকালীন অধ্যয়ন ও আবাসিক সুবিধা।",
-    "en": "For students who have passed Dakhil/SSC or Alim/HSC. Admission test, full-time study and residential facilities.",
-    "ar": "لخريجي الداخل/الثانوية المتوسطة أو العالم/الثانوية العامة. اختبار قبول ودراسة بدوام كامل وسكن طلابي."
-   },
-   "opens": "2026-11-01",
-   "closes": "2027-01-15",
-   "mode": "link",
-   "formUrl": "",
-   "fee": {
-    "bn": "ফরম ফি প্রযোজ্য",
-    "en": "Form fee applies",
-    "ar": "توجد رسوم استمارة"
-   },
-   "venue": {
-    "bn": "উত্তরা ক্যাম্পাস, ঢাকা",
-    "en": "Uttara campus, Dhaka",
-    "ar": "حرم أُتّرا، دكا"
-   },
-   "slug": "kq-2027"
-  },
-  {
-   "id": "model-madrasa-2027",
-   "type": "admission",
-   "entity": "model-madrasa",
-   "image": "img/model-madrasa.jpg",
-   "title": {
-    "bn": "কুল্লিয়াতুল কুরআন মডেল মাদরাসা: ভর্তি ২০২৭",
-    "en": "Kulliyatul Quran Model Madrasa: admission 2027",
-    "ar": "مدرسة كلية القرآن النموذجية: القبول 2027"
-   },
-   "text": {
-    "bn": "শিশু শ্রেণি থেকে বিভিন্ন শ্রেণিতে ভর্তি। আসন সীমিত।",
-    "en": "Admission from the early years upward. Limited seats.",
-    "ar": "القبول من مرحلة الطفولة المبكرة فما فوق. المقاعد محدودة."
-   },
-   "opens": "2026-11-01",
-   "closes": "2026-12-31",
-   "mode": "link",
-   "formUrl": "",
-   "fee": {
-    "bn": "বিস্তারিত অফিসে",
-    "en": "Details at the office",
-    "ar": "التفاصيل في المكتب"
-   },
-   "venue": {
-    "bn": "উত্তরা, ঢাকা",
-    "en": "Uttara, Dhaka",
-    "ar": "أُتّرا، دكا"
-   },
-   "slug": "madrasa-2027"
-  },
-  {
-   "id": "after-school-2027",
+   "id": "kq-general-arabic",
+   "slug": "general-arabic",
    "type": "course",
-   "entity": "after-school",
-   "image": "img/program-women-children.jpg",
+   "entity": "courses",
+   "image": "img/halaqa-class.jpg",
+   "status": "open",
+   "opens": "",
+   "closes": "",
+   "mode": "link",
+   "formUrl": "https://forms.gle/StKr9sHnQUhz2i3c6",
    "title": {
-    "bn": "কুল্লিয়াতুল কুরআন আফটার স্কুল: নতুন ব্যাচ",
-    "en": "Kulliyatul Quran After School: new batch",
-    "ar": "برنامج ما بعد المدرسة: دفعة جديدة"
+    "bn": "জেনারেল আরবি ভাষা কোর্স",
+    "en": "General Arabic Language Course",
+    "ar": "دورة اللغة العربية العامة"
    },
    "text": {
-    "bn": "স্কুলগামী শিশুদের জন্য কুরআন, আরবি ও আদব।",
-    "en": "Qur'an, Arabic and adab for school-going children.",
-    "ar": "القرآن والعربية والآداب لتلاميذ المدارس."
+    "bn": "কুল্লিয়াতুল কুরআনিল কারীমের আরবি ভাষা ইনস্টিটিউটের ‘দাওরাতুল লুগা আল-আরাবিয়্যাহ আল-‘আম্মাহ’। আরবির প্রাথমিক জ্ঞান আছে এমন যে কারও জন্য।",
+    "en": "‘Dawrat al-Lughah al-‘Arabiyyah al-‘Ammah’ of the Kulliyatul Quranil Kareem Arabic Language Institute, for anyone with basic Arabic.",
+    "ar": "دورة اللغة العربية العامة بمعهد اللغة العربية في كلية القرآن الكريم، لمن لديه معرفة أساسية بالعربية."
    },
-   "opens": "2026-11-01",
-   "closes": "2027-01-31",
-   "mode": "link",
-   "formUrl": "",
-   "fee": {
-    "bn": "মাসিক ফি",
-    "en": "Monthly fee",
-    "ar": "رسوم شهرية"
+   "facts": [
+    {
+     "bn": "মেয়াদ ১ বছর: ৪ মাস করে ৩টি সেমিস্টার",
+     "en": "1 year: three 4-month semesters",
+     "ar": "سنة واحدة: ثلاثة فصول مدة كل منها 4 أشهر"
+    },
+    {
+     "bn": "সেমিস্টারে প্রায় ১৩৫–১৪০টি ক্লাস",
+     "en": "About 135–140 classes per semester",
+     "ar": "نحو 135–140 حصة في الفصل"
+    },
+    {
+     "bn": "সপ্তাহে ৩ দিন, প্রতিদিন ৩ ঘণ্টা",
+     "en": "3 days a week, 3 hours a day",
+     "ar": "3 أيام أسبوعيًا، 3 ساعات يوميًا"
+    },
+    {
+     "bn": "ক্যাম্পাসে সরাসরি ক্লাস; টেক্সট বুক ও সার্টিফিকেট প্রদান",
+     "en": "In-person classes on campus; textbooks and a certificate are provided",
+     "ar": "دروس حضورية في الحرم؛ تُقدَّم الكتب والشهادة"
+    }
+   ],
+   "eligibility": [
+    {
+     "bn": "আরবি ভাষার প্রাথমিক ও মৌলিক জ্ঞান থাকতে হবে",
+     "en": "Basic knowledge of Arabic is required",
+     "ar": "يُشترط معرفة أساسية باللغة العربية"
+    }
+   ],
+   "fees": [
+    {
+     "label": {
+      "bn": "ভর্তি ফি",
+      "en": "Admission fee",
+      "ar": "رسوم القبول"
+     },
+     "amount": "৳5,000"
+    },
+    {
+     "label": {
+      "bn": "সেমিস্টার ফি",
+      "en": "Semester fee",
+      "ar": "رسوم الفصل"
+     },
+     "amount": "৳20,000 (৳5,000 × 4)"
+    }
+   ],
+   "feeNote": {
+    "bn": "প্রথম ৩০ জনের জন্য ৫০%–৬০% ছাড়। কুল্লিয়ার অফিস থেকেও ভর্তি ফরম সংগ্রহ করা যাবে।",
+    "en": "50%–60% discount for the first 30 applicants. Forms are also available at the Kulliya office.",
+    "ar": "خصم 50%–60% لأول 30 متقدمًا. تتوفر الاستمارة أيضًا في مكتب الكلية."
    },
    "venue": {
-    "bn": "উত্তরা, ঢাকা",
-    "en": "Uttara, Dhaka",
-    "ar": "أُتّرا، دكا"
+    "bn": "কুল্লিয়াতুল কুরআন ক্যাম্পাস, উত্তরা, ঢাকা",
+    "en": "Kulliyatul Quran campus, Uttara, Dhaka",
+    "ar": "حرم كلية القرآن، أُتّرا، دكا"
    },
-   "slug": "after-school"
+   "source": "https://www.kulliyatulquran.com/courses/general-arabic-language"
   },
   {
-   "id": "arabic-intensive",
+   "id": "kq-academic-arabic",
+   "slug": "academic-arabic",
    "type": "course",
    "entity": "courses",
    "image": "img/program-corporate.jpg",
-   "title": {
-    "bn": "২ মাসের নিবিড় আরবি ভাষা কোর্স",
-    "en": "2-month intensive Arabic course",
-    "ar": "دورة عربية مكثفة لشهرين"
-   },
-   "text": {
-    "bn": "দাখিল পরীক্ষার্থী ও আরবি ভাষায় ভিত্তি গড়তে আগ্রহীদের জন্য।",
-    "en": "For Dakhil candidates and anyone building a foundation in Arabic.",
-    "ar": "لطلاب الداخل ولكل من يريد تأسيسًا في العربية."
-   },
-   "opens": "2026-11-10",
-   "closes": "2026-12-20",
+   "status": "info",
+   "opens": "",
+   "closes": "",
    "mode": "link",
    "formUrl": "",
-   "fee": {
-    "bn": "কোর্স ফি প্রযোজ্য",
-    "en": "Course fee applies",
-    "ar": "توجد رسوم"
+   "title": {
+    "bn": "একাডেমিক আরবি ভাষা কোর্স",
+    "en": "Academic Arabic Language Course",
+    "ar": "دورة اللغة العربية للأغراض الأكاديمية"
+   },
+   "text": {
+    "bn": "‘দাওরাতুল লুগা আল-আরাবিয়্যাহ লিল আগরাদ আল-একাডেমিয়্যাহ’। কোর্স শেষে যোগ্যতা অনুযায়ী সানাবিয়্যাহ বা কুল্লিয়ায় ভর্তির সুযোগ।",
+    "en": "‘Dawrat al-Lughah al-‘Arabiyyah lil-Aghrad al-Academiyyah’. On completion, students may enter Sanabiyyah or Kulliya according to their qualifications.",
+    "ar": "دورة اللغة العربية للأغراض الأكاديمية. بعد إتمامها يمكن الالتحاق بالسنابية أو الكلية حسب المؤهل."
+   },
+   "facts": [
+    {
+     "bn": "মেয়াদ ১ বছর: ৬ মাস করে ২টি সেমিস্টার",
+     "en": "1 year: two 6-month semesters",
+     "ar": "سنة واحدة: فصلان مدة كل منهما 6 أشهر"
+    },
+    {
+     "bn": "প্রথম সেমিস্টারে প্রায় ৩০০টি, দ্বিতীয়তে প্রায় ৩৮০টি ক্লাস",
+     "en": "About 300 classes in the first semester and 380 in the second",
+     "ar": "نحو 300 حصة في الفصل الأول و380 في الثاني"
+    },
+    {
+     "bn": "সপ্তাহে ৫ দিন ক্লাস; টেক্সট বুক ও সার্টিফিকেট প্রদান",
+     "en": "Classes 5 days a week; textbooks and a certificate are provided",
+     "ar": "الدروس 5 أيام أسبوعيًا؛ تُقدَّم الكتب والشهادة"
+    }
+   ],
+   "eligibility": [
+    {
+     "bn": "দাখিল / মুতাওয়াসসিতাহ / কাফিয়া পর্যায়ের জ্ঞান",
+     "en": "Dakhil / Mutawassitah / Kafiyah level",
+     "ar": "مستوى الداخل / المتوسطة / الكافية"
+    }
+   ],
+   "fees": [
+    {
+     "label": {
+      "bn": "ভর্তি ফি",
+      "en": "Admission fee",
+      "ar": "رسوم القبول"
+     },
+     "amount": "৳5,000"
+    },
+    {
+     "label": {
+      "bn": "সেমিস্টার ফি",
+      "en": "Semester fee",
+      "ar": "رسوم الفصل"
+     },
+     "amount": "৳30,000 (৳5,000 × 6)"
+    }
+   ],
+   "feeNote": {
+    "bn": "প্রথম ৩০ জনের জন্য ৫০% ছাড়।",
+    "en": "50% discount for the first 30 applicants.",
+    "ar": "خصم 50% لأول 30 متقدمًا."
    },
    "venue": {
-    "bn": "উত্তরা ক্যাম্পাস",
-    "en": "Uttara campus",
-    "ar": "حرم أُتّرا"
+    "bn": "কুল্লিয়াতুল কুরআন ক্যাম্পাস, উত্তরা, ঢাকা",
+    "en": "Kulliyatul Quran campus, Uttara, Dhaka",
+    "ar": "حرم كلية القرآن، أُتّرا، دكا"
    },
-   "slug": "arabic-2m"
+   "source": "https://www.kulliyatulquran.com/courses/academic-arabic-language"
   },
   {
-   "id": "hajj-course-2027",
-   "type": "course",
-   "entity": "courses",
+   "id": "kq-sanabiyyah",
+   "slug": "sanabiyyah",
+   "type": "admission",
+   "entity": "kulliyatul-quran",
    "image": "img/scholars-visit-group.jpg",
-   "title": {
-    "bn": "হজ্জ ও উমরাহ প্রশিক্ষণ কোর্স ২০২৭",
-    "en": "Hajj & Umrah training course 2027",
-    "ar": "دورة الحج والعمرة 2027"
-   },
-   "text": {
-    "bn": "হজ্জযাত্রীদের জন্য সুন্নাহভিত্তিক ব্যবহারিক প্রশিক্ষণ।",
-    "en": "Sunnah-based practical training for pilgrims.",
-    "ar": "تدريب عملي على السنة للحجاج."
-   },
-   "opens": "2027-02-01",
-   "closes": "2027-04-15",
+   "status": "info",
+   "opens": "",
+   "closes": "",
    "mode": "link",
    "formUrl": "",
-   "fee": {
-    "bn": "ফ্রি",
-    "en": "Free",
-    "ar": "مجاني"
+   "title": {
+    "bn": "সানাবিয়্যাহ (উচ্চ মাধ্যমিক) ভর্তি",
+    "en": "Sanabiyyah (higher secondary) admission",
+    "ar": "القبول في المرحلة السنابية (الثانوية)"
    },
+   "text": {
+    "bn": "আরবি ভাষায় পড়া, লেখা ও বলার দক্ষতা এবং দেশের স্বনামধন্য বিশ্ববিদ্যালয়ে উচ্চশিক্ষার প্রস্তুতি।",
+    "en": "Reading, writing and speaking Arabic, and preparation for higher study at leading universities.",
+    "ar": "إتقان القراءة والكتابة والمحادثة بالعربية والاستعداد للدراسة الجامعية."
+   },
+   "facts": [
+    {
+     "bn": "ভর্তি পরীক্ষা: ১ম পর্ব ডিসেম্বর/মার্চ/জুলাই, ২য় পর্ব জানুয়ারি/এপ্রিল/আগস্ট (সম্ভাব্য)",
+     "en": "Entrance exam (tentative): part 1 in December/March/July, part 2 in January/April/August",
+     "ar": "اختبار القبول (مبدئيًا): الجزء الأول في ديسمبر/مارس/يوليو، والثاني في يناير/أبريل/أغسطس"
+    },
+    {
+     "bn": "প্রতি বছর ২০ জন মেধাবীকে বৃত্তি",
+     "en": "Scholarships for 20 high achievers every year",
+     "ar": "منح دراسية لـ20 طالبًا متفوقًا كل عام"
+    },
+    {
+     "bn": "আরবিতে যথেষ্ট দক্ষতা না থাকলে আরবি ভাষা কোর্স বাধ্যতামূলক (আলাদা ভর্তি ফি নেই)",
+     "en": "An Arabic course is compulsory if Arabic is not yet strong enough (no separate admission fee)",
+     "ar": "دورة العربية إلزامية لمن لم يتقن العربية بعد (دون رسوم قبول إضافية)"
+    }
+   ],
+   "eligibility": [
+    {
+     "bn": "দাখিল / মুতাওয়াসসিতাহ / কাফিয়া / এসএসসি পাস",
+     "en": "Dakhil / Mutawassitah / Kafiyah / SSC",
+     "ar": "الداخل / المتوسطة / الكافية / الثانوية العامة"
+    },
+    {
+     "bn": "ভর্তি পরীক্ষায় উত্তীর্ণ ও পূর্ণকালীন শিক্ষার্থী হতে হবে",
+     "en": "Pass the entrance exam and study full-time",
+     "ar": "النجاح في اختبار القبول والدراسة بدوام كامل"
+    }
+   ],
+   "fees": [
+    {
+     "label": {
+      "bn": "ভর্তি ফি",
+      "en": "Admission fee",
+      "ar": "رسوم القبول"
+     },
+     "amount": "৳5,000"
+    },
+    {
+     "label": {
+      "bn": "মাসিক বেতন",
+      "en": "Monthly fee",
+      "ar": "الرسوم الشهرية"
+     },
+     "amount": "৳2,500"
+    },
+    {
+     "label": {
+      "bn": "সেশন ফি",
+      "en": "Session fee",
+      "ar": "رسوم العام"
+     },
+     "amount": "৳5,000"
+    },
+    {
+     "label": {
+      "bn": "লাইব্রেরি ফি (প্রতি সেমিস্টার)",
+      "en": "Library fee (per semester)",
+      "ar": "رسوم المكتبة (لكل فصل)"
+     },
+     "amount": "৳1,000"
+    },
+    {
+     "label": {
+      "bn": "পরীক্ষার ফি (প্রতি সেমিস্টার)",
+      "en": "Exam fee (per semester)",
+      "ar": "رسوم الاختبار (لكل فصل)"
+     },
+     "amount": "৳1,000"
+    },
+    {
+     "label": {
+      "bn": "কম্পিউটার ল্যাব ফি",
+      "en": "Computer lab fee",
+      "ar": "رسوم المختبر"
+     },
+     "amount": "৳500"
+    },
+    {
+     "label": {
+      "bn": "উন্নয়ন ফি",
+      "en": "Development fee",
+      "ar": "رسوم التطوير"
+     },
+     "amount": "৳1,000"
+    },
+    {
+     "label": {
+      "bn": "পরিচয়পত্র",
+      "en": "ID card",
+      "ar": "بطاقة الهوية"
+     },
+     "amount": "৳200"
+    }
+   ],
    "venue": {
-    "bn": "অনলাইন ও সশরীরে",
-    "en": "Online and in person",
-    "ar": "عن بُعد وحضوريًا"
+    "bn": "কুল্লিয়াতুল কুরআন ক্যাম্পাস, উত্তরা, ঢাকা",
+    "en": "Kulliyatul Quran campus, Uttara, Dhaka",
+    "ar": "حرم كلية القرآن، أُتّرا، دكا"
    },
-   "slug": "hajj-2027"
+   "video": "0HUA17Zek58",
+   "source": "https://www.kulliyatulquran.com/courses/sanabiyah"
+  },
+  {
+   "id": "kq-kulliya",
+   "slug": "kulliya",
+   "type": "admission",
+   "entity": "kulliyatul-quran",
+   "image": "img/chairman-speech.jpg",
+   "status": "info",
+   "opens": "",
+   "closes": "",
+   "mode": "link",
+   "formUrl": "",
+   "title": {
+    "bn": "কুল্লিয়া (ব্যাচেলর ইন ইসলামিক স্টাডিজ) ভর্তি",
+    "en": "Kulliya (Bachelor in Islamic Studies) admission",
+    "ar": "القبول في الكلية (بكالوريوس الدراسات الإسلامية)"
+   },
+   "text": {
+    "bn": "ইসলামী শারিয়া ও আরবি ভাষায় পূর্ণ দক্ষতা, কমপক্ষে ৫ পারা হিফয, বক্তৃতা-বিতর্ক-লেখনী প্রশিক্ষণ এবং বিদেশি বিশ্ববিদ্যালয়ে ক্রেডিট ট্রান্সফারের সুযোগ।",
+    "en": "Full command of Shari'ah sciences and Arabic, memorising at least 5 juz', training in speaking, debate and writing, and credit transfer to universities abroad.",
+    "ar": "إتقان العلوم الشرعية والعربية، وحفظ خمسة أجزاء على الأقل، والتدريب على الخطابة والمناظرة والكتابة، وإمكانية معادلة الساعات مع جامعات خارجية."
+   },
+   "facts": [
+    {
+     "bn": "ভর্তি পরীক্ষা: ১ম পর্ব ডিসেম্বর/মার্চ/জুলাই, ২য় পর্ব জানুয়ারি/এপ্রিল/আগস্ট (সম্ভাব্য)",
+     "en": "Entrance exam (tentative): part 1 in December/March/July, part 2 in January/April/August",
+     "ar": "اختبار القبول (مبدئيًا): الجزء الأول في ديسمبر/مارس/يوليو، والثاني في يناير/أبريل/أغسطس"
+    }
+   ],
+   "eligibility": [
+    {
+     "bn": "আলিম / সানাবিয়্যাহ / মেশকাত / এইচএসসি পাস",
+     "en": "Alim / Sanabiyyah / Mishkat / HSC",
+     "ar": "العالم / السنابية / المشكاة / الثانوية العليا"
+    },
+    {
+     "bn": "ভর্তি পরীক্ষায় উত্তীর্ণ ও পূর্ণকালীন শিক্ষার্থী হতে হবে",
+     "en": "Pass the entrance exam and study full-time",
+     "ar": "النجاح في اختبار القبول والدراسة بدوام كامل"
+    }
+   ],
+   "fees": [
+    {
+     "label": {
+      "bn": "ভর্তি ফি",
+      "en": "Admission fee",
+      "ar": "رسوم القبول"
+     },
+     "amount": "৳5,000"
+    },
+    {
+     "label": {
+      "bn": "মাসিক বেতন",
+      "en": "Monthly fee",
+      "ar": "الرسوم الشهرية"
+     },
+     "amount": "৳5,000"
+    },
+    {
+     "label": {
+      "bn": "সেশন ফি",
+      "en": "Session fee",
+      "ar": "رسوم العام"
+     },
+     "amount": "৳5,000"
+    },
+    {
+     "label": {
+      "bn": "লাইব্রেরি ফি (প্রতি সেমিস্টার)",
+      "en": "Library fee (per semester)",
+      "ar": "رسوم المكتبة (لكل فصل)"
+     },
+     "amount": "৳1,000"
+    },
+    {
+     "label": {
+      "bn": "পরীক্ষার ফি (প্রতি সেমিস্টার)",
+      "en": "Exam fee (per semester)",
+      "ar": "رسوم الاختبار (لكل فصل)"
+     },
+     "amount": "৳1,000"
+    },
+    {
+     "label": {
+      "bn": "কম্পিউটার ল্যাব ফি",
+      "en": "Computer lab fee",
+      "ar": "رسوم المختبر"
+     },
+     "amount": "৳500"
+    },
+    {
+     "label": {
+      "bn": "উন্নয়ন ফি",
+      "en": "Development fee",
+      "ar": "رسوم التطوير"
+     },
+     "amount": "৳1,000"
+    },
+    {
+     "label": {
+      "bn": "পরিচয়পত্র",
+      "en": "ID card",
+      "ar": "بطاقة الهوية"
+     },
+     "amount": "৳200"
+    }
+   ],
+   "venue": {
+    "bn": "কুল্লিয়াতুল কুরআন ক্যাম্পাস, উত্তরা, ঢাকা",
+    "en": "Kulliyatul Quran campus, Uttara, Dhaka",
+    "ar": "حرم كلية القرآن، أُتّرا، دكا"
+   },
+   "source": "https://www.kulliyatulquran.com/courses/kulliya"
+  },
+  {
+   "id": "kq-intensive-arabic",
+   "slug": "arabic-2-months",
+   "type": "course",
+   "entity": "courses",
+   "image": "img/halaqa-class.jpg",
+   "status": "info",
+   "opens": "",
+   "closes": "",
+   "mode": "link",
+   "formUrl": "",
+   "title": {
+    "bn": "দাখিল ফলপ্রার্থীদের জন্য আলট্রা পদ্ধতিতে ২ মাসে আরবি ভাষা কোর্স",
+    "en": "2-month ‘Ultra method’ Arabic course for Dakhil candidates",
+    "ar": "الدورة المكثفة في اللغة العربية لطلاب الداخل (شهران)"
+   },
+   "text": {
+    "bn": "الدَّوْرَةُ المُكَثَّفَةُ فِي اللُّغَةِ العَرَبِيَّةِ: কুল্লিয়াতুল কুরআনের ওয়েবসাইটে ‘চলমান কোর্স’ হিসেবে তালিকাভুক্ত। ভর্তির বিস্তারিত জানতে অফিসে যোগাযোগ করুন।",
+    "en": "Listed as a current course on the Kulliyatul Quran website. Contact the office for admission details.",
+    "ar": "مدرجة ضمن الدورات الحالية في موقع كلية القرآن. للتفاصيل يُرجى التواصل مع المكتب."
+   },
+   "facts": [],
+   "eligibility": [],
+   "fees": [],
+   "venue": {
+    "bn": "কুল্লিয়াতুল কুরআন ক্যাম্পাস, উত্তরা, ঢাকা",
+    "en": "Kulliyatul Quran campus, Uttara, Dhaka",
+    "ar": "حرم كلية القرآن، أُتّرا، دكا"
+   },
+   "video": "nU09L0hWldI",
+   "source": "https://www.kulliyatulquran.com/courses"
+  },
+  {
+   "id": "model-madrasa",
+   "slug": "model-madrasa",
+   "type": "admission",
+   "entity": "model-madrasa",
+   "image": "img/model-madrasa.jpg",
+   "status": "info",
+   "opens": "",
+   "closes": "",
+   "mode": "link",
+   "formUrl": "",
+   "title": {
+    "bn": "কুল্লিয়াতুল কুরআন মডেল মাদরাসা: ভর্তি",
+    "en": "Kulliyatul Quran Model Madrasa: admission",
+    "ar": "مدرسة كلية القرآن النموذجية: القبول"
+   },
+   "text": {
+    "bn": "ভর্তির সময়সূচি, শ্রেণি ও ফি অ্যাডমিন প্যানেল থেকে যোগ হবে। এখন জানতে অফিসে যোগাযোগ করুন।",
+    "en": "Admission dates, classes and fees will be added from the admin panel. Please contact the office for now.",
+    "ar": "ستُضاف مواعيد القبول والصفوف والرسوم من لوحة الإدارة. يُرجى التواصل مع المكتب حاليًا."
+   },
+   "facts": [],
+   "eligibility": [],
+   "fees": [],
+   "venue": {
+    "bn": "উত্তরা, ঢাকা",
+    "en": "Uttara, Dhaka",
+    "ar": "أُتّرا، دكا"
+   },
+   "source": "https://www.kulliyatulquran.com/p/kulliyatul-quran-model-madrasah",
+   "needsInfo": true
+  },
+  {
+   "id": "after-school",
+   "slug": "after-school",
+   "type": "course",
+   "entity": "after-school",
+   "image": "img/program-women-children.jpg",
+   "status": "info",
+   "opens": "",
+   "closes": "",
+   "mode": "link",
+   "formUrl": "",
+   "title": {
+    "bn": "কুল্লিয়াতুল কুরআন আফটার স্কুল",
+    "en": "Kulliyatul Quran After School",
+    "ar": "برنامج كلية القرآن بعد المدرسة"
+   },
+   "text": {
+    "bn": "ব্যাচ, সময় ও ফি অ্যাডমিন প্যানেল থেকে যোগ হবে। এখন জানতে অফিসে যোগাযোগ করুন।",
+    "en": "Batches, timings and fees will be added from the admin panel. Please contact the office for now.",
+    "ar": "ستُضاف الدفعات والمواعيد والرسوم من لوحة الإدارة. يُرجى التواصل مع المكتب حاليًا."
+   },
+   "facts": [],
+   "eligibility": [],
+   "fees": [],
+   "venue": {
+    "bn": "উত্তরা, ঢাকা",
+    "en": "Uttara, Dhaka",
+    "ar": "أُتّرا، دكا"
+   },
+   "source": "https://www.kulliyatulquran.com/p/kulliyatul-quran-after-school",
+   "needsInfo": true
   },
   {
    "id": "teachers-training",
+   "slug": "teachers",
    "type": "training",
    "entity": "teachers-training",
-   "image": "img/sunnah-conference-2024.jpg",
-   "title": {
-    "bn": "টিচার্স ট্রেনিং: Effective Teaching (পরবর্তী ব্যাচ)",
-    "en": "Teachers Training: Effective Teaching (next batch)",
-    "ar": "تدريب المعلمين: التدريس الفعّال (الدفعة القادمة)"
-   },
-   "text": {
-    "bn": "মাদরাসা ও স্কুল শিক্ষকদের জন্য দিনব্যাপী কর্মশালা: আধুনিক ও ইসলামী দৃষ্টিভঙ্গির সমন্বয়।",
-    "en": "A day-long workshop for madrasa and school teachers, integrating modern and Islamic perspectives.",
-    "ar": "ورشة ليوم كامل لمعلمي المدارس، تجمع بين المنظورين الحديث والإسلامي."
-   },
-   "opens": "2026-12-01",
-   "closes": "2027-01-20",
+   "image": "img/chairman-speech.jpg",
+   "status": "info",
+   "opens": "",
+   "closes": "",
    "mode": "link",
    "formUrl": "",
-   "fee": {
-    "bn": "নিবন্ধন ফি প্রযোজ্য",
-    "en": "Registration fee applies",
-    "ar": "توجد رسوم تسجيل"
+   "title": {
+    "bn": "শিক্ষক প্রশিক্ষণ কোর্স",
+    "en": "Teacher training course",
+    "ar": "دورة تدريب المعلمين"
    },
+   "text": {
+    "bn": "কুল্লিয়াতুল কুরআনের শিক্ষক প্রশিক্ষণ কার্যক্রম। পরবর্তী ব্যাচের তথ্য অ্যাডমিন প্যানেল থেকে যোগ হবে।",
+    "en": "Kulliyatul Quran's teacher training programme. Details of the next batch will be added from the admin panel.",
+    "ar": "برنامج تدريب المعلمين في كلية القرآن. ستُضاف تفاصيل الدفعة القادمة من لوحة الإدارة."
+   },
+   "facts": [],
+   "eligibility": [],
+   "fees": [],
    "venue": {
     "bn": "ঢাকা",
     "en": "Dhaka",
     "ar": "دكا"
    },
-   "slug": "teachers"
+   "source": "https://www.kulliyatulquran.com/courses",
+   "needsInfo": true
   },
   {
    "id": "volunteer",
+   "slug": "volunteer",
    "type": "volunteer",
    "entity": "",
    "image": "img/event-gettogether.jpg",
+   "status": "open",
+   "opens": "",
+   "closes": "",
+   "mode": "native",
+   "formUrl": "",
    "title": {
     "bn": "স্বেচ্ছাসেবক হিসেবে যুক্ত হোন",
     "en": "Join as a volunteer",
     "ar": "انضم متطوعًا"
    },
    "text": {
-    "bn": "ইভেন্ট, ত্রাণ, ডিজিটাল দাওয়াহ ও প্রশাসনিক কাজে আপনার সময় ও দক্ষতা দিন।",
-    "en": "Give your time and skills to events, relief, digital Dawah and administration.",
-    "ar": "قدّم وقتك ومهاراتك في الفعاليات والإغاثة والدعوة الرقمية والإدارة."
+    "bn": "ইভেন্ট, ত্রাণ, ডিজিটাল দাওয়াহ ও প্রশাসনিক কাজে আপনার সময় ও দক্ষতা দিন। ফরম পূরণ করলে টিম যোগাযোগ করবে।",
+    "en": "Give your time and skills to events, relief, digital Dawah and administration. Fill in the form and the team will contact you.",
+    "ar": "قدّم وقتك ومهاراتك في الفعاليات والإغاثة والدعوة الرقمية والإدارة. املأ الاستمارة وسيتواصل معك الفريق."
    },
-   "opens": "2026-01-01",
-   "closes": "2027-12-31",
-   "mode": "native",
-   "formUrl": "",
-   "fee": {
-    "bn": "—",
-    "en": "—",
-    "ar": "—"
-   },
-   "venue": {
-    "bn": "ঢাকা ও সারাদেশ",
-    "en": "Dhaka and nationwide",
-    "ar": "دكا وجميع أنحاء البلاد"
-   },
-   "slug": "volunteer"
-  }
- ],
- "events": [
-  {
-   "date": "2026-11-21",
-   "time": "17:00",
-   "title": {
-    "bn": "সাপ্তাহিক ইলমী মজলিস",
-    "en": "Weekly ilmi majlis",
-    "ar": "المجلس العلمي الأسبوعي"
-   },
-   "venue": {
-    "bn": "উত্তরা ও অনলাইন",
-    "en": "Uttara and online",
-    "ar": "أُتّرا وعن بُعد"
-   },
-   "type": "halaqa",
-   "registration": ""
-  },
-  {
-   "date": "2026-11-28",
-   "time": "17:00",
-   "title": {
-    "bn": "সাপ্তাহিক ইলমী মজলিস",
-    "en": "Weekly ilmi majlis",
-    "ar": "المجلس العلمي الأسبوعي"
-   },
-   "venue": {
-    "bn": "উত্তরা ও অনলাইন",
-    "en": "Uttara and online",
-    "ar": "أُتّرا وعن بُعد"
-   },
-   "type": "halaqa",
-   "registration": ""
-  },
-  {
-   "date": "2026-12-05",
-   "time": "20:30",
-   "title": {
-    "bn": "প্রশ্নোত্তর সেশন (অনলাইন)",
-    "en": "Q&A session (online)",
-    "ar": "جلسة أسئلة وأجوبة (عن بُعد)"
-   },
-   "venue": {
-    "bn": "Zoom ও Facebook Live",
-    "en": "Zoom and Facebook Live",
-    "ar": "زوم وبث فيسبوك"
-   },
-   "type": "qa",
-   "registration": ""
-  },
-  {
-   "date": "2027-01-20",
-   "time": "09:00",
-   "title": {
-    "bn": "টিচার্স ট্রেনিং: Effective Teaching",
-    "en": "Teachers Training: Effective Teaching",
-    "ar": "تدريب المعلمين: التدريس الفعّال"
-   },
+   "facts": [],
+   "eligibility": [],
+   "fees": [],
    "venue": {
     "bn": "ঢাকা",
     "en": "Dhaka",
     "ar": "دكا"
    },
-   "type": "training",
-   "registration": "teachers-training"
+   "source": ""
+  }
+ ],
+ "events": [
+  {
+   "id": "ilmi-majlis",
+   "recurring": {
+    "bn": "সাপ্তাহিক",
+    "en": "Weekly",
+    "ar": "أسبوعي"
+   },
+   "date": "",
+   "time": "",
+   "type": "halaqa",
+   "title": {
+    "bn": "সাপ্তাহিক ইলমী মাজলিস",
+    "en": "Weekly Ilmi Majlis",
+    "ar": "المجلس العلمي الأسبوعي"
+   },
+   "venue": {
+    "bn": "লাইভ ও রেকর্ড: IBT YouTube চ্যানেল",
+    "en": "Live and recorded on the IBT YouTube channel",
+    "ar": "بث مباشر وتسجيل على قناة الوقف في يوتيوب"
+   },
+   "link": "https://www.youtube.com/channel/UCm8It2AWLRt3N22-fL89K_w/streams",
+   "registration": ""
+  },
+  {
+   "id": "ask-elahi",
+   "recurring": {
+    "bn": "ধারাবাহিক প্রশ্নোত্তর",
+    "en": "Q&A series",
+    "ar": "سلسلة أسئلة وأجوبة"
+   },
+   "date": "",
+   "time": "",
+   "type": "qa",
+   "title": {
+    "bn": "Ask Dr Monzur E Elahi: প্রশ্নোত্তর পর্ব",
+    "en": "Ask Dr Monzur E Elahi: Q&A episodes",
+    "ar": "اسأل د. منظور إلهي: حلقات أسئلة وأجوبة"
+   },
+   "venue": {
+    "bn": "IBT YouTube চ্যানেল",
+    "en": "IBT YouTube channel",
+    "ar": "قناة الوقف في يوتيوب"
+   },
+   "link": "https://www.youtube.com/channel/UCm8It2AWLRt3N22-fL89K_w",
+   "registration": ""
+  },
+  {
+   "id": "get-together-2026",
+   "recurring": {
+    "bn": "তারিখ ঘোষণা সাপেক্ষে",
+    "en": "Date to be announced",
+    "ar": "يُعلن الموعد لاحقًا"
+   },
+   "date": "",
+   "time": "",
+   "type": "event",
+   "title": {
+    "bn": "IBT ৪র্থ গেট টুগেদার ২০২৬: শাইখদের সান্নিধ্যে একটি দিন",
+    "en": "IBT 4th Get-Together 2026: a day with the Shaikhs",
+    "ar": "اللقاء الرابع للوقف 2026: يوم مع المشايخ"
+   },
+   "venue": {
+    "bn": "বিস্তারিত ভিডিওতে",
+    "en": "Details in the video",
+    "ar": "التفاصيل في الفيديو"
+   },
+   "video": "8MlFKh__zNg",
+   "registration": ""
   }
  ],
  "news": [
   {
-   "id": "first-prayer",
-   "date": "2026-02-10",
-   "image": "img/first-prayer.jpg",
+   "id": "get-together-2026",
+   "date": "2026-11",
+   "image": "yt:8MlFKh__zNg",
+   "video": "8MlFKh__zNg",
    "title": {
-    "bn": "নির্মাণাধীন মাসজিদে প্রথম সালাত",
-    "en": "First prayer in the masjid under construction",
-    "ar": "أول صلاة في المسجد قيد الإنشاء"
+    "bn": "আসছে IBT ৪র্থ গেট টুগেদার ২০২৬",
+    "en": "IBT's 4th Get-Together 2026 is coming",
+    "ar": "اللقاء الرابع للوقف 2026 قريبًا"
    },
    "summary": {
-    "bn": "প্রথম ছাদ ঢালাইয়ের পর নির্মাণাধীন ইমাম বুখারী জামে মাসজিদে প্রথমবারের মতো জামাআতে সালাত আদায় করা হয়েছে, আলহামদুলিল্লাহ।",
-    "en": "After the first roof slab was cast, the first congregational prayer was held in the Imam Bukhari Jame Masjid, alhamdulillah.",
-    "ar": "بعد صب السقف الأول أُقيمت أول صلاة جماعة في جامع الإمام البخاري، والحمد لله."
+    "bn": "‘শাইখদের সান্নিধ্যে একটি দিন’: সমর্থক ও শুভাকাঙ্ক্ষীদের নিয়ে ইমাম বুখারী ট্রাস্টের চতুর্থ গেট টুগেদার।",
+    "en": "‘A day with the Shaikhs’: Imam Bukhari Trust's fourth get-together for supporters and well-wishers.",
+    "ar": "«يوم مع المشايخ»: اللقاء الرابع لوقف الإمام البخاري مع الداعمين والمحبين."
    },
-   "review": true
+   "source": "YouTube"
+  },
+  {
+   "id": "construction-2026-10",
+   "date": "2026-10",
+   "image": "yt:ViHzrqAKvO8",
+   "video": "ViHzrqAKvO8",
+   "title": {
+    "bn": "মাসজিদ ও একাডেমিক ভবনের কাজ চলমান",
+    "en": "Work continues on the masjid and academic building",
+    "ar": "تواصل العمل في المسجد والمبنى الأكاديمي"
+   },
+   "summary": {
+    "bn": "নিউ ঢাকা সিটিতে ইমাম বুখারী জামে মাসজিদ ও একাডেমিক ভবনের নির্মাণকাজের সর্বশেষ চিত্র।",
+    "en": "The latest footage of construction of the Imam Bukhari Jame Masjid and academic building at New Dhaka City.",
+    "ar": "أحدث مشاهد أعمال بناء جامع الإمام البخاري والمبنى الأكاديمي في مدينة دكا الجديدة."
+   },
+   "source": "YouTube"
+  },
+  {
+   "id": "pile-cap-2026",
+   "date": "2026-10",
+   "image": "yt:GW_HDHAsbyM",
+   "video": "GW_HDHAsbyM",
+   "title": {
+    "bn": "একাডেমিক ভবনের পাইল ক্যাপ ঢালাই চলমান",
+    "en": "Pile-cap casting under way for the academic building",
+    "ar": "صب رؤوس الخوازيق للمبنى الأكاديمي"
+   },
+   "summary": {
+    "bn": "১৫৮টি পাইলের ওপর একাডেমিক ভবনের পাইল ক্যাপ ঢালাইয়ের কাজ চলছে।",
+    "en": "Pile caps are being cast over the academic building's 158 piles.",
+    "ar": "يجري صب رؤوس الخوازيق فوق 158 خازوقًا للمبنى الأكاديمي."
+   },
+   "source": "YouTube · IBT Catalog 2026"
+  },
+  {
+   "id": "welfare-2026",
+   "date": "2026-10",
+   "image": "yt:g9lRiceVtBY",
+   "video": "g9lRiceVtBY",
+   "title": {
+    "bn": "সামাজিক জনকল্যাণমূলক কাজের খণ্ডচিত্র",
+    "en": "Glimpses of our social welfare work",
+    "ar": "لقطات من أعمالنا الاجتماعية"
+   },
+   "summary": {
+    "bn": "ত্রাণ, শীতবস্ত্র, ইফতার ও কুরবানিসহ ইমাম বুখারী ট্রাস্টের জনকল্যাণমূলক কার্যক্রমের ভিডিও।",
+    "en": "A video of IBT's welfare work, including relief, winter clothing, iftar and qurbani.",
+    "ar": "فيديو لأعمال الوقف الخيرية من إغاثة وكسوة شتاء وإفطار وأضاحٍ."
+   },
+   "source": "YouTube"
+  },
+  {
+   "id": "second-roof-2026",
+   "date": "2026-07",
+   "image": "yt:UpmANHHV-NQ",
+   "video": "UpmANHHV-NQ",
+   "title": {
+    "bn": "মাসজিদের দ্বিতীয় ছাদের বর্তমান অবস্থা",
+    "en": "The masjid's second roof slab",
+    "ar": "السقف الثاني للمسجد"
+   },
+   "summary": {
+    "bn": "ইমাম বুখারী জামে মাসজিদের দ্বিতীয় ছাদের কাজের ভিডিও আপডেট।",
+    "en": "A video update on the Imam Bukhari Jame Masjid's second roof slab.",
+    "ar": "تحديث مصوّر عن السقف الثاني لجامع الإمام البخاري."
+   },
+   "source": "YouTube"
+  },
+  {
+   "id": "first-prayer",
+   "date": "2026",
+   "image": "img/first-prayer.jpg",
+   "title": {
+    "bn": "নির্মাণাধীন মাসজিদে সালাত",
+    "en": "Prayer in the masjid under construction",
+    "ar": "الصلاة في المسجد قيد الإنشاء"
+   },
+   "summary": {
+    "bn": "ছাদ ঢালাইয়ের পর নির্মাণাধীন ইমাম বুখারী জামে মাসজিদে জামাআতে সালাত আদায় শুরু হয়েছে, আলহামদুলিল্লাহ।",
+    "en": "Since the roof slabs were cast, congregational prayer has begun in the Imam Bukhari Jame Masjid under construction, alhamdulillah.",
+    "ar": "بعد صب الأسقف بدأت صلاة الجماعة في جامع الإمام البخاري قيد الإنشاء، والحمد لله."
+   },
+   "source": "IBT Catalog 2026"
   },
   {
    "id": "scholars-visit",
-   "date": "2026-01-20",
+   "date": "2026",
    "image": "img/scholars-visit.jpg",
    "title": {
-    "bn": "নির্মাণাধীন মাসজিদ পরিদর্শনে সম্মানিত স্কলারগণ",
-    "en": "Respected scholars visit the masjid site",
-    "ar": "علماء أفاضل يزورون موقع المسجد"
+    "bn": "নির্মাণকাজ পরিদর্শনে সম্মানিত আলেমগণ",
+    "en": "Respected scholars visit the construction",
+    "ar": "علماء أفاضل يزورون موقع البناء"
    },
    "summary": {
-    "bn": "দেশের সম্মানিত আলেমগণ ইমাম বুখারী জামে মাসজিদ ও একাডেমিক ক্যাম্পাসের নির্মাণকাজ পরিদর্শন করেন এবং দু‘আ করেন।",
-    "en": "Respected scholars visited the construction of the Jame Masjid and academic campus and made du'a.",
-    "ar": "زار علماء أفاضل موقع بناء الجامع والحرم الأكاديمي ودعوا بالخير."
+    "bn": "সম্মানিত আলেমগণ ইমাম বুখারী জামে মাসজিদ কমপ্লেক্সের নির্মাণকাজ পরিদর্শন করেন।",
+    "en": "Respected scholars visited the construction of the Imam Bukhari Jame Masjid Complex.",
+    "ar": "زار علماء أفاضل أعمال بناء مجمع جامع الإمام البخاري."
    },
-   "review": true
+   "source": "IBT Catalog 2026"
   },
   {
-   "id": "teachers-workshop",
-   "date": "2026-11-14",
-   "image": "img/sunnah-conference-2024.jpg",
+   "id": "winter-2024",
+   "date": "2024",
+   "image": "img/winter-2024-distribution.jpg",
    "title": {
-    "bn": "দিনব্যাপী শিক্ষক প্রশিক্ষণ কর্মশালা সম্পন্ন",
-    "en": "Day-long teacher training workshop held",
-    "ar": "انعقاد ورشة تدريب المعلمين"
+    "bn": "শীতবস্ত্র বিতরণ ২০২৪",
+    "en": "Winter clothing distribution 2024",
+    "ar": "توزيع كسوة الشتاء 2024"
    },
    "summary": {
-    "bn": "“Effective Teaching: Integrating Modern and Islamic Perspectives” শীর্ষক কর্মশালায় প্রফেসর ড. মোহাম্মদ মানজুরে ইলাহী সেশন পরিচালনা করেন।",
-    "en": "Prof. Dr. Mohammad Manzur-e-Elahi led sessions at the workshop “Effective Teaching: Integrating Modern and Islamic Perspectives”.",
-    "ar": "قاد الأستاذ الدكتور محمد منظور إلهي جلسات ورشة «التدريس الفعال: الدمج بين المنظورين الحديث والإسلامي»."
+    "bn": "শীতার্ত মানুষের মধ্যে শীতবস্ত্র বিতরণ করা হয়।",
+    "en": "Winter clothing was distributed to people in need.",
+    "ar": "وُزّعت كسوة الشتاء على المحتاجين."
    },
-   "review": true
+   "source": "Google Drive · IBT"
   },
   {
-   "id": "flood-relief",
-   "date": "2024-09-01",
+   "id": "flood-2024",
+   "date": "2024",
    "image": "img/relief-flood-1.jpg",
    "title": {
     "bn": "বন্যার্তদের পাশে ইমাম বুখারী ট্রাস্ট",
-    "en": "Imam Bukhari Trust stands by flood victims",
-    "ar": "الوقف إلى جانب منكوبي الفيضانات"
+    "en": "Standing with flood victims",
+    "ar": "إلى جانب منكوبي الفيضانات"
    },
    "summary": {
-    "bn": "বন্যাকবলিত এলাকায় নৌকায় করে খাদ্য ও জরুরি সামগ্রী পৌঁছে দেওয়া হয়।",
-    "en": "Food and emergency supplies were delivered by boat to flood-hit areas.",
-    "ar": "إيصال الغذاء والمستلزمات العاجلة بالقوارب إلى المناطق المنكوبة."
+    "bn": "২০২৪ সালের বন্যায় ক্ষতিগ্রস্ত এলাকায় ত্রাণ ও পুনর্বাসন সহায়তা দেওয়া হয়।",
+    "en": "Relief and rehabilitation support was provided in areas hit by the 2024 floods.",
+    "ar": "قُدّمت الإغاثة ودعم إعادة التأهيل في المناطق المتضررة من فيضانات 2024."
    },
-   "review": true
+   "source": "IBT Catalog 2026 · Google Drive"
   },
   {
    "id": "sunnah-conf",
-   "date": "2024-06-01",
+   "date": "2024",
    "image": "img/sunnah-conference-2024.jpg",
+   "video": "J0WR-qV5Omg",
    "title": {
     "bn": "সুন্নাহ কনফারেন্স বাংলাদেশ ২০২৪",
     "en": "Sunnah Conference Bangladesh 2024",
     "ar": "مؤتمر السنة في بنغلاديش 2024"
    },
    "summary": {
-    "bn": "“সুন্নাহর প্রামাণিকতা ও সংরক্ষণ” বিষয়ে দেশি-বিদেশি গবেষক ও শিক্ষাবিদদের অংশগ্রহণে আন্তর্জাতিক কনফারেন্স।",
-    "en": "An international conference on the authenticity and preservation of the Sunnah with researchers and academics from home and abroad.",
-    "ar": "مؤتمر دولي عن حجية السنة وحفظها بمشاركة باحثين وأكاديميين من الداخل والخارج."
+    "bn": "কুল্লিয়াতুল কুরআনের আয়োজনে সুন্নাহ কনফারেন্স বাংলাদেশ ২০২৪।",
+    "en": "Sunnah Conference Bangladesh 2024, organised by Kulliyatul Quran.",
+    "ar": "مؤتمر السنة في بنغلاديش 2024 بتنظيم كلية القرآن."
    },
-   "review": true
+   "source": "YouTube · IBT Catalog 2026"
+  },
+  {
+   "id": "kq-academic-inauguration",
+   "date": "2023",
+   "image": "yt:4brggmfTVzc",
+   "video": "4brggmfTVzc",
+   "title": {
+    "bn": "কুল্লিয়াতুল কুরআনের একাডেমিক ভবন নির্মাণকাজের শুভ উদ্বোধন",
+    "en": "Construction of Kulliyatul Quran's academic building inaugurated",
+    "ar": "افتتاح أعمال بناء المبنى الأكاديمي لكلية القرآن"
+   },
+   "summary": {
+    "bn": "প্রফেসর ড. মোহাম্মদ মানজুরে ইলাহীর উপস্থিতিতে একাডেমিক ভবনের নির্মাণকাজের উদ্বোধন।",
+    "en": "The start of construction of the academic building, with Prof. Dr. Mohammad Manzur-e-Elahi.",
+    "ar": "افتتاح أعمال بناء المبنى الأكاديمي بحضور أ.د. محمد منظور إلهي."
+   },
+   "source": "YouTube"
   }
  ],
  "videos": [
@@ -2792,9 +3341,9 @@
      },
      "image": "img/design-night-2.jpg",
      "text": {
-      "bn": "২০২৭–২০২৮ সালের মধ্যে বাকি কাজ সম্পন্ন করার লক্ষ্য। আপনার সাদাকাহ এই যাত্রার অংশ হতে পারে।",
-      "en": "The goal is to complete the remaining work in 2027–2028. Your sadaqah can be part of this journey.",
-      "ar": "الهدف إتمام بقية الأعمال خلال 2027–2028، ويمكن لصدقتك أن تكون جزءًا من هذه المسيرة."
+      "bn": "মাসজিদের ওপরের তলাগুলো ও একাডেমিক ভবনের কাজ সামনে। আপনার সাদাকাহ এই যাত্রার অংশ হতে পারে।",
+      "en": "The masjid's upper floors and the academic building lie ahead. Your sadaqah can be part of this journey.",
+      "ar": "أمامنا الطوابق العليا للمسجد والمبنى الأكاديمي، وصدقتك يمكن أن تكون جزءًا من هذه الرحلة."
      }
     }
    ]
@@ -2881,82 +3430,37 @@
    },
    "type": "publication",
    "year": "2026",
-   "url": "",
+   "url": "files/IBT_Catalog_2026.pdf",
    "note": {
-    "bn": "শীঘ্রই ডাউনলোড",
-    "en": "Download coming soon",
-    "ar": "التحميل قريبًا"
-   }
-  },
-  {
-   "title": {
-    "bn": "বার্ষিক প্রতিবেদন ২০২৫",
-    "en": "Annual Report 2025",
-    "ar": "التقرير السنوي 2025"
-   },
-   "type": "annual",
-   "year": "2025",
-   "url": "",
-   "note": {
-    "bn": "প্রস্তুত হচ্ছে",
-    "en": "In preparation",
-    "ar": "قيد الإعداد"
-   }
-  },
-  {
-   "title": {
-    "bn": "নির্মাণ অগ্রগতি প্রতিবেদন",
-    "en": "Construction progress report",
-    "ar": "تقرير تقدم البناء"
-   },
-   "type": "progress",
-   "year": "2026",
-   "url": "",
-   "note": {
-    "bn": "অনুমোদনের অপেক্ষায়",
-    "en": "Awaiting approval",
-    "ar": "بانتظار الاعتماد"
-   }
-  },
-  {
-   "title": {
-    "bn": "অডিট রিপোর্ট",
-    "en": "Audit report",
-    "ar": "تقرير التدقيق"
-   },
-   "type": "audit",
-   "year": "2025",
-   "url": "",
-   "note": {
-    "bn": "অডিট প্রক্রিয়াধীন",
-    "en": "Audit in progress",
-    "ar": "التدقيق جارٍ"
+    "bn": "PDF ডাউনলোড",
+    "en": "Download PDF",
+    "ar": "تحميل PDF"
    }
   }
  ],
  "faqs": [
   {
    "q": {
-    "bn": "আমার দান কোন খাতে ব্যয় হবে তা কীভাবে নিশ্চিত হবো?",
-    "en": "How can I be sure my donation goes to the fund I choose?",
-    "ar": "كيف أتأكد أن تبرعي يذهب إلى الصندوق الذي اخترته؟"
+    "bn": "আমার দান নির্দিষ্ট খাতে দিতে চাইলে কী করব?",
+    "en": "How do I give to a specific fund?",
+    "ar": "كيف أتبرع لصندوق محدد؟"
    },
    "a": {
-    "bn": "প্রতিটি দান নির্বাচিত তহবিলের হিসাবে আলাদাভাবে লিপিবদ্ধ হয় এবং আপনি রসিদ পান। যাকাত সম্পূর্ণ পৃথক হিসাবে রাখা হয়।",
-    "en": "Every donation is recorded against the fund you choose and you receive a receipt. Zakat is kept in a completely separate account.",
-    "ar": "تُسجَّل كل تبرعة في حساب الصندوق المختار وتتلقى إيصالًا، وتُحفظ الزكاة في حساب مستقل تمامًا."
+    "bn": "দানের পর ‘দান জানান’ ফরমে খাত, পরিমাণ ও ট্রানজেকশন আইডি দিন। বিস্তারিত জানতে +880 1852-808554 নম্বরে যোগাযোগ করুন।",
+    "en": "After giving, use the ‘Report your donation’ form with the fund, amount and transaction ID. For details call +880 1852-808554.",
+    "ar": "بعد التبرع استخدم نموذج «أبلغ عن تبرعك» مع الصندوق والمبلغ ورقم العملية. للتفاصيل اتصل على ‎+880 1852-808554."
    }
   },
   {
    "q": {
-    "bn": "আমি কি প্রতি মাসে নিয়মিত দান করতে পারি?",
-    "en": "Can I give every month?",
-    "ar": "هل يمكنني التبرع شهريًا؟"
+    "bn": "আপনাদের কি অনলাইন কোর্স আছে?",
+    "en": "Do you offer online courses?",
+    "ar": "هل لديكم دورات عن بُعد؟"
    },
    "a": {
-    "bn": "হ্যাঁ, মাসিক দাতা সদস্য হতে পারেন। শীঘ্রই বিকাশ অটো-পে চালু হবে, তখন প্রতি মাসে স্বয়ংক্রিয়ভাবে দান হবে।",
-    "en": "Yes, you can become a monthly donor member. bKash auto-pay is coming soon, so your gift will go through automatically each month.",
-    "ar": "نعم، يمكنك أن تصبح عضوًا متبرعًا شهريًا، وسيتوفر قريبًا الخصم التلقائي عبر بيكاش."
+    "bn": "কুল্লিয়াতুল কুরআনের কোর্সগুলো বর্তমানে অফলাইনে, ক্যাম্পাসে সরাসরি। আলোচনা ও প্রশ্নোত্তর YouTube চ্যানেলে দেখা যায়।",
+    "en": "Kulliyatul Quran's courses are currently held in person on campus. Talks and Q&A sessions are available on YouTube.",
+    "ar": "دورات كلية القرآن حاليًا حضورية في الحرم، والدروس وجلسات الأسئلة متاحة على يوتيوب."
    }
   },
   {
@@ -3141,7 +3645,7 @@
    "ar": "أعمالنا في لمحة"
   },
   "latest_videos": {
-   "bn": "সর্বশেষ ভিডিও",
+   "bn": "সাম্প্রতিক ভিডিও",
    "en": "Latest videos",
    "ar": "أحدث الفيديوهات"
   },
@@ -3381,9 +3885,9 @@
    "ar": "مسيرتنا"
   },
   "chairman_title": {
-   "bn": "প্রতিষ্ঠাতা ও চেয়ারম্যান",
-   "en": "Founder & Chairman",
-   "ar": "المؤسس والرئيس"
+   "bn": "চেয়ারম্যান",
+   "en": "Chairman",
+   "ar": "رئيس مجلس الإدارة"
   },
   "read_message": {
    "bn": "পূর্ণ বার্তা পড়ুন",
@@ -3514,6 +4018,237 @@
    "bn": "স্থাপত্য নকশা",
    "en": "Architectural design",
    "ar": "التصميم المعماري"
+  },
+  "reg_info": {
+   "bn": "বিস্তারিত তথ্য",
+   "en": "Details",
+   "ar": "التفاصيل"
+  },
+  "reg_needs_info": {
+   "bn": "তথ্য শীঘ্রই যোগ হবে",
+   "en": "Details coming soon",
+   "ar": "التفاصيل قريبًا"
+  },
+  "fees": {
+   "bn": "ফি কাঠামো",
+   "en": "Fees",
+   "ar": "الرسوم"
+  },
+  "eligibility": {
+   "bn": "ভর্তির যোগ্যতা",
+   "en": "Eligibility",
+   "ar": "شروط القبول"
+  },
+  "course_facts": {
+   "bn": "কোর্স পরিচিতি",
+   "en": "About the course",
+   "ar": "عن الدورة"
+  },
+  "contact_office": {
+   "bn": "ভর্তি ও বিস্তারিত তথ্যের জন্য যোগাযোগ করুন",
+   "en": "Contact us for admission and details",
+   "ar": "تواصل معنا للقبول والتفاصيل"
+  },
+  "official_page": {
+   "bn": "অফিসিয়াল পেজ",
+   "en": "Official page",
+   "ar": "الصفحة الرسمية"
+  },
+  "programmes": {
+   "bn": "নিয়মিত কার্যক্রম",
+   "en": "Regular programmes",
+   "ar": "البرامج المنتظمة"
+  },
+  "watch": {
+   "bn": "ভিডিও দেখুন",
+   "en": "Watch video",
+   "ar": "شاهد الفيديو"
+  },
+  "all_videos": {
+   "bn": "সব ভিডিও",
+   "en": "All videos",
+   "ar": "كل الفيديوهات"
+  },
+  "live": {
+   "bn": "লাইভ",
+   "en": "Live",
+   "ar": "مباشر"
+  },
+  "load_more": {
+   "bn": "আরও দেখুন",
+   "en": "Load more",
+   "ar": "عرض المزيد"
+  },
+  "search_videos": {
+   "bn": "ভিডিও খুঁজুন…",
+   "en": "Search videos…",
+   "ar": "ابحث في الفيديوهات…"
+  },
+  "playlists": {
+   "bn": "প্লেলিস্ট",
+   "en": "Playlists",
+   "ar": "قوائم التشغيل"
+  },
+  "subscribe": {
+   "bn": "সাবস্ক্রাইব",
+   "en": "Subscribe",
+   "ar": "اشترك"
+  },
+  "video_count": {
+   "bn": "টি ভিডিও",
+   "en": " videos",
+   "ar": " فيديو"
+  },
+  "photo_story": {
+   "bn": "ছবিতে",
+   "en": "In pictures",
+   "ar": "بالصور"
+  },
+  "open_youtube": {
+   "bn": "YouTube-এ খুলুন",
+   "en": "Open on YouTube",
+   "ar": "افتح في يوتيوب"
+  },
+  "academic_committee": {
+   "bn": "একাডেমিক কমিটি",
+   "en": "Academic committee",
+   "ar": "اللجنة الأكاديمية"
+  },
+  "construction_progress": {
+   "bn": "নির্মাণ অগ্রগতি",
+   "en": "Construction progress",
+   "ar": "تقدم البناء"
+  },
+  "our_work": {
+   "bn": "আমাদের কাজ",
+   "en": "Our work",
+   "ar": "أعمالنا"
+  },
+  "activities": {
+   "bn": "সাম্প্রতিক কার্যক্রম",
+   "en": "Recent activities",
+   "ar": "الأنشطة الأخيرة"
+  },
+  "give_now": {
+   "bn": "এখনই দান করুন",
+   "en": "Give now",
+   "ar": "تبرّع الآن"
+  },
+  "donate_band": {
+   "bn": "মাসজিদ ও শিক্ষা কার্যক্রমে আপনার সাদাকাহ",
+   "en": "Your sadaqah for the masjid and education",
+   "ar": "صدقتك للمسجد والتعليم"
+  },
+  "newest": {
+   "bn": "নতুন",
+   "en": "New",
+   "ar": "جديد"
   }
- }
+ },
+ "scholars": [
+  {
+   "name": {
+    "bn": "শাইখ প্রফেসর ড. মোহাম্মদ মানজুরে ইলাহী",
+    "en": "Shaikh Prof. Dr. Mohammad Manzur-e-Elahi",
+    "ar": ""
+   },
+   "role": {
+    "bn": "পিএইচডি, মদিনা ইসলামী বিশ্ববিদ্যালয়",
+    "en": "PhD, Islamic University of Madinah",
+    "ar": ""
+   },
+   "photo": "https://api.kulliyatulquran.com/uploads/dr_manzureelahi_71cac0175c.jpeg"
+  },
+  {
+   "name": {
+    "bn": "শাইখ ড. আবু বকর মুহাম্মাদ যাকারিয়া",
+    "en": "Shaikh Dr. Abu Bakr Muhammad Zakaria",
+    "ar": ""
+   },
+   "role": {
+    "bn": "পিএইচডি, মদিনা ইসলামী বিশ্ববিদ্যালয়",
+    "en": "PhD, Islamic University of Madinah",
+    "ar": ""
+   },
+   "photo": "https://api.kulliyatulquran.com/uploads/dr_abu_bakr_zakaria_28c19fd192.jpeg"
+  },
+  {
+   "name": {
+    "bn": "শাইখ ড. মুহাম্মাদ সাইফুল্লাহ",
+    "en": "Shaikh Dr. Muhammad Saifullah",
+    "ar": ""
+   },
+   "role": {
+    "bn": "পিএইচডি, মদিনা ইসলামী বিশ্ববিদ্যালয়",
+    "en": "PhD, Islamic University of Madinah",
+    "ar": ""
+   },
+   "photo": "https://api.kulliyatulquran.com/uploads/dr_saifullah_6167b03d72.jpeg"
+  },
+  {
+   "name": {
+    "bn": "শাইখ ড. ইমাম হোসাইন",
+    "en": "Shaikh Dr. Imam Hossain",
+    "ar": ""
+   },
+   "role": {
+    "bn": "সহযোগী অধ্যাপক, আরবি বিভাগ, জাতীয় বিশ্ববিদ্যালয়",
+    "en": "Associate Professor of Arabic, National University",
+    "ar": ""
+   },
+   "photo": "https://api.kulliyatulquran.com/uploads/dr_imam_hossain_f3a718f49e.jpeg"
+  },
+  {
+   "name": {
+    "bn": "শাইখ ড. রেজাউল করীম",
+    "en": "Shaikh Dr. Rezaul Karim",
+    "ar": ""
+   },
+   "role": {
+    "bn": "পিএইচডি, মদিনা ইসলামী বিশ্ববিদ্যালয়",
+    "en": "PhD, Islamic University of Madinah",
+    "ar": ""
+   },
+   "photo": "https://api.kulliyatulquran.com/uploads/dr_reza_22239af86a.jpeg"
+  },
+  {
+   "name": {
+    "bn": "শাইখ ড. আব্দুল্লাহিল কাফী বিন লুৎফর রহমান",
+    "en": "Shaikh Dr. Abdullahil Kafi bin Lutfor Rahman",
+    "ar": ""
+   },
+   "role": {
+    "bn": "পিএইচডি, মদিনা ইসলামী বিশ্ববিদ্যালয়",
+    "en": "PhD, Islamic University of Madinah",
+    "ar": ""
+   },
+   "photo": "https://api.kulliyatulquran.com/uploads/dr_abdullah_hil_kafi_6d3082bcb6.jpeg"
+  },
+  {
+   "name": {
+    "bn": "এম. এম. ফজলে রাব্বি",
+    "en": "M. M. Fazle Rabbi",
+    "ar": ""
+   },
+   "role": {
+    "bn": "সহকারী অধ্যাপক, বাংলাদেশ ইউনিভার্সিটি অব বিজনেস অ্যান্ড টেকনোলজি",
+    "en": "Assistant Professor, Bangladesh University of Business and Technology",
+    "ar": ""
+   },
+   "photo": "https://api.kulliyatulquran.com/uploads/fazle_rabbi_7fde53b4cc.jpeg"
+  },
+  {
+   "name": {
+    "bn": "ড. মোহাম্মদ নাছির উদ্দীন",
+    "en": "Dr. Mohammad Nasir Uddin",
+    "ar": ""
+   },
+   "role": {
+    "bn": "অধ্যাপক, ইসলামী বিশ্ববিদ্যালয়, কুষ্টিয়া",
+    "en": "Professor, Islamic University, Kushtia",
+    "ar": ""
+   },
+   "photo": "https://api.kulliyatulquran.com/uploads/Prof_Dr_Nasir_Uddin_12763fb144.jpg"
+  }
+ ]
 }

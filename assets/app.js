@@ -5,7 +5,8 @@
   var DEF = null;          // bundled defaults (data/content.json)
   var C = null;            // live content = defaults + published cloud overrides
   var cloud = { db: null, user: null, assets: null, canEdit: false, uid: null, ready: false };
-  var CMS_KEYS = ["settings", "home", "chairman", "cells", "history", "institutions", "floors", "projects", "initiatives", "impact", "funds", "supportItems", "payment", "donateCopy", "registrations", "events", "news", "videos", "stories", "reports", "faqs", "ui"];
+  var CMS_KEYS = ["settings", "home", "chairman", "cells", "history", "institutions", "floors", "projects", "initiatives", "impact", "funds", "supportItems", "payment", "donateCopy", "registrations", "events", "news", "videos", "stories", "reports", "faqs", "ui", "scholars"];
+  var V = { videos: [], playlists: [], channels: [] }; // data/videos.json (auto-updated from YouTube)
   IBT.CMS_KEYS = CMS_KEYS;
   var state = { lang: "bn", theme: "dark", route: "home", preview: false, drafts: {} };
   IBT.state = state; IBT.cloud = cloud;
@@ -29,9 +30,11 @@
   IBT.tr = tr; IBT.T = T; IBT.U = U;
   function img(ref) {
     if (!ref) return "";
+    if (ref.indexOf("yt:") === 0) return ytThumb(ref.slice(3));
     if (ref.indexOf("asset:") === 0) return window.IBT_GAS ? window.IBT_GAS.assetUrl(ref.slice(6)) : "/_blob/" + ref.slice(6);
     return ref;
   }
+  function ytThumb(id, small) { return "https://i.ytimg.com/vi/" + encodeURIComponent(id) + (small ? "/mqdefault.jpg" : "/hqdefault.jpg"); }
   IBT.img = img;
   var LOC = { bn: "bn-BD", en: "en-GB", ar: "ar-SA" };
   function num(n) { try { return new Intl.NumberFormat(LOC[state.lang]).format(n); } catch (e) { return String(n); } }
@@ -125,12 +128,16 @@
   // Priority nav: hide trailing items that do not fit (they stay in the drawer)
   function fitNav() {
     var nav = $(".header .nav"); if (!nav) return;
+    var hd = $(".header"); hd.classList.remove("cramped");
     var items = $$("a", nav); items.forEach(function (a) { a.style.display = ""; });
     if (getComputedStyle(nav).display === "none") return;
-    for (var i = items.length - 1; i >= 0 && nav.scrollWidth > nav.clientWidth + 1; i--) items[i].style.display = "none";
+    var shown = items.length;
+    for (var i = items.length - 1; i >= 0 && nav.scrollWidth > nav.clientWidth + 1; i--) { items[i].style.display = "none"; shown--; }
+    if (shown < 4) hd.classList.add("cramped");
   }
   window.addEventListener("resize", function () { clearTimeout(fitNav._t); fitNav._t = setTimeout(fitNav, 120); });
-  if (document.fonts && document.fonts.ready) document.fonts.ready.then(function () { fitNav(); });
+  if (document.fonts) { document.fonts.ready.then(function () { fitNav(); }); if (document.fonts.addEventListener) document.fonts.addEventListener("loadingdone", function () { fitNav(); }); }
+  setTimeout(fitNav, 1500);
   function renderFooter() {
     var S = C.settings, c = S.contact || {};
     $("#chrome-bottom").innerHTML = '<footer class="footer"><div class="wrap"><div class="cols">' +
@@ -146,12 +153,19 @@
   function pageHead(eyebrow, title, lead, cr) { return '<section class="page-hero"><div class="wrap">' + (cr || "") + (eyebrow ? '<div class="eyebrow">' + eyebrow + "</div>" : "") + '<h1 class="h-display rv">' + title + "</h1>" + (lead ? '<p class="lead rv" style="max-width:760px">' + lead + "</p>" : "") + "</div></section>"; }
   function statusChip(s) { var map = { running: "", ongoing: "", construction: "gold", establishing: "gold", planned: "muted", proposed: "warn", done: "", progress: "gold" }; return '<span class="chip ' + (map[s] || "") + '"><span class="dot"></span>' + U("status_" + s) + "</span>"; }
   function reviewNote(o) { return (o && o.review && cloud.canEdit) ? '<div class="pending">⚠ review: approval pending (visible to editors only)</div>' : ""; }
-  function regStatus(r) { var now = new Date(), o = parseDate(r.opens), c = parseDate(r.closes); if (c) c.setHours(23, 59, 59); if (o && now < o) return "soon"; if (c && now > c) return "closed"; return "open"; }
+  function regStatus(r) { if (!r.opens && !r.closes) return ["open", "soon", "closed", "info"].indexOf(r.status) > -1 ? r.status : "info"; var now = new Date(), o = parseDate(r.opens), c = parseDate(r.closes); if (c) c.setHours(23, 59, 59); if (o && now < o) return "soon"; if (c && now > c) return "closed"; return "open"; }
   IBT.regStatus = regStatus;
-  function regChip(r) { var s = regStatus(r); return '<span class="chip ' + (s === "open" ? "" : s === "soon" ? "gold" : "muted") + '">' + (s === "open" ? '<span class="dot pulse"></span>' : "") + U("reg_" + s) + "</span>"; }
-  function vcard(v) {
-    return '<a class="vcard" href="https://www.youtube.com/watch?v=' + esc(v.youtubeId) + '" target="_blank" rel="noopener"><div class="vthumb"><div class="pattern"></div><div class="pl">' + icon("play") + '</div><div class="vt"><span>' + esc(v.channel || "") + "</span><span>YouTube ↗</span></div></div><div class=\"t\">" + T(v.title) + '</div><div class="s">' + esc(v.speaker || "") + "</div></a>";
+  function regChip(r) { var s = regStatus(r); return '<span class="chip ' + (s === "open" ? "" : s === "soon" ? "gold" : "muted") + '">' + (s === "open" ? '<span class="dot pulse"></span>' : "") + U(s === "info" && r.needsInfo ? "reg_needs_info" : "reg_" + s) + "</span>"; }
+  function vnorm(v) {
+    if (v.youtubeId) return { id: v.youtubeId, title: tr(v.title), sub: v.speaker || v.channel || "", date: v.date || "", live: false };
+    var ch = (V.channels || []).filter(function (c) { return c.id === v.channel; })[0];
+    return { id: v.id, title: v.title, sub: ch ? ch.name : "", date: v.date || v.approx || "", live: v.kind === "live" };
   }
+  function vcard(v) {
+    var n = vnorm(v);
+    return '<button class="vcard" type="button" data-play="' + esc(n.id) + '" data-title="' + esc(n.title) + '"><div class="vthumb"><img loading="lazy" src="' + esc(ytThumb(n.id, true)) + '" alt=""><div class="pl">' + icon("play") + '</div><div class="vt"><span>' + (n.live ? '<span class="chip muted" style="background:#c62828;color:#fff">' + U("live") + "</span>" : "") + "</span><span>" + (n.date ? fdate(n.date) : "") + '</span></div></div><div class="t">' + esc(n.title) + '</div><div class="s">' + esc(n.sub) + "</div></button>";
+  }
+  IBT.V = function () { return V; };
   function card(o) {
     return '<a class="card glass" href="' + o.href + '"><div class="media">' + (o.image ? '<img loading="lazy" src="' + esc(img(o.image)) + '" alt="' + esc(o.alt || "") + '">' : "") + (o.chip || "") + '</div><div class="body"><h3>' + o.title + "</h3>" + (o.text ? "<p>" + o.text + "</p>" : "") + '<div class="foot"><span class="linkarrow">' + (o.cta || U("learn_more")) + ARROW + "</span>" + (o.meta || "") + "</div></div></a>";
   }
@@ -160,31 +174,52 @@
   var P = {};
   P.home = function () {
     var H = C.home, S = C.settings;
-    var ins = C.institutions || [], regs = (C.registrations || []).filter(function (r) { return regStatus(r) === "open"; });
-    var news = (C.news || []).slice().sort(function (a, b) { return (b.date || "").localeCompare(a.date || ""); }).slice(0, 3);
-    var html = "";
-    var ringImgs = heroImages();
-    html += '<section class="hero hero-ring" id="hero"><div class="hero-bg" aria-hidden="true"><img id="heroBg" src="' + esc(img(ringImgs[0])) + '" alt=""></div><div class="shade"></div>' +
-      '<div class="wrap hero-grid"><div class="content glass dense rv"><div class="eyebrow">' + T(H.heroEyebrow) + '</div><h1 class="h-display">' + T(H.heroTitle) + '</h1><p class="lead">' + T(H.heroText) + '</p><div class="ctas"><button class="btn primary" data-story="' + esc(H.heroStory || "ibjmc") + '">' + icon("play") + T(H.heroCta1) + '</button><a class="btn" href="#donate">' + icon("heart") + T(H.heroCta2) + '</a></div><div class="meta"><span>' + icon("pin") + " " + T(S.contact.site) + "</span></div></div>" +
-      '<div class="ring-stage" id="ringStage" role="region" aria-roledescription="carousel" aria-label="' + esc(Uraw("design_gallery")) + '"><div class="ring" id="ring">' + ringImgs.map(function (src, i) { return '<figure class="rc" data-i="' + i + '"><img src="' + esc(img(src)) + '" alt="' + esc(Uraw("illustrative")) + " " + (i + 1) + '" draggable="false"' + (i > 3 ? ' loading="lazy"' : "") + "></figure>"; }).join("") + '</div><div class="ring-glow"></div><div class="ring-ctl"><button class="icon-btn" data-ring="-1" aria-label="' + Uraw("prev") + '">' + icon("arrow", "flip-l") + '</button><span class="chip muted">' + icon("cube") + " " + U("illustrative") + '</span><button class="icon-btn" data-ring="1" aria-label="' + Uraw("next") + '">' + icon("arrow") + "</button></div></div></div>" +
-      '<div class="scroll-cue" aria-hidden="true"></div></section>';
-    if (regs.length) html += '<section class="section tight"><div class="wrap"><div class="glass" style="padding:16px 18px;display:flex;gap:14px;align-items:center;flex-wrap:wrap"><span class="chip"><span class="dot pulse"></span>' + U("reg_open") + '</span><div style="display:flex;gap:10px;flex-wrap:wrap;flex:1">' + regs.slice(0, 4).map(function (r) { return '<a class="btn sm" style="white-space:normal;text-align:start" href="#reg-' + esc(r.id) + '">' + T(r.title) + "</a>"; }).join("") + '</div><a class="linkarrow" href="#register">' + U("view_all") + ARROW + "</a></div></div></section>";
-    html += '<section class="section"><div class="wrap split"><div class="rv"><div class="eyebrow">' + U("nav_about") + '</div><h2 class="h-section">' + T(H.aboutTitle) + '</h2><p class="lead">' + T(H.aboutText) + '</p><div class="glass" style="padding:18px;margin:18px 0"><div class="eyebrow" style="margin-bottom:6px">' + T(H.visionTitle) + '</div><p style="margin:0">' + T(H.visionText) + '</p></div><a class="linkarrow" href="#about">' + U("learn_more") + ARROW + '</a></div><div class="stack-photos rv"><div class="photo p1"><img loading="lazy" src="' + esc(img(H.aboutImage)) + '" alt=""></div><div class="photo p2"><img loading="lazy" src="img/event-gettogether.jpg" alt=""></div></div></div></section>';
-    html += '<section class="section" style="padding-top:0"><div class="wrap"><div class="sec-head"><div><div class="eyebrow">' + T(S.tagline) + '</div><h2 class="h-section">' + U("nav_initiatives") + '</h2></div></div><div class="bento">' + (H.pillars || []).map(function (p) { return '<a class="tile glass tilt rv" href="' + esc(p.link || "#initiatives") + '"><span class="sweep"></span><span class="ic">' + icon(p.icon) + "</span><h3>" + T(p.title) + "</h3><p>" + T(p.text) + '</p><span class="linkarrow" style="margin-top:auto">' + U("learn_more") + ARROW + "</span></a>"; }).join("") + "</div></div></section>";
-    html += '<section class="section" style="padding-top:0"><div class="wrap"><div class="spotlight rv"><img loading="lazy" src="' + esc(img(H.spotlightImage)) + '" alt=""><div class="in"><div><span class="chip gold" style="margin-bottom:12px">' + statusChip("construction") + '</span><h2 class="h-section" style="color:#fff">' + T(H.spotlightTitle) + '</h2><p style="color:rgba(242,245,247,.85);max-width:640px">' + T(H.spotlightText) + '</p><div class="ctas" style="display:flex;gap:10px;flex-wrap:wrap"><button class="btn primary" data-story="ibjmc">' + icon("play") + U("enter_story") + '</button><a class="btn" style="color:#fff" href="#project-ibjmc">' + U("tracker_title") + ARROW + '</a></div></div><div class="glass">' + floorSummary() + "</div></div></div></div></section>";
-    html += '<section class="section" style="padding-top:0"><div class="wrap"><div class="sec-head"><h2 class="h-section">' + U("nav_institutions") + '</h2><a class="linkarrow" href="#institutions">' + U("view_all") + ARROW + '</a></div><div class="grid g3">' + ins.slice(0, 6).map(function (i) { return card({ href: i.link || "#inst-" + i.id, image: i.image, title: T(i.name), text: T(i.summary), chip: statusChip(i.status) }); }).join("") + "</div></div></section>";
-    html += impactSection();
-    html += '<section class="section" style="padding-top:0"><div class="wrap"><div class="sec-head"><h2 class="h-section">' + U("latest_videos") + '</h2><a class="linkarrow" href="#media">' + U("view_all") + ARROW + '</a></div><div class="rail">' + (C.videos || []).slice(0, 8).map(vcard).join("") + "</div></div></section>";
-    html += '<section class="section" style="padding-top:0"><div class="wrap split rev"><div class="photo rv" style="aspect-ratio:4/5;max-height:560px"><img loading="lazy" src="' + esc(img(C.chairman.photo2 || C.chairman.photo)) + '" alt="' + esc(tr(C.chairman.name)) + '"></div><div class="rv"><div class="eyebrow">' + U("chairman_title") + '</div><h2 class="h-section">' + T(C.chairman.name) + '</h2><p class="lead">' + T(C.chairman.message).split(/[।.?؟]/).slice(0, 3).join(tr({ bn: "। ", en: ". ", ar: ". " })) + '…</p><a class="btn" href="#chairman">' + U("read_message") + ARROW + "</a></div></div></section>";
-    html += '<section class="section" style="padding-top:0"><div class="wrap"><div class="sec-head"><h2 class="h-section">' + U("latest_news") + '</h2><a class="linkarrow" href="#news">' + U("view_all") + ARROW + '</a></div><div class="grid g3">' + news.map(newsCard).join("") + "</div></div></section>";
-    var q = H.quote;
-    if (q) html += '<section class="section" style="padding-top:0"><div class="wrap"><div class="quote glass rv">' + starSvg() + "<blockquote>" + T(q.text) + "</blockquote><cite>" + T(q.ref) + "</cite>" + reviewNote(q) + '<div style="margin-top:22px"><a class="btn primary" href="#donate">' + icon("heart") + U("donate") + "</a></div></div></div></section>";
+    var regs = (C.registrations || []).filter(function (r) { return regStatus(r) === "open"; });
+    var news = sortedNews().slice(0, 5);
+    var slides = (H.heroSlides || []).length ? H.heroSlides : [{ image: H.heroImage, caption: "" }];
+    var latest = (V.videos || []).filter(function (v) { return v.channel === "ibt"; })[0];
+    var html = '<section class="hero hero-photo" id="hero"><div class="slides" aria-hidden="true">' + slides.map(function (sl, i) { return '<div class="slide' + (i ? "" : " on") + '"><img src="' + esc(img(sl.image)) + '" alt=""' + (i ? ' loading="lazy"' : "") + "></div>"; }).join("") + "</div>" +
+      '<div class="wrap"><div class="content"><div class="eyebrow">' + T(H.heroEyebrow) + '</div><h1 class="h-display">' + T(H.heroTitle) + '</h1><p class="lead">' + T(H.heroText) + '</p><div class="ctas"><a class="btn primary" href="#project-ibjmc">' + icon("masjid") + T(H.heroCta2) + '</a><button class="btn light" data-story="' + esc(H.heroStory || "ibjmc") + '">' + icon("play") + T(H.heroCta1) + "</button></div></div>" +
+      '<div class="hero-foot"><div><div class="cap" id="heroCap">' + slideCap(slides[0]) + '</div><div class="dots" role="tablist">' + slides.map(function (sl, i) { return '<button role="tab" aria-label="' + (i + 1) + '" aria-current="' + (i ? "false" : "true") + '" data-slide="' + i + '"></button>'; }).join("") + "</div></div>" +
+      (latest ? '<button class="latest-vid" data-play="' + esc(latest.id) + '" data-title="' + esc(latest.title) + '"><img src="' + esc(ytThumb(latest.id, true)) + '" alt=""><span><small>' + U("latest_videos") + " · YouTube</small><b>" + esc(latest.title) + "</b></span></button>" : "") + "</div></div></section>";
+    if (regs.length) html += '<div class="regbar"><div class="wrap"><span class="chip"><span class="dot pulse"></span>' + U("reg_open") + '</span>' + regs.slice(0, 3).map(function (r) { return '<a href="#reg-' + esc(r.id) + '">' + T(r.title) + ARROW + "</a>"; }).join("") + "</div></div>";
+    html += '<section class="section tight"><div class="wrap"><div class="facts rv">' + (H.facts || []).map(function (f) { return '<div><b data-count="' + esc(f.value) + '"' + (f.plain ? ' data-plain="1"' : "") + ">" + (f.plain ? digits(f.value) : num(+f.value)) + "</b><span>" + T(f.label) + "</span></div>"; }).join("") + '</div><div class="src">' + T(H.factsSource) + "</div></div></section>";
+    html += '<section class="section"><div class="wrap split"><div class="rv"><div class="eyebrow">' + U("nav_about") + '</div><h2 class="h-section">' + T(H.aboutTitle) + '</h2><p class="lead">' + T(H.aboutText) + '</p><p class="muted"><b>' + T(H.visionTitle) + ":</b> " + T(H.visionText) + '</p><a class="linkarrow" href="#about">' + U("learn_more") + ARROW + '</a></div><div class="photo rv" style="aspect-ratio:4/3"><img loading="lazy" src="' + esc(img(H.aboutImage || "img/first-prayer.jpg")) + '" alt=""></div></div></section>';
+    html += '<section class="section" style="padding-top:0"><div class="wrap"><div class="sec-head"><div><div class="eyebrow">' + T(S.tagline) + '</div><h2 class="h-section">' + U("our_work") + '</h2></div></div><div class="work-grid">' + (H.pillars || []).map(function (p, i) { return '<a class="work rv' + (i === 0 ? " wide" : "") + '" href="' + esc(p.link || "#initiatives") + '"><img loading="lazy" src="' + esc(img(p.image)) + '" alt=""><div class="in"><h3>' + T(p.title) + "</h3><p>" + T(p.text) + "</p></div></a>"; }).join("") + "</div></div></section>";
+    html += progressBand();
+    var vids = (V.videos || []).filter(function (v) { return v.channel === "ibt"; }).slice(0, 8);
+    if (vids.length) html += '<section class="section" style="padding-top:0"><div class="wrap"><div class="sec-head"><div><div class="eyebrow">YouTube</div><h2 class="h-section">' + U("latest_videos") + '</h2></div><a class="linkarrow" href="#media">' + U("all_videos") + ARROW + '</a></div><div class="grid g4">' + vids.map(vcard).join("") + "</div></div></section>";
+    html += '<section class="section" style="padding-top:0"><div class="wrap"><div class="sec-head"><h2 class="h-section">' + U("activities") + '</h2><a class="linkarrow" href="#news">' + U("view_all") + ARROW + '</a></div><div class="acts">' + news.map(actRow).join("") + "</div></div></section>";
+    html += '<section class="section" style="padding-top:0"><div class="wrap split rev"><div class="photo rv" style="aspect-ratio:4/5;max-height:560px"><img loading="lazy" src="' + esc(img(C.chairman.photo2 || C.chairman.photo)) + '" alt="' + esc(tr(C.chairman.name)) + '"></div><div class="rv"><div class="eyebrow">' + U("chairman_title") + '</div><h2 class="h-section">' + T(C.chairman.name) + '</h2><p class="muted">' + T(C.chairman.role) + '</p><p class="lead" style="font-size:1.05rem">' + T(C.chairman.message).slice(0, 420) + '…</p><a class="btn" href="#chairman">' + U("read_message") + ARROW + "</a></div></div></section>";
+    html += donateBand();
     return html;
   };
-  function heroImages() {
-    var H = C.home, list = state.theme === "dark" ? (H.heroGalleryNight || []) : (H.heroGallery || []);
-    if (!list.length) list = H.heroGallery || H.heroGalleryNight || [H.heroImage];
-    return list.slice(0, 12);
+  function slideCap(sl) { return sl && tr(sl.caption) ? (sl.kind === "design" ? '<span class="chip">' + U("illustrative") + "</span>" : "") + "<span>" + T(sl.caption) + "</span>" : ""; }
+  function sortedNews() { return (C.news || []).slice().sort(function (a, b) { return String(b.date || "").localeCompare(String(a.date || "")); }); }
+  function actRow(n) {
+    var parts = String(n.date || "").split("-");
+    var when = parts.length >= 2 ? new Intl.DateTimeFormat(LOC[state.lang], { month: "short" }).format(parseDate(n.date)) + "<small>" + digits(parts[0]) + "</small>" : digits(parts[0] || "");
+    return '<a class="act rv" href="#news-' + esc(n.id) + '"><div class="when">' + when + "</div><div><b>" + T(n.title) + '</b><span class="muted">' + T(n.summary) + "</span></div>" + (n.image ? '<img loading="lazy" src="' + esc(img(n.image)) + '" alt="">' : "") + "</a>";
+  }
+  function progressBand() {
+    var F = C.floors || {}; if (!F.mosque) return "";
+    function row(k) { var fl = F[k] || []; var done = fl.filter(function (f) { return f.status === "done"; }).length; return '<div class="row"><b><span>' + U(k) + "</span><span>" + digits(done) + "/" + digits(fl.length) + '</span></b><div class="track">' + fl.map(function (f) { return '<i class="' + esc(f.status) + '" title="' + esc(tr(f.label)) + " · " + esc(tr(f.use)) + '"></i>'; }).join("") + "</div></div>"; }
+    return '<section class="section" style="padding-top:0"><div class="wrap progress-band"><div class="pics rv"><div class="photo"><img loading="lazy" src="img/construction-structure.jpg" alt=""></div><div class="photo"><img loading="lazy" src="img/construction-piling.jpg" alt=""></div><div class="photo"><img loading="lazy" src="img/first-prayer.jpg" alt=""></div></div><div class="rv"><div class="eyebrow">' + U("construction_progress") + '</div><h2 class="h-section">' + T(((C.projects || [])[0] || {}).name || C.settings.siteName) + '</h2><p class="muted">' + T(((C.projects || [])[0] || {}).summary) + '</p><div class="bars">' + row("mosque") + row("academic") + '</div><div class="src">' + U("source") + ": " + T(F.source) + '</div><div class="ctas" style="display:flex;gap:10px;flex-wrap:wrap;margin-top:18px"><a class="btn primary" href="#project-ibjmc">' + U("learn_more") + ARROW + '</a><a class="btn" href="#donate" data-fund="ibjmc">' + icon("heart") + U("donate") + "</a></div></div></div></section>";
+  }
+  function donateBand() {
+    var ch = ((C.payment || {}).channels || []).filter(function (c) { return c.show && c.type !== "bank"; });
+    return '<section class="section" style="padding-top:0"><div class="wrap"><div class="donate-band rv"><div><h2 class="h-section">' + U("donate_band") + "</h2><p>" + T((C.donateCopy || {}).transparency) + '</p><a class="btn light" href="#donate">' + icon("heart") + U("give_now") + ARROW + '</a></div><div class="chs">' + ch.map(function (c) { return '<div class="ch"><span>' + T(c.name) + "</span><span>" + esc(c.number) + "</span></div>"; }).join("") + "</div></div></div></section>";
+  }
+  function mountSlides(hero) {
+    var slides = $$(".slide", hero), dots = $$(".dots button", hero), cur = 0, t = null;
+    var data = (C.home.heroSlides || []);
+    if (slides.length < 2) return null;
+    function go(i) { cur = (i + slides.length) % slides.length; slides.forEach(function (s, k) { s.classList.toggle("on", k === cur); }); dots.forEach(function (d, k) { d.setAttribute("aria-current", k === cur ? "true" : "false"); }); var c = $("#heroCap"); if (c) c.innerHTML = slideCap(data[cur]); }
+    function start() { stop(); if (!document.documentElement.classList.contains("nomotion")) t = setInterval(function () { go(cur + 1); }, 6500); }
+    function stop() { if (t) clearInterval(t); t = null; }
+    hero.addEventListener("click", function (e) { var d = e.target.closest("[data-slide]"); if (d) { go(+d.dataset.slide); start(); } });
+    start();
+    return { setTheme: function () { }, destroy: stop };
   }
   // 3D ring carousel built from IBT's real architectural renders (CSS 3D, no WebGL)
   function mountRing(stage) {
@@ -252,7 +287,7 @@
     var M = C.impact; if (!M) return "";
     return '<section class="section" style="padding-top:0"><div class="wrap"><div class="sec-head"><div><div class="eyebrow">' + U("as_of") + " " + fdate(M.asOf) + '</div><h2 class="h-section">' + U("impact_title") + '</h2></div></div><div class="grid g3">' + (M.groups || []).map(function (g) { return '<div class="impact-group glass rv"><h3>' + T(g.title) + "</h3>" + (g.items || []).map(function (it) { return '<div class="stat"><b data-count="' + esc(it.value) + '" data-suffix="' + esc(it.suffix || "") + '">' + digits(0) + "</b><span>" + T(it.label) + "</span></div>"; }).join("") + "</div>"; }).join("") + '</div><div class="source-line"><span class="chip muted">' + U("source") + ": " + T(M.source) + "</span>" + (M.qualitative || []).map(function (q) { return '<span class="chip">' + T(q) + "</span>"; }).join("") + "</div></div></section>";
   }
-  function newsCard(n) { return card({ href: "#news-" + n.id, image: n.image, title: T(n.title), text: T(n.summary), meta: '<span class="faint">' + fdate(n.date) + "</span>" }); }
+  function newsCard(n) { return card({ href: "#news-" + n.id, image: n.image, title: T(n.title), text: T(n.summary), meta: '<span class="faint">' + fdate(n.date) + "</span>", chip: n.video ? '<span class="chip">' + icon("play") + "YouTube</span>" : "" }); }
 
   P.about = function () {
     var H = C.home;
@@ -270,7 +305,7 @@
     return pageHead(U("chairman_title"), T(M.name), T(M.role), crumbs([[U("nav_about"), "#about"], [U("chairman_title")]])) +
       '<section class="section tight"><div class="wrap split"><div class="photo rv" style="aspect-ratio:1"><img src="' + esc(img(M.photo)) + '" alt="' + esc(tr(M.name)) + '"></div><div class="prose rv"><p>' + T(M.bio) + '</p><div class="glass" style="padding:22px;margin-top:10px"><div class="eyebrow">' + U("message") + '</div><p style="margin:0;font-size:1.1rem">' + T(M.message) + "</p></div>" + reviewNote(M) +
       (links.length ? '<div style="display:flex;gap:10px;margin-top:16px">' + links.map(function (l) { return '<a class="btn" href="' + esc(l.url) + '" target="_blank" rel="noopener">' + icon(l.name.toLowerCase()) + esc(l.name) + "</a>"; }).join("") + "</div>" : "") + "</div></div></section>" +
-      '<section class="section tight"><div class="wrap"><h2 class="h-section">' + U("videos") + '</h2><div class="rail" style="margin-top:16px">' + (C.videos || []).filter(function (v) { return /Elahi/i.test(v.speaker || "") || v.channel === "IBT"; }).map(vcard).join("") + "</div></div></section>";
+      '<section class="section tight"><div class="wrap"><h2 class="h-section">' + U("videos") + '</h2><div class="grid g4" style="margin-top:16px">' + (V.videos || []).filter(function (v) { return /elahi|ইলাহী/i.test(v.title); }).slice(0, 8).map(vcard).join("") + "</div></div></section>";
   };
 
   P.institutions = function () {
@@ -287,7 +322,8 @@
       '<section class="section tight"><div class="wrap split" style="align-items:start"><div class="prose rv">' + (i.body ? "<p>" + T(i.body) + "</p>" : "") + reviewNote(i) + (story ? '<button class="btn primary" data-story="' + esc(story.id) + '">' + icon("play") + U("enter_story") + "</button> " : "") + (i.website ? '<a class="btn" href="' + esc(i.website) + '" target="_blank" rel="noopener">' + esc(i.website.replace(/^https?:\/\//, "").replace(/\/$/, "")) + icon("ext") + "</a>" : "") + '</div><div class="glass rv" style="padding:22px"><h3>' + U("features") + '</h3><ul class="check">' + (i.features || []).map(function (f) { return "<li>" + T(f) + "</li>"; }).join("") + "</ul></div></div></section>" +
       ((i.programs || []).length ? '<section class="section tight"><div class="wrap"><h2 class="h-section">' + U("programs") + '</h2><div class="grid g2" style="margin-top:16px">' + i.programs.map(function (p) { return '<div class="glass rv" style="padding:18px"><b>' + T(p.name) + '</b><p class="muted" style="margin:6px 0 0">' + T(p.text) + "</p></div>"; }).join("") + "</div></div></section>" : "") +
       (regs.length ? '<section class="section tight"><div class="wrap"><h2 class="h-section">' + U("nav_register") + '</h2><div class="grid" style="margin-top:16px">' + regs.map(regCard).join("") + "</div></div></section>" : "") +
-      (vids.length ? '<section class="section tight"><div class="wrap"><h2 class="h-section">' + U("videos") + '</h2><div class="rail" style="margin-top:16px">' + vids.map(vcard).join("") + "</div></div></section>" : "");
+      (vids.length ? '<section class="section tight"><div class="wrap"><h2 class="h-section">' + U("videos") + '</h2><div class="grid g4" style="margin-top:16px">' + vids.map(vcard).join("") + "</div></div></section>" : "") +
+      (i.id === "kulliyatul-quran" && (C.scholars || []).length ? '<section class="section tight"><div class="wrap"><h2 class="h-section">' + U("academic_committee") + '</h2><div class="people" style="margin-top:18px">' + C.scholars.map(function (p) { return '<div class="person rv"><img loading="lazy" src="' + esc(img(p.photo)) + '" alt="" onerror="this.style.visibility=\'hidden\'"><b>' + T(p.name) + "</b><small>" + T(p.role) + "</small></div>"; }).join("") + '</div><div class="src">' + U("source") + ': <a href="https://www.kulliyatulquran.com/members" target="_blank" rel="noopener">kulliyatulquran.com</a></div></div></section>' : "");
   };
 
   P.projects = function () {
@@ -327,49 +363,87 @@
   };
 
   P.media = function () {
-    var topics = ["all", "ibt", "kulliya", "courses", "research"];
-    return pageHead(U("nav_media"), U("nav_media"), "", crumbs([[U("nav_media")]])) +
-      '<section class="section tight"><div class="wrap"><h2 class="h-section">' + U("documentaries") + '</h2><div class="grid g2" style="margin-top:16px">' + (C.stories || []).map(function (s) { return '<button class="card glass" style="text-align:start;padding:0;border:1px solid var(--glass-border);cursor:pointer;color:inherit" data-story="' + esc(s.id) + '"><div class="media" style="aspect-ratio:16/8"><img loading="lazy" src="' + esc(img(s.cover)) + '" alt=""><span class="chip gold">' + digits((s.chapters || []).length) + " " + U("chapter") + '</span></div><div class="body"><h3>' + T(s.title) + '</h3><span class="linkarrow">' + icon("play") + U("enter_story") + "</span></div></button>"; }).join("") + "</div></div></section>" +
-      '<section class="section tight"><div class="wrap"><div class="sec-head"><h2 class="h-section">' + U("videos") + '</h2><div class="tabs" id="vtabs">' + topics.map(function (t, i) { return '<button aria-pressed="' + (i === 0) + '" data-topic="' + t + '">' + (t === "all" ? U("all") : t === "ibt" ? "IBT" : t === "kulliya" ? tr({ bn: "কুল্লিয়াতুল কুরআন", en: "Kulliyatul Quran", ar: "كلية القرآن" }) : t === "courses" ? U("programs") : tr({ bn: "গবেষণা", en: "Research", ar: "البحث" })) + "</button>"; }).join("") + '</div></div><div class="grid g4" id="vgrid">' + (C.videos || []).map(function (v) { return '<div data-topic="' + esc(v.topic) + '">' + vcard(v) + "</div>"; }).join("") + '</div><div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:22px">' + (C.settings.youtubeChannels || []).map(function (y) { return '<a class="btn" href="' + esc(y.url) + '" target="_blank" rel="noopener">' + icon("youtube") + esc(y.name) + "</a>"; }).join("") + "</div></div></section>";
+    var chans = V.channels || [];
+    return pageHead("YouTube", U("nav_media"), "", crumbs([[U("nav_media")]])) +
+      '<section class="section tight"><div class="wrap"><h2 class="h-section">' + U("documentaries") + '</h2><div class="grid g2" style="margin-top:16px">' + (C.stories || []).map(function (s) { return '<button class="card glass" style="text-align:start;padding:0;cursor:pointer;color:inherit" data-story="' + esc(s.id) + '"><div class="media" style="aspect-ratio:16/8"><img loading="lazy" src="' + esc(img(s.cover)) + '" alt=""><span class="chip gold">' + digits((s.chapters || []).length) + " " + U("chapter") + '</span></div><div class="body"><h3>' + T(s.title) + '</h3><span class="linkarrow">' + icon("play") + U("enter_story") + "</span></div></button>"; }).join("") + "</div></div></section>" +
+      '<section class="section tight"><div class="wrap"><div class="sec-head"><div><h2 class="h-section">' + U("all_videos") + '</h2><p class="faint" id="vcount"></p></div><div style="display:flex;gap:8px;flex-wrap:wrap">' + chans.map(function (y) { return '<a class="btn sm" href="' + esc(y.url) + '?sub_confirmation=1" target="_blank" rel="noopener">' + icon("youtube") + esc(y.name) + "</a>"; }).join("") + '</div></div>' +
+      '<div class="vfilter"><div class="tabs" id="vch"><button aria-pressed="true" data-ch="">' + U("all") + "</button>" + chans.map(function (c) { return '<button aria-pressed="false" data-ch="' + esc(c.id) + '">' + esc(c.name) + "</button>"; }).join("") + '<button aria-pressed="false" data-ch="live">' + U("live") + '</button></div><select class="input" id="vpl" style="max-width:260px"><option value="">' + U("playlists") + "</option>" + (V.playlists || []).map(function (p) { return '<option value="' + esc(p.id) + '">' + esc(p.name) + " (" + digits((p.videos || []).length) + ")</option>"; }).join("") + '</select><input class="input" id="vq" type="search" placeholder="' + esc(Uraw("search_videos")) + '"></div>' +
+      '<div class="grid g4" id="vgrid"></div><div style="text-align:center;margin-top:22px"><button class="btn" id="vmore">' + U("load_more") + "</button></div></div></section>";
   };
+  var vstate = { ch: "", pl: "", q: "", n: 24 };
+  function renderVideos() {
+    var g = $("#vgrid"); if (!g) return;
+    var pl = vstate.pl ? ((V.playlists || []).filter(function (p) { return p.id === vstate.pl; })[0] || {}).videos || [] : null;
+    var q = vstate.q.toLowerCase();
+    var list = (V.videos || []).filter(function (v) {
+      if (vstate.ch === "live" && v.kind !== "live") return false;
+      if (vstate.ch && vstate.ch !== "live" && v.channel !== vstate.ch) return false;
+      if (pl && pl.indexOf(v.id) < 0) return false;
+      if (q && String(v.title).toLowerCase().indexOf(q) < 0) return false;
+      return true;
+    });
+    g.innerHTML = list.length ? list.slice(0, vstate.n).map(vcard).join("") : '<div class="empty glass" style="grid-column:1/-1">' + U("no_results") + "</div>";
+    $("#vmore").style.display = list.length > vstate.n ? "" : "none";
+    $("#vcount").textContent = num(list.length) + Uraw("video_count");
+  }
+  function openPlayer(id, title) {
+    var p = $("#player");
+    p.innerHTML = '<button class="icon-btn px" data-act="close-player" aria-label="' + Uraw("close") + '">' + icon("x") + '</button><div class="frame"><iframe src="https://www.youtube-nocookie.com/embed/' + encodeURIComponent(id) + '?autoplay=1&rel=0" title="' + esc(title || "YouTube") + '" allow="autoplay; encrypted-media; picture-in-picture; fullscreen" allowfullscreen></iframe></div><div class="ptitle"><b>' + esc(title || "") + '</b><a href="https://www.youtube.com/watch?v=' + encodeURIComponent(id) + '" target="_blank" rel="noopener">' + U("open_youtube") + " ↗</a></div>";
+    p.classList.add("open"); document.body.style.overflow = "hidden";
+  }
+  function closePlayer() { var p = $("#player"); if (!p.classList.contains("open")) return; p.classList.remove("open"); p.innerHTML = ""; document.body.style.overflow = ""; }
+  IBT.openPlayer = openPlayer;
 
   P.news = function () {
-    var ev = (C.events || []).slice().sort(function (a, b) { return a.date.localeCompare(b.date); }).filter(function (e) { return parseDate(e.date) >= new Date(new Date().toDateString()); });
+    var today = new Date(new Date().toDateString());
+    var ev = (C.events || []).filter(function (e) { return !e.date || parseDate(e.date) >= today; }).sort(function (a, b) { return String(a.date || "9999").localeCompare(String(b.date || "9999")); });
     return pageHead(U("nav_news"), U("nav_news"), "", crumbs([[U("nav_news")]])) +
-      '<section class="section tight"><div class="wrap"><h2 class="h-section">' + U("upcoming_events") + '</h2><div class="grid" style="margin-top:16px">' + (ev.length ? ev.map(eventRow).join("") : '<div class="empty glass">—</div>') + "</div></div></section>" +
-      '<section class="section tight"><div class="wrap"><h2 class="h-section">' + U("latest_news") + '</h2><div class="grid g3" style="margin-top:16px">' + (C.news || []).slice().sort(function (a, b) { return (b.date || "").localeCompare(a.date || ""); }).map(newsCard).join("") + "</div></div></section>";
+      '<section class="section tight"><div class="wrap"><h2 class="h-section">' + U("programmes") + '</h2><div class="grid" style="margin-top:16px">' + (ev.length ? ev.map(eventRow).join("") : '<div class="empty glass">—</div>') + "</div></div></section>" +
+      '<section class="section tight"><div class="wrap"><h2 class="h-section">' + U("activities") + '</h2><div class="grid g3" style="margin-top:16px">' + sortedNews().map(newsCard).join("") + "</div></div></section>";
   };
   function eventRow(e) {
-    var d = parseDate(e.date);
-    var day = d ? new Intl.DateTimeFormat(LOC[state.lang], { day: "numeric" }).format(d) : "", mon = d ? new Intl.DateTimeFormat(LOC[state.lang], { month: "short" }).format(d) : "";
-    var ics = "data:text/calendar;charset=utf-8," + encodeURIComponent("BEGIN:VCALENDAR\nVERSION:2.0\nBEGIN:VEVENT\nDTSTART:" + e.date.replace(/-/g, "") + "T" + (e.time || "09:00").replace(":", "") + "00\nSUMMARY:" + tr(e.title) + "\nLOCATION:" + tr(e.venue) + "\nEND:VEVENT\nEND:VCALENDAR");
-    return '<div class="ev glass rv"><div class="dt"><b>' + day + "</b><small>" + mon + '</small></div><div><b>' + T(e.title) + '</b><div class="muted" style="font-size:.92rem">' + icon("pin") + " " + T(e.venue) + " · " + digits(e.time || "") + '</div><div class="ev hj" style="padding:0;display:block">' + U("hijri") + ": " + esc(hijri(e.date)) + '</div></div><div style="display:flex;gap:8px">' + (e.registration ? '<a class="btn sm primary" href="#reg-' + esc(e.registration) + '">' + U("register_now") + "</a>" : "") + '<a class="btn sm" href="' + ics + '" target="_blank" rel="noopener">' + icon("cal") + "</a></div></div>";
+    var d = e.date ? parseDate(e.date) : null, action = "";
+    var head = d ? '<b>' + new Intl.DateTimeFormat(LOC[state.lang], { day: "numeric" }).format(d) + "</b><small>" + new Intl.DateTimeFormat(LOC[state.lang], { month: "short" }).format(d) + "</small>" : icon(e.type === "qa" ? "dawah" : e.type === "event" ? "cal" : "education");
+    if (e.registration) action += '<a class="btn sm primary" href="#reg-' + esc(e.registration) + '">' + U("register_now") + "</a>";
+    if (e.video) action += '<button class="btn sm" data-play="' + esc(e.video) + '" data-title="' + esc(tr(e.title)) + '">' + icon("play") + U("watch") + "</button>";
+    if (e.link) action += '<a class="btn sm" href="' + esc(e.link) + '" target="_blank" rel="noopener">' + icon("youtube") + U("open_youtube") + "</a>";
+    if (d) { var ics = "data:text/calendar;charset=utf-8," + encodeURIComponent("BEGIN:VCALENDAR\nVERSION:2.0\nBEGIN:VEVENT\nDTSTART:" + e.date.replace(/-/g, "") + "T" + (e.time || "09:00").replace(":", "") + "00\nSUMMARY:" + tr(e.title) + "\nLOCATION:" + tr(e.venue) + "\nEND:VEVENT\nEND:VCALENDAR"); action += '<a class="btn sm" href="' + ics + '" target="_blank" rel="noopener" aria-label="Calendar">' + icon("cal") + "</a>"; }
+    return '<div class="ev glass rv"><div class="dt">' + head + '</div><div><b>' + T(e.title) + '</b><div class="muted" style="font-size:.92rem">' + (e.recurring ? '<span class="chip muted">' + T(e.recurring) + "</span> " : "") + T(e.venue) + (e.time ? " · " + digits(e.time) : "") + "</div>" + (d ? '<div class="faint" style="font-size:.85rem">' + U("hijri") + ": " + esc(hijri(e.date)) + "</div>" : "") + '</div><div style="display:flex;gap:8px;flex-wrap:wrap">' + action + "</div></div>";
   }
   P.newsItem = function (id) {
     var n = find(C.news, id); if (!n) return P.notfound();
-    return pageHead(fdate(n.date) + " · " + esc(hijri(n.date)), T(n.title), "", crumbs([[U("nav_news"), "#news"], [T(n.title)]])) +
-      '<section class="section tight" style="padding-top:0"><div class="wrap"><div class="cover"><img src="' + esc(img(n.image)) + '" alt=""></div><div class="prose" style="margin-top:24px"><p class="lead">' + T(n.summary) + "</p>" + (n.body ? "<p>" + T(n.body) + "</p>" : "") + reviewNote(n) + "</div></div></section>";
+    var full = String(n.date || "").split("-").length === 3;
+    var media = n.video ? '<button class="cover vcover" data-play="' + esc(n.video) + '" data-title="' + esc(tr(n.title)) + '"><img src="' + esc(img(n.image || "yt:" + n.video)) + '" alt=""><span class="pl">' + icon("play") + "</span></button>" : (n.image ? '<div class="cover"><img src="' + esc(img(n.image)) + '" alt=""></div>' : "");
+    return pageHead(fdate(n.date) + (full ? " · " + esc(hijri(n.date)) : ""), T(n.title), "", crumbs([[U("nav_news"), "#news"], [T(n.title)]])) +
+      '<section class="section tight" style="padding-top:0"><div class="wrap">' + media + '<div class="prose" style="margin-top:24px"><p class="lead">' + T(n.summary) + "</p>" + (n.body ? "<p>" + T(n.body) + "</p>" : "") + (n.source ? '<div class="src">' + U("source") + ": " + esc(n.source) + "</div>" : "") + reviewNote(n) + "</div></div></section>";
   };
 
   function regCard(r) {
-    var st = regStatus(r);
-    return '<div class="reg glass rv"><div class="media"><img loading="lazy" src="' + esc(img(r.image)) + '" alt=""></div><div class="body"><div style="display:flex;gap:8px;flex-wrap:wrap">' + regChip(r) + '<span class="chip muted">' + esc(r.type) + '</span></div><h3 style="margin:0">' + T(r.title) + '</h3><p class="muted" style="margin:0">' + T(r.text) + '</p><div class="meta"><span>' + icon("cal") + " " + U("closes") + ": " + fdate(r.closes) + "</span><span>" + icon("pin") + " " + T(r.venue) + "</span><span>" + U("fee") + ": " + T(r.fee) + '</span></div><div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:4px"><a class="btn sm ' + (st === "open" ? "primary" : "") + '" href="#reg-' + esc(r.id) + '">' + (st === "open" ? U("register_now") : U("learn_more")) + ARROW + "</a></div></div></div>";
+    var st = regStatus(r), fees = r.fees || [];
+    var meta = (r.closes ? "<span>" + icon("cal") + " " + U("closes") + ": " + fdate(r.closes) + "</span>" : "") + "<span>" + icon("pin") + " " + T(r.venue) + "</span>" + (fees.length ? "<span>" + T(fees[0].label) + ": <b>" + esc(fees[0].amount) + "</b></span>" : "");
+    return '<div class="reg glass rv"><div class="media"><img loading="lazy" src="' + esc(img(r.image)) + '" alt=""></div><div class="body"><div style="display:flex;gap:8px;flex-wrap:wrap">' + regChip(r) + '</div><h3 style="margin:0">' + T(r.title) + '</h3><p class="muted" style="margin:0">' + T(r.text) + '</p><div class="meta">' + meta + '</div><div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:4px"><a class="btn sm ' + (st === "open" ? "primary" : "") + '" href="#reg-' + esc(r.id) + '">' + (st === "open" ? U("register_now") : U("learn_more")) + ARROW + "</a></div></div></div>";
   }
   P.register = function () {
-    var regs = (C.registrations || []).slice().sort(function (a, b) { var o = { open: 0, soon: 1, closed: 2 }; return o[regStatus(a)] - o[regStatus(b)]; });
+    var regs = (C.registrations || []).slice().sort(function (a, b) { var o = { open: 0, soon: 1, info: 2, closed: 3 }; return o[regStatus(a)] - o[regStatus(b)]; });
     return pageHead(U("nav_register"), U("nav_register"), "", crumbs([[U("nav_register")]])) + '<section class="section tight"><div class="wrap grid">' + regs.map(regCard).join("") + "</div></section>";
   };
   P.reg = function (id) {
     var r = find(C.registrations, id) || (C.registrations || []).filter(function (x) { return x.slug === id; })[0]; if (!r) return P.notfound();
-    var st = regStatus(r);
+    var st = regStatus(r), c = C.settings.contact;
     var share = location.href.split("#")[0] + "#r-" + (r.slug || r.id);
     var action = "";
     if (st === "open") {
       if (r.mode !== "native" && r.formUrl) action = '<a class="btn primary" href="' + esc(prefill(r)) + '" target="_blank" rel="noopener">' + U("open_form") + icon("ext") + '</a><p class="faint" style="margin-top:10px">Google Forms</p>';
       else action = (r.mode !== "native" ? '<div class="notice info" style="margin-bottom:14px">' + U("form_pending") + "</div>" : "") + submitForm("registration", r.id, [["name", "text", true], ["phone", "tel", true], ["email", "email", false], ["message", "textarea", false]]);
-    } else action = '<div class="notice info">' + U("reg_" + st) + (st === "soon" ? " · " + U("opens") + ": " + fdate(r.opens) : "") + "</div>";
+    } else if (st === "info") action = '<div class="notice info"><b>' + U("contact_office") + '</b><div class="ltr" style="margin-top:6px">' + (c.phones || []).map(function (p) { return '<a href="tel:' + esc(p.replace(/[^+\d]/g, "")) + '">' + esc(p) + "</a>"; }).join(" · ") + "</div></div>";
+    else action = '<div class="notice info">' + U("reg_" + st) + (st === "soon" && r.opens ? " · " + U("opens") + ": " + fdate(r.opens) : "") + "</div>";
+    var kv = (r.opens ? "<dt>" + U("opens") + "</dt><dd>" + fdate(r.opens) + "</dd>" : "") + (r.closes ? "<dt>" + U("closes") + "</dt><dd>" + fdate(r.closes) + (st === "open" ? ' <span class="countdown" data-until="' + esc(r.closes) + '"></span>' : "") + "</dd>" : "") + "<dt>" + U("venue") + "</dt><dd>" + T(r.venue) + "</dd>";
+    var list = function (title, arr) { return arr && arr.length ? '<h3 style="font-size:1.05rem;margin:20px 0 8px">' + U(title) + '</h3><ul class="check">' + arr.map(function (x) { return "<li>" + T(x) + "</li>"; }).join("") + "</ul>" : ""; };
+    var fees = (r.fees || []).length ? '<h3 style="font-size:1.05rem;margin:20px 0 8px">' + U("fees") + '</h3><table class="fees">' + r.fees.map(function (f) { return "<tr><td>" + T(f.label) + '</td><td class="ltr">' + esc(f.amount) + "</td></tr>"; }).join("") + "</table>" + (r.feeNote ? '<p class="faint" style="margin-top:8px">' + T(r.feeNote) + "</p>" : "") : "";
     return pageHead(regChip(r), T(r.title), T(r.text), crumbs([[U("nav_register"), "#register"], [T(r.title)]])) +
-      '<section class="section tight" style="padding-top:0"><div class="wrap split" style="align-items:start"><div class="glass" style="padding:24px"><dl class="kv"><dt>' + U("opens") + "</dt><dd>" + fdate(r.opens) + "</dd><dt>" + U("closes") + "</dt><dd>" + fdate(r.closes) + (st === "open" ? ' <span class="countdown" data-until="' + esc(r.closes) + '"></span>' : "") + "</dd><dt>" + U("venue") + "</dt><dd>" + T(r.venue) + "</dd><dt>" + U("fee") + "</dt><dd>" + T(r.fee) + '</dd></dl><hr style="border:0;border-top:1px solid var(--line);margin:18px 0">' + action + '</div><div><div class="photo" style="aspect-ratio:16/10"><img src="' + esc(img(r.image)) + '" alt=""></div><div class="glass" style="padding:18px;margin-top:16px;display:flex;gap:16px;align-items:center;flex-wrap:wrap"><div class="qr" id="qrBox" data-url="' + esc(share) + '"></div><div style="flex:1;min-width:200px"><b>' + U("share_link") + '</b><div class="faint ltr" style="word-break:break-all;margin:6px 0">' + esc(share) + '</div><button class="btn sm" data-copy="' + esc(share) + '">' + icon("copy") + U("copy") + "</button></div></div></div></div></section>";
+      '<section class="section tight" style="padding-top:0"><div class="wrap split" style="align-items:start"><div class="glass" style="padding:24px"><dl class="kv">' + kv + "</dl>" + list("course_facts", r.facts) + list("eligibility", r.eligibility) + fees + (r.source ? '<div class="src">' + U("source") + ': <a href="' + esc(r.source) + '" target="_blank" rel="noopener">' + esc(r.source.replace(/^https?:\/\/(www\.)?/, "")) + "</a></div>" : "") + '<hr style="border:0;border-top:1px solid var(--line);margin:18px 0">' + action + "</div><div>" +
+      (r.video ? '<button class="cover vcover" data-play="' + esc(r.video) + '" data-title="' + esc(tr(r.title)) + '" style="aspect-ratio:16/9"><img src="' + esc(ytThumb(r.video)) + '" alt=""><span class="pl">' + icon("play") + "</span></button>" : '<div class="photo" style="aspect-ratio:16/10"><img src="' + esc(img(r.image)) + '" alt=""></div>') +
+      '<div class="glass" style="padding:18px;margin-top:16px;display:flex;gap:16px;align-items:center;flex-wrap:wrap"><div class="qr" id="qrBox" data-url="' + esc(share) + '"></div><div style="flex:1;min-width:200px"><b>' + U("share_link") + '</b><div class="faint ltr" style="word-break:break-all;margin:6px 0">' + esc(share) + '</div><button class="btn sm" data-copy="' + esc(share) + '">' + icon("copy") + U("copy") + "</button></div></div></div></div></section>";
   };
   function prefill(r) {
     var u = r.formUrl || ""; if (!u) return "";
@@ -460,7 +534,7 @@
     (C.initiatives || []).forEach(function (i) { out.push([tr(i.name), tr(i.summary), "#init-" + i.id]); });
     (C.registrations || []).forEach(function (i) { out.push([tr(i.title), tr(i.text), "#reg-" + i.id]); });
     (C.news || []).forEach(function (i) { out.push([tr(i.title), tr(i.summary), "#news-" + i.id]); });
-    (C.videos || []).forEach(function (v) { out.push([tr(v.title), "YouTube · " + (v.channel || ""), "https://www.youtube.com/watch?v=" + v.youtubeId]); });
+    (V.videos || []).forEach(function (v) { out.push([v.title, "YouTube" + (v.approx ? " · " + v.approx : ""), "yt:" + v.id]); });
     (C.funds || []).forEach(function (f) { out.push([tr(f.name), tr(f.text), "#donate"]); });
     return out;
   }
@@ -468,7 +542,7 @@
     q = q.trim().toLowerCase(); var res = $("#searchRes");
     if (!q) { res.innerHTML = ""; return; }
     var hits = searchIndex().filter(function (r) { return (r[0] + " " + r[1]).toLowerCase().indexOf(q) > -1; }).slice(0, 20);
-    res.innerHTML = hits.length ? hits.map(function (h) { var ext = h[2].indexOf("http") === 0; return '<a href="' + esc(h[2]) + '"' + (ext ? ' target="_blank" rel="noopener"' : "") + "><b>" + esc(h[0]) + "</b><small>" + esc(h[1].slice(0, 120)) + "</small></a>"; }).join("") : '<div class="empty">' + U("no_results") + "</div>";
+    res.innerHTML = hits.length ? hits.map(function (h) { var yt = h[2].indexOf("yt:") === 0, ext = h[2].indexOf("http") === 0; return '<a href="' + (yt ? "#media" : esc(h[2])) + '"' + (yt ? ' data-play="' + esc(h[2].slice(3)) + '" data-title="' + esc(h[0]) + '"' : "") + (ext ? ' target="_blank" rel="noopener"' : "") + "><b>" + esc(h[0]) + "</b><small>" + esc(h[1].slice(0, 120)) + "</small></a>"; }).join("") : '<div class="empty">' + U("no_results") + "</div>";
   }
 
   // ---------- router ----------
@@ -510,13 +584,14 @@
       el.addEventListener("pointerleave", function () { el.style.transform = ""; });
     });
     // 3D hero
-    var rs = $("#ringStage"); if (rs) { var rg = mountRing(rs); if (rg) scenes.push(rg); }
+    var hp = $(".hero-photo"); if (hp) { var sl = mountSlides(hp); if (sl) scenes.push(sl); }
     var tc = $("#trackerCanvas");
     if (tc) {
       var s2 = window.IBT3D && !document.documentElement.classList.contains("lowfx") ? window.IBT3D.mount(tc, { mode: "tracker", floors: C.floors, theme: state.theme, night: state.theme === "dark", onPick: showFloor }) : null;
       if (s2) scenes.push(s2); else { tc.remove(); $("#trackerFallback").style.display = "block"; }
     }
     wireDonate();
+    if ($("#vgrid") && state.route === "media") { vstate = { ch: "", pl: "", q: "", n: 24 }; renderVideos(); }
     var qb = $("#qrBox"); if (qb) makeQR(qb);
     $$(".countdown").forEach(function (el) { var d = parseDate(el.dataset.until); d.setHours(23, 59, 59); var days = Math.ceil((d - new Date()) / 864e5); el.textContent = "· " + digits(days) + " " + tr({ bn: "দিন বাকি", en: "days left", ar: "يومًا متبقيًا" }); });
   }
@@ -530,6 +605,7 @@
   function countIn(root) {
     $$("[data-count]", root).forEach(function (el) {
       if (el._done) return; el._done = true;
+      if (el.dataset.plain) return;
       var to = parseFloat(el.dataset.count) || 0, suf = el.dataset.suffix || "", t0 = performance.now(), dur = document.documentElement.classList.contains("nomotion") ? 1 : 1400;
       (function step(now) { var p = Math.min(1, (now - t0) / dur), v = Math.round(to * (1 - Math.pow(1 - p, 3))); el.textContent = num(v) + suf; if (p < 1) requestAnimationFrame(step); })(t0);
     });
@@ -543,6 +619,10 @@
   // ---------- events ----------
   document.addEventListener("click", function (e) {
     var t = e.target;
+    var pv = t.closest("[data-play]"); if (pv) { e.preventDefault(); $("#search").classList.remove("open"); openPlayer(pv.dataset.play, pv.dataset.title); return; }
+    if (t.closest("[data-act=close-player]") || t === $("#player")) { closePlayer(); return; }
+    var vc = t.closest("#vch [data-ch]"); if (vc) { $$("#vch button").forEach(function (b) { b.setAttribute("aria-pressed", b === vc ? "true" : "false"); }); vstate.ch = vc.dataset.ch; vstate.n = 24; renderVideos(); return; }
+    if (t.closest("#vmore")) { vstate.n += 24; renderVideos(); return; }
     var st = t.closest("[data-story]"); if (st) { e.preventDefault(); IBT.openStory(st.dataset.story); return; }
     var lb = t.closest("[data-lightbox]"); if (lb) { var L = $("#lightbox"); L.innerHTML = '<img src="' + esc(lb.dataset.lightbox) + '" alt="">'; L.classList.add("open"); return; }
     if (t.closest("#lightbox")) { $("#lightbox").classList.remove("open"); return; }
@@ -564,11 +644,12 @@
     var df = t.closest("a[data-fund]"); if (df) state.fund = df.dataset.fund;
   });
   document.addEventListener("keydown", function (e) {
-    if (e.key === "Escape") { if ($("#story").classList.contains("open")) closeStory(); $("#search").classList.remove("open"); $("#drawer").classList.remove("open"); $("#lightbox").classList.remove("open"); }
+    if (e.key === "Escape") { closePlayer(); if ($("#story").classList.contains("open")) closeStory(); $("#search").classList.remove("open"); $("#drawer").classList.remove("open"); $("#lightbox").classList.remove("open"); }
     if ($("#story").classList.contains("open")) { var rtl = state.lang === "ar"; if (e.key === "ArrowRight") storyGo(storyIdx + (rtl ? -1 : 1)); if (e.key === "ArrowLeft") storyGo(storyIdx + (rtl ? 1 : -1)); }
     if ((e.key === "k" && (e.ctrlKey || e.metaKey)) || (e.key === "/" && !/input|textarea|select/i.test(document.activeElement.tagName))) { e.preventDefault(); $("#search").classList.add("open"); $("#searchInput").focus(); }
   });
-  document.addEventListener("input", function (e) { if (e.target.id === "searchInput") doSearch(e.target.value); });
+  document.addEventListener("input", function (e) { if (e.target.id === "searchInput") doSearch(e.target.value); if (e.target.id === "vq") { vstate.q = e.target.value; vstate.n = 24; renderVideos(); } });
+  document.addEventListener("change", function (e) { if (e.target.id === "vpl") { vstate.pl = e.target.value; vstate.n = 24; renderVideos(); } });
   document.addEventListener("submit", function (e) {
     var f = e.target.closest("form[data-submit]"); if (!f) return; e.preventDefault();
     var out = $(".out", f), data = {}; new FormData(f).forEach(function (v, k) { data[k] = String(v).slice(0, 2000); });
@@ -578,7 +659,7 @@
     }).then(function () { btn.disabled = false; });
   });
   window.addEventListener("hashchange", route);
-  window.addEventListener("scroll", function () { var h = $(".header"); if (h) h.style.paddingTop = window.scrollY > 30 ? "6px" : "10px"; }, { passive: true });
+  window.addEventListener("scroll", function () { var h = $(".header"); if (h) h.classList.toggle("scrolled", window.scrollY > 10); var md = $("#mdonate"); if (md) md.classList.toggle("show", window.scrollY > 500); }, { passive: true });
 
   // ---------- cloud (claude artifact runtime) ----------
   IBT.submit = function (kind, ref, data) {
@@ -636,7 +717,8 @@
     route();
     initCloud();
   }
-  fetch("data/content.json").then(function (r) { return r.json(); }).then(boot, function () {
+  var vReq = fetch("data/videos.json").then(function (r) { return r.json(); }).then(function (d) { V = d || V; }, function () { });
+  fetch("data/content.json").then(function (r) { return r.json(); }).then(function (d) { return vReq.then(function () { boot(d); }); }).catch(function () {
     $("#main").innerHTML = '<div class="wrap section"><h1>Imam Bukhari Trust</h1><p>Content could not be loaded. Please refresh.</p></div>';
   });
 })();

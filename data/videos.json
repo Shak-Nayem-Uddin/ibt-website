@@ -1,0 +1,3290 @@
+{
+"updated": "2026-11-19",
+"note": "approx = month estimated from YouTube's relative date; new videos are added automatically with exact dates.",
+"channels": [
+{
+"id": "ibt",
+"channelId": "UCm8It2AWLRt3N22-fL89K_w",
+"name": "Imam Bukhari Trust",
+"url": "https://www.youtube.com/channel/UCm8It2AWLRt3N22-fL89K_w"
+},
+{
+"id": "kq",
+"channelId": "UCBTHMWdAFuQ5ynEryDIWdRw",
+"name": "Kulliyatul Quran BD",
+"url": "https://www.youtube.com/@kulliyatulquranbd"
+}
+],
+"playlists": [
+{
+"id": "PLJ08WrbxyTXTbo2Vb8krr1j102dIwuLn_",
+"name": "প্রফেসর ড মোহাম্মদ অলী উল্যাহ",
+"channel": "kq",
+"videos": [
+"41kY5uKj5tc"
+]
+},
+{
+"id": "PLJ08WrbxyTXQy4Ifmd9WJWbKmPcEA3-oo",
+"name": "Sunnah Conference 2024",
+"channel": "kq",
+"videos": [
+"J0WR-qV5Omg"
+]
+},
+{
+"id": "PLJ08WrbxyTXSoDIJuanby2tkfCEcdk2xE",
+"name": "Promo Video",
+"channel": "kq",
+"videos": [
+"0HUA17Zek58",
+"nU09L0hWldI",
+"tRIv-YZPLLo",
+"2P-Aet9BxGY"
+]
+},
+{
+"id": "PLJ08WrbxyTXQdkckRzxQafSKsJMj4THfb",
+"name": "Academic activities",
+"channel": "kq",
+"videos": [
+"8nMIfc2xoyE"
+]
+},
+{
+"id": "PLJ08WrbxyTXR3btscJsJI8dUb2nAxw7Tu",
+"name": "Sheikh Ahmed Rafi",
+"channel": "kq",
+"videos": [
+"8nMIfc2xoyE"
+]
+},
+{
+"id": "PLJ08WrbxyTXQ27Hx0G8Em1Rudqj4k2o0f",
+"name": "Sanabiyah (Alim)",
+"channel": "kq",
+"videos": [
+"15hOaC8ipp8"
+]
+},
+{
+"id": "PLJ08WrbxyTXQmmDED-1I4klDUCHNby8TS",
+"name": "Kulliya students",
+"channel": "kq",
+"videos": [
+"7HHzFTawdTs",
+"v4ItZdcG6bg",
+"kaqIrtPXqpY"
+]
+},
+{
+"id": "PLJ08WrbxyTXSzxp980zzL9_bawjtzXGNa",
+"name": "Shaikh Dr. Saifullah",
+"channel": "kq",
+"videos": [
+"JN52qtjKkB0",
+"hnw4b0SsAUg",
+"0HUA17Zek58"
+]
+},
+{
+"id": "PLJ08WrbxyTXTwU87WuHVUJOfeH-mMn9Ew",
+"name": "Sheikh Saalim Al-Azhari",
+"channel": "kq",
+"videos": [
+"S9ydq9g8BDQ",
+"aIpzvGC-9r0"
+]
+},
+{
+"id": "PLJ08WrbxyTXTHWQ8M7Pr6pCFTV3e03Z0Q",
+"name": "Dr. Mohammad Monzur-E-Elahi",
+"channel": "kq",
+"videos": [
+"z8SH2NKcuLQ",
+"wk94zVQR23Q",
+"9W3PA3HkMmM",
+"QAfp4SQMblU",
+"whhZw6nHZGY",
+"aNKkJymmS60",
+"nmqatOZpe6Q",
+"15hOaC8ipp8",
+"2P-Aet9BxGY",
+"tRIv-YZPLLo",
+"nU09L0hWldI",
+"LFhTlxXXcQ8",
+"u42dSG1ojQI"
+]
+},
+{
+"id": "PLPoR2UQBlssIAt2c7RNbZDSF6zI0x1VYf",
+"name": "এক নজরে ইমাম বুখারী ট্রাস্ট",
+"channel": "ibt",
+"videos": [
+"GW_HDHAsbyM",
+"g9lRiceVtBY",
+"Yo5NBLjWdIg",
+"np9M6nVfdjE",
+"rXBsFhP9RgE"
+]
+},
+{
+"id": "PLPoR2UQBlssJYUTdLKv0uRQtuxHkUN2z-",
+"name": "Living Islam ।। Imam Bukhari Trust",
+"channel": "ibt",
+"videos": [
+"n3QWFzK9Vkc",
+"R3_3PlbdJi4",
+"9ssbeQ5Ial4",
+"gyNkgIliHrQ",
+"jSXb6Yd2hwc",
+"7YtbtLJmPFs",
+"fczYgfmEGqQ",
+"W78BCJfwN_E",
+"d52olfOfIdA",
+"kB_UQIA4jLI",
+"h4YrtcVyX1I",
+"aaBnErpy11o",
+"dxx60Gwx_a8",
+"ys_ujNWCmfc",
+"HWnchAeMPWg",
+"BGhpzLH7Leg",
+"LltlahmcXzE",
+"VdXaoGolVWk",
+"dge_trxoicU",
+"8OoaI5it4DM",
+"CacrXWnO2gg",
+"yauCivoBgNA",
+"PUqaKLPKY_M",
+"Ny7qWKGd1-E",
+"gdZGCiGM9_0",
+"OMNAqdtumHI",
+"kJX8nuOpn4w",
+"eXbECgihrfQ",
+"aqYJIDUvdJ0",
+"GUctXFDyF2Y"
+]
+},
+{
+"id": "PLPoR2UQBlssL9eBHykZVVrVok-EwcmG_j",
+"name": "“রাসূলুল্লাহ ﷺ এর হজ্জ”",
+"channel": "ibt",
+"videos": [
+"PJGoLn8vpC0",
+"H1UOuOCw5-8",
+"jdLmze9TYlM"
+]
+},
+{
+"id": "PLPoR2UQBlssKtx2zvXCovKSZVOBkY1j8j",
+"name": "স্পেশাল হজ্জ ট্রেনিং: হজ্জ ৩৬০°",
+"channel": "ibt",
+"videos": [
+"DwvrfdIp60Y",
+"lAekf_5xb7A",
+"qjXOXf9R6hs",
+"XaaAI_mbbCo",
+"modnKIKiJfA",
+"NV_p5X48On0",
+"QCVGWmBtJ4I",
+"INMClPmzawk"
+]
+},
+{
+"id": "PLPoR2UQBlssLxQeu2VbjV6zIeQ7Nflu1v",
+"name": "এই পবিত্র রামাদানে, ড. মানজুরে ইলাহী শায়খের সাথে",
+"channel": "ibt",
+"videos": [
+"HU_iASuybgM",
+"uFmZv4Zf0KM",
+"u1wyYQrfoRI",
+"nJDG5tzVaIM",
+"52hs7x2_z0c",
+"njRKkJw73x4",
+"w9gLv-5kt8Y",
+"NdnjTgiNbqA",
+"wts4aTDA5Ss",
+"39cfCMZgVSM",
+"7l9nYBPfRbA",
+"fKIZZWnhn0g",
+"S91fz5pIfHA",
+"HpqXUET5QJA",
+"2lZQbsReXRo",
+"MSfJ84Hv9no",
+"SaMHrclAGSU",
+"yA6piVmsG6o",
+"WfDL7QcamaI",
+"Lt4UP7ETh5k",
+"E1-j4L_QRXE",
+"-a006J5siYs",
+"Hp-Bfc_53GY",
+"f2AG44nIgdY",
+"B9m2Hue9DVA",
+"Mwyku0-E0y4",
+"YJt3WrrOimo",
+"jP3r1n9w3MQ",
+"_2qHOPehNXk",
+"U32zncteWXM",
+"s7_aoBRynuE",
+"UHFLnOO2kB0",
+"AMslQKPbsyc",
+"9cI8tIUfTjg",
+"rc28dEycnic",
+"jUzuSBrk8po",
+"ozAAE2yLT5s",
+"Z1mBnjY7Evw",
+"9WhpZMC6sDs",
+"OP0B62bs5kc",
+"spolw5skCh4",
+"obYnfLowhhA",
+"mpZKdd3LVGg",
+"xE8rtJrWwho",
+"kp583oCddwA",
+"QMeAruNrVWk",
+"V4yHJpL44jw",
+"LQb-25W0X1k",
+"OBhP6XugSfo",
+"qpVtgFQ-e6I",
+"4BxkIbBSAU8",
+"udoYw8OYVhU",
+"4foC1Q4_LMo",
+"TnNWymxGBzs",
+"QZ3mQcamtXo",
+"otipA3m085A",
+"uyoxLuo94e4",
+"IHXdIhX54vk",
+"d6RQAMOF1h8",
+"8zc8qPMbIHU",
+"pkZ3fQPeSzI"
+]
+},
+{
+"id": "PLPoR2UQBlssJFePGOHjrDCOZR6ouDp7dH",
+"name": "Sunnah Conference Bangladesh",
+"channel": "ibt",
+"videos": [
+"OS7CUfvbQnA",
+"FlP8rd4vJow",
+"gWV3KmUAxdo",
+"kqIFDd57Lmk",
+"0W_odowrCHk",
+"F3VR1rn3TQo"
+]
+},
+{
+"id": "PLPoR2UQBlssIHK2FmgHitpjKuz7uoH-GI",
+"name": "সাপ্তাহিক ইলমী মাজলিস",
+"channel": "ibt",
+"videos": [
+"crIob-9EVNE",
+"OtOFyMT0LIw",
+"TTxSrE4nxMA",
+"6nztljg2INg",
+"aYjAn1iyuNc",
+"jReIgzYiWoY",
+"IAiNhMjbeZI",
+"nxhIoTqZFW0",
+"A5Chlc6dBUA",
+"Q1SXADWc7kY",
+"MfzgJDSCKNE",
+"8G5LCWqkB7w",
+"a23JUm_9T2E",
+"J-2nKcukDXY",
+"BCfhKT2-nxg",
+"fHSiB7-Zl14",
+"3zgdb-KDlLc",
+"TAYduqWEXeI",
+"J5C93DbIehg",
+"On3YgLFVG0o",
+"2_DYR_zB51c",
+"e04SsdfrTv8",
+"2-QcC0-0S04",
+"gEQVEhBBv8g",
+"hDBheOrU0T0",
+"9N4oD87qjvE",
+"vgeUVPKtUv4",
+"_8pvv3kmgxw",
+"KQT1TCA16W4",
+"loJi5XdGPZ8",
+"MxGlGefTLro",
+"_yfCtljE18M",
+"9BsDgGjMH-8",
+"AweUR2gQT7s",
+"iQlzqcYustQ",
+"SwkaECOzwYk",
+"rQbGz-BfmSI",
+"m6GpUBzOSuo",
+"aJFtg-8orH0",
+"ad78T-ECbm4",
+"FdXPWBd2mko",
+"Sk69OnJyw8E",
+"VQ3YRAtCC54",
+"DaKJWDUJuQY",
+"ytM-Zk7ja00",
+"vgyzmfYO0bg",
+"VJ2AlaJElSc",
+"xFGykJ5cd-A",
+"-nI_2V04rec",
+"-egP3weJnKA",
+"skcu0qXYR-o",
+"5xzu04Hl7ZA",
+"QXX9u2ZWIm0",
+"9cNX-Nc_viE",
+"lCSV-PvMGNQ",
+"1JLoxahE4fU",
+"slJyH5IutzY",
+"6e8GrMmpxp8",
+"unmpFPNa3m0",
+"xsfR88c5jFw",
+"otsL31douYw",
+"6uBmtqz-IzI",
+"JuIgtkWA4r8",
+"m1iJaPa8Cts",
+"J9d8o_Blv1w",
+"ewJMtM0uPzQ",
+"v3SYEtnQEuU",
+"A-g_-hkd0Q8",
+"bFzIX2ktlZw",
+"UHCEdD3FJBY",
+"uey03NHrjiY",
+"KOsvN1petgk",
+"Yg4W4ikzCkM",
+"bPS3P-9J50o",
+"YpLKuSSZp9w",
+"8418p7ZCpNs",
+"nTbiMd2seh0",
+"DwQkCZwMAQ0",
+"XEhO4KcvXgQ",
+"5aFeIynRwHg",
+"twbyJQB3sxg",
+"0sMPEijJ_QE",
+"BC_6iZdESdU"
+]
+},
+{
+"id": "PLPoR2UQBlssIwEXGdNmCGMqx2MU7T6Ezv",
+"name": "Ask Dr Monzur E Elahi",
+"channel": "ibt",
+"videos": [
+"bC2OHQAfm6g",
+"kWOxl0pRC2w",
+"wuZiphCga3U",
+"3_cDjDTHDwA",
+"UBTGns4Ojpw",
+"jBnCmh-3MCY",
+"xuAcnecAbtU",
+"YgdgNoaukMg",
+"s86YnwOkcd0",
+"vOxzbkTOCZM",
+"szTbqh0XLeU",
+"9CtV4HzESHE",
+"ekxnK4549rE",
+"Wni9P1fEajg",
+"2WSQgW8dyGY",
+"x07J7WZx5nc",
+"qk8dglkNDyk",
+"UM2b4_KFGQ0",
+"HFincEAVNc8",
+"n66qm_jE_0g",
+"4GC8_3HhGxI",
+"O1RrRBBHFwE",
+"Ix7dTW-tCC8",
+"QTTow62gWkQ",
+"AUuZAz-ijEA",
+"Tje9R5iY4U4",
+"jd5UV3hkSxs"
+]
+},
+{
+"id": "PLPoR2UQBlssK4bjJfgEdyJRgNVur06MvR",
+"name": "Female Halaka",
+"channel": "ibt",
+"videos": [
+"qWvUqhvZAzw",
+"zo7PD7JSe_o"
+]
+}
+],
+"videos": [
+{
+"id": "8MlFKh__zNg",
+"title": "মিস করবেন না! শাইখদের সান্নিধ্যে একটি দিন | IBT ৪র্থ গেট টুগেদার ২০২৬",
+"channel": "ibt",
+"kind": "video",
+"approx": "2026-11",
+"playlists": []
+},
+{
+"id": "CtiOTsnWpLo",
+"title": "দ্বীনদারির আড়ালেও কি অহংকার থাকতে পারে? - দ্বীনি জ্ঞান ও আমলে আত্মগর্ব, অন্যকে তুচ্ছজ্ঞান, সংশোধনে অ",
+"channel": "ibt",
+"kind": "live",
+"approx": "2026-11",
+"playlists": []
+},
+{
+"id": "XE3YWEjN3Cw",
+"title": "হুব্বুদ দুনিয়া: দুনিয়ার প্রতি অতিরিক্ত ভালোবাসা কীভাবে অন্তরকে প্রভাবিত করে?",
+"channel": "ibt",
+"kind": "live",
+"approx": "2026-11",
+"playlists": []
+},
+{
+"id": "ViHzrqAKvO8",
+"title": "ইমাম বুখারী ট্রাস্ট এর মসজিদ ও একাডেমিক ভবনের কার্যক্রম চলমান",
+"channel": "ibt",
+"kind": "video",
+"approx": "2026-10",
+"playlists": []
+},
+{
+"id": "GW_HDHAsbyM",
+"title": "ইমাম বুখারী ট্রাস্ট এর একাডেমিক ভবনের পাইল ক্যাপ ঢালাই কার্যক্রম চলমান",
+"channel": "ibt",
+"kind": "video",
+"approx": "2026-10",
+"playlists": [
+"PLPoR2UQBlssIAt2c7RNbZDSF6zI0x1VYf"
+]
+},
+{
+"id": "g9lRiceVtBY",
+"title": "ইমাম বুখারী ট্রাস্ট সামাজিক জনকল্যাণমূলক কাজের খন্ডচিত্র",
+"channel": "ibt",
+"kind": "video",
+"approx": "2026-10",
+"playlists": [
+"PLPoR2UQBlssIAt2c7RNbZDSF6zI0x1VYf"
+]
+},
+{
+"id": "wuZiphCga3U",
+"title": "Ask Dr Monzur E Elahi (Episode 26)",
+"channel": "ibt",
+"kind": "video",
+"approx": "2026-10",
+"playlists": [
+"PLPoR2UQBlssIwEXGdNmCGMqx2MU7T6Ezv"
+]
+},
+{
+"id": "kWOxl0pRC2w",
+"title": "Ask Dr Monzur E Elahi (Episode 27)",
+"channel": "ibt",
+"kind": "video",
+"approx": "2026-10",
+"playlists": [
+"PLPoR2UQBlssIwEXGdNmCGMqx2MU7T6Ezv"
+]
+},
+{
+"id": "z0DprO8RsLY",
+"title": "হাশরের ময়দানে মানুষের পাঁচটি প্রশ্ন: জীবনের হিসাবের জন্য আমার প্রস্তুতি কতটুকু?",
+"channel": "ibt",
+"kind": "live",
+"approx": "2026-10",
+"playlists": []
+},
+{
+"id": "bC2OHQAfm6g",
+"title": "Ask Dr Monzur E Elahi (Episode 28)",
+"channel": "ibt",
+"kind": "live",
+"approx": "2026-10",
+"playlists": [
+"PLPoR2UQBlssIwEXGdNmCGMqx2MU7T6Ezv"
+]
+},
+{
+"id": "crIob-9EVNE",
+"title": "“নিশ্চয়ই মানুষ তার রবের প্রতি বড়ই অকৃতজ্ঞ” (সূরা আল-আদিয়াত ১০০:৬) কুরআনের আলোকে আত্মসমালোচনা",
+"channel": "ibt",
+"kind": "live",
+"approx": "2026-10",
+"playlists": [
+"PLPoR2UQBlssIHK2FmgHitpjKuz7uoH-GI"
+]
+},
+{
+"id": "OtOFyMT0LIw",
+"title": "সালাফদের দাওয়াতি জীবন: সাফল্যের মূলনীতি ও সমকালীন শিক্ষা",
+"channel": "ibt",
+"kind": "live",
+"approx": "2026-10",
+"playlists": [
+"PLPoR2UQBlssIHK2FmgHitpjKuz7uoH-GI"
+]
+},
+{
+"id": "TTxSrE4nxMA",
+"title": "বিনয়: মুমিনের সৌন্দর্য",
+"channel": "ibt",
+"kind": "live",
+"approx": "2026-10",
+"playlists": [
+"PLPoR2UQBlssIHK2FmgHitpjKuz7uoH-GI"
+]
+},
+{
+"id": "6nztljg2INg",
+"title": "কমফোর্ট জোন নাকি আল্লাহর দিকে আহ্বান? - মুস‘আব ইবন উমাইর (রা.) এর জীবনের আসল উদ্দেশ্য",
+"channel": "ibt",
+"kind": "live",
+"approx": "2026-10",
+"playlists": [
+"PLPoR2UQBlssIHK2FmgHitpjKuz7uoH-GI"
+]
+},
+{
+"id": "nxhIoTqZFW0",
+"title": "সূরা আন-নাযি‘আত: শিক্ষা ও দিকনির্দেশনা",
+"channel": "ibt",
+"kind": "video",
+"approx": "2026-09",
+"playlists": [
+"PLPoR2UQBlssIHK2FmgHitpjKuz7uoH-GI"
+]
+},
+{
+"id": "A5Chlc6dBUA",
+"title": "স্বপ্ন, কাশফ ও ইলহাম: অতীন্দ্রিয় অভিজ্ঞতা ও শরিয়তের মানদণ্ড",
+"channel": "ibt",
+"kind": "video",
+"approx": "2026-09",
+"playlists": [
+"PLPoR2UQBlssIHK2FmgHitpjKuz7uoH-GI"
+]
+},
+{
+"id": "aYjAn1iyuNc",
+"title": "আত্মীয়তার বন্ধন: ছিন্ন করার ভয়াবহতা ও রক্ষার উপায়",
+"channel": "ibt",
+"kind": "live",
+"approx": "2026-09",
+"playlists": [
+"PLPoR2UQBlssIHK2FmgHitpjKuz7uoH-GI"
+]
+},
+{
+"id": "jReIgzYiWoY",
+"title": "মুমিনের সম্মান: গীবত ও অপবাদের ভয়াবহতা",
+"channel": "ibt",
+"kind": "live",
+"approx": "2026-09",
+"playlists": [
+"PLPoR2UQBlssIHK2FmgHitpjKuz7uoH-GI"
+]
+},
+{
+"id": "IAiNhMjbeZI",
+"title": "আল্লাহর সিদ্ধান্তে সন্তুষ্টি: তাকদীরের প্রতি ঈমানের বাস্তব প্রভাব",
+"channel": "ibt",
+"kind": "live",
+"approx": "2026-09",
+"playlists": [
+"PLPoR2UQBlssIHK2FmgHitpjKuz7uoH-GI"
+]
+},
+{
+"id": "3_cDjDTHDwA",
+"title": "Ask Dr Monzur E Elahi (Episode 25)",
+"channel": "ibt",
+"kind": "video",
+"approx": "2026-08",
+"playlists": [
+"PLPoR2UQBlssIwEXGdNmCGMqx2MU7T6Ezv"
+]
+},
+{
+"id": "a23JUm_9T2E",
+"title": "ইখতিলাফের ক্ষেত্রে সালাফদের মানহাজ এবং সাধারণ মুসলিমের করণীয়",
+"channel": "ibt",
+"kind": "video",
+"approx": "2026-08",
+"playlists": [
+"PLPoR2UQBlssIHK2FmgHitpjKuz7uoH-GI"
+]
+},
+{
+"id": "Q1SXADWc7kY",
+"title": "ইসলামী ভ্রাতৃত্ব: অধিকার, দায়িত্ব ও হারিয়ে যাওয়া উম্মাহবোধ",
+"channel": "ibt",
+"kind": "live",
+"approx": "2026-08",
+"playlists": [
+"PLPoR2UQBlssIHK2FmgHitpjKuz7uoH-GI"
+]
+},
+{
+"id": "MfzgJDSCKNE",
+"title": "কুরআন যেভাবে একজন মুমিনের ব্যক্তিত্ব গড়ে তোলে",
+"channel": "ibt",
+"kind": "live",
+"approx": "2026-08",
+"playlists": [
+"PLPoR2UQBlssIHK2FmgHitpjKuz7uoH-GI"
+]
+},
+{
+"id": "8G5LCWqkB7w",
+"title": "আল্লাহকে জানা: প্রশান্ত হৃদয় ও অর্থবহ জীবনের চাবিকাঠি",
+"channel": "ibt",
+"kind": "live",
+"approx": "2026-08",
+"playlists": [
+"PLPoR2UQBlssIHK2FmgHitpjKuz7uoH-GI"
+]
+},
+{
+"id": "BCfhKT2-nxg",
+"title": "আধুনিক ফিতনার মুখে ঈমান: সাহাবায়ে কেরামের জীবন থেকে উত্তরণের পথ",
+"channel": "ibt",
+"kind": "video",
+"approx": "2026-07",
+"playlists": [
+"PLPoR2UQBlssIHK2FmgHitpjKuz7uoH-GI"
+]
+},
+{
+"id": "UpmANHHV-NQ",
+"title": "ইমাম বুখারী জামে মাসজিদের দ্বিতীয় ছাদের বর্তমান অবস্থা",
+"channel": "ibt",
+"kind": "video",
+"approx": "2026-07",
+"playlists": []
+},
+{
+"id": "KVVgI3Mk5sQ",
+"title": "সালাত ও সিয়ামে সন্তানকে অভ্যস্ত করা",
+"channel": "ibt",
+"kind": "video",
+"approx": "2026-07",
+"playlists": []
+},
+{
+"id": "6Tr1tv5WQnw",
+"title": "বোনদের প্রতি শায়েখের বিশেষ বার্তা",
+"channel": "ibt",
+"kind": "video",
+"approx": "2026-07",
+"playlists": []
+},
+{
+"id": "UBTGns4Ojpw",
+"title": "Ask Dr Monzur E Elahi (Episode 24)",
+"channel": "ibt",
+"kind": "video",
+"approx": "2026-07",
+"playlists": [
+"PLPoR2UQBlssIwEXGdNmCGMqx2MU7T6Ezv"
+]
+},
+{
+"id": "J-2nKcukDXY",
+"title": "প্রতিদিন নিজেকে আখেরাতের জন্য কীভাবে প্রস্তুত করব?",
+"channel": "ibt",
+"kind": "live",
+"approx": "2026-07",
+"playlists": [
+"PLPoR2UQBlssIHK2FmgHitpjKuz7uoH-GI"
+]
+},
+{
+"id": "fHSiB7-Zl14",
+"title": "সমাজ পরিবর্তনের স্তম্ভ হিসেবে মুসলিম নারীর ভূমিকা",
+"channel": "ibt",
+"kind": "live",
+"approx": "2026-07",
+"playlists": [
+"PLPoR2UQBlssIHK2FmgHitpjKuz7uoH-GI"
+]
+},
+{
+"id": "3zgdb-KDlLc",
+"title": "ভাষার ভিতরে লুকানো শিরক ও প্রচলিত ভুল",
+"channel": "ibt",
+"kind": "live",
+"approx": "2026-07",
+"playlists": [
+"PLPoR2UQBlssIHK2FmgHitpjKuz7uoH-GI"
+]
+},
+{
+"id": "n3QWFzK9Vkc",
+"title": "নফস, অভ্যাস ও আত্মপ্রবঞ্চনা",
+"channel": "ibt",
+"kind": "video",
+"approx": "2026-06",
+"playlists": [
+"PLPoR2UQBlssJYUTdLKv0uRQtuxHkUN2z-"
+]
+},
+{
+"id": "R3_3PlbdJi4",
+"title": "আত্মসচেতনতা",
+"channel": "ibt",
+"kind": "video",
+"approx": "2026-06",
+"playlists": [
+"PLPoR2UQBlssJYUTdLKv0uRQtuxHkUN2z-"
+]
+},
+{
+"id": "9ssbeQ5Ial4",
+"title": "মুহাসাবা",
+"channel": "ibt",
+"kind": "video",
+"approx": "2026-06",
+"playlists": [
+"PLPoR2UQBlssJYUTdLKv0uRQtuxHkUN2z-"
+]
+},
+{
+"id": "gyNkgIliHrQ",
+"title": "ভেতরের বাধাসমূহ সনাক্তকরণ",
+"channel": "ibt",
+"kind": "video",
+"approx": "2026-06",
+"playlists": [
+"PLPoR2UQBlssJYUTdLKv0uRQtuxHkUN2z-"
+]
+},
+{
+"id": "jSXb6Yd2hwc",
+"title": "আত্মতুষ্টি",
+"channel": "ibt",
+"kind": "video",
+"approx": "2026-06",
+"playlists": [
+"PLPoR2UQBlssJYUTdLKv0uRQtuxHkUN2z-"
+]
+},
+{
+"id": "7YtbtLJmPFs",
+"title": "আত্মবিস্মৃতি",
+"channel": "ibt",
+"kind": "video",
+"approx": "2026-06",
+"playlists": [
+"PLPoR2UQBlssJYUTdLKv0uRQtuxHkUN2z-"
+]
+},
+{
+"id": "fczYgfmEGqQ",
+"title": "রামাদানে বাস্তবসম্মত লক্ষ্য নির্ধারণ",
+"channel": "ibt",
+"kind": "video",
+"approx": "2026-06",
+"playlists": [
+"PLPoR2UQBlssJYUTdLKv0uRQtuxHkUN2z-"
+]
+},
+{
+"id": "W78BCJfwN_E",
+"title": "যখন আল্লাহ অজান্তেই আপনার বিষয়গুলো ঠিক করে দেন",
+"channel": "ibt",
+"kind": "video",
+"approx": "2026-06",
+"playlists": [
+"PLPoR2UQBlssJYUTdLKv0uRQtuxHkUN2z-"
+]
+},
+{
+"id": "d52olfOfIdA",
+"title": "রামাদানে আমলের ধারাবাহিকতা",
+"channel": "ibt",
+"kind": "video",
+"approx": "2026-06",
+"playlists": [
+"PLPoR2UQBlssJYUTdLKv0uRQtuxHkUN2z-"
+]
+},
+{
+"id": "kB_UQIA4jLI",
+"title": "সহজ ইস্তিগফারের ফজিলত",
+"channel": "ibt",
+"kind": "video",
+"approx": "2026-06",
+"playlists": [
+"PLPoR2UQBlssJYUTdLKv0uRQtuxHkUN2z-"
+]
+},
+{
+"id": "9uTP980Yd_4",
+"title": "ইদ-উল আযহার শুভেচ্ছা ।। Dr. Mohammad Monzur-E-Elahi",
+"channel": "ibt",
+"kind": "video",
+"approx": "2026-06",
+"playlists": []
+},
+{
+"id": "8AR3YlUjOcE",
+"title": "জিলহাজ্জ মাসের বিশেষ আমল",
+"channel": "ibt",
+"kind": "video",
+"approx": "2026-06",
+"playlists": []
+},
+{
+"id": "Yo5NBLjWdIg",
+"title": "ইমাম বুখারী জামে মাসজিদ কমপ্লেক্স ও একাডেমিক ভবন-এর নির্মাণাধীন কাজের বর্তমান অগ্রগতি",
+"channel": "ibt",
+"kind": "video",
+"approx": "2026-06",
+"playlists": [
+"PLPoR2UQBlssIAt2c7RNbZDSF6zI0x1VYf"
+]
+},
+{
+"id": "TAYduqWEXeI",
+"title": "আধুনিক পরিবারে সুন্নাহ: ব্যস্ত জীবনে বাস্তব ইসলাম",
+"channel": "ibt",
+"kind": "live",
+"approx": "2026-06",
+"playlists": [
+"PLPoR2UQBlssIHK2FmgHitpjKuz7uoH-GI"
+]
+},
+{
+"id": "lnyZB0rUnEo",
+"title": "মৃত্যু আসন্ন — আমরা কি প্রস্তুত? চূড়ান্ত যাত্রার জন্য প্রস্তুতি",
+"channel": "ibt",
+"kind": "live",
+"approx": "2026-06",
+"playlists": []
+},
+{
+"id": "J5C93DbIehg",
+"title": "কুরবানী: আল্লাহর প্রতি আনুগত্য, নফসের বিরুদ্ধে সংগ্রাম ও উম্মাহর সামাজিক দায়িত্ব",
+"channel": "ibt",
+"kind": "live",
+"approx": "2026-06",
+"playlists": [
+"PLPoR2UQBlssIHK2FmgHitpjKuz7uoH-GI"
+]
+},
+{
+"id": "On3YgLFVG0o",
+"title": "রাসূল ﷺ–এর অনুসরণে সাহাবাগণের অনুপম দৃষ্টান্ত: আমাদের জন্য শিক্ষা",
+"channel": "ibt",
+"kind": "video",
+"approx": "2026-05",
+"playlists": [
+"PLPoR2UQBlssIHK2FmgHitpjKuz7uoH-GI"
+]
+},
+{
+"id": "jBnCmh-3MCY",
+"title": "Ask Dr Monzur E Elahi (Episode 23)",
+"channel": "ibt",
+"kind": "video",
+"approx": "2026-05",
+"playlists": [
+"PLPoR2UQBlssIwEXGdNmCGMqx2MU7T6Ezv"
+]
+},
+{
+"id": "xuAcnecAbtU",
+"title": "Ask Dr Monzur E Elahi (Episode 22)",
+"channel": "ibt",
+"kind": "video",
+"approx": "2026-05",
+"playlists": [
+"PLPoR2UQBlssIwEXGdNmCGMqx2MU7T6Ezv"
+]
+},
+{
+"id": "-8cM9VjI1B0",
+"title": "যিলহজ্জের প্রথম ১০ দিন: ফজিলত, আমল ও প্রস্তুতি",
+"channel": "ibt",
+"kind": "live",
+"approx": "2026-05",
+"playlists": []
+},
+{
+"id": "2_DYR_zB51c",
+"title": "দাজ্জাল, ইয়াজুজ-মাজুজ ও পৃথিবীর শেষ অধ্যায়: কুরআন-হাদীসের আলোকে বিশ্লেষণ",
+"channel": "ibt",
+"kind": "live",
+"approx": "2026-05",
+"playlists": [
+"PLPoR2UQBlssIHK2FmgHitpjKuz7uoH-GI"
+]
+},
+{
+"id": "e04SsdfrTv8",
+"title": "তাফসির সূরা আন নাবা",
+"channel": "ibt",
+"kind": "live",
+"approx": "2026-05",
+"playlists": [
+"PLPoR2UQBlssIHK2FmgHitpjKuz7uoH-GI"
+]
+},
+{
+"id": "2-QcC0-0S04",
+"title": "আদব তত্ত্ব থেকে আচরণে: আধুনিক সমাজে নববী শিষ্টাচার",
+"channel": "ibt",
+"kind": "live",
+"approx": "2026-05",
+"playlists": [
+"PLPoR2UQBlssIHK2FmgHitpjKuz7uoH-GI"
+]
+},
+{
+"id": "HW5gxbGAVQo",
+"title": "ইমাম বুখারি ট্রাস্ট স্পেশাল হজ্জ ট্রেনিং: হজ্জ ৩৬০",
+"channel": "ibt",
+"kind": "video",
+"approx": "2026-04",
+"playlists": []
+},
+{
+"id": "BRF47wlJj00",
+"title": "জমজম পানির একটি অলৌকিক ঘটনা",
+"channel": "ibt",
+"kind": "video",
+"approx": "2026-04",
+"playlists": []
+},
+{
+"id": "9N4oD87qjvE",
+"title": "আপনি কি লাইফস্টাইল কে ইলাহ্ বানিয়ে নিচ্ছেন?",
+"channel": "ibt",
+"kind": "video",
+"approx": "2026-04",
+"playlists": [
+"PLPoR2UQBlssIHK2FmgHitpjKuz7uoH-GI"
+]
+},
+{
+"id": "H6jTaoKXTAo",
+"title": "ইদ-উল ফিতরের শুভেচ্ছা ।। Dr. Mohammad Monzur-E-Elahi",
+"channel": "ibt",
+"kind": "video",
+"approx": "2026-04",
+"playlists": []
+},
+{
+"id": "h4YrtcVyX1I",
+"title": "আপনার জীবনযাত্রায় কীভাবে বারাকাহ আনবেন",
+"channel": "ibt",
+"kind": "video",
+"approx": "2026-04",
+"playlists": [
+"PLPoR2UQBlssJYUTdLKv0uRQtuxHkUN2z-"
+]
+},
+{
+"id": "gEQVEhBBv8g",
+"title": "পরিবারে কুরআন কালচার কিভাবে আনবো",
+"channel": "ibt",
+"kind": "live",
+"approx": "2026-04",
+"playlists": [
+"PLPoR2UQBlssIHK2FmgHitpjKuz7uoH-GI"
+]
+},
+{
+"id": "hDBheOrU0T0",
+"title": "কুরআনের সাথে সাহাবাদের সম্পর্ক কেমন ছিলো",
+"channel": "ibt",
+"kind": "live",
+"approx": "2026-04",
+"playlists": [
+"PLPoR2UQBlssIHK2FmgHitpjKuz7uoH-GI"
+]
+},
+{
+"id": "aaBnErpy11o",
+"title": "পাকস্থলীর সংযম বনাম আত্মার শুদ্ধি",
+"channel": "ibt",
+"kind": "video",
+"approx": "2026-03",
+"playlists": [
+"PLPoR2UQBlssJYUTdLKv0uRQtuxHkUN2z-"
+]
+},
+{
+"id": "dxx60Gwx_a8",
+"title": "সংকল্পের পুনরাবৃত্তি",
+"channel": "ibt",
+"kind": "video",
+"approx": "2026-03",
+"playlists": [
+"PLPoR2UQBlssJYUTdLKv0uRQtuxHkUN2z-"
+]
+},
+{
+"id": "bU5RrcNLDzc",
+"title": "রামাদানের এই শেষ দশকে সাদাকার গুরুত্ব",
+"channel": "ibt",
+"kind": "video",
+"approx": "2026-03",
+"playlists": []
+},
+{
+"id": "NpzMj8Vd_C4",
+"title": "রমাদানের শেষ দশক এবং এই রমাদানে কী পাথেয় নিয়ে যাচ্ছি? ।। Dr Abdullah Al Kafi Madani",
+"channel": "ibt",
+"kind": "video",
+"approx": "2026-03",
+"playlists": []
+},
+{
+"id": "ys_ujNWCmfc",
+"title": "রমাদানের পর শয়তানের বিভ্রান্তির কৌশল ।। Living Islam imam Bukhari Trust",
+"channel": "ibt",
+"kind": "video",
+"approx": "2026-03",
+"playlists": [
+"PLPoR2UQBlssJYUTdLKv0uRQtuxHkUN2z-"
+]
+},
+{
+"id": "HWnchAeMPWg",
+"title": "পাঁচ ওযা়ক্ত সালাত হেফাজত করা কেন জরুরি",
+"channel": "ibt",
+"kind": "video",
+"approx": "2026-03",
+"playlists": [
+"PLPoR2UQBlssJYUTdLKv0uRQtuxHkUN2z-"
+]
+},
+{
+"id": "BGhpzLH7Leg",
+"title": "ছোট আমল বিশাল সওযা়ব",
+"channel": "ibt",
+"kind": "video",
+"approx": "2026-03",
+"playlists": [
+"PLPoR2UQBlssJYUTdLKv0uRQtuxHkUN2z-"
+]
+},
+{
+"id": "LltlahmcXzE",
+"title": "কেন জুমুআকে বলা হয় সপ্তাহের শ্রেষ্ঠ দিন ।। Living Islam imam Bukhari Trust",
+"channel": "ibt",
+"kind": "video",
+"approx": "2026-03",
+"playlists": [
+"PLPoR2UQBlssJYUTdLKv0uRQtuxHkUN2z-"
+]
+},
+{
+"id": "VdXaoGolVWk",
+"title": "আল্লাহর নিকটবর্তী হৃদযে়র লক্ষণ ।। Living Islam imam Bukhari Trust",
+"channel": "ibt",
+"kind": "video",
+"approx": "2026-03",
+"playlists": [
+"PLPoR2UQBlssJYUTdLKv0uRQtuxHkUN2z-"
+]
+},
+{
+"id": "dge_trxoicU",
+"title": "হৃদযে়র প্রশান্তির কুরআনিক দোযা় ।। Living Islam imam Bukhari Trust",
+"channel": "ibt",
+"kind": "video",
+"approx": "2026-03",
+"playlists": [
+"PLPoR2UQBlssJYUTdLKv0uRQtuxHkUN2z-"
+]
+},
+{
+"id": "8OoaI5it4DM",
+"title": "রোগী পরিদর্শনের ফজিলত ।। Living Islam imam Bukhari Trust",
+"channel": "ibt",
+"kind": "video",
+"approx": "2026-03",
+"playlists": [
+"PLPoR2UQBlssJYUTdLKv0uRQtuxHkUN2z-"
+]
+},
+{
+"id": "CacrXWnO2gg",
+"title": "হৃদয়ের কাঠিন্য ও তা দুর করার উপায় ।। Living Islam imam Bukhari Trust",
+"channel": "ibt",
+"kind": "video",
+"approx": "2026-03",
+"playlists": [
+"PLPoR2UQBlssJYUTdLKv0uRQtuxHkUN2z-"
+]
+},
+{
+"id": "yauCivoBgNA",
+"title": "আল্লাহ কেন মুমিনদের পরীক্ষা করেন ।। Living Islam imam Bukhari Trust",
+"channel": "ibt",
+"kind": "video",
+"approx": "2026-03",
+"playlists": [
+"PLPoR2UQBlssJYUTdLKv0uRQtuxHkUN2z-"
+]
+},
+{
+"id": "PUqaKLPKY_M",
+"title": "গোপন পুণ্য বনাম গোপন পাপ ।। Living Islam imam Bukhari Trust",
+"channel": "ibt",
+"kind": "video",
+"approx": "2026-03",
+"playlists": [
+"PLPoR2UQBlssJYUTdLKv0uRQtuxHkUN2z-"
+]
+},
+{
+"id": "np9M6nVfdjE",
+"title": "Gathering Under One Roof: Continuing the Prophetic Legacy",
+"channel": "ibt",
+"kind": "video",
+"approx": "2026-03",
+"playlists": [
+"PLPoR2UQBlssIAt2c7RNbZDSF6zI0x1VYf"
+]
+},
+{
+"id": "Ny7qWKGd1-E",
+"title": "রাইযা়ন দরজা ।। Living Islam imam Bukhari Trust",
+"channel": "ibt",
+"kind": "video",
+"approx": "2026-03",
+"playlists": [
+"PLPoR2UQBlssJYUTdLKv0uRQtuxHkUN2z-"
+]
+},
+{
+"id": "gdZGCiGM9_0",
+"title": "মুচকি হাসার সুন্নাহ ।। Living Islam imam Bukhari Trust",
+"channel": "ibt",
+"kind": "video",
+"approx": "2026-03",
+"playlists": [
+"PLPoR2UQBlssJYUTdLKv0uRQtuxHkUN2z-"
+]
+},
+{
+"id": "OMNAqdtumHI",
+"title": "প্রতিটি কথা লিপিবদ্ধকারী দুই ফেরেশতা ।। Living Islam imam Bukhari Trust",
+"channel": "ibt",
+"kind": "video",
+"approx": "2026-03",
+"playlists": [
+"PLPoR2UQBlssJYUTdLKv0uRQtuxHkUN2z-"
+]
+},
+{
+"id": "kJX8nuOpn4w",
+"title": "যখন আপনার দোয়া দেরিতে কবুল হয় ।। Living Islam imam Bukhari Trust",
+"channel": "ibt",
+"kind": "video",
+"approx": "2026-03",
+"playlists": [
+"PLPoR2UQBlssJYUTdLKv0uRQtuxHkUN2z-"
+]
+},
+{
+"id": "dmc7trMdRxc",
+"title": "Gathering Under One Roof: Continuing the Prophetic Legacy",
+"channel": "ibt",
+"kind": "video",
+"approx": "2026-03",
+"playlists": []
+},
+{
+"id": "eXbECgihrfQ",
+"title": "“সুবহানাল্লাহি ওযা় বিহামদিহী” এর ওজন  ।। Living Islam imam Bukhari Trust",
+"channel": "ibt",
+"kind": "video",
+"approx": "2026-03",
+"playlists": [
+"PLPoR2UQBlssJYUTdLKv0uRQtuxHkUN2z-"
+]
+},
+{
+"id": "aqYJIDUvdJ0",
+"title": "একটি “আলহামদুলিল্লাহ” এর মূল্য ।। Living Islam imam Bukhari Trust",
+"channel": "ibt",
+"kind": "video",
+"approx": "2026-03",
+"playlists": [
+"PLPoR2UQBlssJYUTdLKv0uRQtuxHkUN2z-"
+]
+},
+{
+"id": "GUctXFDyF2Y",
+"title": "রোজাদার ব্যক্তির জন্য ফেরেশতাদের দোয়া ।। Living Islam imam Bukhari Trust",
+"channel": "ibt",
+"kind": "video",
+"approx": "2026-03",
+"playlists": [
+"PLPoR2UQBlssJYUTdLKv0uRQtuxHkUN2z-"
+]
+},
+{
+"id": "0ygfATP02xc",
+"title": "ইফতার বিতরণ প্রকল্প ২০২৬।। ইমাম বুখারী ট্রাস্ট",
+"channel": "ibt",
+"kind": "video",
+"approx": "2026-02",
+"playlists": []
+},
+{
+"id": "yMAUh9FMrkk",
+"title": "একসাথে—আল্লাহর পথে, আল্লাহর ভালবাসা অর্জনের যাত্রায়",
+"channel": "ibt",
+"kind": "video",
+"approx": "2026-02",
+"playlists": []
+},
+{
+"id": "vgeUVPKtUv4",
+"title": "রমজানের প্রস্তুতি: ডিজিটাল ডিটক্স",
+"channel": "ibt",
+"kind": "live",
+"approx": "2026-02",
+"playlists": [
+"PLPoR2UQBlssIHK2FmgHitpjKuz7uoH-GI"
+]
+},
+{
+"id": "Y3Kn7NJTAR4",
+"title": "মুসলিমদের বুদ্ধিবৃত্তিক পরাধীনতা (পর্ব ২)",
+"channel": "ibt",
+"kind": "video",
+"approx": "2026-01",
+"playlists": []
+},
+{
+"id": "6hYqzflft7I",
+"title": "ইমাম বুখারী ট্রাস্ট ।। গেট টুগেদার ২০২৬",
+"channel": "ibt",
+"kind": "video",
+"approx": "2026-01",
+"playlists": []
+},
+{
+"id": "loJi5XdGPZ8",
+"title": "তাওয়াক্কুলের প্রকৃত পরীক্ষা  নবীদের জীবন থেকে শিক্ষা",
+"channel": "ibt",
+"kind": "video",
+"approx": "2026-01",
+"playlists": [
+"PLPoR2UQBlssIHK2FmgHitpjKuz7uoH-GI"
+]
+},
+{
+"id": "MxGlGefTLro",
+"title": "সূরা আল ফাতিহা - রোজ পড়ি, তবু অচেনা",
+"channel": "ibt",
+"kind": "video",
+"approx": "2026-01",
+"playlists": [
+"PLPoR2UQBlssIHK2FmgHitpjKuz7uoH-GI"
+]
+},
+{
+"id": "_yfCtljE18M",
+"title": "মুসলিমদের বুদ্ধিবৃত্তিক পরাধীনতা",
+"channel": "ibt",
+"kind": "video",
+"approx": "2026-01",
+"playlists": [
+"PLPoR2UQBlssIHK2FmgHitpjKuz7uoH-GI"
+]
+},
+{
+"id": "_8pvv3kmgxw",
+"title": "আমি কি মুনাফিক? নিফাকের সূক্ষ্ম লক্ষণ: উমার (রা.) এর আত্ম জিজ্ঞাসা থেকে আমরা কী শিখি?",
+"channel": "ibt",
+"kind": "live",
+"approx": "2026-01",
+"playlists": [
+"PLPoR2UQBlssIHK2FmgHitpjKuz7uoH-GI"
+]
+},
+{
+"id": "KQT1TCA16W4",
+"title": "মতভেদ (ইখতিলাফ) : রহমত না ফিতনা? (হাদিসের আলোকে আদাবুল ইখতিলাফ)",
+"channel": "ibt",
+"kind": "live",
+"approx": "2026-01",
+"playlists": [
+"PLPoR2UQBlssIHK2FmgHitpjKuz7uoH-GI"
+]
+},
+{
+"id": "YgdgNoaukMg",
+"title": "Ask Dr Monzur E Elahi (Episode 20)",
+"channel": "ibt",
+"kind": "video",
+"approx": "2025-12",
+"playlists": [
+"PLPoR2UQBlssIwEXGdNmCGMqx2MU7T6Ezv"
+]
+},
+{
+"id": "s86YnwOkcd0",
+"title": "Ask Dr Monzur E Elahi (Episode 19)",
+"channel": "ibt",
+"kind": "video",
+"approx": "2025-12",
+"playlists": [
+"PLPoR2UQBlssIwEXGdNmCGMqx2MU7T6Ezv"
+]
+},
+{
+"id": "vOxzbkTOCZM",
+"title": "Ask Dr Monzur E Elahi (Episode 18)",
+"channel": "ibt",
+"kind": "video",
+"approx": "2025-12",
+"playlists": [
+"PLPoR2UQBlssIwEXGdNmCGMqx2MU7T6Ezv"
+]
+},
+{
+"id": "szTbqh0XLeU",
+"title": "Ask Dr Monzur E Elahi (Episode 17)",
+"channel": "ibt",
+"kind": "video",
+"approx": "2025-12",
+"playlists": [
+"PLPoR2UQBlssIwEXGdNmCGMqx2MU7T6Ezv"
+]
+},
+{
+"id": "AweUR2gQT7s",
+"title": "দুর্বল মুমিনের চেয়ে শক্তিশালী মুমিন আল্লাহর কাছে অধিক প্রিয়",
+"channel": "ibt",
+"kind": "live",
+"approx": "2025-12",
+"playlists": [
+"PLPoR2UQBlssIHK2FmgHitpjKuz7uoH-GI"
+]
+},
+{
+"id": "9BsDgGjMH-8",
+"title": "এআই ও ডিজিটাল যুগে মুসলিমের নৈতিকতা: সুযোগ, বিপদ ও দায়িত্ব",
+"channel": "ibt",
+"kind": "live",
+"approx": "2025-12",
+"playlists": [
+"PLPoR2UQBlssIHK2FmgHitpjKuz7uoH-GI"
+]
+},
+{
+"id": "iQlzqcYustQ",
+"title": "\"অবশ্যই আমি তাদেরকে গুরুতর আযাবের পূর্বে লঘু আযাব আস্বাদন করাব, যাতে তারা ফিরে আসে\"",
+"channel": "ibt",
+"kind": "live",
+"approx": "2025-12",
+"playlists": [
+"PLPoR2UQBlssIHK2FmgHitpjKuz7uoH-GI"
+]
+},
+{
+"id": "SwkaECOzwYk",
+"title": "শির্কের আধুনিক রূপ: অচেতন গুনাহ?",
+"channel": "ibt",
+"kind": "live",
+"approx": "2025-12",
+"playlists": [
+"PLPoR2UQBlssIHK2FmgHitpjKuz7uoH-GI"
+]
+},
+{
+"id": "rQbGz-BfmSI",
+"title": "তুমি কি তাকে লক্ষ্য করেছ  যে তার প্রবৃত্তিকে আপন ইলাহ বানিয়ে নিয়েছে",
+"channel": "ibt",
+"kind": "video",
+"approx": "2025-11",
+"playlists": [
+"PLPoR2UQBlssIHK2FmgHitpjKuz7uoH-GI"
+]
+},
+{
+"id": "m6GpUBzOSuo",
+"title": "সাধারণ মানুষের জন্য কুরআন বোঝার মূলনীতি",
+"channel": "ibt",
+"kind": "video",
+"approx": "2025-11",
+"playlists": [
+"PLPoR2UQBlssIHK2FmgHitpjKuz7uoH-GI"
+]
+},
+{
+"id": "aJFtg-8orH0",
+"title": "আমরা কি পারছি আল্লাহর নিয়ামতের শুকরিয়া আদায় করতে",
+"channel": "ibt",
+"kind": "video",
+"approx": "2025-11",
+"playlists": [
+"PLPoR2UQBlssIHK2FmgHitpjKuz7uoH-GI"
+]
+},
+{
+"id": "ad78T-ECbm4",
+"title": "সালাতে খুশু কিভাবে বাড়াবো",
+"channel": "ibt",
+"kind": "video",
+"approx": "2025-11",
+"playlists": [
+"PLPoR2UQBlssIHK2FmgHitpjKuz7uoH-GI"
+]
+},
+{
+"id": "_xCq6S7zzTg",
+"title": "একসাথে—আল্লাহর পথে, আল্লাহর ভালবাসা অর্জনের যাত্রায়",
+"channel": "ibt",
+"kind": "video",
+"approx": "2025-11",
+"playlists": []
+},
+{
+"id": "Sk69OnJyw8E",
+"title": "গোপনে গুনাহ? আপনি কি ভুলে গেছেন আল্লাহ দেখছেন",
+"channel": "ibt",
+"kind": "video",
+"approx": "2025-11",
+"playlists": [
+"PLPoR2UQBlssIHK2FmgHitpjKuz7uoH-GI"
+]
+},
+{
+"id": "NH9ED4DfnKA",
+"title": "একটি অনুপ্রেরণামূলক ঘটনা: দোয়ার শক্তি",
+"channel": "ibt",
+"kind": "video",
+"approx": "2025-11",
+"playlists": []
+},
+{
+"id": "vgyzmfYO0bg",
+"title": "ক্ষমা ও সহনশীলতা বিভক্তির যুগে ঐক্যের বার্তা",
+"channel": "ibt",
+"kind": "video",
+"approx": "2025-11",
+"playlists": [
+"PLPoR2UQBlssIHK2FmgHitpjKuz7uoH-GI"
+]
+},
+{
+"id": "VJ2AlaJElSc",
+"title": "রাসুলুল্লাহ (সা.)-এর জীবন থেকে শিক্ষা: ন্যায় ও ন্যায্যতা জীবনের প্রতিটি পদক্ষেপে",
+"channel": "ibt",
+"kind": "video",
+"approx": "2025-11",
+"playlists": [
+"PLPoR2UQBlssIHK2FmgHitpjKuz7uoH-GI"
+]
+},
+{
+"id": "xFGykJ5cd-A",
+"title": "নিয়তের ভুল এক ভয়ানক বিপদ  আমল রুপ নিচ্ছে পাপে, অথচ সাধারন কাজও হতে পারতো নেকির পাহাড়।",
+"channel": "ibt",
+"kind": "video",
+"approx": "2025-11",
+"playlists": [
+"PLPoR2UQBlssIHK2FmgHitpjKuz7uoH-GI"
+]
+},
+{
+"id": "-egP3weJnKA",
+"title": "ফিতনার সময় করনীয়",
+"channel": "ibt",
+"kind": "video",
+"approx": "2025-11",
+"playlists": [
+"PLPoR2UQBlssIHK2FmgHitpjKuz7uoH-GI"
+]
+},
+{
+"id": "skcu0qXYR-o",
+"title": "\"আল্লাহর সাথে সম্পর্ক: আদব, ভয় ও ভালোবাসা\"",
+"channel": "ibt",
+"kind": "video",
+"approx": "2025-11",
+"playlists": [
+"PLPoR2UQBlssIHK2FmgHitpjKuz7uoH-GI"
+]
+},
+{
+"id": "5xzu04Hl7ZA",
+"title": "হুসনু যন- ইতিবাচক চিন্তা",
+"channel": "ibt",
+"kind": "video",
+"approx": "2025-11",
+"playlists": [
+"PLPoR2UQBlssIHK2FmgHitpjKuz7uoH-GI"
+]
+},
+{
+"id": "QXX9u2ZWIm0",
+"title": "সুন্নাহ অনুসরণে প্রতিবন্ধকতা সমূহ",
+"channel": "ibt",
+"kind": "video",
+"approx": "2025-11",
+"playlists": [
+"PLPoR2UQBlssIHK2FmgHitpjKuz7uoH-GI"
+]
+},
+{
+"id": "9cNX-Nc_viE",
+"title": "ভারতবর্ষে ইসলাম এর ইতিহাস",
+"channel": "ibt",
+"kind": "video",
+"approx": "2025-11",
+"playlists": [
+"PLPoR2UQBlssIHK2FmgHitpjKuz7uoH-GI"
+]
+},
+{
+"id": "lCSV-PvMGNQ",
+"title": "সোশ্যাল মিডিয়া ব্যবহারে ইসলামিক গাইডলাইন",
+"channel": "ibt",
+"kind": "video",
+"approx": "2025-11",
+"playlists": [
+"PLPoR2UQBlssIHK2FmgHitpjKuz7uoH-GI"
+]
+},
+{
+"id": "1JLoxahE4fU",
+"title": "সাহাবীরা কিভাবে রাসূলুল্লাহ ﷺ কে ভালবাসতেন, সম্মান করতেন ও প্রতিরক্ষা করতেন",
+"channel": "ibt",
+"kind": "video",
+"approx": "2025-11",
+"playlists": [
+"PLPoR2UQBlssIHK2FmgHitpjKuz7uoH-GI"
+]
+},
+{
+"id": "kqIFDd57Lmk",
+"title": "TS-1B: সুন্নাহ অস্বীকারকারীদের সংশয়সমূহ ও তার জবাব – প্রাচ্যবিদদের সৃষ্ট সংশয়সমূহের পর্যালোচনা",
+"channel": "ibt",
+"kind": "video",
+"approx": "2025-11",
+"playlists": [
+"PLPoR2UQBlssJFePGOHjrDCOZR6ouDp7dH"
+]
+},
+{
+"id": "0W_odowrCHk",
+"title": "TS-1A: কুরআন ও হাদিসের পারস্পারিক সম্পর্ক",
+"channel": "ibt",
+"kind": "video",
+"approx": "2025-11",
+"playlists": [
+"PLPoR2UQBlssJFePGOHjrDCOZR6ouDp7dH"
+]
+},
+{
+"id": "slJyH5IutzY",
+"title": "ইব্রাহীম আ. এর পথে: তাওহীদের আহ্বান ও ত্যাগের যাত্রা",
+"channel": "ibt",
+"kind": "video",
+"approx": "2025-11",
+"playlists": [
+"PLPoR2UQBlssIHK2FmgHitpjKuz7uoH-GI"
+]
+},
+{
+"id": "6e8GrMmpxp8",
+"title": "কুরবানীর ভুলসমূহ এবং যিলহজ্জ মাসের ১ম দশ দিন",
+"channel": "ibt",
+"kind": "video",
+"approx": "2025-11",
+"playlists": [
+"PLPoR2UQBlssIHK2FmgHitpjKuz7uoH-GI"
+]
+},
+{
+"id": "FlP8rd4vJow",
+"title": "প্লেনারি সেশন-২: সুন্নাহ ও বিজ্ঞান (Speaker - 01)",
+"channel": "ibt",
+"kind": "video",
+"approx": "2025-11",
+"playlists": [
+"PLPoR2UQBlssJFePGOHjrDCOZR6ouDp7dH"
+]
+},
+{
+"id": "9CtV4HzESHE",
+"title": "Ask Dr Monzur E Elahi (Episode 16)",
+"channel": "ibt",
+"kind": "video",
+"approx": "2025-11",
+"playlists": [
+"PLPoR2UQBlssIwEXGdNmCGMqx2MU7T6Ezv"
+]
+},
+{
+"id": "Wni9P1fEajg",
+"title": "Ask Dr Monzur E Elahi Episode  14",
+"channel": "ibt",
+"kind": "video",
+"approx": "2025-11",
+"playlists": [
+"PLPoR2UQBlssIwEXGdNmCGMqx2MU7T6Ezv"
+]
+},
+{
+"id": "2WSQgW8dyGY",
+"title": "Ask Dr Monzur E Elahi (Episode -13)",
+"channel": "ibt",
+"kind": "video",
+"approx": "2025-11",
+"playlists": [
+"PLPoR2UQBlssIwEXGdNmCGMqx2MU7T6Ezv"
+]
+},
+{
+"id": "qk8dglkNDyk",
+"title": "Ask Dr  Monzur E Elahi (Episode  11)",
+"channel": "ibt",
+"kind": "video",
+"approx": "2025-11",
+"playlists": [
+"PLPoR2UQBlssIwEXGdNmCGMqx2MU7T6Ezv"
+]
+},
+{
+"id": "x07J7WZx5nc",
+"title": "Ask Dr  Monzur E Elahi (Episode  12)",
+"channel": "ibt",
+"kind": "video",
+"approx": "2025-11",
+"playlists": [
+"PLPoR2UQBlssIwEXGdNmCGMqx2MU7T6Ezv"
+]
+},
+{
+"id": "UM2b4_KFGQ0",
+"title": "Ask Dr  Monzur E Elahi (Episode  10)",
+"channel": "ibt",
+"kind": "video",
+"approx": "2025-11",
+"playlists": [
+"PLPoR2UQBlssIwEXGdNmCGMqx2MU7T6Ezv"
+]
+},
+{
+"id": "HFincEAVNc8",
+"title": "Ask Dr  Monzur E Elahi (Episode  09)",
+"channel": "ibt",
+"kind": "video",
+"approx": "2025-11",
+"playlists": [
+"PLPoR2UQBlssIwEXGdNmCGMqx2MU7T6Ezv"
+]
+},
+{
+"id": "n66qm_jE_0g",
+"title": "Ask Dr  Monzur E Elahi (Episode  08)",
+"channel": "ibt",
+"kind": "video",
+"approx": "2025-11",
+"playlists": [
+"PLPoR2UQBlssIwEXGdNmCGMqx2MU7T6Ezv"
+]
+},
+{
+"id": "4GC8_3HhGxI",
+"title": "Ask Dr  Monzur E Elahi (Episode 7)",
+"channel": "ibt",
+"kind": "video",
+"approx": "2025-11",
+"playlists": [
+"PLPoR2UQBlssIwEXGdNmCGMqx2MU7T6Ezv"
+]
+},
+{
+"id": "O1RrRBBHFwE",
+"title": "Ask Dr  Monzur E Elahi (Episode 6)",
+"channel": "ibt",
+"kind": "video",
+"approx": "2025-11",
+"playlists": [
+"PLPoR2UQBlssIwEXGdNmCGMqx2MU7T6Ezv"
+]
+},
+{
+"id": "ekxnK4549rE",
+"title": "Ask Dr Monzur E Elahi Episode - 15",
+"channel": "ibt",
+"kind": "video",
+"approx": "2025-11",
+"playlists": [
+"PLPoR2UQBlssIwEXGdNmCGMqx2MU7T6Ezv"
+]
+},
+{
+"id": "unmpFPNa3m0",
+"title": "বাংলাদেশে হাদীস অস্বীকারকারীদের ষড়যন্ত্র",
+"channel": "ibt",
+"kind": "video",
+"approx": "2025-11",
+"playlists": [
+"PLPoR2UQBlssIHK2FmgHitpjKuz7uoH-GI"
+]
+},
+{
+"id": "PJGoLn8vpC0",
+"title": "“রাসূলুল্লাহ ﷺ এর হজ্জ” - ৩য় পর্ব",
+"channel": "ibt",
+"kind": "video",
+"approx": "2025-11",
+"playlists": [
+"PLPoR2UQBlssL9eBHykZVVrVok-EwcmG_j"
+]
+},
+{
+"id": "H1UOuOCw5-8",
+"title": "“রাসূলুল্লাহ ﷺ এর হজ্জ” - ২য় পর্ব",
+"channel": "ibt",
+"kind": "video",
+"approx": "2025-11",
+"playlists": [
+"PLPoR2UQBlssL9eBHykZVVrVok-EwcmG_j"
+]
+},
+{
+"id": "jdLmze9TYlM",
+"title": "“রাসূলুল্লাহ ﷺ এর হজ্জ” - ১ম পর্ব",
+"channel": "ibt",
+"kind": "video",
+"approx": "2025-11",
+"playlists": [
+"PLPoR2UQBlssL9eBHykZVVrVok-EwcmG_j"
+]
+},
+{
+"id": "gWV3KmUAxdo",
+"title": "প্লেনারি সেশন-১: কি-নোট বক্তব্য",
+"channel": "ibt",
+"kind": "video",
+"approx": "2025-11",
+"playlists": [
+"PLPoR2UQBlssJFePGOHjrDCOZR6ouDp7dH"
+]
+},
+{
+"id": "F3VR1rn3TQo",
+"title": "সুন্নাহ কনফারেন্স বাংলাদেশ ২০২৪ এ আগত অতিথিদের ইমাম বুখারী ট্রাস্ট নিয়ে কিছু মন্তব্য",
+"channel": "ibt",
+"kind": "video",
+"approx": "2025-11",
+"playlists": [
+"PLPoR2UQBlssJFePGOHjrDCOZR6ouDp7dH"
+]
+},
+{
+"id": "MqztKpdNins",
+"title": "“ইমাম বুখারী ট্রাস্ট: নির্মাণ অগ্রগতির নতুন দিগন্ত”",
+"channel": "ibt",
+"kind": "video",
+"approx": "2025-11",
+"playlists": []
+},
+{
+"id": "t1-NGRFdBio",
+"title": "নির্মাণ কাজের বর্তমান অবস্থা ।। ইমাম বুখারী ট্রাস্ট",
+"channel": "ibt",
+"kind": "video",
+"approx": "2025-11",
+"playlists": []
+},
+{
+"id": "9B083fiQVds",
+"title": "হকের দাওয়াতের প্রচারে আপনার অংশগ্রহণই হতে পারে চিরস্থায়ী কল্যাণ",
+"channel": "ibt",
+"kind": "video",
+"approx": "2025-11",
+"playlists": []
+},
+{
+"id": "INMClPmzawk",
+"title": "The Mental & Emotional Journey of Hajj",
+"channel": "ibt",
+"kind": "video",
+"approx": "2025-11",
+"playlists": [
+"PLPoR2UQBlssKtx2zvXCovKSZVOBkY1j8j"
+]
+},
+{
+"id": "QCVGWmBtJ4I",
+"title": "Medical Guidance",
+"channel": "ibt",
+"kind": "video",
+"approx": "2025-11",
+"playlists": [
+"PLPoR2UQBlssKtx2zvXCovKSZVOBkY1j8j"
+]
+},
+{
+"id": "NV_p5X48On0",
+"title": "Inspirational Reflections to Maximize Your benefits from Hajj",
+"channel": "ibt",
+"kind": "video",
+"approx": "2025-11",
+"playlists": [
+"PLPoR2UQBlssKtx2zvXCovKSZVOBkY1j8j"
+]
+},
+{
+"id": "modnKIKiJfA",
+"title": "Significane of Different Landmark",
+"channel": "ibt",
+"kind": "video",
+"approx": "2025-11",
+"playlists": [
+"PLPoR2UQBlssKtx2zvXCovKSZVOBkY1j8j"
+]
+},
+{
+"id": "XaaAI_mbbCo",
+"title": "Umrah & Hajj Rituals in Detail",
+"channel": "ibt",
+"kind": "video",
+"approx": "2025-11",
+"playlists": [
+"PLPoR2UQBlssKtx2zvXCovKSZVOBkY1j8j"
+]
+},
+{
+"id": "lAekf_5xb7A",
+"title": "The Spiritual and Historical essence of Hajj ।। Hajj Trainning IBT",
+"channel": "ibt",
+"kind": "video",
+"approx": "2025-11",
+"playlists": [
+"PLPoR2UQBlssKtx2zvXCovKSZVOBkY1j8j"
+]
+},
+{
+"id": "qjXOXf9R6hs",
+"title": "Pre Hajj Preparation and Tips for Your Journey and Stay in Saudi Arabia",
+"channel": "ibt",
+"kind": "video",
+"approx": "2025-11",
+"playlists": [
+"PLPoR2UQBlssKtx2zvXCovKSZVOBkY1j8j"
+]
+},
+{
+"id": "DwvrfdIp60Y",
+"title": "Welcome and Meeting & Greeting Session",
+"channel": "ibt",
+"kind": "video",
+"approx": "2025-11",
+"playlists": [
+"PLPoR2UQBlssKtx2zvXCovKSZVOBkY1j8j"
+]
+},
+{
+"id": "zcQBRYqNPiM",
+"title": "ইমাম বুখারী জামে মাসজিদ কমপ্লেক্স নির্মাণ কাজ এর অগ্রগতি",
+"channel": "ibt",
+"kind": "video",
+"approx": "2025-11",
+"playlists": []
+},
+{
+"id": "xsfR88c5jFw",
+"title": "রামাদান পরবর্তী আত্মপর্যালোচনা",
+"channel": "ibt",
+"kind": "video",
+"approx": "2025-11",
+"playlists": [
+"PLPoR2UQBlssIHK2FmgHitpjKuz7uoH-GI"
+]
+},
+{
+"id": "JcgNEvaPJWw",
+"title": "গণহত্যার নিকৃষ্ট অধ্যায়: ফিলিস্তিনে মুসলমানদের ওপর বর্বরতা",
+"channel": "ibt",
+"kind": "video",
+"approx": "2025-11",
+"playlists": []
+},
+{
+"id": "otsL31douYw",
+"title": "সেদিন উপকৃত হবে শুধু সে, যে আল্লাহর নিকট আসবে বিশুদ্ধ অন্তঃকরণ নিয়ে",
+"channel": "ibt",
+"kind": "video",
+"approx": "2025-11",
+"playlists": [
+"PLPoR2UQBlssIHK2FmgHitpjKuz7uoH-GI"
+]
+},
+{
+"id": "6uBmtqz-IzI",
+"title": "উত্তম আখলাক মুমিনের পরিচয় ।। শাইখ সানাউল্লাহ বিন নাজির",
+"channel": "ibt",
+"kind": "video",
+"approx": "2025-11",
+"playlists": [
+"PLPoR2UQBlssIHK2FmgHitpjKuz7uoH-GI"
+]
+},
+{
+"id": "JuIgtkWA4r8",
+"title": "দ্বীনি সমাজ বিনির্মাণ: আমাদের দায়িত্ব ও করণীয়",
+"channel": "ibt",
+"kind": "video",
+"approx": "2025-11",
+"playlists": [
+"PLPoR2UQBlssIHK2FmgHitpjKuz7uoH-GI"
+]
+},
+{
+"id": "pkZ3fQPeSzI",
+"title": "লাইলাতুল কদরের রাতে কোন ইবাদত বেশি গুরুত্ব দেওয়া উচিত?",
+"channel": "ibt",
+"kind": "video",
+"approx": "2025-11",
+"playlists": [
+"PLPoR2UQBlssLxQeu2VbjV6zIeQ7Nflu1v"
+]
+},
+{
+"id": "d6RQAMOF1h8",
+"title": "লাইলাতুল কদর কীভাবে চেনা যায়?",
+"channel": "ibt",
+"kind": "video",
+"approx": "2025-11",
+"playlists": [
+"PLPoR2UQBlssLxQeu2VbjV6zIeQ7Nflu1v"
+]
+},
+{
+"id": "IHXdIhX54vk",
+"title": "লাইলাতুল কদরের নির্দিষ্ট কোনো দিন আছে কি?",
+"channel": "ibt",
+"kind": "video",
+"approx": "2025-11",
+"playlists": [
+"PLPoR2UQBlssLxQeu2VbjV6zIeQ7Nflu1v"
+]
+},
+{
+"id": "uyoxLuo94e4",
+"title": "ঈদের জামাতে নারীদের অংশগ্রহণ সম্পর্কে ইসলাম কী বলে?",
+"channel": "ibt",
+"kind": "video",
+"approx": "2025-11",
+"playlists": [
+"PLPoR2UQBlssLxQeu2VbjV6zIeQ7Nflu1v"
+]
+},
+{
+"id": "TnNWymxGBzs",
+"title": "ঈদ উপলক্ষ্যে সন্তানদের আনন্দের জন্য কিছু নতুন কাপড় কেনা কি জায়েজ?",
+"channel": "ibt",
+"kind": "video",
+"approx": "2025-11",
+"playlists": [
+"PLPoR2UQBlssLxQeu2VbjV6zIeQ7Nflu1v"
+]
+},
+{
+"id": "QZ3mQcamtXo",
+"title": "আত্মীয়দের সাথে সম্পর্ক উন্নত করতে ঈদ উপহার দেয়া যাবে কি?",
+"channel": "ibt",
+"kind": "video",
+"approx": "2025-11",
+"playlists": [
+"PLPoR2UQBlssLxQeu2VbjV6zIeQ7Nflu1v"
+]
+},
+{
+"id": "otipA3m085A",
+"title": "ঈদগাহে যাওয়ার আগে কোনো দোয়া আছে কি?",
+"channel": "ibt",
+"kind": "video",
+"approx": "2025-11",
+"playlists": [
+"PLPoR2UQBlssLxQeu2VbjV6zIeQ7Nflu1v"
+]
+},
+{
+"id": "4BxkIbBSAU8",
+"title": "রমাদানে উমরাহ করলে কি আলাদা কোনো ফজিলত রয়েছে?",
+"channel": "ibt",
+"kind": "video",
+"approx": "2025-11",
+"playlists": [
+"PLPoR2UQBlssLxQeu2VbjV6zIeQ7Nflu1v"
+]
+},
+{
+"id": "4foC1Q4_LMo",
+"title": "তাওয়াফ করার সময় পানীয় গ্রহণ করলে কি সিয়াম ভাঙবে?",
+"channel": "ibt",
+"kind": "video",
+"approx": "2025-11",
+"playlists": [
+"PLPoR2UQBlssLxQeu2VbjV6zIeQ7Nflu1v"
+]
+},
+{
+"id": "udoYw8OYVhU",
+"title": "উমরাহ করার সময় সিয়াম রাখা যাবে কি?",
+"channel": "ibt",
+"kind": "video",
+"approx": "2025-11",
+"playlists": [
+"PLPoR2UQBlssLxQeu2VbjV6zIeQ7Nflu1v"
+]
+},
+{
+"id": "qpVtgFQ-e6I",
+"title": "ইতিকাফ শেষে পরিবারকে ইসলামের গুরুত্বপূর্ণ শিক্ষা কীভাবে দিতে পারেন?",
+"channel": "ibt",
+"kind": "video",
+"approx": "2025-11",
+"playlists": [
+"PLPoR2UQBlssLxQeu2VbjV6zIeQ7Nflu1v"
+]
+},
+{
+"id": "QMeAruNrVWk",
+"title": "সিয়াম অবস্থায় চোখের ড্রপ ব্যবহার করা কি সঠিক?",
+"channel": "ibt",
+"kind": "video",
+"approx": "2025-11",
+"playlists": [
+"PLPoR2UQBlssLxQeu2VbjV6zIeQ7Nflu1v"
+]
+},
+{
+"id": "kp583oCddwA",
+"title": "সিয়াম অবস্থায় ইনহেলার বা নেবুলাইজার ব্যবহার করলে সিয়াম ভেঙে যাবে কি?",
+"channel": "ibt",
+"kind": "video",
+"approx": "2025-11",
+"playlists": [
+"PLPoR2UQBlssLxQeu2VbjV6zIeQ7Nflu1v"
+]
+},
+{
+"id": "8zc8qPMbIHU",
+"title": "এই রাতে ইবাদতের ফজিলত সম্পর্কে রাসূলুল্লাহ (ﷺ) কী বলেছেন?",
+"channel": "ibt",
+"kind": "video",
+"approx": "2025-11",
+"playlists": [
+"PLPoR2UQBlssLxQeu2VbjV6zIeQ7Nflu1v"
+]
+},
+{
+"id": "mpZKdd3LVGg",
+"title": "রোগীর জন্য সিয়াম রাখা ক্ষতিকর বা বিপজ্জনক হলে, কি করবো? অপারগ রোগীর জন্য সিয়ামের বদলে কী করা উচিত?",
+"channel": "ibt",
+"kind": "video",
+"approx": "2025-11",
+"playlists": [
+"PLPoR2UQBlssLxQeu2VbjV6zIeQ7Nflu1v"
+]
+},
+{
+"id": "obYnfLowhhA",
+"title": "ডায়ালাইসিসের সময় সিয়াম রাখা যাবে কি?",
+"channel": "ibt",
+"kind": "video",
+"approx": "2025-11",
+"playlists": [
+"PLPoR2UQBlssLxQeu2VbjV6zIeQ7Nflu1v"
+]
+},
+{
+"id": "spolw5skCh4",
+"title": "ব্লাড টেস্ট ও রক্ত দান করালে কি সিয়াম ভাঙবে?",
+"channel": "ibt",
+"kind": "video",
+"approx": "2025-11",
+"playlists": [
+"PLPoR2UQBlssLxQeu2VbjV6zIeQ7Nflu1v"
+]
+},
+{
+"id": "OP0B62bs5kc",
+"title": "ইনজেকশন ও ইনসুলিন নিলে কি সিয়াম ভেঙে যাবে?",
+"channel": "ibt",
+"kind": "video",
+"approx": "2025-11",
+"playlists": [
+"PLPoR2UQBlssLxQeu2VbjV6zIeQ7Nflu1v"
+]
+},
+{
+"id": "9WhpZMC6sDs",
+"title": "ট্রেনে বা বাসে দীর্ঘ ভ্রমণের সময় তারাবি পড়া সম্ভব না হলে কী করবেন?",
+"channel": "ibt",
+"kind": "video",
+"approx": "2025-11",
+"playlists": [
+"PLPoR2UQBlssLxQeu2VbjV6zIeQ7Nflu1v"
+]
+},
+{
+"id": "xE8rtJrWwho",
+"title": "অসুস্থ অবস্থায় ভুলে কোনো ওষুধ খেলে সিয়ামের কী হবে?",
+"channel": "ibt",
+"kind": "video",
+"approx": "2025-11",
+"playlists": [
+"PLPoR2UQBlssLxQeu2VbjV6zIeQ7Nflu1v"
+]
+},
+{
+"id": "Z1mBnjY7Evw",
+"title": "বিমান ভ্রমণের সময় সেহরি বা ইফতারের সময় কীভাবে নির্ধারণ করবেন?",
+"channel": "ibt",
+"kind": "video",
+"approx": "2025-11",
+"playlists": [
+"PLPoR2UQBlssLxQeu2VbjV6zIeQ7Nflu1v"
+]
+},
+{
+"id": "ozAAE2yLT5s",
+"title": "সফরের তারাবি পড়ার নিয়ম কী?",
+"channel": "ibt",
+"kind": "video",
+"approx": "2025-11",
+"playlists": [
+"PLPoR2UQBlssLxQeu2VbjV6zIeQ7Nflu1v"
+]
+},
+{
+"id": "rc28dEycnic",
+"title": "সফরে সিয়াম অবস্থায় ভাঙলে কি কাজা করতে হবে? কখন তা পূরণ করতে হবে?",
+"channel": "ibt",
+"kind": "video",
+"approx": "2025-11",
+"playlists": [
+"PLPoR2UQBlssLxQeu2VbjV6zIeQ7Nflu1v"
+]
+},
+{
+"id": "jUzuSBrk8po",
+"title": "যদি কেউ রমাদানে রাতে যাত্রা শুরু করে, তাকে কি সেহরি করতে হবে?",
+"channel": "ibt",
+"kind": "video",
+"approx": "2025-11",
+"playlists": [
+"PLPoR2UQBlssLxQeu2VbjV6zIeQ7Nflu1v"
+]
+},
+{
+"id": "AMslQKPbsyc",
+"title": "একা তারাবি পড়ার ক্ষেত্রে কি জামাতের সমান সওয়াব পাওয়া যাবে?",
+"channel": "ibt",
+"kind": "video",
+"approx": "2025-11",
+"playlists": [
+"PLPoR2UQBlssLxQeu2VbjV6zIeQ7Nflu1v"
+]
+},
+{
+"id": "9cI8tIUfTjg",
+"title": "সফরের জন্য সিয়াম ভাঙা যাবে কি?",
+"channel": "ibt",
+"kind": "video",
+"approx": "2025-11",
+"playlists": [
+"PLPoR2UQBlssLxQeu2VbjV6zIeQ7Nflu1v"
+]
+},
+{
+"id": "UHFLnOO2kB0",
+"title": "বাসায় মনযোগ সহকারে আমার ক্যাপাসিটি অনুযায়ী সুরা দিয়ে তারাবী পড়া উত্তম হবে?",
+"channel": "ibt",
+"kind": "video",
+"approx": "2025-11",
+"playlists": [
+"PLPoR2UQBlssLxQeu2VbjV6zIeQ7Nflu1v"
+]
+},
+{
+"id": "s7_aoBRynuE",
+"title": "মসজিদে যদি অতি দ্রুত তারাবী হয়, তাহলে কি বাসায় এসে পড়া উত্তম হবে?",
+"channel": "ibt",
+"kind": "video",
+"approx": "2025-11",
+"playlists": [
+"PLPoR2UQBlssLxQeu2VbjV6zIeQ7Nflu1v"
+]
+},
+{
+"id": "U32zncteWXM",
+"title": "তারাবির পরে নফল সালাত পড়া জায়েয কি?",
+"channel": "ibt",
+"kind": "video",
+"approx": "2025-11",
+"playlists": [
+"PLPoR2UQBlssLxQeu2VbjV6zIeQ7Nflu1v"
+]
+},
+{
+"id": "_2qHOPehNXk",
+"title": "কোনো রাত তারাবি না পড়লে কি গুনাহ হবে?",
+"channel": "ibt",
+"kind": "video",
+"approx": "2025-11",
+"playlists": [
+"PLPoR2UQBlssLxQeu2VbjV6zIeQ7Nflu1v"
+]
+},
+{
+"id": "V4yHJpL44jw",
+"title": "ইতিকাফ কি? কখন শুরু হয়?",
+"channel": "ibt",
+"kind": "video",
+"approx": "2025-11",
+"playlists": [
+"PLPoR2UQBlssLxQeu2VbjV6zIeQ7Nflu1v"
+]
+},
+{
+"id": "YJt3WrrOimo",
+"title": "তারাবি ৮ রাকাত না ২০ রাকাত?",
+"channel": "ibt",
+"kind": "video",
+"approx": "2025-11",
+"playlists": [
+"PLPoR2UQBlssLxQeu2VbjV6zIeQ7Nflu1v"
+]
+},
+{
+"id": "LQb-25W0X1k",
+"title": "ইতিকাফে থাকা অবস্থায় জরুরি প্রয়োজনে বের হওয়া যাবে কি অথবা এ অবস্থায় মোবাইল ফোন ব্যবহার করা যাবে কি?",
+"channel": "ibt",
+"kind": "video",
+"approx": "2025-11",
+"playlists": [
+"PLPoR2UQBlssLxQeu2VbjV6zIeQ7Nflu1v"
+]
+},
+{
+"id": "f2AG44nIgdY",
+"title": "কুরআন তিলাওয়াতে ভুল হলে তা রমাদানে তিলাওয়াতের নিয়ম কী?",
+"channel": "ibt",
+"kind": "video",
+"approx": "2025-11",
+"playlists": [
+"PLPoR2UQBlssLxQeu2VbjV6zIeQ7Nflu1v"
+]
+},
+{
+"id": "nJDG5tzVaIM",
+"title": "রাতে সিয়ামের নিয়ত করার পর সকাল বেলায় সিয়াম রাখতে না চাইলে কী হবে?",
+"channel": "ibt",
+"kind": "video",
+"approx": "2025-11",
+"playlists": [
+"PLPoR2UQBlssLxQeu2VbjV6zIeQ7Nflu1v"
+]
+},
+{
+"id": "MSfJ84Hv9no",
+"title": "মহিলারা কীভাবে ইতিকাফ করবে? মহিলারা কি ঘরের নির্দিষ্ট কক্ষে ইতিকাফ করতে পারে?",
+"channel": "ibt",
+"kind": "video",
+"approx": "2025-11",
+"playlists": [
+"PLPoR2UQBlssLxQeu2VbjV6zIeQ7Nflu1v"
+]
+},
+{
+"id": "m1iJaPa8Cts",
+"title": "বাংলাদেশের প্রেক্ষাপটে দ্বীনি প্রতিষ্ঠানের প্রয়োজনীয়তা ও অবদান",
+"channel": "ibt",
+"kind": "video",
+"approx": "2025-11",
+"playlists": [
+"PLPoR2UQBlssIHK2FmgHitpjKuz7uoH-GI"
+]
+},
+{
+"id": "J9d8o_Blv1w",
+"title": "রমাদানের শেষ দশক ও ইতিকাফ",
+"channel": "ibt",
+"kind": "video",
+"approx": "2025-11",
+"playlists": [
+"PLPoR2UQBlssIHK2FmgHitpjKuz7uoH-GI"
+]
+},
+{
+"id": "oGrJivoPm4s",
+"title": "নারী উন্নয়ন ও ইসলামী সমাজ বিনির্মাণে ইমাম বুখারী ট্রাস্ট",
+"channel": "ibt",
+"kind": "video",
+"approx": "2025-11",
+"playlists": []
+},
+{
+"id": "cW4p5VQGSYo",
+"title": "কেমন ছিল রাসূলুল্লাহ (ﷺ) এর কমিউনিটি/সোসাইটি",
+"channel": "ibt",
+"kind": "video",
+"approx": "2025-11",
+"playlists": []
+},
+{
+"id": "3VOmNTynoZg",
+"title": "একটি মাসজিদ ভিত্তিক কমিউনিটি গড়ে তোলার পথে: ইমাম বুখারী ট্রাস্ট",
+"channel": "ibt",
+"kind": "video",
+"approx": "2025-11",
+"playlists": []
+},
+{
+"id": "OBhP6XugSfo",
+"title": "ইতিকাফের সময় সেহরি বা ইফতার ঘরে খেতে গেলে কি তা ভেঙে যাবে?",
+"channel": "ibt",
+"kind": "video",
+"approx": "2025-11",
+"playlists": [
+"PLPoR2UQBlssLxQeu2VbjV6zIeQ7Nflu1v"
+]
+},
+{
+"id": "QJN1L8C7BDk",
+"title": "আগামী দিনের ইসলামের দাঈদের জন্য বিনিয়োগ করুন",
+"channel": "ibt",
+"kind": "video",
+"approx": "2025-11",
+"playlists": []
+},
+{
+"id": "Xoc6_DPdg5A",
+"title": "আপনার দানে গড়ে উঠুক আল্লাহর ঘর | মসজিদ ও একাডেমি কমপ্লেক্স - ইমাম বুখারী ট্রাস্ট",
+"channel": "ibt",
+"kind": "video",
+"approx": "2025-11",
+"playlists": []
+},
+{
+"id": "jP3r1n9w3MQ",
+"title": "মহিলারা ঘরে তারাবি পড়লে কীভাবে পড়তে হবে?",
+"channel": "ibt",
+"kind": "video",
+"approx": "2025-11",
+"playlists": [
+"PLPoR2UQBlssLxQeu2VbjV6zIeQ7Nflu1v"
+]
+},
+{
+"id": "rXBsFhP9RgE",
+"title": "১৬ কোটি মুসলিমের জন্য আপনার দ্বায়িত্ব এবং ইসলামের পুনর্জাগরণে আপনার ভূমিকা | IBT",
+"channel": "ibt",
+"kind": "video",
+"approx": "2025-11",
+"playlists": [
+"PLPoR2UQBlssIAt2c7RNbZDSF6zI0x1VYf"
+]
+},
+{
+"id": "E1-j4L_QRXE",
+"title": "শিশুরা কি তারাবির সালাতের অংশ নিতে পারে?",
+"channel": "ibt",
+"kind": "video",
+"approx": "2025-11",
+"playlists": [
+"PLPoR2UQBlssLxQeu2VbjV6zIeQ7Nflu1v"
+]
+},
+{
+"id": "HpqXUET5QJA",
+"title": "ঘরে সালাতের ইমামতি করলে কি তারাবি হবে?",
+"channel": "ibt",
+"kind": "video",
+"approx": "2025-11",
+"playlists": [
+"PLPoR2UQBlssLxQeu2VbjV6zIeQ7Nflu1v"
+]
+},
+{
+"id": "NdnjTgiNbqA",
+"title": "সিয়াম রাখার সময় টিভি বা সিনেমা দেখা কি শুদ্ধ?",
+"channel": "ibt",
+"kind": "video",
+"approx": "2025-11",
+"playlists": [
+"PLPoR2UQBlssLxQeu2VbjV6zIeQ7Nflu1v"
+]
+},
+{
+"id": "njRKkJw73x4",
+"title": "সিয়াম অবস্থায় দাঁত ব্রাশ করার পরে মাউথওয়াশ ব্যবহার করা যাবে কি?",
+"channel": "ibt",
+"kind": "video",
+"approx": "2025-11",
+"playlists": [
+"PLPoR2UQBlssLxQeu2VbjV6zIeQ7Nflu1v"
+]
+},
+{
+"id": "7l9nYBPfRbA",
+"title": "মাসিকের কারণে ছুটে যাওয়া সিয়াম কীভাবে কাজা করতে হবে?",
+"channel": "ibt",
+"kind": "video",
+"approx": "2025-11",
+"playlists": [
+"PLPoR2UQBlssLxQeu2VbjV6zIeQ7Nflu1v"
+]
+},
+{
+"id": "SaMHrclAGSU",
+"title": "মহিলারা কি রাতের শেষ আলাদা নফল সালাতের পড়তে পারে? মহিলারা যদি ৮ রাকাতের বেশি পড়তে না পারে, বিধান কী?",
+"channel": "ibt",
+"kind": "video",
+"approx": "2025-11",
+"playlists": [
+"PLPoR2UQBlssLxQeu2VbjV6zIeQ7Nflu1v"
+]
+},
+{
+"id": "w9gLv-5kt8Y",
+"title": "সিয়াম অবস্থায় পারফিউম বা মেকআপ ব্যবহার করা যাবে কি?",
+"channel": "ibt",
+"kind": "video",
+"approx": "2025-11",
+"playlists": [
+"PLPoR2UQBlssLxQeu2VbjV6zIeQ7Nflu1v"
+]
+},
+{
+"id": "Hp-Bfc_53GY",
+"title": "রমাদানে কুরআন একবার খতম করা কি বাধ্যতামূলক?",
+"channel": "ibt",
+"kind": "video",
+"approx": "2025-11",
+"playlists": [
+"PLPoR2UQBlssLxQeu2VbjV6zIeQ7Nflu1v"
+]
+},
+{
+"id": "B9m2Hue9DVA",
+"title": "তাজউইদ ঠিক না থাকলেও রমাদানে কুরআন পড়া যাবে কি?",
+"channel": "ibt",
+"kind": "video",
+"approx": "2025-11",
+"playlists": [
+"PLPoR2UQBlssLxQeu2VbjV6zIeQ7Nflu1v"
+]
+},
+{
+"id": "Mwyku0-E0y4",
+"title": "মোবাইলে কুরআন পড়ার সময় ওজু করতে হবে কি?",
+"channel": "ibt",
+"kind": "video",
+"approx": "2025-11",
+"playlists": [
+"PLPoR2UQBlssLxQeu2VbjV6zIeQ7Nflu1v"
+]
+},
+{
+"id": "wts4aTDA5Ss",
+"title": "সিয়াম রাখার সময় সোশ্যাল মিডিয়া থেকে বিরতি নেওয়া উচিত কি?",
+"channel": "ibt",
+"kind": "video",
+"approx": "2025-11",
+"playlists": [
+"PLPoR2UQBlssLxQeu2VbjV6zIeQ7Nflu1v"
+]
+},
+{
+"id": "fKIZZWnhn0g",
+"title": "প্রেগন্যান্ট অবস্থায় সিয়াম রাখার বিধান কী?",
+"channel": "ibt",
+"kind": "video",
+"approx": "2025-11",
+"playlists": [
+"PLPoR2UQBlssLxQeu2VbjV6zIeQ7Nflu1v"
+]
+},
+{
+"id": "S91fz5pIfHA",
+"title": "ব্রেস্টফিডিং করালে সিয়াম কি ভাঙবে?",
+"channel": "ibt",
+"kind": "video",
+"approx": "2025-11",
+"playlists": [
+"PLPoR2UQBlssLxQeu2VbjV6zIeQ7Nflu1v"
+]
+},
+{
+"id": "2lZQbsReXRo",
+"title": "মহিলারা কি মাসিক অবস্থায় কুরআন স্পর্শ করতে পারবে?",
+"channel": "ibt",
+"kind": "video",
+"approx": "2025-11",
+"playlists": [
+"PLPoR2UQBlssLxQeu2VbjV6zIeQ7Nflu1v"
+]
+},
+{
+"id": "WfDL7QcamaI",
+"title": "কত বয়সে শিশুদের সিয়াম রাখার অভ্যাস করানো উচিত?",
+"channel": "ibt",
+"kind": "video",
+"approx": "2025-11",
+"playlists": [
+"PLPoR2UQBlssLxQeu2VbjV6zIeQ7Nflu1v"
+]
+},
+{
+"id": "Lt4UP7ETh5k",
+"title": "যদি শিশু সিয়াম রাখার সময় ক্লান্ত হয়ে পড়ে, তাকে কি সিয়াম ভাঙতে বলা যাবে?",
+"channel": "ibt",
+"kind": "video",
+"approx": "2025-11",
+"playlists": [
+"PLPoR2UQBlssLxQeu2VbjV6zIeQ7Nflu1v"
+]
+},
+{
+"id": "52hs7x2_z0c",
+"title": "সিয়ামের নিয়তে ভুল হলে তা সংশোধন কীভাবে করবেন? নিয়ত ছাড়া কোনো সিয়াম শুদ্ধ হবে কি?",
+"channel": "ibt",
+"kind": "video",
+"approx": "2025-11",
+"playlists": [
+"PLPoR2UQBlssLxQeu2VbjV6zIeQ7Nflu1v"
+]
+},
+{
+"id": "39cfCMZgVSM",
+"title": "মাসিক শুরু হলে সিয়াম কীভাবে ভাঙতে হবে?",
+"channel": "ibt",
+"kind": "video",
+"approx": "2025-11",
+"playlists": [
+"PLPoR2UQBlssLxQeu2VbjV6zIeQ7Nflu1v"
+]
+},
+{
+"id": "-a006J5siYs",
+"title": "শিশুরা যদি ইফতারের আগে অস্থির হয়, কীভাবে তাদের সামলানো যাবে?",
+"channel": "ibt",
+"kind": "video",
+"approx": "2025-11",
+"playlists": [
+"PLPoR2UQBlssLxQeu2VbjV6zIeQ7Nflu1v"
+]
+},
+{
+"id": "yA6piVmsG6o",
+"title": "না জেনে ভুলে কিছু খেলে কি সিয়াম নষ্ট হবে? ।। এই রামাদানে ড. মানজুরে ইলাহী শায়খের সাথে",
+"channel": "ibt",
+"kind": "video",
+"approx": "2025-11",
+"playlists": [
+"PLPoR2UQBlssLxQeu2VbjV6zIeQ7Nflu1v"
+]
+},
+{
+"id": "u1wyYQrfoRI",
+"title": "সেহরি না করলে সিয়াম হবে কি? ।। এই রামাদানে ড. মানজুরে ইলাহী শায়খের সাথে",
+"channel": "ibt",
+"kind": "video",
+"approx": "2025-11",
+"playlists": [
+"PLPoR2UQBlssLxQeu2VbjV6zIeQ7Nflu1v"
+]
+},
+{
+"id": "uFmZv4Zf0KM",
+"title": "সিয়ামের নিয়ত কখন করতে হবে ।। এই রামাদানে ড. মানজুরে ইলাহী শায়খের সাথে",
+"channel": "ibt",
+"kind": "video",
+"approx": "2025-11",
+"playlists": [
+"PLPoR2UQBlssLxQeu2VbjV6zIeQ7Nflu1v"
+]
+},
+{
+"id": "HU_iASuybgM",
+"title": "এই পবিত্র রামাদানে, ড. মানজুরে ইলাহী শায়খের সাথে",
+"channel": "ibt",
+"kind": "video",
+"approx": "2025-11",
+"playlists": [
+"PLPoR2UQBlssLxQeu2VbjV6zIeQ7Nflu1v"
+]
+},
+{
+"id": "ewJMtM0uPzQ",
+"title": "আল কুরআন এর নির্বাচিত আয়াতের তাফসির",
+"channel": "ibt",
+"kind": "video",
+"approx": "2025-11",
+"playlists": [
+"PLPoR2UQBlssIHK2FmgHitpjKuz7uoH-GI"
+]
+},
+{
+"id": "v3SYEtnQEuU",
+"title": "কিভাবে আমরা দুনিয়ার জীবনকে আখিরাতের জন্য বিনিয়োগ করবো",
+"channel": "ibt",
+"kind": "video",
+"approx": "2025-11",
+"playlists": [
+"PLPoR2UQBlssIHK2FmgHitpjKuz7uoH-GI"
+]
+},
+{
+"id": "A-g_-hkd0Q8",
+"title": "বরকতপূর্ণ শাম অঞ্চল: ইসলামী ঐতিহ্য, কিয়ামতের আলামত ও বর্তমান প্রেক্ষাপট",
+"channel": "ibt",
+"kind": "video",
+"approx": "2025-11",
+"playlists": [
+"PLPoR2UQBlssIHK2FmgHitpjKuz7uoH-GI"
+]
+},
+{
+"id": "OS7CUfvbQnA",
+"title": "সুন্নাহ কনফারেন্স বাংলাদেশ ২০২৪",
+"channel": "ibt",
+"kind": "video",
+"approx": "2025-11",
+"playlists": [
+"PLPoR2UQBlssJFePGOHjrDCOZR6ouDp7dH"
+]
+},
+{
+"id": "bFzIX2ktlZw",
+"title": "সুন্নাহর মাধ্যমে আত্মশুদ্ধি",
+"channel": "ibt",
+"kind": "video",
+"approx": "2025-11",
+"playlists": [
+"PLPoR2UQBlssIHK2FmgHitpjKuz7uoH-GI"
+]
+},
+{
+"id": "UHCEdD3FJBY",
+"title": "আল-কুরআন কিভাবে পড়ব, বুঝব এবং সে অনুযায়ী আমল করব",
+"channel": "ibt",
+"kind": "video",
+"approx": "2025-11",
+"playlists": [
+"PLPoR2UQBlssIHK2FmgHitpjKuz7uoH-GI"
+]
+},
+{
+"id": "uey03NHrjiY",
+"title": "কিভাবে দ্বীনের উপর অটল থাকব",
+"channel": "ibt",
+"kind": "video",
+"approx": "2025-11",
+"playlists": [
+"PLPoR2UQBlssIHK2FmgHitpjKuz7uoH-GI"
+]
+},
+{
+"id": "KOsvN1petgk",
+"title": "কবর আখিরাতের প্রথম ধাপ ।। ড. আবু বকর মোহাম্মদ যাকারিয়া",
+"channel": "ibt",
+"kind": "video",
+"approx": "2025-11",
+"playlists": [
+"PLPoR2UQBlssIHK2FmgHitpjKuz7uoH-GI"
+]
+},
+{
+"id": "Yg4W4ikzCkM",
+"title": "জাতি গঠন ও রাষ্ট্রের উন্নয়নের আবশ্যিকতা",
+"channel": "ibt",
+"kind": "video",
+"approx": "2025-11",
+"playlists": [
+"PLPoR2UQBlssIHK2FmgHitpjKuz7uoH-GI"
+]
+},
+{
+"id": "bPS3P-9J50o",
+"title": "ফিতনাহ মোকাবেলায় জামাতবদ্ধ জীবন এবং মসজিদ ভিত্তিক কমিউনিটির প্রয়োজনীয়তা: কুরআন ও সুন্নাহর শিক্ষা",
+"channel": "ibt",
+"kind": "video",
+"approx": "2025-11",
+"playlists": [
+"PLPoR2UQBlssIHK2FmgHitpjKuz7uoH-GI"
+]
+},
+{
+"id": "YpLKuSSZp9w",
+"title": "ইসলামে শান্তি ও সহনশীলতা ।। শাইখ ড. রেজাউল করীম",
+"channel": "ibt",
+"kind": "video",
+"approx": "2025-11",
+"playlists": [
+"PLPoR2UQBlssIHK2FmgHitpjKuz7uoH-GI"
+]
+},
+{
+"id": "8418p7ZCpNs",
+"title": "মৃত্যু পরবর্তী বিভিন্ন স্তরের বর্ণনা ।। ড.আব্দুল বাসির বিন নওশাদ",
+"channel": "ibt",
+"kind": "video",
+"approx": "2025-11",
+"playlists": [
+"PLPoR2UQBlssIHK2FmgHitpjKuz7uoH-GI"
+]
+},
+{
+"id": "nTbiMd2seh0",
+"title": "সন্তানের বুদ্ধিবৃত্তিক বিকাশে আধুনিক প্রযুক্তির প্রভাব ।। ড. মোহাম্মদ মানজুরে ইলাহী",
+"channel": "ibt",
+"kind": "video",
+"approx": "2025-11",
+"playlists": [
+"PLPoR2UQBlssIHK2FmgHitpjKuz7uoH-GI"
+]
+},
+{
+"id": "DwQkCZwMAQ0",
+"title": "হারাম ও সন্দেহজনক বিষয়ে জড়িয়ে যাওয়া: রোগাক্রান্ত অন্তরের উপসর্গ",
+"channel": "ibt",
+"kind": "video",
+"approx": "2025-11",
+"playlists": [
+"PLPoR2UQBlssIHK2FmgHitpjKuz7uoH-GI"
+]
+},
+{
+"id": "XEhO4KcvXgQ",
+"title": "বর্তমান প্রেক্ষাপটে ঈমান ভঙ্গের কারণসমূহের বিশ্লেষণাত্মক আলোচনা ।। ড  ইমাম হোসাইন",
+"channel": "ibt",
+"kind": "video",
+"approx": "2025-11",
+"playlists": [
+"PLPoR2UQBlssIHK2FmgHitpjKuz7uoH-GI"
+]
+},
+{
+"id": "5aFeIynRwHg",
+"title": "“যুবকদের জন্য রাসূল ﷺ  ই শ্রেষ্ঠ রোল মডেল” ।। মো. রায়হান উদ্দিন বিন শহীদুল্লাহ",
+"channel": "ibt",
+"kind": "video",
+"approx": "2025-11",
+"playlists": [
+"PLPoR2UQBlssIHK2FmgHitpjKuz7uoH-GI"
+]
+},
+{
+"id": "twbyJQB3sxg",
+"title": "কুরআন ও সুন্নাহর আলোকে শিশুর নৈতিক ও আত্মিক বিকাশ ।। Dr. Mohammad Monzur-E-Elahi",
+"channel": "ibt",
+"kind": "video",
+"approx": "2025-11",
+"playlists": [
+"PLPoR2UQBlssIHK2FmgHitpjKuz7uoH-GI"
+]
+},
+{
+"id": "0sMPEijJ_QE",
+"title": "বৈষম্যমুক্ত সমাজ গঠনে মুসলিমদের ভূমিকা কেমন হওয়া উচিত",
+"channel": "ibt",
+"kind": "video",
+"approx": "2025-11",
+"playlists": [
+"PLPoR2UQBlssIHK2FmgHitpjKuz7uoH-GI"
+]
+},
+{
+"id": "dJGmoWOdJFY",
+"title": "আর্তমানবতার সেবায় ইসলামের নির্দেশনা ।। ড. রফিকুল ইসলাম মাদানী",
+"channel": "ibt",
+"kind": "video",
+"approx": "2025-11",
+"playlists": []
+},
+{
+"id": "BC_6iZdESdU",
+"title": "বর্তমান পরিস্থিতিতে মুসলিম উম্মাহর করণীয় ।। Dr. Mohammad Monzur-E-Elahi",
+"channel": "ibt",
+"kind": "video",
+"approx": "2025-11",
+"playlists": [
+"PLPoR2UQBlssIHK2FmgHitpjKuz7uoH-GI"
+]
+},
+{
+"id": "41kY5uKj5tc",
+"title": "কুল্লিয়াতুল কুরআন গুরুত্বপূর্ণ দিকনির্দেশনা ও নাসীহা  - প্রফেসর ড  মোহাম্মদ অলী উল্যাহ",
+"channel": "kq",
+"kind": "video",
+"approx": "2025-11",
+"playlists": [
+"PLJ08WrbxyTXTbo2Vb8krr1j102dIwuLn_"
+]
+},
+{
+"id": "u42dSG1ojQI",
+"title": "কুল্লিয়াতুল কুরআন এর লক্ষ্য, উদ্দেশ্য ও ছাত্রদের প্রতি নাসীহা",
+"channel": "kq",
+"kind": "video",
+"approx": "2025-11",
+"playlists": [
+"PLJ08WrbxyTXTHWQ8M7Pr6pCFTV3e03Z0Q"
+]
+},
+{
+"id": "0HUA17Zek58",
+"title": "“কুল্লিয়াতুল কুরআনে সানাবিয়্যাহ ও আলিম স্তরে ভর্তি শুরু” -   Dr muhammad Saifullah",
+"channel": "kq",
+"kind": "video",
+"approx": "2025-11",
+"playlists": [
+"PLJ08WrbxyTXSoDIJuanby2tkfCEcdk2xE",
+"PLJ08WrbxyTXSzxp980zzL9_bawjtzXGNa"
+]
+},
+{
+"id": "LFhTlxXXcQ8",
+"title": "\"যে স্বপ্ন বুকে নিয়ে যাত্রা শুরু করেছিল কুল্লিয়াতুল কুরআন\"  - Dr. Mohammad Monzur E Elahi",
+"channel": "kq",
+"kind": "video",
+"approx": "2025-11",
+"playlists": [
+"PLJ08WrbxyTXTHWQ8M7Pr6pCFTV3e03Z0Q"
+]
+},
+{
+"id": "nU09L0hWldI",
+"title": "আল্ট্রা পদ্ধতিতে ২ মাসে আরবি ভাষা কোর্স - Dr. Mohammad Monzur E Elahi",
+"channel": "kq",
+"kind": "video",
+"approx": "2025-11",
+"playlists": [
+"PLJ08WrbxyTXSoDIJuanby2tkfCEcdk2xE",
+"PLJ08WrbxyTXTHWQ8M7Pr6pCFTV3e03Z0Q"
+]
+},
+{
+"id": "tRIv-YZPLLo",
+"title": "অ্যারাবিক ডিপ্লোমা কোর্স- Arabic Language Course for Enrolling in Arabic & Islamic Universities",
+"channel": "kq",
+"kind": "video",
+"approx": "2025-11",
+"playlists": [
+"PLJ08WrbxyTXSoDIJuanby2tkfCEcdk2xE",
+"PLJ08WrbxyTXTHWQ8M7Pr6pCFTV3e03Z0Q"
+]
+},
+{
+"id": "J0WR-qV5Omg",
+"title": "সুন্নাহ কনফারেন্স বাংলাদেশ ২০২৪",
+"channel": "kq",
+"kind": "video",
+"approx": "2025-11",
+"playlists": [
+"PLJ08WrbxyTXQy4Ifmd9WJWbKmPcEA3-oo"
+]
+},
+{
+"id": "FdXPWBd2mko",
+"title": "এআই ও ডিজিটাল যুগে মুসলিমের নৈতিকতা: সুযোগ, বিপদ ও দায়িত্ব",
+"channel": "ibt",
+"kind": "live",
+"approx": "2025-11",
+"playlists": [
+"PLPoR2UQBlssIHK2FmgHitpjKuz7uoH-GI"
+]
+},
+{
+"id": "VQ3YRAtCC54",
+"title": "যখন আল্লাহ দেখা থেকে লজ্জা পাই না– গোপন গুনাহ ও আত্মা ক্ষয়ে যাওয়া",
+"channel": "ibt",
+"kind": "live",
+"approx": "2025-11",
+"playlists": [
+"PLPoR2UQBlssIHK2FmgHitpjKuz7uoH-GI"
+]
+},
+{
+"id": "DaKJWDUJuQY",
+"title": "কারামত সম্পর্কে সঠিক ধারনা: পীর বুজুর্গদের কারামত বনাম সাহাবীদের কারামাত",
+"channel": "ibt",
+"kind": "live",
+"approx": "2025-11",
+"playlists": [
+"PLPoR2UQBlssIHK2FmgHitpjKuz7uoH-GI"
+]
+},
+{
+"id": "CsKBMKZ5KQY",
+"title": "তাওয়াক্কুলের প্রকৃত পরীক্ষা: নবীদের জীবন থেকে শিক্ষা",
+"channel": "ibt",
+"kind": "live",
+"approx": "2025-11",
+"playlists": []
+},
+{
+"id": "ytM-Zk7ja00",
+"title": "শেষ জামানার মহাপ্রতারণা: দুনিয়ার মরীচিকা ও মুমিনের করণীয়",
+"channel": "ibt",
+"kind": "live",
+"approx": "2025-11",
+"playlists": [
+"PLPoR2UQBlssIHK2FmgHitpjKuz7uoH-GI"
+]
+},
+{
+"id": "-nI_2V04rec",
+"title": "সাহাবাদের ত্যাগের আয়নায় আমার দ্বীন",
+"channel": "ibt",
+"kind": "live",
+"approx": "2025-11",
+"playlists": [
+"PLPoR2UQBlssIHK2FmgHitpjKuz7uoH-GI"
+]
+},
+{
+"id": "eu4p3wEelWE",
+"title": "তুমি কি তাকে লক্ষ্য করেছ, যে তার প্রবৃত্তিকে আপন ইলাহ বানিয়ে নিয়েছে?",
+"channel": "ibt",
+"kind": "live",
+"approx": "2025-11",
+"playlists": []
+},
+{
+"id": "Ix7dTW-tCC8",
+"title": "Ask Dr Monzur E Elahi (Episode- 5)",
+"channel": "ibt",
+"kind": "video",
+"approx": "2024-11",
+"playlists": [
+"PLPoR2UQBlssIwEXGdNmCGMqx2MU7T6Ezv"
+]
+},
+{
+"id": "nFhHgGQfhPM",
+"title": "যে মহতী আহবান নিয়ে সব শাইখ একসাথে: ইমাম বুখারী ট্রাস্ট  (Imam Bukhari Trust)",
+"channel": "ibt",
+"kind": "video",
+"approx": "2024-11",
+"playlists": []
+},
+{
+"id": "QTTow62gWkQ",
+"title": "Ask Dr Monzur E Elahi (Episode 4)",
+"channel": "ibt",
+"kind": "video",
+"approx": "2024-11",
+"playlists": [
+"PLPoR2UQBlssIwEXGdNmCGMqx2MU7T6Ezv"
+]
+},
+{
+"id": "AUuZAz-ijEA",
+"title": "Ask Dr  Monzur E Elahi (Episode - 3)",
+"channel": "ibt",
+"kind": "video",
+"approx": "2024-11",
+"playlists": [
+"PLPoR2UQBlssIwEXGdNmCGMqx2MU7T6Ezv"
+]
+},
+{
+"id": "Tje9R5iY4U4",
+"title": "Ask Dr  Monzur E Elahi (Episode - 2)",
+"channel": "ibt",
+"kind": "video",
+"approx": "2024-11",
+"playlists": [
+"PLPoR2UQBlssIwEXGdNmCGMqx2MU7T6Ezv"
+]
+},
+{
+"id": "jd5UV3hkSxs",
+"title": "Ask Dr. Monzur E-Elahi (Episode 1)",
+"channel": "ibt",
+"kind": "video",
+"approx": "2024-11",
+"playlists": [
+"PLPoR2UQBlssIwEXGdNmCGMqx2MU7T6Ezv"
+]
+},
+{
+"id": "LK0UQnM4iY0",
+"title": "দ্বীনের জন্য সালাফদের নিরন্তর - প্রচেষ্টা এবং আমাদের জন্য শিক্ষা",
+"channel": "ibt",
+"kind": "video",
+"approx": "2024-11",
+"playlists": []
+},
+{
+"id": "zo7PD7JSe_o",
+"title": "বর্তমান প্রেক্ষাপটে একজন নারীর আখলাক ও দ্বীন শিক্ষার রোডম্যাপ ২য় পর্ব",
+"channel": "ibt",
+"kind": "video",
+"approx": "2024-11",
+"playlists": [
+"PLPoR2UQBlssK4bjJfgEdyJRgNVur06MvR"
+]
+},
+{
+"id": "8DjpYKDKBVw",
+"title": "তুমি হতাশ হয়ো না, নিশ্চয় আল্লাহ আমাদের সাথে আছেন",
+"channel": "ibt",
+"kind": "video",
+"approx": "2024-11",
+"playlists": []
+},
+{
+"id": "qWvUqhvZAzw",
+"title": "বর্তমান প্রেক্ষাপটে একজন নারীর আখলাক ও দ্বীন শিক্ষার রোডম্যাপ ১ম পর্ব",
+"channel": "ibt",
+"kind": "video",
+"approx": "2024-11",
+"playlists": [
+"PLPoR2UQBlssK4bjJfgEdyJRgNVur06MvR"
+]
+},
+{
+"id": "kenE4V29o_k",
+"title": "Opening Ceremony of Imam Bukhari Trust",
+"channel": "ibt",
+"kind": "video",
+"approx": "2024-11",
+"playlists": []
+},
+{
+"id": "2P-Aet9BxGY",
+"title": "সকলকে 'কুল্লিয়াতুল কুরআনিল কারীম ওয়াদ-দিরাসাতিল ইসলামিয়্যাহ' এর পক্ষ থেকে  ঈদুল আযহার শুভেচ্ছা",
+"channel": "kq",
+"kind": "video",
+"approx": "2024-11",
+"playlists": [
+"PLJ08WrbxyTXSoDIJuanby2tkfCEcdk2xE",
+"PLJ08WrbxyTXTHWQ8M7Pr6pCFTV3e03Z0Q"
+]
+},
+{
+"id": "15hOaC8ipp8",
+"title": "সানাবিয়্যাহ কোর্সে ভর্তি চলছে - Dr. Mohammad Monzur E Elahi",
+"channel": "kq",
+"kind": "video",
+"approx": "2024-11",
+"playlists": [
+"PLJ08WrbxyTXQ27Hx0G8Em1Rudqj4k2o0f",
+"PLJ08WrbxyTXTHWQ8M7Pr6pCFTV3e03Z0Q"
+]
+},
+{
+"id": "nmqatOZpe6Q",
+"title": "‘দাখিল ফলপ্রার্থীদের জন্য বিশেষ আরবি ভাষা কোর্স’",
+"channel": "kq",
+"kind": "video",
+"approx": "2024-11",
+"playlists": [
+"PLJ08WrbxyTXTHWQ8M7Pr6pCFTV3e03Z0Q"
+]
+},
+{
+"id": "8nMIfc2xoyE",
+"title": "আন্তর্জাতিক ইসলামী বিশ্ববিদ্যালয় ভর্তি প্রস্তুতি কর্মশালা - Kulliyatul Quran",
+"channel": "kq",
+"kind": "video",
+"approx": "2023-11",
+"playlists": [
+"PLJ08WrbxyTXQdkckRzxQafSKsJMj4THfb",
+"PLJ08WrbxyTXR3btscJsJI8dUb2nAxw7Tu"
+]
+},
+{
+"id": "aIpzvGC-9r0",
+"title": "সানাবিয়্যাহ (আলিম) ক্লাস -  শাইখ সালেম আল আজহারী",
+"channel": "kq",
+"kind": "video",
+"approx": "2023-11",
+"playlists": [
+"PLJ08WrbxyTXTwU87WuHVUJOfeH-mMn9Ew"
+]
+},
+{
+"id": "hnw4b0SsAUg",
+"title": "কুলিয়াতুল কুরআন-এর দুটি গুরুত্বপূর্ণ কোর্স  সানাবিয়্যাহ (আলিম) + অ্যারাবিক - Dr.Muhammad Saifullah",
+"channel": "kq",
+"kind": "video",
+"approx": "2023-11",
+"playlists": [
+"PLJ08WrbxyTXSzxp980zzL9_bawjtzXGNa"
+]
+},
+{
+"id": "2cfnyM1IPvo",
+"title": "‘দাখিল ফলপ্রার্থীদের জন্য বিশেষ আরবি ভাষা কোর্স’।। Dr. Mohammad Monzur-E-Elahi",
+"channel": "kq",
+"kind": "video",
+"approx": "2023-11",
+"playlists": []
+},
+{
+"id": "aNKkJymmS60",
+"title": "শিক্ষার্থীদের উদ্দেশ্যে নাসীহাহ ।। Dr. Mohammad Monzur-E-Elahi",
+"channel": "kq",
+"kind": "video",
+"approx": "2023-11",
+"playlists": [
+"PLJ08WrbxyTXTHWQ8M7Pr6pCFTV3e03Z0Q"
+]
+},
+{
+"id": "whhZw6nHZGY",
+"title": "কুল্লিয়ার সংক্ষিপ্ত পরিচিতি -  Dr  Mohammad Monzur E Elahi",
+"channel": "kq",
+"kind": "video",
+"approx": "2023-11",
+"playlists": [
+"PLJ08WrbxyTXTHWQ8M7Pr6pCFTV3e03Z0Q"
+]
+},
+{
+"id": "ZDV38vUKBwQ",
+"title": "আখিরাতের স্মরণ। ড. মোহাম্মদ মানজুরে ইলাহী",
+"channel": "kq",
+"kind": "video",
+"approx": "2023-11",
+"playlists": []
+},
+{
+"id": "C-g--nnudKU",
+"title": "ইমাম বুখারী জামে মাসজিদ ও একাডেমিক ক্যাম্পাস। ড. মোহাম্মদ মানজুরে ইলাহী",
+"channel": "kq",
+"kind": "video",
+"approx": "2023-11",
+"playlists": []
+},
+{
+"id": "gBuNL9ZLdYo",
+"title": "জেনারেল অ্যারাবিক ল্যাঙ্গুয়েজ কোর্সে ভর্তি চলছে - Kulliyatul Quranil Kareem Waddirasatil Islamiyah",
+"channel": "kq",
+"kind": "video",
+"approx": "2023-11",
+"playlists": []
+},
+{
+"id": "4brggmfTVzc",
+"title": "কুল্লিয়াতুল কুরআন-এর একাডেমিক ভবন নির্মাণ কাজের শুভ উদ্বোধন II ড. মোহাম্মদ মানজুরে ইলাহী",
+"channel": "kq",
+"kind": "video",
+"approx": "2023-11",
+"playlists": []
+},
+{
+"id": "kaqIrtPXqpY",
+"title": "যাদের হৃদয়ে আছে আল্লাহর ভয় -  Student of Kulliya",
+"channel": "kq",
+"kind": "video",
+"approx": "2023-11",
+"playlists": [
+"PLJ08WrbxyTXQmmDED-1I4klDUCHNby8TS"
+]
+},
+{
+"id": "v4ItZdcG6bg",
+"title": "একজন শিক্ষার্থীর অনুভূতি প্রকাশ",
+"channel": "kq",
+"kind": "video",
+"approx": "2023-11",
+"playlists": [
+"PLJ08WrbxyTXQmmDED-1I4klDUCHNby8TS"
+]
+},
+{
+"id": "QAfp4SQMblU",
+"title": "'কুল্লিয়াতুল কুরআনিল কারীম ওয়াদ-দিরাসাতিল ইসলামিয়্যাহ'  -  Dr. Mohammad Monzur-E-Elah",
+"channel": "kq",
+"kind": "video",
+"approx": "2023-11",
+"playlists": [
+"PLJ08WrbxyTXTHWQ8M7Pr6pCFTV3e03Z0Q"
+]
+},
+{
+"id": "9W3PA3HkMmM",
+"title": "জেনারেল শিক্ষার্থীরা মদিনা  ইউনিভার্সিটিতে ভর্তি হতে পারবে কি? - Dr. Mohammad Monzur E Elahi",
+"channel": "kq",
+"kind": "video",
+"approx": "2023-11",
+"playlists": [
+"PLJ08WrbxyTXTHWQ8M7Pr6pCFTV3e03Z0Q"
+]
+},
+{
+"id": "7HHzFTawdTs",
+"title": "জেনারেল এরাবিক ল্যাঙ্গুয়েজ কোর্স এর শিক্ষার্থীদের মাঝে কথোপকথন",
+"channel": "kq",
+"kind": "video",
+"approx": "2023-11",
+"playlists": [
+"PLJ08WrbxyTXQmmDED-1I4klDUCHNby8TS"
+]
+},
+{
+"id": "JN52qtjKkB0",
+"title": "একাডেমিক আরবি ভাষা কোর্সে  ক্লাস নিচ্ছেন :   শাইখ ড. মুহাম্মাদ সাইফুল্লাহ (হাফিযাহুল্লাহ)",
+"channel": "kq",
+"kind": "video",
+"approx": "2023-11",
+"playlists": [
+"PLJ08WrbxyTXSzxp980zzL9_bawjtzXGNa"
+]
+},
+{
+"id": "S9ydq9g8BDQ",
+"title": "Kulliya is proud of teaching in arabic medium - Ustaz Sheikh Salem Al Azhari",
+"channel": "kq",
+"kind": "video",
+"approx": "2023-11",
+"playlists": [
+"PLJ08WrbxyTXTwU87WuHVUJOfeH-mMn9Ew"
+]
+},
+{
+"id": "cvKtTFLVUHc",
+"title": "আনিসুর রহমান শিক্ষার্থী - জেনারেল অ্যারাবিক ল্যাংগুয়েজ কোর্স কুল্লিয়াতুল কুরআন, উত্তরা, ঢাকা।",
+"channel": "kq",
+"kind": "video",
+"approx": "2023-11",
+"playlists": []
+},
+{
+"id": "kmiBO4MbBsc",
+"title": "\" কুল্লিয়াতুল কুরআনিল কারীম \" বিশুদ্ধ ধারার একটি উচ্চতর ইসলামী শিক্ষা, প্রশিক্ষণ ও গবেষণা প্রতিষ্ঠান",
+"channel": "kq",
+"kind": "video",
+"approx": "2022-11",
+"playlists": []
+},
+{
+"id": "z8SH2NKcuLQ",
+"title": "ইলম অর্জন",
+"channel": "kq",
+"kind": "video",
+"approx": "2022-11",
+"playlists": [
+"PLJ08WrbxyTXTHWQ8M7Pr6pCFTV3e03Z0Q"
+]
+},
+{
+"id": "wk94zVQR23Q",
+"title": "আল্লাহ সুবহানাহু ওয়া তা'আলার রহমতের বিশালতা ও ক্ষমার দৃষ্টান্ত।",
+"channel": "kq",
+"kind": "video",
+"approx": "2022-11",
+"playlists": [
+"PLJ08WrbxyTXTHWQ8M7Pr6pCFTV3e03Z0Q"
+]
+}
+]
+}

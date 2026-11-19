@@ -24,32 +24,29 @@ C["settings"] = {
     "defaultTheme": "dark",
     "announcement": {
         "show": True,
-        "text": T("রেজিস্ট্রেশন চলছে: কুল্লিয়াতুল কুরআন সেশন ২০২৭ ভর্তি ও বিভিন্ন কোর্স", "Registrations open: Kulliyatul Quran Session 2027 admissions and courses", "التسجيل مفتوح: القبول في كلية القرآن لعام 2027 والدورات"),
-        "link": "#register"
+        "text": T("কুল্লিয়াতুল কুরআন: জেনারেল আরবি ভাষা কোর্সে ভর্তি ফরম অনলাইনে", "Kulliyatul Quran: General Arabic Language Course admission form is online", "كلية القرآن: استمارة القبول في دورة اللغة العربية العامة متاحة إلكترونيًا"),
+        "link": "#reg-kq-general-arabic"
     },
     "contact": {
-        "phones": ["+880 1852-808554", "+880 1898-940943"],
+        "phones": ["+880 1852-808554", "+880 1306-746437"],
         "email": "bukharimasjid.bd@gmail.com",
-        "email2": "info@imambukharimasjid.org",
+        "email2": "",
         "office": T("হাউস ১৭ (১ম তলা), রোড ৬/এ, সেক্টর ৫, উত্তরা, ঢাকা ১২৩০", "House 17 (1st Floor), Road 6/A, Sector 5, Uttara, Dhaka 1230", "منزل 17، الطريق 6/أ، القطاع 5، أُتّرا، دكا 1230"),
         "site": T("নিউ ঢাকা সিটি, পলাশপুর, ঢাকা–মাওয়া এক্সপ্রেসওয়ে সংলগ্ন, ঢাকা", "New Dhaka City, Palashpur, adjacent to the Dhaka–Mawa Expressway, Dhaka", "مدينة دكا الجديدة، بلاشبور، بجوار طريق دكا–ماوا السريع، دكا"),
-        "hours": T("শনি–বৃহস্পতি, সকাল ৯টা–বিকাল ৫টা", "Saturday–Thursday, 9 am–5 pm", "السبت–الخميس، 9 صباحًا–5 مساءً")
+        "hours": T("অফিস: শনি–বৃহস্পতি, সকাল ৯টা–বিকাল ৫টা", "Office: Saturday–Thursday, 9 am–5 pm", "المكتب: السبت–الخميس، 9 صباحًا–5 مساءً")
     },
     "social": [
         {"name": "Facebook", "url": "https://www.facebook.com/imambukharitrustbd", "icon": "facebook"},
-        {"name": "YouTube", "url": "https://www.youtube.com/@ImamBukhariTrustOfficial", "icon": "youtube"},
-        {"name": "LinkedIn", "url": "https://www.linkedin.com/company/imam-bukhari-trust", "icon": "linkedin"},
-        {"name": "X", "url": "https://twitter.com/ImamBukhTrust", "icon": "x"}
+        {"name": "YouTube", "url": "https://www.youtube.com/channel/UCm8It2AWLRt3N22-fL89K_w", "icon": "youtube"}
     ],
     "relatedSites": [
-        {"name": T("কুল্লিয়াতুল কুরআন", "Kulliyatul Quran", "كلية القرآن"), "url": "https://kulliyatulquran.com/"},
-        {"name": T("সুন্নাহ কনফারেন্স", "Sunnah Conference", "مؤتمر السنة"), "url": "https://conference.kulliyatulquran.com"},
-        {"name": T("কুল্লিয়াতুল কুরআন ফেসবুক", "Kulliyatul Quran Facebook", "فيسبوك كلية القرآن"), "url": "https://www.facebook.com/kulliyatulquran"},
-        {"name": T("কুল্লিয়াতুল কুরআন ইউটিউব", "Kulliyatul Quran YouTube", "يوتيوب كلية القرآن"), "url": "https://www.youtube.com/@kulliyatulquranbd9275"}
+        {"name": T("কুল্লিয়াতুল কুরআন ওয়েবসাইট", "Kulliyatul Quran website", "موقع كلية القرآن"), "url": "https://www.kulliyatulquran.com/"},
+        {"name": T("কুল্লিয়াতুল কুরআন ইউটিউব", "Kulliyatul Quran YouTube", "يوتيوب كلية القرآن"), "url": "https://www.youtube.com/@kulliyatulquranbd"},
+        {"name": T("পুরনো ওয়েবসাইট", "Previous website", "الموقع السابق"), "url": "https://www.imambukharitrust.com/"}
     ],
     "youtubeChannels": [
-        {"name": "IBT Official", "channelId": "UCm8It2AWLRt3N22-fL89K_w", "url": "https://www.youtube.com/@ImamBukhariTrustOfficial"},
-        {"name": "Kulliyatul Quran", "channelId": "UCBTHMWdAFuQ5ynEryDIWdRw", "url": "https://www.youtube.com/@kulliyatulquranbd9275"}
+        {"name": "Imam Bukhari Trust", "channelId": "UCm8It2AWLRt3N22-fL89K_w", "url": "https://www.youtube.com/channel/UCm8It2AWLRt3N22-fL89K_w"},
+        {"name": "Kulliyatul Quran BD", "channelId": "UCBTHMWdAFuQ5ynEryDIWdRw", "url": "https://www.youtube.com/@kulliyatulquranbd"}
     ]
 }
 
@@ -60,6 +57,14 @@ C["home"] = {
     "heroCta1": T("আমাদের গল্প দেখুন", "Watch our story", "شاهد قصتنا"),
     "heroCta2": T("মাসজিদ নির্মাণে অংশ নিন", "Support the Masjid", "ساهم في بناء المسجد"),
     "heroImage": "img/design-night-1.jpg",
+    "heroSlides": [
+        {"image": "img/design-night-1.jpg", "caption": T("ইমাম বুখারী জামে মাসজিদ কমপ্লেক্স · স্থাপত্য নকশা", "Imam Bukhari Jame Masjid Complex · architectural design", "مجمع جامع الإمام البخاري · التصميم المعماري"), "kind": "design"},
+        {"image": "img/first-prayer.jpg", "caption": T("নির্মাণাধীন মাসজিদে সালাত", "Prayer in the masjid under construction", "الصلاة في المسجد قيد الإنشاء"), "kind": "photo"},
+        {"image": "img/design-aerial.jpg", "caption": T("মাসজিদ ও একাডেমিক ক্যাম্পাস · স্থাপত্য নকশা", "Masjid and academic campus · architectural design", "المسجد والحرم الأكاديمي · التصميم المعماري"), "kind": "design"},
+        {"image": "img/winter-2024-distribution.jpg", "caption": T("শীতবস্ত্র বিতরণ প্রকল্প ২০২৪", "Winter clothing distribution 2024", "توزيع كسوة الشتاء 2024"), "kind": "photo"},
+        {"image": "img/halaqa-class.jpg", "caption": T("কুল্লিয়াতুল কুরআনে ক্লাস", "A class at Kulliyatul Quran", "درس في كلية القرآن"), "kind": "photo"},
+        {"image": "img/construction-structure.jpg", "caption": T("নির্মাণকাজ, নিউ ঢাকা সিটি", "Construction at New Dhaka City", "أعمال البناء في مدينة دكا الجديدة"), "kind": "photo"}
+    ],
     "heroGalleryNight": ["img/design-night-1.jpg", "img/design-night-2.jpg", "img/design-night-3.jpg", "img/design-front.jpg", "img/design-aerial.jpg", "img/design-portal.jpg", "img/design-courtyard.jpg", "img/design-landscape.jpg"],
     "heroGallery": ["img/design-front.jpg", "img/design-side.jpg", "img/design-aerial.jpg", "img/design-portal.jpg", "img/design-entrance.jpg", "img/design-courtyard.jpg", "img/design-plaza.jpg", "img/design-landscape.jpg", "img/design-night-1.jpg"],
     "heroStory": "ibjmc",
@@ -87,11 +92,12 @@ C["home"] = {
 
 C["chairman"] = {
     "name": T("প্রফেসর ড. মোহাম্মদ মানজুরে ইলাহী", "Prof. Dr. Mohammad Manzur-e-Elahi", "الأستاذ الدكتور محمد منظور إلهي"),
-    "role": T("প্রতিষ্ঠাতা ও চেয়ারম্যান, ইমাম বুখারী ট্রাস্ট", "Founder & Chairman, Imam Bukhari Trust", "المؤسس ورئيس مجلس الإدارة، وقف الإمام البخاري"),
+    "role": T("চেয়ারম্যান, ইমাম বুখারী ট্রাস্ট · প্রতিষ্ঠাতা, কুল্লিয়াতুল কুরআন", "Chairman, Imam Bukhari Trust · Founder, Kulliyatul Quran", "رئيس وقف الإمام البخاري · مؤسس كلية القرآن"),
     "photo": "img/chairman.jpg",
     "photo2": "img/chairman-speech.jpg",
     "bio": T("অধ্যাপক ড. মোহাম্মদ মানজুরে ইলাহী একাধারে গবেষক, শিক্ষাবিদ, ইসলামিক স্কলার ও লেখক। তিনি একজন দা‘ঈ ইলাল্লাহ এবং সুপরিচিত মিডিয়া ব্যক্তিত্ব; ইসলামী গবেষণা, দাওয়াহ কার্যক্রম ও গণমাধ্যমে ইসলামী আলোচনার মাধ্যমে তিনি জাতীয় ও আন্তর্জাতিক অঙ্গনে পরিচিত। বর্তমানে তিনি জাতীয় বিশ্ববিদ্যালয়ের ইসলামিক স্টাডিজ বিভাগের অধ্যাপক। তিনি মদীনা ইসলামী বিশ্ববিদ্যালয় থেকে কৃতিত্বের সাথে ব্যাচেলর, মাস্টার্স ও পিএইচডি ডিগ্রি অর্জন করেন এবং সেখান থেকে পিএইচডি অর্জনকারী প্রথম বাংলাদেশি নাগরিক। বিশুদ্ধ ও বস্তুনিষ্ঠ ইসলামী শিক্ষা সবার কাছে পৌঁছে দিতে তিনি কুল্লিয়াতুল কুরআনিল কারীম ওয়াদ-দিরাসাতিল ইসলামিয়্যাহ ও তাইবাহ একাডেমি প্রতিষ্ঠা করেন।", "Prof. Dr. Mohammad Manzur-e-Elahi is a researcher, educationist, Islamic scholar and author. A da'i and a well-known media personality, he is known nationally and internationally for his research, Dawah and Islamic programmes in the media. He is a Professor in the Department of Islamic Studies at National University. He earned his Bachelor's, Master's and PhD with distinction from the Islamic University of Madinah, and is the first Bangladeshi citizen to receive a PhD from that university. To bring authentic, objective Islamic education to everyone, he founded Kulliyatul Quranil Kareem wad-Dirasatil Islamiyyah and Taibah Academy.", "الأستاذ الدكتور محمد منظور إلهي باحثٌ ومربٍّ وعالمٌ ومؤلف، وداعيةٌ إلى الله وشخصيةٌ إعلامية معروفة على المستويين الوطني والدولي من خلال البحث العلمي والدعوة والبرامج الإسلامية في وسائل الإعلام. يعمل أستاذًا في قسم الدراسات الإسلامية بالجامعة الوطنية في بنغلاديش. حصل على البكالوريوس والماجستير والدكتوراه بتفوق من الجامعة الإسلامية بالمدينة المنورة، وهو أول مواطن بنغلاديشي يحصل على الدكتوراه منها. أسس كلية القرآن الكريم والدراسات الإسلامية وأكاديمية طيبة لإيصال العلم الشرعي الأصيل إلى الجميع."),
-    "message": T("১৫ কোটিরও বেশি মুসলিমের এই দেশে কতজন প্রকৃতপক্ষে ইসলাম অনুশীলন করেন? ওয়াক্তিয়া সালাত আর জুমুআর সালাতে মুসল্লির বিশাল ব্যবধান আমাদের কী বার্তা দেয়? ডিজিটাল ফিতনার মধ্যে বেড়ে ওঠা তরুণ প্রজন্মের জন্য আমাদের কি কোনো সুসংগঠিত দাওয়াহ কৌশল আছে? এই প্রশ্নগুলো কঠিন, কিন্তু এড়িয়ে যাওয়ার সুযোগ নেই। এই বাস্তবতা সামনে রেখেই ইমাম বুখারী ট্রাস্ট একটি সুন্নাহভিত্তিক, প্রজ্ঞাসম্পন্ন ও দীর্ঘমেয়াদি দাওয়াহ-ভিশন নিয়ে কাজ করছে, যাতে ইসলাম শুধু পরিচয়পত্রে নয়, জীবনে ফিরে আসে, বিইযনিল্লাহ।", "In this country of more than 150 million Muslims, how many truly practise Islam? What does the gap between the daily prayers and the Jumu'ah congregation tell us? Do we have an organised Dawah strategy for a young generation growing up amid digital fitnah? These questions are hard, but we cannot avoid them. With this reality in view, Imam Bukhari Trust works with a Sunnah-based, wise and long-term Dawah vision, so that Islam returns not only to identity cards but to life itself, by the permission of Allah.", "في بلادنا أكثر من مئة وخمسين مليون مسلم، فكم منهم يمارس الإسلام حقًّا؟ وماذا يخبرنا الفارق الكبير بين المصلين في الصلوات اليومية وصلاة الجمعة؟ وهل لدينا استراتيجية دعوية منظمة لجيلٍ ينشأ وسط الفتن الرقمية؟ إنها أسئلة صعبة لا مفر منها. ومن هذا الواقع ينطلق وقف الإمام البخاري برؤيةٍ دعويةٍ سُنّيةٍ حكيمةٍ طويلة المدى، ليعود الإسلام إلى الحياة لا إلى بطاقات الهوية فحسب، بإذن الله."),
+    "message": T("২০১৭ সালে ইমাম বুখারী ট্রাস্ট শিক্ষা, সমাজ উন্নয়ন ও দীনি কার্যক্রমকে সামনে রেখে প্রতিষ্ঠিত হয়। এর সর্বপ্রথম প্রকল্প হলো ইমাম বুখারী জামে মাসজিদ কমপ্লেক্স বাংলাদেশ এবং দ্বিতীয় প্রকল্প হলো কুল্লিয়াতুল কুরআনিল কারীমসহ একগুচ্ছ একাডেমিক কার্যক্রম। জ্ঞানার্জন ও জ্ঞানের সাধনা এবং জ্ঞান বিতরণই একটি জাতির সমৃদ্ধির প্রধান কারণ; তাই শিক্ষার্জন ও শিক্ষাদান মুসলিম জাতির সবচেয়ে বড় অগ্রাধিকার। পাশাপাশি সমাজের সকল বয়সী অবহেলিত-বঞ্চিত মানুষদের পাশে দাঁড়ানো আমাদের নৈতিক ও মানবিক কর্তব্য। আমরা আশা করছি, মুসলিম সমাজের ভাই-বোনেরা এই মহান কাজে এগিয়ে আসবেন, অংশগ্রহণ করবেন এবং সাহায্যের হাত বাড়িয়ে দেবেন। আল্লাহ আমাদের সকল প্রচেষ্টা কবুল করুন।", "Imam Bukhari Trust was founded in 2017 with education, social development and religious work in view. Its first project is the Imam Bukhari Jame Masjid Complex Bangladesh, and its second is a group of academic programmes including Kulliyatul Quranil Kareem. Seeking, pursuing and spreading knowledge is the main cause of a nation's prosperity, so learning and teaching are the Muslim community's highest priority. Standing beside the neglected and deprived of every age is also our moral and human duty. We hope our brothers and sisters will come forward, take part and lend a helping hand in this great work. May Allah accept all our efforts.", "تأسس وقف الإمام البخاري عام 2017 واضعًا نصب عينيه التعليم والتنمية الاجتماعية والعمل الدعوي. وأول مشروعاته مجمع جامع الإمام البخاري في بنغلاديش، والثاني مجموعة من البرامج الأكاديمية منها كلية القرآن الكريم. إن طلب العلم والاجتهاد فيه ونشره هو السبب الأول لنهضة الأمم، ولذا فالتعلم والتعليم أولى أولويات الأمة المسلمة. كما أن الوقوف إلى جانب المحرومين من كل الأعمار واجب أخلاقي وإنساني. ونرجو أن يتقدم الإخوة والأخوات للمشاركة في هذا العمل العظيم ومدّ يد العون. تقبّل الله منا جميعًا."),
+    "messageSource": "https://www.imambukharitrust.com/chairman-message",
     "links": [
         {"name": "Facebook", "url": ""},
         {"name": "YouTube", "url": ""}
@@ -111,12 +117,12 @@ C["cells"] = [
 ]
 
 C["history"] = [
-    {"date": "2017-10-01", "title": T("আনুষ্ঠানিক কার্যক্রম শুরু", "Formal operations begin", "بدء الأعمال رسميًا"), "text": T("ধলেশ্বরী নদীর তীরে পলাশপুরে ইমাম বুখারী ট্রাস্টের যাত্রা শুরু।", "Imam Bukhari Trust begins its work at Palashpur, on the bank of the Dhaleshwari.", "انطلاق وقف الإمام البخاري في بلاشبور على ضفاف نهر دهاليشوري.")},
-    {"date": "2021", "title": T("কুল্লিয়াতুল কুরআন প্রতিষ্ঠা", "Kulliyatul Quran founded", "تأسيس كلية القرآن"), "text": T("২০২১ খ্রি. / ১৪৪২ হি. উচ্চতর ইসলামী শিক্ষা ও গবেষণা প্রতিষ্ঠান হিসেবে যাত্রা।", "Founded in 2021 / 1442 AH as a higher Islamic education and research institution.", "تأسست عام 2021م / 1442هـ مؤسسةً للتعليم الإسلامي العالي والبحث.")},
-    {"date": "2022-07", "title": T("উত্তরায় ক্লাস শুরু", "Classes begin in Uttara", "بدء الدراسة في أُتّرا"), "text": T("অস্থায়ী ক্যাম্পাসে আরবি ভাষা ও সানাবিয়্যাহ ক্লাস শুরু।", "Arabic language and Sanabiyyah classes begin at the temporary campus.", "بدء دروس اللغة العربية والمرحلة الثانوية في الحرم المؤقت.")},
-    {"date": "2023", "title": T("নির্মাণকাজের উদ্বোধন", "Construction inaugurated", "افتتاح أعمال البناء"), "text": T("ইমাম বুখারী জামে মাসজিদ ও একাডেমিক ক্যাম্পাসের নির্মাণকাজের শুভ উদ্বোধন।", "Construction of the Jame Masjid and academic campus is inaugurated.", "افتتاح أعمال بناء الجامع والحرم الأكاديمي.")},
-    {"date": "2024", "title": T("পাইলিং ও সুন্নাহ কনফারেন্স", "Piling and the Sunnah Conference", "الخوازيق ومؤتمر السنة"), "text": T("২২৫টি পাইলের কাজ শুরু; আন্তর্জাতিক সুন্নাহ কনফারেন্স বাংলাদেশ ২০২৪ আয়োজন।", "Work on 225 piles begins; the international Sunnah Conference Bangladesh 2024 is held.", "بدء تنفيذ 225 خازوقًا؛ وانعقاد مؤتمر السنة الدولي في بنغلاديش 2024.")},
-    {"date": "2026-02", "title": T("প্রথম ছাদ ঢালাই সম্পন্ন", "First roof slab completed", "اكتمال صب السقف الأول"), "text": T("২২৫টি পাইল ও মাসজিদের প্রথম ছাদ ঢালাই সম্পন্ন, আলহামদুলিল্লাহ। নির্মাণাধীন মাসজিদে প্রথম সালাত আদায়।", "225 piles and the masjid's first roof slab completed, alhamdulillah. The first prayer is held in the masjid under construction.", "اكتمال 225 خازوقًا وصب السقف الأول للمسجد، والحمد لله. وإقامة أول صلاة في المسجد قيد الإنشاء.")}
+    {"date": "2017-10-01", "title": T("আনুষ্ঠানিক কার্যক্রম শুরু", "Formal operations begin", "بدء الأعمال رسميًا"), "text": T("ধলেশ্বরী নদীর তীরবর্তী পলাশপুরে ইমাম বুখারী ট্রাস্টের আনুষ্ঠানিক কার্যক্রম শুরু।", "Imam Bukhari Trust formally begins its work at Palashpur, on the bank of the Dhaleshwari.", "بدء أعمال وقف الإمام البخاري رسميًا في بلاشبور على ضفاف نهر دهاليشوري."), "source": "imambukharitrust.com"},
+    {"date": "2021", "title": T("কুল্লিয়াতুল কুরআন প্রতিষ্ঠা", "Kulliyatul Quran founded", "تأسيس كلية القرآن"), "text": T("২০২১ খ্রি. / ১৪৪২ হি. উচ্চতর ইসলামী শিক্ষা ও গবেষণা প্রতিষ্ঠান হিসেবে স্থাপিত।", "Established in 2021 / 1442 AH as a higher Islamic education and research institution.", "تأسست عام 2021م / 1442هـ مؤسسةً للتعليم الإسلامي العالي والبحث."), "source": "kulliyatulquran.com"},
+    {"date": "2022-07", "title": T("উত্তরায় ক্লাস শুরু", "Classes begin in Uttara", "بدء الدراسة في أُتّرا"), "text": T("অস্থায়ী ক্যাম্পাসে আরবি ভাষা ও সানাবিয়্যাহ পর্যায়ের ক্লাস শুরু।", "Arabic language and Sanabiyyah classes begin at the temporary campus in Uttara.", "بدء دروس اللغة العربية والمرحلة الثانوية في الحرم المؤقت بأُتّرا."), "source": "imambukharitrust.com"},
+    {"date": "2023-01", "title": T("স্থায়ী ক্যাম্পাসের কাজ শুরু", "Work on the permanent campus begins", "بدء العمل في الحرم الدائم"), "text": T("নিউ ঢাকা সিটিতে কুল্লিয়াতুল কুরআনের স্থায়ী ক্যাম্পাসের কাজ শুরু।", "Work begins on Kulliyatul Quran's permanent campus at New Dhaka City.", "بدء العمل في الحرم الدائم لكلية القرآن في مدينة دكا الجديدة."), "source": "imambukharitrust.com"},
+    {"date": "2024", "title": T("পাইলিং ও সুন্নাহ কনফারেন্স বাংলাদেশ ২০২৪", "Piling and Sunnah Conference Bangladesh 2024", "الخوازيق ومؤتمر السنة في بنغلاديش 2024"), "text": T("মাসজিদ ও একাডেমিক ভবনের পাইলিং শুরু; সুন্নাহ কনফারেন্স বাংলাদেশ ২০২৪ আয়োজন।", "Piling begins for the masjid and academic building; Sunnah Conference Bangladesh 2024 is held.", "بدء أعمال الخوازيق للمسجد والمبنى الأكاديمي، وانعقاد مؤتمر السنة في بنغلاديش 2024."), "source": "IBT Catalog 2026 · YouTube"},
+    {"date": "2026", "title": T("মাসজিদের কাঠামো উঠছে", "The masjid structure rises", "ارتفاع هيكل المسجد"), "text": T("২২৫টি পাইল ও মাসজিদের ছাদ ঢালাই সম্পন্ন; নির্মাণাধীন মাসজিদে সালাত শুরু; একাডেমিক ভবনের পাইল ক্যাপ ঢালাই চলমান।", "All 225 piles and the masjid's roof slabs are cast; prayers begin in the masjid under construction; pile-cap casting for the academic building is under way.", "اكتمال 225 خازوقًا وصب أسقف المسجد، وبدء الصلاة في المسجد قيد الإنشاء، ويجري صب رؤوس الخوازيق للمبنى الأكاديمي."), "source": "IBT Catalog 2026 · YouTube"}
 ]
 
 C["institutions"] = [
@@ -227,22 +233,22 @@ C["institutions"] = [
 ]
 
 C["floors"] = {
-    "asOf": "2026-02-15",
-    "source": T("IBT ক্যাটালগ ২০২৬", "IBT Catalog 2026", "كتيّب الوقف 2026"),
+    "asOf": "2026-11",
+    "source": T("IBT ক্যাটালগ ২০২৬ ও নির্মাণ অগ্রগতির ভিডিও", "IBT Catalog 2026 and construction-progress videos", "كتيّب الوقف 2026 ومقاطع تقدم البناء"),
     "note": T("তথ্য হালনাগাদ করতে অ্যাডমিন প্যানেল ব্যবহার করুন।", "Update from the admin panel as work progresses.", "تُحدَّث البيانات من لوحة الإدارة."),
     "mosque": [
         {"label": T("ফাউন্ডেশন ও পাইলিং", "Foundation & piling", "الأساسات والخوازيق"), "use": T("৬৭টি পাইল", "67 piles", "67 خازوقًا"), "status": "done"},
         {"label": T("নিচতলা", "Ground floor", "الطابق الأرضي"), "use": T("মহিলা মাসজিদ ও ওযুখানা", "Sisters' prayer area & wudu", "مصلى النساء والمتوضأ"), "status": "done"},
-        {"label": T("১ম তলা", "1st floor", "الطابق الأول"), "use": T("মূল মাসজিদ", "Main prayer hall", "قاعة الصلاة"), "status": "progress"},
-        {"label": T("২য় তলা", "2nd floor", "الطابق الثاني"), "use": T("মাসজিদ ও ই‘তিকাফ", "Prayer hall & i'tikaf", "الصلاة والاعتكاف"), "status": "planned"},
+        {"label": T("১ম তলা", "1st floor", "الطابق الأول"), "use": T("মূল মাসজিদ", "Main prayer hall", "قاعة الصلاة"), "status": "done"},
+        {"label": T("২য় তলা", "2nd floor", "الطابق الثاني"), "use": T("মাসজিদ ও ই‘তিকাফ", "Prayer hall & i'tikaf", "الصلاة والاعتكاف"), "status": "done"},
         {"label": T("৩য় তলা", "3rd floor", "الطابق الثالث"), "use": T("মাসজিদ", "Prayer hall", "قاعة الصلاة"), "status": "planned"},
         {"label": T("৪র্থ তলা", "4th floor", "الطابق الرابع"), "use": T("মাসজিদ ও খাদেম কক্ষ", "Prayer hall & khadim room", "الصلاة وغرفة الخادم"), "status": "planned"},
         {"label": T("৫ম তলা", "5th floor", "الطابق الخامس"), "use": T("লাইব্রেরি, ইমাম কক্ষ", "Library & imam's room", "المكتبة وغرفة الإمام"), "status": "planned"},
         {"label": T("৬ষ্ঠ তলা", "6th floor", "الطابق السادس"), "use": T("ডাইনিং ও ছাদ-বারান্দা", "Dining & terrace", "قاعة الطعام والشرفة"), "status": "planned"}
     ],
     "academic": [
-        {"label": T("ফাউন্ডেশন ও পাইলিং", "Foundation & piling", "الأساسات والخوازيق"), "use": T("১৫৮টি পাইল", "158 piles", "158 خازوقًا"), "status": "progress"},
-        {"label": T("নিচতলা", "Ground floor", "الطابق الأرضي"), "use": T("অভিভাবক কক্ষ, ডিসপ্লে, ক্যান্টিন", "Parents' lounge, display, canteen", "استراحة أولياء الأمور والمعرض والمقصف"), "status": "planned"},
+        {"label": T("ফাউন্ডেশন ও পাইলিং", "Foundation & piling", "الأساسات والخوازيق"), "use": T("১৫৮টি পাইল · পাইল ক্যাপ ঢালাই চলমান", "158 piles · pile caps being cast", "158 خازوقًا · صب رؤوس الخوازيق جارٍ"), "status": "progress"},
+        {"label": T("নিচতলা", "Ground floor", "الطابق الأرضي"), "use": T("অভিভাবক কক্ষ, ডিসপ্লে, ক্যান্টিন", "Parents' lounge, display, canteen", "استراحة أولياء الأمور والمعرض والمقصف"), "status": "progress"},
         {"label": T("১ম তলা", "1st floor", "الطابق الأول"), "use": T("কনফারেন্স ও প্রশাসন", "Conference & administration", "المؤتمرات والإدارة"), "status": "planned"},
         {"label": T("২য় তলা", "2nd floor", "الطابق الثاني"), "use": T("শ্রেণিকক্ষ", "Classrooms", "فصول"), "status": "planned"},
         {"label": T("৩য় তলা", "3rd floor", "الطابق الثالث"), "use": T("শ্রেণিকক্ষ ও লাইব্রেরি", "Classrooms & library", "فصول ومكتبة"), "status": "planned"},
@@ -263,7 +269,7 @@ C["projects"] = [
         "location": T("নিউ ঢাকা সিটি, পলাশপুর, ঢাকা–মাওয়া এক্সপ্রেসওয়ে সংলগ্ন, ঢাকা", "New Dhaka City, Palashpur, by the Dhaka–Mawa Expressway, Dhaka", "مدينة دكا الجديدة، بلاشبور، بجوار طريق دكا–ماوا السريع"),
         "summary": T("ধলেশ্বরী নদীর তীরে মাসজিদ কমপ্লেক্স ও কুল্লিয়াতুল কুরআনের স্থায়ী একাডেমিক ক্যাম্পাস নির্মাণ।", "Building the masjid complex and Kulliyatul Quran's permanent academic campus on the bank of the Dhaleshwari.", "بناء مجمع المسجد والحرم الأكاديمي الدائم لكلية القرآن على ضفاف نهر دهاليشوري."),
         "image": "img/design-side.jpg",
-        "body": T("জমি ক্রয় ও রেজিস্ট্রেশন, নির্মাণ অনুমোদন, মাটি পরীক্ষা, স্থাপত্য নকশা ও প্রাক-নির্মাণ কাজ সম্পন্ন হয়েছে। ২২৫টি পাইল এবং মাসজিদের প্রথম ছাদ ঢালাই সম্পন্ন হয়েছে, আলহামদুলিল্লাহ। প্রকল্পটি জিরো পয়েন্ট থেকে প্রায় ১৫ কিমি, বাবুবাজার ব্রিজ থেকে প্রায় ৮ কিমি দূরে।", "Land purchase and registration, construction approval, soil testing, architectural design and pre-construction work are complete. All 225 piles and the masjid's first roof slab have been completed, alhamdulillah. The site is about 15 km from Zero Point and about 8 km from Babubazar Bridge.", "اكتمل شراء الأرض وتسجيلها، والحصول على ترخيص البناء، وفحص التربة، والتصميم المعماري، وأعمال ما قبل البناء. واكتمل تنفيذ 225 خازوقًا وصب السقف الأول للمسجد، والحمد لله. يبعد الموقع نحو 15 كم عن النقطة الصفرية ونحو 8 كم عن جسر بابوبازار."),
+        "body": T("জমি ক্রয় ও রেজিস্ট্রেশন, নির্মাণ অনুমোদন, মাটি পরীক্ষা, স্থাপত্য নকশা ও প্রাক-নির্মাণ কাজ সম্পন্ন হয়েছে। ২২৫টি পাইল এবং মাসজিদের ছাদ ঢালাই সম্পন্ন হয়েছে, আলহামদুলিল্লাহ; একাডেমিক ভবনের পাইল ক্যাপ ঢালাই চলমান। মাসজিদ ভবন: বি+জি+৫, প্রায় ৬১,২৯৪ বর্গফুট, মোট নামাজের স্থান ২০,৭৪১ বর্গফুট। একাডেমিক ভবন: বি+জি+৯, প্রায় ১,৮০,৭৯৯ বর্গফুট, ৭০টি শ্রেণিকক্ষ, ২,১০০ শিক্ষার্থীর ধারণক্ষমতা। প্রকল্পটি জিরো পয়েন্ট থেকে প্রায় ১৫ কিমি দূরে।", "Land purchase and registration, construction approval, soil testing, architectural design and pre-construction work are complete. All 225 piles and the masjid's roof slabs have been cast, alhamdulillah, and pile caps for the academic building are being cast. Masjid building: B+G+5, about 61,294 sq ft, with 20,741 sq ft of prayer space. Academic building: B+G+9, about 180,799 sq ft, 70 classrooms for 2,100 students. The site is about 15 km from Zero Point.", "اكتمل شراء الأرض وتسجيلها، والحصول على ترخيص البناء، وفحص التربة، والتصميم المعماري، وأعمال ما قبل البناء. واكتمل تنفيذ 225 خازوقًا وصب أسقف المسجد، والحمد لله، ويجري صب رؤوس الخوازيق للمبنى الأكاديمي. مبنى المسجد: قبو وأرضي وخمسة طوابق بنحو 61,294 قدمًا مربعًا ومساحة صلاة 20,741 قدمًا مربعًا. المبنى الأكاديمي: قبو وأرضي وتسعة طوابق بنحو 180,799 قدمًا مربعًا و70 فصلًا تتسع لـ2,100 طالب. يبعد الموقع نحو 15 كم عن النقطة الصفرية."),
         "objectives": [
             T("মাসজিদ আন-নববীর আদলে মাসজিদকেন্দ্রিক জ্ঞানভিত্তিক কমিউনিটি", "A knowledge-based, masjid-centred community on the model of Masjid an-Nabawi", "مجتمع معرفي متمحور حول المسجد على هدي المسجد النبوي"),
             T("কুল্লিয়াতুল কুরআনের স্থায়ী ক্যাম্পাস", "A permanent campus for Kulliyatul Quran", "حرم دائم لكلية القرآن"),
@@ -271,7 +277,7 @@ C["projects"] = [
             T("নারী ও শিশুদের জন্য উন্নত সুবিধা", "Excellent facilities for women and children", "مرافق متميزة للنساء والأطفال")
         ],
         "design": ["img/design-front.jpg", "img/design-night-1.jpg", "img/design-aerial.jpg", "img/design-portal.jpg", "img/design-entrance.jpg", "img/design-courtyard.jpg", "img/design-plaza.jpg", "img/design-colonnade.jpg", "img/design-landscape.jpg", "img/design-night-2.jpg", "img/design-street.jpg", "img/design-aerial-2.jpg", "img/design-masjid-front.jpg", "img/design-night-3.jpg", "img/design-corner.jpg"],
-        "gallery": [ "img/site-signboard.jpg", "img/construction-piling.jpg", "img/construction-formwork.jpg", "img/construction-structure.jpg", "img/first-prayer.jpg", "img/scholars-visit.jpg", "img/scholars-visit-group.jpg"],
+        "gallery": [ "img/flood-2024-rehab-feni.jpg", "img/site-signboard.jpg", "img/construction-piling.jpg", "img/construction-formwork.jpg", "img/construction-structure.jpg", "img/first-prayer.jpg", "img/scholars-visit.jpg", "img/scholars-visit-group.jpg"],
         "tracker": True,
         "story": "ibjmc",
         "fund": "mosque"
@@ -673,6 +679,8 @@ C["ui"] = {
     "admin": T("অ্যাডমিন", "Admin", "الإدارة"),
     "design_gallery": T("স্থাপত্য নকশা", "Architectural design", "التصميم المعماري")
 }
+
+exec(open("content_v3.py", encoding="utf-8").read())
 
 with open("data/content.json", "w", encoding="utf-8") as f:
     json.dump(C, f, ensure_ascii=False, indent=1)
