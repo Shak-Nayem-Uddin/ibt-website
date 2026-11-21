@@ -749,8 +749,8 @@
     route();
     initCloud();
   }
-  var vReq = fetch("data/videos.json").then(function (r) { return r.json(); }).then(function (d) { V = d || V; }, function () { });
-  fetch("data/content.json").then(function (r) { return r.json(); }).then(function (d) { return vReq.then(function () { boot(d); }); }).catch(function () {
+  var vReq = fetch("data/videos.json?h=" + Math.floor(Date.now() / 36e5)).then(function (r) { return r.json(); }).then(function (d) { V = d || V; }, function () { });
+  fetch("data/content.json?v=4.0").then(function (r) { return r.json(); }).then(function (d) { return vReq.then(function () { boot(d); }); }).catch(function () {
     $("#main").innerHTML = '<div class="wrap section"><h1>Imam Bukhari Trust</h1><p>Content could not be loaded. Please refresh.</p></div>';
   });
 })();
