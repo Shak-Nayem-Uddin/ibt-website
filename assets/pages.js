@@ -190,7 +190,7 @@
     var COLS = (window.IBT3D && window.IBT3D.colors) || {}, mg = h.find((C().masterplan || {}).groups || [], id) || {};
     return '<div class="bld-tabs">' + ((C().future || {}).buildings || []).map(function (x) { return '<button data-bld="' + esc(x.id) + '" aria-pressed="' + (x.id === id) + '"><i style="background:' + (COLS[x.id] || "var(--accent)") + '"></i>' + T(x.name) + "</button>"; }).join("") + "</div>" +
       "<div><h3>" + T(b.name) + '</h3><div style="margin-top:8px"><span class="chip ' + (b.status === "planned" || b.status === "proposed" ? "muted" : "gold") + '"><span class="dot"></span>' + T(b.statusText) + "</span></div></div>" +
-      (floorsKind ? levelsHtml(floorsKind) : "") +
+      (floorsKind ? '<div class="bp-pct">' + h.pctRing(floorsKind, "sm") + "<span>" + L({ bn: "কাঠামোগত অগ্রগতি", en: "Structural progress", ar: "تقدم الهيكل" }) + "</span></div>" + levelsHtml(floorsKind) : "") +
       ((mg.parts || []).length > 1 ? '<div class="faint" style="font-weight:600">' + L({ bn: "মাস্টারপ্ল্যানে এই গ্রুপের ভবন", en: "Buildings in this group (master plan)", ar: "مباني هذه المجموعة في المخطط" }) + '</div><div class="parts">' + mg.parts.map(function (p) { return '<span class="chip">' + T(p.name) + "</span>"; }).join("") + "</div>" : "") +
       '<div class="faint" style="font-weight:600">' + U("what_inside") + "</div>" + itemsHtml(b) +
       '<div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:auto">' + (b.fund ? '<a class="btn primary sm" href="#fund-' + esc(b.fund) + '">' + icon("heart") + U("give_to_fund") + "</a>" : '<a class="btn primary sm" href="#donate">' + icon("heart") + U("donate") + "</a>") + '<a class="btn sm" href="#future">' + U("nav_future") + ARROW + "</a></div>";
@@ -202,6 +202,13 @@
   function mountCampus() {
     var stage = $("#campusStage"); if (!stage || !window.IBT3D) return;
     var canvas = $("canvas", stage), labels = $(".labels", stage), panel = $("#bldPanel");
+    if (!stage.dataset.go && window.matchMedia && matchMedia("(max-width: 760px), (prefers-reduced-data: reduce)").matches) {
+      // phones: show a still of the model first; the 3D engine (≈600 KB) loads only on request
+      stage.classList.add("poster");
+      stage.insertAdjacentHTML("afterbegin", '<img class="fallback" src="img/campus-3d.webp" alt="' + esc(L({ bn: "ক্যাম্পাসের ৩ডি মডেল", en: "3D model of the campus", ar: "نموذج ثلاثي الأبعاد للحرم" })) + '"><button type="button" class="btn primary go3d">' + icon("cube") + L({ bn: "৩ডি মডেল চালু করুন", en: "Open the 3D model", ar: "افتح النموذج ثلاثي الأبعاد" }) + "</button>");
+      $(".go3d", stage).addEventListener("click", function () { stage.dataset.go = "1"; stage.classList.remove("poster"); $(".fallback", stage).remove(); this.remove(); mountCampus(); });
+      return;
+    }
     function fallback() { canvas.remove(); stage.insertAdjacentHTML("afterbegin", '<img class="fallback" src="img/design-aerial.jpg" alt="">'); $(".hint", stage).remove(); }
     if (!window.IBT3D.ok()) return fallback();
     var route = st.route;
@@ -219,22 +226,21 @@
   });
   function ring(kind) {
     var list = (C().floors || {})[kind] || []; if (!list.length) return "";
-    var d = list.filter(function (f) { return f.status === "done"; }).length;
-    return '<span class="stagec" title="' + esc(L({ bn: "কাঠামোর ধাপ (ফাউন্ডেশন ও তলা)", en: "Structural stages (foundation and floors)", ar: "مراحل الهيكل" })) + '"><b>' + digits(d) + "/" + digits(list.length) + "</b>" + L({ bn: "ধাপ সম্পন্ন", en: "stages done", ar: "مراحل مكتملة" }) + "</span>";
+    return '<span class="stagec">' + h.pctRing(kind) + "<span>" + L({ bn: "কাঠামোগত অগ্রগতি", en: "Structural progress", ar: "تقدم الهيكل" }) + "</span></span>";
   }
   function updateSection() {
     var F = C().floors || {}, ph = F.photos || {};
     function card(kind, title, fundId, vid) {
       return '<div class="upd rv"><div class="ph"><img loading="lazy" src="' + esc(img(ph[kind])) + '" alt=""><span class="chip">' + h.fdate(F.asOf) + '</span></div><div class="in"><div class="upd-top"><h3>' + title + '</h3>' + ring(kind) + '</div><div class="head">' + icon("check") + "<span>" + T((F.headline || {})[kind]) + "</span></div>" + levelsHtml(kind) + '<div class="spec">' + T((F.specs || {})[kind]) + '</div><div style="display:flex;gap:8px;flex-wrap:wrap"><a class="btn primary sm" href="#fund-' + fundId + '">' + icon("heart") + U("give_to_fund") + "</a>" + (vid ? '<button class="btn sm" data-play="' + vid + '" data-title="' + esc(Uraw(kind === "mosque" ? "masjid" : "academic_bld")) + '">' + icon("play") + U("watch") + "</button>" : "") + "</div></div></div>";
     }
-    return '<div class="update">' + card("mosque", U("masjid"), "mosque", "ViHzrqAKvO8") + card("academic", U("academic_bld"), "academy", "GW_HDHAsbyM") + '</div><div class="src">' + U("source") + ": " + T(F.source) + "</div>";
+    return '<div class="update">' + card("mosque", U("masjid"), "mosque", "ViHzrqAKvO8") + card("academic", U("academic_bld"), "academy", "GW_HDHAsbyM") + "</div>";
   }
 
   /* ================= future projects ================= */
   P.future = function () {
     var Fu = C().future || {};
     return h.pageHead(U("nav_projects"), T(Fu.title), T(Fu.intro), h.crumbs([[U("nav_future")]])) +
-      '<section class="section tight" style="padding-top:0"><div class="wrap">' + campusSection("masjid-complex") + '<p class="faint" style="margin-top:12px">' + T(Fu.note) + "</p></div></section>" +
+      '<section class="section tight" style="padding-top:0"><div class="wrap">' + campusSection("masjid-complex") + "</div></section>" +
       '<section class="section tight"><div class="wrap fut">' + (Fu.buildings || []).map(function (b, i) {
         return '<article class="fbld rv" id="b-' + esc(b.id) + '"><div class="ph"><img loading="lazy" src="' + esc(img(b.image)) + '" alt=""><span class="num">' + digits(i + 1) + '</span>' + (b.illustrative ? '<span class="chip ill">' + U("illustrative") + "</span>" : "") + '</div><div class="in"><div><span class="chip ' + (b.status === "planned" || b.status === "proposed" ? "muted" : "gold") + '"><span class="dot"></span>' + T(b.statusText) + "</span></div><h3>" + T(b.name) + '</h3><div class="faint" style="font-weight:600">' + U("what_inside") + "</div>" + itemsHtml(b) +
           '<div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:6px">' + (b.fund ? '<a class="btn primary sm" href="#fund-' + esc(b.fund) + '">' + icon("heart") + U("give_to_fund") + "</a>" : '<a class="btn primary sm" href="#donate">' + icon("heart") + U("donate") + "</a>") + "</div></div></article>";
@@ -267,7 +273,7 @@
     var pAbout = '<section class="section tight intro-sec"><div class="wrap intro"><div class="intro-l"><div class="eyebrow">' + U("nav_about") + '</div><h2 class="h-section">' + T(A.mission) + '</h2><p class="muted">' + T(H.aboutText) + '</p><a class="linkarrow" href="#about">' + L({ bn: "ইমাম বুখারী ট্রাস্ট সম্পর্কে আরও", en: "More about Imam Bukhari Trust", ar: "المزيد عن الوقف" }) + ARROW + '</a></div><div class="intro-r">' + (A.values || []).slice(0, 3).map(function (v) { return '<div class="iv"><span class="ic">' + icon(v.icon) + "</span><div><b>" + T(v.title) + "</b><span>" + T(v.text) + "</span></div></div>"; }).join("") + "</div></div></section>";
     var inst = (c.institutions || []).filter(function (i) { return i.id !== "ibjmc"; }).slice(0, 5);
     var pInst = '<section class="section tight"><div class="wrap"><div class="sec-head"><div><div class="eyebrow">' + U("nav_institutions") + '</div><h2 class="h-section">' + L({ bn: "শিক্ষাপ্রতিষ্ঠান", en: "Educational institutions", ar: "المؤسسات التعليمية" }) + '</h2></div><a class="linkarrow" href="#institutions">' + U("view_all") + ARROW + '</a></div><div class="inst-row">' + inst.map(function (i) { return '<a class="inst-c" href="#inst-' + esc(i.id) + '"><span class="ph"><img loading="lazy" src="' + esc(img(i.image)) + '" alt=""></span><b>' + T(i.name) + '</b><span class="muted">' + T(i.summary) + "</span></a>"; }).join("") + "</div></div></section>";
-    var pTrans = '<section class="section tight"><div class="wrap"><div class="trans-band"><div><div class="eyebrow">' + U("nav_transparency") + '</div><h2 class="h-section">' + L({ bn: "স্বচ্ছতা ও জবাবদিহিতা", en: "Transparency and accountability", ar: "الشفافية والمساءلة" }) + '</h2><p class="muted">' + L({ bn: "প্রতিটি দান নির্ধারিত খাতে লিপিবদ্ধ হয়। প্রকাশিত নথি ও প্রকাশের অপেক্ষায় থাকা প্রতিবেদনের অবস্থা এক জায়গায় দেখুন।", en: "Every gift is recorded against its cause. See published documents and the status of reports awaiting approval in one place.", ar: "يُسجَّل كل تبرع في مجاله. اطلع على الوثائق المنشورة وحالة التقارير في مكان واحد." }) + '</p></div><div class="trans-links"><a href="#transparency-annual">' + icon("doc") + U("tr_annual") + ARROW + '</a><a href="#transparency-financial">' + icon("coin") + U("tr_financial") + ARROW + '</a><a href="#transparency-projects">' + icon("masjid") + U("tr_projects") + ARROW + "</a></div></div></div></section>";
+    var pTrans = '<section class="section tight"><div class="wrap"><div class="trans-band"><div><div class="eyebrow">' + U("nav_transparency") + '</div><h2 class="h-section">' + L({ bn: "স্বচ্ছতা ও জবাবদিহিতা", en: "Transparency and accountability", ar: "الشفافية والمساءلة" }) + '</h2><p class="muted">' + L({ bn: "প্রতিটি দান নির্ধারিত খাতে লিপিবদ্ধ হয় এবং দাতাকে রসিদ দেওয়া হয়। অগ্রগতি ও প্রকাশিত প্রতিবেদন দেখুন এক জায়গায়।", en: "Every gift is recorded against its cause and receipted. See progress and published reports in one place.", ar: "يُسجَّل كل تبرع في مجاله ويُمنح المتبرع إيصالًا. اطلع على التقدم والتقارير المنشورة في مكان واحد." }) + '</p></div><div class="trans-links"><a href="#transparency-annual">' + icon("doc") + U("tr_annual") + ARROW + '</a><a href="#transparency-financial">' + icon("coin") + U("tr_financial") + ARROW + '</a><a href="#transparency-projects">' + icon("masjid") + U("tr_projects") + ARROW + "</a></div></div></div></section>";
     return html + pPt + pFacts + pAbout + pWork + pInst + pBuild + pCampus + pFunds + pNews + pVideos + pChair + pTrans + pDonate;
   };
 

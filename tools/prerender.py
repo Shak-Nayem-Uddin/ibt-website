@@ -59,6 +59,12 @@ async def main():
             html = re.sub(r'(<main id="main" tabindex="-1">).*?(</main>)', lambda m: m.group(1) + data["main"] + m.group(2), html, 1, re.S)
             out = ROOT / route / "index.html"; out.parent.mkdir(exist_ok=True); out.write_text(html, encoding="utf-8")
             print("ok", route, len(html) // 1024, "KB")
+        # home: the root page carries the rendered home content too, so the first paint needs no script
+        await pg.goto(f"http://127.0.0.1:{PORT}/index.html#home"); await pg.reload(); await pg.wait_for_timeout(2500)
+        main = await pg.evaluate("() => { document.querySelectorAll('#main .rv').forEach(e => e.classList.add('in')); return document.querySelector('#main').innerHTML; }")
+        root = (ROOT / "index.html").read_text(encoding="utf-8")
+        root = re.sub(r"(<main id=\"main\" tabindex=\"-1\">).*?(</main>)", lambda m: m.group(1) + main + m.group(2), root, 1, re.S)
+        (ROOT / "index.html").write_text(root, encoding="utf-8"); print("ok home (index.html)", len(root) // 1024, "KB")
         await b.close()
     today = date.today().isoformat()
     urls = [SITE] + [SITE + r + "/" for r in ROUTES]

@@ -215,7 +215,7 @@
 
   /* ---------- opening logo intro + page-change transition ---------- */
   var T0 = window.performance ? performance.now() : 0, booted = false, ptTimer = 0;
-  function introOut() { var el = document.getElementById("intro"); if (!el || el.classList.contains("out")) return; var wait = Math.max(0, 1500 - ((window.performance ? performance.now() : 0) - T0)); setTimeout(function () { el.classList.add("out"); setTimeout(function () { el.remove(); }, 700); }, wait); }
+  function introOut() { var el = document.getElementById("intro"); if (!el || el.classList.contains("out")) return; var wait = Math.max(0, 1100 - ((window.performance ? performance.now() : 0) - T0)); setTimeout(function () { el.classList.add("out"); setTimeout(function () { el.remove(); }, 700); }, wait); }
   setTimeout(introOut, 5000); // never block the site
   IBT.loading = function (on) { var p = document.getElementById("ptrans"); if (!p) return; clearTimeout(ptTimer); if (on) p.classList.add("on"); else ptTimer = setTimeout(function () { p.classList.remove("on"); }, 120); };
   var lastRoute = null;

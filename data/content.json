@@ -399,9 +399,9 @@
    }
   ],
   "factsSource": {
-   "bn": "সূত্র: IBT ক্যাটালগ ২০২৬",
-   "en": "Source: IBT Catalog 2026",
-   "ar": "المصدر: كتيّب الوقف 2026"
+   "bn": "",
+   "en": "",
+   "ar": ""
   }
  },
  "chairman": {
@@ -1081,9 +1081,9 @@
    "ar": "وقف الإمام البخاري، نوفمبر 2026"
   },
   "note": {
-   "bn": "তথ্য হালনাগাদ করতে অ্যাডমিন প্যানেল ব্যবহার করুন।",
-   "en": "Update from the admin panel as work progresses.",
-   "ar": "تُحدَّث البيانات من لوحة الإدارة."
+   "bn": "",
+   "en": "",
+   "ar": ""
   },
   "mosque": [
    {
@@ -1106,9 +1106,9 @@
      "ar": "الطابق الأول"
     },
     "use": {
-     "bn": "মহিলা মাসজিদ ও ওযুখানা",
-     "en": "Sisters' prayer area & wudu",
-     "ar": "مصلى النساء والمتوضأ"
+     "bn": "মূল মাসজিদ",
+     "en": "Main prayer hall",
+     "ar": "قاعة الصلاة"
     },
     "status": "done",
     "note": {
@@ -1124,9 +1124,9 @@
      "ar": "الطابق الثاني"
     },
     "use": {
-     "bn": "মূল মাসজিদ",
-     "en": "Main prayer hall",
-     "ar": "قاعة الصلاة"
+     "bn": "মাসজিদ ও ই‘তিকাফ",
+     "en": "Prayer hall & i'tikaf",
+     "ar": "الصلاة والاعتكاف"
     },
     "status": "done",
     "note": {
@@ -1142,9 +1142,9 @@
      "ar": "الطابق الثالث"
     },
     "use": {
-     "bn": "মাসজিদ ও ই‘তিকাফ",
-     "en": "Prayer hall & i'tikaf",
-     "ar": "الصلاة والاعتكاف"
+     "bn": "মাসজিদ",
+     "en": "Prayer hall",
+     "ar": "قاعة الصلاة"
     },
     "status": "planned"
    },
@@ -1155,9 +1155,9 @@
      "ar": "الطابق الرابع"
     },
     "use": {
-     "bn": "মাসজিদ",
-     "en": "Prayer hall",
-     "ar": "قاعة الصلاة"
+     "bn": "মাসজিদ ও খাদেম কক্ষ",
+     "en": "Prayer hall & khadim room",
+     "ar": "الصلاة وغرفة الخادم"
     },
     "status": "planned"
    },
@@ -1168,19 +1168,6 @@
      "ar": "الطابق الخامس"
     },
     "use": {
-     "bn": "মাসজিদ ও খাদেম কক্ষ",
-     "en": "Prayer hall & khadim room",
-     "ar": "الصلاة وغرفة الخادم"
-    },
-    "status": "planned"
-   },
-   {
-    "label": {
-     "bn": "৬ষ্ঠ তলা",
-     "en": "6th floor",
-     "ar": "الطابق السادس"
-    },
-    "use": {
      "bn": "লাইব্রেরি, ইমাম কক্ষ",
      "en": "Library & imam's room",
      "ar": "المكتبة وغرفة الإمام"
@@ -1189,9 +1176,9 @@
    },
    {
     "label": {
-     "bn": "৭ম তলা",
-     "en": "7th floor",
-     "ar": "الطابق السابع"
+     "bn": "৬ষ্ঠ তলা",
+     "en": "6th floor",
+     "ar": "الطابق السادس"
     },
     "use": {
      "bn": "ডাইনিং ও ছাদ-বারান্দা",
@@ -1375,14 +1362,14 @@
   },
   "specs": {
    "mosque": {
-    "bn": "বি+জি+৫ · প্রায় ৬১,২৯৪ বর্গফুট · নামাজের স্থান ২০,৭৪১ বর্গফুট",
-    "en": "B+G+5 · about 61,294 sq ft · 20,741 sq ft of prayer space",
-    "ar": "قبو+أرضي+5 · نحو 61,294 قدمًا مربعًا · مساحة صلاة 20,741 قدمًا مربعًا"
+    "bn": "জি+৫ · ৬ তলা",
+    "en": "G+5 · 6 floors",
+    "ar": "أرضي+5 · 6 طوابق"
    },
    "academic": {
-    "bn": "বি+জি+৯ · প্রায় ১,৮০,৭৯৯ বর্গফুট · ৭০টি শ্রেণিকক্ষ · ২,১০০ শিক্ষার্থী",
-    "en": "B+G+9 · about 180,799 sq ft · 70 classrooms · 2,100 students",
-    "ar": "قبو+أرضي+9 · نحو 180,799 قدمًا مربعًا · 70 فصلًا · 2,100 طالب"
+    "bn": "জি+৯ · ১০ তলা · ৭০টি শ্রেণিকক্ষ · ২,১০০ শিক্ষার্থী",
+    "en": "G+9 · 10 floors · 70 classrooms · 2,100 students",
+    "ar": "أرضي+9 · 10 طوابق · 70 فصلًا · 2,100 طالب"
    }
   }
  },
@@ -1408,9 +1395,9 @@
    },
    "image": "img/design-side.webp",
    "body": {
-    "bn": "জমি ক্রয় ও রেজিস্ট্রেশন, নির্মাণ অনুমোদন, মাটি পরীক্ষা, স্থাপত্য নকশা ও প্রাক-নির্মাণ কাজ সম্পন্ন হয়েছে। ২২৫টি পাইলের কাজ শেষ। মাসজিদ কমপ্লেক্সের ১ম ও ২য় তলার ছাদ ঢালাই সম্পন্ন হয়েছে, আলহামদুলিল্লাহ। একাডেমিক ভবনের ফাউন্ডেশনের কাজ প্রায় শেষ, এখন ছাদ ঢালাইয়ের প্রস্তুতি চলছে। মাসজিদ ভবন: বি+জি+৫, প্রায় ৬১,২৯৪ বর্গফুট, মোট নামাজের স্থান ২০,৭৪১ বর্গফুট। একাডেমিক ভবন: বি+জি+৯, প্রায় ১,৮০,৭৯৯ বর্গফুট, ৭০টি শ্রেণিকক্ষ, ২,১০০ শিক্ষার্থীর ধারণক্ষমতা।",
-    "en": "Land purchase and registration, construction approval, soil testing, architectural design and pre-construction work are complete, and all 225 piles are done. The roof slabs of the masjid complex's 1st and 2nd floors have been cast, alhamdulillah. The academic building's foundation is nearly complete and preparations for its first roof slab are under way. Masjid building: B+G+5, about 61,294 sq ft, with 20,741 sq ft of prayer space. Academic building: B+G+9, about 180,799 sq ft, 70 classrooms for 2,100 students.",
-    "ar": "اكتمل شراء الأرض وتسجيلها، والترخيص، وفحص التربة، والتصميم المعماري، وأعمال ما قبل البناء، وتنفيذ 225 خازوقًا. وتم صب سقفي الطابقين الأول والثاني لمجمع المسجد، والحمد لله. وشارفت أساسات المبنى الأكاديمي على الانتهاء، ويجري التحضير لصب سقفه الأول. مبنى المسجد: قبو+أرضي+5 بنحو 61,294 قدمًا مربعًا ومساحة صلاة 20,741 قدمًا مربعًا. المبنى الأكاديمي: قبو+أرضي+9 بنحو 180,799 قدمًا مربعًا و70 فصلًا تتسع لـ2,100 طالب."
+    "bn": "জমি ক্রয় ও রেজিস্ট্রেশন, নির্মাণ অনুমোদন, মাটি পরীক্ষা, স্থাপত্য নকশা ও প্রাক-নির্মাণ কাজ সম্পন্ন হয়েছে। ২২৫টি পাইলের কাজ শেষ। মাসজিদ কমপ্লেক্সের ১ম ও ২য় তলার ছাদ ঢালাই সম্পন্ন হয়েছে, আলহামদুলিল্লাহ। একাডেমিক ভবনের ফাউন্ডেশনের কাজ প্রায় শেষ, এখন ছাদ ঢালাইয়ের প্রস্তুতি চলছে। মাসজিদ ভবন: জি+৫। একাডেমিক ভবন: জি+৯, ৭০টি শ্রেণিকক্ষ, ২,১০০ শিক্ষার্থীর ধারণক্ষমতা।",
+    "en": "Land purchase and registration, construction approval, soil testing, architectural design and pre-construction work are complete, and all 225 piles are done. The roof slabs of the masjid complex's 1st and 2nd floors have been cast, alhamdulillah. The academic building's foundation is nearly complete and preparations for its first roof slab are under way. Masjid building: G+5. Academic building: G+9, 70 classrooms for 2,100 students.",
+    "ar": "اكتمل شراء الأرض وتسجيلها، والترخيص، وفحص التربة، والتصميم المعماري، وأعمال ما قبل البناء، وتنفيذ 225 خازوقًا. وتم صب سقفي الطابقين الأول والثاني لمجمع المسجد، والحمد لله. وشارفت أساسات المبنى الأكاديمي على الانتهاء، ويجري التحضير لصب سقفه الأول. مبنى المسجد: أرضي+5. المبنى الأكاديمي: أرضي+9 و70 فصلًا تتسع لـ2,100 طالب."
    },
    "objectives": [
     {
@@ -1922,9 +1909,9 @@
     "ar": "بناء المسجد"
    },
    "text": {
-    "bn": "ইমাম বুখারী জামে মাসজিদ কমপ্লেক্স (বি+জি+৫) নির্মাণ। ১ম ও ২য় তলার ছাদ ঢালাই সম্পন্ন হয়েছে; এখন ওপরের তলাগুলোর কাজ সামনে।",
-    "en": "Building the Imam Bukhari Jame Masjid Complex (B+G+5). The 1st and 2nd floor slabs are cast; the upper floors lie ahead.",
-    "ar": "بناء مجمع جامع الإمام البخاري (قبو+أرضي+5). تم صب سقفي الطابقين الأول والثاني، والطوابق العليا هي المرحلة القادمة."
+    "bn": "ইমাম বুখারী জামে মাসজিদ কমপ্লেক্স (জি+৫) নির্মাণ। ১ম ও ২য় তলার ছাদ ঢালাই সম্পন্ন হয়েছে; এখন ওপরের তলাগুলোর কাজ সামনে।",
+    "en": "Building the Imam Bukhari Jame Masjid Complex (G+5). The 1st and 2nd floor slabs are cast; the upper floors lie ahead.",
+    "ar": "بناء مجمع جامع الإمام البخاري (أرضي+5). تم صب سقفي الطابقين الأول والثاني، والطوابق العليا هي المرحلة القادمة."
    },
    "suggested": [
     1000,
@@ -2081,9 +2068,9 @@
     "ar": "المبنى الأكاديمي"
    },
    "text": {
-    "bn": "কুল্লিয়াতুল কুরআনের স্থায়ী ক্যাম্পাস (বি+জি+৯, ৭০টি শ্রেণিকক্ষ, ২,১০০ শিক্ষার্থী)। ফাউন্ডেশনের কাজ প্রায় শেষ, এখন ছাদ ঢালাইয়ের প্রস্তুতি চলছে।",
-    "en": "Kulliyatul Quran's permanent campus (B+G+9, 70 classrooms, 2,100 students). The foundation is nearly complete and slab preparations are under way.",
-    "ar": "الحرم الدائم لكلية القرآن (قبو+أرضي+9، 70 فصلًا، 2,100 طالب). الأساسات شارفت على الانتهاء والتحضير لصب السقف جارٍ."
+    "bn": "কুল্লিয়াতুল কুরআনের স্থায়ী ক্যাম্পাস (জি+৯, ৭০টি শ্রেণিকক্ষ, ২,১০০ শিক্ষার্থী)। ফাউন্ডেশনের কাজ প্রায় শেষ, এখন ছাদ ঢালাইয়ের প্রস্তুতি চলছে।",
+    "en": "Kulliyatul Quran's permanent campus (G+9, 70 classrooms, 2,100 students). The foundation is nearly complete and slab preparations are under way.",
+    "ar": "الحرم الدائم لكلية القرآن (أرضي+9، 70 فصلًا، 2,100 طالب). الأساسات شارفت على الانتهاء والتحضير لصب السقف جارٍ."
    },
    "suggested": [
     1000,
@@ -3570,9 +3557,9 @@
     "ar": "دورة تدريب المعلمين"
    },
    "text": {
-    "bn": "কুল্লিয়াতুল কুরআনের শিক্ষক প্রশিক্ষণ কার্যক্রম। পরবর্তী ব্যাচের তথ্য অ্যাডমিন প্যানেল থেকে যোগ হবে।",
-    "en": "Kulliyatul Quran's teacher training programme. Details of the next batch will be added from the admin panel.",
-    "ar": "برنامج تدريب المعلمين في كلية القرآن. ستُضاف تفاصيل الدفعة القادمة من لوحة الإدارة."
+    "bn": "কুল্লিয়াতুল কুরআনের শিক্ষক প্রশিক্ষণ কার্যক্রম। পরবর্তী ব্যাচের তারিখ ঘোষণা করা হলে এখানে জানানো হবে।",
+    "en": "Kulliyatul Quran's teacher training programme. Dates for the next batch will be announced here.",
+    "ar": "برنامج تدريب المعلمين في كلية القرآن. يُعلن هنا عن مواعيد الدفعة القادمة."
    },
    "facts": [],
    "eligibility": [],
@@ -5856,6 +5843,11 @@
    "bn": "শিক্ষা, দাওয়াহ, গবেষণা ও সমাজকল্যাণে ট্রাস্টের কার্যক্রমের ক্ষেত্রসমূহ। নির্দিষ্ট কর্মসূচির সময়সূচি ও অবস্থা সংশ্লিষ্ট পাতায় এবং সংবাদ ও ইভেন্ট অংশে প্রকাশ করা হয়।",
    "en": "The Trust's areas of activity in education, Dawah, research and social welfare. Schedules and the status of specific programmes are published on their own pages and under News and Events.",
    "ar": "مجالات عمل الوقف في التعليم والدعوة والبحث والرعاية الاجتماعية. تُنشر مواعيد البرامج المحددة وحالتها في صفحاتها الخاصة وفي قسم الأخبار والفعاليات."
+  },
+  "send_ready": {
+   "bn": "আপনার তথ্য প্রস্তুত। পাঠানো সম্পন্ন করতে নিচের “ইমেইলে পাঠান” বোতাম চাপুন, অথবা ফোনে যোগাযোগ করুন।",
+   "en": "Your details are ready. Press “Send by email” below to complete sending, or call us.",
+   "ar": "بياناتك جاهزة. اضغط «أرسل بالبريد» أدناه لإتمام الإرسال، أو اتصل بنا."
   }
  },
  "scholars": [
@@ -5976,9 +5968,9 @@
    "ar": "حرم معرفي متكامل محوره المسجد: تعليم وبحث ودعوة وخدمة مجتمعية في خمسة مبانٍ."
   },
   "note": {
-   "bn": "ছবিগুলো স্থাপত্য নকশা ও প্রতীকী চিত্র।",
-   "en": "Images are architectural designs and illustrations.",
-   "ar": "الصور تصاميم معمارية ورسوم توضيحية."
+   "bn": "",
+   "en": "",
+   "ar": ""
   },
   "buildings": [
    {
@@ -6038,7 +6030,8 @@
       },
       "icon": "studio"
      }
-    ]
+    ],
+    "illustrative": false
    },
    {
     "id": "academic-1",
@@ -6113,7 +6106,8 @@
       },
       "icon": "youth"
      }
-    ]
+    ],
+    "illustrative": false
    },
    {
     "id": "academic-2",
@@ -6164,7 +6158,7 @@
       "icon": "hostel"
      }
     ],
-    "illustrative": true
+    "illustrative": false
    },
    {
     "id": "academic-3",
@@ -6239,7 +6233,7 @@
       "icon": "hostel"
      }
     ],
-    "illustrative": true
+    "illustrative": false
    },
    {
     "id": "taibah-tower",
@@ -6290,7 +6284,7 @@
       "icon": "code"
      }
     ],
-    "illustrative": true
+    "illustrative": false
    }
   ]
  },
@@ -7652,7 +7646,7 @@
     "parts": [
      {
       "x": -19.63,
-      "z": -5.45,
+      "z": 5.7,
       "w": 8.67,
       "d": 9.15,
       "key": "masjid",
@@ -7671,7 +7665,7 @@
     "parts": [
      {
       "x": -19.63,
-      "z": 5.7,
+      "z": -5.45,
       "w": 8.67,
       "d": 9.15,
       "key": "academic",
@@ -8237,9 +8231,9 @@
   {
    "date": "",
    "text": {
-    "bn": "মাসজিদ: ৩য় থেকে ৭ম তলা",
-    "en": "Masjid: 3rd to 7th floors",
-    "ar": "المسجد: الطوابق 3–7"
+    "bn": "মাসজিদ: ৩য় থেকে ৬ষ্ঠ তলা",
+    "en": "Masjid: 3rd to 6th floors",
+    "ar": "المسجد: الطوابق 3–6"
    },
    "status": "planned"
   }
