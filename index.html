@@ -13,12 +13,35 @@
   // Set theme & language before first paint (no flash of the wrong theme)
   (function(){try{var t=localStorage.getItem("ibt_theme");if(t!=="light"&&t!=="dark"){t=matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light"}document.documentElement.setAttribute("data-theme",t);var l=localStorage.getItem("ibt_lang")||"bn";document.documentElement.lang=l;document.documentElement.dir=l==="ar"?"rtl":"ltr"}catch(e){}})();
 </script>
-<link rel="preload" href="fonts/hind-siliguri-bengali-400-normal.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="preload" href="fonts/hind-siliguri-bengali-600-normal.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="assets/app.css?v=5.0">
+<link rel="preload" href="fonts/kalpurush.woff2" as="font" type="font/woff2" crossorigin>
+<style>
+#intro{position:fixed;inset:0;z-index:9999;display:grid;place-items:center;background:radial-gradient(70% 60% at 50% 45%,#F3FAF5,#DCEEE1);transition:opacity .55s ease,visibility .55s}
+[data-theme="dark"] #intro{background:radial-gradient(70% 60% at 50% 45%,#16231F,#0B1210)}
+#intro.out{opacity:0;visibility:hidden}
+#intro .in-stage{display:grid;justify-items:center;gap:22px;perspective:900px}
+#intro .in-halo{position:absolute;width:280px;height:280px;border-radius:50%;background:radial-gradient(circle,rgba(142,182,155,.55),rgba(142,182,155,0) 65%);filter:blur(6px);animation:inHalo 1.6s ease-out both}
+.in-logo{position:relative;width:132px;height:132px;transform-style:preserve-3d;animation:inLogo 1.5s cubic-bezier(.2,.8,.2,1) both}
+.in-logo img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;backface-visibility:visible;filter:drop-shadow(0 14px 22px rgba(5,31,32,.28))}
+.in-logo .lw,[data-theme="dark"] .in-logo .lc{display:none}[data-theme="dark"] .in-logo .lw{display:block}
+#intro .in-name{display:grid;justify-items:center;gap:2px;animation:inName .9s .75s ease both;color:#163832;font-family:Kalpurush,"Hind Siliguri",sans-serif}
+[data-theme="dark"] #intro .in-name{color:#DAF1DE}
+#intro .in-name b{font-size:1.5rem;letter-spacing:.01em}#intro .in-name span{font:600 .78rem/1 system-ui,sans-serif;letter-spacing:.28em;text-transform:uppercase;opacity:.65}
+@keyframes inLogo{0%{transform:scale(.18) rotateY(-300deg) rotateX(18deg);opacity:0}55%{opacity:1}80%{transform:scale(1.06) rotateY(12deg) rotateX(0)}100%{transform:scale(1) rotateY(0)}}
+@keyframes inHalo{0%{transform:scale(.2);opacity:0}60%{opacity:1}100%{transform:scale(1);opacity:.8}}
+@keyframes inName{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+#ptrans{position:fixed;inset:0;z-index:9998;display:grid;place-items:center;pointer-events:none;opacity:0;background:color-mix(in srgb,var(--bg,#F5FAF6) 72%,transparent);backdrop-filter:blur(4px);transition:opacity .25s}
+#ptrans.on{opacity:1}
+#ptrans .in-logo.sm{width:64px;height:64px;animation:none}
+#ptrans.on .in-logo.sm{animation:pSpin .9s cubic-bezier(.4,0,.2,1) infinite}
+@keyframes pSpin{0%{transform:perspective(500px) rotateY(0) scale(.82)}50%{transform:perspective(500px) rotateY(180deg) scale(1)}100%{transform:perspective(500px) rotateY(360deg) scale(.82)}}
+@media (prefers-reduced-motion:reduce){.in-logo,#intro .in-halo,#intro .in-name{animation:none!important}#ptrans{display:none}}
+</style>
+<link rel="stylesheet" href="assets/app.css?v=5.1">
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"NGO","name":"Imam Bukhari Trust","alternateName":["IBT","ইমাম বুখারী ট্রাস্ট","وقف الإمام البخاري"],"url":"https://www.imambukharitrust.com/","foundingDate":"2017-10-01","address":{"@type":"PostalAddress","streetAddress":"House 17, Road 6/A, Sector 5, Uttara","addressLocality":"Dhaka","postalCode":"1230","addressCountry":"BD"},"email":"bukharimasjid.bd@gmail.com","sameAs":["https://www.facebook.com/imambukharitrustbd","https://www.youtube.com/channel/UCm8It2AWLRt3N22-fL89K_w","https://www.youtube.com/@kulliyatulquranbd"]}</script>
 </head>
 <body>
+<div id="intro" aria-hidden="true"><div class="in-stage"><div class="in-halo"></div><div class="in-logo"><img class="lc" src="img/logo-color-mark.png" alt=""><img class="lw" src="img/logo-mark.png" alt=""></div><div class="in-name"><b>ইমাম বুখারী ট্রাস্ট</b><span>Imam Bukhari Trust</span></div></div></div>
+<div id="ptrans" aria-hidden="true"><div class="in-logo sm"><img class="lc" src="img/logo-color-mark.png" alt=""><img class="lw" src="img/logo-mark.png" alt=""></div></div>
 <a class="skip" href="#main">Skip to content</a>
 <div id="chrome-top"></div>
 <main id="main" tabindex="-1"><div class="wrap section"><div style="padding:28px;max-width:520px">ইমাম বুখারী ট্রাস্ট · লোড হচ্ছে…</div></div></main>
@@ -30,13 +53,13 @@
 <div class="player" id="player" role="dialog" aria-modal="true" aria-label="Video"></div>
 <div class="mdonate" id="mdonate"></div>
 <div class="toast glass dense" id="toast" role="status" aria-live="polite"></div>
-<script src="assets/config.js?v=5.0"></script>
-<script src="assets/gas.js?v=5.0"></script>
-<script src="assets/scene3d.js?v=5.0"></script>
-<script src="assets/app.js?v=5.0"></script>
-<script src="assets/pages.js?v=5.0"></script>
-<script src="assets/extras.js?v=5.0"></script>
-<script src="assets/ask.js?v=5.0"></script>
-<script src="assets/admin.js?v=5.0"></script>
+<script src="assets/config.js?v=5.1"></script>
+<script src="assets/gas.js?v=5.1"></script>
+<script src="assets/scene3d.js?v=5.1"></script>
+<script src="assets/app.js?v=5.1"></script>
+<script src="assets/pages.js?v=5.1"></script>
+<script src="assets/extras.js?v=5.1"></script>
+<script src="assets/ask.js?v=5.1"></script>
+<script src="assets/admin.js?v=5.1"></script>
 </body>
 </html>

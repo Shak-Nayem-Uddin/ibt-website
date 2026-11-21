@@ -136,6 +136,7 @@
       '<nav class="nav" aria-label="Main">' + NAV.slice(1).map(function (n) { return '<a href="#' + n[0] + '" data-nav="' + n[0] + '">' + (n[0] === "live" ? '<span class="live-dot" aria-hidden="true"></span>' : "") + U(n[1]) + "</a>"; }).join("") + "</nav>" +
       '<div class="more" id="more"><button class="more-btn" id="moreBtn" aria-haspopup="true" aria-expanded="false">' + U("more") + '<svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></button><div class="more-menu" id="moreMenu" role="menu"></div></div>' +
       '<div class="hd-actions"><button class="icon-btn" id="searchBtn" aria-label="' + Uraw("search") + '">' + icon("search") + "</button>" + langSwitch() +
+      '<div class="lang-mini" id="langMini"><button class="icon-btn" id="langMiniBtn" aria-haspopup="true" aria-label="Language"><span>' + ({ bn: "বাং", en: "EN", ar: "ع" })[state.lang] + '</span></button><div class="lang-mini-menu">' + [["bn", "বাংলা"], ["en", "English"], ["ar", "العربية"]].map(function (l) { return '<button data-l="' + l[0] + '" lang="' + l[0] + '" aria-pressed="' + (state.lang === l[0]) + '">' + l[1] + "</button>"; }).join("") + "</div></div>" +
       '<button class="icon-btn theme-btn" id="themeBtn"></button>' + (cloud.canEdit ? '<a class="icon-btn" href="#admin" aria-label="' + Uraw("admin") + '" title="' + Uraw("admin") + '">' + icon("gear") + "</a>" : "") +
       '<a class="btn primary sm donate-hd" href="#donate">' + icon("heart") + U("donate") + '</a><button class="icon-btn menu-btn" id="menuBtn" aria-label="' + Uraw("menu") + '">' + icon("menu") + "</button></div>" +
       "</div></div></header>";
@@ -469,14 +470,14 @@
     var action = "";
     if (st === "open") {
       if (r.mode !== "native" && r.formUrl) action = '<a class="btn primary" href="' + esc(prefill(r)) + '" target="_blank" rel="noopener">' + U("open_form") + icon("ext") + '</a><p class="faint" style="margin-top:10px">Google Forms</p>';
-      else action = (r.mode !== "native" ? '<div class="notice info" style="margin-bottom:14px">' + U("form_pending") + "</div>" : "") + submitForm("registration", r.id, [["name", "text", true], ["phone", "tel", true], ["email", "email", false], ["message", "textarea", false]]);
+      else action = (r.mode !== "native" ? '<div class="notice info" style="margin-bottom:14px">' + U("form_pending") + "</div>" : "") + submitForm("registration", r.id, r.fields && r.fields.length ? r.fields : [["name", "text", true], ["phone", "tel", true], ["email", "email", false], ["message", "textarea", false]]);
     } else if (st === "info") action = '<div class="notice info"><b>' + U("contact_office") + '</b><div class="ltr" style="margin-top:6px">' + (c.phones || []).map(function (p) { return '<a href="tel:' + esc(p.replace(/[^+\d]/g, "")) + '">' + esc(p) + "</a>"; }).join(" · ") + "</div></div>";
     else action = '<div class="notice info">' + U("reg_" + st) + (st === "soon" && r.opens ? " · " + U("opens") + ": " + fdate(r.opens) : "") + "</div>";
     var kv = (r.opens ? "<dt>" + U("opens") + "</dt><dd>" + fdate(r.opens) + "</dd>" : "") + (r.closes ? "<dt>" + U("closes") + "</dt><dd>" + fdate(r.closes) + (st === "open" ? ' <span class="countdown" data-until="' + esc(r.closes) + '"></span>' : "") + "</dd>" : "") + "<dt>" + U("venue") + "</dt><dd>" + T(r.venue) + "</dd>";
     var list = function (title, arr) { return arr && arr.length ? '<h3 style="font-size:1.05rem;margin:20px 0 8px">' + U(title) + '</h3><ul class="check">' + arr.map(function (x) { return "<li>" + T(x) + "</li>"; }).join("") + "</ul>" : ""; };
     var fees = (r.fees || []).length ? '<h3 style="font-size:1.05rem;margin:20px 0 8px">' + U("fees") + '</h3><table class="fees">' + r.fees.map(function (f) { return "<tr><td>" + T(f.label) + '</td><td class="ltr">' + esc(f.amount) + "</td></tr>"; }).join("") + "</table>" + (r.feeNote ? '<p class="faint" style="margin-top:8px">' + T(r.feeNote) + "</p>" : "") : "";
     return pageHead(regChip(r), T(r.title), T(r.text), crumbs([[U("nav_register"), "#register"], [T(r.title)]])) +
-      '<section class="section tight" style="padding-top:0"><div class="wrap split" style="align-items:start"><div class="glass" style="padding:24px"><dl class="kv">' + kv + "</dl>" + list("course_facts", r.facts) + list("eligibility", r.eligibility) + fees + (r.source ? '<div class="src">' + U("source") + ': <a href="' + esc(r.source) + '" target="_blank" rel="noopener">' + esc(r.source.replace(/^https?:\/\/(www\.)?/, "")) + "</a></div>" : "") + '<hr style="border:0;border-top:1px solid var(--line);margin:18px 0">' + action + "</div><div>" +
+      '<section class="section tight" style="padding-top:0"><div class="wrap split" style="align-items:start"><div class="glass" style="padding:24px"><dl class="kv">' + kv + "</dl>" + list(r.type === "event" || r.type === "membership" ? "at_a_glance" : "course_facts", r.facts) + list("eligibility", r.eligibility) + fees + (r.source ? '<div class="src">' + U("source") + ': <a href="' + esc(r.source) + '" target="_blank" rel="noopener">' + esc(r.source.replace(/^https?:\/\/(www\.)?/, "")) + "</a></div>" : "") + '<hr style="border:0;border-top:1px solid var(--line);margin:18px 0">' + action + "</div><div>" +
       (r.video ? '<button class="cover vcover" data-play="' + esc(r.video) + '" data-title="' + esc(tr(r.title)) + '" style="aspect-ratio:16/9"><img src="' + esc(ytThumb(r.video)) + '" alt=""><span class="pl">' + icon("play") + "</span></button>" : '<div class="photo" style="aspect-ratio:16/10"><img src="' + esc(img(r.image)) + '" alt=""></div>') +
       '<div class="glass" style="padding:18px;margin-top:16px;display:flex;gap:16px;align-items:center;flex-wrap:wrap"><div class="qr" id="qrBox" data-url="' + esc(share) + '"></div><div style="flex:1;min-width:200px"><b>' + U("share_link") + '</b><div class="faint ltr" style="word-break:break-all;margin:6px 0">' + esc(share) + '</div><button class="btn sm" data-copy="' + esc(share) + '">' + icon("copy") + U("copy") + "</button></div></div></div></div></section>";
   };
@@ -616,7 +617,7 @@
     var io = ("IntersectionObserver" in window && !nomo) ? new IntersectionObserver(function (es) { es.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target); countIn(e.target); } }); }, { threshold: 0.12 }) : null;
     $$(".rv").forEach(function (el) { if (io) io.observe(el); else { el.classList.add("in"); countIn(el); } });
     // tilt
-    if (!nomo && matchMedia("(hover:hover)").matches) $$(".tilt").forEach(function (el) {
+    if (false) $$(".tilt").forEach(function (el) {
       el.addEventListener("pointermove", function (e) { var r = el.getBoundingClientRect(); var x = (e.clientX - r.left) / r.width - 0.5, y = (e.clientY - r.top) / r.height - 0.5; el.style.transform = "perspective(800px) rotateY(" + (x * 8) + "deg) rotateX(" + (-y * 8) + "deg) translateZ(6px)"; });
       el.addEventListener("pointerleave", function () { el.style.transform = ""; });
     });
@@ -666,9 +667,11 @@
     var ch = t.closest("#story [data-ch]"); if (ch) { storyGo(+ch.dataset.ch); return; }
     var sp = t.closest("#story [data-sp]"); if (sp) { storyGo(storyIdx + (+sp.dataset.sp)); return; }
     if (t.closest("[data-act=close-story]")) { closeStory(); if (location.hash.indexOf("#story-") === 0) history.replaceState(null, "", "#" + state.route); return; }
-    var lb2 = t.closest(".lang-switch button"); if (lb2) { IBT.setLang(lb2.dataset.l); return; }
+    var lb2 = t.closest(".lang-switch button, .lang-mini-menu button"); if (lb2) { var lm = $("#langMini"); if (lm) lm.classList.remove("open"); IBT.setLang(lb2.dataset.l); return; }
     if (t.closest("#themeBtn")) { var order = ["auto", "light", "dark"]; IBT.setTheme(order[(order.indexOf(state.themePref || "auto") + 1) % 3]); toast(Uraw("theme_" + state.themePref)); return; }
     if (t.closest("#menuBtn")) { $("#drawer").classList.add("open"); return; }
+    if (t.closest("#langMiniBtn")) { $("#langMini").classList.toggle("open"); return; }
+    var lmo = $("#langMini"); if (lmo && lmo.classList.contains("open") && !t.closest("#langMini [data-l]")) lmo.classList.remove("open");
     var mb = t.closest("#moreBtn"); var mo = $("#more");
     if (mb) { var op = !mo.classList.contains("open"); mo.classList.toggle("open", op); mb.setAttribute("aria-expanded", String(op)); return; }
     if (mo && mo.classList.contains("open")) { mo.classList.remove("open"); $("#moreBtn").setAttribute("aria-expanded", "false"); }
@@ -695,7 +698,8 @@
     var out = $(".out", f), data = {}; new FormData(f).forEach(function (v, k) { data[k] = String(v).slice(0, 2000); });
     var btn = $("button[type=submit]", f); btn.disabled = true;
     IBT.submit(f.dataset.submit, f.dataset.ref, data).then(function () { out.innerHTML = '<div class="notice ok">' + U("sent_ok") + "</div>"; f.reset(); }, function () {
-      var c = C.settings.contact; out.innerHTML = '<div class="notice err">' + U("send_fail") + '<div class="ltr" style="margin-top:6px">' + (c.phones || []).map(esc).join(" · ") + " · " + esc(c.email) + "</div></div>";
+      var c = C.settings.contact, title = (($("h1") || {}).textContent || "").trim(), body = Object.keys(data).map(function (k) { return k + ": " + data[k]; }).join("\n");
+      out.innerHTML = '<div class="notice">' + U("send_fail") + '<div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:10px"><a class="btn sm primary" href="mailto:' + esc(c.email) + "?subject=" + encodeURIComponent("[Website] " + title) + "&body=" + encodeURIComponent(body) + '">' + icon("mail") + U("send_by_email") + '</a>' + (c.phones || []).map(function (p) { return '<a class="btn sm ltr" href="tel:' + esc(p.replace(/[^+\d]/g, "")) + '">' + icon("phone") + esc(p) + "</a>"; }).join("") + "</div></div>";
     }).then(function () { btn.disabled = false; });
   });
   window.addEventListener("hashchange", route);

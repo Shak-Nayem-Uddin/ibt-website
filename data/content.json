@@ -27,12 +27,12 @@
   "defaultTheme": "auto",
   "announcement": {
    "show": true,
+   "link": "#reg-get-together-2026",
    "text": {
-    "bn": "জেনারেল আরবি ভাষা কোর্সে ভর্তি চলছে · অনলাইনে আবেদন করুন",
-    "en": "General Arabic Language Course: admission open · apply online",
-    "ar": "دورة اللغة العربية العامة: القبول مفتوح · قدّم إلكترونيًا"
-   },
-   "link": "#reg-kq-general-arabic"
+    "bn": "১৬ ডিসেম্বর বার্ষিক দ্বীনি ফ্যামিলি গেট-টুগেদার · রেজিস্ট্রেশন চলছে",
+    "en": "16 Dec Family Get-Together · registration open",
+    "ar": "اللقاء العائلي 16 ديسمبر · التسجيل مفتوح"
+   }
   },
   "contact": {
    "phones": [
@@ -2921,6 +2921,58 @@
  },
  "registrations": [
   {
+   "id": "get-together-2026",
+   "slug": "get-together-2026",
+   "type": "event",
+   "entity": "",
+   "image": "img/event-gettogether.jpg",
+   "status": "open",
+   "opens": "",
+   "closes": "2026-12-16",
+   "mode": "link",
+   "formUrl": "https://forms.gle/eGeHpiT1T27tfw9i6",
+   "title": {
+    "bn": "বার্ষিক দ্বীনি ফ্যামিলি গেট-টুগেদার ২০২৬ (IBT ৪র্থ গেট টুগেদার)",
+    "en": "Annual Family Get-Together 2026 (IBT's 4th)",
+    "ar": "اللقاء العائلي السنوي 2026 (اللقاء الرابع للوقف)"
+   },
+   "text": {
+    "bn": "শহরের ব্যস্ততা থেকে দূরে, সবুজ প্রকৃতির মাঝে শায়খগণ ও দ্বীনি পরিবারগুলোর সঙ্গে একটি আনন্দময় ও শিক্ষণীয় দিন: ইলম, সোহবত ও ভ্রাতৃত্বের আয়োজন। সপরিবারে অংশ নিতে রেজিস্ট্রেশন করুন।",
+    "en": "A joyful, learning-filled day with the Shaikhs and practising families, away from the city in green surroundings: knowledge, companionship and brotherhood. Register to attend with your family.",
+    "ar": "يوم مبهج ونافع مع المشايخ والأسر المتدينة بعيدًا عن صخب المدينة وسط الطبيعة: علم وصحبة وأخوّة. سجّل لتحضر مع أسرتك."
+   },
+   "facts": [
+    {
+     "bn": "তারিখ: ১৬ ডিসেম্বর ২০২৬, বুধবার",
+     "en": "Date: Wednesday, 16 December 2026",
+     "ar": "التاريخ: الأربعاء 16 ديسمبر 2026"
+    },
+    {
+     "bn": "সময়: সকাল ৬:৩০ থেকে",
+     "en": "Time: from 6:30 am",
+     "ar": "الوقت: من 6:30 صباحًا"
+    },
+    {
+     "bn": "সপরিবারে অংশগ্রহণের সুযোগ",
+     "en": "Families are welcome",
+     "ar": "الأسر مرحّب بها"
+    },
+    {
+     "bn": "যোগাযোগ: 01898-940943, 01852-808554",
+     "en": "Contact: 01898-940943, 01852-808554",
+     "ar": "للتواصل: 01898-940943، 01852-808554"
+    }
+   ],
+   "eligibility": [],
+   "fees": [],
+   "venue": {
+    "bn": "নিউ ঢাকা সিটি রিসোর্ট, পলাশপুর, ঢাকা–মাওয়া হাইওয়ে",
+    "en": "New Dhaka City Resort, Palashpur, Dhaka–Mawa Highway",
+    "ar": "منتجع مدينة دكا الجديدة، بلاشبور، طريق دكا–ماوا"
+   },
+   "source": "https://www.facebook.com/imambukharitrustbd"
+  },
+  {
    "id": "ibt-family",
    "slug": "ibt-family",
    "type": "membership",
@@ -3381,10 +3433,10 @@
    "type": "admission",
    "entity": "model-madrasa",
    "image": "img/model-madrasa.jpg",
-   "status": "info",
+   "status": "open",
    "opens": "",
    "closes": "",
-   "mode": "link",
+   "mode": "native",
    "formUrl": "",
    "title": {
     "bn": "কুল্লিয়াতুল কুরআন মডেল মাদরাসা: ভর্তি",
@@ -3392,9 +3444,9 @@
     "ar": "مدرسة كلية القرآن النموذجية: القبول"
    },
    "text": {
-    "bn": "ভর্তির সময়সূচি, শ্রেণি ও ফি অ্যাডমিন প্যানেল থেকে যোগ হবে। এখন জানতে অফিসে যোগাযোগ করুন।",
-    "en": "Admission dates, classes and fees will be added from the admin panel. Please contact the office for now.",
-    "ar": "ستُضاف مواعيد القبول والصفوف والرسوم من لوحة الإدارة. يُرجى التواصل مع المكتب حاليًا."
+    "bn": "কুল্লিয়াতুল কুরআন মডেল মাদরাসায় ভর্তি চলছে। নিচের ফরমে শিক্ষার্থীর তথ্য দিন; অফিস থেকে যোগাযোগ করে শ্রেণি, আসন ও ফি জানানো হবে।",
+    "en": "Admission to Kulliyatul Quran Model Madrasa is open. Submit the student's details below and the office will contact you about class, seats and fees.",
+    "ar": "القبول في مدرسة كلية القرآن النموذجية مفتوح. أرسل بيانات الطالب وسيتواصل المكتب معك بشأن الصف والمقاعد والرسوم."
    },
    "facts": [],
    "eligibility": [],
@@ -3405,28 +3457,61 @@
     "ar": "أُتّرا، دكا"
    },
    "source": "https://www.kulliyatulquran.com/p/kulliyatul-quran-model-madrasah",
-   "needsInfo": true
+   "needsInfo": false,
+   "fields": [
+    [
+     "student",
+     "text",
+     true,
+     null,
+     "student_name"
+    ],
+    [
+     "guardian",
+     "text",
+     true,
+     null,
+     "guardian_name"
+    ],
+    [
+     "phone",
+     "tel",
+     true
+    ],
+    [
+     "age_class",
+     "text",
+     true,
+     null,
+     "age_class"
+    ],
+    [
+     "message",
+     "textarea",
+     false
+    ]
+   ]
   },
   {
    "id": "after-school",
    "slug": "after-school",
-   "type": "course",
+   "type": "admission",
    "entity": "after-school",
    "image": "img/program-women-children.jpg",
-   "status": "info",
+   "status": "open",
    "opens": "",
    "closes": "",
-   "mode": "link",
+   "mode": "native",
    "formUrl": "",
    "title": {
-    "bn": "কুল্লিয়াতুল কুরআন আফটার স্কুল",
-    "en": "Kulliyatul Quran After School",
-    "ar": "برنامج كلية القرآن بعد المدرسة"
+    "bn": "কুল্লিয়াতুল কুরআন আফটার স্কুল: ভর্তি",
+    "en": "Kulliyatul Quran After School: admission",
+    "ar": "برنامج كلية القرآن بعد المدرسة: القبول"
    },
    "text": {
-    "bn": "ব্যাচ, সময় ও ফি অ্যাডমিন প্যানেল থেকে যোগ হবে। এখন জানতে অফিসে যোগাযোগ করুন।",
-    "en": "Batches, timings and fees will be added from the admin panel. Please contact the office for now.",
-    "ar": "ستُضاف الدفعات والمواعيد والرسوم من لوحة الإدارة. يُرجى التواصل مع المكتب حاليًا."
+    "bn": "স্কুলের পাশাপাশি কুরআন ও দ্বীনি শিক্ষার জন্য আফটার স্কুলে ভর্তি চলছে। ফরম পূরণ করুন; ব্যাচ, সময় ও ফি অফিস থেকে জানানো হবে।",
+    "en": "Admission is open for After School, Quran and Islamic learning alongside regular school. Fill in the form and the office will share batches, timings and fees.",
+    "ar": "القبول مفتوح في برنامج ما بعد المدرسة لتعلم القرآن والعلوم الشرعية. املأ النموذج وسيرسل المكتب الدفعات والمواعيد والرسوم."
    },
    "facts": [],
    "eligibility": [],
@@ -3437,7 +3522,40 @@
     "ar": "أُتّرا، دكا"
    },
    "source": "https://www.kulliyatulquran.com/p/kulliyatul-quran-after-school",
-   "needsInfo": true
+   "needsInfo": false,
+   "fields": [
+    [
+     "student",
+     "text",
+     true,
+     null,
+     "student_name"
+    ],
+    [
+     "guardian",
+     "text",
+     true,
+     null,
+     "guardian_name"
+    ],
+    [
+     "phone",
+     "tel",
+     true
+    ],
+    [
+     "age_class",
+     "text",
+     true,
+     null,
+     "age_class"
+    ],
+    [
+     "message",
+     "textarea",
+     false
+    ]
+   ]
   },
   {
    "id": "teachers-training",
@@ -3553,25 +3671,25 @@
   {
    "id": "get-together-2026",
    "recurring": {
-    "bn": "তারিখ ঘোষণা সাপেক্ষে",
-    "en": "Date to be announced",
-    "ar": "يُعلن الموعد لاحقًا"
+    "bn": "",
+    "en": "",
+    "ar": ""
    },
-   "date": "",
-   "time": "",
+   "date": "2026-12-16",
+   "time": "06:30",
    "type": "event",
    "title": {
-    "bn": "IBT ৪র্থ গেট টুগেদার ২০২৬: শাইখদের সান্নিধ্যে একটি দিন",
-    "en": "IBT 4th Get-Together 2026: a day with the Shaikhs",
-    "ar": "اللقاء الرابع للوقف 2026: يوم مع المشايخ"
+    "bn": "বার্ষিক দ্বীনি ফ্যামিলি গেট-টুগেদার ২০২৬ (IBT ৪র্থ গেট টুগেদার)",
+    "en": "Annual Family Get-Together 2026 (IBT's 4th)",
+    "ar": "اللقاء العائلي السنوي 2026 (اللقاء الرابع للوقف)"
    },
    "venue": {
-    "bn": "বিস্তারিত ভিডিওতে",
-    "en": "Details in the video",
-    "ar": "التفاصيل في الفيديو"
+    "bn": "নিউ ঢাকা সিটি রিসোর্ট, পলাশপুর, ঢাকা–মাওয়া হাইওয়ে",
+    "en": "New Dhaka City Resort, Palashpur, Dhaka–Mawa Highway",
+    "ar": "منتجع مدينة دكا الجديدة، بلاشبور، طريق دكا–ماوا"
    },
    "video": "8MlFKh__zNg",
-   "registration": ""
+   "registration": "https://forms.gle/eGeHpiT1T27tfw9i6"
   }
  ],
  "news": [
@@ -5502,6 +5620,31 @@
    "bn": "যুক্ত হোন",
    "en": "Join now",
    "ar": "انضم الآن"
+  },
+  "student_name": {
+   "bn": "শিক্ষার্থীর নাম",
+   "en": "Student's name",
+   "ar": "اسم الطالب"
+  },
+  "guardian_name": {
+   "bn": "অভিভাবকের নাম",
+   "en": "Guardian's name",
+   "ar": "اسم ولي الأمر"
+  },
+  "age_class": {
+   "bn": "বয়স / যে শ্রেণিতে ভর্তি হতে চায়",
+   "en": "Age / class sought",
+   "ar": "العمر / الصف المطلوب"
+  },
+  "send_by_email": {
+   "bn": "ইমেইলে পাঠান",
+   "en": "Send by email",
+   "ar": "أرسل بالبريد"
+  },
+  "at_a_glance": {
+   "bn": "এক নজরে",
+   "en": "At a glance",
+   "ar": "نظرة سريعة"
   }
  },
  "scholars": [

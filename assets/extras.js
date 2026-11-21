@@ -182,19 +182,27 @@
   document.addEventListener("keydown", function (e) { if (e.key === "Escape" && BOT_OPEN) openBot(false); });
 
   /* ================= interactive touches ================= */
-  function tilt(sel) {
-    if (document.documentElement.classList.contains("nomotion") || !matchMedia("(hover:hover)").matches) return;
-    $$(sel).forEach(function (el) {
-      if (el._tilt) return; el._tilt = 1; el.classList.add("tilt3d");
-      el.addEventListener("pointermove", function (e) { var r = el.getBoundingClientRect(), x = (e.clientX - r.left) / r.width - 0.5, y = (e.clientY - r.top) / r.height - 0.5; el.style.transform = "perspective(900px) rotateY(" + (x * 6).toFixed(2) + "deg) rotateX(" + (-y * 6).toFixed(2) + "deg) translateY(-3px)"; el.style.setProperty("--mx", ((x + 0.5) * 100).toFixed(1) + "%"); el.style.setProperty("--my", ((y + 0.5) * 100).toFixed(1) + "%"); });
-      el.addEventListener("pointerleave", function () { el.style.transform = ""; });
-    });
-  }
+  // soft glow that follows the pointer (no movement of the card or image); delegated so redrawn parts get it too
+  var GLOW = ".cause, .fbld, .upd, .card, .glass, .reg, .vcard, .work, .pick-c, .qa-open, .ask-card, .fb-sec, .bld-panel, .live-off, .oqa, .give, .fact";
+  if (window.matchMedia && matchMedia("(hover:hover)").matches) document.addEventListener("pointermove", function (e) {
+    var el = e.target.closest && e.target.closest(GLOW); if (!el) return;
+    if (!el.classList.contains("glow")) el.classList.add("glow");
+    var r = el.getBoundingClientRect(); el.style.setProperty("--mx", (e.clientX - r.left).toFixed(0) + "px"); el.style.setProperty("--my", (e.clientY - r.top).toFixed(0) + "px");
+  }, { passive: true });
   function rings() {
     $$(".ring[data-p]").forEach(function (r) { var p = Math.max(0, Math.min(100, +r.dataset.p)); r.style.setProperty("--p", p); });
   }
 
+  /* ---------- opening logo intro + page-change transition ---------- */
+  var T0 = window.performance ? performance.now() : 0, booted = false, ptTimer = 0;
+  function introOut() { var el = document.getElementById("intro"); if (!el || el.classList.contains("out")) return; var wait = Math.max(0, 1500 - ((window.performance ? performance.now() : 0) - T0)); setTimeout(function () { el.classList.add("out"); setTimeout(function () { el.remove(); }, 700); }, wait); }
+  setTimeout(introOut, 5000); // never block the site
+  IBT.loading = function (on) { var p = document.getElementById("ptrans"); if (!p) return; clearTimeout(ptTimer); if (on) p.classList.add("on"); else ptTimer = setTimeout(function () { p.classList.remove("on"); }, 120); };
+  var lastRoute = null;
+  IBT.beforeHooks.push(function () { if (booted && (location.hash.slice(1).split("?")[0] || "home") !== lastRoute) IBT.loading(true); });
   IBT.afterHooks = (IBT.afterHooks || []).concat([function (route) {
+    if (!booted) { booted = true; introOut(); } else { clearTimeout(ptTimer); ptTimer = setTimeout(function () { var p = document.getElementById("ptrans"); if (p) p.classList.remove("on"); }, route !== lastRoute ? 420 : 0); }
+    lastRoute = route;
     botShell(); markLive();
     if (route === "home" || route === "media") {
       var anchor = route === "home" ? ($(".donate-band") || {}).closest && $(".donate-band").closest("section") : null;
@@ -209,7 +217,6 @@
     }
     var ft = $(".footer"); if (ft && joinUrl() && !$(".ft-join", ft)) { var fl = $(".footer .wrap"); if (fl) fl.insertAdjacentHTML("afterbegin", '<div class="ft-join"><span>' + U("join_t") + '</span><a class="btn sm primary" target="_blank" rel="noopener" href="' + esc(joinUrl()) + '">' + U("join_btn") + h.ARROW + "</a></div>"); }
     if ($("#fbBox")) mountFb();
-    tilt(".cause, .fbld, .upd, .card.glass, .fact, .inst-card");
     rings();
   }]);
   IBT.bot = { answer: answer, open: openBot };
