@@ -720,7 +720,7 @@
     var btn = $("button[type=submit]", f); btn.disabled = true;
     IBT.submit(f.dataset.submit, f.dataset.ref, data).then(function () { out.innerHTML = '<div class="notice ok">' + U("sent_ok") + "</div>"; f.reset(); }, function (err) {
       var c = C.settings.contact, title = (($("h1") || {}).textContent || "").trim(), body = Object.keys(data).map(function (k) { return k + ": " + data[k]; }).join("\n");
-      out.innerHTML = '<div class="notice">' + U(err && err.message === "offline" ? "send_ready" : "send_fail") + '<div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:10px"><a class="btn sm primary" href="mailto:' + esc(c.email) + "?subject=" + encodeURIComponent("[Website] " + title) + "&body=" + encodeURIComponent(body) + '">' + icon("mail") + U("send_by_email") + '</a>' + (c.phones || []).map(function (p) { return '<a class="btn sm ltr" href="tel:' + esc(p.replace(/[^+\d]/g, "")) + '">' + icon("phone") + esc(p) + "</a>"; }).join("") + "</div></div>";
+      out.innerHTML = '<div class="notice">' + U((err && err.message === "offline") || !(window.IBT_CONFIG && IBT_CONFIG.api) ? "send_ready" : "send_fail") + '<div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:10px"><a class="btn sm primary" href="mailto:' + esc(c.email) + "?subject=" + encodeURIComponent("[Website] " + title) + "&body=" + encodeURIComponent(body) + '">' + icon("mail") + U("send_by_email") + '</a>' + (c.phones || []).map(function (p) { return '<a class="btn sm ltr" href="tel:' + esc(p.replace(/[^+\d]/g, "")) + '">' + icon("phone") + esc(p) + "</a>"; }).join("") + "</div></div>";
     }).then(function () { btn.disabled = false; });
   });
   window.addEventListener("hashchange", route);
