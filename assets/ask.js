@@ -196,7 +196,7 @@
   document.addEventListener("click", function (e) { var b = e.target.closest("[data-askq]"); if (!b) return; S.q = b.dataset.askq; S.topic = ""; location.hash = "#ask"; });
   IBT.afterHooks.push(function (route) {
     if (route !== "home") return;
-    var secs = $$("#main > section"); var at = secs[2] || secs[secs.length - 1]; if (!at) return;
+    var secs = $$("#main > section"); var at = $("#newsSec") || secs[secs.length - 1]; if (!at) return;
     at.insertAdjacentHTML("afterend", promo()); var el = $(".ask-promo"); if (el) setTimeout(function () { el.classList.add("in"); }, 50);
   });
   IBT.qa = { load: loadDB, search: function (q, n) { return search(q, wantSrc(), n || 3); }, url: function (it) { return (SRC[it[0]] || SRC["iqa-bn"]).url(it[1], it[3]); }, src: SRC };

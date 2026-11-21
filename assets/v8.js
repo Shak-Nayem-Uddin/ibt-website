@@ -68,7 +68,7 @@
   };
   P.activities = function () {
     return head(U("nav_activities"), U("nav_activities"), L({ bn: "ইমাম বুখারী ট্রাস্টের কাজ পাঁচটি ধারায়।", en: "IBT's work runs in five streams.", ar: "تسير أعمال الوقف في خمسة مسارات." }), [[U("nav_activities")]]) +
-      sec('<div class="acts">' + Object.keys(ACTS).map(function (k) { return '<a class="act-c" href="#activity-' + k + '"><span class="ic">' + icon(ACTS[k].icon) + "</span><b>" + U("act_" + k) + "</b><span class=\"muted\">" + L(ACTS[k].text) + "</span>" + h.ARROW + "</a>"; }).join("") + "</div>");
+      sec('<div class="actgrid">' + Object.keys(ACTS).map(function (k) { return '<a class="act-c" href="#activity-' + k + '"><span class="ic">' + icon(ACTS[k].icon) + "</span><b>" + U("act_" + k) + "</b><span class=\"muted\">" + L(ACTS[k].text) + "</span>" + h.ARROW + "</a>"; }).join("") + "</div>");
   };
   Object.keys(ACTS).forEach(function (k) {
     P["activity-" + k] = function () {

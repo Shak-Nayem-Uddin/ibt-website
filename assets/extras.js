@@ -224,7 +224,7 @@
     if (!booted) { booted = true; introOut(); } else { clearTimeout(ptTimer); ptTimer = setTimeout(function () { var p = document.getElementById("ptrans"); if (p) p.classList.remove("on"); }, route !== lastRoute ? 420 : 0); }
     lastRoute = route;
     botShell(); markLive(); document.documentElement.classList.toggle("r-admin", route === "admin");
-    if (route === "home" || route === "media") {
+    if (route === "media") {
       var anchor = route === "home" ? ($(".donate-band") || {}).closest && $(".donate-band").closest("section") : null;
       var sec = '<section class="section tight"><div class="wrap">' + fbSection() + "</div></section>";
       if (anchor) anchor.insertAdjacentHTML("beforebegin", sec); else $("#main").insertAdjacentHTML("beforeend", sec);
@@ -232,13 +232,13 @@
     }
     if (route === "home") setTimeout(function () { $$(".slide img[data-src]").forEach(function (im) { im.src = im.dataset.src; im.removeAttribute("data-src"); }); }, 2500);
     if (route === "home" && !$(".now-sec")) {
-      var fx = $(".facts"), anchorS = fx && fx.closest("section");
+      var anchorS = $(".intro-sec") || ($(".facts") && $(".facts").closest("section"));
       if (anchorS) anchorS.insertAdjacentHTML("afterend", nowSection());
       tickCd(); if (!cdTimer && $("[data-cd]")) cdTimer = setInterval(tickCd, 1000);
     }
     var fj = $(".ft-join"); if (fj) fj.style.display = route === "home" ? "none" : "";
     if (route === "home" && joinUrl() && !$(".join-band")) {
-      var at = $(".fb-sec"); at = at && at.closest("section");
+      var at = $(".trans-band"); at = at && at.closest("section");
       var band = '<section class="section tight"><div class="wrap"><div class="join-band rv in"><div class="jb-ic">' + icon("user") + '</div><div class="jb-tx"><h2 class="h-section">' + U("join_t") + '</h2><p class="muted">' + U("join_text") + '</p></div><a class="btn primary lg" target="_blank" rel="noopener" href="' + esc(joinUrl()) + '">' + U("join_btn") + h.ARROW + "</a></div></div></section>";
       if (at) at.insertAdjacentHTML("beforebegin", band); else $("#main").insertAdjacentHTML("beforeend", band);
     }
