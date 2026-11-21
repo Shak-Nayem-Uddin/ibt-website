@@ -685,6 +685,18 @@ exec(open("content_v4.py", encoding="utf-8").read())
 exec(open("content_v5.py", encoding="utf-8").read())
 exec(open("content_v6.py", encoding="utf-8").read())
 exec(open("content_v7.py", encoding="utf-8").read())
+exec(open("content_v8.py", encoding="utf-8").read())
+
+# serve WebP where a smaller WebP copy exists (originals stay in the repo)
+import os as _os
+def _webp(o):
+    if isinstance(o, dict): return {k: _webp(v) for k, v in o.items()}
+    if isinstance(o, list): return [_webp(v) for v in o]
+    if isinstance(o, str) and o.startswith("img/") and o.lower().endswith((".jpg", ".jpeg", ".png")):
+        w = _os.path.splitext(o)[0] + ".webp"
+        if _os.path.exists(w): return w
+    return o
+C = _webp(C)
 
 with open("data/content.json", "w", encoding="utf-8") as f:
     json.dump(C, f, ensure_ascii=False, indent=1)

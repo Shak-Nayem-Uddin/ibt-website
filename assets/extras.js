@@ -230,6 +230,7 @@
       if (anchor) anchor.insertAdjacentHTML("beforebegin", sec); else $("#main").insertAdjacentHTML("beforeend", sec);
       var el = $(".fb-sec"); if (el) el.classList.add("in");
     }
+    if (route === "home") setTimeout(function () { $$(".slide img[data-src]").forEach(function (im) { im.src = im.dataset.src; im.removeAttribute("data-src"); }); }, 2500);
     if (route === "home" && !$(".now-sec")) {
       var fx = $(".facts"), anchorS = fx && fx.closest("section");
       if (anchorS) anchorS.insertAdjacentHTML("afterend", nowSection());

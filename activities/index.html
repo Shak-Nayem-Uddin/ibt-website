@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="bn" dir="ltr" data-theme="dark">
+<head>
+<base href="/ibt-website/">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#051F20">
+<meta name="description" content="ইমাম বুখারী ট্রাস্টের কাজ পাঁচটি ধারায়।">
+<meta property="og:title" content="আমাদের কার্যক্রম · ইমাম বুখারী ট্রাস্ট">
+<meta property="og:description" content="ইমাম বুখারী ট্রাস্টের কাজ পাঁচটি ধারায়।">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://shak-nayem-uddin.github.io/ibt-website/activities/">
+<meta property="og:image" content="https://shak-nayem-uddin.github.io/ibt-website/img/og-cover.jpg">
+<meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
+<meta property="og:site_name" content="Imam Bukhari Trust">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://shak-nayem-uddin.github.io/ibt-website/img/og-cover.jpg">
+<link rel="canonical" href="https://shak-nayem-uddin.github.io/ibt-website/activities/">
+<link rel="icon" href="img/logo-color-mark.png">
+<link rel="alternate" hreflang="bn" href="https://shak-nayem-uddin.github.io/ibt-website/"><link rel="alternate" hreflang="x-default" href="https://shak-nayem-uddin.github.io/ibt-website/">
+<title>আমাদের কার্যক্রম · ইমাম বুখারী ট্রাস্ট</title>
+<script>
+  // Set theme & language before first paint (no flash of the wrong theme)
+  (function(){try{var t=localStorage.getItem("ibt_theme");if(t!=="light"&&t!=="dark"){t=matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light"}document.documentElement.setAttribute("data-theme",t);var l=localStorage.getItem("ibt_lang")||"bn";document.documentElement.lang=l;document.documentElement.dir=l==="ar"?"rtl":"ltr"}catch(e){}})();
+</script>
+<link rel="preload" href="fonts/kalpurush.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="data/content.json?v=5.0" as="fetch" crossorigin>
+<link rel="preload" href="img/design-night-1.webp" as="image" fetchpriority="high">
+<style>
+#intro{position:fixed;inset:0;z-index:9999;display:grid;place-items:center;background:radial-gradient(70% 60% at 50% 45%,#F3FAF5,#DCEEE1);transition:opacity .55s ease,visibility .55s}
+[data-theme="dark"] #intro{background:radial-gradient(70% 60% at 50% 45%,#16231F,#0B1210)}
+#intro.out{opacity:0;visibility:hidden}
+#intro .in-stage{display:grid;justify-items:center;gap:22px;perspective:900px}
+#intro .in-halo{position:absolute;width:280px;height:280px;border-radius:50%;background:radial-gradient(circle,rgba(142,182,155,.55),rgba(142,182,155,0) 65%);filter:blur(6px);animation:inHalo 1.6s ease-out both}
+.in-logo{position:relative;width:132px;height:132px;transform-style:preserve-3d;animation:inLogo 1.5s cubic-bezier(.2,.8,.2,1) both}
+.in-logo img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;backface-visibility:visible;filter:drop-shadow(0 14px 22px rgba(5,31,32,.28))}
+.in-logo .lw,[data-theme="dark"] .in-logo .lc{display:none}[data-theme="dark"] .in-logo .lw{display:block}
+#intro .in-name{display:grid;justify-items:center;gap:2px;animation:inName .9s .75s ease both;color:#163832;font-family:Kalpurush,"Hind Siliguri",sans-serif}
+[data-theme="dark"] #intro .in-name{color:#DAF1DE}
+#intro .in-name b{font-size:1.5rem;letter-spacing:.01em}#intro .in-name span{font:600 .78rem/1 system-ui,sans-serif;letter-spacing:.28em;text-transform:uppercase;opacity:.65}
+@keyframes inLogo{0%{transform:scale(.18) rotateY(-300deg) rotateX(18deg);opacity:0}55%{opacity:1}80%{transform:scale(1.06) rotateY(12deg) rotateX(0)}100%{transform:scale(1) rotateY(0)}}
+@keyframes inHalo{0%{transform:scale(.2);opacity:0}60%{opacity:1}100%{transform:scale(1);opacity:.8}}
+@keyframes inName{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+#ptrans{position:fixed;inset:0;z-index:9998;display:grid;place-items:center;pointer-events:none;opacity:0;background:color-mix(in srgb,var(--bg,#F5FAF6) 72%,transparent);backdrop-filter:blur(4px);transition:opacity .25s}
+#ptrans.on{opacity:1}
+#ptrans .in-logo.sm{width:64px;height:64px;animation:none}
+#ptrans.on .in-logo.sm{animation:pSpin .9s cubic-bezier(.4,0,.2,1) infinite}
+@keyframes pSpin{0%{transform:perspective(500px) rotateY(0) scale(.82)}50%{transform:perspective(500px) rotateY(180deg) scale(1)}100%{transform:perspective(500px) rotateY(360deg) scale(.82)}}
+@media (prefers-reduced-motion:reduce){.in-logo,#intro .in-halo,#intro .in-name{animation:none!important}#ptrans{display:none}}
+</style>
+<link rel="stylesheet" href="assets/app.css?v=5.3">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"NGO","name":"Imam Bukhari Trust","alternateName":["IBT","ইমাম বুখারী ট্রাস্ট","وقف الإمام البخاري"],"url":"https://www.imambukharitrust.com/","foundingDate":"2017-10-01","address":{"@type":"PostalAddress","streetAddress":"House 17, Road 6/A, Sector 5, Uttara","addressLocality":"Dhaka","postalCode":"1230","addressCountry":"BD"},"email":"bukharimasjid.bd@gmail.com","sameAs":["https://www.facebook.com/imambukharitrustbd","https://www.youtube.com/channel/UCm8It2AWLRt3N22-fL89K_w","https://www.youtube.com/@kulliyatulquranbd"]}</script>
+</head>
+<body>
+<div id="intro" aria-hidden="true"><div class="in-stage"><div class="in-halo"></div><div class="in-logo"><img class="lc" src="img/logo-color-mark.png" alt=""><img class="lw" src="img/logo-mark.png" alt=""></div><div class="in-name"><b>ইমাম বুখারী ট্রাস্ট</b><span>Imam Bukhari Trust</span></div></div></div>
+<div id="ptrans" aria-hidden="true"><div class="in-logo sm"><img class="lc" src="img/logo-color-mark.png" alt=""><img class="lw" src="img/logo-mark.png" alt=""></div></div>
+<a class="skip" href="#main">Skip to content</a>
+<div id="chrome-top"></div>
+<script>if(!location.hash)history.replaceState(null,"",document.baseURI+"#activities");</script>
+<main id="main" tabindex="-1"><section class="page-hero"><div class="wrap"><nav class="crumbs" aria-label="Breadcrumb"><a href="#home">হোম</a><span>/</span><span>আমাদের কার্যক্রম</span></nav><div class="eyebrow">আমাদের কার্যক্রম</div><h1 class="h-display rv in">আমাদের কার্যক্রম</h1><p class="lead rv in" style="max-width:760px">ইমাম বুখারী ট্রাস্টের কাজ পাঁচটি ধারায়।</p></div></section><section class="section tight"><div class="wrap"><div class="acts"><a class="act-c" href="#activity-education"><span class="ic"><svg class="i " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 9l10-5 10 5-10 5z"></path><path d="M6 11v5c3 2 9 2 12 0v-5"></path></svg></span><b>ইসলামী শিক্ষা</b><span class="muted">শিশু থেকে উচ্চশিক্ষা পর্যন্ত কুরআন-সুন্নাহভিত্তিক শিক্ষা: মডেল মাদরাসা, আফটার স্কুল, সানাবিয়্যাহ ও কুল্লিয়্যাহ, আরবি ভাষা ও বিভিন্ন কোর্স।</span><svg class="i flip-rtl" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a><a class="act-c" href="#activity-dawah"><span class="ic"><svg class="i " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5h16v10H8l-4 4z"></path><path d="M8 9h8M8 12h5"></path></svg></span><b>দাওয়াহ</b><span class="muted">সাপ্তাহিক হালাকা, কনফারেন্স, প্রশিক্ষণ এবং ডিজিটাল মাধ্যমে বিশুদ্ধ দ্বীনের দাওয়াহ।</span><svg class="i flip-rtl" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a><a class="act-c" href="#activity-research"><span class="ic"><svg class="i " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="10" cy="10" r="6"></circle><path d="M20 20l-5.5-5.5M7 10h6M10 7v6"></path></svg></span><b>গবেষণা</b><span class="muted">সমসাময়িক বিষয়ে কুরআন-সুন্নাহভিত্তিক গবেষণা, সেমিনার ও নীতিনির্ধারণী সংলাপ।</span><svg class="i flip-rtl" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a><a class="act-c" href="#activity-welfare"><span class="ic"><svg class="i " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-4.4-9.3-8.6C1.1 9.3 2.8 5.5 6.4 5.1 8.6 4.9 10.3 6 12 8c1.7-2 3.4-3.1 5.6-2.9 3.6.4 5.3 4.2 3.7 7.3C19 16.6 12 21 12 21z"></path></svg></span><b>সমাজকল্যাণ</b><span class="muted">ত্রাণ, শীতবস্ত্র, ইফতার, শিক্ষাবৃত্তি ও দুর্যোগ-পরবর্তী পুনর্বাসন।</span><svg class="i flip-rtl" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a><a class="act-c" href="#activity-community"><span class="ic"><svg class="i " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="8" cy="7" r="3"></circle><circle cx="17" cy="9" r="2.5"></circle><path d="M2 21c0-4 3-7 6-7s6 3 6 7M13 21c0-3 2-5 4-5s4 2 4 5"></path></svg></span><b>কমিউনিটি উন্নয়ন</b><span class="muted">মাসজিদকে কেন্দ্র করে একটি দ্বীনি কমিউনিটি: পরিবার, যুবক ও প্রবীণদের জন্য কার্যক্রম।</span><svg class="i flip-rtl" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a></div></div></section></main>
+<div id="chrome-bottom"></div>
+<div class="drawer" id="drawer"><div class="scrim"></div><div class="panel glass dense"></div></div>
+<div class="search" id="search" role="dialog" aria-modal="true" aria-label="Search"><div class="box glass dense"><input class="input" id="searchInput" type="search" autocomplete="off" placeholder="Search…"><div class="res" id="searchRes"></div></div></div>
+<div class="story" id="story" role="dialog" aria-modal="true" aria-hidden="true"></div>
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true"></div>
+<div class="player" id="player" role="dialog" aria-modal="true" aria-label="Video"></div>
+<div class="mdonate" id="mdonate"></div>
+<div class="toast glass dense" id="toast" role="status" aria-live="polite"></div>
+<script src="assets/config.js?v=5.3"></script>
+<script src="assets/gas.js?v=5.3"></script>
+<script src="assets/gh.js?v=5.3"></script>
+<script src="assets/scene3d.js?v=5.3"></script>
+<script src="assets/app.js?v=5.3"></script>
+<script src="assets/pages.js?v=5.3"></script>
+<script src="assets/extras.js?v=5.3"></script>
+<script src="assets/ask.js?v=5.3"></script>
+<script src="assets/v8.js?v=5.3"></script>
+<script src="assets/admin.js?v=5.3"></script>
+</body>
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="bn" dir="ltr" data-theme="dark">
+<head>
+<base href="/ibt-website/">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#051F20">
+<meta name="description" content="সময় স্বয়ংক্রিয়ভাবে হিসাব করা হয় এবং প্রতিদিন হালনাগাদ হয়। স্থানীয় মাসজিদের সময়সূচির সাথে কয়েক মিনিটের পার্থক্য হতে পারে।">
+<meta property="og:title" content="নামাজের সময়সূচি · ইমাম বুখারী ট্রাস্ট">
+<meta property="og:description" content="সময় স্বয়ংক্রিয়ভাবে হিসাব করা হয় এবং প্রতিদিন হালনাগাদ হয়। স্থানীয় মাসজিদের সময়সূচির সাথে কয়েক মিনিটের পার্থক্য হতে পারে।">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://shak-nayem-uddin.github.io/ibt-website/prayer/">
+<meta property="og:image" content="https://shak-nayem-uddin.github.io/ibt-website/img/og-cover.jpg">
+<meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
+<meta property="og:site_name" content="Imam Bukhari Trust">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://shak-nayem-uddin.github.io/ibt-website/img/og-cover.jpg">
+<link rel="canonical" href="https://shak-nayem-uddin.github.io/ibt-website/prayer/">
+<link rel="icon" href="img/logo-color-mark.png">
+<link rel="alternate" hreflang="bn" href="https://shak-nayem-uddin.github.io/ibt-website/"><link rel="alternate" hreflang="x-default" href="https://shak-nayem-uddin.github.io/ibt-website/">
+<title>নামাজের সময়সূচি · ইমাম বুখারী ট্রাস্ট</title>
+<script>
+  // Set theme & language before first paint (no flash of the wrong theme)
+  (function(){try{var t=localStorage.getItem("ibt_theme");if(t!=="light"&&t!=="dark"){t=matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light"}document.documentElement.setAttribute("data-theme",t);var l=localStorage.getItem("ibt_lang")||"bn";document.documentElement.lang=l;document.documentElement.dir=l==="ar"?"rtl":"ltr"}catch(e){}})();
+</script>
+<link rel="preload" href="fonts/kalpurush.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="data/content.json?v=5.0" as="fetch" crossorigin>
+<link rel="preload" href="img/design-night-1.webp" as="image" fetchpriority="high">
+<style>
+#intro{position:fixed;inset:0;z-index:9999;display:grid;place-items:center;background:radial-gradient(70% 60% at 50% 45%,#F3FAF5,#DCEEE1);transition:opacity .55s ease,visibility .55s}
+[data-theme="dark"] #intro{background:radial-gradient(70% 60% at 50% 45%,#16231F,#0B1210)}
+#intro.out{opacity:0;visibility:hidden}
+#intro .in-stage{display:grid;justify-items:center;gap:22px;perspective:900px}
+#intro .in-halo{position:absolute;width:280px;height:280px;border-radius:50%;background:radial-gradient(circle,rgba(142,182,155,.55),rgba(142,182,155,0) 65%);filter:blur(6px);animation:inHalo 1.6s ease-out both}
+.in-logo{position:relative;width:132px;height:132px;transform-style:preserve-3d;animation:inLogo 1.5s cubic-bezier(.2,.8,.2,1) both}
+.in-logo img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;backface-visibility:visible;filter:drop-shadow(0 14px 22px rgba(5,31,32,.28))}
+.in-logo .lw,[data-theme="dark"] .in-logo .lc{display:none}[data-theme="dark"] .in-logo .lw{display:block}
+#intro .in-name{display:grid;justify-items:center;gap:2px;animation:inName .9s .75s ease both;color:#163832;font-family:Kalpurush,"Hind Siliguri",sans-serif}
+[data-theme="dark"] #intro .in-name{color:#DAF1DE}
+#intro .in-name b{font-size:1.5rem;letter-spacing:.01em}#intro .in-name span{font:600 .78rem/1 system-ui,sans-serif;letter-spacing:.28em;text-transform:uppercase;opacity:.65}
+@keyframes inLogo{0%{transform:scale(.18) rotateY(-300deg) rotateX(18deg);opacity:0}55%{opacity:1}80%{transform:scale(1.06) rotateY(12deg) rotateX(0)}100%{transform:scale(1) rotateY(0)}}
+@keyframes inHalo{0%{transform:scale(.2);opacity:0}60%{opacity:1}100%{transform:scale(1);opacity:.8}}
+@keyframes inName{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+#ptrans{position:fixed;inset:0;z-index:9998;display:grid;place-items:center;pointer-events:none;opacity:0;background:color-mix(in srgb,var(--bg,#F5FAF6) 72%,transparent);backdrop-filter:blur(4px);transition:opacity .25s}
+#ptrans.on{opacity:1}
+#ptrans .in-logo.sm{width:64px;height:64px;animation:none}
+#ptrans.on .in-logo.sm{animation:pSpin .9s cubic-bezier(.4,0,.2,1) infinite}
+@keyframes pSpin{0%{transform:perspective(500px) rotateY(0) scale(.82)}50%{transform:perspective(500px) rotateY(180deg) scale(1)}100%{transform:perspective(500px) rotateY(360deg) scale(.82)}}
+@media (prefers-reduced-motion:reduce){.in-logo,#intro .in-halo,#intro .in-name{animation:none!important}#ptrans{display:none}}
+</style>
+<link rel="stylesheet" href="assets/app.css?v=5.3">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"NGO","name":"Imam Bukhari Trust","alternateName":["IBT","ইমাম বুখারী ট্রাস্ট","وقف الإمام البخاري"],"url":"https://www.imambukharitrust.com/","foundingDate":"2017-10-01","address":{"@type":"PostalAddress","streetAddress":"House 17, Road 6/A, Sector 5, Uttara","addressLocality":"Dhaka","postalCode":"1230","addressCountry":"BD"},"email":"bukharimasjid.bd@gmail.com","sameAs":["https://www.facebook.com/imambukharitrustbd","https://www.youtube.com/channel/UCm8It2AWLRt3N22-fL89K_w","https://www.youtube.com/@kulliyatulquranbd"]}</script>
+</head>
+<body>
+<div id="intro" aria-hidden="true"><div class="in-stage"><div class="in-halo"></div><div class="in-logo"><img class="lc" src="img/logo-color-mark.png" alt=""><img class="lw" src="img/logo-mark.png" alt=""></div><div class="in-name"><b>ইমাম বুখারী ট্রাস্ট</b><span>Imam Bukhari Trust</span></div></div></div>
+<div id="ptrans" aria-hidden="true"><div class="in-logo sm"><img class="lc" src="img/logo-color-mark.png" alt=""><img class="lw" src="img/logo-mark.png" alt=""></div></div>
+<a class="skip" href="#main">Skip to content</a>
+<div id="chrome-top"></div>
+<script>if(!location.hash)history.replaceState(null,"",document.baseURI+"#prayer");</script>
+<main id="main" tabindex="-1"><section class="page-hero"><div class="wrap"><nav class="crumbs" aria-label="Breadcrumb"><a href="#home">হোম</a><span>/</span><span>নামাজের সময়</span></nav><div class="eyebrow">নামাজের সময়</div><h1 class="h-display rv in">নামাজের সময়সূচি</h1><p class="lead rv in" style="max-width:760px">সময় স্বয়ংক্রিয়ভাবে হিসাব করা হয় এবং প্রতিদিন হালনাগাদ হয়। স্থানীয় মাসজিদের সময়সূচির সাথে কয়েক মিনিটের পার্থক্য হতে পারে।</p></div></section><section class="section tight" style="padding-top:0"><div class="wrap pt-layout"><div><div class="pt-next" id="ptNext"><div><small>পরবর্তী নামাজ</small><div class="nm" data-n="">ফজর</div><div class="loc" data-loc="">উত্তরা, ঢাকা, বাংলাদেশ · ৪:৫৯ AM</div></div><div style="text-align:end"><small>বাকি</small><div class="cd" data-cd="">৫:৩৮:১০</div><div class="loc" data-hijri="">১১ জমাদিউস সানি, ১৪৪৮ হিজরি</div></div></div><div class="pt-list" id="ptList"><div class="p next"><span>ফজর</span><b>৪:৫৮ AM</b></div><div class="p "><span>সূর্যোদয়</span><b>৬:১৭ AM</b></div><div class="p "><span>যোহর</span><b>১১:৪৫ AM</b></div><div class="p "><span>আসর</span><b>২:৫০ PM</b></div><div class="p "><span>মাগরিব</span><b>৫:১১ PM</b></div><div class="p "><span>এশা</span><b>৬:৩০ PM</b></div></div><h2 class="h-section" style="margin-top:36px;font-size:1.4rem">এই সপ্তাহ</h2><div class="tbl-wrap"><table class="pt-week" id="ptWeek"><tbody><tr><th></th><th>ফজর</th><th>সূর্যোদয়</th><th>যোহর</th><th>আসর</th><th>মাগরিব</th><th>এশা</th></tr><tr class="today"><td>শনি ২১ নভে</td><td>৪:৫৮ AM</td><td>৬:১৭ AM</td><td>১১:৪৫ AM</td><td>২:৫০ PM</td><td>৫:১১ PM</td><td>৬:৩০ PM</td></tr><tr class=""><td>রবি ২২ নভে</td><td>৪:৫৯ AM</td><td>৬:১৮ AM</td><td>১১:৪৬ AM</td><td>২:৫০ PM</td><td>৫:১১ PM</td><td>৬:৩০ PM</td></tr><tr class=""><td>সোম ২৩ নভে</td><td>৪:৫৯ AM</td><td>৬:১৮ AM</td><td>১১:৪৬ AM</td><td>২:৫০ PM</td><td>৫:১১ PM</td><td>৬:৩০ PM</td></tr><tr class=""><td>মঙ্গল ২৪ নভে</td><td>৫:০০ AM</td><td>৬:১৯ AM</td><td>১১:৪৬ AM</td><td>২:৫০ PM</td><td>৫:১১ PM</td><td>৬:৩০ PM</td></tr><tr class=""><td>বুধ ২৫ নভে</td><td>৫:০১ AM</td><td>৬:২০ AM</td><td>১১:৪৬ AM</td><td>২:৫০ PM</td><td>৫:১১ PM</td><td>৬:৩০ PM</td></tr><tr class=""><td>বৃহস্পতি ২৬ নভে</td><td>৫:০১ AM</td><td>৬:২১ AM</td><td>১১:৪৭ AM</td><td>২:৫০ PM</td><td>৫:১১ PM</td><td>৬:৩০ PM</td></tr><tr class=""><td>শুক্র ২৭ নভে</td><td>৫:০২ AM</td><td>৬:২১ AM</td><td>১১:৪৭ AM</td><td>২:৫০ PM</td><td>৫:১১ PM</td><td>৬:৩০ PM</td></tr></tbody></table></div></div><aside class="pt-set" id="ptSet"><div class="field"><label>দেশ</label><select class="input" aria-label="দেশ" data-pt="cc"><option value="0" selected="">বাংলাদেশ</option><option value="1">সৌদি আরব</option><option value="2">সংযুক্ত আরব আমিরাত</option><option value="3">কাতার</option><option value="4">কুয়েত</option><option value="5">ওমান</option><option value="6">বাহরাইন</option><option value="7">মালয়েশিয়া</option><option value="8">সিঙ্গাপুর</option><option value="9">ইন্দোনেশিয়া</option><option value="10">পাকিস্তান</option><option value="11">ভারত</option><option value="12">মালদ্বীপ</option><option value="13">তুরস্ক</option><option value="14">মিশর</option><option value="15">যুক্তরাজ্য</option><option value="16">যুক্তরাষ্ট্র</option><option value="17">কানাডা</option><option value="18">অস্ট্রেলিয়া</option><option value="19">জার্মানি</option><option value="20">ফ্রান্স</option><option value="21">ইতালি</option><option value="22">জাপান</option><option value="23">দক্ষিণ আফ্রিকা</option></select></div><div class="field"><label>শহর</label><select class="input" aria-label="শহর" data-pt="ci"><option value="0" selected="">উত্তরা, ঢাকা</option><option value="1">ঢাকা</option><option value="2">চট্টগ্রাম</option><option value="3">সিলেট</option><option value="4">রাজশাহী</option><option value="5">খুলনা</option><option value="6">বরিশাল</option><option value="7">রংপুর</option><option value="8">ময়মনসিংহ</option><option value="9">কুমিল্লা</option><option value="10">গাজীপুর</option><option value="11">নারায়ণগঞ্জ</option><option value="12">কক্সবাজার</option></select></div><button class="btn" data-pt-geo=""><svg class="i " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="3"></circle><path d="M12 2v3M12 19v3M2 12h3M19 12h3"></path><circle cx="12" cy="12" r="7"></circle></svg>আমার লোকেশন</button><div class="field"><label>হিসাব পদ্ধতি</label><select class="input" aria-label="হিসাব পদ্ধতি" data-pt="method"><option value="Karachi" selected="">University of Islamic Sciences, Karachi</option><option value="MuslimWorldLeague">Muslim World League</option><option value="UmmAlQura">Umm al-Qura, Makkah</option><option value="Egyptian">Egyptian General Authority</option><option value="Dubai">Dubai</option><option value="Qatar">Qatar</option><option value="Kuwait">Kuwait</option><option value="Singapore">Singapore / Malaysia (JAKIM)</option><option value="Turkey">Diyanet, Türkiye</option><option value="NorthAmerica">ISNA, North America</option><option value="MoonsightingCommittee">Moonsighting Committee</option><option value="Tehran">Tehran</option></select></div><div class="field"><label>আসরের হিসাব</label><select class="input" aria-label="আসরের হিসাব" data-pt="asr"><option value="standard" selected="">স্ট্যান্ডার্ড (শাফেয়ী, মালেকী, হাম্বলী)</option><option value="hanafi">হানাফী</option></select></div><p class="faint" style="margin:0">সময় স্বয়ংক্রিয়ভাবে হিসাব করা হয় এবং প্রতিদিন হালনাগাদ হয়। স্থানীয় মাসজিদের সময়সূচির সাথে কয়েক মিনিটের পার্থক্য হতে পারে।</p></aside></div></section></main>
+<div id="chrome-bottom"></div>
+<div class="drawer" id="drawer"><div class="scrim"></div><div class="panel glass dense"></div></div>
+<div class="search" id="search" role="dialog" aria-modal="true" aria-label="Search"><div class="box glass dense"><input class="input" id="searchInput" type="search" autocomplete="off" placeholder="Search…"><div class="res" id="searchRes"></div></div></div>
+<div class="story" id="story" role="dialog" aria-modal="true" aria-hidden="true"></div>
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true"></div>
+<div class="player" id="player" role="dialog" aria-modal="true" aria-label="Video"></div>
+<div class="mdonate" id="mdonate"></div>
+<div class="toast glass dense" id="toast" role="status" aria-live="polite"></div>
+<script src="assets/config.js?v=5.3"></script>
+<script src="assets/gas.js?v=5.3"></script>
+<script src="assets/gh.js?v=5.3"></script>
+<script src="assets/scene3d.js?v=5.3"></script>
+<script src="assets/app.js?v=5.3"></script>
+<script src="assets/pages.js?v=5.3"></script>
+<script src="assets/extras.js?v=5.3"></script>
+<script src="assets/ask.js?v=5.3"></script>
+<script src="assets/v8.js?v=5.3"></script>
+<script src="assets/admin.js?v=5.3"></script>
+</body>
+</html>

@@ -113,7 +113,7 @@
     if (changed && IBT._themeInit) scenes.forEach(function (s) { s && s.setTheme && s.setTheme(t); });
     if (IBT._scenes) IBT._scenes.forEach(function (s) { s && s.setTheme(t); });
     IBT._themeInit = true;
-    var m = $('meta[name="theme-color"]'); if (m) m.content = t === "dark" ? "#051F20" : "#F5FAF6";
+    var m = $('meta[name="theme-color"]'); if (m) m.content = t === "dark" ? "#0E1513" : "#FAF8F3";
   }
   function applyLang(l) {
     state.lang = l;
@@ -127,6 +127,24 @@
   // ---------- chrome (header/footer) ----------
   var NAV = [["home", "nav_home"], ["about", "nav_about"], ["ask", "nav_ask"], ["projects", "nav_projects"], ["future", "nav_future"], ["funds", "nav_funds"], ["quran", "nav_quran"], ["prayer", "nav_prayer"], ["live", "nav_live"], ["media", "nav_media"], ["institutions", "nav_institutions"], ["initiatives", "nav_initiatives"], ["news", "nav_news"], ["register", "nav_register"], ["chairman", "chairman_title"], ["transparency", "nav_transparency"], ["contact", "nav_contact"]];
   IBT.NAV = NAV;
+  // grouped navigation (institutional structure); every older page stays reachable from a group or an internal link
+  var NAVG = [
+    ["about", "nav_about", [["about", "nav_overview"], ["history", "history"], ["mission", "nav_mission"], ["chairman", "chairman_title"], ["governance", "nav_governance"]]],
+    ["activities", "nav_activities", [["activity-education", "act_education"], ["activity-dawah", "act_dawah"], ["activity-research", "act_research"], ["activity-welfare", "act_welfare"], ["activity-community", "act_community"], ["initiatives", "nav_all_initiatives"]]],
+    ["projects", "nav_projects", [["project-ibjmc", "nav_masjid_complex"], ["academic-building", "nav_academic_bld"], ["future", "nav_future"], ["projects", "nav_all_projects"]]],
+    ["institutions", "nav_institutions", [["inst-kulliyatul-quran", "nav_kq"], ["institutions", "nav_other_inst"]]],
+    ["resources", "nav_resources", [["quran", "nav_quran"], ["ask", "nav_ask"], ["prayer", "nav_prayer"], ["media", "nav_videos"], ["live", "nav_live"], ["publications", "nav_publications"], ["news", "nav_news"], ["register", "nav_events"]]],
+    ["transparency", "nav_transparency", [["transparency-annual", "tr_annual"], ["transparency-financial", "tr_financial"], ["transparency-projects", "tr_projects"], ["transparency", "tr_accountability"]]],
+    ["contact", "nav_contact"]
+  ];
+  IBT.NAVG = NAVG;
+  function navGroupsHtml() {
+    return NAVG.map(function (g) {
+      if (!g[2]) return '<a class="ng-top" href="#' + g[0] + '" data-nav="' + g[0] + '">' + U(g[1] + "_s") + "</a>";
+      return '<div class="ng" data-g="' + g[0] + '"><button class="ng-btn" type="button" aria-expanded="false" aria-haspopup="true">' + U(g[1] + "_s") + '<svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></button><div class="ng-menu" role="menu">' +
+        g[2].map(function (c) { return '<a role="menuitem" href="#' + c[0] + '" data-nav="' + c[0] + '">' + (c[0] === "live" ? '<span class="live-dot" aria-hidden="true"></span>' : "") + U(c[1]) + "</a>"; }).join("") + "</div></div>";
+    }).join("");
+  }
   function langSwitch() { return '<div class="lang-switch" role="group" aria-label="Language"><button data-l="bn" lang="bn">বাংলা</button><button data-l="en" lang="en">EN</button><button data-l="ar" lang="ar">عربي</button></div>'; }
   function renderHeader() {
     var S = C.settings, a = S.announcement || {};
@@ -134,16 +152,18 @@
     $("#chrome-top").innerHTML = ann +
       '<header class="header"><div class="wrap"><div class="bar">' +
       '<a class="brand" href="#home" aria-label="' + esc(tr(S.siteName)) + '"><span class="mark"></span><span class="bt"><b>' + T(S.siteName) + "</b><small>" + T(S.tagline) + "</small></span></a>" +
-      '<nav class="nav" aria-label="Main">' + NAV.slice(1).map(function (n) { return '<a href="#' + n[0] + '" data-nav="' + n[0] + '">' + (n[0] === "live" ? '<span class="live-dot" aria-hidden="true"></span>' : "") + U(n[1]) + "</a>"; }).join("") + "</nav>" +
-      '<div class="more" id="more"><button class="more-btn" id="moreBtn" aria-haspopup="true" aria-expanded="false">' + U("more") + '<svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></button><div class="more-menu" id="moreMenu" role="menu"></div></div>' +
+      '<nav class="nav gnav" aria-label="Main">' + navGroupsHtml() + "</nav>" +
       '<div class="hd-actions"><button class="icon-btn" id="searchBtn" aria-label="' + Uraw("search") + '">' + icon("search") + "</button>" + langSwitch() +
-      '<div class="lang-mini" id="langMini"><button class="icon-btn" id="langMiniBtn" aria-haspopup="true" aria-label="Language"><span>' + ({ bn: "বাং", en: "EN", ar: "ع" })[state.lang] + '</span></button><div class="lang-mini-menu">' + [["bn", "বাংলা"], ["en", "English"], ["ar", "العربية"]].map(function (l) { return '<button data-l="' + l[0] + '" lang="' + l[0] + '" aria-pressed="' + (state.lang === l[0]) + '">' + l[1] + "</button>"; }).join("") + "</div></div>" +
+      '<div class="lang-mini" id="langMini"><button class="icon-btn" id="langMiniBtn" aria-haspopup="true" aria-label="' + ({ bn: "বাং", en: "EN", ar: "ع" })[state.lang] + ' · Language"><span>' + ({ bn: "বাং", en: "EN", ar: "ع" })[state.lang] + '</span></button><div class="lang-mini-menu">' + [["bn", "বাংলা"], ["en", "English"], ["ar", "العربية"]].map(function (l) { return '<button data-l="' + l[0] + '" lang="' + l[0] + '" aria-pressed="' + (state.lang === l[0]) + '">' + l[1] + "</button>"; }).join("") + "</div></div>" +
       '<button class="icon-btn theme-btn" id="themeBtn"></button>' + (cloud.canEdit ? '<a class="icon-btn" href="#admin" aria-label="' + Uraw("admin") + '" title="' + Uraw("admin") + '">' + icon("gear") + "</a>" : "") +
       '<a class="btn primary sm donate-hd" href="#donate">' + icon("heart") + U("donate") + '</a><button class="icon-btn menu-btn" id="menuBtn" aria-label="' + Uraw("menu") + '">' + icon("menu") + "</button></div>" +
       "</div></div></header>";
     document.documentElement.classList.toggle("has-ann", !!ann);
     $("#drawer .panel").innerHTML = '<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px"><span class="brand"><span class="mark"></span><span class="bt"><b>' + T(S.siteName) + '</b></span></span><button class="icon-btn" data-act="close-drawer" aria-label="' + Uraw("close") + '">' + icon("x") + "</button></div>" + langSwitch() +
-      NAV.map(function (n) { return '<a class="nl" href="#' + n[0] + '">' + U(n[1]) + ARROW + "</a>"; }).join("") +
+      '<a class="nl" href="#home">' + U("nav_home") + ARROW + "</a>" + NAVG.map(function (g) {
+        if (!g[2]) return '<a class="nl" href="#' + g[0] + '">' + U(g[1]) + ARROW + "</a>";
+        return '<details class="dg"><summary class="nl">' + U(g[1]) + '<svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></summary><div class="dg-in">' + g[2].map(function (c) { return '<a href="#' + c[0] + '">' + U(c[1]) + "</a>"; }).join("") + "</div></details>";
+      }).join("") + '<a class="nl" href="#funds">' + U("nav_funds") + ARROW + "</a>" +
       (cloud.canEdit ? '<a class="nl" href="#admin">' + U("admin") + icon("gear") + "</a>" : "") +
       '<a class="btn primary" style="justify-content:center;margin-top:10px" href="#donate">' + icon("heart") + U("donate") + "</a>";
     applyTheme(state.themePref); applyLang(state.lang);
@@ -155,17 +175,10 @@
   }
   // Priority nav: hide trailing items that do not fit (they stay in the drawer)
   function fitNav() {
-    var nav = $(".header .nav"); if (!nav) return;
-    var hd = $(".header"); hd.classList.remove("cramped");
-    var items = $$("a", nav); items.forEach(function (a) { a.style.display = ""; });
-    var more = $("#more"), menu = $("#moreMenu");
-    if (getComputedStyle(nav).display === "none") { if (more) more.style.display = "none"; return; }
-    if (more) more.style.display = "";
-    var hidden = [];
-    for (var i = items.length - 1; i >= 0 && nav.scrollWidth > nav.clientWidth + 1; i--) { items[i].style.display = "none"; hidden.unshift(items[i]); }
-    if (items.length - hidden.length < 3) hd.classList.add("cramped");
-    if (menu) menu.innerHTML = hidden.map(function (a) { return '<a role="menuitem" data-nav="' + a.dataset.nav + '" class="' + a.className + '" href="' + a.getAttribute("href") + '">' + a.innerHTML + "</a>"; }).join("");
-    if (more) more.style.display = hidden.length ? "" : "none";
+    var nav = $(".header .nav"), hd = $(".header"); if (!nav || !hd) return;
+    hd.classList.remove("collapsed");
+    if (getComputedStyle(nav).display === "none") return;
+    if (nav.scrollWidth > nav.clientWidth + 1) hd.classList.add("collapsed");
   }
   window.addEventListener("resize", function () { clearTimeout(fitNav._t); fitNav._t = setTimeout(fitNav, 120); });
   if (document.fonts) { document.fonts.ready.then(function () { fitNav(); }); if (document.fonts.addEventListener) document.fonts.addEventListener("loadingdone", function () { fitNav(); }); }
@@ -174,10 +187,10 @@
     var S = C.settings, c = S.contact || {};
     $("#chrome-bottom").innerHTML = '<footer class="footer"><div class="wrap"><div class="cols">' +
       '<div><a class="brand" href="#home"><span class="mark"></span><span class="bt"><b>' + T(S.siteName) + "</b><small>" + T(S.motto) + '</small></span></a><p class="muted" style="margin-top:14px;max-width:340px">' + U("footer_note") + '</p><div class="socials">' + (S.social || []).map(function (s) { return '<a class="icon-btn" href="' + esc(s.url) + '" target="_blank" rel="noopener" aria-label="' + esc(s.name) + '">' + icon(s.icon === "x" ? "x2" : s.icon) + "</a>"; }).join("") + "</div></div>" +
-      "<div><h4>" + U("nav_about") + "</h4><ul>" + NAV.slice(1, 6).map(function (n) { return '<li><a href="#' + n[0] + '">' + U(n[1]) + "</a></li>"; }).join("") + '<li><a href="#chairman">' + U("chairman_title") + "</a></li></ul></div>" +
-      "<div><h4>" + U("related_sites") + "</h4><ul>" + (S.relatedSites || []).map(function (s) { return '<li><a href="' + esc(s.url) + '" target="_blank" rel="noopener">' + T(s.name) + "</a></li>"; }).join("") + '<li><a href="#transparency">' + U("nav_transparency") + "</a></li></ul></div>" +
+      "<div><h4>" + U("nav_about") + "</h4><ul>" + NAVG[0][2].concat([["projects", "nav_projects"], ["institutions", "nav_institutions"], ["initiatives", "nav_activities"]]).map(function (n) { return '<li><a href="#' + n[0] + '">' + U(n[1]) + "</a></li>"; }).join("") + "</ul></div>" +
+      "<div><h4>" + U("nav_resources") + "</h4><ul>" + [["donate", "donate"], ["funds", "nav_funds"], ["ask", "nav_ask"], ["quran", "nav_quran"], ["prayer", "nav_prayer"], ["register", "nav_events"], ["transparency", "nav_transparency"]].map(function (n) { return '<li><a href="#' + n[0] + '">' + U(n[1]) + "</a></li>"; }).join("") + (S.relatedSites || []).map(function (s) { return '<li><a href="' + esc(s.url) + '" target="_blank" rel="noopener">' + T(s.name) + "</a></li>"; }).join("") + "</ul></div>" +
       "<div><h4>" + U("nav_contact") + '</h4><ul class="muted"><li style="display:flex;gap:8px">' + icon("pin") + "<span>" + T(c.office) + '</span></li><li style="display:flex;gap:8px">' + icon("phone") + '<span class="ltr">' + (c.phones || []).map(esc).join("<br>") + '</span></li><li style="display:flex;gap:8px">' + icon("mail") + '<span class="ltr">' + esc(c.email) + (c.email2 ? "<br>" + esc(c.email2) : "") + "</span></li></ul></div>" +
-      '</div><div class="bottom"><span>© ' + digits(new Date().getFullYear()) + " " + T(S.siteName) + " · " + esc(hijri(new Date().toISOString().slice(0, 10)).replace(/^.*?(\d{4}|[০-৯]{4}|[٠-٩]{4}).*$/, "$1")) + (state.lang === "en" ? " AH" : state.lang === "bn" ? " হি." : " هـ") + '</span><span>' + T(S.tagline) + "</span></div></div></footer>";
+      '</div><div class="bottom"><span>© ' + digits(new Date().getFullYear()) + " " + T(S.siteName) + " · " + esc(hijri(new Date().toISOString().slice(0, 10)).replace(/^.*?(\d{4}|[০-৯]{4}|[٠-٩]{4}).*$/, "$1")) + (state.lang === "en" ? " AH" : state.lang === "bn" ? " হি." : " هـ") + '</span><span class="ft-links"><a href="#privacy">' + U("privacy") + '</a> · <a href="#terms">' + U("terms") + '</a> · <a href="#transparency">' + U("nav_transparency") + "</a></span></div></div></footer>";
   }
 
   // ---------- page helpers ----------
@@ -216,7 +229,7 @@
     var slides = (H.heroSlides || []).length ? H.heroSlides : [{ image: H.heroImage, caption: "" }];
     var latest = (V.videos || []).filter(function (v) { return v.channel === "ibt"; })[0];
     var html = '<section class="hero hero-photo" id="hero"><div class="slides" aria-hidden="true">' + slides.map(function (sl, i) { return '<div class="slide' + (i ? "" : " on") + '"><img src="' + esc(img(sl.image)) + '" alt=""' + (i ? ' loading="lazy"' : "") + "></div>"; }).join("") + "</div>" +
-      '<div class="wrap"><div class="content"><div class="eyebrow">' + T(H.heroEyebrow) + '</div><h1 class="h-display">' + T(H.heroTitle) + '</h1><p class="lead">' + T(H.heroText) + '</p><div class="ctas"><a class="btn primary" href="#project-ibjmc">' + icon("masjid") + T(H.heroCta2) + '</a><button class="btn light" data-story="' + esc(H.heroStory || "ibjmc") + '">' + icon("play") + T(H.heroCta1) + "</button></div></div>" +
+      '<div class="wrap"><div class="content"><div class="eyebrow">' + T(H.heroEyebrow) + '</div><h1 class="h-display">' + T(H.heroTitle) + '</h1><p class="lead">' + T(H.heroText) + '</p><div class="ctas"><a class="btn light" href="#activities">' + icon("book") + U("explore_work") + '</a><a class="btn ghost-light" href="#projects">' + icon("masjid") + U("discover_projects") + '</a><a class="btn gold" href="#donate">' + icon("heart") + U("support_mission") + '</a><button class="btn ghost-light icon-only" data-story="' + esc(H.heroStory || "ibjmc") + '" aria-label="' + esc(tr(H.heroCta1)) + '">' + icon("play") + "</button></div></div>" +
       '<div class="hero-foot"><div><div class="cap" id="heroCap">' + slideCap(slides[0]) + '</div><div class="dots" role="tablist">' + slides.map(function (sl, i) { return '<button role="tab" aria-label="' + (i + 1) + '" aria-current="' + (i ? "false" : "true") + '" data-slide="' + i + '"></button>'; }).join("") + "</div></div>" +
       (latest ? '<button class="latest-vid" data-play="' + esc(latest.id) + '" data-title="' + esc(latest.title) + '"><img src="' + esc(ytThumb(latest.id, true)) + '" alt=""><span><small>' + U("latest_videos") + " · YouTube</small><b>" + esc(latest.title) + "</b></span></button>" : "") + "</div></div></section>";
     if (regs.length) html += '<div class="regbar"><div class="wrap"><span class="chip"><span class="dot pulse"></span>' + U("reg_open") + '</span>' + regs.slice(0, 3).map(function (r) { return '<a href="#reg-' + esc(r.id) + '">' + T(r.title) + ARROW + "</a>"; }).join("") + "</div></div>";
@@ -322,7 +335,7 @@
   }
   function impactSection() {
     var M = C.impact; if (!M) return "";
-    return '<section class="section" style="padding-top:0"><div class="wrap"><div class="sec-head"><div><div class="eyebrow">' + U("as_of") + " " + fdate(M.asOf) + '</div><h2 class="h-section">' + U("impact_title") + '</h2></div></div><div class="grid g3">' + (M.groups || []).map(function (g) { return '<div class="impact-group glass rv"><h3>' + T(g.title) + "</h3>" + (g.items || []).map(function (it) { return '<div class="stat"><b data-count="' + esc(it.value) + '" data-suffix="' + esc(it.suffix || "") + '">' + digits(0) + "</b><span>" + T(it.label) + "</span></div>"; }).join("") + "</div>"; }).join("") + '</div><div class="source-line"><span class="chip muted">' + U("source") + ": " + T(M.source) + "</span>" + (M.qualitative || []).map(function (q) { return '<span class="chip">' + T(q) + "</span>"; }).join("") + "</div></div></section>";
+    return '<section class="section" style="padding-top:0"><div class="wrap"><div class="sec-head"><div><div class="eyebrow">' + U("as_of") + " " + fdate(M.asOf) + '</div><h2 class="h-section">' + U("impact_title") + '</h2></div></div><div class="grid g3">' + (M.groups || []).map(function (g) { return '<div class="impact-group glass rv"><h3>' + T(g.title) + "</h3>" + (g.items || []).map(function (it) { return '<div class="stat"><b data-count="' + esc(it.value) + '" data-suffix="' + esc(it.suffix || "") + '">' + num(+it.value) + esc(it.suffix || "") + "</b><span>" + T(it.label) + "</span></div>"; }).join("") + "</div>"; }).join("") + '</div><div class="source-line"><span class="chip muted">' + U("source") + ": " + T(M.source) + "</span>" + (M.qualitative || []).map(function (q) { return '<span class="chip">' + T(q) + "</span>"; }).join("") + "</div></div></section>";
   }
   function newsCard(n) { return card({ href: "#news-" + n.id, image: n.image, title: T(n.title), text: T(n.summary), meta: '<span class="faint">' + fdate(n.date) + "</span>", chip: n.video ? '<span class="chip">' + icon("play") + "YouTube</span>" : "" }); }
 
@@ -404,7 +417,7 @@
     return pageHead("YouTube", U("nav_media"), "", crumbs([[U("nav_media")]])) +
       '<section class="section tight"><div class="wrap"><h2 class="h-section">' + U("documentaries") + '</h2><div class="grid g2" style="margin-top:16px">' + (C.stories || []).map(function (s) { return '<button class="card glass" style="text-align:start;padding:0;cursor:pointer;color:inherit" data-story="' + esc(s.id) + '"><div class="media" style="aspect-ratio:16/8"><img loading="lazy" src="' + esc(img(s.cover)) + '" alt=""><span class="chip gold">' + digits((s.chapters || []).length) + " " + U("chapter") + '</span></div><div class="body"><h3>' + T(s.title) + '</h3><span class="linkarrow">' + icon("play") + U("enter_story") + "</span></div></button>"; }).join("") + "</div></div></section>" +
       '<section class="section tight"><div class="wrap"><div class="sec-head"><div><h2 class="h-section">' + U("all_videos") + '</h2><p class="faint" id="vcount"></p></div><div style="display:flex;gap:8px;flex-wrap:wrap">' + chans.map(function (y) { return '<a class="btn sm" href="' + esc(y.url) + '?sub_confirmation=1" target="_blank" rel="noopener">' + icon("youtube") + esc(y.name) + "</a>"; }).join("") + '</div></div>' +
-      '<div class="vfilter"><div class="tabs" id="vch"><button aria-pressed="true" data-ch="">' + U("all") + "</button>" + chans.map(function (c) { return '<button aria-pressed="false" data-ch="' + esc(c.id) + '">' + esc(c.name) + "</button>"; }).join("") + '<button aria-pressed="false" data-ch="live">' + U("live") + '</button></div><select class="input" id="vpl" style="max-width:260px"><option value="">' + U("playlists") + "</option>" + (V.playlists || []).map(function (p) { return '<option value="' + esc(p.id) + '">' + esc(p.name) + " (" + digits((p.videos || []).length) + ")</option>"; }).join("") + '</select><input class="input" id="vq" type="search" placeholder="' + esc(Uraw("search_videos")) + '"></div>' +
+      '<div class="vfilter"><div class="tabs" id="vch"><button aria-pressed="true" data-ch="">' + U("all") + "</button>" + chans.map(function (c) { return '<button aria-pressed="false" data-ch="' + esc(c.id) + '">' + esc(c.name) + "</button>"; }).join("") + '<button aria-pressed="false" data-ch="live">' + U("live") + '</button></div><select class="input" id="vpl" aria-label="Playlist" style="max-width:260px"><option value="">' + U("playlists") + "</option>" + (V.playlists || []).map(function (p) { return '<option value="' + esc(p.id) + '">' + esc(p.name) + " (" + digits((p.videos || []).length) + ")</option>"; }).join("") + '</select><input class="input" id="vq" type="search" placeholder="' + esc(Uraw("search_videos")) + '"></div>' +
       '<div class="grid g4" id="vgrid"></div><div style="text-align:center;margin-top:22px"><button class="btn" id="vmore">' + U("load_more") + "</button></div></div></section>";
   };
   var vstate = { ch: "", pl: "", q: "", n: 24 };
@@ -600,6 +613,7 @@
     if (m) html = (m[1] === "news" ? P.newsItem : P[m[1]])(m[2]);
     else html = (P[h] || P.notfound)();
     var main = $("#main"); main.innerHTML = html;
+    $$(".ng").forEach(function (g) { g.classList.toggle("active", !!$$(".ng-menu a", g).filter(function (x) { var n = x.dataset.nav; return h === n || (n !== "transparency" && h.indexOf(n + "-") === 0); }).length); });
     $$(".nav a, .more-menu a").forEach(function (a) { a.classList.toggle("active", h.indexOf(a.dataset.nav) === 0 || (a.dataset.nav === "institutions" && h.indexOf("inst-") === 0) || (a.dataset.nav === "projects" && h.indexOf("project-") === 0) || (a.dataset.nav === "initiatives" && h.indexOf("init-") === 0) || (a.dataset.nav === "register" && h.indexOf("reg-") === 0)); });
     if (!IBT._noscroll) window.scrollTo({ top: 0, behavior: "instant" in window ? "instant" : "auto" });
     IBT._noscroll = false;
@@ -644,7 +658,8 @@
   function countIn(root) {
     $$("[data-count]", root).forEach(function (el) {
       if (el._done) return; el._done = true;
-      if (el.dataset.plain) return;
+      // statistics are shown at their recorded value; no counting animation (it showed wrong numbers mid-way)
+      if (el.dataset.plain || true) { if (!el.textContent.trim() || el.textContent === digits(0)) el.textContent = num(parseFloat(el.dataset.count) || 0) + (el.dataset.suffix || ""); return; }
       var to = parseFloat(el.dataset.count) || 0, suf = el.dataset.suffix || "", t0 = performance.now(), dur = document.documentElement.classList.contains("nomotion") ? 1 : 1400;
       (function step(now) { var p = Math.min(1, (now - t0) / dur), v = Math.round(to * (1 - Math.pow(1 - p, 3))); el.textContent = num(v) + suf; if (p < 1) requestAnimationFrame(step); })(t0);
     });
@@ -673,6 +688,9 @@
     if (t.closest("#menuBtn")) { $("#drawer").classList.add("open"); return; }
     if (t.closest("#langMiniBtn")) { $("#langMini").classList.toggle("open"); return; }
     var lmo = $("#langMini"); if (lmo && lmo.classList.contains("open") && !t.closest("#langMini [data-l]")) lmo.classList.remove("open");
+    var ngb = t.closest(".ng-btn");
+    $$(".ng.open").forEach(function (g) { if (!ngb || g !== ngb.parentElement) { g.classList.remove("open"); $(".ng-btn", g).setAttribute("aria-expanded", "false"); } });
+    if (ngb) { var gg = ngb.parentElement, op2 = !gg.classList.contains("open"); gg.classList.toggle("open", op2); ngb.setAttribute("aria-expanded", String(op2)); return; }
     var mb = t.closest("#moreBtn"); var mo = $("#more");
     if (mb) { var op = !mo.classList.contains("open"); mo.classList.toggle("open", op); mb.setAttribute("aria-expanded", String(op)); return; }
     if (mo && mo.classList.contains("open")) { mo.classList.remove("open"); $("#moreBtn").setAttribute("aria-expanded", "false"); }
@@ -688,7 +706,7 @@
     var df = t.closest("a[data-fund]"); if (df) state.fund = df.dataset.fund;
   });
   document.addEventListener("keydown", function (e) {
-    if (e.key === "Escape") { var mo2 = $("#more"); if (mo2) mo2.classList.remove("open"); closePlayer(); if ($("#story").classList.contains("open")) closeStory(); $("#search").classList.remove("open"); $("#drawer").classList.remove("open"); $("#lightbox").classList.remove("open"); }
+    if (e.key === "Escape") { var mo2 = $("#more"); if (mo2) mo2.classList.remove("open"); $$(".ng.open").forEach(function (g) { g.classList.remove("open"); }); closePlayer(); if ($("#story").classList.contains("open")) closeStory(); $("#search").classList.remove("open"); $("#drawer").classList.remove("open"); $("#lightbox").classList.remove("open"); }
     if ($("#story").classList.contains("open")) { var rtl = state.lang === "ar"; if (e.key === "ArrowRight") storyGo(storyIdx + (rtl ? -1 : 1)); if (e.key === "ArrowLeft") storyGo(storyIdx + (rtl ? 1 : -1)); }
     if ((e.key === "k" && (e.ctrlKey || e.metaKey)) || (e.key === "/" && !/input|textarea|select/i.test(document.activeElement.tagName))) { e.preventDefault(); $("#search").classList.add("open"); $("#searchInput").focus(); }
   });

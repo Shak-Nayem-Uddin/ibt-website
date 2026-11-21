@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /harvest/
+Disallow: /apps-script/
+
+Sitemap: https://shak-nayem-uddin.github.io/ibt-website/sitemap.xml

@@ -246,8 +246,8 @@
     var c = C(), H = c.home, S = c.settings, V = h.V();
     var slides = (H.heroSlides || []).length ? H.heroSlides : [{ image: H.heroImage, caption: "" }];
     var latest = (V.videos || []).filter(function (v) { return v.channel === "ibt"; })[0];
-    var html = '<section class="hero hero-photo" id="hero"><div class="slides" aria-hidden="true">' + slides.map(function (sl, i) { return '<div class="slide' + (i ? "" : " on") + '"><img src="' + esc(img(sl.image)) + '" alt=""' + (i ? ' loading="lazy"' : ' fetchpriority="high"') + "></div>"; }).join("") + "</div>" +
-      '<div class="wrap"><div class="content"><div class="eyebrow">' + T(H.heroEyebrow) + '</div><h1 class="h-display">' + T(H.heroTitle) + '</h1><p class="lead">' + T(H.heroText) + '</p><div class="ctas"><a class="btn light lg" href="#funds">' + icon("heart") + U("donate_now") + '</a><a class="btn on-dark lg" href="#future">' + icon("cube") + U("nav_future") + "</a></div></div>" +
+    var html = '<section class="hero hero-photo" id="hero"><div class="slides" aria-hidden="true">' + slides.map(function (sl, i) { return '<div class="slide' + (i ? "" : " on") + '"><img ' + (i ? 'data-src' : 'src') + '="' + esc(img(sl.image)) + '" alt=""' + (i ? ' decoding="async"' : ' fetchpriority="high"') + "></div>"; }).join("") + "</div>" +
+      '<div class="wrap"><div class="content"><div class="eyebrow">' + T(H.heroEyebrow) + '</div><h1 class="h-display">' + T(H.heroTitle) + '</h1><p class="lead">' + T(H.heroText) + '</p><div class="ctas"><a class="btn light lg" href="#activities">' + icon("book") + U("explore_work") + '</a><a class="btn on-dark lg" href="#projects">' + icon("cube") + U("discover_projects") + '</a><a class="btn gold lg" href="#donate">' + icon("heart") + U("support_mission") + "</a></div></div>" +
       '<div class="hero-foot"><div><div class="cap" id="heroCap">' + h.slideCap(slides[0]) + '</div><div class="dots" role="tablist">' + slides.map(function (sl, i) { return '<button role="tab" aria-label="' + (i + 1) + '" aria-current="' + (i ? "false" : "true") + '" data-slide="' + i + '"></button>'; }).join("") + "</div></div>" +
       (latest ? '<button class="latest-vid" data-play="' + esc(latest.id) + '" data-title="' + esc(latest.title) + '"><img src="' + esc(h.ytThumb(latest.id, true)) + '" alt=""><span><small>' + U("latest_videos") + " · YouTube</small><b>" + esc(latest.title) + "</b></span></button>" : "") + "</div></div></section>";
     html += '<div class="wrap"><a class="pt-strip" id="ptStrip" href="#prayer" style="color:inherit"><div class="now"><small>' + U("prayer_title") + '</small><b data-pt-next>—</b><small data-pt-loc></small></div><div class="times" data-pt-times></div><span class="linkarrow">' + U("view_all") + ARROW + "</span></a></div>";
@@ -277,7 +277,7 @@
 
   /* ================= prayer times ================= */
   var CITIES = [
-    ["BD", "বাংলাদেশ", "Bangladesh", "بنغلاديش", "Asia/Dhaka", "Karachi", [["Dhaka", "ঢাকা", "دكا", 23.8103, 90.4125], ["Chattogram", "চট্টগ্রাম", "شيتاغونغ", 22.3569, 91.7832], ["Sylhet", "সিলেট", "سلهت", 24.8949, 91.8687], ["Rajshahi", "রাজশাহী", "راجشاهي", 24.3745, 88.6042], ["Khulna", "খুলনা", "خولنا", 22.8456, 89.5403], ["Barishal", "বরিশাল", "باريسال", 22.701, 90.3535], ["Rangpur", "রংপুর", "رانغبور", 25.7439, 89.2752], ["Mymensingh", "ময়মনসিংহ", "ميمنسينغ", 24.7471, 90.4203], ["Cumilla", "কুমিল্লা", "كوميلا", 23.4607, 91.1809], ["Gazipur", "গাজীপুর", "غازيبور", 23.9999, 90.4203], ["Narayanganj", "নারায়ণগঞ্জ", "نارايانغانج", 23.6238, 90.5], ["Cox's Bazar", "কক্সবাজার", "كوكس بازار", 21.4272, 92.0058]]],
+    ["BD", "বাংলাদেশ", "Bangladesh", "بنغلاديش", "Asia/Dhaka", "Karachi", [["Uttara, Dhaka", "উত্তরা, ঢাকা", "أُترا، دكا", 23.8759, 90.3795], ["Dhaka", "ঢাকা", "دكا", 23.8103, 90.4125], ["Chattogram", "চট্টগ্রাম", "شيتاغونغ", 22.3569, 91.7832], ["Sylhet", "সিলেট", "سلهت", 24.8949, 91.8687], ["Rajshahi", "রাজশাহী", "راجشاهي", 24.3745, 88.6042], ["Khulna", "খুলনা", "خولنا", 22.8456, 89.5403], ["Barishal", "বরিশাল", "باريسال", 22.701, 90.3535], ["Rangpur", "রংপুর", "رانغبور", 25.7439, 89.2752], ["Mymensingh", "ময়মনসিংহ", "ميمنسينغ", 24.7471, 90.4203], ["Cumilla", "কুমিল্লা", "كوميلا", 23.4607, 91.1809], ["Gazipur", "গাজীপুর", "غازيبور", 23.9999, 90.4203], ["Narayanganj", "নারায়ণগঞ্জ", "نارايانغانج", 23.6238, 90.5], ["Cox's Bazar", "কক্সবাজার", "كوكس بازار", 21.4272, 92.0058]]],
     ["SA", "সৌদি আরব", "Saudi Arabia", "السعودية", "Asia/Riyadh", "UmmAlQura", [["Makkah", "মক্কা", "مكة المكرمة", 21.4225, 39.8262], ["Madinah", "মদিনা", "المدينة المنورة", 24.4672, 39.6111], ["Riyadh", "রিয়াদ", "الرياض", 24.7136, 46.6753], ["Jeddah", "জেদ্দা", "جدة", 21.4858, 39.1925], ["Dammam", "দাম্মাম", "الدمام", 26.4207, 50.0888]]],
     ["AE", "সংযুক্ত আরব আমিরাত", "United Arab Emirates", "الإمارات", "Asia/Dubai", "Dubai", [["Dubai", "দুবাই", "دبي", 25.2048, 55.2708], ["Abu Dhabi", "আবুধাবি", "أبوظبي", 24.4539, 54.3773], ["Sharjah", "শারজাহ", "الشارقة", 25.3463, 55.4209]]],
     ["QA", "কাতার", "Qatar", "قطر", "Asia/Qatar", "Qatar", [["Doha", "দোহা", "الدوحة", 25.2854, 51.531]]],
@@ -308,10 +308,9 @@
   function ptSettings() {
     var s = null; try { s = JSON.parse(h.ls("ibt_pt") || "null"); } catch (e) { }
     if (s && s.lat != null) return s;
-    var tz = ""; try { tz = Intl.DateTimeFormat().resolvedOptions().timeZone || ""; } catch (e) { }
-    var cc = 0, ci = 0, found = false;
-    CITIES.forEach(function (co, i) { co[6].forEach(function (c, j) { if (!found && (c[5] || co[4]) === tz) { cc = i; ci = j; found = true; } }); });
-    return cityPick(cc, ci, null, "standard");
+    // default is always Uttara, Dhaka (IBT's home), never guessed from the device time zone
+    var cc = 0; CITIES.forEach(function (co, i) { if (co[0] === "BD") cc = i; });
+    return cityPick(cc, 0, null, "standard");
   }
   function cityPick(cc, ci, method, asr) {
     var co = CITIES[cc], c = co[6][ci];
@@ -369,11 +368,11 @@
       var s = ptSettings();
       function setHtml() {
         var co = CITIES[s.cc] || CITIES[0];
-        box.innerHTML = '<div class="field"><label>' + U("country") + '</label><select class="input" data-pt="cc">' + CITIES.map(function (c, i) { return '<option value="' + i + '"' + (i === s.cc && !s.geo ? " selected" : "") + ">" + esc(st.lang === "bn" ? c[1] : st.lang === "ar" ? c[3] : c[2]) + "</option>"; }).join("") + "</select></div>" +
-          '<div class="field"><label>' + U("city") + '</label><select class="input" data-pt="ci">' + co[6].map(function (c, j) { return '<option value="' + j + '"' + (j === s.ci && !s.geo ? " selected" : "") + ">" + esc(st.lang === "bn" ? c[1] : st.lang === "ar" ? c[2] : c[0]) + "</option>"; }).join("") + "</select></div>" +
+        box.innerHTML = '<div class="field"><label>' + U("country") + '</label><select class="input" aria-label="' + esc(Uraw("country")) + '" data-pt="cc">' + CITIES.map(function (c, i) { return '<option value="' + i + '"' + (i === s.cc && !s.geo ? " selected" : "") + ">" + esc(st.lang === "bn" ? c[1] : st.lang === "ar" ? c[3] : c[2]) + "</option>"; }).join("") + "</select></div>" +
+          '<div class="field"><label>' + U("city") + '</label><select class="input" aria-label="' + esc(Uraw("city")) + '" data-pt="ci">' + co[6].map(function (c, j) { return '<option value="' + j + '"' + (j === s.ci && !s.geo ? " selected" : "") + ">" + esc(st.lang === "bn" ? c[1] : st.lang === "ar" ? c[2] : c[0]) + "</option>"; }).join("") + "</select></div>" +
           '<button class="btn" data-pt-geo>' + icon("locate") + U("use_location") + "</button>" +
-          '<div class="field"><label>' + U("calc_method") + '</label><select class="input" data-pt="method">' + METHODS.map(function (m) { return '<option value="' + m[0] + '"' + (m[0] === s.method ? " selected" : "") + ">" + esc(m[1]) + "</option>"; }).join("") + "</select></div>" +
-          '<div class="field"><label>' + U("asr_method") + '</label><select class="input" data-pt="asr"><option value="standard"' + (s.asr !== "hanafi" ? " selected" : "") + ">" + esc(Uraw("asr_standard")) + '</option><option value="hanafi"' + (s.asr === "hanafi" ? " selected" : "") + ">" + esc(Uraw("asr_hanafi")) + "</option></select></div>" +
+          '<div class="field"><label>' + U("calc_method") + '</label><select class="input" aria-label="' + esc(Uraw("calc_method")) + '" data-pt="method">' + METHODS.map(function (m) { return '<option value="' + m[0] + '"' + (m[0] === s.method ? " selected" : "") + ">" + esc(m[1]) + "</option>"; }).join("") + "</select></div>" +
+          '<div class="field"><label>' + U("asr_method") + '</label><select class="input" aria-label="' + esc(Uraw("asr_method")) + '" data-pt="asr"><option value="standard"' + (s.asr !== "hanafi" ? " selected" : "") + ">" + esc(Uraw("asr_standard")) + '</option><option value="hanafi"' + (s.asr === "hanafi" ? " selected" : "") + ">" + esc(Uraw("asr_hanafi")) + "</option></select></div>" +
           '<p class="faint" style="margin:0">' + U("prayer_note") + "</p>";
       }
       function draw() {
@@ -462,10 +461,10 @@
   }
   function drawTop() {
     var s = Q.s, top = $("#qTop");
-    top.innerHTML = '<div><label>' + U("surah") + '</label><select class="input" data-q="surah">' + Q.chapters.map(function (c) { return '<option value="' + c.id + '"' + (s.mode === "surah" && c.id === s.n ? " selected" : "") + ">" + digits(c.id) + ". " + esc(c.name_simple) + " · " + esc(c.translated_name.name) + "</option>"; }).join("") + "</select></div>" +
-      '<div><label>' + U("juz") + '</label><select class="input" data-q="juz"><option value="">—</option>' + Array.apply(null, Array(30)).map(function (_, i) { return '<option value="' + (i + 1) + '"' + (s.mode === "juz" && s.n === i + 1 ? " selected" : "") + ">" + U("juz") + " " + digits(i + 1) + "</option>"; }).join("") + "</select></div>" +
-      '<div><label>' + U("reciter") + '</label><select class="input" data-q="reciter">' + RECITERS.map(function (r) { return '<option value="' + r[0] + '"' + (r[0] === s.reciter ? " selected" : "") + ">" + esc(r[1]) + "</option>"; }).join("") + "</select></div>" +
-      '<div><label>' + U("tafsir") + '</label><select class="input" data-q="tafsir"><option value="166"' + (s.tafsir === 166 ? " selected" : "") + ">" + esc(Uraw("tafsir_zakaria")) + '</option><option value="169"' + (s.tafsir === 169 ? " selected" : "") + ">" + esc(Uraw("tafsir_kathir")) + "</option></select></div>" +
+    top.innerHTML = '<div><label>' + U("surah") + '</label><select class="input" aria-label="' + esc(Uraw("surah")) + '" data-q="surah">' + Q.chapters.map(function (c) { return '<option value="' + c.id + '"' + (s.mode === "surah" && c.id === s.n ? " selected" : "") + ">" + digits(c.id) + ". " + esc(c.name_simple) + " · " + esc(c.translated_name.name) + "</option>"; }).join("") + "</select></div>" +
+      '<div><label>' + U("juz") + '</label><select class="input" aria-label="' + esc(Uraw("juz")) + '" data-q="juz"><option value="">—</option>' + Array.apply(null, Array(30)).map(function (_, i) { return '<option value="' + (i + 1) + '"' + (s.mode === "juz" && s.n === i + 1 ? " selected" : "") + ">" + U("juz") + " " + digits(i + 1) + "</option>"; }).join("") + "</select></div>" +
+      '<div><label>' + U("reciter") + '</label><select class="input" aria-label="' + esc(Uraw("reciter")) + '" data-q="reciter">' + RECITERS.map(function (r) { return '<option value="' + r[0] + '"' + (r[0] === s.reciter ? " selected" : "") + ">" + esc(r[1]) + "</option>"; }).join("") + "</select></div>" +
+      '<div><label>' + U("tafsir") + '</label><select class="input" aria-label="' + esc(Uraw("tafsir")) + '" data-q="tafsir"><option value="166"' + (s.tafsir === 166 ? " selected" : "") + ">" + esc(Uraw("tafsir_zakaria")) + '</option><option value="169"' + (s.tafsir === 169 ? " selected" : "") + ">" + esc(Uraw("tafsir_kathir")) + "</option></select></div>" +
       '<div class="q-acts"><button class="btn primary sm" data-q="play">' + icon("play") + U("play_all") + '</button><button class="toggle" data-q="trBn" aria-pressed="' + !!s.trBn + '">বাংলা</button><button class="toggle" data-q="trEn" aria-pressed="' + !!s.trEn + '">English</button><button class="toggle" data-q="tafAll" aria-pressed="' + !!s.tafAll + '">' + icon("doc") + U(s.tafAll ? "hide_tafsir" : "show_tafsir") + '</button><button class="toggle" data-q="size" aria-label="' + esc(Uraw("font_size")) + '" title="' + esc(Uraw("font_size")) + '">A<small>A</small></button></div>';
   }
   function loadPart(reset) {
@@ -585,7 +584,7 @@
   /* ================= hooks ================= */
   IBT.afterHooks = (IBT.afterHooks || []).concat([function (route) {
     if (route === "donate") drawWiz();
-    if ($("#campusStage")) mountCampus();
+    if ($("#campusStage")) { var cs = $("#campusStage"); if ("IntersectionObserver" in window && st.route === "home") { var cio = new IntersectionObserver(function (es) { if (es[0].isIntersecting) { cio.disconnect(); mountCampus(); } }, { rootMargin: "400px" }); cio.observe(cs); } else mountCampus(); }
     if ($("#ptStrip")) homeStrip();
     if (route === "prayer") prayerPage();
     if (route === "quran") qInit();
