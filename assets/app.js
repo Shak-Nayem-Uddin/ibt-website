@@ -31,6 +31,7 @@
   function img(ref) {
     if (!ref) return "";
     if (ref.indexOf("yt:") === 0) return ytThumb(ref.slice(3));
+    if (ref.indexOf("asset:gh/") === 0) return ref.slice(9);
     if (ref.indexOf("asset:") === 0) return window.IBT_GAS ? window.IBT_GAS.assetUrl(ref.slice(6)) : "/_blob/" + ref.slice(6);
     return ref;
   }
@@ -470,7 +471,7 @@
     var action = "";
     if (st === "open") {
       if (r.mode !== "native" && r.formUrl) action = '<a class="btn primary" href="' + esc(prefill(r)) + '" target="_blank" rel="noopener">' + U("open_form") + icon("ext") + '</a><p class="faint" style="margin-top:10px">Google Forms</p>';
-      else action = (r.mode !== "native" ? '<div class="notice info" style="margin-bottom:14px">' + U("form_pending") + "</div>" : "") + submitForm("registration", r.id, r.fields && r.fields.length ? r.fields : [["name", "text", true], ["phone", "tel", true], ["email", "email", false], ["message", "textarea", false]]);
+      else action = (r.mode !== "native" ? '<div class="notice info" style="margin-bottom:14px">' + U("form_pending") + "</div>" : "") + submitForm("registration", r.id, r.fields && r.fields.length ? r.fields : r.formType === "admission" ? [["student", "text", true, null, "student_name"], ["guardian", "text", true, null, "guardian_name"], ["phone", "tel", true], ["age_class", "text", true, null, "age_class"], ["message", "textarea", false]] : [["name", "text", true], ["phone", "tel", true], ["email", "email", false], ["message", "textarea", false]]);
     } else if (st === "info") action = '<div class="notice info"><b>' + U("contact_office") + '</b><div class="ltr" style="margin-top:6px">' + (c.phones || []).map(function (p) { return '<a href="tel:' + esc(p.replace(/[^+\d]/g, "")) + '">' + esc(p) + "</a>"; }).join(" · ") + "</div></div>";
     else action = '<div class="notice info">' + U("reg_" + st) + (st === "soon" && r.opens ? " · " + U("opens") + ": " + fdate(r.opens) : "") + "</div>";
     var kv = (r.opens ? "<dt>" + U("opens") + "</dt><dd>" + fdate(r.opens) + "</dd>" : "") + (r.closes ? "<dt>" + U("closes") + "</dt><dd>" + fdate(r.closes) + (st === "open" ? ' <span class="countdown" data-until="' + esc(r.closes) + '"></span>' : "") + "</dd>" : "") + "<dt>" + U("venue") + "</dt><dd>" + T(r.venue) + "</dd>";

@@ -82,6 +82,7 @@
   }
   function joinUrl() { return ((C() || {}).settings || {}).joinUrl || ""; }
   var INTENTS = [
+    { k: ["গেট টুগেদার", "গেট-টুগেদার", "গেটটুগেদার", "get together", "get-together", "gettogether", "পিকনিক", "picnic", "১৬ ডিসেম্বর", "16 dec"], a: function () { var r = h.find(C().registrations || [], "get-together-2026"); return r ? regCard(r) + (r.formUrl ? '<div class="bot-contact"><a class="btn sm primary" target="_blank" rel="noopener" href="' + esc(r.formUrl) + '">' + L({ bn: "রেজিস্ট্রেশন ফরম", en: "Registration form", ar: "نموذج التسجيل" }) + "</a></div>" : "") : U("bot_unknown") + contactHtml(); } },
     { k: ["সদস্য", "মেম্বার", "member", "যুক্ত হ", "join", "পরিবারের সঙ্গে", "স্বেচ্ছাসেব", "volunteer", "انضم", "عضو", "تطوع"], a: function () { return U("join_text") + '<div class="bot-contact"><a class="btn sm primary" target="_blank" rel="noopener" href="' + esc(joinUrl()) + '">' + icon("user") + U("join_btn") + "</a></div>"; } },
     { k: ["সালাম", "assalam", "salam", "hello", "hi ", "হাই", "হ্যালো", "السلام", "مرحبا"], a: function () { return U("bot_hello"); } },
     { k: ["bank", "ব্যাংক", "ব্যাংক", "একাউন্ট", "অ্যাকাউন্ট", "account", "routing", "swift", "بنك", "حساب"], a: function () { return L({ bn: "ব্যাংকের মাধ্যমে দান করতে পারেন:", en: "You can give by bank transfer:", ar: "يمكنك التبرع بالتحويل البنكي:" }) + payHtml("bank") + link("#donate", U("donate_now")); } },
@@ -193,6 +194,25 @@
     $$(".ring[data-p]").forEach(function (r) { var p = Math.max(0, Math.min(100, +r.dataset.p)); r.style.setProperty("--p", p); });
   }
 
+  /* ---------- home: "happening now" (open registrations, with a live countdown for the next event) ---------- */
+  function nowSection() {
+    var R = (C().registrations || []).filter(function (r) { return IBT.regStatus(r) === "open"; });
+    if (!R.length) return "";
+    var ev = R.filter(function (r) { return r.type === "event" && r.closes; })[0], rest = R.filter(function (r) { return r !== ev; }).sort(function (a, b) { var o = { admission: 0, event: 1, course: 2, training: 3, membership: 4 }; return (o[a.type] != null ? o[a.type] : 5) - (o[b.type] != null ? o[b.type] : 5); }).slice(0, 4);
+    var big = ev ? '<a class="now-ev" href="#reg-' + esc(ev.id) + '"><img src="' + esc(h.img(ev.image)) + '" alt="" loading="lazy"><div class="now-ev-in"><span class="live-pill" style="background:#B8912E"><span></span>' + L({ bn: "রেজিস্ট্রেশন চলছে", en: "Registration open", ar: "التسجيل مفتوح" }) + '</span><h3>' + T(ev.title) + '</h3><p>' + (ev.facts || []).slice(0, 2).map(function (f) { return T(f); }).join(" · ") + '</p><div class="cd" data-cd="' + esc(ev.closes) + '"></div><span class="btn primary">' + L({ bn: "রেজিস্ট্রেশন করুন", en: "Register now", ar: "سجّل الآن" }) + h.ARROW + "</span></div></a>" : "";
+    var cards = rest.map(function (r) { return '<a class="now-c" href="#reg-' + esc(r.id) + '"><span class="ph"><img src="' + esc(h.img(r.image)) + '" alt="" loading="lazy"></span><span class="tx"><small>' + (({ admission: L({ bn: "ভর্তি চলছে", en: "Admission open", ar: "القبول مفتوح" }), membership: L({ bn: "সদস্য হোন", en: "Join", ar: "انضم" }) })[r.type] || L({ bn: "আবেদন চলছে", en: "Open now", ar: "مفتوح" })) + "</small><b>" + T(r.title) + "</b></span>" + h.ARROW + "</a>"; }).join("");
+    return '<section class="section tight now-sec"><div class="wrap"><div class="sec-head"><div><span class="eyebrow">' + L({ bn: "এখন চলছে", en: "Happening now", ar: "يجري الآن" }) + '</span><h2 class="h-section">' + L({ bn: "রেজিস্ট্রেশন ও ভর্তি", en: "Registrations & admissions", ar: "التسجيل والقبول" }) + '</h2></div><a class="linkarrow" href="#register">' + L({ bn: "সব দেখুন", en: "See all", ar: "عرض الكل" }) + h.ARROW + '</a></div><div class="now-grid">' + big + '<div class="now-list">' + cards + "</div></div></div></section>";
+  }
+  var cdTimer = 0;
+  function tickCd() {
+    var els = $$("[data-cd]"); if (!els.length) { clearInterval(cdTimer); cdTimer = 0; return; }
+    els.forEach(function (el) {
+      var end = new Date(el.dataset.cd + "T06:30:00+06:00"), d = Math.max(0, end - new Date()), D = Math.floor(d / 864e5), Hh = Math.floor(d / 36e5) % 24, M = Math.floor(d / 6e4) % 60, S = Math.floor(d / 1e3) % 60;
+      var lab = { bn: ["দিন", "ঘণ্টা", "মিনিট", "সেকেন্ড"], en: ["days", "hours", "min", "sec"], ar: ["يوم", "ساعة", "دقيقة", "ثانية"] }[st.lang];
+      el.innerHTML = [D, Hh, M, S].map(function (v, i) { return "<span><b>" + h.digits(String(v).padStart(2, "0")) + "</b><small>" + lab[i] + "</small></span>"; }).join("");
+    });
+  }
+
   /* ---------- opening logo intro + page-change transition ---------- */
   var T0 = window.performance ? performance.now() : 0, booted = false, ptTimer = 0;
   function introOut() { var el = document.getElementById("intro"); if (!el || el.classList.contains("out")) return; var wait = Math.max(0, 1500 - ((window.performance ? performance.now() : 0) - T0)); setTimeout(function () { el.classList.add("out"); setTimeout(function () { el.remove(); }, 700); }, wait); }
@@ -203,19 +223,25 @@
   IBT.afterHooks = (IBT.afterHooks || []).concat([function (route) {
     if (!booted) { booted = true; introOut(); } else { clearTimeout(ptTimer); ptTimer = setTimeout(function () { var p = document.getElementById("ptrans"); if (p) p.classList.remove("on"); }, route !== lastRoute ? 420 : 0); }
     lastRoute = route;
-    botShell(); markLive();
+    botShell(); markLive(); document.documentElement.classList.toggle("r-admin", route === "admin");
     if (route === "home" || route === "media") {
       var anchor = route === "home" ? ($(".donate-band") || {}).closest && $(".donate-band").closest("section") : null;
       var sec = '<section class="section tight"><div class="wrap">' + fbSection() + "</div></section>";
       if (anchor) anchor.insertAdjacentHTML("beforebegin", sec); else $("#main").insertAdjacentHTML("beforeend", sec);
       var el = $(".fb-sec"); if (el) el.classList.add("in");
     }
+    if (route === "home" && !$(".now-sec")) {
+      var fx = $(".facts"), anchorS = fx && fx.closest("section");
+      if (anchorS) anchorS.insertAdjacentHTML("afterend", nowSection());
+      tickCd(); if (!cdTimer && $("[data-cd]")) cdTimer = setInterval(tickCd, 1000);
+    }
+    var fj = $(".ft-join"); if (fj) fj.style.display = route === "home" ? "none" : "";
     if (route === "home" && joinUrl() && !$(".join-band")) {
       var at = $(".fb-sec"); at = at && at.closest("section");
       var band = '<section class="section tight"><div class="wrap"><div class="join-band rv in"><div class="jb-ic">' + icon("user") + '</div><div class="jb-tx"><h2 class="h-section">' + U("join_t") + '</h2><p class="muted">' + U("join_text") + '</p></div><a class="btn primary lg" target="_blank" rel="noopener" href="' + esc(joinUrl()) + '">' + U("join_btn") + h.ARROW + "</a></div></div></section>";
       if (at) at.insertAdjacentHTML("beforebegin", band); else $("#main").insertAdjacentHTML("beforeend", band);
     }
-    var ft = $(".footer"); if (ft && joinUrl() && !$(".ft-join", ft)) { var fl = $(".footer .wrap"); if (fl) fl.insertAdjacentHTML("afterbegin", '<div class="ft-join"><span>' + U("join_t") + '</span><a class="btn sm primary" target="_blank" rel="noopener" href="' + esc(joinUrl()) + '">' + U("join_btn") + h.ARROW + "</a></div>"); }
+    var ft = $(".footer"); if (ft && joinUrl() && !$(".ft-join", ft) && route !== "home") { var fl = $(".footer .wrap"); if (fl) fl.insertAdjacentHTML("afterbegin", '<div class="ft-join"><span>' + U("join_t") + '</span><a class="btn sm primary" target="_blank" rel="noopener" href="' + esc(joinUrl()) + '">' + U("join_btn") + h.ARROW + "</a></div>"); }
     if ($("#fbBox")) mountFb();
     rings();
   }]);

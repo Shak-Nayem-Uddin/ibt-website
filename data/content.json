@@ -3458,39 +3458,7 @@
    },
    "source": "https://www.kulliyatulquran.com/p/kulliyatul-quran-model-madrasah",
    "needsInfo": false,
-   "fields": [
-    [
-     "student",
-     "text",
-     true,
-     null,
-     "student_name"
-    ],
-    [
-     "guardian",
-     "text",
-     true,
-     null,
-     "guardian_name"
-    ],
-    [
-     "phone",
-     "tel",
-     true
-    ],
-    [
-     "age_class",
-     "text",
-     true,
-     null,
-     "age_class"
-    ],
-    [
-     "message",
-     "textarea",
-     false
-    ]
-   ]
+   "formType": "admission"
   },
   {
    "id": "after-school",

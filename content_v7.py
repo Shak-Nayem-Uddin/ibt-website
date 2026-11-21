@@ -21,7 +21,7 @@ C["settings"]["announcement"] = {"show": True, "link": "#reg-get-together-2026",
 ADM_FIELDS = [["student", "text", True, None, "student_name"], ["guardian", "text", True, None, "guardian_name"], ["phone", "tel", True], ["age_class", "text", True, None, "age_class"], ["message", "textarea", False]]
 for r in C["registrations"]:
     if r["id"] == "model-madrasa":
-        r.update({"status": "open", "mode": "native", "needsInfo": False, "fields": ADM_FIELDS,
+        r.update({"status": "open", "mode": "native", "needsInfo": False, "formType": "admission",
           "text": T("কুল্লিয়াতুল কুরআন মডেল মাদরাসায় ভর্তি চলছে। নিচের ফরমে শিক্ষার্থীর তথ্য দিন; অফিস থেকে যোগাযোগ করে শ্রেণি, আসন ও ফি জানানো হবে।",
                     "Admission to Kulliyatul Quran Model Madrasa is open. Submit the student's details below and the office will contact you about class, seats and fees.",
                     "القبول في مدرسة كلية القرآن النموذجية مفتوح. أرسل بيانات الطالب وسيتواصل المكتب معك بشأن الصف والمقاعد والرسوم.")})
