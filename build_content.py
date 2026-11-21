@@ -682,6 +682,8 @@ C["ui"] = {
 
 exec(open("content_v3.py", encoding="utf-8").read())
 exec(open("content_v4.py", encoding="utf-8").read())
+exec(open("content_v5.py", encoding="utf-8").read())
+exec(open("content_v6.py", encoding="utf-8").read())
 
 with open("data/content.json", "w", encoding="utf-8") as f:
     json.dump(C, f, ensure_ascii=False, indent=1)

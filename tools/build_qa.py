@@ -18,7 +18,7 @@ def get(u, limit=None):
 db = json.loads(OUT.read_text()) if OUT.exists() else {'items': []}
 state = json.loads(STATE.read_text()) if STATE.exists() else {}
 have = {(i[0], str(i[1])): i for i in db['items']}
-state.setdefault('missing', {}); state.setdefault('iw_page', 1); state.setdefault('iw_done', False)
+state.setdefault('missing', {}); state.pop('iw_page', None); state.pop('iw_done', None)
 
 # ---- IslamQA: sitemap → ids, then fetch only the <head> of new pages for the title ----
 def sitemap_ids(lang):
@@ -49,7 +49,7 @@ for lang in ['bn', 'en']:
     with cf.ThreadPoolExecutor(4) as ex:
         futs = []
         for i in todo:
-            if time.time() - T0 > BUDGET * (0.55 if lang == 'bn' else 0.8): break
+            if time.time() - T0 > BUDGET * (0.35 if lang == 'bn' else 0.6): break
             futs.append(ex.submit(job, i))
             if len(futs) >= 8:
                 for f in futs:
@@ -62,21 +62,31 @@ for lang in ['bn', 'en']:
             if t: have[(src, i2)] = [src, int(i2), t]
     print(src, 'now', sum(1 for k in have if k[0] == src))
 
-# ---- Islamweb English: fatwa list pages give id + English slug (title) ----
-def slug_title(s): return re.sub(r'\s+', ' ', s.replace('-', ' ')).strip()
-page = 1 if state['iw_done'] else state['iw_page']; empty = 0
-while time.time() - T0 < BUDGET and page < 4000:
-    try: t = get('https://www.islamweb.net/en/fatwa/?page=%d' % page)
-    except Exception as e: print('iw fail', page, e); break
-    found = re.findall(r'href="(?:https://www\.islamweb\.net)?/(?:en|ar)/fatwa/(\d+)/([^"/?#]+)"', t)
-    new = 0
-    for i, slug in found:
-        if ('iw-en', i) not in have: have[('iw-en', i)] = ['iw-en', int(i), slug_title(html.unescape(slug)), slug]; new += 1
-    if not found: empty += 1
-    if empty >= 3: state['iw_done'] = True; state['iw_page'] = 1; break
-    if state['iw_done'] and new == 0 and page > 3: break  # caught up with new fatwas
-    page += 1; state['iw_page'] = page; time.sleep(0.6)
-print('iw-en now', sum(1 for k in have if k[0] == 'iw-en'), 'page', page)
+# ---- Islamweb English: crawl the fatwa category tree (/en/fatawa/...) and its pagination; links give id + English slug ----
+def slug_title(x): return re.sub(r'\s+', ' ', x.replace('-', ' ')).strip()
+iw = state.setdefault('iw', {'queue': [], 'seen': []})
+if not iw['queue']:
+    try:
+        home = get('https://www.islamweb.net/en/fatwa/')
+        iw['queue'] = sorted(set('https://www.islamweb.net' + u for u in re.findall(r'href="(?:https://www\.islamweb\.net)?(/en/fatawa/\d+/[^"#]*)"', home)))
+        iw['seen'] = []
+        print('iw categories', len(iw['queue']))
+    except Exception as e: print('iw home fail', e)
+seen = set(iw['seen']); pages = 0
+while iw['queue'] and time.time() - T0 < BUDGET:
+    u = iw['queue'].pop(0)
+    if u in seen: continue
+    seen.add(u); pages += 1
+    try: t = get(u)
+    except Exception as e: print('iw fail', u, e); continue
+    for i, slug in re.findall(r'href="(?:https://www\.islamweb\.net)?/(?:en|ar)/fatwa/(\d+)/([^"/?#]+)"', t):
+        if ('iw-en', i) not in have: have[('iw-en', i)] = ['iw-en', int(i), slug_title(html.unescape(slug)), slug]
+    for v in re.findall(r'href="((?:https://www\.islamweb\.net)?/en/fatawa/[^"#]+)"', t):
+        v = html.unescape(v); v = v if v.startswith('http') else 'https://www.islamweb.net' + v
+        if v not in seen and v not in iw['queue']: iw['queue'].append(v)
+    time.sleep(0.5)
+iw['seen'] = sorted(seen) if iw['queue'] else []   # finished a full pass: start fresh next time (picks up new fatwas)
+print('iw-en now', sum(1 for k in have if k[0] == 'iw-en'), 'pages', pages, 'queue', len(iw['queue']))
 
 items = sorted(have.values(), key=lambda x: ({'iqa-bn': 0, 'iqa-en': 1, 'iw-en': 2}.get(x[0], 9), -x[1]))
 fe = [have[('iqa-bn', i)] for i in featured if ('iqa-bn', i) in have]

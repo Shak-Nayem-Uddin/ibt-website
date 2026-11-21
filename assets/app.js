@@ -5,7 +5,7 @@
   var DEF = null;          // bundled defaults (data/content.json)
   var C = null;            // live content = defaults + published cloud overrides
   var cloud = { db: null, user: null, assets: null, canEdit: false, uid: null, ready: false };
-  var CMS_KEYS = ["settings", "home", "chairman", "cells", "history", "institutions", "floors", "projects", "initiatives", "impact", "funds", "supportItems", "payment", "donateCopy", "registrations", "events", "news", "videos", "stories", "reports", "faqs", "ui", "scholars"];
+  var CMS_KEYS = ["settings", "home", "chairman", "cells", "history", "institutions", "floors", "projects", "initiatives", "impact", "funds", "supportItems", "payment", "donateCopy", "registrations", "events", "news", "videos", "stories", "reports", "faqs", "ui", "scholars", "live", "chatbot", "qa"];
   var V = { videos: [], playlists: [], channels: [] }; // data/videos.json (auto-updated from YouTube)
   IBT.CMS_KEYS = CMS_KEYS;
   var state = { lang: "bn", theme: "", themePref: "auto", route: "home", preview: false, drafts: {} };
@@ -62,7 +62,7 @@
   var I = {
     arrow: '<path d="M5 12h14M13 6l6 6-6 6"/>', play: '<path d="M8 5v14l11-7z" fill="currentColor" stroke="none"/>',
     sun: '<circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/>',
-    moon: '<path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/>', menu: '<path d="M4 7h16M4 12h16M4 17h16"/>', x: '<path d="M6 6l12 12M18 6L6 18"/>',
+    chat: '<path d="M21 12a8 8 0 0 1-11.6 7.1L4 20l1-4.6A8 8 0 1 1 21 12Z"/><path d="M9.5 9.5a2.5 2.5 0 1 1 3.2 2.4c-.5.2-.7.6-.7 1.1M12 15.5h.01"/>', info: '<circle cx="12" cy="12" r="9"/><path d="M12 11v5M12 8h.01"/>', user: '<circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/>', external: '<path d="M14 4h6v6M20 4l-9 9"/><path d="M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/>', pray: '<path d="M12 3c-3 4-6 6-6 10a6 6 0 0 0 12 0c0-4-3-6-6-10z"/><path d="M12 13v4"/>', drop: '<path d="M12 3s6 6.5 6 11a6 6 0 0 1-12 0c0-4.5 6-11 6-11z"/>', kaaba: '<path d="M4 8l8-4 8 4v10l-8 3-8-3z"/><path d="M4 8l8 3 8-3M12 11v10M4 12l8 3 8-3"/>', leaf: '<path d="M5 19c0-8 5-14 15-15-1 10-7 15-15 15z"/><path d="M5 19l8-8"/>', video: '<rect x="2.5" y="6" width="13" height="12" rx="2.5"/><path d="M15.5 10.5 21.5 7v10l-6-3.5"/>', send: '<path d="M21 3 10 14"/><path d="M21 3l-7 18-4-7-7-4 18-7z"/>', moon: '<path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/>', menu: '<path d="M4 7h16M4 12h16M4 17h16"/>', x: '<path d="M6 6l12 12M18 6L6 18"/>',
     search: '<circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/>', heart: '<path d="M12 21s-7-4.4-9.3-8.6C1.1 9.3 2.8 5.5 6.4 5.1 8.6 4.9 10.3 6 12 8c1.7-2 3.4-3.1 5.6-2.9 3.6.4 5.3 4.2 3.7 7.3C19 16.6 12 21 12 21z"/>',
     research: '<circle cx="10" cy="10" r="6"/><path d="M20 20l-5.5-5.5M7 10h6M10 7v6"/>', education: '<path d="M2 9l10-5 10 5-10 5z"/><path d="M6 11v5c3 2 9 2 12 0v-5"/>',
     dawah: '<path d="M4 5h16v10H8l-4 4z"/><path d="M8 9h8M8 12h5"/>', masjid: '<path d="M12 3c3 2 5 4 5 7H7c0-3 2-5 5-7z"/><path d="M5 21V10h14v11M3 21h18M10 21v-4a2 2 0 0 1 4 0v4"/><path d="M12 3V1"/>',
@@ -124,7 +124,7 @@
   if (darkMQ) { var mqh = function () { if (state.themePref === "auto") applyTheme("auto"); }; if (darkMQ.addEventListener) darkMQ.addEventListener("change", mqh); else if (darkMQ.addListener) darkMQ.addListener(mqh); }
 
   // ---------- chrome (header/footer) ----------
-  var NAV = [["home", "nav_home"], ["about", "nav_about"], ["projects", "nav_projects"], ["future", "nav_future"], ["funds", "nav_funds"], ["quran", "nav_quran"], ["prayer", "nav_prayer"], ["media", "nav_media"], ["institutions", "nav_institutions"], ["initiatives", "nav_initiatives"], ["news", "nav_news"], ["register", "nav_register"], ["transparency", "nav_transparency"], ["contact", "nav_contact"]];
+  var NAV = [["home", "nav_home"], ["about", "nav_about"], ["ask", "nav_ask"], ["projects", "nav_projects"], ["future", "nav_future"], ["funds", "nav_funds"], ["quran", "nav_quran"], ["prayer", "nav_prayer"], ["live", "nav_live"], ["media", "nav_media"], ["institutions", "nav_institutions"], ["initiatives", "nav_initiatives"], ["news", "nav_news"], ["register", "nav_register"], ["chairman", "chairman_title"], ["transparency", "nav_transparency"], ["contact", "nav_contact"]];
   IBT.NAV = NAV;
   function langSwitch() { return '<div class="lang-switch" role="group" aria-label="Language"><button data-l="bn" lang="bn">বাংলা</button><button data-l="en" lang="en">EN</button><button data-l="ar" lang="ar">عربي</button></div>'; }
   function renderHeader() {
@@ -133,7 +133,8 @@
     $("#chrome-top").innerHTML = ann +
       '<header class="header"><div class="wrap"><div class="bar">' +
       '<a class="brand" href="#home" aria-label="' + esc(tr(S.siteName)) + '"><span class="mark"></span><span class="bt"><b>' + T(S.siteName) + "</b><small>" + T(S.tagline) + "</small></span></a>" +
-      '<nav class="nav" aria-label="Main">' + NAV.slice(1, 9).map(function (n) { return '<a href="#' + n[0] + '" data-nav="' + n[0] + '">' + U(n[1]) + "</a>"; }).join("") + "</nav>" +
+      '<nav class="nav" aria-label="Main">' + NAV.slice(1).map(function (n) { return '<a href="#' + n[0] + '" data-nav="' + n[0] + '">' + (n[0] === "live" ? '<span class="live-dot" aria-hidden="true"></span>' : "") + U(n[1]) + "</a>"; }).join("") + "</nav>" +
+      '<div class="more" id="more"><button class="more-btn" id="moreBtn" aria-haspopup="true" aria-expanded="false">' + U("more") + '<svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></button><div class="more-menu" id="moreMenu" role="menu"></div></div>' +
       '<div class="hd-actions"><button class="icon-btn" id="searchBtn" aria-label="' + Uraw("search") + '">' + icon("search") + "</button>" + langSwitch() +
       '<button class="icon-btn theme-btn" id="themeBtn"></button>' + (cloud.canEdit ? '<a class="icon-btn" href="#admin" aria-label="' + Uraw("admin") + '" title="' + Uraw("admin") + '">' + icon("gear") + "</a>" : "") +
       '<a class="btn primary sm donate-hd" href="#donate">' + icon("heart") + U("donate") + '</a><button class="icon-btn menu-btn" id="menuBtn" aria-label="' + Uraw("menu") + '">' + icon("menu") + "</button></div>" +
@@ -155,10 +156,14 @@
     var nav = $(".header .nav"); if (!nav) return;
     var hd = $(".header"); hd.classList.remove("cramped");
     var items = $$("a", nav); items.forEach(function (a) { a.style.display = ""; });
-    if (getComputedStyle(nav).display === "none") return;
-    var shown = items.length;
-    for (var i = items.length - 1; i >= 0 && nav.scrollWidth > nav.clientWidth + 1; i--) { items[i].style.display = "none"; shown--; }
-    if (shown < 4) hd.classList.add("cramped");
+    var more = $("#more"), menu = $("#moreMenu");
+    if (getComputedStyle(nav).display === "none") { if (more) more.style.display = "none"; return; }
+    if (more) more.style.display = "";
+    var hidden = [];
+    for (var i = items.length - 1; i >= 0 && nav.scrollWidth > nav.clientWidth + 1; i--) { items[i].style.display = "none"; hidden.unshift(items[i]); }
+    if (items.length - hidden.length < 3) hd.classList.add("cramped");
+    if (menu) menu.innerHTML = hidden.map(function (a) { return '<a role="menuitem" data-nav="' + a.dataset.nav + '" class="' + a.className + '" href="' + a.getAttribute("href") + '">' + a.innerHTML + "</a>"; }).join("");
+    if (more) more.style.display = hidden.length ? "" : "none";
   }
   window.addEventListener("resize", function () { clearTimeout(fitNav._t); fitNav._t = setTimeout(fitNav, 120); });
   if (document.fonts) { document.fonts.ready.then(function () { fitNav(); }); if (document.fonts.addEventListener) document.fonts.addEventListener("loadingdone", function () { fitNav(); }); }
@@ -593,7 +598,7 @@
     if (m) html = (m[1] === "news" ? P.newsItem : P[m[1]])(m[2]);
     else html = (P[h] || P.notfound)();
     var main = $("#main"); main.innerHTML = html;
-    $$(".nav a").forEach(function (a) { a.classList.toggle("active", h.indexOf(a.dataset.nav) === 0 || (a.dataset.nav === "institutions" && h.indexOf("inst-") === 0) || (a.dataset.nav === "projects" && h.indexOf("project-") === 0) || (a.dataset.nav === "initiatives" && h.indexOf("init-") === 0) || (a.dataset.nav === "register" && h.indexOf("reg-") === 0)); });
+    $$(".nav a, .more-menu a").forEach(function (a) { a.classList.toggle("active", h.indexOf(a.dataset.nav) === 0 || (a.dataset.nav === "institutions" && h.indexOf("inst-") === 0) || (a.dataset.nav === "projects" && h.indexOf("project-") === 0) || (a.dataset.nav === "initiatives" && h.indexOf("init-") === 0) || (a.dataset.nav === "register" && h.indexOf("reg-") === 0)); });
     if (!IBT._noscroll) window.scrollTo({ top: 0, behavior: "instant" in window ? "instant" : "auto" });
     IBT._noscroll = false;
     $("#drawer").classList.remove("open");
@@ -664,6 +669,9 @@
     var lb2 = t.closest(".lang-switch button"); if (lb2) { IBT.setLang(lb2.dataset.l); return; }
     if (t.closest("#themeBtn")) { var order = ["auto", "light", "dark"]; IBT.setTheme(order[(order.indexOf(state.themePref || "auto") + 1) % 3]); toast(Uraw("theme_" + state.themePref)); return; }
     if (t.closest("#menuBtn")) { $("#drawer").classList.add("open"); return; }
+    var mb = t.closest("#moreBtn"); var mo = $("#more");
+    if (mb) { var op = !mo.classList.contains("open"); mo.classList.toggle("open", op); mb.setAttribute("aria-expanded", String(op)); return; }
+    if (mo && mo.classList.contains("open")) { mo.classList.remove("open"); $("#moreBtn").setAttribute("aria-expanded", "false"); }
     if (t.closest("[data-act=close-drawer]") || t.closest("#drawer .scrim")) { $("#drawer").classList.remove("open"); return; }
     if (t.closest("#drawer a")) { $("#drawer").classList.remove("open"); }
     if (t.closest("#searchBtn")) { $("#search").classList.add("open"); setTimeout(function () { $("#searchInput").focus(); }, 30); return; }
@@ -676,7 +684,7 @@
     var df = t.closest("a[data-fund]"); if (df) state.fund = df.dataset.fund;
   });
   document.addEventListener("keydown", function (e) {
-    if (e.key === "Escape") { closePlayer(); if ($("#story").classList.contains("open")) closeStory(); $("#search").classList.remove("open"); $("#drawer").classList.remove("open"); $("#lightbox").classList.remove("open"); }
+    if (e.key === "Escape") { var mo2 = $("#more"); if (mo2) mo2.classList.remove("open"); closePlayer(); if ($("#story").classList.contains("open")) closeStory(); $("#search").classList.remove("open"); $("#drawer").classList.remove("open"); $("#lightbox").classList.remove("open"); }
     if ($("#story").classList.contains("open")) { var rtl = state.lang === "ar"; if (e.key === "ArrowRight") storyGo(storyIdx + (rtl ? -1 : 1)); if (e.key === "ArrowLeft") storyGo(storyIdx + (rtl ? 1 : -1)); }
     if ((e.key === "k" && (e.ctrlKey || e.metaKey)) || (e.key === "/" && !/input|textarea|select/i.test(document.activeElement.tagName))) { e.preventDefault(); $("#search").classList.add("open"); $("#searchInput").focus(); }
   });
@@ -750,7 +758,7 @@
     initCloud();
   }
   var vReq = fetch("data/videos.json?h=" + Math.floor(Date.now() / 36e5)).then(function (r) { return r.json(); }).then(function (d) { V = d || V; }, function () { });
-  fetch("data/content.json?v=4.0").then(function (r) { return r.json(); }).then(function (d) { return vReq.then(function () { boot(d); }); }).catch(function () {
+  fetch("data/content.json?v=5.0").then(function (r) { return r.json(); }).then(function (d) { return vReq.then(function () { boot(d); }); }).catch(function () {
     $("#main").innerHTML = '<div class="wrap section"><h1>Imam Bukhari Trust</h1><p>Content could not be loaded. Please refresh.</p></div>';
   });
 })();

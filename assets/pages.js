@@ -48,141 +48,156 @@
     if (f.floors) html += '<div class="upd rv" style="margin-bottom:40px"><div class="in"><div class="eyebrow" style="margin:0">' + U("current_status") + " · " + h.fdate((C().floors || {}).asOf) + '</div><div class="head">' + icon("check") + "<span>" + T(((C().floors || {}).headline || {})[f.floors]) + "</span></div>" + levelsHtml(f.floors) + '<div class="spec">' + T(((C().floors || {}).specs || {})[f.floors]) + "</div></div></div>";
     if ((f.story || []).length) html += '<h2 class="h-section" style="margin-bottom:28px">' + L({ bn: "ছবিতে ও ভিডিওতে", en: "In pictures and film", ar: "بالصور والفيديو" }) + '</h2><div class="doc">' + f.story.map(chapterHtml).join("") + "</div>";
     if ((f.shares || []).length) html += '<div style="margin-top:48px"><h2 class="h-section">' + U("take_a_share") + '</h2><p class="muted">' + U("share_hint") + '</p><div class="shares" style="margin-top:16px">' + f.shares.map(function (s, i) { return shareBtn(s, i); }).join("") + '</div><div class="src">' + L({ bn: "সূত্র: IBT ক্যাটালগ ২০২৬", en: "Source: IBT Catalog 2026", ar: "المصدر: كتيّب الوقف 2026" }) + "</div></div>";
-    html += '</div><aside class="give-sticky" id="give">' + giveBox(f.id, true) + "</aside></div></section>";
+    html += '</div><aside class="give-sticky" id="give">' + quickGive(f) + "</aside></div></section>";
     var others = funds().filter(function (x) { return x.id !== f.id; }).slice(0, 3);
     html += '<section class="section tight alt"><div class="wrap"><div class="sec-head"><h2 class="h-section">' + U("all_causes") + '</h2><a class="linkarrow" href="#funds">' + U("view_all") + ARROW + '</a></div><div class="causes">' + others.map(causeCard).join("") + "</div></div></section>";
     return html;
   };
+  /* ---------- quick give card (cause pages) → opens the donate wizard ---------- */
+  var give = { fund: null, share: null, qty: 1, amount: 0, freq: "once", method: "bkash", step: 1 };
+  function quickGive(f) {
+    var sug = f.suggested || [500, 1000, 5000, 10000];
+    return '<div class="give"><h3>' + U("give_to_fund") + '</h3><p class="faint" style="margin:0">' + T(f.name) + '</p><div class="amts">' + sug.map(function (a, i) { return '<button type="button" data-qg="' + a + '" aria-pressed="' + (i === 1) + '">' + money(a) + "</button>"; }).join("") + '</div>' +
+      '<button class="btn primary lg block" data-qg-go="' + esc(f.id) + '">' + icon("heart") + U("donate_now") + ARROW + '</button><p class="faint" style="margin:0;text-align:center">' + L({ bn: "বিকাশ, নগদ, রকেট বা ব্যাংকে পাঠাতে পারবেন", en: "Send by bKash, Nagad, Rocket or bank", ar: "عبر بيكاش أو نقد أو روكيت أو البنك" }) + "</p></div>";
+  }
   function shareBtn(s, i) {
     return '<button class="share" type="button" data-share="' + i + '" aria-pressed="false"><span class="ic">' + icon(s.icon || "heart") + "</span><span><b>" + T(s.name) + "</b><span>" + money(s.amount) + "</span></span></button>";
   }
+  document.addEventListener("click", function (e) {
+    var q = e.target.closest("[data-qg]"); if (q) { $$("[data-qg]").forEach(function (b) { b.setAttribute("aria-pressed", String(b === q)); }); return; }
+    var go = e.target.closest("[data-qg-go]");
+    if (go) { var f = fundById(go.dataset.qgGo), sel = $("[data-qg][aria-pressed=true]"); give = { fund: f.id, share: null, qty: 1, amount: sel ? +sel.dataset.qg : (f.suggested || [1000])[1], freq: "once", method: give.method || "bkash", step: 3 }; st.giveKeep = true; location.hash = "#donate"; return; }
+    var sh = e.target.closest(".share[data-share]");
+    if (sh && st.route && st.route.indexOf("fund-") === 0) { var fu = fundById(st.route.slice(5)); give = { fund: fu.id, share: +sh.dataset.share, qty: 1, amount: 0, freq: "once", method: give.method || "bkash", step: 2 }; st.giveKeep = true; location.hash = "#donate"; }
+  });
 
-  /* ---------- give box (used on cause pages and the donate page) ---------- */
-  var give = { fund: null, share: null, qty: 1, amount: 0, freq: "once" };
-  function giveBox(fid, compact) {
-    var f = fundById(fid) || funds()[0]; give.fund = f.id; give.share = null; give.qty = 1; give.amount = (f.suggested || [1000])[1] || 1000; give.freq = "once";
-    var pay = C().payment || {}, ch = (pay.channels || []).filter(function (c) { return c.show; });
-    var mob = ch.filter(function (c) { return c.type !== "bank"; }), banks = ch.filter(function (c) { return c.type === "bank"; });
-    var col = { bkash: "#E2136E", nagad: "#EC1C24", rocket: "#8C3494" };
-    var html = '<div class="give" data-givebox>' +
-      '<div class="stp"><i>1</i>' + U("step_fund") + "</div>" +
-      '<select class="input" data-give-fund aria-label="' + esc(Uraw("step_fund")) + '">' + funds().map(function (x) { return '<option value="' + esc(x.id) + '"' + (x.id === f.id ? " selected" : "") + ">" + esc(L(x.name)) + "</option>"; }).join("") + "</select>" +
-      '<div data-give-shares></div>' +
-      '<div class="stp"><i>2</i>' + U("step_amount") + '</div><div class="seg" role="group"><button data-freq="once" aria-pressed="true">' + L({ bn: "এককালীন", en: "One-time", ar: "مرة واحدة" }) + '</button><button data-freq="monthly" aria-pressed="false">' + U("monthly") + '</button></div>' +
-      '<div class="amts" data-give-amts></div><div class="amount-in"><span>৳</span><input class="input" type="number" min="10" step="10" inputmode="numeric" data-give-amount aria-label="' + esc(Uraw("or_amount")) + '" placeholder="' + esc(Uraw("or_amount")) + '"></div>' +
-      '<div class="notice info" data-give-monthly hidden>' + T(((C().ui || {}).autopay_text) || "") + '</div>' +
-      '<div class="total"><span class="muted">' + U("your_gift") + '</span><b data-give-total></b></div>' +
-      '<div class="stp"><i>3</i>' + U("step_pay") + '</div><p class="faint" style="margin:-6px 0 0">' + U("pay_hint") + '</p><div class="channels">' +
-      mob.map(function (c) { return '<div class="channel"><div class="logo" style="background:' + (col[c.type] || "#235347") + '">' + esc(c.type.toUpperCase()) + '</div><div><b>' + T(c.name) + '</b><div class="num">' + esc(c.number) + '</div><div class="faint">' + T(c.note) + '</div></div><button class="icon-btn" data-copy="' + esc(c.number.replace(/[^\d]/g, "")) + '" aria-label="' + esc(Uraw("copy")) + '">' + icon("copy") + "</button></div>"; }).join("") + "</div>" +
-      (compact ? '<details><summary class="linkarrow" style="cursor:pointer">' + L({ bn: "ব্যাংক হিসাব", en: "Bank accounts", ar: "الحسابات البنكية" }) + "</summary>" : "<div>") + '<div class="channels" style="margin-top:10px">' + banks.map(bankCard).join("") + "</div>" + (compact ? "</details>" : "</div>") +
-      '<a class="btn primary block" href="#donate" data-give-report>' + icon("doc") + U("step_report") + "</a></div>";
-    return html;
+  /* ---------- donate wizard: 1 cause → 2 amount → 3 send → 4 tell us ---------- */
+  var STEPS = [["step_fund", "heart"], ["step_amount", "coin"], ["step_pay", "phone"], ["step_report", "check"]];
+  P.donate = function () {
+    if (!st.giveKeep) give = { fund: st.fund || null, share: null, qty: 1, amount: 0, freq: "once", method: "bkash", step: st.fund ? 2 : 1 };
+    st.giveKeep = false;
+    if (give.fund && !give.amount && give.share == null) give.amount = (fundById(give.fund).suggested || [1000])[1];
+    return '<section class="page-hero donate-hero"><div class="wrap">' + h.crumbs([[U("donate")]]) + '<h1 class="h-display">' + L({ bn: "সহজে দান করুন", en: "Give in a few easy steps", ar: "تبرّع بخطوات سهلة" }) + '</h1><p class="lead">' + L({ bn: "খাত বাছুন, পরিমাণ ঠিক করুন, টাকা পাঠান, তারপর আমাদের জানিয়ে দিন। আপনার দান নির্দিষ্ট খাতেই জমা হবে।", en: "Choose a cause, pick an amount, send the money, then let us know. Your gift is recorded against the cause you chose.", ar: "اختر المجال والمبلغ، أرسل التبرع، ثم أبلغنا. يُسجَّل تبرعك في المجال الذي اخترته." }) + "</p></div></section>" +
+      '<section class="section tight" style="padding-top:0"><div class="wrap"><ol class="wiz-steps" id="wizSteps">' + STEPS.map(function (s, i) { return '<li><button type="button" data-wiz-go="' + (i + 1) + '"><i>' + digits(i + 1) + "</i><span>" + U(s[0]) + "</span></button></li>"; }).join("") + '</ol><div class="wiz" id="wiz"></div>' +
+      '<div class="wiz-help">' + icon("phone") + "<span>" + L({ bn: "দান করতে কোনো সমস্যা হলে কল করুন", en: "Need help giving? Call us", ar: "تحتاج مساعدة؟ اتصل بنا" }) + ' <a class="ltr" href="tel:+8801852808554">+880 1852-808554</a></span></div></div></section>' +
+      '<section class="section tight"><div class="wrap">' + verseBlock() + "</div></section>";
+  };
+  function total() { var f = fundById(give.fund); if (f && give.share != null && f.shares && f.shares[give.share]) return f.shares[give.share].amount * give.qty; return give.amount || 0; }
+  function summary() {
+    var f = fundById(give.fund); if (!f) return "";
+    return '<div class="wiz-sum"><img src="' + esc(img(f.image)) + '" alt=""><div><small>' + U("your_gift") + "</small><b>" + T(f.name) + (give.share != null && f.shares ? " · " + esc(L(f.shares[give.share].name)) + " × " + num(give.qty) : "") + '</b></div><strong>' + (total() ? money(total()) : "—") + (give.freq === "monthly" ? "<small> / " + U("monthly") + "</small>" : "") + "</strong></div>";
   }
+  var PAYSTEPS = {
+    bkash: { bn: ["বিকাশ অ্যাপ খুলুন", "“Payment” (পেমেন্ট) অপশনে যান", "মার্চেন্ট নম্বর দিন: {n}", "টাকার পরিমাণ দিন: {a}", "রেফারেন্সে খাতের নাম লিখুন: {f}", "পিন দিয়ে নিশ্চিত করুন এবং ট্রানজেকশন আইডি রেখে দিন"],
+             en: ["Open the bKash app", "Tap “Payment”", "Enter the merchant number: {n}", "Enter the amount: {a}", "In the reference, write the cause: {f}", "Confirm with your PIN and keep the transaction ID"] },
+    nagad: { bn: ["নগদ অ্যাপ খুলুন", "“Send Money” অপশনে যান", "নম্বর দিন: {n}", "টাকার পরিমাণ দিন: {a}", "রেফারেন্সে খাতের নাম লিখুন: {f}", "পিন দিয়ে নিশ্চিত করুন এবং ট্রানজেকশন আইডি রেখে দিন"],
+             en: ["Open the Nagad app", "Tap “Send Money”", "Enter the number: {n}", "Enter the amount: {a}", "In the reference, write the cause: {f}", "Confirm with your PIN and keep the transaction ID"] },
+    rocket: { bn: ["রকেট অ্যাপ খুলুন বা *322# ডায়াল করুন", "“Send Money” অপশনে যান", "নম্বর দিন: {n}", "টাকার পরিমাণ দিন: {a}", "রেফারেন্সে খাতের নাম লিখুন: {f}", "পিন দিয়ে নিশ্চিত করুন এবং ট্রানজেকশন আইডি রেখে দিন"],
+              en: ["Open the Rocket app or dial *322#", "Choose “Send Money”", "Enter the number: {n}", "Enter the amount: {a}", "In the reference, write the cause: {f}", "Confirm with your PIN and keep the transaction ID"] }
+  };
+  var COL = { bkash: "#E2136E", nagad: "#EC1C24", rocket: "#8C3494", bank: "#235347" };
+  function chs() { return ((C().payment || {}).channels || []).filter(function (c) { return c.show; }); }
   function bankCard(c) {
     return '<div class="bank"><div class="bn">' + esc(tr(c.name, "en")) + '</div><div class="acn">' + esc(c.acname || "") + '</div><div class="no"><span>' + esc(c.number) + '</span><button class="icon-btn" data-copy="' + esc(c.number.replace(/\s/g, "")) + '" aria-label="' + esc(Uraw("copy")) + '">' + icon("copy") + "</button></div><dl>" +
       (c.branch ? "<dt>" + U("branch") + "</dt><dd>" + esc(tr(c.branch, "en")) + "</dd>" : "") + (c.routing ? "<dt>" + U("routing") + "</dt><dd>" + esc(c.routing) + "</dd>" : "") + (c.swift ? "<dt>SWIFT</dt><dd>" + esc(c.swift) + "</dd>" : "") + "</dl></div>";
   }
-  function wireGive() {
-    var box = $("[data-givebox]"); if (!box) return;
-    function f() { return fundById(give.fund) || funds()[0]; }
-    function total() { var fu = f(); return give.share != null && fu.shares && fu.shares[give.share] ? fu.shares[give.share].amount * give.qty : give.amount; }
-    function draw() {
-      var fu = f();
-      var sh = $("[data-give-shares]", box);
-      sh.innerHTML = (fu.shares || []).length ? '<div class="faint" style="margin:2px 0 6px">' + U("take_a_share") + '</div><select class="input" data-give-share><option value="">' + esc(Uraw("or_amount")) + "</option>" + fu.shares.map(function (s, i) { return '<option value="' + i + '"' + (give.share === i ? " selected" : "") + ">" + esc(L(s.name)) + " · " + money(s.amount) + "</option>"; }).join("") + "</select>" +
-        (give.share != null ? '<div class="qty" style="margin-top:8px"><span>' + esc(L(fu.shares[give.share].name)) + '</span><span class="stepper"><button type="button" data-qty="-1" aria-label="-">−</button><b>' + num(give.qty) + '</b><button type="button" data-qty="1" aria-label="+">+</button></span></div>' : "") : "";
-      $("[data-give-amts]", box).innerHTML = (fu.suggested || []).map(function (a) { return '<button type="button" data-amt="' + a + '" aria-pressed="' + (give.share == null && give.amount === a) + '">' + money(a) + "</button>"; }).join("");
-      var inp = $("[data-give-amount]", box); if (document.activeElement !== inp) inp.value = give.share == null ? give.amount : "";
-      $("[data-give-total]", box).textContent = money(total());
-      $("[data-give-monthly]", box).hidden = give.freq !== "monthly";
-      $$("[data-freq]", box).forEach(function (b) { b.setAttribute("aria-pressed", b.dataset.freq === give.freq ? "true" : "false"); });
-      $$(".share[data-share]").forEach(function (b) { b.setAttribute("aria-pressed", String(+b.dataset.share === give.share)); });
-      var r = $("[data-give-report]", box); if (r) r.dataset.fund = fu.id;
-      st.give = { fund: fu.id, amount: total() };
-      var rf = $("#reportForm"); if (rf) prefillReport();
+  function drawWiz() {
+    var w = $("#wiz"); if (!w) return;
+    var f = fundById(give.fund), s = give.step, html = "";
+    $$("#wizSteps li").forEach(function (li, i) { li.className = i + 1 < s ? "done" : i + 1 === s ? "on" : ""; });
+    if (s > 1 && f) html += summary();
+    if (s === 1) {
+      html += '<h2 class="wiz-q">' + L({ bn: "কোন খাতে দান করতে চান?", en: "Which cause would you like to support?", ar: "أي مجال تود دعمه؟" }) + '</h2><div class="pick">' + funds().map(function (x) {
+        return '<button type="button" class="pick-c" data-pick="' + esc(x.id) + '" aria-pressed="' + (x.id === give.fund) + '"><span class="ph"><img loading="lazy" src="' + esc(img(x.image)) + '" alt=""></span><span class="tx"><b>' + T(x.name) + "</b><small>" + T(x.tagline || "") + "</small></span></button>";
+      }).join("") + "</div>";
+    } else if (s === 2) {
+      var sug = f.suggested || [500, 1000, 5000, 10000];
+      html += '<h2 class="wiz-q">' + L({ bn: "কত টাকা দান করতে চান?", en: "How much would you like to give?", ar: "كم تود أن تتبرع؟" }) + '</h2><div class="amts big">' + sug.map(function (a) { return '<button type="button" data-amt="' + a + '" aria-pressed="' + (give.share == null && give.amount === a) + '">' + money(a) + "</button>"; }).join("") + "</div>" +
+        '<label class="faint" for="wizAmt" style="display:block;margin-top:14px">' + U("or_amount") + '</label><div class="amount-in"><span>৳</span><input class="input" id="wizAmt" type="number" min="10" step="10" inputmode="numeric" value="' + (give.share == null && give.amount ? give.amount : "") + '"></div>' +
+        ((f.shares || []).length ? '<details class="sharebox"' + (give.share != null ? " open" : "") + '><summary>' + icon("cube") + L({ bn: "অথবা নির্মাণের একটি অংশের দায়িত্ব নিন", en: "Or fund a specific part of the construction", ar: "أو موّل جزءًا محددًا من البناء" }) + '</summary><div class="shares">' + f.shares.map(function (x, i) { return '<button class="share" type="button" data-share="' + i + '" aria-pressed="' + (give.share === i) + '"><span class="ic">' + icon(x.icon || "heart") + "</span><span><b>" + T(x.name) + "</b><span>" + money(x.amount) + "</span></span></button>"; }).join("") + "</div>" +
+          (give.share != null ? '<div class="qty"><span>' + L({ bn: "পরিমাণ (কয়টি)", en: "Quantity", ar: "الكمية" }) + '</span><span class="stepper"><button type="button" data-qty="-1" aria-label="-">−</button><b>' + num(give.qty) + '</b><button type="button" data-qty="1" aria-label="+">+</button></span></div>' : "") + "</details>" : "") +
+        '<div class="seg" role="group" style="margin-top:16px"><button data-freq="once" aria-pressed="' + (give.freq === "once") + '">' + L({ bn: "এককালীন", en: "One-time", ar: "مرة واحدة" }) + '</button><button data-freq="monthly" aria-pressed="' + (give.freq === "monthly") + '">' + U("monthly") + "</button></div>" +
+        (give.freq === "monthly" ? '<p class="faint" style="margin:8px 0 0">' + L({ bn: "প্রতি মাসে একই পরিমাণ পাঠাতে পারেন; বিকাশ অটো-পে চালু হলে এখানে জানানো হবে।", en: "Send the same amount each month; we'll announce here when bKash auto-pay is available.", ar: "يمكنك إرسال المبلغ نفسه شهريًا." }) + "</p>" : "");
+    } else if (s === 3) {
+      var list = chs(), types = ["bkash", "nagad", "rocket", "bank"].filter(function (t) { return list.some(function (c) { return c.type === t; }); });
+      if (types.indexOf(give.method) < 0) give.method = types[0];
+      html += '<h2 class="wiz-q">' + L({ bn: "কীভাবে টাকা পাঠাবেন?", en: "How would you like to send it?", ar: "كيف تود الإرسال؟" }) + '</h2><div class="methods">' + types.map(function (t) { return '<button type="button" data-method="' + t + '" aria-pressed="' + (t === give.method) + '"><span class="dotc" style="background:' + COL[t] + '"></span>' + ({ bkash: L({ bn: "বিকাশ", en: "bKash", ar: "بيكاش" }), nagad: L({ bn: "নগদ", en: "Nagad", ar: "نقد" }), rocket: L({ bn: "রকেট", en: "Rocket", ar: "روكيت" }), bank: L({ bn: "ব্যাংক", en: "Bank", ar: "بنك" }) })[t] + "</button>"; }).join("") + "</div>";
+      var mine = list.filter(function (c) { return c.type === give.method; });
+      if (give.method === "bank") html += '<div class="channels" style="margin-top:14px">' + mine.map(bankCard).join("") + '</div><p class="faint">' + L({ bn: "জমার স্লিপে বা ট্রান্সফারের রেফারেন্সে খাতের নাম লিখুন।", en: "Write the cause in the deposit slip or transfer reference.", ar: "اكتب اسم المجال في مرجع التحويل." }) + "</p>";
+      else {
+        var c0 = mine[0], lng = st.lang === "bn" ? "bn" : "en";
+        var stepsTxt = (PAYSTEPS[give.method] || PAYSTEPS.nagad)[lng].map(function (x) { return "<li>" + esc(x).replace("{n}", '<b class="ltr">' + esc(c0.number) + "</b>").replace("{a}", "<b>" + money(total()) + "</b>").replace("{f}", "<b>" + esc(L(f.name)) + "</b>") + "</li>"; }).join("");
+        html += '<div class="paycard" style="--pc:' + COL[give.method] + '"><div class="pc-top">' + mine.map(function (c) { return '<div class="pc-num"><small>' + T(c.name) + '</small><span class="ltr">' + esc(c.number) + '</span><button class="btn sm" data-copy="' + esc(c.number.replace(/[^\d]/g, "")) + '">' + icon("copy") + U("copy") + "</button></div>"; }).join("") + '</div><ol class="howto">' + stepsTxt + "</ol></div>";
+      }
+    } else if (s === 4) {
+      var chOpts = chs().filter(function (c) { return c.type === give.method; });
+      html += '<h2 class="wiz-q">' + L({ bn: "টাকা পাঠিয়েছেন? আমাদের জানিয়ে দিন", en: "Sent it? Let us know", ar: "أرسلت التبرع؟ أبلغنا" }) + '</h2><p class="muted">' + L({ bn: "শুধু তিনটি তথ্য দিন। এতে আপনার দান নির্দিষ্ট খাতে জমা হবে এবং আমরা নিশ্চিত করে জানাব।", en: "Just three details, so we can record your gift against the cause and confirm it.", ar: "ثلاث معلومات فقط لنسجل تبرعك ونؤكده." }) + "</p>" +
+        '<form class="form" data-submit="donation" data-ref="' + esc(give.fund) + '"><input type="hidden" name="fund" value="' + esc(give.fund) + '"><input type="hidden" name="amount" value="' + total() + '"><input type="hidden" name="frequency" value="' + give.freq + '"><input type="hidden" name="share" value="' + (give.share != null && f.shares ? esc(L(f.shares[give.share].name)) + " x" + give.qty : "") + '"><input type="hidden" name="date" value="' + new Date().toISOString().slice(0, 10) + '">' +
+        '<div class="row2"><div class="field"><label for="d_name">' + U("name") + ' *</label><input class="input" id="d_name" name="name" required autocomplete="name"></div><div class="field"><label for="d_phone">' + U("phone") + ' *</label><input class="input" id="d_phone" name="phone" type="tel" required autocomplete="tel" inputmode="tel"></div></div>' +
+        '<div class="row2"><div class="field"><label for="d_txn">' + U("txn_id") + ' *</label><input class="input" id="d_txn" name="txn" required></div><div class="field"><label for="d_ch">' + U("channel") + '</label><select class="input" id="d_ch" name="channel">' + chs().map(function (c) { return '<option value="' + esc(c.type + ":" + c.number) + '"' + (c === chOpts[0] ? " selected" : "") + ">" + esc(tr(c.name)) + " · " + esc(c.number) + "</option>"; }).join("") + "</select></div></div>" +
+        '<div class="field"><label for="d_msg">' + U("message") + '</label><textarea class="input" id="d_msg" name="message" rows="2" style="min-height:70px"></textarea></div><button class="btn primary lg" type="submit">' + icon("check") + U("submit") + '</button><div class="out" aria-live="polite"></div></form>';
     }
-    box.addEventListener("change", function (e) {
-      if (e.target.matches("[data-give-fund]")) { give.fund = e.target.value; give.share = null; give.qty = 1; give.amount = (f().suggested || [1000])[1] || 1000; draw(); if (st.route === "donate") drawDonateCause(); }
-      if (e.target.matches("[data-give-share]")) { give.share = e.target.value === "" ? null : +e.target.value; give.qty = 1; draw(); }
-    });
-    box.addEventListener("input", function (e) { if (e.target.matches("[data-give-amount]")) { give.share = null; give.amount = Math.max(0, parseInt(e.target.value, 10) || 0); draw(); } });
-    box.addEventListener("click", function (e) {
-      var a = e.target.closest("[data-amt]"); if (a) { give.share = null; give.amount = +a.dataset.amt; draw(); return; }
-      var q = e.target.closest("[data-qty]"); if (q) { give.qty = Math.max(1, Math.min(999, give.qty + (+q.dataset.qty))); draw(); return; }
-      var fr = e.target.closest("[data-freq]"); if (fr) { give.freq = fr.dataset.freq; draw(); return; }
-      var rp = e.target.closest("[data-give-report]"); if (rp && st.route === "donate") { e.preventDefault(); var t = $("#report"); if (t) t.scrollIntoView({ behavior: "smooth" }); }
-    });
-    document.addEventListener("click", shareClick);
-    draw();
-    IBT._giveDraw = draw;
+    var canNext = s === 1 ? !!give.fund : s === 2 ? total() >= 10 : s === 3;
+    html += '<div class="wiz-nav">' + (s > 1 ? '<button class="btn" data-wiz="back">' + icon("arrow", "flip-ltr") + L({ bn: "আগের ধাপ", en: "Back", ar: "السابق" }) + "</button>" : "<span></span>") +
+      (s < 4 ? '<button class="btn primary lg" data-wiz="next"' + (canNext ? "" : " disabled") + ">" + (s === 3 ? L({ bn: "টাকা পাঠিয়েছি", en: "I've sent it", ar: "تم الإرسال" }) : L({ bn: "পরের ধাপ", en: "Continue", ar: "التالي" })) + ARROW + "</button>" : "") + "</div>";
+    w.innerHTML = html;
   }
-  function shareClick(e) {
-    var b = e.target.closest(".share[data-share]"); if (!b || !$("[data-givebox]")) return;
-    give.share = +b.dataset.share; give.qty = 1; if (IBT._giveDraw) IBT._giveDraw();
-    var g = $("#give"); if (g && window.innerWidth < 1000) g.scrollIntoView({ behavior: "smooth", block: "start" });
-  }
-  IBT.beforeHooks.push(function () { document.removeEventListener("click", shareClick); IBT._giveDraw = null; });
-  function prefillReport() {
-    var rf = $("#reportForm"); if (!rf || !st.give) return;
-    var fs = $('[name="fund"]', rf), am = $('[name="amount"]', rf);
-    if (fs) fs.value = st.give.fund; if (am && st.give.amount) am.value = st.give.amount;
-  }
-
-  /* ---------- donate page ---------- */
-  P.donate = function () {
-    var D = C().donateCopy || {}, pay = C().payment || {};
-    var f0 = st.fund || "mosque";
-    var html = h.pageHead(U("donate"), L({ bn: "আপনার সাদাকাহ, স্থায়ী কল্যাণ", en: "Your sadaqah, a lasting good", ar: "صدقتك خيرٌ باقٍ" }), T(D.transparency), h.crumbs([[U("donate")]]));
-    html += '<section class="section tight" style="padding-top:0"><div class="wrap"><div class="cause-row" role="group" aria-label="' + esc(Uraw("step_fund")) + '">' + funds().map(function (f) { return '<button class="cause-pill" data-pick="' + esc(f.id) + '" aria-pressed="' + (f.id === f0) + '"><img src="' + esc(img(f.image)) + '" alt="">' + T(f.name) + "</button>"; }).join("") + "</div></div></section>";
-    html += '<section class="section tight" style="padding-top:8px"><div class="wrap donate-steps"><div id="donateCause"></div><aside class="give-sticky" id="give">' + giveBox(f0, false) + "</aside></div></section>";
-    html += '<section class="section tight" id="report"><div class="wrap split" style="align-items:start"><div class="glass" style="padding:clamp(20px,3vw,30px)"><h2 style="font-size:1.4rem">' + U("report_donation") + '</h2><p class="muted">' + U("report_donation_text") + '</p><div id="reportForm">' +
-      h.submitForm("donation", "", [["name", "text", true], ["phone", "tel", true], ["amount", "number", true, null, "amount"], ["channel", "select", true, (pay.channels || []).map(function (c) { return [c.type + (c.type === "bank" ? ":" + c.number : ""), tr(c.name)]; }), "channel"], ["txn", "text", true, null, "txn_id"], ["date", "date", true], ["fund", "select", true, funds().map(function (f) { return [f.id, tr(f.name)]; }), "fund"], ["message", "textarea", false]]) +
-      '</div></div><div class="grid">' + verseBlock() + ((D.motivations || []).slice(0, 2).map(function (m) { return '<div class="glass" style="padding:22px"><h3 style="font-size:1.1rem">' + T(m.title) + '</h3><p class="muted" style="margin:0">' + T(m.text) + '</p><div class="faint" style="margin-top:8px">' + T(m.ref) + "</div></div>"; }).join("")) + "</div></div></section>";
-    return html;
-  };
-  function drawDonateCause() {
-    var el = $("#donateCause"); if (!el) return;
-    var f = fundById(give.fund); if (!f) return;
-    $$("[data-pick]").forEach(function (b) { b.setAttribute("aria-pressed", String(b.dataset.pick === f.id)); });
-    el.innerHTML = '<div class="photo" style="aspect-ratio:16/9;border-radius:var(--r-xl)"><img src="' + esc(img(f.cover || f.image)) + '" alt=""></div><h2 class="h-section" style="margin-top:22px">' + T(f.name) + '</h2><p class="lead">' + T(f.text) + "</p>" +
-      (f.floors ? '<div class="upd" style="margin:18px 0"><div class="in"><div class="head">' + icon("check") + "<span>" + T(((C().floors || {}).headline || {})[f.floors]) + "</span></div>" + levelsHtml(f.floors) + "</div></div>" : "") +
-      ((f.shares || []).length ? '<h3 style="margin-top:24px">' + U("take_a_share") + '</h3><p class="faint">' + U("share_hint") + '</p><div class="shares">' + f.shares.map(shareBtn).join("") + "</div>" : "") +
-      '<div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:20px"><a class="btn" href="#fund-' + esc(f.id) + '">' + icon("eye") + L({ bn: "এই খাতের বিস্তারিত ও ডকুমেন্টারি", en: "Story and documentary", ar: "القصة والفيلم" }) + "</a>" + (f.video ? '<button class="btn" data-play="' + esc(f.video) + '" data-title="' + esc(L(f.name)) + '">' + icon("play") + U("watch_documentary") + "</button>" : "") + "</div>";
-    if (IBT._giveDraw) IBT._giveDraw();
-  }
+  function wizNav(n) { give.step = Math.max(1, Math.min(4, n)); drawWiz(); var t = $("#wizSteps"); if (t && t.getBoundingClientRect().top < 0) t.scrollIntoView({ behavior: "smooth" }); }
   document.addEventListener("click", function (e) {
-    var pk = e.target.closest("[data-pick]"); if (pk && st.route === "donate") { give.fund = pk.dataset.pick; give.share = null; give.qty = 1; var fu = fundById(give.fund); give.amount = (fu.suggested || [1000])[1] || 1000; var sel = $("[data-give-fund]"); if (sel) sel.value = give.fund; drawDonateCause(); return; }
-    var gv = e.target.closest("[data-give]"); if (gv) { e.preventDefault(); st.fund = gv.dataset.give; location.hash = "#fund-" + gv.dataset.give; setTimeout(function () { var g = $("#give"); if (g) g.scrollIntoView({ behavior: "smooth" }); }, 120); }
-    var df = e.target.closest("a[data-fund]"); if (df) st.fund = df.dataset.fund;
-    var sc = e.target.closest("[data-scrollto]"); if (sc) { var t = document.getElementById(sc.dataset.scrollto); if (t) t.scrollIntoView({ behavior: "smooth", block: "start" }); }
+    if (st.route !== "donate" || !$("#wiz")) return;
+    var t = e.target, b;
+    if ((b = t.closest("[data-wiz-go]"))) { var n = +b.dataset.wizGo; if (n === 1 || (n === 2 && give.fund) || (n >= 3 && give.fund && total() >= 10)) wizNav(n); return; }
+    if ((b = t.closest("[data-pick]"))) { give.fund = b.dataset.pick; give.share = null; give.qty = 1; give.amount = (fundById(give.fund).suggested || [1000])[1]; wizNav(2); return; }
+    if ((b = t.closest("[data-amt]"))) { give.share = null; give.amount = +b.dataset.amt; drawWiz(); return; }
+    if ((b = t.closest(".share[data-share]"))) { give.share = +b.dataset.share; give.qty = 1; drawWiz(); return; }
+    if ((b = t.closest("[data-qty]"))) { give.qty = Math.max(1, Math.min(999, give.qty + (+b.dataset.qty))); drawWiz(); return; }
+    if ((b = t.closest("[data-freq]"))) { give.freq = b.dataset.freq; drawWiz(); return; }
+    if ((b = t.closest("[data-method]"))) { give.method = b.dataset.method; drawWiz(); return; }
+    if ((b = t.closest("[data-wiz]"))) { wizNav(give.step + (b.dataset.wiz === "next" ? 1 : -1)); return; }
+  });
+  document.addEventListener("input", function (e) {
+    if (e.target.id !== "wizAmt") return;
+    give.share = null; give.amount = Math.max(0, parseInt(e.target.value, 10) || 0);
+    $$("#wiz [data-amt]").forEach(function (x) { x.setAttribute("aria-pressed", String(+x.dataset.amt === give.amount)); });
+    $$("#wiz .share").forEach(function (x) { x.setAttribute("aria-pressed", "false"); });
+    var nx = $('#wiz [data-wiz="next"]'); if (nx) nx.disabled = give.amount < 10;
+    var sm = $("#wiz .wiz-sum strong"); if (sm) sm.innerHTML = give.amount ? money(give.amount) : "—";
+  });
+  document.addEventListener("click", function (e) {
+    var gv = e.target.closest("[data-give]"); if (gv) { e.preventDefault(); give = { fund: gv.dataset.give, share: null, qty: 1, amount: (fundById(gv.dataset.give).suggested || [1000])[1], freq: "once", method: "bkash", step: 2 }; st.giveKeep = true; location.hash = "#donate"; return; }
+    var df = e.target.closest("a[data-fund]"); if (df) { st.fund = df.dataset.fund; }
+    var sc = e.target.closest("[data-scrollto]"); if (sc) { var tt = document.getElementById(sc.dataset.scrollto); if (tt) tt.scrollIntoView({ behavior: "smooth", block: "start" }); }
   });
 
   /* ================= campus 3D + construction update ================= */
   function futureB(id) { return h.find(((C().future || {}).buildings) || [], id) || {}; }
-  function campusBuildings() {
-    var F = C().floors || {};
+  function campusGroups() {
+    var F = C().floors || {}, mp = C().masterplan || {};
     function sts(list) { return (list || []).slice(1).map(function (f) { return f.status; }); }
-    return [
-      { id: "masjid-complex", kind: "masjid", x: -5, z: 3, w: 9, d: 9, foundation: ((F.mosque || [])[0] || {}).status || "done", floors: sts(F.mosque), label: L(futureB("masjid-complex").name) },
-      { id: "academic-1", x: 9.5, z: -1.5, w: 7, d: 12, foundation: ((F.academic || [])[0] || {}).status || "progress", floors: sts(F.academic), label: L(futureB("academic-1").name) },
-      { id: "academic-2", x: -15, z: -6.5, w: 8, d: 6, ghostFloors: 6, label: L(futureB("academic-2").name) },
-      { id: "academic-3", x: -15.5, z: 8.5, w: 7, d: 5, ghostFloors: 5, label: L(futureB("academic-3").name) },
-      { id: "taibah-tower", kind: "tower", x: 17, z: 9, w: 4.6, d: 4.6, ghostFloors: 13, label: L(futureB("taibah-tower").name) }
-    ];
+    return (mp.groups || []).map(function (g) {
+      return { id: g.id, label: L(futureB(g.id).name), parts: g.parts.map(function (p) {
+        var q = { x: p.x, z: p.z, w: p.w, d: p.d, kind: p.kind, ghostFloors: p.ghostFloors, name: L(p.name) };
+        if (p.status === "mosque") { q.kind = "masjid"; q.floors = sts(F.mosque); q.foundation = ((F.mosque || [])[0] || {}).status || "done"; }
+        if (p.status === "academic") { q.floors = sts(F.academic); q.foundation = ((F.academic || [])[0] || {}).status || "progress"; }
+        return q;
+      }) };
+    });
   }
   function itemsHtml(b) { return '<div class="items">' + (b.items || []).map(function (it) { return '<div class="it"><span class="ic">' + icon(it.icon || "cube") + "</span><span>" + T(it.name) + "</span></div>"; }).join("") + "</div>"; }
   function bldPanel(id) {
     var b = futureB(id); if (!b.id) return "";
     var floorsKind = id === "masjid-complex" ? "mosque" : id === "academic-1" ? "academic" : null;
-    return '<div class="bld-tabs">' + ((C().future || {}).buildings || []).map(function (x) { return '<button data-bld="' + esc(x.id) + '" aria-pressed="' + (x.id === id) + '">' + T(x.name) + "</button>"; }).join("") + "</div>" +
+    var COLS = (window.IBT3D && window.IBT3D.colors) || {}, mg = h.find((C().masterplan || {}).groups || [], id) || {};
+    return '<div class="bld-tabs">' + ((C().future || {}).buildings || []).map(function (x) { return '<button data-bld="' + esc(x.id) + '" aria-pressed="' + (x.id === id) + '"><i style="background:' + (COLS[x.id] || "var(--accent)") + '"></i>' + T(x.name) + "</button>"; }).join("") + "</div>" +
       "<div><h3>" + T(b.name) + '</h3><div style="margin-top:8px"><span class="chip ' + (b.status === "planned" ? "muted" : "gold") + '"><span class="dot"></span>' + T(b.statusText) + "</span></div></div>" +
       (floorsKind ? levelsHtml(floorsKind) : "") +
+      ((mg.parts || []).length > 1 ? '<div class="faint" style="font-weight:600">' + L({ bn: "মাস্টারপ্ল্যানে এই গ্রুপের ভবন", en: "Buildings in this group (master plan)", ar: "مباني هذه المجموعة في المخطط" }) + '</div><div class="parts">' + mg.parts.map(function (p) { return '<span class="chip">' + T(p.name) + "</span>"; }).join("") + "</div>" : "") +
       '<div class="faint" style="font-weight:600">' + U("what_inside") + "</div>" + itemsHtml(b) +
       '<div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:auto">' + (b.fund ? '<a class="btn primary sm" href="#fund-' + esc(b.fund) + '">' + icon("heart") + U("give_to_fund") + "</a>" : '<a class="btn primary sm" href="#donate">' + icon("heart") + U("donate") + "</a>") + '<a class="btn sm" href="#future">' + U("nav_future") + ARROW + "</a></div>";
   }
   function campusSection(sel) {
     sel = sel || "masjid-complex";
-    return '<div class="campus"><div class="stage3d rv" id="campusStage"><canvas aria-label="3D"></canvas><div class="labels"></div><span class="hint">' + icon("cube") + " " + U("drag_hint") + '</span><div class="legend"><span class="chip"><i style="background:var(--done)"></i>' + U("status_done") + '</span><span class="chip"><i style="background:var(--progress)"></i>' + U("status_progress") + '</span><span class="chip"><i style="border:1.5px dashed var(--text-3)"></i>' + U("status_planned") + '</span></div></div><div class="bld-panel rv" id="bldPanel" data-sel="' + esc(sel) + '">' + bldPanel(sel) + "</div></div>";
+    return '<div class="campus"><div class="stage3d rv" id="campusStage"><canvas aria-label="3D"></canvas><div class="labels"></div><span class="hint">' + icon("cube") + " " + U("drag_hint") + '</span><div class="zoom3d"><button type="button" data-z3="in" aria-label="+">+</button><button type="button" data-z3="out" aria-label="−">−</button><button type="button" data-z3="reset" aria-label="reset">' + icon("locate") + '</button></div><div class="legend"><span class="chip"><i style="background:var(--done)"></i>' + U("status_done") + '</span><span class="chip"><i style="background:var(--progress)"></i>' + U("status_progress") + '</span><span class="chip"><i style="border:1.5px dashed var(--text-3)"></i>' + U("status_planned") + '</span></div></div><div class="bld-panel rv" id="bldPanel" data-sel="' + esc(sel) + '">' + bldPanel(sel) + "</div></div>";
   }
   function mountCampus() {
     var stage = $("#campusStage"); if (!stage || !window.IBT3D) return;
@@ -192,19 +207,25 @@
     var route = st.route;
     window.IBT3D.load().then(function () {
       if (st.route !== route || !document.body.contains(canvas)) return;
-      var sc = window.IBT3D.mount(canvas, { buildings: campusBuildings(), theme: st.theme, labelsEl: labels, selected: panel.dataset.sel, onPick: function (id) { panel.dataset.sel = id; panel.innerHTML = bldPanel(id); } });
+      var sc = window.IBT3D.mount(canvas, { groups: campusGroups(), context: (C().masterplan || {}).context, theme: st.theme, labelsEl: labels, selected: panel.dataset.sel, onPick: function (id) { panel.dataset.sel = id; panel.innerHTML = bldPanel(id); } });
       if (sc) { h.scenes().push(sc); IBT._campus = sc; } else fallback();
     }, fallback);
   }
   document.addEventListener("click", function (e) {
+    var z = e.target.closest("[data-z3]"); if (z && IBT._campus) { if (z.dataset.z3 === "reset") IBT._campus.reset(); else IBT._campus.zoom(z.dataset.z3 === "in" ? 0.8 : 1.25); return; }
     var b = e.target.closest("[data-bld]"); if (!b) return;
     var panel = $("#bldPanel"); if (!panel) return; panel.dataset.sel = b.dataset.bld; panel.innerHTML = bldPanel(b.dataset.bld);
     if (IBT._campus) IBT._campus.setSelected(b.dataset.bld);
   });
+  function ring(kind) {
+    var list = (C().floors || {})[kind] || []; if (!list.length) return "";
+    var v = list.reduce(function (a, f) { return a + (f.status === "done" ? 1 : f.status === "progress" ? 0.5 : 0); }, 0), p = Math.round(v / list.length * 100);
+    return '<span class="ring" data-p="' + p + '" title="' + esc(L({ bn: "কাঠামোর অগ্রগতি (আনুমানিক)", en: "Structure progress (approx.)", ar: "تقدم الهيكل (تقريبي)" })) + '"><b>' + digits(p) + "%</b></span>";
+  }
   function updateSection() {
     var F = C().floors || {}, ph = F.photos || {};
     function card(kind, title, fundId, vid) {
-      return '<div class="upd rv"><div class="ph"><img loading="lazy" src="' + esc(img(ph[kind])) + '" alt=""><span class="chip">' + h.fdate(F.asOf) + '</span></div><div class="in"><h3>' + title + '</h3><div class="head">' + icon("check") + "<span>" + T((F.headline || {})[kind]) + "</span></div>" + levelsHtml(kind) + '<div class="spec">' + T((F.specs || {})[kind]) + '</div><div style="display:flex;gap:8px;flex-wrap:wrap"><a class="btn primary sm" href="#fund-' + fundId + '">' + icon("heart") + U("give_to_fund") + "</a>" + (vid ? '<button class="btn sm" data-play="' + vid + '" data-title="' + esc(Uraw(kind === "mosque" ? "masjid" : "academic_bld")) + '">' + icon("play") + U("watch") + "</button>" : "") + "</div></div></div>";
+      return '<div class="upd rv"><div class="ph"><img loading="lazy" src="' + esc(img(ph[kind])) + '" alt=""><span class="chip">' + h.fdate(F.asOf) + '</span></div><div class="in"><div class="upd-top"><h3>' + title + '</h3>' + ring(kind) + '</div><div class="head">' + icon("check") + "<span>" + T((F.headline || {})[kind]) + "</span></div>" + levelsHtml(kind) + '<div class="spec">' + T((F.specs || {})[kind]) + '</div><div style="display:flex;gap:8px;flex-wrap:wrap"><a class="btn primary sm" href="#fund-' + fundId + '">' + icon("heart") + U("give_to_fund") + "</a>" + (vid ? '<button class="btn sm" data-play="' + vid + '" data-title="' + esc(Uraw(kind === "mosque" ? "masjid" : "academic_bld")) + '">' + icon("play") + U("watch") + "</button>" : "") + "</div></div></div>";
     }
     return '<div class="update">' + card("mosque", U("masjid"), "mosque", "ViHzrqAKvO8") + card("academic", U("academic_bld"), "academy", "GW_HDHAsbyM") + '</div><div class="src">' + U("source") + ": " + T(F.source) + "</div>";
   }
@@ -215,7 +236,7 @@
     return h.pageHead(U("nav_projects"), T(Fu.title), T(Fu.intro), h.crumbs([[U("nav_future")]])) +
       '<section class="section tight" style="padding-top:0"><div class="wrap">' + campusSection("masjid-complex") + '<p class="faint" style="margin-top:12px">' + T(Fu.note) + "</p></div></section>" +
       '<section class="section tight"><div class="wrap fut">' + (Fu.buildings || []).map(function (b, i) {
-        return '<article class="fbld rv" id="b-' + esc(b.id) + '"><div class="ph"><img loading="lazy" src="' + esc(img(b.image)) + '" alt=""><span class="num">' + digits(i + 1) + '</span></div><div class="in"><div><span class="chip ' + (b.status === "planned" ? "muted" : "gold") + '"><span class="dot"></span>' + T(b.statusText) + "</span></div><h3>" + T(b.name) + '</h3><div class="faint" style="font-weight:600">' + U("what_inside") + "</div>" + itemsHtml(b) +
+        return '<article class="fbld rv" id="b-' + esc(b.id) + '"><div class="ph"><img loading="lazy" src="' + esc(img(b.image)) + '" alt=""><span class="num">' + digits(i + 1) + '</span>' + (b.illustrative ? '<span class="chip ill">' + U("illustrative") + "</span>" : "") + '</div><div class="in"><div><span class="chip ' + (b.status === "planned" ? "muted" : "gold") + '"><span class="dot"></span>' + T(b.statusText) + "</span></div><h3>" + T(b.name) + '</h3><div class="faint" style="font-weight:600">' + U("what_inside") + "</div>" + itemsHtml(b) +
           '<div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:6px">' + (b.fund ? '<a class="btn primary sm" href="#fund-' + esc(b.fund) + '">' + icon("heart") + U("give_to_fund") + "</a>" : '<a class="btn primary sm" href="#donate">' + icon("heart") + U("donate") + "</a>") + "</div></div></article>";
       }).join("") + "</div></section>";
   };
@@ -563,9 +584,7 @@
 
   /* ================= hooks ================= */
   IBT.afterHooks = (IBT.afterHooks || []).concat([function (route) {
-    if ($("[data-givebox]")) wireGive();
-    if (route === "donate") drawDonateCause();
-    if (route === "donate" && st.give) setTimeout(prefillReport, 0);
+    if (route === "donate") drawWiz();
     if ($("#campusStage")) mountCampus();
     if ($("#ptStrip")) homeStrip();
     if (route === "prayer") prayerPage();
