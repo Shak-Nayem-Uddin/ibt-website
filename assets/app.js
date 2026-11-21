@@ -359,8 +359,8 @@
   };
 
   P.institutions = function () {
-    return pageHead(U("nav_institutions"), U("nav_institutions"), T(C.home.visionText), crumbs([[U("nav_institutions")]])) +
-      '<section class="section tight"><div class="wrap grid g3">' + (C.institutions || []).map(function (i) { return card({ href: i.link || "#inst-" + i.id, image: i.image, title: T(i.name), text: T(i.summary), chip: statusChip(i.status) }); }).join("") + "</div></section>";
+    return pageHead(U("nav_institutions"), U("nav_institutions"), U("inst_lead"), crumbs([[U("nav_institutions")]])) +
+      '<section class="section tight"><div class="wrap grid g3">' + (C.institutions || []).map(function (i) { return card({ href: i.link || "#inst-" + i.id, image: i.image, title: T(i.name), text: T(i.summary), chip: statusChip(i.status) }); }).join("") + '</div><div class="wrap">' + '<p class="faint status-key">' + U("status_legend") + '</p>' + "</div></section>";
   };
   P.inst = function (id) {
     var i = find(C.institutions, id); if (!i) return P.notfound();
@@ -377,8 +377,8 @@
   };
 
   P.projects = function () {
-    return pageHead(U("nav_projects"), U("nav_projects"), "", crumbs([[U("nav_projects")]])) +
-      '<section class="section tight"><div class="wrap grid g2">' + (C.projects || []).filter(function (p) { return !p.hidden; }).map(function (p) { return card({ href: "#project-" + p.id, image: p.image, title: T(p.name), text: T(p.summary), chip: statusChip(p.status), meta: '<span class="faint">' + T(p.location) + "</span>" }); }).join("") + "</div></section>";
+    return pageHead(U("nav_projects"), U("nav_projects"), U("proj_lead"), crumbs([[U("nav_projects")]])) +
+      '<section class="section tight"><div class="wrap grid g2">' + (C.projects || []).filter(function (p) { return !p.hidden; }).map(function (p) { return card({ href: "#project-" + p.id, image: p.image, title: T(p.name), text: T(p.summary), chip: statusChip(p.status), meta: '<span class="faint">' + T(p.location) + "</span>" }); }).join("") + '</div><div class="wrap">' + '<p class="faint status-key">' + U("status_legend") + '</p>' + "</div></section>";
   };
   P.project = function (id) {
     var p = find(C.projects, id); if (!p) return P.notfound();
@@ -401,7 +401,7 @@
   }
 
   P.initiatives = function () {
-    return pageHead(U("nav_initiatives"), U("nav_initiatives"), "", crumbs([[U("nav_initiatives")]])) +
+    return pageHead(U("nav_initiatives"), U("nav_initiatives"), U("init_lead"), crumbs([[U("nav_initiatives")]])) +
       '<section class="section tight"><div class="wrap grid g3">' + (C.initiatives || []).map(function (i) { return card({ href: "#init-" + i.id, image: i.image, title: T(i.name), text: T(i.summary) }); }).join("") + "</div></section>";
   };
   P.init = function (id) {
