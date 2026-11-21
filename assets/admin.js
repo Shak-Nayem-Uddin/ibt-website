@@ -15,7 +15,7 @@
   var tl = { type: "tl" }, t = { type: "t" }, s = { type: "s" }, url = { type: "url" }, im = { type: "img" }, bool = { type: "bool" }, dt = { type: "date" }, nm = { type: "num" };
   function sel(o) { return { type: "sel", opts: o }; }
   var SCHEMA = {
-    settings: { label: "সাইট সেটিংস", group: "site", fields: { siteName: t, shortName: s, tagline: t, motto: t, logo: im, logoColor: im, defaultLang: sel(["bn", "en", "ar"]), defaultTheme: sel(["dark", "light"]),
+    settings: { label: "সাইট সেটিংস", group: "site", fields: { siteName: t, shortName: s, tagline: t, motto: t, logo: im, logoColor: im, defaultLang: sel(["bn", "en", "ar"]), defaultTheme: sel(["auto", "light", "dark"]),
       announcement: { type: "obj", fields: { show: bool, text: t, link: s } },
       contact: { type: "obj", fields: { phones: { type: "strs" }, email: s, email2: s, office: t, site: t, hours: t } },
       social: L({ name: s, url: url, icon: sel(["facebook", "youtube", "linkedin", "x"]) }, "name"),

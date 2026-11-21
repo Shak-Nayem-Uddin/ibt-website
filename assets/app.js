@@ -8,7 +8,7 @@
   var CMS_KEYS = ["settings", "home", "chairman", "cells", "history", "institutions", "floors", "projects", "initiatives", "impact", "funds", "supportItems", "payment", "donateCopy", "registrations", "events", "news", "videos", "stories", "reports", "faqs", "ui", "scholars"];
   var V = { videos: [], playlists: [], channels: [] }; // data/videos.json (auto-updated from YouTube)
   IBT.CMS_KEYS = CMS_KEYS;
-  var state = { lang: "bn", theme: "dark", route: "home", preview: false, drafts: {} };
+  var state = { lang: "bn", theme: "", themePref: "auto", route: "home", preview: false, drafts: {} };
   IBT.state = state; IBT.cloud = cloud;
 
   // ---------- utils ----------
@@ -49,7 +49,7 @@
   }
   function hijri(s) {
     var d = parseDate(s); if (!d) return "";
-    try { return new Intl.DateTimeFormat((state.lang === "en" ? "en" : state.lang === "bn" ? "bn" : "ar") + "-u-ca-islamic-umalqura", { day: "numeric", month: "long", year: "numeric" }).format(d); } catch (e) { return ""; }
+    try { return new Intl.DateTimeFormat((state.lang === "en" ? "en" : state.lang === "bn" ? "bn" : "ar") + "-u-ca-islamic-umalqura", { day: "numeric", month: "long", year: "numeric" }).format(d).replace(/\s*যুগ$/, " হিজরি"); } catch (e) { return ""; }
   }
   IBT.fdate = fdate; IBT.num = num; IBT.hijri = hijri;
   function toast(msg) { var t = $("#toast"); t.textContent = msg; t.classList.add("show"); clearTimeout(t._h); t._h = setTimeout(function () { t.classList.remove("show"); }, 2600); }
@@ -77,6 +77,24 @@
     ext: '<path d="M14 4h6v6M20 4l-9 9M19 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1h5"/>', copy: '<rect x="8" y="8" width="12" height="12" rx="2"/><path d="M16 8V5a1 1 0 0 0-1-1H5a1 1 0 0 0-1 1v10a1 1 0 0 0 1 1h3"/>',
     doc: '<path d="M6 2h9l5 5v15H6z"/><path d="M14 2v6h6M9 13h8M9 17h8"/>', cube: '<path d="M12 2l9 5v10l-9 5-9-5V7z"/><path d="M12 22V12M21 7l-9 5-9-5"/>',
     star8: '<path d="M12 1l2.6 6.4L21 6l-1.4 6.4L24 17l-6.4.6L12 23l-3-5.4L2 17l3.4-4.6L3 6l6.4 1.4z" fill="none"/>', gear: '<circle cx="12" cy="12" r="3"/><path d="M19 12a7 7 0 0 0-.1-1.2l2-1.6-2-3.4-2.4 1a7 7 0 0 0-2-1.2L14 3h-4l-.5 2.6a7 7 0 0 0-2 1.2l-2.4-1-2 3.4 2 1.6A7 7 0 0 0 5 12c0 .4 0 .8.1 1.2l-2 1.6 2 3.4 2.4-1a7 7 0 0 0 2 1.2L10 21h4l.5-2.6a7 7 0 0 0 2-1.2l2.4 1 2-3.4-2-1.6c.1-.4.1-.8.1-1.2z"/>',
+    auto: '<circle cx="12" cy="12" r="9"/><path d="M12 3a9 9 0 0 0 0 18z" fill="currentColor"/>',
+    winter: '<path d="M12 2v20M4.9 7l14.2 10M4.9 17L19.1 7M9 4l3 2 3-2M9 20l3-2 3 2"/>', relief: '<path d="M3 11l9-7 9 7"/><path d="M5 10v10h14V10"/><path d="M12 14c-1.5-1.6-4-.6-3 1.5.6 1.2 3 3 3 3s2.4-1.8 3-3c1-2.1-1.5-3.1-3-1.5z"/>',
+    scholar: '<path d="M2 9l10-5 10 5-10 5z"/><path d="M6 11v5c3 2 9 2 12 0v-5M22 9v6"/>', iftar: '<path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5z"/><path d="M16 3l.7 1.6L18.3 5l-1.6.7L16 7.3l-.7-1.6L13.7 5l1.6-.4z"/>',
+    library: '<path d="M4 4h4v16H4zM10 4h4v16h-4z"/><path d="M16 5l3.8-1 2.2 15.8-3.8 1z"/>', maktab: '<path d="M4 19V6a2 2 0 0 1 2-2h12v15H6a2 2 0 0 0-2 2"/><path d="M8 8h6M8 11h4"/>',
+    quran: '<path d="M12 6c-2-1.5-5-2-8-1.5V19c3-.5 6 0 8 1.5 2-1.5 5-2 8-1.5V4.5c-3-.5-6 0-8 1.5z"/><path d="M12 6v14.5"/>', studio: '<rect x="3" y="6" width="13" height="12" rx="2"/><path d="M16 10l5-3v10l-5-3z"/>',
+    seminar: '<rect x="3" y="4" width="18" height="11" rx="1"/><path d="M8 20l4-5 4 5M12 15v-2"/>', arabic: '<path d="M4 6h16M4 12h10M4 18h7"/><circle cx="18" cy="17" r="3"/>',
+    school: '<path d="M3 21h18M5 21V10l7-5 7 5v11"/><path d="M10 21v-5h4v5M12 5V2l3 1.5"/>', clock: '<circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/>',
+    teacher: '<circle cx="8" cy="6" r="3"/><path d="M3 21v-4a5 5 0 0 1 10 0v4M13 10h8v7h-6"/>', hostel: '<path d="M3 20V8l9-5 9 5v12M3 20h18"/><path d="M7 20v-6h10v6M7 11h2M15 11h2"/>',
+    youth: '<circle cx="9" cy="7" r="3"/><circle cx="17" cy="8" r="2.5"/><path d="M3 20c0-4 3-6.5 6-6.5s6 2.5 6 6.5M14.5 14c3 0 6.5 1.5 6.5 6"/>', senior: '<circle cx="11" cy="5" r="2.5"/><path d="M11 8v7l-3 6M11 15l3 6M7 11l4-2 4 2M17 12v9"/>',
+    home: '<path d="M3 11l9-7 9 7v9a1 1 0 0 1-1 1h-5v-6h-6v6H4a1 1 0 0 1-1-1z"/>', museum: '<path d="M3 21h18M4 10h16M12 3l9 5H3zM6 10v8M10 10v8M14 10v8M18 10v8"/>',
+    book: '<path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20V3H6.5A2.5 2.5 0 0 0 4 5.5z"/><path d="M4 19.5A2.5 2.5 0 0 0 6.5 22H20v-5"/>', code: '<path d="M8 8l-4 4 4 4M16 8l4 4-4 4M14 5l-4 14"/>',
+    slab: '<path d="M2 18h20M4 18V9h16v9M2 9h20M7 9V5h10v4"/>', musalla: '<rect x="6" y="2" width="12" height="20" rx="1.5"/><path d="M9 9c0-2 1.3-3.5 3-4 1.7.5 3 2 3 4v4H9zM8 17h8"/>',
+    wudu: '<path d="M12 3c3 4 5 6.5 5 9.5a5 5 0 0 1-10 0C7 9.5 9 7 12 3z"/>', sqft: '<path d="M4 4h16v16H4z"/><path d="M4 9h5M15 4v5M4 15h4M20 15h-5"/>',
+    cement: '<path d="M6 4h12l2 4v12H4V8z"/><path d="M4 8h16M9 13h6"/>', brick: '<rect x="2" y="5" width="9" height="5" rx="1"/><rect x="13" y="5" width="9" height="5" rx="1"/><rect x="7" y="12" width="10" height="5" rx="1"/><rect x="2" y="12" width="3" height="5"/><rect x="19" y="12" width="3" height="5"/>',
+    rod: '<path d="M3 17L17 3M7 21L21 7M5 19L19 5"/>', classroom: '<rect x="3" y="3" width="18" height="11" rx="1"/><path d="M7 21v-3h10v3M12 14v4"/>',
+    play2: '<path d="M8 5v14l11-7z"/>', pause: '<path d="M7 5h3v14H7zM14 5h3v14h-3z" fill="currentColor" stroke="none"/>', prev: '<path d="M18 6L8 12l10 6zM6 6v12"/>', next: '<path d="M6 6l10 6-10 6zM18 6v12"/>',
+    eye: '<path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/>', locate: '<circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3"/><circle cx="12" cy="12" r="7"/>',
+    research2: '<circle cx="10" cy="10" r="6"/><path d="M20 20l-5.5-5.5"/>', check: '<path d="M5 12l5 5L20 7"/>',
     qr: '<rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><path d="M14 14h3v3M21 14v7h-4M17 21h0"/>'
   };
   function icon(n, cls) { return '<svg class="i ' + (cls || "") + '" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">' + (I[n] || I.arrow) + "</svg>"; }
@@ -84,13 +102,17 @@
   var ARROW = icon("arrow", "flip-rtl");
 
   // ---------- theme & language ----------
-  function applyTheme(t) {
+  var darkMQ = window.matchMedia ? matchMedia("(prefers-color-scheme: dark)") : null;
+  function resolveTheme(pref) { return pref === "light" || pref === "dark" ? pref : (darkMQ && darkMQ.matches ? "dark" : "light"); }
+  function applyTheme(pref) {
+    state.themePref = pref || "auto"; var t = resolveTheme(state.themePref);
+    var changed = state.theme !== t;
     state.theme = t; document.documentElement.setAttribute("data-theme", t);
-    var b = $("#themeBtn"); if (b) { b.innerHTML = icon(t === "dark" ? "sun" : "moon"); b.setAttribute("aria-label", Uraw(t === "dark" ? "theme_light" : "theme_dark")); }
+    var b = $("#themeBtn"); if (b) { b.innerHTML = icon(state.themePref === "auto" ? "auto" : t === "dark" ? "moon" : "sun") + (state.themePref === "auto" ? '<span class="lbl">A</span>' : ""); b.setAttribute("aria-label", Uraw("theme_" + state.themePref)); b.title = Uraw("theme_" + state.themePref); }
+    if (changed && IBT._themeInit) scenes.forEach(function (s) { s && s.setTheme && s.setTheme(t); });
     if (IBT._scenes) IBT._scenes.forEach(function (s) { s && s.setTheme(t); });
-    if (C && state.route === "home" && $("#ringStage") && IBT._themeInit) { IBT._noscroll = true; renderMain(); }
     IBT._themeInit = true;
-    var m = $('meta[name="theme-color"]'); if (m) m.content = t === "dark" ? "#06182A" : "#F4F7F1";
+    var m = $('meta[name="theme-color"]'); if (m) m.content = t === "dark" ? "#051F20" : "#F5FAF6";
   }
   function applyLang(l) {
     state.lang = l;
@@ -99,26 +121,29 @@
   }
   IBT.setLang = function (l) { ls("ibt_lang", l); applyLang(l); renderAll(); };
   IBT.setTheme = function (t) { ls("ibt_theme", t); applyTheme(t); };
+  if (darkMQ) { var mqh = function () { if (state.themePref === "auto") applyTheme("auto"); }; if (darkMQ.addEventListener) darkMQ.addEventListener("change", mqh); else if (darkMQ.addListener) darkMQ.addListener(mqh); }
 
   // ---------- chrome (header/footer) ----------
-  var NAV = [["home", "nav_home"], ["about", "nav_about"], ["institutions", "nav_institutions"], ["projects", "nav_projects"], ["initiatives", "nav_initiatives"], ["media", "nav_media"], ["news", "nav_news"], ["register", "nav_register"], ["transparency", "nav_transparency"], ["contact", "nav_contact"]];
+  var NAV = [["home", "nav_home"], ["about", "nav_about"], ["projects", "nav_projects"], ["future", "nav_future"], ["funds", "nav_funds"], ["quran", "nav_quran"], ["prayer", "nav_prayer"], ["media", "nav_media"], ["institutions", "nav_institutions"], ["initiatives", "nav_initiatives"], ["news", "nav_news"], ["register", "nav_register"], ["transparency", "nav_transparency"], ["contact", "nav_contact"]];
+  IBT.NAV = NAV;
   function langSwitch() { return '<div class="lang-switch" role="group" aria-label="Language"><button data-l="bn" lang="bn">বাংলা</button><button data-l="en" lang="en">EN</button><button data-l="ar" lang="ar">عربي</button></div>'; }
   function renderHeader() {
     var S = C.settings, a = S.announcement || {};
     var ann = (a.show && tr(a.text) && ls("ibt_ann_hide") !== tr(a.text)) ? '<div class="announce" id="announce"><a href="' + esc(a.link || "#register") + '"><span class="dot pulse" style="color:var(--accent);margin-inline-end:8px"></span>' + T(a.text) + '</a><button class="x" aria-label="' + Uraw("close") + '" data-act="hide-ann">×</button></div>' : "";
     $("#chrome-top").innerHTML = ann +
-      '<header class="header"><div class="wrap"><div class="bar glass dense">' +
+      '<header class="header"><div class="wrap"><div class="bar">' +
       '<a class="brand" href="#home" aria-label="' + esc(tr(S.siteName)) + '"><span class="mark"></span><span class="bt"><b>' + T(S.siteName) + "</b><small>" + T(S.tagline) + "</small></span></a>" +
-      '<nav class="nav" aria-label="Main">' + NAV.slice(1, 8).map(function (n) { return '<a href="#' + n[0] + '" data-nav="' + n[0] + '">' + U(n[1]) + "</a>"; }).join("") + "</nav>" +
+      '<nav class="nav" aria-label="Main">' + NAV.slice(1, 9).map(function (n) { return '<a href="#' + n[0] + '" data-nav="' + n[0] + '">' + U(n[1]) + "</a>"; }).join("") + "</nav>" +
       '<div class="hd-actions"><button class="icon-btn" id="searchBtn" aria-label="' + Uraw("search") + '">' + icon("search") + "</button>" + langSwitch() +
-      '<button class="icon-btn" id="themeBtn"></button>' + (cloud.canEdit ? '<a class="icon-btn" href="#admin" aria-label="' + Uraw("admin") + '" title="' + Uraw("admin") + '">' + icon("gear") + "</a>" : "") +
+      '<button class="icon-btn theme-btn" id="themeBtn"></button>' + (cloud.canEdit ? '<a class="icon-btn" href="#admin" aria-label="' + Uraw("admin") + '" title="' + Uraw("admin") + '">' + icon("gear") + "</a>" : "") +
       '<a class="btn primary sm donate-hd" href="#donate">' + icon("heart") + U("donate") + '</a><button class="icon-btn menu-btn" id="menuBtn" aria-label="' + Uraw("menu") + '">' + icon("menu") + "</button></div>" +
       "</div></div></header>";
+    document.documentElement.classList.toggle("has-ann", !!ann);
     $("#drawer .panel").innerHTML = '<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px"><span class="brand"><span class="mark"></span><span class="bt"><b>' + T(S.siteName) + '</b></span></span><button class="icon-btn" data-act="close-drawer" aria-label="' + Uraw("close") + '">' + icon("x") + "</button></div>" + langSwitch() +
       NAV.map(function (n) { return '<a class="nl" href="#' + n[0] + '">' + U(n[1]) + ARROW + "</a>"; }).join("") +
       (cloud.canEdit ? '<a class="nl" href="#admin">' + U("admin") + icon("gear") + "</a>" : "") +
       '<a class="btn primary" style="justify-content:center;margin-top:10px" href="#donate">' + icon("heart") + U("donate") + "</a>";
-    applyTheme(state.theme); applyLang(state.lang);
+    applyTheme(state.themePref); applyLang(state.lang);
     var si = $("#searchInput"); if (si) si.placeholder = Uraw("search_ph");
     fitNav();
     $("#mdonate").innerHTML = '<a class="btn primary" href="#donate">' + icon("heart") + U("donate") + "</a>";
@@ -172,6 +197,11 @@
 
   // ---------- pages ----------
   var P = {};
+  IBT.P = P;
+  IBT.H = { $: $, $$: $$, esc: esc, tr: tr, T: T, U: U, Uraw: Uraw, img: img, ytThumb: ytThumb, icon: icon, num: num, money: money, digits: digits, fdate: fdate, hijri: hijri, parseDate: parseDate,
+    crumbs: crumbs, pageHead: pageHead, statusChip: statusChip, card: card, find: find, vcard: vcard, toast: toast, ls: ls, submitForm: function () { return submitForm.apply(null, arguments); },
+    impactSection: function () { return impactSection(); }, sortedNews: function () { return sortedNews(); }, actRow: function (n) { return actRow(n); }, slideCap: function (s) { return slideCap(s); },
+    scenes: function () { return scenes; }, state: state, ARROW: ARROW, LOC: LOC, regStatus: function (r) { return regStatus(r); }, C: function () { return C; }, V: function () { return V; } };
   P.home = function () {
     var H = C.home, S = C.settings;
     var regs = (C.registrations || []).filter(function (r) { return regStatus(r) === "open"; });
@@ -557,8 +587,9 @@
   }
   function renderMain() {
     scenes.forEach(function (s) { s && s.destroy && s.destroy(); }); scenes.length = 0;
+    (IBT.beforeHooks || []).forEach(function (fn) { try { fn(); } catch (e) { } });
     var h = state.route, html;
-    var m = h.match(/^(inst|project|init|news|reg)-(.+)$/);
+    var m = h.match(/^(inst|project|init|news|reg|fund)-(.+)$/);
     if (m) html = (m[1] === "news" ? P.newsItem : P[m[1]])(m[2]);
     else html = (P[h] || P.notfound)();
     var main = $("#main"); main.innerHTML = html;
@@ -569,6 +600,7 @@
     afterRender();
     var titles = { home: "", donate: Uraw("donate") }; document.title = tr(C.settings.siteName) + (h !== "home" ? " · " + (($("h1") || {}).textContent || titles[h] || "") : " · " + tr(C.settings.tagline));
     if (h === "admin" && window.IBTAdmin) window.IBTAdmin.render($("#adminRoot"));
+    (IBT.afterHooks || []).forEach(function (fn) { try { fn(h); } catch (e) { if (window.console) console.error(e); } });
   }
   function renderAll() { renderHeader(); renderFooter(); IBT._noscroll = true; renderMain(); }
   IBT.rerender = renderAll;
@@ -630,14 +662,14 @@
     var sp = t.closest("#story [data-sp]"); if (sp) { storyGo(storyIdx + (+sp.dataset.sp)); return; }
     if (t.closest("[data-act=close-story]")) { closeStory(); if (location.hash.indexOf("#story-") === 0) history.replaceState(null, "", "#" + state.route); return; }
     var lb2 = t.closest(".lang-switch button"); if (lb2) { IBT.setLang(lb2.dataset.l); return; }
-    if (t.closest("#themeBtn")) { IBT.setTheme(state.theme === "dark" ? "light" : "dark"); return; }
+    if (t.closest("#themeBtn")) { var order = ["auto", "light", "dark"]; IBT.setTheme(order[(order.indexOf(state.themePref || "auto") + 1) % 3]); toast(Uraw("theme_" + state.themePref)); return; }
     if (t.closest("#menuBtn")) { $("#drawer").classList.add("open"); return; }
     if (t.closest("[data-act=close-drawer]") || t.closest("#drawer .scrim")) { $("#drawer").classList.remove("open"); return; }
     if (t.closest("#drawer a")) { $("#drawer").classList.remove("open"); }
     if (t.closest("#searchBtn")) { $("#search").classList.add("open"); setTimeout(function () { $("#searchInput").focus(); }, 30); return; }
     if (t === $("#search")) { $("#search").classList.remove("open"); return; }
     if (t.closest("#search a")) $("#search").classList.remove("open");
-    if (t.closest("[data-act=hide-ann]")) { ls("ibt_ann_hide", tr(C.settings.announcement.text)); $("#announce").remove(); return; }
+    if (t.closest("[data-act=hide-ann]")) { ls("ibt_ann_hide", tr(C.settings.announcement.text)); $("#announce").remove(); document.documentElement.classList.remove("has-ann"); return; }
     var cp = t.closest("[data-copy]"); if (cp) { e.preventDefault(); var txt = cp.dataset.copy; (navigator.clipboard && navigator.clipboard.writeText ? navigator.clipboard.writeText(txt) : Promise.reject()).then(function () { toast(Uraw("copied") + ": " + txt); }, function () { toast(txt); }); return; }
     var fr = t.closest("[data-floor]"); if (fr) { var p = fr.dataset.floor.split(":"); showFloor(p[0], +p[1]); scenes.forEach(function (s) { s.setSelected && s.setSelected(p[0], +p[1]); }); return; }
     var vt = t.closest("#vtabs [data-topic]"); if (vt) { $$("#vtabs button").forEach(function (b) { b.setAttribute("aria-pressed", b === vt ? "true" : "false"); }); $$("#vgrid > div").forEach(function (d) { d.style.display = vt.dataset.topic === "all" || d.dataset.topic === vt.dataset.topic ? "" : "none"; }); return; }
@@ -710,9 +742,9 @@
     var nomo = matchMedia("(prefers-reduced-motion: reduce)").matches; if (nomo) document.documentElement.classList.add("nomotion");
     if (window.IBT3D && window.IBT3D.lowEnd()) document.documentElement.classList.add("lowfx");
     var l = ls("ibt_lang") || (C.settings.defaultLang || "bn");
-    var t = ls("ibt_theme") || (matchMedia("(prefers-color-scheme: light)").matches ? "light" : (C.settings.defaultTheme || "dark"));
-    state.lang = ["bn", "en", "ar"].indexOf(l) > -1 ? l : "bn"; state.theme = t === "light" ? "light" : "dark";
-    applyLang(state.lang); applyTheme(state.theme);
+    var t = ls("ibt_theme") || C.settings.defaultTheme || "auto";
+    state.lang = ["bn", "en", "ar"].indexOf(l) > -1 ? l : "bn";
+    applyLang(state.lang); applyTheme(["auto", "light", "dark"].indexOf(t) > -1 ? t : "auto");
     renderHeader(); renderFooter();
     route();
     initCloud();

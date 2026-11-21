@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="theme-color" content="#0D1310">
+<meta name="theme-color" content="#051F20">
 <meta name="description" content="Imam Bukhari Trust (IBT), Dhaka: research-based Islamic education, Dawah, the Imam Bukhari Jame Masjid Complex and social welfare, guided by the Qur'an and authentic Sunnah.">
 <meta property="og:title" content="Imam Bukhari Trust · Faith · Knowledge · Service">
 <meta property="og:description" content="Building a knowledge-based society through faith, knowledge and service.">
@@ -11,12 +11,10 @@
 <title>Imam Bukhari Trust · ইমাম বুখারী ট্রাস্ট</title>
 <script>
   // Set theme & language before first paint (no flash of the wrong theme)
-  (function(){try{var t=localStorage.getItem("ibt_theme");if(!t){t="dark"}document.documentElement.setAttribute("data-theme",t==="light"?"light":"dark");var l=localStorage.getItem("ibt_lang")||"bn";document.documentElement.lang=l;document.documentElement.dir=l==="ar"?"rtl":"ltr"}catch(e){}})();
+  (function(){try{var t=localStorage.getItem("ibt_theme");if(t!=="light"&&t!=="dark"){t=matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light"}document.documentElement.setAttribute("data-theme",t);var l=localStorage.getItem("ibt_lang")||"bn";document.documentElement.lang=l;document.documentElement.dir=l==="ar"?"rtl":"ltr"}catch(e){}})();
 </script>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,600;8..60,700&family=Noto+Kufi+Arabic:wght@600;700;800&display=swap" rel="stylesheet">
-<link rel="preload" href="fonts/noto-sans-bengali-bengali-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/hind-siliguri-bengali-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/hind-siliguri-bengali-600-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="assets/app.css">
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"NGO","name":"Imam Bukhari Trust","alternateName":["IBT","ইমাম বুখারী ট্রাস্ট","وقف الإمام البخاري"],"url":"https://www.imambukharitrust.com/","foundingDate":"2017-10-01","address":{"@type":"PostalAddress","streetAddress":"House 17, Road 6/A, Sector 5, Uttara","addressLocality":"Dhaka","postalCode":"1230","addressCountry":"BD"},"email":"bukharimasjid.bd@gmail.com","sameAs":["https://www.facebook.com/imambukharitrustbd","https://www.youtube.com/channel/UCm8It2AWLRt3N22-fL89K_w","https://www.youtube.com/@kulliyatulquranbd"]}</script>
 </head>
@@ -32,11 +30,11 @@
 <div class="player" id="player" role="dialog" aria-modal="true" aria-label="Video"></div>
 <div class="mdonate" id="mdonate"></div>
 <div class="toast glass dense" id="toast" role="status" aria-live="polite"></div>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 <script src="assets/config.js"></script>
 <script src="assets/gas.js"></script>
 <script src="assets/scene3d.js"></script>
 <script src="assets/app.js"></script>
+<script src="assets/pages.js"></script>
 <script src="assets/admin.js"></script>
 </body>
 </html>

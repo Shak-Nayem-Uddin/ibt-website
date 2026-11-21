@@ -24,7 +24,7 @@
   "logo": "img/logo-mark.png",
   "logoColor": "img/logo-color-mark.png",
   "defaultLang": "bn",
-  "defaultTheme": "dark",
+  "defaultTheme": "auto",
   "announcement": {
    "show": true,
    "text": {
@@ -36,8 +36,7 @@
   },
   "contact": {
    "phones": [
-    "+880 1852-808554",
-    "+880 1306-746437"
+    "+880 1852-808554"
    ],
    "email": "bukharimasjid.bd@gmail.com",
    "email2": "",
@@ -1046,11 +1045,11 @@
   }
  ],
  "floors": {
-  "asOf": "2026-10",
+  "asOf": "2026-11",
   "source": {
-   "bn": "IBT ক্যাটালগ ২০২৬ ও নির্মাণ অগ্রগতির ভিডিও",
-   "en": "IBT Catalog 2026 and construction-progress videos",
-   "ar": "كتيّب الوقف 2026 ومقاطع تقدم البناء"
+   "bn": "ইমাম বুখারী ট্রাস্ট, নভেম্বর ২০২৬",
+   "en": "Imam Bukhari Trust, November 2026",
+   "ar": "وقف الإمام البخاري، نوفمبر 2026"
   },
   "note": {
    "bn": "তথ্য হালনাগাদ করতে অ্যাডমিন প্যানেল ব্যবহার করুন।",
@@ -1073,35 +1072,45 @@
    },
    {
     "label": {
-     "bn": "নিচতলা",
-     "en": "Ground floor",
-     "ar": "الطابق الأرضي"
+     "bn": "১ম তলা",
+     "en": "1st floor",
+     "ar": "الطابق الأول"
     },
     "use": {
      "bn": "মহিলা মাসজিদ ও ওযুখানা",
      "en": "Sisters' prayer area & wudu",
      "ar": "مصلى النساء والمتوضأ"
     },
-    "status": "done"
-   },
-   {
-    "label": {
-     "bn": "১ম তলা",
-     "en": "1st floor",
-     "ar": "الطابق الأول"
-    },
-    "use": {
-     "bn": "মূল মাসজিদ",
-     "en": "Main prayer hall",
-     "ar": "قاعة الصلاة"
-    },
-    "status": "done"
+    "status": "done",
+    "note": {
+     "bn": "ছাদ ঢালাই সম্পন্ন",
+     "en": "Roof slab cast",
+     "ar": "تم صب السقف"
+    }
    },
    {
     "label": {
      "bn": "২য় তলা",
      "en": "2nd floor",
      "ar": "الطابق الثاني"
+    },
+    "use": {
+     "bn": "মূল মাসজিদ",
+     "en": "Main prayer hall",
+     "ar": "قاعة الصلاة"
+    },
+    "status": "done",
+    "note": {
+     "bn": "ছাদ ঢালাই সম্পন্ন",
+     "en": "Roof slab cast",
+     "ar": "تم صب السقف"
+    }
+   },
+   {
+    "label": {
+     "bn": "৩য় তলা",
+     "en": "3rd floor",
+     "ar": "الطابق الثالث"
     },
     "use": {
      "bn": "মাসজিদ ও ই‘তিকাফ",
@@ -1112,9 +1121,9 @@
    },
    {
     "label": {
-     "bn": "৩য় তলা",
-     "en": "3rd floor",
-     "ar": "الطابق الثالث"
+     "bn": "৪র্থ তলা",
+     "en": "4th floor",
+     "ar": "الطابق الرابع"
     },
     "use": {
      "bn": "মাসজিদ",
@@ -1125,9 +1134,9 @@
    },
    {
     "label": {
-     "bn": "৪র্থ তলা",
-     "en": "4th floor",
-     "ar": "الطابق الرابع"
+     "bn": "৫ম তলা",
+     "en": "5th floor",
+     "ar": "الطابق الخامس"
     },
     "use": {
      "bn": "মাসজিদ ও খাদেম কক্ষ",
@@ -1138,9 +1147,9 @@
    },
    {
     "label": {
-     "bn": "৫ম তলা",
-     "en": "5th floor",
-     "ar": "الطابق الخامس"
+     "bn": "৬ষ্ঠ তলা",
+     "en": "6th floor",
+     "ar": "الطابق السادس"
     },
     "use": {
      "bn": "লাইব্রেরি, ইমাম কক্ষ",
@@ -1151,9 +1160,9 @@
    },
    {
     "label": {
-     "bn": "৬ষ্ঠ তলা",
-     "en": "6th floor",
-     "ar": "الطابق السادس"
+     "bn": "৭ম তলা",
+     "en": "7th floor",
+     "ar": "الطابق السابع"
     },
     "use": {
      "bn": "ডাইনিং ও ছাদ-বারান্দা",
@@ -1175,26 +1184,36 @@
      "en": "158 piles · pile caps being cast",
      "ar": "158 خازوقًا · صب رؤوس الخوازيق جارٍ"
     },
-    "status": "progress"
-   },
-   {
-    "label": {
-     "bn": "নিচতলা",
-     "en": "Ground floor",
-     "ar": "الطابق الأرضي"
-    },
-    "use": {
-     "bn": "অভিভাবক কক্ষ, ডিসপ্লে, ক্যান্টিন",
-     "en": "Parents' lounge, display, canteen",
-     "ar": "استراحة أولياء الأمور والمعرض والمقصف"
-    },
-    "status": "progress"
+    "status": "progress",
+    "note": {
+     "bn": "ফাউন্ডেশনের কাজ প্রায় শেষ",
+     "en": "Foundation work nearly complete",
+     "ar": "أعمال الأساسات شارفت على الانتهاء"
+    }
    },
    {
     "label": {
      "bn": "১ম তলা",
      "en": "1st floor",
      "ar": "الطابق الأول"
+    },
+    "use": {
+     "bn": "অভিভাবক কক্ষ, ডিসপ্লে, ক্যান্টিন",
+     "en": "Parents' lounge, display, canteen",
+     "ar": "استراحة أولياء الأمور والمعرض والمقصف"
+    },
+    "status": "next",
+    "note": {
+     "bn": "ছাদ ঢালাইয়ের প্রস্তুতি চলছে",
+     "en": "Preparing for the roof slab",
+     "ar": "التحضير لصب السقف"
+    }
+   },
+   {
+    "label": {
+     "bn": "২য় তলা",
+     "en": "2nd floor",
+     "ar": "الطابق الثاني"
     },
     "use": {
      "bn": "কনফারেন্স ও প্রশাসন",
@@ -1205,27 +1224,14 @@
    },
    {
     "label": {
-     "bn": "২য় তলা",
-     "en": "2nd floor",
-     "ar": "الطابق الثاني"
-    },
-    "use": {
-     "bn": "শ্রেণিকক্ষ",
-     "en": "Classrooms",
-     "ar": "فصول"
-    },
-    "status": "planned"
-   },
-   {
-    "label": {
      "bn": "৩য় তলা",
      "en": "3rd floor",
      "ar": "الطابق الثالث"
     },
     "use": {
-     "bn": "শ্রেণিকক্ষ ও লাইব্রেরি",
-     "en": "Classrooms & library",
-     "ar": "فصول ومكتبة"
+     "bn": "শ্রেণিকক্ষ",
+     "en": "Classrooms",
+     "ar": "فصول"
     },
     "status": "planned"
    },
@@ -1236,9 +1242,9 @@
      "ar": "الطابق الرابع"
     },
     "use": {
-     "bn": "শ্রেণিকক্ষ",
-     "en": "Classrooms",
-     "ar": "فصول"
+     "bn": "শ্রেণিকক্ষ ও লাইব্রেরি",
+     "en": "Classrooms & library",
+     "ar": "فصول ومكتبة"
     },
     "status": "planned"
    },
@@ -1306,9 +1312,50 @@
      "ar": "فصول"
     },
     "status": "planned"
+   },
+   {
+    "label": {
+     "bn": "১০ম তলা",
+     "en": "10th floor",
+     "ar": "الطابق العاشر"
+    },
+    "use": {
+     "bn": "শ্রেণিকক্ষ",
+     "en": "Classrooms",
+     "ar": "فصول"
+    },
+    "status": "planned"
    }
   ],
-  "review": true
+  "review": true,
+  "headline": {
+   "mosque": {
+    "bn": "১ম ও ২য় তলার ছাদ ঢালাই সম্পন্ন, আলহামদুলিল্লাহ",
+    "en": "1st and 2nd floor roof slabs cast, alhamdulillah",
+    "ar": "اكتمل صب سقفي الطابقين الأول والثاني، والحمد لله"
+   },
+   "academic": {
+    "bn": "ফাউন্ডেশনের কাজ প্রায় শেষ, এখন ছাদ ঢালাইয়ের প্রস্তুতি চলছে",
+    "en": "Foundation nearly complete; preparing for the first roof slab",
+    "ar": "الأساسات شارفت على الانتهاء، والتحضير لصب السقف جارٍ"
+   }
+  },
+  "photos": {
+   "mosque": "img/construction-masjid-2026-10.jpg",
+   "academic": "img/construction-academic-2026-10.jpg"
+  },
+  "specs": {
+   "mosque": {
+    "bn": "বি+জি+৫ · প্রায় ৬১,২৯৪ বর্গফুট · নামাজের স্থান ২০,৭৪১ বর্গফুট",
+    "en": "B+G+5 · about 61,294 sq ft · 20,741 sq ft of prayer space",
+    "ar": "قبو+أرضي+5 · نحو 61,294 قدمًا مربعًا · مساحة صلاة 20,741 قدمًا مربعًا"
+   },
+   "academic": {
+    "bn": "বি+জি+৯ · প্রায় ১,৮০,৭৯৯ বর্গফুট · ৭০টি শ্রেণিকক্ষ · ২,১০০ শিক্ষার্থী",
+    "en": "B+G+9 · about 180,799 sq ft · 70 classrooms · 2,100 students",
+    "ar": "قبو+أرضي+9 · نحو 180,799 قدمًا مربعًا · 70 فصلًا · 2,100 طالب"
+   }
+  }
  },
  "projects": [
   {
@@ -1332,9 +1379,9 @@
    },
    "image": "img/design-side.jpg",
    "body": {
-    "bn": "জমি ক্রয় ও রেজিস্ট্রেশন, নির্মাণ অনুমোদন, মাটি পরীক্ষা, স্থাপত্য নকশা ও প্রাক-নির্মাণ কাজ সম্পন্ন হয়েছে। ২২৫টি পাইল এবং মাসজিদের ছাদ ঢালাই সম্পন্ন হয়েছে, আলহামদুলিল্লাহ; একাডেমিক ভবনের পাইল ক্যাপ ঢালাই চলমান। মাসজিদ ভবন: বি+জি+৫, প্রায় ৬১,২৯৪ বর্গফুট, মোট নামাজের স্থান ২০,৭৪১ বর্গফুট। একাডেমিক ভবন: বি+জি+৯, প্রায় ১,৮০,৭৯৯ বর্গফুট, ৭০টি শ্রেণিকক্ষ, ২,১০০ শিক্ষার্থীর ধারণক্ষমতা। প্রকল্পটি জিরো পয়েন্ট থেকে প্রায় ১৫ কিমি দূরে।",
-    "en": "Land purchase and registration, construction approval, soil testing, architectural design and pre-construction work are complete. All 225 piles and the masjid's roof slabs have been cast, alhamdulillah, and pile caps for the academic building are being cast. Masjid building: B+G+5, about 61,294 sq ft, with 20,741 sq ft of prayer space. Academic building: B+G+9, about 180,799 sq ft, 70 classrooms for 2,100 students. The site is about 15 km from Zero Point.",
-    "ar": "اكتمل شراء الأرض وتسجيلها، والحصول على ترخيص البناء، وفحص التربة، والتصميم المعماري، وأعمال ما قبل البناء. واكتمل تنفيذ 225 خازوقًا وصب أسقف المسجد، والحمد لله، ويجري صب رؤوس الخوازيق للمبنى الأكاديمي. مبنى المسجد: قبو وأرضي وخمسة طوابق بنحو 61,294 قدمًا مربعًا ومساحة صلاة 20,741 قدمًا مربعًا. المبنى الأكاديمي: قبو وأرضي وتسعة طوابق بنحو 180,799 قدمًا مربعًا و70 فصلًا تتسع لـ2,100 طالب. يبعد الموقع نحو 15 كم عن النقطة الصفرية."
+    "bn": "জমি ক্রয় ও রেজিস্ট্রেশন, নির্মাণ অনুমোদন, মাটি পরীক্ষা, স্থাপত্য নকশা ও প্রাক-নির্মাণ কাজ সম্পন্ন হয়েছে। ২২৫টি পাইলের কাজ শেষ। মাসজিদ কমপ্লেক্সের ১ম ও ২য় তলার ছাদ ঢালাই সম্পন্ন হয়েছে, আলহামদুলিল্লাহ। একাডেমিক ভবনের ফাউন্ডেশনের কাজ প্রায় শেষ, এখন ছাদ ঢালাইয়ের প্রস্তুতি চলছে। মাসজিদ ভবন: বি+জি+৫, প্রায় ৬১,২৯৪ বর্গফুট, মোট নামাজের স্থান ২০,৭৪১ বর্গফুট। একাডেমিক ভবন: বি+জি+৯, প্রায় ১,৮০,৭৯৯ বর্গফুট, ৭০টি শ্রেণিকক্ষ, ২,১০০ শিক্ষার্থীর ধারণক্ষমতা।",
+    "en": "Land purchase and registration, construction approval, soil testing, architectural design and pre-construction work are complete, and all 225 piles are done. The roof slabs of the masjid complex's 1st and 2nd floors have been cast, alhamdulillah. The academic building's foundation is nearly complete and preparations for its first roof slab are under way. Masjid building: B+G+5, about 61,294 sq ft, with 20,741 sq ft of prayer space. Academic building: B+G+9, about 180,799 sq ft, 70 classrooms for 2,100 students.",
+    "ar": "اكتمل شراء الأرض وتسجيلها، والترخيص، وفحص التربة، والتصميم المعماري، وأعمال ما قبل البناء، وتنفيذ 225 خازوقًا. وتم صب سقفي الطابقين الأول والثاني لمجمع المسجد، والحمد لله. وشارفت أساسات المبنى الأكاديمي على الانتهاء، ويجري التحضير لصب سقفه الأول. مبنى المسجد: قبو+أرضي+5 بنحو 61,294 قدمًا مربعًا ومساحة صلاة 20,741 قدمًا مربعًا. المبنى الأكاديمي: قبو+أرضي+9 بنحو 180,799 قدمًا مربعًا و70 فصلًا تتسع لـ2,100 طالب."
    },
    "objectives": [
     {
@@ -1841,74 +1888,629 @@
    "featured": true,
    "image": "img/render-mosque.jpg",
    "name": {
-    "bn": "মাসজিদ নির্মাণ তহবিল",
-    "en": "Masjid Construction Fund",
-    "ar": "صندوق بناء المسجد"
+    "bn": "মাসজিদ নির্মাণ",
+    "en": "Masjid construction",
+    "ar": "بناء المسجد"
    },
    "text": {
-    "bn": "ইমাম বুখারী জামে মাসজিদ কমপ্লেক্সের নির্মাণ। এটি এক সাদাকায়ে জারিয়াহ।",
-    "en": "Building the Imam Bukhari Jame Masjid Complex: a continuing charity (sadaqah jariyah).",
-    "ar": "بناء مجمع جامع الإمام البخاري، صدقة جارية."
+    "bn": "ইমাম বুখারী জামে মাসজিদ কমপ্লেক্স (বি+জি+৫) নির্মাণ। ১ম ও ২য় তলার ছাদ ঢালাই সম্পন্ন হয়েছে; এখন ওপরের তলাগুলোর কাজ সামনে।",
+    "en": "Building the Imam Bukhari Jame Masjid Complex (B+G+5). The 1st and 2nd floor slabs are cast; the upper floors lie ahead.",
+    "ar": "بناء مجمع جامع الإمام البخاري (قبو+أرضي+5). تم صب سقفي الطابقين الأول والثاني، والطوابق العليا هي المرحلة القادمة."
    },
    "suggested": [
     1000,
-    5000,
-    35000,
-    100000
+    3200,
+    15000,
+    35000
+   ],
+   "icon": "masjid",
+   "cover": "img/design-night-1.jpg",
+   "tagline": {
+    "bn": "আল্লাহর ঘর নির্মাণে শরিক হোন",
+    "en": "Take part in building a house of Allah",
+    "ar": "شارك في بناء بيت من بيوت الله"
+   },
+   "status": {
+    "bn": "১ম ও ২য় তলার ছাদ ঢালাই সম্পন্ন",
+    "en": "1st & 2nd floor slabs cast",
+    "ar": "اكتمل سقفا الطابقين الأول والثاني"
+   },
+   "floors": "mosque",
+   "video": "ViHzrqAKvO8",
+   "shares": [
+    {
+     "name": {
+      "bn": "মাসজিদের প্রতি ছাদ ঢালাই",
+      "en": "One roof slab of the masjid",
+      "ar": "صب سقف واحد للمسجد"
+     },
+     "amount": 5580000,
+     "icon": "slab"
+    },
+    {
+     "name": {
+      "bn": "একজন মুসল্লির জায়গা",
+      "en": "Space for one worshipper",
+      "ar": "مكان مصلٍّ واحد"
+     },
+     "amount": 35000,
+     "icon": "musalla"
+    },
+    {
+     "name": {
+      "bn": "একটি ওযুখানা",
+      "en": "One wudu point",
+      "ar": "موضع وضوء واحد"
+     },
+     "amount": 15000,
+     "icon": "wudu"
+    },
+    {
+     "name": {
+      "bn": "প্রতি বর্গফুট নির্মাণ",
+      "en": "One square foot",
+      "ar": "قدم مربع واحد"
+     },
+     "amount": 3200,
+     "icon": "sqft"
+    },
+    {
+     "name": {
+      "bn": "১০০ ব্যাগ সিমেন্ট",
+      "en": "100 bags of cement",
+      "ar": "100 كيس إسمنت"
+     },
+     "amount": 51000,
+     "icon": "cement"
+    },
+    {
+     "name": {
+      "bn": "১ টন রড",
+      "en": "1 ton of steel rod",
+      "ar": "طن حديد تسليح"
+     },
+     "amount": 93000,
+     "icon": "rod"
+    },
+    {
+     "name": {
+      "bn": "২,০০০ ইট",
+      "en": "2,000 bricks",
+      "ar": "2,000 طوبة"
+     },
+     "amount": 26000,
+     "icon": "brick"
+    }
+   ],
+   "story": [
+    {
+     "title": {
+      "bn": "স্বপ্ন",
+      "en": "The dream",
+      "ar": "الحلم"
+     },
+     "text": {
+      "bn": "মাসজিদ আন-নববীর আদলে মাসজিদকেন্দ্রিক একটি জ্ঞানভিত্তিক কমিউনিটি, যার কেন্দ্রে থাকবে মাসজিদ, ইলম ও খিদমাহ।",
+      "en": "A knowledge-based community centred on the masjid, on the model of Masjid an-Nabawi.",
+      "ar": "مجتمع معرفي محوره المسجد على هدي المسجد النبوي."
+     },
+     "image": "img/design-aerial.jpg",
+     "video": ""
+    },
+    {
+     "title": {
+      "bn": "ভিত্তি",
+      "en": "The foundation",
+      "ar": "الأساس"
+     },
+     "text": {
+      "bn": "নিউ ঢাকা সিটিতে ধলেশ্বরী নদীর তীরে মাসজিদ ও একাডেমিক ভবন মিলিয়ে ২২৫টি পাইলের কাজ সম্পন্ন হয়েছে।",
+      "en": "225 piles for the masjid and academic building have been completed at New Dhaka City, on the bank of the Dhaleshwari.",
+      "ar": "اكتمل تنفيذ 225 خازوقًا للمسجد والمبنى الأكاديمي في مدينة دكا الجديدة على ضفاف نهر دهاليشوري."
+     },
+     "image": "img/construction-piling.jpg",
+     "video": ""
+    },
+    {
+     "title": {
+      "bn": "প্রথম সালাত",
+      "en": "The first prayer",
+      "ar": "الصلاة الأولى"
+     },
+     "text": {
+      "bn": "ছাদ ঢালাইয়ের পর নির্মাণাধীন মাসজিদেই জামাআতে সালাত শুরু হয়েছে, আলহামদুলিল্লাহ।",
+      "en": "Once the slabs were cast, congregational prayer began in the masjid under construction, alhamdulillah.",
+      "ar": "بعد صب الأسقف بدأت صلاة الجماعة في المسجد قيد الإنشاء، والحمد لله."
+     },
+     "image": "img/first-prayer.jpg",
+     "video": ""
+    },
+    {
+     "title": {
+      "bn": "আজকের অবস্থা",
+      "en": "Where we are today",
+      "ar": "أين وصلنا اليوم"
+     },
+     "text": {
+      "bn": "১ম ও ২য় তলার ছাদ ঢালাই সম্পন্ন। ওপরের তলাগুলো নির্মাণে আপনার সাদাকাহ এক চলমান সাদাকায়ে জারিয়াহ হতে পারে।",
+      "en": "The 1st and 2nd floor slabs are cast. Your sadaqah towards the upper floors can be a continuing charity.",
+      "ar": "اكتمل سقفا الطابقين الأول والثاني، وصدقتك للطوابق العليا صدقة جارية."
+     },
+     "image": "img/construction-masjid-2026-10.jpg",
+     "video": "ViHzrqAKvO8"
+    }
    ]
   },
   {
    "id": "academy",
-   "head": "Academy Fund",
+   "head": "Academic Building",
    "featured": true,
    "image": "img/render-academic.jpg",
    "name": {
-    "bn": "একাডেমিক ভবন তহবিল",
-    "en": "Academic Building Fund",
-    "ar": "صندوق المبنى الأكاديمي"
+    "bn": "একাডেমিক ভবন",
+    "en": "Academic building",
+    "ar": "المبنى الأكاديمي"
    },
    "text": {
-    "bn": "কুল্লিয়াতুল কুরআনের স্থায়ী একাডেমিক ভবন: শ্রেণিকক্ষ, লাইব্রেরি ও দাওয়াহ সেন্টার।",
-    "en": "Kulliyatul Quran's permanent academic building: classrooms, library and Dawah centre.",
-    "ar": "المبنى الأكاديمي الدائم لكلية القرآن: الفصول والمكتبة ومركز الدعوة."
+    "bn": "কুল্লিয়াতুল কুরআনের স্থায়ী ক্যাম্পাস (বি+জি+৯, ৭০টি শ্রেণিকক্ষ, ২,১০০ শিক্ষার্থী)। ফাউন্ডেশনের কাজ প্রায় শেষ, এখন ছাদ ঢালাইয়ের প্রস্তুতি চলছে।",
+    "en": "Kulliyatul Quran's permanent campus (B+G+9, 70 classrooms, 2,100 students). The foundation is nearly complete and slab preparations are under way.",
+    "ar": "الحرم الدائم لكلية القرآن (قبو+أرضي+9، 70 فصلًا، 2,100 طالب). الأساسات شارفت على الانتهاء والتحضير لصب السقف جارٍ."
    },
    "suggested": [
     1000,
     5000,
-    25000,
-    150000
+    26000,
+    51000
+   ],
+   "icon": "education",
+   "cover": "img/design-front.jpg",
+   "tagline": {
+    "bn": "প্রজন্মের জন্য ইলমের ঘর",
+    "en": "A house of knowledge for generations",
+    "ar": "دار علم للأجيال"
+   },
+   "status": {
+    "bn": "ফাউন্ডেশন প্রায় শেষ",
+    "en": "Foundation nearly complete",
+    "ar": "الأساسات شارفت على الانتهاء"
+   },
+   "floors": "academic",
+   "video": "GW_HDHAsbyM",
+   "shares": [
+    {
+     "name": {
+      "bn": "একটি শ্রেণিকক্ষ",
+      "en": "One classroom",
+      "ar": "فصل دراسي واحد"
+     },
+     "amount": 1500000,
+     "icon": "classroom"
+    },
+    {
+     "name": {
+      "bn": "১০০ ব্যাগ সিমেন্ট",
+      "en": "100 bags of cement",
+      "ar": "100 كيس إسمنت"
+     },
+     "amount": 51000,
+     "icon": "cement"
+    },
+    {
+     "name": {
+      "bn": "১ টন রড",
+      "en": "1 ton of steel rod",
+      "ar": "طن حديد تسليح"
+     },
+     "amount": 93000,
+     "icon": "rod"
+    },
+    {
+     "name": {
+      "bn": "২,০০০ ইট",
+      "en": "2,000 bricks",
+      "ar": "2,000 طوبة"
+     },
+     "amount": 26000,
+     "icon": "brick"
+    }
+   ],
+   "story": [
+    {
+     "title": {
+      "bn": "নকশা",
+      "en": "The design",
+      "ar": "التصميم"
+     },
+     "text": {
+      "bn": "এগারো তলার একাডেমিক ভবনে থাকবে শ্রেণিকক্ষ, লাইব্রেরি, কনফারেন্স হল ও প্রশাসনিক অংশ।",
+      "en": "The academic building will hold classrooms, a library, a conference hall and administration.",
+      "ar": "سيضم المبنى الأكاديمي فصولًا ومكتبة وقاعة مؤتمرات وإدارة."
+     },
+     "image": "img/render-academic.jpg",
+     "video": ""
+    },
+    {
+     "title": {
+      "bn": "পাইল ক্যাপ ঢালাই",
+      "en": "Casting the pile caps",
+      "ar": "صب رؤوس الخوازيق"
+     },
+     "text": {
+      "bn": "১৫৮টি পাইলের ওপর পাইল ক্যাপ ঢালাইয়ের কাজ এগিয়েছে।",
+      "en": "Pile caps have been cast over the building's 158 piles.",
+      "ar": "تقدم صب رؤوس الخوازيق فوق 158 خازوقًا."
+     },
+     "image": "img/construction-academic-2026-10.jpg",
+     "video": "GW_HDHAsbyM"
+    },
+    {
+     "title": {
+      "bn": "পরবর্তী ধাপ",
+      "en": "Next step",
+      "ar": "الخطوة التالية"
+     },
+     "text": {
+      "bn": "ফাউন্ডেশনের কাজ প্রায় শেষ; এখন প্রথম ছাদ ঢালাইয়ের প্রস্তুতি চলছে।",
+      "en": "The foundation is nearly complete; preparations for the first roof slab are under way.",
+      "ar": "الأساسات شارفت على الانتهاء ويجري التحضير لصب السقف الأول."
+     },
+     "image": "img/design-courtyard.jpg",
+     "video": ""
+    }
    ]
   },
   {
-   "id": "sadaqah",
-   "head": "Sadaqa",
-   "featured": true,
-   "image": "img/event-gettogether.jpg",
+   "id": "dawah",
+   "head": "Da'wa & Events",
+   "featured": false,
+   "image": "img/chairman-speech.jpg",
    "name": {
-    "bn": "সাধারণ সাদাকাহ তহবিল",
-    "en": "General Sadaqah Fund",
-    "ar": "صندوق الصدقة العامة"
+    "bn": "দাওয়াহ ও গবেষণা",
+    "en": "Dawah & research",
+    "ar": "الدعوة والبحث"
    },
    "text": {
-    "bn": "যেখানে প্রয়োজন সবচেয়ে বেশি, সেখানে ট্রাস্টের সব দ্বীনি কার্যক্রমে ব্যয় হবে।",
-    "en": "Used across all of the Trust's work, wherever the need is greatest.",
-    "ar": "يُصرف في جميع أعمال الوقف حيث الحاجة أشد."
+    "bn": "ইলমী মাজলিস, প্রশ্নোত্তর, কনফারেন্স, ডিজিটাল কনটেন্ট ও প্রকাশনা এবং দাওয়াহ সেন্টার নির্মাণ।",
+    "en": "Ilmi majlis, Q&A, conferences, digital content and publications, and building the Dawah centre.",
+    "ar": "المجالس العلمية والأسئلة والمؤتمرات والمحتوى الرقمي والنشر وبناء مركز الدعوة."
    },
    "suggested": [
     500,
     1000,
     5000,
     10000
+   ],
+   "icon": "dawah",
+   "cover": "img/sunnah-conference-2024.jpg",
+   "tagline": {
+    "bn": "কুরআন-সুন্নাহর সঠিক বার্তা সবার কাছে",
+    "en": "The message of the Qur'an and Sunnah, for everyone",
+    "ar": "رسالة القرآن والسنة للجميع"
+   },
+   "shares": [
+    {
+     "name": {
+      "bn": "দাওয়াহ সেন্টার নির্মাণ",
+      "en": "Building the Dawah centre",
+      "ar": "بناء مركز الدعوة"
+     },
+     "amount": 5000000,
+     "icon": "dawah"
+    }
+   ],
+   "story": [
+    {
+     "title": {
+      "bn": "সুন্নাহ কনফারেন্স",
+      "en": "Sunnah Conference",
+      "ar": "مؤتمر السنة"
+     },
+     "text": {
+      "bn": "সুন্নাহ কনফারেন্স বাংলাদেশ ২০২৪-এ দেশের বিশিষ্ট আলেমগণ অংশ নেন।",
+      "en": "Leading scholars took part in Sunnah Conference Bangladesh 2024.",
+      "ar": "شارك كبار العلماء في مؤتمر السنة في بنغلاديش 2024."
+     },
+     "image": "img/sunnah-conference-2024.jpg",
+     "video": "J0WR-qV5Omg"
+    },
+    {
+     "title": {
+      "bn": "হালাকা ও প্রশ্নোত্তর",
+      "en": "Halaqa and Q&A",
+      "ar": "الحلقات والأسئلة"
+     },
+     "text": {
+      "bn": "সাপ্তাহিক ইলমী মাজলিস ও প্রশ্নোত্তর পর্ব নিয়মিত YouTube-এ প্রচারিত হয়।",
+      "en": "The weekly Ilmi Majlis and Q&A sessions are broadcast regularly on YouTube.",
+      "ar": "يُبث المجلس العلمي الأسبوعي وجلسات الأسئلة بانتظام على يوتيوب."
+     },
+     "image": "img/halaqa-class.jpg",
+     "video": ""
+    },
+    {
+     "title": {
+      "bn": "ডিজিটাল দাওয়াহ",
+      "en": "Digital Dawah",
+      "ar": "الدعوة الرقمية"
+     },
+     "text": {
+      "bn": "আধুনিক প্রজন্মের কাছে সঠিক ইসলাম পৌঁছে দিতে কনটেন্ট, প্রকাশনা ও প্রযুক্তি স্টুডিওর কাজ চলছে।",
+      "en": "Content, publications and a technology studio carry authentic Islam to a new generation.",
+      "ar": "محتوى ونشر واستوديو تقني لإيصال الإسلام الصحيح للجيل الجديد."
+     },
+     "image": "img/chairman-speech.jpg",
+     "video": ""
+    }
+   ]
+  },
+  {
+   "id": "winter",
+   "head": "Social Welfare",
+   "icon": "winter",
+   "image": "img/winter-2024-distribution.jpg",
+   "cover": "img/doc-winter.jpg",
+   "name": {
+    "bn": "শীতবস্ত্র বিতরণ",
+    "en": "Winter clothing",
+    "ar": "كسوة الشتاء"
+   },
+   "tagline": {
+    "bn": "শীতার্ত মানুষের পাশে একটি কম্বল",
+    "en": "A blanket for someone in the cold",
+    "ar": "بطانية لمن يعاني البرد"
+   },
+   "text": {
+    "bn": "প্রতি শীতে দরিদ্র ও শীতার্ত মানুষের মাঝে কম্বল ও শীতবস্ত্র বিতরণ।",
+    "en": "Each winter we distribute blankets and warm clothing to people in need.",
+    "ar": "نوزع كل شتاء البطانيات والملابس الدافئة على المحتاجين."
+   },
+   "suggested": [
+    500,
+    1000,
+    2000,
+    5000
+   ],
+   "story": [
+    {
+     "title": {
+      "bn": "শীতে জর্জরিত মানুষ",
+      "en": "People hit by the cold",
+      "ar": "ضحايا البرد"
+     },
+     "text": {
+      "bn": "শীতে জর্জরিত মানুষদের মাঝে কম্বল বিতরণ করা হয়।",
+      "en": "Blankets were distributed to people struggling in the cold.",
+      "ar": "وُزعت البطانيات على من أنهكهم البرد."
+     },
+     "image": "img/doc-winter.jpg",
+     "video": "g9lRiceVtBY"
+    },
+    {
+     "title": {
+      "bn": "শীতবস্ত্র ২০২৪",
+      "en": "Winter 2024",
+      "ar": "شتاء 2024"
+     },
+     "text": {
+      "bn": "লাইনে দাঁড়িয়ে শীতবস্ত্র গ্রহণ করছেন উপকারভোগীরা।",
+      "en": "Recipients queue for winter clothing.",
+      "ar": "المستفيدون يصطفون لاستلام الكسوة."
+     },
+     "image": "img/winter-2024-queue.jpg",
+     "video": ""
+    },
+    {
+     "title": {
+      "bn": "আপনার অংশ",
+      "en": "Your part",
+      "ar": "دورك"
+     },
+     "text": {
+      "bn": "এ শীতেও যেন কেউ উষ্ণতা থেকে বঞ্চিত না হয়।",
+      "en": "So that no one goes without warmth this winter.",
+      "ar": "حتى لا يُحرم أحد من الدفء هذا الشتاء."
+     },
+     "image": "img/winter-2024-distribution.jpg",
+     "video": ""
+    }
+   ]
+  },
+  {
+   "id": "relief",
+   "head": "Social Welfare",
+   "icon": "relief",
+   "image": "img/relief-flood-1.jpg",
+   "cover": "img/doc-flood-relief.jpg",
+   "name": {
+    "bn": "বন্যা ও দুর্যোগে ত্রাণ",
+    "en": "Flood & disaster relief",
+    "ar": "إغاثة الفيضانات والكوارث"
+   },
+   "tagline": {
+    "bn": "দুর্যোগে ত্রাণ, দুর্যোগের পর পুনর্বাসন",
+    "en": "Relief in disaster, rehabilitation after it",
+    "ar": "إغاثة في الكارثة وتأهيل بعدها"
+   },
+   "text": {
+    "bn": "বন্যার্তদের মাঝে ত্রাণসামগ্রী এবং পরবর্তী পুনর্বাসন: বাড়ি নির্মাণ সামগ্রী, টিউবওয়েল, গবাদি পশু ও আর্থিক সহায়তা।",
+    "en": "Relief for flood victims, then rehabilitation: house-building materials, tube-wells, livestock and financial support.",
+    "ar": "إغاثة المتضررين من الفيضانات ثم التأهيل: مواد بناء المنازل والآبار الأنبوبية والمواشي والدعم المالي."
+   },
+   "suggested": [
+    1000,
+    2000,
+    5000,
+    10000
+   ],
+   "story": [
+    {
+     "title": {
+      "bn": "ত্রাণসামগ্রী",
+      "en": "Relief supplies",
+      "ar": "المواد الإغاثية"
+     },
+     "text": {
+      "bn": "নৌকায় করে পানিবন্দি মানুষের কাছে ত্রাণসামগ্রী পৌঁছে দেওয়া হয়।",
+      "en": "Relief supplies were taken by boat to families cut off by the water.",
+      "ar": "نُقلت المواد الإغاثية بالقوارب إلى العائلات المحاصرة."
+     },
+     "image": "img/doc-flood-relief.jpg",
+     "video": "g9lRiceVtBY"
+    },
+    {
+     "title": {
+      "bn": "পুনর্বাসন",
+      "en": "Rehabilitation",
+      "ar": "إعادة التأهيل"
+     },
+     "text": {
+      "bn": "বন্যার পর বাড়ি নির্মাণ সামগ্রী, টিউবওয়েল ও গবাদি পশু দিয়ে পরিবারগুলোকে আবার দাঁড়াতে সাহায্য করা হয়।",
+      "en": "After the flood, families were helped back on their feet with building materials, tube-wells and livestock.",
+      "ar": "بعد الفيضان ساعدنا الأسر بمواد البناء والآبار والمواشي."
+     },
+     "image": "img/doc-flood-rehab-2.jpg",
+     "video": ""
+    },
+    {
+     "title": {
+      "bn": "জীবিকা",
+      "en": "Livelihoods",
+      "ar": "سبل العيش"
+     },
+     "text": {
+      "bn": "গবাদি পশু ও আর্থিক সহায়তা দিয়ে আয়ের পথ তৈরি।",
+      "en": "Livestock and financial support to restore an income.",
+      "ar": "مواشٍ ودعم مالي لاستعادة مصدر الدخل."
+     },
+     "image": "img/doc-flood-rehab-1.jpg",
+     "video": ""
+    }
+   ]
+  },
+  {
+   "id": "scholarship",
+   "head": "Kulliyatul Quran",
+   "icon": "scholar",
+   "image": "img/model-madrasa.jpg",
+   "cover": "img/scholars-visit-group.jpg",
+   "name": {
+    "bn": "শিক্ষাবৃত্তি ও শিক্ষার্থী সহায়তা",
+    "en": "Scholarships & student support",
+    "ar": "المنح ودعم الطلاب"
+   },
+   "tagline": {
+    "bn": "মেধাবী ও অসচ্ছল শিক্ষার্থীর পাশে",
+    "en": "Standing by able students in need",
+    "ar": "إلى جانب الطلاب المتفوقين المحتاجين"
+   },
+   "text": {
+    "bn": "কুল্লিয়াতুল কুরআনে প্রতি বছর ২০ জন মেধাবী শিক্ষার্থীকে বৃত্তি দেওয়া হয়। এ ছাড়া আহত ও অসচ্ছল শিক্ষার্থীদের চিকিৎসা ও পড়াশোনায় সহায়তা।",
+    "en": "Kulliyatul Quran awards scholarships to 20 high-achieving students every year, and helps injured and needy students with treatment and study costs.",
+    "ar": "تمنح كلية القرآن منحًا لعشرين طالبًا متفوقًا كل عام، وتساعد الطلاب المصابين والمحتاجين في العلاج والدراسة."
+   },
+   "suggested": [
+    1000,
+    2500,
+    5000,
+    10000
+   ],
+   "story": [
+    {
+     "title": {
+      "bn": "মেধাবৃত্তি",
+      "en": "Merit scholarships",
+      "ar": "منح التفوق"
+     },
+     "text": {
+      "bn": "সানাবিয়্যাহ পর্যায়ে প্রতি বছর ২০ জন মেধাবী শিক্ষার্থীকে বৃত্তি।",
+      "en": "Scholarships for 20 high achievers each year at Sanabiyyah level.",
+      "ar": "منح لعشرين طالبًا متفوقًا سنويًا في المرحلة السنابية."
+     },
+     "image": "img/model-madrasa.jpg",
+     "video": ""
+    },
+    {
+     "title": {
+      "bn": "আহত শিক্ষার্থীদের চিকিৎসা",
+      "en": "Treatment for injured students",
+      "ar": "علاج الطلاب المصابين"
+     },
+     "text": {
+      "bn": "জুলাই বিপ্লবে আহত শিক্ষার্থীদের চিকিৎসা খরচ প্রদান করা হয়।",
+      "en": "Medical costs were paid for students injured in the July uprising.",
+      "ar": "تكفلنا بنفقات علاج الطلاب المصابين في ثورة يوليو."
+     },
+     "image": "img/doc-july-medical.jpg",
+     "video": "g9lRiceVtBY"
+    },
+    {
+     "title": {
+      "bn": "আন্তর্জাতিক উচ্চশিক্ষা",
+      "en": "Higher study abroad",
+      "ar": "الدراسة في الخارج"
+     },
+     "text": {
+      "bn": "কুল্লিয়াতুল কুরআনের ৬ জন শিক্ষার্থী আন্তর্জাতিক বিশ্ববিদ্যালয়ে উচ্চশিক্ষায়।",
+      "en": "Six Kulliyatul Quran students are now at international universities.",
+      "ar": "ستة من طلاب الكلية يدرسون في جامعات دولية."
+     },
+     "image": "img/scholars-visit-group.jpg",
+     "video": ""
+    }
+   ]
+  },
+  {
+   "id": "iftar",
+   "head": "Social Welfare",
+   "icon": "iftar",
+   "image": "img/doc-iftar.jpg",
+   "cover": "img/doc-iftar.jpg",
+   "name": {
+    "bn": "রমাদানে ইফতার",
+    "en": "Ramadan iftar",
+    "ar": "إفطار رمضان"
+   },
+   "tagline": {
+    "bn": "রোজাদারকে ইফতার করানোর সওয়াব",
+    "en": "The reward of feeding a fasting person",
+    "ar": "أجر تفطير الصائم"
+   },
+   "text": {
+    "bn": "রমাদানে দরিদ্র রোজাদারদের মাঝে ইফতার ও খাদ্যসামগ্রী বিতরণ।",
+    "en": "Iftar and food packs for fasting people in need during Ramadan.",
+    "ar": "توزيع الإفطار والسلال الغذائية على الصائمين المحتاجين في رمضان."
+   },
+   "suggested": [
+    500,
+    1000,
+    2500,
+    5000
+   ],
+   "story": [
+    {
+     "title": {
+      "bn": "ইফতার বিতরণ ১৪৪৬ হি.",
+      "en": "Iftar distribution 1446 AH",
+      "ar": "توزيع الإفطار 1446هـ"
+     },
+     "text": {
+      "bn": "কামারজুরী, গাজীপুর মহানগরে ইমাম বুখারী ট্রাস্ট ও কুল্লিয়াতুল কুরআনের যৌথ ইফতার বিতরণ কর্মসূচি।",
+      "en": "A joint iftar distribution by Imam Bukhari Trust and Kulliyatul Quran at Kamarjuri, Gazipur.",
+      "ar": "برنامج إفطار مشترك بين الوقف وكلية القرآن في كمارجوري، غازيبور."
+     },
+     "image": "img/doc-iftar.jpg",
+     "video": "g9lRiceVtBY"
+    }
    ]
   },
   {
    "id": "zakat",
    "head": "Zakat",
    "featured": true,
-   "image": "img/relief-flood-1.jpg",
+   "image": "img/relief-flood-2.jpg",
    "name": {
     "bn": "যাকাত তহবিল",
-    "en": "Zakat Fund",
+    "en": "Zakat fund",
     "ar": "صندوق الزكاة"
    },
    "text": {
@@ -1921,7 +2523,69 @@
     5000,
     10000,
     50000
-   ]
+   ],
+   "icon": "coin",
+   "tagline": {
+    "bn": "শরিয়াহসম্মত খাতে যাকাত বণ্টন",
+    "en": "Zakat distributed to its rightful recipients",
+    "ar": "توزيع الزكاة على مستحقيها"
+   }
+  },
+  {
+   "id": "kulliya",
+   "head": "Kulliya",
+   "featured": false,
+   "image": "img/halaqa-class.jpg",
+   "name": {
+    "bn": "কুল্লিয়াতুল কুরআন",
+    "en": "Kulliyatul Quran",
+    "ar": "كلية القرآن"
+   },
+   "text": {
+    "bn": "শিক্ষার্থী বৃত্তি, শিক্ষক ও শিক্ষা কার্যক্রম (মডেল মাদরাসা ও আফটার স্কুলসহ)।",
+    "en": "Student scholarships, teachers and academic programmes (including the Model Madrasa and After School).",
+    "ar": "منح الطلاب والمعلمين والبرامج التعليمية (ومنها المدرسة النموذجية وبرنامج ما بعد المدرسة)."
+   },
+   "suggested": [
+    1000,
+    3000,
+    6000,
+    12000
+   ],
+   "icon": "education",
+   "tagline": {
+    "bn": "বিশুদ্ধ ধারার উচ্চতর দ্বীনি শিক্ষা",
+    "en": "Higher Islamic education in the pure tradition",
+    "ar": "تعليم شرعي عالٍ على المنهج الصحيح"
+   }
+  },
+  {
+   "id": "sadaqah",
+   "head": "Sadaqa",
+   "featured": true,
+   "image": "img/event-gettogether.jpg",
+   "name": {
+    "bn": "সাধারণ সাদাকাহ",
+    "en": "General sadaqah",
+    "ar": "صدقة عامة"
+   },
+   "text": {
+    "bn": "যেখানে প্রয়োজন সবচেয়ে বেশি, সেখানে ট্রাস্টের সব দ্বীনি কার্যক্রমে ব্যয় হবে।",
+    "en": "Used across all of the Trust's work, wherever the need is greatest.",
+    "ar": "يُصرف في جميع أعمال الوقف حيث الحاجة أشد."
+   },
+   "suggested": [
+    500,
+    1000,
+    5000,
+    10000
+   ],
+   "icon": "heart",
+   "tagline": {
+    "bn": "যেখানে প্রয়োজন সবচেয়ে বেশি",
+    "en": "Where the need is greatest",
+    "ar": "حيث الحاجة أشد"
+   }
   },
   {
    "id": "monthly",
@@ -1943,99 +2607,17 @@
     1000,
     2000,
     5000
-   ]
-  },
-  {
-   "id": "kulliya",
-   "head": "Kulliya",
-   "featured": false,
-   "image": "img/halaqa-class.jpg",
-   "name": {
-    "bn": "কুল্লিয়াতুল কুরআন তহবিল",
-    "en": "Kulliyatul Quran Fund",
-    "ar": "صندوق كلية القرآن"
-   },
-   "text": {
-    "bn": "শিক্ষার্থী বৃত্তি, শিক্ষক ও শিক্ষা কার্যক্রম (মডেল মাদরাসা ও আফটার স্কুলসহ)।",
-    "en": "Student scholarships, teachers and academic programmes (including the Model Madrasa and After School).",
-    "ar": "منح الطلاب والمعلمين والبرامج التعليمية (ومنها المدرسة النموذجية وبرنامج ما بعد المدرسة)."
-   },
-   "suggested": [
-    1000,
-    3000,
-    6000,
-    12000
-   ]
-  },
-  {
-   "id": "social",
-   "head": "Social Development",
-   "featured": false,
-   "image": "img/relief-flood-2.jpg",
-   "name": {
-    "bn": "সমাজকল্যাণ তহবিল",
-    "en": "Social Welfare Fund",
-    "ar": "صندوق الرعاية الاجتماعية"
-   },
-   "text": {
-    "bn": "ত্রাণ, ইফতার, শীতবস্ত্র, চিকিৎসা ও পুনর্বাসন।",
-    "en": "Relief, iftar, winter clothes, medical care and rehabilitation.",
-    "ar": "الإغاثة والإفطار وكسوة الشتاء والعلاج وإعادة التأهيل."
-   },
-   "suggested": [
-    500,
-    1000,
-    3000,
-    10000
-   ]
-  },
-  {
-   "id": "dawah",
-   "head": "Da'wa & Events",
-   "featured": false,
-   "image": "img/chairman-speech.jpg",
-   "name": {
-    "bn": "দাওয়াহ ও ইভেন্ট তহবিল",
-    "en": "Dawah & Events Fund",
-    "ar": "صندوق الدعوة والفعاليات"
-   },
-   "text": {
-    "bn": "হালাকা, কোর্স, কর্মশালা ও ডিজিটাল দাওয়াহ।",
-    "en": "Halaqas, courses, workshops and digital Dawah.",
-    "ar": "الحلقات والدورات والورش والدعوة الرقمية."
-   },
-   "suggested": [
-    500,
-    1000,
-    5000,
-    10000
-   ]
-  },
-  {
-   "id": "research",
-   "head": "Research",
-   "featured": false,
-   "image": "img/sunnah-conference-2024.jpg",
-   "name": {
-    "bn": "গবেষণা তহবিল",
-    "en": "Research Fund",
-    "ar": "صندوق البحث العلمي"
-   },
-   "text": {
-    "bn": "গবেষণা, সেমিনার ও প্রকাশনা।",
-    "en": "Research, seminars and publications.",
-    "ar": "البحث والندوات والنشر."
-   },
-   "suggested": [
-    1000,
-    5000,
-    10000,
-    25000
-   ]
+   ],
+   "icon": "cal",
+   "tagline": {
+    "bn": "প্রতি মাসে নিয়মিত সাদাকাহ",
+    "en": "A regular monthly sadaqah",
+    "ar": "صدقة شهرية منتظمة"
+   }
   }
  ],
  "supportItems": {
-  "asOf": "2026-02-15",
+  "asOf": "2026-11",
   "items": [
    {
     "name": {
@@ -2048,9 +2630,9 @@
    },
    {
     "name": {
-     "bn": "মাসজিদের প্রথম ছাদ ঢালাই",
-     "en": "The masjid's first roof slab",
-     "ar": "صب السقف الأول للمسجد"
+     "bn": "মাসজিদের ১ম ও ২য় তলার ছাদ ঢালাই",
+     "en": "The masjid's 1st and 2nd floor roof slabs",
+     "ar": "صب سقفي الطابقين الأول والثاني للمسجد"
     },
     "amount": 0,
     "status": "done"
@@ -2205,21 +2787,75 @@
     "name": {
      "bn": "ইসলামী ব্যাংক বাংলাদেশ লিমিটেড",
      "en": "Islami Bank Bangladesh Ltd.",
-     "ar": "بنك إسلامي بنغلاديش المحدود"
+     "ar": "Islami Bank Bangladesh Ltd."
     },
     "number": "2050 2230 2018 75016",
     "note": {
-     "bn": "হিসাবের নাম: IMAM BUKHARI JAME MASJID COMPLEX, BANGLADESH · ভিআইপি রোড শাখা, ঢাকা · SWIFT: IBBLBDDH223 · রাউটিং: 125276856",
-     "en": "Account name: IMAM BUKHARI JAME MASJID COMPLEX, BANGLADESH · VIP Road Branch, Dhaka · SWIFT: IBBLBDDH223 · Routing: 125276856",
-     "ar": "اسم الحساب: IMAM BUKHARI JAME MASJID COMPLEX, BANGLADESH · فرع طريق VIP، دكا · SWIFT: IBBLBDDH223 · رقم التوجيه: 125276856"
+     "bn": "হিসাবের নাম: IMAM BUKHARI JAME MASJID COMPLEX, BANGLADESH · ভিআইপি রোড শাখা, ঢাকা · রাউটিং: 125276856 · SWIFT: IBBLBDDH223",
+     "en": "Account name: IMAM BUKHARI JAME MASJID COMPLEX, BANGLADESH · VIP Road Branch, Dhaka · Routing: 125276856 · SWIFT: IBBLBDDH223",
+     "ar": "اسم الحساب: IMAM BUKHARI JAME MASJID COMPLEX, BANGLADESH · VIP Road Branch, Dhaka · Routing: 125276856 · SWIFT: IBBLBDDH223"
     },
+    "acname": "IMAM BUKHARI JAME MASJID COMPLEX, BANGLADESH",
+    "branch": {
+     "bn": "ভিআইপি রোড শাখা, ঢাকা",
+     "en": "VIP Road Branch, Dhaka",
+     "ar": "VIP Road Branch, Dhaka"
+    },
+    "routing": "125276856",
+    "swift": "IBBLBDDH223",
+    "show": true
+   },
+   {
+    "type": "bank",
+    "name": {
+     "bn": "আল-আরাফাহ ইসলামী ব্যাংক পিএলসি",
+     "en": "Al-Arafah Islami Bank PLC",
+     "ar": "Al-Arafah Islami Bank PLC"
+    },
+    "number": "0171 0201 48399",
+    "note": {
+     "bn": "হিসাবের নাম: IMAM BUKHARI JAME MASJID COMPLEX, BANGLADESH · উত্তরা মডেল টাউন শাখা · রাউটিং: 015264699 · SWIFT: ALARBDDYH082",
+     "en": "Account name: IMAM BUKHARI JAME MASJID COMPLEX, BANGLADESH · Uttara Model Town Branch · Routing: 015264699 · SWIFT: ALARBDDYH082",
+     "ar": "اسم الحساب: IMAM BUKHARI JAME MASJID COMPLEX, BANGLADESH · Uttara Model Town Branch · Routing: 015264699 · SWIFT: ALARBDDYH082"
+    },
+    "acname": "IMAM BUKHARI JAME MASJID COMPLEX, BANGLADESH",
+    "branch": {
+     "bn": "উত্তরা মডেল টাউন শাখা",
+     "en": "Uttara Model Town Branch",
+     "ar": "Uttara Model Town Branch"
+    },
+    "routing": "015264699",
+    "swift": "ALARBDDYH082",
+    "show": true
+   },
+   {
+    "type": "bank",
+    "name": {
+     "bn": "ইসলামী ব্যাংক বাংলাদেশ লিমিটেড",
+     "en": "Islami Bank Bangladesh Ltd.",
+     "ar": "Islami Bank Bangladesh Ltd."
+    },
+    "number": "2050 4350 9000 01614",
+    "note": {
+     "bn": "হিসাবের নাম: IMAM BUKHARI TRUST · কলেজ গেট শাখা, টঙ্গী, গাজীপুর · রাউটিং: 125330413",
+     "en": "Account name: IMAM BUKHARI TRUST · College Gate Branch, Tongi, Gazipur · Routing: 125330413",
+     "ar": "اسم الحساب: IMAM BUKHARI TRUST · College Gate Branch, Tongi, Gazipur · Routing: 125330413"
+    },
+    "acname": "IMAM BUKHARI TRUST",
+    "branch": {
+     "bn": "কলেজ গেট শাখা, টঙ্গী, গাজীপুর",
+     "en": "College Gate Branch, Tongi, Gazipur",
+     "ar": "College Gate Branch, Tongi, Gazipur"
+    },
+    "routing": "125330413",
+    "swift": "",
     "show": true
    }
   ],
   "gatewayLive": false,
   "autopayLive": false,
   "review": false,
-  "source": "https://www.facebook.com/imambukharitrustbd"
+  "source": "IBT Facebook page (May 2026) · IBT YouTube (Oct 2026)"
  },
  "donateCopy": {
   "motivations": [
@@ -2908,6 +3544,22 @@
  ],
  "news": [
   {
+   "id": "construction-2026-11",
+   "date": "2026-11",
+   "image": "img/construction-academic-2026-10.jpg",
+   "title": {
+    "bn": "একাডেমিক ভবনের ফাউন্ডেশন প্রায় শেষ, ছাদ ঢালাইয়ের প্রস্তুতি",
+    "en": "Academic building foundation nearly done; slab preparations begin",
+    "ar": "أساسات المبنى الأكاديمي شارفت على الانتهاء"
+   },
+   "summary": {
+    "bn": "মাসজিদ কমপ্লেক্সের ১ম ও ২য় তলার ছাদ ঢালাই সম্পন্ন হয়েছে। একাডেমিক ভবনের ফাউন্ডেশনের কাজ প্রায় শেষ, এখন ছাদ ঢালাইয়ের প্রস্তুতি চলছে।",
+    "en": "The masjid complex's 1st and 2nd floor slabs are cast. The academic building's foundation is nearly complete and slab preparations are under way.",
+    "ar": "اكتمل صب سقفي الطابقين الأول والثاني لمجمع المسجد، وشارفت أساسات المبنى الأكاديمي على الانتهاء."
+   },
+   "source": "Imam Bukhari Trust"
+  },
+  {
    "id": "get-together-2026",
    "date": "2026-11",
    "image": "yt:8MlFKh__zNg",
@@ -2981,9 +3633,9 @@
    "image": "yt:UpmANHHV-NQ",
    "video": "UpmANHHV-NQ",
    "title": {
-    "bn": "মাসজিদের দ্বিতীয় ছাদের বর্তমান অবস্থা",
-    "en": "The masjid's second roof slab",
-    "ar": "السقف الثاني للمسجد"
+    "bn": "মাসজিদের ১ম ও ২য় তলার ছাদ ঢালাই সম্পন্ন",
+    "en": "Masjid's 1st and 2nd floor slabs cast",
+    "ar": "اكتمال صب سقفي الطابقين الأول والثاني للمسجد"
    },
    "summary": {
     "bn": "ইমাম বুখারী জামে মাসজিদের দ্বিতীয় ছাদের কাজের ভিডিও আপডেট।",
@@ -3835,12 +4487,12 @@
    "ar": "إغلاق"
   },
   "next": {
-   "bn": "পরবর্তী",
+   "bn": "পরের",
    "en": "Next",
    "ar": "التالي"
   },
   "prev": {
-   "bn": "পূর্ববর্তী",
+   "bn": "আগের",
    "en": "Previous",
    "ar": "السابق"
   },
@@ -3925,14 +4577,14 @@
    "ar": "مواقع ذات صلة"
   },
   "theme_light": {
-   "bn": "লাইট মোড",
-   "en": "Light mode",
-   "ar": "الوضع الفاتح"
+   "bn": "লাইট",
+   "en": "Light",
+   "ar": "فاتح"
   },
   "theme_dark": {
-   "bn": "ডার্ক মোড",
-   "en": "Dark mode",
-   "ar": "الوضع الداكن"
+   "bn": "ডার্ক",
+   "en": "Dark",
+   "ar": "داكن"
   },
   "illustrative": {
    "bn": "স্থাপত্য ভিজ্যুয়ালাইজেশন",
@@ -4143,6 +4795,376 @@
    "bn": "নতুন",
    "en": "New",
    "ar": "جديد"
+  },
+  "nav_future": {
+   "bn": "ভবিষ্যৎ প্রকল্প",
+   "en": "Future projects",
+   "ar": "المشاريع المستقبلية"
+  },
+  "nav_prayer": {
+   "bn": "নামাজের সময়",
+   "en": "Prayer times",
+   "ar": "مواقيت الصلاة"
+  },
+  "nav_quran": {
+   "bn": "আল-কুরআন",
+   "en": "Al-Quran",
+   "ar": "القرآن الكريم"
+  },
+  "nav_funds": {
+   "bn": "দানের খাত",
+   "en": "Causes",
+   "ar": "مجالات التبرع"
+  },
+  "theme_auto": {
+   "bn": "স্বয়ংক্রিয়",
+   "en": "Auto",
+   "ar": "تلقائي"
+  },
+  "donate_now": {
+   "bn": "এখনই দান করুন",
+   "en": "Donate now",
+   "ar": "تبرّع الآن"
+  },
+  "give_to_fund": {
+   "bn": "এই খাতে দান করুন",
+   "en": "Give to this cause",
+   "ar": "تبرّع لهذا المجال"
+  },
+  "watch_documentary": {
+   "bn": "ডকুমেন্টারি দেখুন",
+   "en": "Watch the documentary",
+   "ar": "شاهد الفيلم"
+  },
+  "take_a_share": {
+   "bn": "অংশ নিন",
+   "en": "Take a share",
+   "ar": "شارك بحصة"
+  },
+  "share_hint": {
+   "bn": "নির্মাণের যে অংশের দায়িত্ব নিতে চান সেটি বেছে নিন, পরিমাণ বাড়াতে পারবেন।",
+   "en": "Pick the part of the work you'd like to fund; you can change the quantity.",
+   "ar": "اختر الجزء الذي تريد تمويله، ويمكنك تغيير الكمية."
+  },
+  "or_amount": {
+   "bn": "অথবা নিজের পরিমাণ লিখুন",
+   "en": "Or enter your own amount",
+   "ar": "أو أدخل مبلغًا من اختيارك"
+  },
+  "your_gift": {
+   "bn": "আপনার দান",
+   "en": "Your gift",
+   "ar": "تبرعك"
+  },
+  "step_fund": {
+   "bn": "খাত বেছে নিন",
+   "en": "Choose a cause",
+   "ar": "اختر المجال"
+  },
+  "step_amount": {
+   "bn": "পরিমাণ",
+   "en": "Amount",
+   "ar": "المبلغ"
+  },
+  "step_pay": {
+   "bn": "পাঠানোর মাধ্যম",
+   "en": "How to send",
+   "ar": "طريقة الإرسال"
+  },
+  "step_report": {
+   "bn": "দান জানান",
+   "en": "Report your gift",
+   "ar": "أبلغنا بتبرعك"
+  },
+  "pay_hint": {
+   "bn": "নিচের যেকোনো মাধ্যমে টাকা পাঠিয়ে ফরমে ট্রানজেকশন আইডি দিন, তাহলে আপনার দান নির্দিষ্ট খাতে জমা হবে।",
+   "en": "Send the money by any channel below, then report the transaction ID so it is recorded against your chosen cause.",
+   "ar": "أرسل المبلغ بأي وسيلة أدناه ثم أبلغنا برقم العملية ليُسجل في المجال الذي اخترته."
+  },
+  "account_name": {
+   "bn": "হিসাবের নাম",
+   "en": "Account name",
+   "ar": "اسم الحساب"
+  },
+  "branch": {
+   "bn": "শাখা",
+   "en": "Branch",
+   "ar": "الفرع"
+  },
+  "routing": {
+   "bn": "রাউটিং",
+   "en": "Routing",
+   "ar": "التوجيه"
+  },
+  "all_causes": {
+   "bn": "সব খাত",
+   "en": "All causes",
+   "ar": "كل المجالات"
+  },
+  "current_status": {
+   "bn": "বর্তমান অবস্থা",
+   "en": "Current status",
+   "ar": "الوضع الحالي"
+  },
+  "construction_update": {
+   "bn": "নির্মাণ আপডেট",
+   "en": "Construction update",
+   "ar": "تحديث البناء"
+  },
+  "explore_3d": {
+   "bn": "৩ডি মডেলে ঘুরে দেখুন",
+   "en": "Explore in 3D",
+   "ar": "استكشف بالأبعاد الثلاثية"
+  },
+  "drag_hint": {
+   "bn": "ঘোরাতে টানুন · ভবনে ক্লিক করুন",
+   "en": "Drag to rotate · tap a building",
+   "ar": "اسحب للتدوير · اضغط على مبنى"
+  },
+  "status_next": {
+   "bn": "প্রস্তুতি চলছে",
+   "en": "Preparing",
+   "ar": "قيد التحضير"
+  },
+  "floors_done": {
+   "bn": "তলা সম্পন্ন",
+   "en": "floors done",
+   "ar": "طوابق مكتملة"
+  },
+  "what_inside": {
+   "bn": "যা থাকবে",
+   "en": "What it will house",
+   "ar": "ما سيضمه"
+  },
+  "masjid": {
+   "bn": "মাসজিদ",
+   "en": "Masjid",
+   "ar": "المسجد"
+  },
+  "academic_bld": {
+   "bn": "একাডেমিক ভবন",
+   "en": "Academic building",
+   "ar": "المبنى الأكاديمي"
+  },
+  "prayer_title": {
+   "bn": "নামাজের সময়সূচি",
+   "en": "Prayer times",
+   "ar": "مواقيت الصلاة"
+  },
+  "fajr": {
+   "bn": "ফজর",
+   "en": "Fajr",
+   "ar": "الفجر"
+  },
+  "sunrise": {
+   "bn": "সূর্যোদয়",
+   "en": "Sunrise",
+   "ar": "الشروق"
+  },
+  "dhuhr": {
+   "bn": "যোহর",
+   "en": "Dhuhr",
+   "ar": "الظهر"
+  },
+  "asr": {
+   "bn": "আসর",
+   "en": "Asr",
+   "ar": "العصر"
+  },
+  "maghrib": {
+   "bn": "মাগরিব",
+   "en": "Maghrib",
+   "ar": "المغرب"
+  },
+  "isha": {
+   "bn": "এশা",
+   "en": "Isha",
+   "ar": "العشاء"
+  },
+  "jumuah": {
+   "bn": "জুমআ",
+   "en": "Jumu'ah",
+   "ar": "الجمعة"
+  },
+  "next_prayer": {
+   "bn": "পরবর্তী নামাজ",
+   "en": "Next prayer",
+   "ar": "الصلاة القادمة"
+  },
+  "in_time": {
+   "bn": "বাকি",
+   "en": "in",
+   "ar": "متبقٍ"
+  },
+  "country": {
+   "bn": "দেশ",
+   "en": "Country",
+   "ar": "الدولة"
+  },
+  "city": {
+   "bn": "শহর",
+   "en": "City",
+   "ar": "المدينة"
+  },
+  "use_location": {
+   "bn": "আমার লোকেশন",
+   "en": "Use my location",
+   "ar": "موقعي"
+  },
+  "calc_method": {
+   "bn": "হিসাব পদ্ধতি",
+   "en": "Calculation method",
+   "ar": "طريقة الحساب"
+  },
+  "asr_method": {
+   "bn": "আসরের হিসাব",
+   "en": "Asr calculation",
+   "ar": "حساب العصر"
+  },
+  "asr_standard": {
+   "bn": "স্ট্যান্ডার্ড (শাফেয়ী, মালেকী, হাম্বলী)",
+   "en": "Standard (Shafi'i, Maliki, Hanbali)",
+   "ar": "الجمهور (الشافعي والمالكي والحنبلي)"
+  },
+  "asr_hanafi": {
+   "bn": "হানাফী",
+   "en": "Hanafi",
+   "ar": "الحنفي"
+  },
+  "sehri_iftar": {
+   "bn": "সাহরি শেষ ও ইফতার",
+   "en": "Suhoor ends · Iftar",
+   "ar": "نهاية السحور · الإفطار"
+  },
+  "prayer_note": {
+   "bn": "সময় স্বয়ংক্রিয়ভাবে হিসাব করা হয় এবং প্রতিদিন হালনাগাদ হয়। স্থানীয় মাসজিদের সময়সূচির সাথে কয়েক মিনিটের পার্থক্য হতে পারে।",
+   "en": "Times are calculated automatically and update every day. They may differ by a few minutes from your local masjid.",
+   "ar": "تُحسب المواقيت تلقائيًا وتتحدث يوميًا، وقد تختلف دقائق عن مسجدك المحلي."
+  },
+  "today": {
+   "bn": "আজ",
+   "en": "Today",
+   "ar": "اليوم"
+  },
+  "my_location": {
+   "bn": "আমার অবস্থান",
+   "en": "My location",
+   "ar": "موقعي"
+  },
+  "quran_title": {
+   "bn": "আল-কুরআনুল কারীম",
+   "en": "The Noble Qur'an",
+   "ar": "القرآن الكريم"
+  },
+  "surah": {
+   "bn": "সূরা",
+   "en": "Surah",
+   "ar": "سورة"
+  },
+  "juz": {
+   "bn": "পারা",
+   "en": "Juz",
+   "ar": "الجزء"
+  },
+  "reciter": {
+   "bn": "কারি",
+   "en": "Reciter",
+   "ar": "القارئ"
+  },
+  "translation": {
+   "bn": "অনুবাদ",
+   "en": "Translation",
+   "ar": "الترجمة"
+  },
+  "tafsir": {
+   "bn": "তাফসির",
+   "en": "Tafsir",
+   "ar": "التفسير"
+  },
+  "show_tafsir": {
+   "bn": "তাফসির দেখান",
+   "en": "Show tafsir",
+   "ar": "إظهار التفسير"
+  },
+  "hide_tafsir": {
+   "bn": "তাফসির লুকান",
+   "en": "Hide tafsir",
+   "ar": "إخفاء التفسير"
+  },
+  "play_all": {
+   "bn": "পুরো তিলাওয়াত শুনুন",
+   "en": "Play recitation",
+   "ar": "تشغيل التلاوة"
+  },
+  "pause": {
+   "bn": "বিরতি",
+   "en": "Pause",
+   "ar": "إيقاف"
+  },
+  "ayah": {
+   "bn": "আয়াত",
+   "en": "Ayah",
+   "ar": "آية"
+  },
+  "makki": {
+   "bn": "মাক্কী",
+   "en": "Makki",
+   "ar": "مكية"
+  },
+  "madani": {
+   "bn": "মাদানী",
+   "en": "Madani",
+   "ar": "مدنية"
+  },
+  "font_size": {
+   "bn": "অক্ষরের আকার",
+   "en": "Text size",
+   "ar": "حجم الخط"
+  },
+  "bn_zakaria": {
+   "bn": "বাংলা: ড. আবু বকর মুহাম্মাদ যাকারিয়া",
+   "en": "Bangla: Dr. Abu Bakr Muhammad Zakaria",
+   "ar": "البنغالية: د. أبو بكر محمد زكريا"
+  },
+  "en_saheeh": {
+   "bn": "ইংরেজি: Saheeh International",
+   "en": "English: Saheeh International",
+   "ar": "الإنجليزية: صحيح إنترناشونال"
+  },
+  "tafsir_zakaria": {
+   "bn": "তাফসীর আবু বকর যাকারিয়া (বাংলা)",
+   "en": "Tafsir Abu Bakr Zakaria (Bangla)",
+   "ar": "تفسير أبو بكر زكريا (بنغالي)"
+  },
+  "tafsir_kathir": {
+   "bn": "তাফসীর ইবনে কাসীর (ইংরেজি, সংক্ষিপ্ত)",
+   "en": "Tafsir Ibn Kathir (English, abridged)",
+   "ar": "تفسير ابن كثير (إنجليزي، مختصر)"
+  },
+  "quran_source": {
+   "bn": "কুরআনের পাঠ, অনুবাদ, তাফসির ও তিলাওয়াত: Quran.com",
+   "en": "Text, translations, tafsir and audio: Quran.com",
+   "ar": "النص والترجمة والتفسير والتلاوة: Quran.com"
+  },
+  "loading": {
+   "bn": "লোড হচ্ছে…",
+   "en": "Loading…",
+   "ar": "جارٍ التحميل…"
+  },
+  "load_failed": {
+   "bn": "লোড করা যায়নি। ইন্টারনেট সংযোগ দেখে আবার চেষ্টা করুন।",
+   "en": "Could not load. Check your connection and try again.",
+   "ar": "تعذر التحميل. تحقق من الاتصال وأعد المحاولة."
+  },
+  "retry": {
+   "bn": "আবার চেষ্টা",
+   "en": "Retry",
+   "ar": "إعادة المحاولة"
+  },
+  "quick_links": {
+   "bn": "দ্রুত লিংক",
+   "en": "Quick links",
+   "ar": "روابط سريعة"
   }
  },
  "scholars": [
@@ -4250,5 +5272,316 @@
    },
    "photo": "https://api.kulliyatulquran.com/uploads/Prof_Dr_Nasir_Uddin_12763fb144.jpg"
   }
- ]
+ ],
+ "future": {
+  "title": {
+   "bn": "ইমাম বুখারী ট্রাস্টের ভবিষ্যৎ প্রকল্প",
+   "en": "IBT future projects",
+   "ar": "مشاريع الوقف المستقبلية"
+  },
+  "intro": {
+   "bn": "মাসজিদকে কেন্দ্র করে একটি পূর্ণাঙ্গ জ্ঞানভিত্তিক ক্যাম্পাস: পাঁচটি ভবনে শিক্ষা, গবেষণা, দাওয়াহ ও সমাজসেবার সমন্বয়।",
+   "en": "A complete knowledge campus centred on the masjid: education, research, Dawah and community service across five buildings.",
+   "ar": "حرم معرفي متكامل محوره المسجد: تعليم وبحث ودعوة وخدمة مجتمعية في خمسة مبانٍ."
+  },
+  "note": {
+   "bn": "ছবিগুলো স্থাপত্য নকশা ও প্রতীকী চিত্র।",
+   "en": "Images are architectural designs and illustrations.",
+   "ar": "الصور تصاميم معمارية ورسوم توضيحية."
+  },
+  "buildings": [
+   {
+    "id": "masjid-complex",
+    "status": "construction",
+    "image": "img/render-mosque.jpg",
+    "color": "#8EB69B",
+    "fund": "mosque",
+    "name": {
+     "bn": "ইমাম বুখারী জামে মাসজিদ কমপ্লেক্স",
+     "en": "Imam Bukhari Jame Masjid Complex",
+     "ar": "مجمع جامع الإمام البخاري"
+    },
+    "statusText": {
+     "bn": "নির্মাণাধীন · ১ম ও ২য় তলার ছাদ ঢালাই সম্পন্ন",
+     "en": "Under construction · 1st & 2nd floor slabs cast",
+     "ar": "قيد الإنشاء · اكتمل سقفا الطابقين الأول والثاني"
+    },
+    "items": [
+     {
+      "name": {
+       "bn": "দাওয়াহ ও রিসার্চ সেন্টার",
+       "en": "Dawah & Research Center",
+       "ar": "مركز الدعوة والبحث"
+      },
+      "icon": "dawah"
+     },
+     {
+      "name": {
+       "bn": "ইমাম বুখারী কেন্দ্রীয় লাইব্রেরি",
+       "en": "Imam Bukhari Central Library",
+       "ar": "مكتبة الإمام البخاري المركزية"
+      },
+      "icon": "library"
+     },
+     {
+      "name": {
+       "bn": "সকাল ও সন্ধ্যার মক্তব",
+       "en": "Morning & Evening Maktab",
+       "ar": "الكتّاب الصباحي والمسائي"
+      },
+      "icon": "maktab"
+     },
+     {
+      "name": {
+       "bn": "তাহফিযুল কুরআন",
+       "en": "Tahfizul Quran",
+       "ar": "تحفيظ القرآن"
+      },
+      "icon": "quran"
+     },
+     {
+      "name": {
+       "bn": "আইবিটি স্টুডিও",
+       "en": "IBT Studio",
+       "ar": "استوديو الوقف"
+      },
+      "icon": "studio"
+     }
+    ]
+   },
+   {
+    "id": "academic-1",
+    "status": "construction",
+    "image": "img/render-academic.jpg",
+    "color": "#DAF1DE",
+    "fund": "academy",
+    "name": {
+     "bn": "একাডেমিক কমপ্লেক্স ১",
+     "en": "Academic Complex 1",
+     "ar": "المجمع الأكاديمي 1"
+    },
+    "statusText": {
+     "bn": "নির্মাণাধীন · ফাউন্ডেশন প্রায় শেষ",
+     "en": "Under construction · foundation nearly complete",
+     "ar": "قيد الإنشاء · الأساسات شارفت على الانتهاء"
+    },
+    "items": [
+     {
+      "name": {
+       "bn": "রিসার্চ সেন্টার",
+       "en": "Research Center",
+       "ar": "مركز البحث"
+      },
+      "icon": "research"
+     },
+     {
+      "name": {
+       "bn": "সেমিনার হল",
+       "en": "Seminar Hall",
+       "ar": "قاعة الندوات"
+      },
+      "icon": "seminar"
+     },
+     {
+      "name": {
+       "bn": "কুল্লিয়াতুল কুরআন উচ্চশিক্ষা",
+       "en": "Kulliyatul Quran Higher Education",
+       "ar": "كلية القرآن للتعليم العالي"
+      },
+      "icon": "education"
+     },
+     {
+      "name": {
+       "bn": "আরবি ভাষা ক্লাব",
+       "en": "Arabic Language Club",
+       "ar": "نادي اللغة العربية"
+      },
+      "icon": "arabic"
+     },
+     {
+      "name": {
+       "bn": "কুল্লিয়াতুল কুরআন মডেল মাদরাসা",
+       "en": "Kulliyatul Quran Model Madrasah",
+       "ar": "مدرسة كلية القرآن النموذجية"
+      },
+      "icon": "school"
+     },
+     {
+      "name": {
+       "bn": "কুল্লিয়াতুল কুরআন আফটার স্কুল",
+       "en": "Kulliyatul Quran After School",
+       "ar": "برنامج كلية القرآن بعد المدرسة"
+      },
+      "icon": "clock"
+     }
+    ]
+   },
+   {
+    "id": "academic-2",
+    "status": "planned",
+    "image": "img/design-courtyard.jpg",
+    "color": "#C9B37E",
+    "name": {
+     "bn": "একাডেমিক কমপ্লেক্স ২",
+     "en": "Academic Complex 2",
+     "ar": "المجمع الأكاديمي 2"
+    },
+    "statusText": {
+     "bn": "পরিকল্পিত",
+     "en": "Planned",
+     "ar": "مخطط"
+    },
+    "items": [
+     {
+      "name": {
+       "bn": "কুল্লিয়াতুল কুরআন গার্লস মডেল মাদরাসা",
+       "en": "Kulliyatul Quran Girls' Model Madrasah",
+       "ar": "مدرسة كلية القرآن النموذجية للبنات"
+      },
+      "icon": "school"
+     },
+     {
+      "name": {
+       "bn": "কুল্লিয়াতুল কুরআন গার্লস উচ্চতর বিভাগ",
+       "en": "Kulliyatul Quran Girls' Higher Section",
+       "ar": "القسم العالي للبنات"
+      },
+      "icon": "education"
+     },
+     {
+      "name": {
+       "bn": "টিচার্স ট্রেনিং ইনস্টিটিউট",
+       "en": "Teachers Training Institute",
+       "ar": "معهد تدريب المعلمين"
+      },
+      "icon": "teacher"
+     },
+     {
+      "name": {
+       "bn": "ছাত্রী হোস্টেল",
+       "en": "Girls' hostel",
+       "ar": "سكن الطالبات"
+      },
+      "icon": "hostel"
+     }
+    ]
+   },
+   {
+    "id": "academic-3",
+    "status": "planned",
+    "image": "img/design-plaza.jpg",
+    "color": "#9BB8C9",
+    "name": {
+     "bn": "একাডেমিক কমপ্লেক্স ৩",
+     "en": "Academic Complex 3",
+     "ar": "المجمع الأكاديمي 3"
+    },
+    "statusText": {
+     "bn": "পরিকল্পিত",
+     "en": "Planned",
+     "ar": "مخطط"
+    },
+    "items": [
+     {
+      "name": {
+       "bn": "ছাত্র হোস্টেল",
+       "en": "Boys' hostel",
+       "ar": "سكن الطلاب"
+      },
+      "icon": "hostel"
+     },
+     {
+      "name": {
+       "bn": "ইংলিশ মিডিয়াম ইসলামিক স্কুল",
+       "en": "English-medium Islamic School",
+       "ar": "مدرسة إسلامية باللغة الإنجليزية"
+      },
+      "icon": "school"
+     },
+     {
+      "name": {
+       "bn": "ইয়ুথ ইসলামিক ক্লাব",
+       "en": "Youth Islamic Club",
+       "ar": "النادي الإسلامي للشباب"
+      },
+      "icon": "youth"
+     },
+     {
+      "name": {
+       "bn": "সিনিয়র সিটিজেন ক্লাব",
+       "en": "Senior Citizens' Club",
+       "ar": "نادي كبار السن"
+      },
+      "icon": "senior"
+     },
+     {
+      "name": {
+       "bn": "সিনিয়র সিটিজেন হাউস",
+       "en": "Senior Citizens' House",
+       "ar": "دار كبار السن"
+      },
+      "icon": "home"
+     },
+     {
+      "name": {
+       "bn": "শিক্ষক ডরমিটরি",
+       "en": "Teachers' dormitory",
+       "ar": "سكن المعلمين"
+      },
+      "icon": "hostel"
+     }
+    ]
+   },
+   {
+    "id": "taibah-tower",
+    "status": "planned",
+    "image": "img/design-night-2.jpg",
+    "color": "#B9A6D9",
+    "name": {
+     "bn": "তাইবাহ একাডেমি টাওয়ার",
+     "en": "Taibah Academy Tower",
+     "ar": "برج أكاديمية طيبة"
+    },
+    "statusText": {
+     "bn": "পরিকল্পিত",
+     "en": "Planned",
+     "ar": "مخطط"
+    },
+    "items": [
+     {
+      "name": {
+       "bn": "ইসলামিক মিউজিয়াম",
+       "en": "Islamic Museum",
+       "ar": "المتحف الإسلامي"
+      },
+      "icon": "museum"
+     },
+     {
+      "name": {
+       "bn": "তাইবাহ একাডেমি",
+       "en": "Taibah Academy",
+       "ar": "أكاديمية طيبة"
+      },
+      "icon": "education"
+     },
+     {
+      "name": {
+       "bn": "তাইবাহ পাবলিশার",
+       "en": "Taibah Publisher",
+       "ar": "دار طيبة للنشر"
+      },
+      "icon": "book"
+     },
+     {
+      "name": {
+       "bn": "তাইবাহ আইটি",
+       "en": "Taibah IT",
+       "ar": "طيبة لتقنية المعلومات"
+      },
+      "icon": "code"
+     }
+    ]
+   }
+  ]
+ }
 }
