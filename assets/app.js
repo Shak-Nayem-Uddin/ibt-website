@@ -685,6 +685,13 @@
   // ---------- events ----------
   document.addEventListener("click", function (e) {
     var t = e.target;
+    // logo, site name and "Home" links: when home is already open, the hash does not change, so scroll up ourselves
+    var hm = t.closest && t.closest('a[href="#home"]');
+    if (hm && !e.ctrlKey && !e.metaKey && !e.shiftKey) {
+      var dr = $("#drawer"); if (dr) dr.classList.remove("open");
+      if ((location.hash || "#home") === "#home" && state.route === "home") { e.preventDefault(); window.scrollTo({ top: 0, behavior: "smooth" }); return; }
+      if (location.pathname.replace(/\/+$/, "/") !== new URL(".", document.baseURI).pathname) { e.preventDefault(); location.href = new URL(".", document.baseURI).href + "#home"; return; }
+    }
     var pv = t.closest("[data-play]"); if (pv) { e.preventDefault(); $("#search").classList.remove("open"); openPlayer(pv.dataset.play, pv.dataset.title); return; }
     if (t.closest("[data-act=close-player]") || t === $("#player")) { closePlayer(); return; }
     var vc = t.closest("#vch [data-ch]"); if (vc) { $$("#vch button").forEach(function (b) { b.setAttribute("aria-pressed", b === vc ? "true" : "false"); }); vstate.ch = vc.dataset.ch; vstate.n = 24; renderVideos(); return; }
@@ -798,7 +805,7 @@
   // a preloaded content.json can otherwise arrive while later scripts are still downloading
   var domReady = new Promise(function (res) { if (document.readyState !== "loading") res(); else document.addEventListener("DOMContentLoaded", res); });
   var vReq = fetch("data/videos.json?h=" + Math.floor(Date.now() / 36e5)).then(function (r) { return r.json(); }).then(function (d) { V = d || V; }, function () { });
-  fetch("data/content.json?v=6.1").then(function (r) { return r.json(); }).then(function (d) { return Promise.all([vReq, domReady]).then(function () { boot(d); }); }).catch(function () {
+  fetch("data/content.json?v=6.5").then(function (r) { return r.json(); }).then(function (d) { return Promise.all([vReq, domReady]).then(function () { boot(d); }); }).catch(function () {
     $("#main").innerHTML = '<div class="wrap section"><h1>Imam Bukhari Trust</h1><p>Content could not be loaded. Please refresh.</p></div>';
   });
 })();
