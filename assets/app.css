@@ -1561,3 +1561,8 @@ main .src{display:none}
 @media (max-width:1000px){.im-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media (max-width:520px){.im-grid{grid-template-columns:1fr 1fr;gap:10px}.im-hero{grid-column:1/-1;grid-row:auto;min-height:260px}.im-t{padding:16px}.im-build{flex-direction:column;align-items:flex-start}}
 html[lang="bn"] .im-hero b,html[lang="bn"] .im-t b{letter-spacing:0}
+/* v11d: keep the % ring readable inside impact tiles (.im-t b was enlarging it) */
+.im-build .pring{--s:96px}
+.im-build .pring::before{inset:9px}
+.im-t .pring b{font-size:1.6rem;letter-spacing:-.01em;line-height:1}
+.im-t .pring b small{font-size:.55em}

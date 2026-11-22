@@ -805,7 +805,7 @@
   // a preloaded content.json can otherwise arrive while later scripts are still downloading
   var domReady = new Promise(function (res) { if (document.readyState !== "loading") res(); else document.addEventListener("DOMContentLoaded", res); });
   var vReq = fetch("data/videos.json?h=" + Math.floor(Date.now() / 36e5)).then(function (r) { return r.json(); }).then(function (d) { V = d || V; }, function () { });
-  fetch("data/content.json?v=6.5").then(function (r) { return r.json(); }).then(function (d) { return Promise.all([vReq, domReady]).then(function () { boot(d); }); }).catch(function () {
+  fetch("data/content.json?v=6.6").then(function (r) { return r.json(); }).then(function (d) { return Promise.all([vReq, domReady]).then(function () { boot(d); }); }).catch(function () {
     $("#main").innerHTML = '<div class="wrap section"><h1>Imam Bukhari Trust</h1><p>Content could not be loaded. Please refresh.</p></div>';
   });
 })();
