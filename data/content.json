@@ -411,9 +411,9 @@
    "ar": "الأستاذ الدكتور محمد منظور إلهي"
   },
   "role": {
-   "bn": "চেয়ারম্যান, ইমাম বুখারী ট্রাস্ট · প্রতিষ্ঠাতা, কুল্লিয়াতুল কুরআন",
-   "en": "Chairman, Imam Bukhari Trust · Founder, Kulliyatul Quran",
-   "ar": "رئيس وقف الإمام البخاري · مؤسس كلية القرآن"
+   "bn": "চেয়ারম্যান, ইমাম বুখারী ট্রাস্ট · প্রফেসর, জাতীয় বিশ্ববিদ্যালয়, বাংলাদেশ · প্রতিষ্ঠাতা, কুল্লিয়াতুল কুরআন",
+   "en": "Chairman, Imam Bukhari Trust · Professor, National University, Bangladesh · Founder, Kulliyatul Quran",
+   "ar": "رئيس وقف الإمام البخاري · أستاذ، الجامعة الوطنية، بنغلاديش · مؤسس كلية القرآن"
   },
   "photo": "img/chairman.webp",
   "photo2": "img/chairman-speech.webp",
@@ -438,7 +438,12 @@
     "url": ""
    }
   ],
-  "review": true
+  "review": true,
+  "designation": {
+   "bn": "প্রফেসর, জাতীয় বিশ্ববিদ্যালয়, বাংলাদেশ",
+   "en": "Professor, National University, Bangladesh",
+   "ar": "أستاذ، الجامعة الوطنية، بنغلاديش"
+  }
  },
  "cells": [
   {
@@ -5858,6 +5863,16 @@
    "bn": "আইবিটি পরিবারে যুক্ত হোন",
    "en": "Join the IBT family",
    "ar": "انضم إلى أسرة الوقف"
+  },
+  "nav_sisters": {
+   "bn": "সহযোগী প্রতিষ্ঠান",
+   "en": "Sister concerns",
+   "ar": "المؤسسات الشقيقة"
+  },
+  "nav_programs": {
+   "bn": "কর্মসূচি ও কোর্স আর্কাইভ",
+   "en": "Programmes & courses archive",
+   "ar": "أرشيف البرامج والدورات"
   }
  },
  "scholars": [
@@ -8246,6 +8261,265 @@
     "ar": "المسجد: الطوابق 3–6"
    },
    "status": "planned"
+  }
+ ],
+ "sisters": [
+  {
+   "id": "kulliyatul-quran",
+   "logo": "img/logo-kq.png",
+   "url": "https://www.kulliyatulquran.com",
+   "inst": "kulliyatul-quran",
+   "name": {
+    "bn": "কুল্লিয়াতুল কুরআনিল কারীম ওয়াদ-দিরাসাতিল ইসলামিয়্যাহ",
+    "en": "Kulliyatul Quranil Kareem Waddirasatil Islamiyah",
+    "ar": "كلية القرآن الكريم والدراسات الإسلامية"
+   },
+   "text": {
+    "bn": "কুরআন ও সুন্নাহভিত্তিক উচ্চতর ইসলামী শিক্ষা: সানাবিয়্যাহ, কুল্লিয়্যাহ ও বিভিন্ন কোর্স।",
+    "en": "Higher Islamic education based on the Qur'an and Sunnah: Sanabiyyah, Kulliyyah and courses.",
+    "ar": "تعليم إسلامي عالٍ على الكتاب والسنة: الثانوية والكلية والدورات."
+   }
+  },
+  {
+   "id": "model-madrasa",
+   "logo": "img/logo-kq.png",
+   "url": "https://www.kulliyatulquran.com/p/kulliyatul-quran-model-madrasah",
+   "inst": "model-madrasa",
+   "name": {
+    "bn": "কুল্লিয়াতুল কুরআন মডেল মাদরাসা",
+    "en": "Kulliyatul Quran Model Madrasah",
+    "ar": "مدرسة كلية القرآن النموذجية"
+   },
+   "text": {
+    "bn": "শিশুদের জন্য কুরআন, আদব ও আধুনিক শিক্ষার সমন্বিত মাদরাসা।",
+    "en": "An integrated madrasah for children: Qur'an, adab and modern subjects.",
+    "ar": "مدرسة متكاملة للأطفال: القرآن والأدب والعلوم الحديثة."
+   }
+  },
+  {
+   "id": "after-school",
+   "logo": "img/logo-kq.png",
+   "url": "https://www.kulliyatulquran.com/p/kulliyatul-quran-after-school",
+   "inst": "after-school",
+   "name": {
+    "bn": "কুল্লিয়াতুল কুরআন আফটার স্কুল",
+    "en": "Kulliyatul Quran After School",
+    "ar": "برنامج ما بعد المدرسة لكلية القرآن"
+   },
+   "text": {
+    "bn": "স্কুলগামী শিক্ষার্থীদের জন্য তা'লীমুল কুরআন, হিফজ, তারবিয়াহ ও আরবি ভাষা।",
+    "en": "Ta'limul Qur'an, hifz, tarbiyah and Arabic for school-going students.",
+    "ar": "تعليم القرآن والتحفيظ والتربية والعربية لطلاب المدارس."
+   }
+  },
+  {
+   "id": "taibah-academy",
+   "logo": "img/logo-taibah-academy.png",
+   "url": "https://taibahacademy.com",
+   "name": {
+    "bn": "তাইবাহ একাডেমি",
+    "en": "Taibah Academy",
+    "ar": "أكاديمية طيبة"
+   },
+   "text": {
+    "bn": "বাংলা ভাষায় বিশুদ্ধ ইসলামী জ্ঞান অর্জনের অনলাইন শিক্ষা প্ল্যাটফর্ম।",
+    "en": "An online learning platform for authentic Islamic knowledge in Bengali.",
+    "ar": "منصة تعليمية إلكترونية للعلم الشرعي باللغة البنغالية."
+   }
+  },
+  {
+   "id": "taibah-publisher",
+   "logo": "",
+   "url": "",
+   "mono": "ت",
+   "name": {
+    "bn": "তাইবাহ পাবলিশার",
+    "en": "Taibah Publisher",
+    "ar": "دار طيبة للنشر"
+   },
+   "text": {
+    "bn": "ইসলামী গ্রন্থ ও শিক্ষা উপকরণ প্রকাশনা।",
+    "en": "Publishing Islamic books and learning materials.",
+    "ar": "نشر الكتب الإسلامية والمواد التعليمية."
+   }
+  }
+ ],
+ "welfareProgs": [
+  {
+   "id": "winter",
+   "icon": "heart",
+   "image": "img/winter-2024-distribution.webp",
+   "fund": "winter",
+   "stat": "400+",
+   "title": {
+    "bn": "শীতবস্ত্র বিতরণ",
+    "en": "Winter clothing",
+    "ar": "كسوة الشتاء"
+   },
+   "statLabel": {
+    "bn": "পরিবার শীতবস্ত্র পেয়েছে",
+    "en": "families received winter clothes",
+    "ar": "أسرة تلقت كسوة الشتاء"
+   },
+   "text": {
+    "bn": "শীতপ্রবণ ও প্রত্যন্ত অঞ্চলে অসহায় পরিবারের মাঝে কম্বল ও শীতবস্ত্র বিতরণ।",
+    "en": "Blankets and warm clothes for families in need in cold and remote areas.",
+    "ar": "توزيع البطانيات والملابس الشتوية على الأسر المحتاجة في المناطق الباردة والنائية."
+   }
+  },
+  {
+   "id": "iftar",
+   "icon": "moon",
+   "image": "img/doc-iftar.webp",
+   "fund": "iftar",
+   "stat": "300+",
+   "title": {
+    "bn": "ইফতার ও খাদ্য সহায়তা",
+    "en": "Iftar and food support",
+    "ar": "الإفطار والدعم الغذائي"
+   },
+   "statLabel": {
+    "bn": "দরিদ্র পরিবার ইফতার/খাদ্য সহায়তা পেয়েছে",
+    "en": "poor families received iftar or food",
+    "ar": "أسرة فقيرة تلقت إفطارًا أو غذاءً"
+   },
+   "text": {
+    "bn": "রমাদানে গ্রামীণ দরিদ্র পরিবার ও রোজাদারদের জন্য ইফতার ও খাদ্যসামগ্রী।",
+    "en": "Iftar and food packs in Ramadan for poor rural families and those fasting.",
+    "ar": "وجبات إفطار وسلال غذائية في رمضان للأسر الريفية الفقيرة والصائمين."
+   }
+  },
+  {
+   "id": "relief",
+   "icon": "relief",
+   "image": "img/relief-flood-1.webp",
+   "fund": "relief",
+   "stat": "100+",
+   "title": {
+    "bn": "বন্যা ত্রাণ ও পুনর্বাসন",
+    "en": "Flood relief and rehabilitation",
+    "ar": "إغاثة الفيضانات وإعادة التأهيل"
+   },
+   "statLabel": {
+    "bn": "বন্যার্ত পরিবার সহায়তা পেয়েছে",
+    "en": "flood-affected families supported",
+    "ar": "أسرة متضررة من الفيضانات تلقت الدعم"
+   },
+   "text": {
+    "bn": "নৌকায় করে আটকে পড়া পরিবারের কাছে ত্রাণ; বন্যার পর ঘর নির্মাণ সামগ্রী, টিউবওয়েল, গবাদি পশু ও আর্থিক সহায়তা।",
+    "en": "Relief by boat to stranded families; after the flood, building materials, tube-wells, livestock and cash support.",
+    "ar": "إغاثة بالقوارب للأسر المحاصرة، وبعد الفيضان مواد بناء وآبار وماشية ودعم مالي."
+   }
+  },
+  {
+   "id": "qurbani",
+   "icon": "heart",
+   "image": "",
+   "fund": "sadaqah",
+   "stat": "90+",
+   "title": {
+    "bn": "কুরবানি প্রকল্প",
+    "en": "Qurbani project",
+    "ar": "مشروع الأضاحي"
+   },
+   "statLabel": {
+    "bn": "পরিবার কুরবানির মাংস পেয়েছে",
+    "en": "families received qurbani meat",
+    "ar": "أسرة تلقت لحم الأضاحي"
+   },
+   "text": {
+    "bn": "ঈদুল আযহায় অসচ্ছল পরিবারের কাছে কুরবানির মাংস পৌঁছে দেওয়া।",
+    "en": "Qurbani meat delivered to families in need at Eid al-Adha.",
+    "ar": "إيصال لحوم الأضاحي إلى الأسر المحتاجة في عيد الأضحى."
+   }
+  },
+  {
+   "id": "medical",
+   "icon": "relief",
+   "image": "img/doc-july-medical.webp",
+   "fund": "sadaqah",
+   "stat": "20+",
+   "title": {
+    "bn": "চিকিৎসা সহায়তা",
+    "en": "Medical support",
+    "ar": "الدعم الطبي"
+   },
+   "statLabel": {
+    "bn": "চিকিৎসা সেবা প্রদান",
+    "en": "medical cases supported",
+    "ar": "حالة علاجية مدعومة"
+   },
+   "text": {
+    "bn": "অসহায় রোগীদের চিকিৎসা খরচে সহায়তা, জুলাই ২০২৪-এ আহত শিক্ষার্থীদের চিকিৎসা খরচ এবং আলেমদের স্বাস্থ্যসেবা।",
+    "en": "Help with treatment costs for patients in need, including students injured in July 2024, and healthcare for scholars.",
+    "ar": "المساعدة في تكاليف العلاج للمرضى المحتاجين، ومنهم الطلاب المصابون في يوليو 2024، والرعاية الصحية للعلماء."
+   }
+  },
+  {
+   "id": "july",
+   "icon": "heart",
+   "image": "img/doc-july-relief.webp",
+   "fund": "sadaqah",
+   "stat": "",
+   "title": {
+    "bn": "দুর্যোগ ও জরুরি সহায়তা",
+    "en": "Emergency support",
+    "ar": "الدعم الطارئ"
+   },
+   "statLabel": {
+    "bn": "",
+    "en": "",
+    "ar": ""
+   },
+   "text": {
+    "bn": "জুলাই ২০২৪-এর পর ট্রাফিকের দায়িত্বে থাকা শিক্ষার্থীদের মাঝে নাস্তা ও পানি বিতরণসহ জরুরি মুহূর্তে মানুষের পাশে দাঁড়ানো।",
+    "en": "Standing with people in emergencies, including snacks and water for students directing traffic after July 2024.",
+    "ar": "الوقوف مع الناس في الطوارئ، ومنه توزيع الوجبات والماء على الطلاب المنظمين للمرور بعد يوليو 2024."
+   }
+  },
+  {
+   "id": "scholarship",
+   "icon": "education",
+   "image": "",
+   "fund": "scholarship",
+   "stat": "",
+   "title": {
+    "bn": "শিক্ষাবৃত্তি ও শিক্ষার্থী সহায়তা",
+    "en": "Scholarships and student support",
+    "ar": "المنح ودعم الطلاب"
+   },
+   "statLabel": {
+    "bn": "",
+    "en": "",
+    "ar": ""
+   },
+   "text": {
+    "bn": "মেধাবী ও অসচ্ছল শিক্ষার্থীদের পড়াশোনা চালিয়ে যেতে শিক্ষাবৃত্তি ও সহায়তা।",
+    "en": "Scholarships and support so that able students in need can continue their studies.",
+    "ar": "منح ودعم ليواصل الطلاب المتفوقون المحتاجون دراستهم."
+   }
+  },
+  {
+   "id": "trees",
+   "icon": "leaf",
+   "image": "",
+   "fund": "sadaqah",
+   "stat": "",
+   "title": {
+    "bn": "বৃক্ষরোপণ ও সাদাকাহ",
+    "en": "Tree planting and sadaqah",
+    "ar": "التشجير والصدقة"
+   },
+   "statLabel": {
+    "bn": "",
+    "en": "",
+    "ar": ""
+   },
+   "text": {
+    "bn": "বৃক্ষরোপণ কর্মসূচি এবং দরিদ্রদের জন্য নিয়মিত সাদাকাহ।",
+    "en": "Tree-planting drives and regular sadaqah for the poor.",
+    "ar": "حملات تشجير وصدقة منتظمة للفقراء."
+   }
   }
  ]
 }

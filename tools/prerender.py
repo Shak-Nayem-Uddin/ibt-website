@@ -14,7 +14,7 @@ from playwright.async_api import async_playwright
 ROOT = Path(__file__).resolve().parent.parent
 SITE = "https://shak-nayem-uddin.github.io/ibt-website/"
 BASE_PATH = "/ibt-website/"
-ROUTES = ["about", "mission", "history", "governance", "chairman", "activities", "projects", "project-ibjmc", "future",
+ROUTES = ["about", "mission", "history", "governance", "chairman", "sister-concerns", "programs", "activity-welfare", "activities", "projects", "project-ibjmc", "future",
           "institutions", "inst-kulliyatul-quran", "funds", "donate", "transparency", "publications", "news", "register",
           "reg-get-together-2026", "ask", "quran", "prayer", "media", "contact", "privacy", "terms"]
 PORT = 8790

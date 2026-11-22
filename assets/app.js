@@ -129,11 +129,11 @@
   IBT.NAV = NAV;
   // grouped navigation (institutional structure); every older page stays reachable from a group or an internal link
   var NAVG = [
-    ["about", "nav_about", [["about", "nav_overview"], ["history", "history"], ["mission", "nav_mission"], ["chairman", "chairman_title"], ["governance", "nav_governance"], ["@join", "nav_join"]]],
+    ["about", "nav_about", [["about", "nav_overview"], ["history", "history"], ["mission", "nav_mission"], ["chairman", "chairman_title"], ["governance", "nav_governance"], ["sister-concerns", "nav_sisters"], ["@join", "nav_join"]]],
     ["activities", "nav_activities", [["activity-education", "act_education"], ["activity-dawah", "act_dawah"], ["activity-research", "act_research"], ["activity-welfare", "act_welfare"], ["activity-community", "act_community"], ["initiatives", "nav_all_initiatives"]]],
     ["projects", "nav_projects", [["project-ibjmc", "nav_masjid_complex"], ["academic-building", "nav_academic_bld"], ["future", "nav_future"], ["projects", "nav_all_projects"], ["funds", "nav_funds"]]],
     ["institutions", "nav_institutions", "inst"],
-    ["resources", "nav_resources", [["quran", "nav_quran"], ["ask", "nav_ask"], ["prayer", "nav_prayer"], ["media", "nav_videos"], ["live", "nav_live"], ["publications", "nav_publications"], ["news", "nav_news"], ["register", "nav_events"]]],
+    ["resources", "nav_resources", [["quran", "nav_quran"], ["ask", "nav_ask"], ["prayer", "nav_prayer"], ["media", "nav_videos"], ["live", "nav_live"], ["publications", "nav_publications"], ["news", "nav_news"], ["programs", "nav_programs"], ["register", "nav_events"]]],
     ["transparency", "nav_transparency", [["transparency-annual", "tr_annual"], ["transparency-financial", "tr_financial"], ["transparency-projects", "tr_projects"], ["transparency", "tr_accountability"]]],
     ["contact", "nav_contact"]
   ];
