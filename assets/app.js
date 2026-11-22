@@ -129,20 +129,30 @@
   IBT.NAV = NAV;
   // grouped navigation (institutional structure); every older page stays reachable from a group or an internal link
   var NAVG = [
-    ["about", "nav_about", [["about", "nav_overview"], ["history", "history"], ["mission", "nav_mission"], ["chairman", "chairman_title"], ["governance", "nav_governance"]]],
+    ["about", "nav_about", [["about", "nav_overview"], ["history", "history"], ["mission", "nav_mission"], ["chairman", "chairman_title"], ["governance", "nav_governance"], ["@join", "nav_join"]]],
     ["activities", "nav_activities", [["activity-education", "act_education"], ["activity-dawah", "act_dawah"], ["activity-research", "act_research"], ["activity-welfare", "act_welfare"], ["activity-community", "act_community"], ["initiatives", "nav_all_initiatives"]]],
-    ["projects", "nav_projects", [["project-ibjmc", "nav_masjid_complex"], ["academic-building", "nav_academic_bld"], ["future", "nav_future"], ["projects", "nav_all_projects"]]],
-    ["institutions", "nav_institutions", [["inst-kulliyatul-quran", "nav_kq"], ["institutions", "nav_other_inst"]]],
+    ["projects", "nav_projects", [["project-ibjmc", "nav_masjid_complex"], ["academic-building", "nav_academic_bld"], ["future", "nav_future"], ["projects", "nav_all_projects"], ["funds", "nav_funds"]]],
+    ["institutions", "nav_institutions", "inst"],
     ["resources", "nav_resources", [["quran", "nav_quran"], ["ask", "nav_ask"], ["prayer", "nav_prayer"], ["media", "nav_videos"], ["live", "nav_live"], ["publications", "nav_publications"], ["news", "nav_news"], ["register", "nav_events"]]],
     ["transparency", "nav_transparency", [["transparency-annual", "tr_annual"], ["transparency-financial", "tr_financial"], ["transparency-projects", "tr_projects"], ["transparency", "tr_accountability"]]],
     ["contact", "nav_contact"]
   ];
   IBT.NAVG = NAVG;
+  // menu items of a group: [href, label html, route, external]
+  function navItems(g) {
+    var list = g[2] === "inst"
+      ? (C.institutions || []).map(function (i) { return ["inst-" + i.id, i.id === "kulliyatul-quran" ? U("nav_kq") : T(i.navName || i.name)]; }).concat([["institutions", U("nav_all_inst")]])
+      : g[2].map(function (c) { return [c[0], U(c[1])]; });
+    return list.map(function (c) { return c[0] === "@join" ? [C.settings.joinUrl || "#register", c[1], "join", !!C.settings.joinUrl] : ["#" + c[0], c[1], c[0], false]; }).filter(function (c) { return c[0]; });
+  }
+  IBT.navItems = navItems;
+  document.addEventListener("pointerout", function (e) { var g = e.target.closest && e.target.closest(".ng.hush"); if (g && !g.contains(e.relatedTarget)) g.classList.remove("hush"); });
+  document.addEventListener("focusin", function (e) { var g = e.target.closest && e.target.closest(".ng.hush"); if (g && e.target.matches(".ng-btn")) g.classList.remove("hush"); });
   function navGroupsHtml() {
     return NAVG.map(function (g) {
       if (!g[2]) return '<a class="ng-top" href="#' + g[0] + '" data-nav="' + g[0] + '">' + U(g[1] + "_s") + "</a>";
       return '<div class="ng" data-g="' + g[0] + '"><button class="ng-btn" type="button" aria-expanded="false" aria-haspopup="true">' + U(g[1] + "_s") + '<svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></button><div class="ng-menu" role="menu">' +
-        g[2].map(function (c) { return '<a role="menuitem" href="#' + c[0] + '" data-nav="' + c[0] + '">' + (c[0] === "live" ? '<span class="live-dot" aria-hidden="true"></span>' : "") + U(c[1]) + "</a>"; }).join("") + "</div></div>";
+        navItems(g).map(function (c) { return '<a role="menuitem" href="' + esc(c[0]) + '" data-nav="' + c[2] + '"' + (c[3] ? ' target="_blank" rel="noopener"' : "") + ">" + (c[2] === "live" ? '<span class="live-dot" aria-hidden="true"></span>' : "") + c[1] + (c[3] ? ' <span aria-hidden="true">↗</span>' : "") + "</a>"; }).join("") + "</div></div>";
     }).join("");
   }
   function langSwitch() { return '<div class="lang-switch" role="group" aria-label="Language"><button data-l="bn" lang="bn">বাংলা</button><button data-l="en" lang="en">EN</button><button data-l="ar" lang="ar">عربي</button></div>'; }
@@ -162,7 +172,7 @@
     $("#drawer .panel").innerHTML = '<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px"><span class="brand"><span class="mark"></span><span class="bt"><b>' + T(S.siteName) + '</b></span></span><button class="icon-btn" data-act="close-drawer" aria-label="' + Uraw("close") + '">' + icon("x") + "</button></div>" + langSwitch() +
       '<a class="nl" href="#home">' + U("nav_home") + ARROW + "</a>" + NAVG.map(function (g) {
         if (!g[2]) return '<a class="nl" href="#' + g[0] + '">' + U(g[1]) + ARROW + "</a>";
-        return '<details class="dg"><summary class="nl">' + U(g[1]) + '<svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></summary><div class="dg-in">' + g[2].map(function (c) { return '<a href="#' + c[0] + '">' + U(c[1]) + "</a>"; }).join("") + "</div></details>";
+        return '<details class="dg"><summary class="nl">' + U(g[1]) + '<svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></summary><div class="dg-in">' + navItems(g).map(function (c) { return '<a href="' + esc(c[0]) + '"' + (c[3] ? ' target="_blank" rel="noopener"' : "") + ">" + c[1] + "</a>"; }).join("") + "</div></details>";
       }).join("") + '<a class="nl" href="#funds">' + U("nav_funds") + ARROW + "</a>" +
       (cloud.canEdit ? '<a class="nl" href="#admin">' + U("admin") + icon("gear") + "</a>" : "") +
       '<a class="btn primary" style="justify-content:center;margin-top:10px" href="#donate">' + icon("heart") + U("donate") + "</a>";
@@ -187,7 +197,7 @@
     var S = C.settings, c = S.contact || {};
     $("#chrome-bottom").innerHTML = '<footer class="footer"><div class="wrap"><div class="cols">' +
       '<div><a class="brand" href="#home"><span class="mark"></span><span class="bt"><b>' + T(S.siteName) + "</b><small>" + T(S.motto) + '</small></span></a><p class="muted" style="margin-top:14px;max-width:340px">' + U("footer_note") + '</p><div class="socials">' + (S.social || []).map(function (s) { return '<a class="icon-btn" href="' + esc(s.url) + '" target="_blank" rel="noopener" aria-label="' + esc(s.name) + '">' + icon(s.icon === "x" ? "x2" : s.icon) + "</a>"; }).join("") + "</div></div>" +
-      "<div><h3 class='fh'>" + U("nav_about") + "</h3><ul>" + NAVG[0][2].concat([["projects", "nav_projects"], ["institutions", "nav_institutions"], ["initiatives", "nav_activities"]]).map(function (n) { return '<li><a href="#' + n[0] + '">' + U(n[1]) + "</a></li>"; }).join("") + "</ul></div>" +
+      "<div><h3 class='fh'>" + U("nav_about") + "</h3><ul>" + NAVG[0][2].filter(function (c) { return c[0].charAt(0) !== "@"; }).concat([["projects", "nav_projects"], ["institutions", "nav_institutions"], ["initiatives", "nav_activities"]]).map(function (n) { return '<li><a href="#' + n[0] + '">' + U(n[1]) + "</a></li>"; }).join("") + "</ul></div>" +
       "<div><h3 class='fh'>" + U("nav_resources") + "</h3><ul>" + [["donate", "donate"], ["funds", "nav_funds"], ["ask", "nav_ask"], ["quran", "nav_quran"], ["prayer", "nav_prayer"], ["register", "nav_events"], ["transparency", "nav_transparency"]].map(function (n) { return '<li><a href="#' + n[0] + '">' + U(n[1]) + "</a></li>"; }).join("") + (S.relatedSites || []).map(function (s) { return '<li><a href="' + esc(s.url) + '" target="_blank" rel="noopener">' + T(s.name) + "</a></li>"; }).join("") + "</ul></div>" +
       "<div><h3 class='fh'>" + U("nav_contact") + '</h3><ul class="muted"><li style="display:flex;gap:8px">' + icon("pin") + "<span>" + T(c.office) + '</span></li><li style="display:flex;gap:8px">' + icon("phone") + '<span class="ltr">' + (c.phones || []).map(esc).join("<br>") + '</span></li><li style="display:flex;gap:8px">' + icon("mail") + '<span class="ltr">' + esc(c.email) + (c.email2 ? "<br>" + esc(c.email2) : "") + "</span></li></ul></div>" +
       '</div><div class="bottom"><span>© ' + digits(new Date().getFullYear()) + " " + T(S.siteName) + " · " + esc(hijri(new Date().toISOString().slice(0, 10)).replace(/^.*?(\d{4}|[০-৯]{4}|[٠-٩]{4}).*$/, "$1")) + (state.lang === "en" ? " AH" : state.lang === "bn" ? " হি." : " هـ") + '</span><span class="ft-links"><a href="#privacy">' + U("privacy") + '</a> · <a href="#terms">' + U("terms") + '</a> · <a href="#transparency">' + U("nav_transparency") + "</a></span></div></div></footer>";
@@ -690,6 +700,8 @@
     if (t.closest("#menuBtn")) { $("#drawer").classList.add("open"); return; }
     if (t.closest("#langMiniBtn")) { $("#langMini").classList.toggle("open"); return; }
     var lmo = $("#langMini"); if (lmo && lmo.classList.contains("open") && !t.closest("#langMini [data-l]")) lmo.classList.remove("open");
+    var nga = t.closest(".ng-menu a");
+    if (nga) { var gq = nga.closest(".ng"); gq.classList.remove("open"); gq.classList.add("hush"); $(".ng-btn", gq).setAttribute("aria-expanded", "false"); setTimeout(function () { if (document.activeElement && gq.contains(document.activeElement)) document.activeElement.blur(); }, 0); }
     var ngb = t.closest(".ng-btn");
     $$(".ng.open").forEach(function (g) { if (!ngb || g !== ngb.parentElement) { g.classList.remove("open"); $(".ng-btn", g).setAttribute("aria-expanded", "false"); } });
     if (ngb) { var gg = ngb.parentElement, op2 = !gg.classList.contains("open"); gg.classList.toggle("open", op2); ngb.setAttribute("aria-expanded", String(op2)); return; }

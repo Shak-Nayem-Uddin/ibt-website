@@ -5848,6 +5848,16 @@
    "bn": "আপনার তথ্য প্রস্তুত। পাঠানো সম্পন্ন করতে নিচের “ইমেইলে পাঠান” বোতাম চাপুন, অথবা ফোনে যোগাযোগ করুন।",
    "en": "Your details are ready. Press “Send by email” below to complete sending, or call us.",
    "ar": "بياناتك جاهزة. اضغط «أرسل بالبريد» أدناه لإتمام الإرسال، أو اتصل بنا."
+  },
+  "nav_all_inst": {
+   "bn": "সকল প্রতিষ্ঠান",
+   "en": "All institutions",
+   "ar": "كل المؤسسات"
+  },
+  "nav_join": {
+   "bn": "আইবিটি পরিবারে যুক্ত হোন",
+   "en": "Join the IBT family",
+   "ar": "انضم إلى أسرة الوقف"
   }
  },
  "scholars": [

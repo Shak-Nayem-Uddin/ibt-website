@@ -46,3 +46,5 @@ C["floors"]["note"] = T("", "", "")
 C["ui"]["send_ready"] = T("আপনার তথ্য প্রস্তুত। পাঠানো সম্পন্ন করতে নিচের “ইমেইলে পাঠান” বোতাম চাপুন, অথবা ফোনে যোগাযোগ করুন।",
                           "Your details are ready. Press “Send by email” below to complete sending, or call us.",
                           "بياناتك جاهزة. اضغط «أرسل بالبريد» أدناه لإتمام الإرسال، أو اتصل بنا.")
+C["ui"]["nav_all_inst"] = T("সকল প্রতিষ্ঠান", "All institutions", "كل المؤسسات")
+C["ui"]["nav_join"] = T("আইবিটি পরিবারে যুক্ত হোন", "Join the IBT family", "انضم إلى أسرة الوقف")
