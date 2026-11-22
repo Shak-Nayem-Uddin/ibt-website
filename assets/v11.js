@@ -93,6 +93,21 @@
       sec('<div class="wf-cta"><div><h2 class="h-section" style="margin:0">' + L({ bn: "আপনিও পাশে থাকুন", en: "Stand with us", ar: "كن معنا" }) + '</h2><p class="muted" style="margin:6px 0 0">' + L({ bn: "যাকাত আলাদা হিসাবে রাখা হয় এবং শুধু শরিয়াহসম্মত খাতে ব্যয় হয়।", en: "Zakat is kept in a separate account and spent only on eligible categories.", ar: "تُحفظ الزكاة في حساب مستقل وتُصرف في مصارفها الشرعية فقط." }) + '</p></div><div style="display:flex;gap:10px;flex-wrap:wrap"><a class="btn primary" href="#donate">' + icon("heart") + U("donate") + '</a><a class="btn" href="#fund-zakat">' + L({ bn: "যাকাত দিন", en: "Give zakat", ar: "أدِّ الزكاة" }) + "</a></div></div>");
   };
 
+  /* ---------- count-up for the impact mosaic (final values are already in the markup) ---------- */
+  function countUp(root) {
+    if (!("IntersectionObserver" in window) || (window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matches)) return;
+    var io = new IntersectionObserver(function (es) {
+      es.forEach(function (e) {
+        if (!e.isIntersecting) return; io.unobserve(e.target);
+        var el = e.target, n = +el.dataset.n, suf = el.dataset.suf || "", t0 = null;
+        if (!n || n < 10) return;
+        function step(t) { if (!t0) t0 = t; var p = Math.min(1, (t - t0) / 1300), v = Math.round(n * (1 - Math.pow(1 - p, 3))); el.textContent = h.num(v) + suf; if (p < 1) requestAnimationFrame(step); }
+        requestAnimationFrame(step);
+      });
+    }, { threshold: 0.4 });
+    $$("[data-n]", root).forEach(function (el) { io.observe(el); });
+  }
+
   /* ---------- placements ---------- */
   IBT.afterHooks.push(function (route) {
     var main = $("#main"); if (!main) return;
@@ -100,6 +115,7 @@
       var at = $("#main .trans-band"); at = at && at.closest("section");
       if (at) at.insertAdjacentHTML("beforebegin", sisterSection(true)); else main.insertAdjacentHTML("beforeend", sisterSection(true));
     }
+    if (route === "home") countUp(main);
     if (route === "about" && !$("#main .sisters")) main.insertAdjacentHTML("beforeend", sisterSection(false));
     if (route === "chairman") {
       var ch = C().chairman || {}, lead = $("#main .page-hero .lead");

@@ -66,3 +66,22 @@ for _i in C["institutions"]:
     if _i["id"] == "teachers-training": _i["image"] = "img/teachers-training.webp"
 for _r in C.get("registrations", []):
     if _r.get("id") == "teachers-training": _r["image"] = "img/teachers-training.webp"
+
+# home "impact at a glance": verified figures (IBT Catalog 2026, Feb 2026) + programme records (sheet, Nov 2026)
+import json as _json
+try:
+    _P = _json.load(open("data/programs.json", encoding="utf-8"))
+except Exception:
+    _P = []
+C["home"]["impact2"] = {
+  "hero": {"disp": T("৩ কোটি+", "30M+", "30 مليون+"), "label": T("বার দেখা হয়েছে ফেসবুকে আমাদের ইসলামিক কনটেন্ট", "views of our Islamic content on Facebook", "مشاهدة لمحتوانا الإسلامي على فيسبوك"),
+           "sub": [T("২ লাখ ৩২ হাজার+ ইউটিউব ভিউ", "232K+ YouTube views", "232 ألف+ مشاهدة على يوتيوب"), T("৬৬০+ ভিডিও ও ডিজিটাল কনটেন্ট", "660+ videos and digital pieces", "660+ فيديو ومحتوى رقمي"), T("১৬টি সক্রিয় WhatsApp কমিউনিটি", "16 active WhatsApp communities", "16 مجموعة واتساب نشطة")]},
+  "items": [
+    {"n": 16800, "suf": "", "icon": "clock", "label": T("ঘণ্টা কুরআন-সুন্নাহভিত্তিক লেকচার ও দারস", "hours of Qur'an-and-Sunnah lectures and dars", "ساعة من الدروس والمحاضرات")},
+    {"n": len(_P), "suf": "", "icon": "dawah", "label": T("হালাকা, কোর্স ও আয়োজন (২০২২ থেকে)", "halaqas, courses and programmes since 2022", "حلقة ودورة وبرنامجًا منذ 2022")},
+    {"n": (sum(p.get("n", 0) for p in _P) // 100) * 100, "suf": "+", "icon": "family", "label": T("বার মানুষ অংশ নিয়েছেন আমাদের আয়োজনে", "recorded participations in our programmes", "مشاركة مسجلة في برامجنا")},
+    {"n": 340, "suf": "+", "icon": "education", "label": T("জন ইসলামিক শর্ট-কোর্স সম্পন্ন করেছেন", "people completed Islamic short courses", "أتموا دورات إسلامية قصيرة")},
+    {"n": 400, "suf": "+", "icon": "heart", "label": T("পরিবার পেয়েছে শীতবস্ত্র", "families received winter clothing", "أسرة تلقت كسوة الشتاء")},
+    {"n": 6, "suf": "", "icon": "education", "label": T("জন শিক্ষার্থী আন্তর্জাতিক বিশ্ববিদ্যালয়ে", "students now at international universities", "طلاب في جامعات دولية")},
+  ],
+}

@@ -402,6 +402,99 @@
    "bn": "",
    "en": "",
    "ar": ""
+  },
+  "impact2": {
+   "hero": {
+    "disp": {
+     "bn": "৩ কোটি+",
+     "en": "30M+",
+     "ar": "30 مليون+"
+    },
+    "label": {
+     "bn": "বার দেখা হয়েছে ফেসবুকে আমাদের ইসলামিক কনটেন্ট",
+     "en": "views of our Islamic content on Facebook",
+     "ar": "مشاهدة لمحتوانا الإسلامي على فيسبوك"
+    },
+    "sub": [
+     {
+      "bn": "২ লাখ ৩২ হাজার+ ইউটিউব ভিউ",
+      "en": "232K+ YouTube views",
+      "ar": "232 ألف+ مشاهدة على يوتيوب"
+     },
+     {
+      "bn": "৬৬০+ ভিডিও ও ডিজিটাল কনটেন্ট",
+      "en": "660+ videos and digital pieces",
+      "ar": "660+ فيديو ومحتوى رقمي"
+     },
+     {
+      "bn": "১৬টি সক্রিয় WhatsApp কমিউনিটি",
+      "en": "16 active WhatsApp communities",
+      "ar": "16 مجموعة واتساب نشطة"
+     }
+    ]
+   },
+   "items": [
+    {
+     "n": 16800,
+     "suf": "",
+     "icon": "clock",
+     "label": {
+      "bn": "ঘণ্টা কুরআন-সুন্নাহভিত্তিক লেকচার ও দারস",
+      "en": "hours of Qur'an-and-Sunnah lectures and dars",
+      "ar": "ساعة من الدروس والمحاضرات"
+     }
+    },
+    {
+     "n": 153,
+     "suf": "",
+     "icon": "dawah",
+     "label": {
+      "bn": "হালাকা, কোর্স ও আয়োজন (২০২২ থেকে)",
+      "en": "halaqas, courses and programmes since 2022",
+      "ar": "حلقة ودورة وبرنامجًا منذ 2022"
+     }
+    },
+    {
+     "n": 15300,
+     "suf": "+",
+     "icon": "family",
+     "label": {
+      "bn": "বার মানুষ অংশ নিয়েছেন আমাদের আয়োজনে",
+      "en": "recorded participations in our programmes",
+      "ar": "مشاركة مسجلة في برامجنا"
+     }
+    },
+    {
+     "n": 340,
+     "suf": "+",
+     "icon": "education",
+     "label": {
+      "bn": "জন ইসলামিক শর্ট-কোর্স সম্পন্ন করেছেন",
+      "en": "people completed Islamic short courses",
+      "ar": "أتموا دورات إسلامية قصيرة"
+     }
+    },
+    {
+     "n": 400,
+     "suf": "+",
+     "icon": "heart",
+     "label": {
+      "bn": "পরিবার পেয়েছে শীতবস্ত্র",
+      "en": "families received winter clothing",
+      "ar": "أسرة تلقت كسوة الشتاء"
+     }
+    },
+    {
+     "n": 6,
+     "suf": "",
+     "icon": "education",
+     "label": {
+      "bn": "জন শিক্ষার্থী আন্তর্জাতিক বিশ্ববিদ্যালয়ে",
+      "en": "students now at international universities",
+      "ar": "طلاب في جامعات دولية"
+     }
+    }
+   ]
   }
  },
  "chairman": {
