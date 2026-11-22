@@ -62,3 +62,7 @@ C["welfareProgs"] = [
 U = C["ui"]
 U["nav_sisters"] = T("সহযোগী প্রতিষ্ঠান", "Sister concerns", "المؤسسات الشقيقة")
 U["nav_programs"] = T("কর্মসূচি ও কোর্স আর্কাইভ", "Programmes & courses archive", "أرشيف البرامج والدورات")
+for _i in C["institutions"]:
+    if _i["id"] == "teachers-training": _i["image"] = "img/teachers-training.webp"
+for _r in C.get("registrations", []):
+    if _r.get("id") == "teachers-training": _r["image"] = "img/teachers-training.webp"

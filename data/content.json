@@ -1045,7 +1045,7 @@
     "en": "Training imams and teachers in scholarship, leadership, teaching methods and community engagement.",
     "ar": "إعداد الأئمة والمعلمين علمًا وقيادةً وطرقَ تدريسٍ وتواصلًا مع المجتمع."
    },
-   "image": "img/sunnah-conference-2024.webp",
+   "image": "img/teachers-training.webp",
    "body": {
     "bn": "সমাজের জন্য জ্ঞানী, দক্ষ ও দূরদর্শী নেতৃত্ব গড়তে ইমাম ও শিক্ষক প্রশিক্ষণ ইনস্টিটিউট প্রতিষ্ঠা করা হচ্ছে। ইতোমধ্যে টিচার্স ট্রেনিং কোর্স চলছে; যেমন ১৪ নভেম্বর ২০২৬-এ অনুষ্ঠিত দিনব্যাপী কর্মশালা “Effective Teaching: Integrating Modern and Islamic Perspectives”।",
     "en": "The Imam and Teachers Training Institute is being established to develop knowledgeable, skilled and visionary leaders for the community. The Teachers Training Course is already running, for example the day-long workshop “Effective Teaching: Integrating Modern and Islamic Perspectives” held on 14 November 2026.",
@@ -3550,7 +3550,7 @@
    "slug": "teachers",
    "type": "training",
    "entity": "teachers-training",
-   "image": "img/chairman-speech.webp",
+   "image": "img/teachers-training.webp",
    "status": "info",
    "opens": "",
    "closes": "",
