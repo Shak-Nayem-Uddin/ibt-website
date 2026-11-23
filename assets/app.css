@@ -2083,3 +2083,8 @@ html[dir="rtl"] .st-q{border-radius:14px 0 0 14px}
 #main > section:last-child{padding-bottom:clamp(28px,3.4vw,44px)!important}
 .footer{margin-top:0!important}
 .wy-n::before{content:attr(data-n)}
+/* ===== v15: formal verse card: no pattern, a thin inner frame ===== */
+.vq{background:linear-gradient(160deg,#0F3530,#163832 55%,#1B4038)}
+.vq::before{inset:12px;opacity:1;background-image:none;border:1px solid rgba(218,241,222,.22);border-radius:20px}
+.vq::after{content:"";position:absolute;inset:16px;border:1px solid rgba(218,241,222,.08);border-radius:17px;pointer-events:none}
+[data-theme="dark"] .vq{background:linear-gradient(160deg,#14302A,#1A3A32 55%,#1E4038)}
