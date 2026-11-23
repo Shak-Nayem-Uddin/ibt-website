@@ -499,8 +499,8 @@
  },
  "chairman": {
   "name": {
-   "bn": "প্রফেসর ড. মোহাম্মদ মানজুরে ইলাহী",
-   "en": "Prof. Dr. Mohammad Manzur-e-Elahi",
+   "bn": "ড. মোহাম্মদ মানজুরে ইলাহী",
+   "en": "Prof. Dr. Mohammad Monzur-E-Elahi",
    "ar": "الأستاذ الدكتور محمد منظور إلهي"
   },
   "role": {
@@ -512,7 +512,7 @@
   "photo2": "img/chairman-speech.webp",
   "bio": {
    "bn": "অধ্যাপক ড. মোহাম্মদ মানজুরে ইলাহী একাধারে গবেষক, শিক্ষাবিদ, ইসলামিক স্কলার ও লেখক। তিনি একজন দা‘ঈ ইলাল্লাহ এবং সুপরিচিত মিডিয়া ব্যক্তিত্ব; ইসলামী গবেষণা, দাওয়াহ কার্যক্রম ও গণমাধ্যমে ইসলামী আলোচনার মাধ্যমে তিনি জাতীয় ও আন্তর্জাতিক অঙ্গনে পরিচিত। বর্তমানে তিনি জাতীয় বিশ্ববিদ্যালয়ের ইসলামিক স্টাডিজ বিভাগের অধ্যাপক। তিনি মদীনা ইসলামী বিশ্ববিদ্যালয় থেকে কৃতিত্বের সাথে ব্যাচেলর, মাস্টার্স ও পিএইচডি ডিগ্রি অর্জন করেন এবং সেখান থেকে পিএইচডি অর্জনকারী প্রথম বাংলাদেশি নাগরিক। বিশুদ্ধ ও বস্তুনিষ্ঠ ইসলামী শিক্ষা সবার কাছে পৌঁছে দিতে তিনি কুল্লিয়াতুল কুরআনিল কারীম ওয়াদ-দিরাসাতিল ইসলামিয়্যাহ ও তাইবাহ একাডেমি প্রতিষ্ঠা করেন।",
-   "en": "Prof. Dr. Mohammad Manzur-e-Elahi is a researcher, educationist, Islamic scholar and author. A da'i and a well-known media personality, he is known nationally and internationally for his research, Dawah and Islamic programmes in the media. He is a Professor in the Department of Islamic Studies at National University. He earned his Bachelor's, Master's and PhD with distinction from the Islamic University of Madinah, and is the first Bangladeshi citizen to receive a PhD from that university. To bring authentic, objective Islamic education to everyone, he founded Kulliyatul Quranil Kareem wad-Dirasatil Islamiyyah and Taibah Academy.",
+   "en": "Prof. Dr. Mohammad Monzur-E-Elahi is a researcher, educationist, Islamic scholar and author. A da'i and a well-known media personality, he is known nationally and internationally for his research, Dawah and Islamic programmes in the media. He is a Professor in the Department of Islamic Studies at National University. He earned his Bachelor's, Master's and PhD with distinction from the Islamic University of Madinah, and is the first Bangladeshi citizen to receive a PhD from that university. To bring authentic, objective Islamic education to everyone, he founded Kulliyatul Quranil Kareem wad-Dirasatil Islamiyyah and Taibah Academy.",
    "ar": "الأستاذ الدكتور محمد منظور إلهي باحثٌ ومربٍّ وعالمٌ ومؤلف، وداعيةٌ إلى الله وشخصيةٌ إعلامية معروفة على المستويين الوطني والدولي من خلال البحث العلمي والدعوة والبرامج الإسلامية في وسائل الإعلام. يعمل أستاذًا في قسم الدراسات الإسلامية بالجامعة الوطنية في بنغلاديش. حصل على البكالوريوس والماجستير والدكتوراه بتفوق من الجامعة الإسلامية بالمدينة المنورة، وهو أول مواطن بنغلاديشي يحصل على الدكتوراه منها. أسس كلية القرآن الكريم والدراسات الإسلامية وأكاديمية طيبة لإيصال العلم الشرعي الأصيل إلى الجميع."
   },
   "message": {
@@ -3967,8 +3967,8 @@
     "ar": "افتتاح أعمال بناء المبنى الأكاديمي لكلية القرآن"
    },
    "summary": {
-    "bn": "প্রফেসর ড. মোহাম্মদ মানজুরে ইলাহীর উপস্থিতিতে একাডেমিক ভবনের নির্মাণকাজের উদ্বোধন।",
-    "en": "The start of construction of the academic building, with Prof. Dr. Mohammad Manzur-e-Elahi.",
+    "bn": "ড. মোহাম্মদ মানজুরে ইলাহীর উপস্থিতিতে একাডেমিক ভবনের নির্মাণকাজের উদ্বোধন।",
+    "en": "The start of construction of the academic building, with Prof. Dr. Mohammad Monzur-E-Elahi.",
     "ar": "افتتاح أعمال بناء المبنى الأكاديمي بحضور أ.د. محمد منظور إلهي."
    },
    "source": "YouTube"
@@ -3996,7 +3996,7 @@
    "topic": "kulliya",
    "channel": "Kulliyatul Quran",
    "entity": "kulliyatul-quran",
-   "speaker": "Prof. Dr. Mohammad Manzur-e-Elahi"
+   "speaker": "Prof. Dr. Mohammad Monzur-E-Elahi"
   },
   {
    "youtubeId": "u42dSG1ojQI",
@@ -4041,7 +4041,7 @@
    "topic": "courses",
    "channel": "Kulliyatul Quran",
    "entity": "courses",
-   "speaker": "Prof. Dr. Mohammad Manzur-e-Elahi"
+   "speaker": "Prof. Dr. Mohammad Monzur-E-Elahi"
   },
   {
    "youtubeId": "tRIv-YZPLLo",
@@ -4109,7 +4109,7 @@
    "topic": "kulliya",
    "channel": "Kulliyatul Quran",
    "entity": "kulliyatul-quran",
-   "speaker": "Prof. Dr. Mohammad Manzur-e-Elahi"
+   "speaker": "Prof. Dr. Mohammad Monzur-E-Elahi"
   }
  ],
  "stories": [
@@ -5966,13 +5966,18 @@
    "bn": "কর্মসূচি ও কোর্স আর্কাইভ",
    "en": "Programmes & courses archive",
    "ar": "أرشيف البرامج والدورات"
+  },
+  "nav_docs": {
+   "bn": "ডকুমেন্টারি",
+   "en": "Documentaries",
+   "ar": "الأفلام الوثائقية"
   }
  },
  "scholars": [
   {
    "name": {
-    "bn": "শায়খ প্রফেসর ড. মোহাম্মদ মানজুরে ইলাহী",
-    "en": "Shaikh Prof. Dr. Mohammad Manzur-e-Elahi",
+    "bn": "শায়খ ড. মোহাম্মদ মানজুরে ইলাহী",
+    "en": "Shaikh Prof. Dr. Mohammad Monzur-E-Elahi",
     "ar": "الشيخ الأستاذ الدكتور محمد منظور إلهي"
    },
    "role": {

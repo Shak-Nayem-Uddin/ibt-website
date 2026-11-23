@@ -1,0 +1,316 @@
+{
+"updated": "2026-11-23",
+"note": "Curated YouTube playlists shown on the Q&A and Videos pages. tools/update_videos.py appends new public items from each playlist feed.",
+"lists": {
+"documentary": {
+"id": "PLPoR2UQBlssKI7PX0P50Z6R2UeFSBCKsr",
+"name": "IBT All Documentary",
+"items": [
+{
+"id": "ViHzrqAKvO8",
+"title": "ইমাম বুখারী ট্রাস্ট এর মসজিদ ও একাডেমিক ভবনের কার্যক্রম চলমান",
+"date": "2026-10-25",
+"len": "1:01"
+},
+{
+"id": "g9lRiceVtBY",
+"title": "ইমাম বুখারী ট্রাস্ট সামাজিক জনকল্যাণমূলক কাজের খন্ডচিত্র",
+"date": "2026-10-08",
+"len": "1:14"
+},
+{
+"id": "np9M6nVfdjE",
+"title": "Gathering Under One Roof: Continuing the Prophetic Legacy",
+"date": "2026-02-25",
+"len": "7:51"
+},
+{
+"id": "MqztKpdNins",
+"title": "“ইমাম বুখারী ট্রাস্ট: নির্মাণ অগ্রগতির নতুন দিগন্ত”",
+"date": "2025-05-12",
+"len": "2:32"
+},
+{
+"id": "t1-NGRFdBio",
+"title": "নির্মাণ কাজের বর্তমান অবস্থা ।। ইমাম বুখারী ট্রাস্ট",
+"date": "2025-05-12",
+"len": "3:25"
+},
+{
+"id": "9B083fiQVds",
+"title": "হকের দাওয়াতের প্রচারে আপনার অংশগ্রহণই হতে পারে চিরস্থায়ী কল্যাণ",
+"date": "2025-05-12",
+"len": "2:45"
+},
+{
+"id": "cW4p5VQGSYo",
+"title": "কেমন ছিল রাসূলুল্লাহ (ﷺ) এর কমিউনিটি/সোসাইটি",
+"date": "2025-03-24",
+"len": "2:58"
+},
+{
+"id": "3VOmNTynoZg",
+"title": "একটি মাসজিদ ভিত্তিক কমিউনিটি গড়ে তোলার পথে: ইমাম বুখারী ট্রাস্ট",
+"date": "2025-03-22",
+"len": "3:29"
+},
+{
+"id": "QJN1L8C7BDk",
+"title": "আগামী দিনের ইসলামের দাঈদের জন্য বিনিয়োগ করুন",
+"date": "2025-03-22",
+"len": "6:25"
+},
+{
+"id": "Xoc6_DPdg5A",
+"title": "আপনার দানে গড়ে উঠুক আল্লাহর ঘর | মসজিদ ও একাডেমি কমপ্লেক্স - ইমাম বুখারী ট্রাস্ট",
+"date": "2025-03-20",
+"len": "3:26"
+},
+{
+"id": "rXBsFhP9RgE",
+"title": "১৬ কোটি মুসলিমের জন্য আপনার দ্বায়িত্ব এবং ইসলামের পুনর্জাগরণে আপনার ভূমিকা | IBT",
+"date": "2025-03-20",
+"len": "6:33"
+},
+{
+"id": "1TlXHdxbaBM",
+"title": "আপনিও হতে পারেন ইসলামি পুনর্জাগরণের কারণ | ড. মানজুরে ইলাহী",
+"date": "2025-03-14",
+"len": "5:07"
+},
+{
+"id": "f9o4OC_m3o4",
+"title": "The Mission of Imam Bukhari Trust | A Call to Action for the Ummah | Dr. Manzur E Elahi",
+"date": "2025-03-14",
+"len": "8:13"
+},
+{
+"id": "-GoFTVaWVJU",
+"title": "ইমাম বুখারী ট্রাস্ট",
+"date": "2024-12-07",
+"len": "3:58"
+},
+{
+"id": "T9QFTs_rGK4",
+"title": "ইমাম বুখারী ট্রাস্ট নিয়ে কিছু মন্তব্য ।। অধ্যাপক ড. আবদুল্লাহ ফারুক",
+"date": "2024-05-30",
+"len": "4:21"
+},
+{
+"id": "MAt4pOJjQrA",
+"title": "এক নজরে ইমাম বুখারী ট্রাস্ট এবং সংক্ষিপ্ত বিবরণ",
+"date": "2024-05-21",
+"len": "5:14"
+},
+{
+"id": "nFhHgGQfhPM",
+"title": "যে মহতী আহবান নিয়ে সব শাইখ একসাথে: ইমাম বুখারী ট্রাস্ট (Imam Bukhari Trust)",
+"date": "2024-03-20",
+"len": "9:38"
+}
+]
+},
+"ask": {
+"id": "PLPoR2UQBlssIwEXGdNmCGMqx2MU7T6Ezv",
+"name": "Ask Dr Monzur E Elahi",
+"items": [
+{
+"id": "PIHVcHXEEUY",
+"title": "Ask Dr. Monzur E-Elahi (Episode-29)",
+"date": "2026-11-19",
+"len": "56:07",
+"ep": 29
+},
+{
+"id": "bC2OHQAfm6g",
+"title": "Ask Dr Monzur E Elahi (Episode 28)",
+"date": "2026-10-22",
+"len": "50:08",
+"ep": 28
+},
+{
+"id": "kWOxl0pRC2w",
+"title": "Ask Dr Monzur E Elahi (Episode 27)",
+"date": "2026-09-27",
+"len": "50:20",
+"ep": 27
+},
+{
+"id": "wuZiphCga3U",
+"title": "Ask Dr Monzur E Elahi (Episode 26)",
+"date": "2026-10-08",
+"len": "1:00:48",
+"ep": 26
+},
+{
+"id": "3_cDjDTHDwA",
+"title": "Ask Dr Monzur E Elahi (Episode 25)",
+"date": "2026-07-29",
+"len": "35:02",
+"ep": 25
+},
+{
+"id": "UBTGns4Ojpw",
+"title": "Ask Dr Monzur E Elahi (Episode 24)",
+"date": "2026-06-24",
+"len": "49:30",
+"ep": 24
+},
+{
+"id": "jBnCmh-3MCY",
+"title": "Ask Dr Monzur E Elahi (Episode 23)",
+"date": "2026-05-06",
+"len": "50:46",
+"ep": 23
+},
+{
+"id": "xuAcnecAbtU",
+"title": "Ask Dr Monzur E Elahi (Episode 22)",
+"date": "2026-04-28",
+"len": "53:30",
+"ep": 22
+},
+{
+"id": "YgdgNoaukMg",
+"title": "Ask Dr Monzur E Elahi (Episode 20)",
+"date": "2025-11-29",
+"len": "47:55",
+"ep": 20
+},
+{
+"id": "s86YnwOkcd0",
+"title": "Ask Dr Monzur E Elahi (Episode 19)",
+"date": "2025-11-29",
+"len": "46:30",
+"ep": 19
+},
+{
+"id": "vOxzbkTOCZM",
+"title": "Ask Dr Monzur E Elahi (Episode 18)",
+"date": "2025-11-29",
+"len": "1:09:16",
+"ep": 18
+},
+{
+"id": "szTbqh0XLeU",
+"title": "Ask Dr Monzur E Elahi (Episode 17)",
+"date": "2025-11-29",
+"len": "59:28",
+"ep": 17
+},
+{
+"id": "9CtV4HzESHE",
+"title": "Ask Dr Monzur E Elahi (Episode 16)",
+"date": "2025-05-24",
+"len": "1:04:46",
+"ep": 16
+},
+{
+"id": "ekxnK4549rE",
+"title": "Ask Dr Monzur E Elahi Episode - 15",
+"date": "2025-05-23",
+"len": "50:59",
+"ep": 15
+},
+{
+"id": "Wni9P1fEajg",
+"title": "Ask Dr Monzur E Elahi Episode 14",
+"date": "2025-05-23",
+"len": "53:51",
+"ep": 14
+},
+{
+"id": "2WSQgW8dyGY",
+"title": "Ask Dr Monzur E Elahi (Episode -13)",
+"date": "2025-05-23",
+"len": "53:11",
+"ep": 13
+},
+{
+"id": "x07J7WZx5nc",
+"title": "Ask Dr Monzur E Elahi (Episode 12)",
+"date": "2025-05-23",
+"len": "33:16",
+"ep": 12
+},
+{
+"id": "qk8dglkNDyk",
+"title": "Ask Dr Monzur E Elahi (Episode 11)",
+"date": "2025-05-23",
+"len": "51:04",
+"ep": 11
+},
+{
+"id": "UM2b4_KFGQ0",
+"title": "Ask Dr Monzur E Elahi (Episode 10)",
+"date": "2025-05-23",
+"len": "53:23",
+"ep": 10
+},
+{
+"id": "HFincEAVNc8",
+"title": "Ask Dr Monzur E Elahi (Episode 09)",
+"date": "2025-05-23",
+"len": "1:03:34",
+"ep": 9
+},
+{
+"id": "n66qm_jE_0g",
+"title": "Ask Dr Monzur E Elahi (Episode 08)",
+"date": "2025-05-23",
+"len": "48:19",
+"ep": 8
+},
+{
+"id": "4GC8_3HhGxI",
+"title": "Ask Dr Monzur E Elahi (Episode 7)",
+"date": "2025-05-23",
+"len": "59:41",
+"ep": 7
+},
+{
+"id": "O1RrRBBHFwE",
+"title": "Ask Dr Monzur E Elahi (Episode 6)",
+"date": "2025-05-23",
+"len": "53:52",
+"ep": 6
+},
+{
+"id": "Ix7dTW-tCC8",
+"title": "Ask Dr Monzur E Elahi (Episode- 5)",
+"date": "2024-09-08",
+"len": "1:04:22",
+"ep": 5
+},
+{
+"id": "QTTow62gWkQ",
+"title": "Ask Dr Monzur E Elahi (Episode 4)",
+"date": "2024-03-11",
+"len": "1:05:07",
+"ep": 4
+},
+{
+"id": "AUuZAz-ijEA",
+"title": "Ask Dr Monzur E Elahi (Episode - 3)",
+"date": "2024-03-04",
+"len": "1:10:38",
+"ep": 3
+},
+{
+"id": "Tje9R5iY4U4",
+"title": "Ask Dr Monzur E Elahi (Episode - 2)",
+"date": "2024-02-15",
+"len": "1:02:59",
+"ep": 2
+},
+{
+"id": "jd5UV3hkSxs",
+"title": "Ask Dr. Monzur E-Elahi (Episode 1)",
+"date": "2024-02-10",
+"len": "56:39",
+"ep": 1
+}
+]
+}
+}
+}

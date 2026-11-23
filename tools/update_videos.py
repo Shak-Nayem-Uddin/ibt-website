@@ -31,3 +31,33 @@ data['videos'].sort(key=lambda v: v.get('date') or v.get('approx') or '', revers
 data['updated'] = datetime.now(timezone.utc).date().isoformat()
 P.write_text(json.dumps(data, ensure_ascii=False, indent=0))
 print('added', added)
+
+# Curated playlists (Q&A series, documentaries): add new items from each playlist's feed.
+import re as _re
+PP = P.parent / 'playlists.json'
+if PP.exists():
+    pls = json.loads(PP.read_text())
+    padded = 0
+    for key, pl in pls['lists'].items():
+        try:
+            xml = urllib.request.urlopen(urllib.request.Request('https://www.youtube.com/feeds/videos.xml?playlist_id=' + pl['id'], headers={'User-Agent': 'Mozilla/5.0'}), timeout=30).read()
+        except Exception as e:
+            print('playlist feed failed', key, e); continue
+        have = {v['id']: v for v in pl['items']}
+        for e in ET.fromstring(xml).findall('a:entry', NS):
+            vid = e.findtext('yt:videoId', namespaces=NS); title = (e.findtext('a:title', namespaces=NS) or '').strip()
+            pub = (e.findtext('a:published', namespaces=NS) or '')[:10]
+            if not vid: continue
+            if vid in have:
+                if title: have[vid]['title'] = _re.sub(r'\s+', ' ', title)
+                continue
+            it = {'id': vid, 'title': _re.sub(r'\s+', ' ', title), 'date': pub, 'len': ''}
+            if key == 'ask':
+                m = _re.search(r'Episode\D*(\d+)', title); it['ep'] = int(m.group(1)) if m else None
+            pl['items'].append(it); have[vid] = it; padded += 1
+        if key == 'ask': pl['items'].sort(key=lambda v: -(v.get('ep') or 0))
+        else: pl['items'].sort(key=lambda v: v.get('date') or '', reverse=True)
+    if padded:
+        pls['updated'] = datetime.now(timezone.utc).date().isoformat()
+        PP.write_text(json.dumps(pls, ensure_ascii=False, indent=0))
+    print('playlist items added', padded)

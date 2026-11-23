@@ -133,7 +133,7 @@
     ["activities", "nav_activities", [["activity-education", "act_education"], ["activity-dawah", "act_dawah"], ["activity-research", "act_research"], ["activity-welfare", "act_welfare"], ["activity-community", "act_community"], ["initiatives", "nav_all_initiatives"]]],
     ["projects", "nav_projects", [["project-ibjmc", "nav_masjid_complex"], ["academic-building", "nav_academic_bld"], ["future", "nav_future"], ["projects", "nav_all_projects"], ["funds", "nav_funds"]]],
     ["institutions", "nav_institutions", "inst"],
-    ["resources", "nav_resources", [["quran", "nav_quran"], ["ask", "nav_ask"], ["prayer", "nav_prayer"], ["media", "nav_videos"], ["live", "nav_live"], ["publications", "nav_publications"], ["news", "nav_news"], ["programs", "nav_programs"], ["register", "nav_events"]]],
+    ["resources", "nav_resources", [["quran", "nav_quran"], ["ask", "nav_ask"], ["prayer", "nav_prayer"], ["media", "nav_videos"], ["documentaries", "nav_docs"], ["live", "nav_live"], ["publications", "nav_publications"], ["news", "nav_news"], ["programs", "nav_programs"], ["register", "nav_events"]]],
     ["transparency", "nav_transparency", [["transparency-annual", "tr_annual"], ["transparency-financial", "tr_financial"], ["transparency-projects", "tr_projects"], ["transparency", "tr_accountability"]]],
     ["contact", "nav_contact"]
   ];
@@ -805,7 +805,7 @@
   // a preloaded content.json can otherwise arrive while later scripts are still downloading
   var domReady = new Promise(function (res) { if (document.readyState !== "loading") res(); else document.addEventListener("DOMContentLoaded", res); });
   var vReq = fetch("data/videos.json?h=" + Math.floor(Date.now() / 36e5)).then(function (r) { return r.json(); }).then(function (d) { V = d || V; }, function () { });
-  fetch("data/content.json?v=6.6").then(function (r) { return r.json(); }).then(function (d) { return Promise.all([vReq, domReady]).then(function () { boot(d); }); }).catch(function () {
+  fetch("data/content.json?v=6.7").then(function (r) { return r.json(); }).then(function (d) { return Promise.all([vReq, domReady]).then(function () { boot(d); }); }).catch(function () {
     $("#main").innerHTML = '<div class="wrap section"><h1>Imam Bukhari Trust</h1><p>Content could not be loaded. Please refresh.</p></div>';
   });
 })();
