@@ -2088,3 +2088,7 @@ html[dir="rtl"] .st-q{border-radius:14px 0 0 14px}
 .vq::before{inset:12px;opacity:1;background-image:none;border:1px solid rgba(218,241,222,.22);border-radius:20px}
 .vq::after{content:"";position:absolute;inset:16px;border:1px solid rgba(218,241,222,.08);border-radius:17px;pointer-events:none}
 [data-theme="dark"] .vq{background:linear-gradient(160deg,#14302A,#1A3A32 55%,#1E4038)}
+section[id],article[id],div[id]{scroll-margin-top:96px}
+/* admin: JSON editor */
+.a-json{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:.82rem;line-height:1.5;white-space:pre;tab-size:2}
+.a-json.bad{border-color:#c62828!important;box-shadow:0 0 0 3px rgba(198,40,40,.15)}

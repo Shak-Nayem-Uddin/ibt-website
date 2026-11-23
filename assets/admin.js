@@ -20,9 +20,9 @@
       contact: { type: "obj", fields: { phones: { type: "strs" }, email: s, email2: s, office: t, site: t, hours: t } },
       social: L({ name: s, url: url, icon: sel(["facebook", "youtube", "linkedin", "x"]) }, "name"),
       relatedSites: L({ name: t, url: url }, "name"),
-      youtubeChannels: L({ name: s, channelId: s, url: url }, "name"), joinUrl: url } },
+      youtubeChannels: L({ name: s, channelId: s, url: url }, "name"), joinUrl: url, askForm: url, officeMapUrl: url, officeMapLL: s } },
     home: { label: "হোমপেজ", group: "pages", fields: { heroEyebrow: t, heroTitle: t, heroText: tl, heroCta1: t, heroCta2: t, heroImage: im, heroImageLight: im, heroSlides: L({ image: im, caption: t, kind: sel(["photo", "design"]) }, "caption"), heroGalleryNight: { type: "imgs" }, heroGallery: { type: "imgs" }, heroStory: s, facts: L({ value: s, plain: bool, label: t }, "label"), factsSource: t, aboutTitle: t, aboutText: tl, aboutImage: im, visionTitle: t, visionText: tl,
-      pillars: L({ icon: sel(ICONS), title: t, text: tl, link: s, image: im }, "title"), spotlightTitle: t, spotlightText: tl, spotlightImage: im, quote: { type: "obj", fields: { text: tl, ref: t, review: bool } } } },
+      pillars: L({ icon: sel(ICONS), title: t, text: tl, link: s, image: im }, "title"), spotlightTitle: t, spotlightText: tl, spotlightImage: im, quote: { type: "obj", fields: { text: tl, ref: t, review: bool } }, impact2: { type: "json" } } },
     chairman: { label: "চেয়ারম্যান", group: "pages", fields: { name: t, role: t, photo: im, photo2: im, bio: tl, message: tl, links: L({ name: s, url: url }, "name"), review: bool } },
     cells: { label: "সেল ও বিভাগ", group: "pages", list: L({ name: t, text: tl, link: s }, "name") },
     history: { label: "ইতিহাস / টাইমলাইন", group: "pages", list: L({ date: s, title: t, text: tl }, "title") },
@@ -46,11 +46,26 @@
     donateCopy: { label: "দানের পেজের লেখা", group: "money", fields: { motivations: L({ title: t, text: tl, ref: t }, "title"), transparency: tl, review: bool } },
     videos: { label: "ভিডিও", group: "media", list: L({ youtubeId: { type: "yt" }, title: t, topic: sel(["ibt", "kulliya", "courses", "research", "dawah"]), channel: s, entity: s, speaker: s }, "title") },
     stories: { label: "ডকুমেন্টারি (Story Mode)", group: "media", list: L({ id: s, entity: s, title: t, cover: im, chapters: L({ title: t, text: tl, image: im, video: { type: "yt" }, start: nm }, "title") }, "title") },
-    reports: { label: "রিপোর্ট ও প্রকাশনা", group: "media", list: L({ title: t, type: sel(["annual", "financial", "audit", "progress", "activity", "publication", "newsletter"]), year: s, url: { type: "file" }, note: t }, "title") },
+    reports: { label: "রিপোর্ট ও প্রকাশনা", group: "media", list: L({ title: t, type: sel(["annual", "financial", "audit", "progress", "activity", "publication", "newsletter"]), year: s, url: { type: "file" }, cover: im, pages: nm, size: s, note: t }, "title") },
+    about: { label: "আমাদের সম্পর্কে: মিশন, মূল্যবোধ", group: "pages", fields: { mission: t, approach: tl, objectives: { type: "tlist" }, values: L({ icon: sel(["heart", "book", "social", "check", "education", "dawah", "research", "family", "globe"]), title: t, text: tl }, "title") } },
+    governance: { label: "পরিচালনা ও সুশাসন", group: "org", fields: { intro: tl, committee: L({ name: t, role: t }, "name"), registrationStatus: sel(["pending", "available"]), registration: tl, policies: L({ name: t, status: sel(["available", "pending", "notpub"]), link: s }, "name") } },
+    sisters: { label: "সহযোগী প্রতিষ্ঠান (লোগো ও লিংক)", group: "org", list: L({ id: s, name: t, text: tl, logo: im, url: url, inst: s }, "name") },
+    welfareProgs: { label: "সমাজকল্যাণ কার্যক্রম", group: "programs", list: L({ id: s, icon: sel(["heart", "winter", "relief", "iftar", "scholar", "social", "family", "home"]), image: im, title: t, text: tl, stat: s, statLabel: t, fund: s }, "title") },
+    milestones: { label: "নির্মাণের মাইলফলক", group: "org", list: L({ date: s, status: sel(["done", "progress", "next", "planned"]), text: t }, "text") },
+    transparencyDocs: { label: "স্বচ্ছতা: নথি ও প্রতিবেদন", group: "money", list: L({ title: t, cat: sel(["annual", "financial", "projects"]), status: sel(["available", "pending", "notpub"]), period: s, published: s, authority: t, file: { type: "file" }, link: s }, "title") },
+    verses: { label: "কুরআনের আয়াত ও হাদীস", group: "pages", json: true, help: "প্রতিটি আয়াত/হাদীস: type (quran/hadith), ar (আরবি), tr (অনুবাদ bn/en), ref (রেফারেন্স), part (অংশ হলে true)। আরবি লেখা যাচাই করা উৎস (quran.com, sunnah.com) থেকে কপি করুন।" },
+    ibjmcInfo: { label: "মাসজিদ কমপ্লেক্স: তথ্য, অর্থায়ন, ভেতরের নকশা", group: "org", json: true, help: "প্রকল্পের মূল তথ্য (facts), অবস্থান, কেন এই মাসজিদ (why), ভেতরের নকশা (interiors), নির্মাণ পরিকল্পনা (timeline), অর্থায়ন (funding: কোটি টাকায়) ও দক্ষিণ এশিয়া অংশ।" },
+    kqInfo: { label: "কুল্লিয়াতুল কুরআন: ভিশন, কারণ, MOU", group: "org", json: true },
+    darulHadith: { label: "দারুল হাদীস আরবি মাদরাসা (প্রস্তাবিত)", group: "org", fields: { name: t, text: tl, subjects: { type: "tlist" } } },
+    masterplan: { label: "3D মাস্টারপ্ল্যান (ভবনের অবস্থান ও নাম)", group: "org", json: true, help: "groups → parts: প্রতিটি ভবনের x, z (অবস্থান), w, d (মাপ), ghostFloors (তলা), name (ছাদে লেখা নাম)। context: আশপাশের প্লট।" },
+    finance: { label: "আর্থিক সারসংক্ষেপ", group: "money", json: true },
+    meta: { label: "সার্চ ইঞ্জিন ও শেয়ার তথ্য (SEO)", group: "adv", json: true },
+    versesNote: { label: "কুরআন অনুবাদের উৎস", group: "adv", json: true },
     ui: { label: "ইন্টারফেসের লেখা (মেনু, বাটন)", group: "site", map: true }
   };
-  var GROUPS = [["site", "সাইট"], ["pages", "পেজ ও কনটেন্ট"], ["org", "প্রতিষ্ঠান ও প্রকল্প"], ["programs", "প্রোগ্রাম, রেজিস্ট্রেশন ও সংবাদ"], ["money", "দান ও তহবিল"], ["media", "মিডিয়া ও প্রকাশনা"]];
-  var LBL = { __items: "আইটেমসমূহ", joinUrl: "IBT পরিবারে যুক্ত হওয়ার ফরম (লিংক)", formType: "ফরমের ধরন (general = নাম/ফোন, admission = শিক্ষার্থী/অভিভাবক)", cover: "কভার ছবি", status: "অবস্থা", shares: "অংশভিত্তিক দান (যেমন ১ বস্তা সিমেন্ট)", amount: "পরিমাণ (৳)", story: "ডকুমেন্টারি অধ্যায়", statusText: "অবস্থার লেখা", illustrative: "প্রতীকী চিত্র", color: "রং (#hex)", fund: "সংশ্লিষ্ট ফান্ড আইডি", buildings: "ভবনসমূহ", intro: "ভূমিকা", siteName: "সাইটের নাম", shortName: "সংক্ষিপ্ত নাম", tagline: "ট্যাগলাইন", motto: "মূলমন্ত্র", logo: "লোগো: ডার্ক মোড (সাদা, স্বচ্ছ PNG)", logoColor: "লোগো: লাইট মোড (রঙিন)", email2: "দ্বিতীয় ইমেইল", heroImageLight: "হিরো ছবি (লাইট মোড)", design: "স্থাপত্য নকশার ছবি", heroGalleryNight: "হিরো 3D ছবি (ডার্ক মোড)", heroGallery: "হিরো 3D ছবি (লাইট মোড)", defaultLang: "ডিফল্ট ভাষা", defaultTheme: "ডিফল্ট থিম", announcement: "ঘোষণা বার", show: "দেখাবে", text: "লেখা", link: "লিংক (#page বা URL)", contact: "যোগাযোগ", phones: "ফোন নম্বর", email: "ইমেইল", office: "অফিস ঠিকানা", site: "প্রকল্প ঠিকানা", hours: "অফিস সময়", social: "সোশ্যাল মিডিয়া", name: "নাম", url: "URL", icon: "আইকন", relatedSites: "সংশ্লিষ্ট সাইট", youtubeChannels: "YouTube চ্যানেল", youtube: "YouTube লাইভ লিংক (খালি রাখলে চ্যানেল থেকে স্বয়ংক্রিয়)", facebook: "Facebook লাইভ ভিডিও লিংক", zoom: "Zoom মিটিং লিংক", zoomId: "Zoom মিটিং আইডি", zoomPass: "Zoom পাসকোড", start: "শুরুর সময় (যেমন 2026-11-28T20:00)", greeting: "শুরুর বার্তা", q: "প্রশ্ন", scholar: "উত্তরদাতা আলেম", ref: "দলিল/সূত্র", category: "বিষয়", keys: "কীওয়ার্ড (কমা দিয়ে)", a: "উত্তর", note: "নোট", channelId: "চ্যানেল আইডি",
+  function ensureSchema() { try { var d = (window.IBT && IBT.getDefaults && IBT.getDefaults()) || {}; Object.keys(d).forEach(function (k) { if (!SCHEMA[k]) SCHEMA[k] = { label: k, group: "adv", json: true }; }); } catch (e) { } }
+  var GROUPS = [["site", "সাইট"], ["pages", "পেজ ও কনটেন্ট"], ["org", "প্রতিষ্ঠান ও প্রকল্প"], ["programs", "প্রোগ্রাম, রেজিস্ট্রেশন ও সংবাদ"], ["money", "দান ও তহবিল"], ["media", "মিডিয়া ও প্রকাশনা"], ["adv", "উন্নত সম্পাদনা (সব অংশ)"]];
+  var LBL = { __items: "আইটেমসমূহ", askForm: "প্রশ্ন পাঠানোর Google Form লিংক", officeMapUrl: "অফিসের Google Maps লিংক", officeMapLL: "অফিসের অবস্থান (lat,lng)", impact2: "হোমপেজের সংখ্যা (JSON)", pages: "পৃষ্ঠা", size: "ফাইলের আকার", logo: "লোগো", inst: "প্রতিষ্ঠান আইডি", stat: "সংখ্যা", statLabel: "সংখ্যার বিবরণ", fund: "দানের খাত আইডি", cat: "ধরন", period: "সময়কাল", published: "প্রকাশ", authority: "দায়িত্বপ্রাপ্ত", file: "ফাইল", subjects: "বিষয়সমূহ", objectives: "লক্ষ্য", values: "মূল্যবোধ", approach: "কর্মপদ্ধতি", mission: "মিশন", committee: "কমিটি", policies: "নীতিমালা", registrationStatus: "নিবন্ধন তথ্য", registration: "নিবন্ধন", joinUrl: "IBT পরিবারে যুক্ত হওয়ার ফরম (লিংক)", formType: "ফরমের ধরন (general = নাম/ফোন, admission = শিক্ষার্থী/অভিভাবক)", cover: "কভার ছবি", status: "অবস্থা", shares: "অংশভিত্তিক দান (যেমন ১ বস্তা সিমেন্ট)", amount: "পরিমাণ (৳)", story: "ডকুমেন্টারি অধ্যায়", statusText: "অবস্থার লেখা", illustrative: "প্রতীকী চিত্র", color: "রং (#hex)", fund: "সংশ্লিষ্ট ফান্ড আইডি", buildings: "ভবনসমূহ", intro: "ভূমিকা", siteName: "সাইটের নাম", shortName: "সংক্ষিপ্ত নাম", tagline: "ট্যাগলাইন", motto: "মূলমন্ত্র", logo: "লোগো: ডার্ক মোড (সাদা, স্বচ্ছ PNG)", logoColor: "লোগো: লাইট মোড (রঙিন)", email2: "দ্বিতীয় ইমেইল", heroImageLight: "হিরো ছবি (লাইট মোড)", design: "স্থাপত্য নকশার ছবি", heroGalleryNight: "হিরো 3D ছবি (ডার্ক মোড)", heroGallery: "হিরো 3D ছবি (লাইট মোড)", defaultLang: "ডিফল্ট ভাষা", defaultTheme: "ডিফল্ট থিম", announcement: "ঘোষণা বার", show: "দেখাবে", text: "লেখা", link: "লিংক (#page বা URL)", contact: "যোগাযোগ", phones: "ফোন নম্বর", email: "ইমেইল", office: "অফিস ঠিকানা", site: "প্রকল্প ঠিকানা", hours: "অফিস সময়", social: "সোশ্যাল মিডিয়া", name: "নাম", url: "URL", icon: "আইকন", relatedSites: "সংশ্লিষ্ট সাইট", youtubeChannels: "YouTube চ্যানেল", youtube: "YouTube লাইভ লিংক (খালি রাখলে চ্যানেল থেকে স্বয়ংক্রিয়)", facebook: "Facebook লাইভ ভিডিও লিংক", zoom: "Zoom মিটিং লিংক", zoomId: "Zoom মিটিং আইডি", zoomPass: "Zoom পাসকোড", start: "শুরুর সময় (যেমন 2026-11-28T20:00)", greeting: "শুরুর বার্তা", q: "প্রশ্ন", scholar: "উত্তরদাতা আলেম", ref: "দলিল/সূত্র", category: "বিষয়", keys: "কীওয়ার্ড (কমা দিয়ে)", a: "উত্তর", note: "নোট", channelId: "চ্যানেল আইডি",
     heroEyebrow: "হিরো: উপরের ছোট লেখা", heroTitle: "হিরো: শিরোনাম", heroText: "হিরো: বিবরণ", heroCta1: "বাটন ১ (গল্প)", heroCta2: "বাটন ২ (দান)", heroImage: "হিরো ছবি (3D না চললে)", heroStory: "হিরো ডকুমেন্টারি আইডি", aboutTitle: "পরিচিতি: শিরোনাম", aboutText: "পরিচিতি: লেখা", aboutImage: "পরিচিতি: ছবি", visionTitle: "ভিশন: শিরোনাম", visionText: "ভিশন: লেখা", pillars: "পাঁচ স্তম্ভ", title: "শিরোনাম", spotlightTitle: "স্পটলাইট: শিরোনাম", spotlightText: "স্পটলাইট: লেখা", spotlightImage: "স্পটলাইট: ছবি", quote: "উদ্ধৃতি / হাদীস", ref: "রেফারেন্স", review: "অনুমোদন বাকি (শুধু এডিটররা সতর্কতা দেখবে)",
     role: "পদবি", photo: "ছবি", photo2: "দ্বিতীয় ছবি", bio: "পরিচিতি", message: "বার্তা", links: "লিংক", date: "তারিখ", q: "প্রশ্ন", a: "উত্তর", id: "আইডি (ইংরেজি, স্পেস ছাড়া)", type: "ধরন", status: "অবস্থা", formerName: "পূর্বনাম", summary: "সারাংশ", body: "বিস্তারিত", image: "ছবি", website: "ওয়েবসাইট", features: "বৈশিষ্ট্য", programs: "প্রোগ্রাম", registrations: "রেজিস্ট্রেশন আইডি", category: "ক্যাটাগরি", location: "অবস্থান", objectives: "লক্ষ্য", gallery: "গ্যালারি ছবি", tracker: "3D ট্র্যাকার দেখাবে", story: "ডকুমেন্টারি আইডি", fund: "ফান্ড আইডি", hidden: "লুকানো", asOf: "যে তারিখ অনুযায়ী", source: "সূত্র", note: "নোট", mosque: "মাসজিদ ভবনের তলা", academic: "একাডেমিক ভবনের তলা", label: "লেবেল", use: "ব্যবহার",
     slug: "শর্ট লিংক নাম", entity: "সংশ্লিষ্ট পেজ আইডি", opens: "শুরুর তারিখ", closes: "শেষ তারিখ", mode: "পদ্ধতি (link = Google Form, native = সাইটের ফর্ম)", formUrl: "Google Form লিংক", prefill: "Pre-fill (entry.xxx = মান; {lang} {source} {title})", fee: "ফি", venue: "স্থান", time: "সময়", registration: "রেজিস্ট্রেশন আইডি",
@@ -77,7 +92,7 @@
   // ---------- field renderers ----------
   function blank(sch) {
     if (!sch || typeof sch !== "object") return "";
-    switch (sch.type) { case "t": case "tl": return { bn: "", en: "", ar: "" }; case "bool": return false; case "num": return 0; case "list": case "strs": case "tlist": case "imgs": case "nums": return []; case "obj": var o = {}; Object.keys(sch.fields).forEach(function (k) { o[k] = blank(sch.fields[k]); }); return o; case "kv": return {}; case "sel": return sch.opts[0]; default: return ""; }
+    switch (sch.type) { case "t": case "tl": return { bn: "", en: "", ar: "" }; case "bool": return false; case "num": return 0; case "json": return {}; case "list": case "strs": case "tlist": case "imgs": case "nums": return []; case "obj": var o = {}; Object.keys(sch.fields).forEach(function (k) { o[k] = blank(sch.fields[k]); }); return o; case "kv": return {}; case "sel": return sch.opts[0]; default: return ""; }
   }
   function blankItem(item) { var o = {}; Object.keys(item).forEach(function (k) { o[k] = blank(item[k]); }); return o; }
   function field(key, sch, val, path) {
@@ -117,6 +132,8 @@
       case "imgs":
         val = val || [];
         return '<div class="a-field"><div class="a-lbl">' + esc(lbl(key)) + '</div><div class="a-gal">' + val.map(function (v, i) { return '<div class="a-gi"><img src="' + esc(IBT.img(v)) + '" alt="">' + listCtl(path, i) + "</div>"; }).join("") + '<button class="btn sm" data-addimg="' + pid(path) + '">+ ছবি</button></div></div>';
+      case "json":
+        return '<div class="a-field">' + head + '<textarea class="input a-json" id="' + id + '" data-json="1" data-p="' + pid(path) + '" dir="ltr" rows="' + Math.min(28, Math.max(6, JSON.stringify(val == null ? null : val, null, 2).split("\n").length + 1)) + '" spellcheck="false">' + esc(JSON.stringify(val == null ? null : val, null, 2)) + '</textarea><small class="faint a-json-msg">JSON ফরম্যাটে লিখুন। ভুল হলে লাল দেখাবে এবং সংরক্ষিত হবে না। লেখা সাধারণত {"bn": "…", "en": "…", "ar": "…"} আকারে থাকে।</small></div>';
       case "list":
         val = val || [];
         return '<div class="a-field"><div class="a-lbl">' + esc(lbl(key)) + ' <span class="chip muted">' + val.length + '</span></div><div class="a-sub">' + val.map(function (it, i) {
@@ -128,7 +145,7 @@
   }
   function listCtl(path, i) { var p = pid(path); return '<span class="a-ctl"><button class="icon-btn" title="উপরে" data-mv="' + p + '" data-i="' + i + '" data-d="-1">↑</button><button class="icon-btn" title="নিচে" data-mv="' + p + '" data-i="' + i + '" data-d="1">↓</button><button class="icon-btn" title="কপি" data-dup="' + p + '" data-i="' + i + '">⧉</button><button class="icon-btn a-del" title="মুছুন" data-del="' + p + '" data-i="' + i + '">✕</button></span>'; }
   function schemaAt(key, path) {
-    var sc = SCHEMA[key], node = sc.list ? sc.list : sc.map ? { type: "map" } : { type: "obj", fields: sc.fields };
+    var sc = SCHEMA[key], node = sc.json ? { type: "json" } : sc.list ? sc.list : sc.map ? { type: "map" } : { type: "obj", fields: sc.fields };
     for (var i = 0; i < path.length; i++) {
       var k = path[i];
       if (node.type === "list") { node = typeof k === "number" ? { type: "obj", fields: node.item } : node; continue; }
@@ -173,7 +190,8 @@
     if (sc.map) {
       var q = A.uiFilter || "";
       body = '<div class="a-field"><input class="input" id="uiFilter" placeholder="খুঁজুন…" value="' + esc(q) + '"></div>' + Object.keys(w).filter(function (k) { return !q || (k + JSON.stringify(w[k])).toLowerCase().indexOf(q.toLowerCase()) > -1; }).map(function (k) { return field(k, { type: "t" }, w[k], [k]); }).join("");
-    } else if (sc.list) body = field("__items", sc.list, w, []);
+    } else if (sc.json) body = '<p class="muted" style="margin:0 0 10px">' + esc(sc.help || "এই অংশটি উন্নত সম্পাদনা (JSON) দিয়ে বদলানো যায়।") + "</p>" + field(sc.label, { type: "json" }, w, []);
+    else if (sc.list) body = field("__items", sc.list, w, []);
     else body = Object.keys(sc.fields).map(function (k) { return field(k, sc.fields[k], w[k], [k]); }).join("");
     $("#aBody").innerHTML = '<div class="a-form glass">' + body + "</div>";
   }
@@ -322,6 +340,11 @@
     else if (el.dataset.num) v = el.value === "" ? 0 : +el.value;
     else if (el.dataset.csv) v = el.value.split(",").map(function (x) { return x.trim(); }).filter(Boolean).map(function (x) { return el.dataset.csv === "nums" ? +x || 0 : x; });
     else if (el.dataset.kv) { v = {}; el.value.split("\n").forEach(function (ln) { var i = ln.indexOf("="); if (i > 0) v[ln.slice(0, i).trim()] = ln.slice(i + 1).trim(); }); }
+    else if (el.dataset.json) {
+      try { v = JSON.parse(el.value); el.classList.remove("bad"); var mg = el.parentNode.querySelector(".a-json-msg"); if (mg) mg.textContent = "ঠিক আছে"; }
+      catch (er) { el.classList.add("bad"); var mg2 = el.parentNode.querySelector(".a-json-msg"); if (mg2) mg2.textContent = "JSON ভুল: " + er.message; return; }
+      if (!path.length) { A.work[A.key] = v; markDirty(); return; }
+    }
     else if (el.dataset.yt) v = ytId(el.value);
     else v = el.value;
     setP(W(A.key), path, v); markDirty();
@@ -372,7 +395,7 @@
     });
   }
   window.IBTAdmin = {
-    render: function (root) {
+    render: function (root) { ensureSchema();
       if (!root) return; A.root = root; root.innerHTML = shell();
       var gl = $("#ghLogin", root);
       if (gl) gl.addEventListener("submit", function (e) { e.preventDefault(); var out = $(".out", gl); out.innerHTML = '<div class="notice info">যাচাই হচ্ছে…</div>'; window.IBT_GH.login($("#ghTok").value, $("#ghKeep").checked).then(function () { return IBT.refreshAuth(); }).then(function () { window.IBTAdmin.render(root); }, function (er) { out.innerHTML = '<div class="notice err">' + (er && er.message === "no-write" ? "এই টোকেনে রিপোজিটরিতে লেখার অনুমতি নেই (Contents: Read and write দিন)।" : "টোকেন সঠিক নয় বা মেয়াদ শেষ।") + "</div>"; }); });

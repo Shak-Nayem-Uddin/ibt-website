@@ -466,7 +466,7 @@
   function eventRow(e) {
     var d = e.date ? parseDate(e.date) : null, action = "";
     var head = d ? '<b>' + new Intl.DateTimeFormat(LOC[state.lang], { day: "numeric" }).format(d) + "</b><small>" + new Intl.DateTimeFormat(LOC[state.lang], { month: "short" }).format(d) + "</small>" : icon(e.type === "qa" ? "dawah" : e.type === "event" ? "cal" : "education");
-    if (e.registration) action += '<a class="btn sm primary" href="#reg-' + esc(e.registration) + '">' + U("register_now") + "</a>";
+    if (e.registration) action += /^https?:/.test(e.registration) ? '<a class="btn sm primary" href="' + esc(e.registration) + '" target="_blank" rel="noopener">' + U("register_now") + "</a>" : '<a class="btn sm primary" href="#reg-' + esc(e.registration) + '">' + U("register_now") + "</a>";
     if (e.video) action += '<button class="btn sm" data-play="' + esc(e.video) + '" data-title="' + esc(tr(e.title)) + '">' + icon("play") + U("watch") + "</button>";
     if (e.link) action += '<a class="btn sm" href="' + esc(e.link) + '" target="_blank" rel="noopener">' + icon("youtube") + U("open_youtube") + "</a>";
     if (d) { var ics = "data:text/calendar;charset=utf-8," + encodeURIComponent("BEGIN:VCALENDAR\nVERSION:2.0\nBEGIN:VEVENT\nDTSTART:" + e.date.replace(/-/g, "") + "T" + (e.time || "09:00").replace(":", "") + "00\nSUMMARY:" + tr(e.title) + "\nLOCATION:" + tr(e.venue) + "\nEND:VEVENT\nEND:VCALENDAR"); action += '<a class="btn sm" href="' + ics + '" target="_blank" rel="noopener" aria-label="Calendar">' + icon("cal") + "</a>"; }
@@ -615,6 +615,11 @@
     if (h.indexOf("r-") === 0) { var r = (C.registrations || []).filter(function (x) { return x.slug === h.slice(2) || x.id === h.slice(2); })[0]; if (r) { location.replace("#reg-" + r.id); return; } }
     if (h.indexOf("story-") === 0) { IBT.openStory(h.slice(6)); return; }
     if (h === "hero" || h === "tracker" || h === "main") return;
+    // a link to a part of the current page (#pj-now, #b-academic-2 ...) scrolls there instead of opening "page not found"
+    if (!P[h] && !/^(inst|project|init|news|reg|fund)-/.test(h)) {
+      var el = document.getElementById(h);
+      if (el && state.route) { try { history.replaceState(null, "", "#" + state.route); } catch (e) { } el.scrollIntoView({ behavior: "smooth", block: "start" }); return; }
+    }
     state.route = h; renderMain();
   }
   function renderMain() {
@@ -758,8 +763,8 @@
   };
   function mergeCloud(docs) {
     var merged = clone(DEF);
-    CMS_KEYS.forEach(function (k) { if (docs[k] && docs[k].data !== undefined) merged[k] = docs[k].data; });
-    if (state.preview) CMS_KEYS.forEach(function (k) { if (state.drafts[k] && state.drafts[k].data !== undefined) merged[k] = state.drafts[k].data; });
+    Object.keys(docs || {}).forEach(function (k) { if (docs[k] && docs[k].data !== undefined) merged[k] = docs[k].data; });
+    if (state.preview) Object.keys(state.drafts || {}).forEach(function (k) { if (state.drafts[k] && state.drafts[k].data !== undefined) merged[k] = state.drafts[k].data; });
     C = merged; IBT.C = C;
   }
   IBT.getContent = function () { return C; };
@@ -805,7 +810,7 @@
   // a preloaded content.json can otherwise arrive while later scripts are still downloading
   var domReady = new Promise(function (res) { if (document.readyState !== "loading") res(); else document.addEventListener("DOMContentLoaded", res); });
   var vReq = fetch("data/videos.json?h=" + Math.floor(Date.now() / 36e5)).then(function (r) { return r.json(); }).then(function (d) { V = d || V; }, function () { });
-  fetch("data/content.json?v=7.4").then(function (r) { return r.json(); }).then(function (d) { return Promise.all([vReq, domReady]).then(function () { boot(d); }); }).catch(function () {
+  fetch("data/content.json?v=7.5").then(function (r) { return r.json(); }).then(function (d) { return Promise.all([vReq, domReady]).then(function () { boot(d); }); }).catch(function () {
     $("#main").innerHTML = '<div class="wrap section"><h1>Imam Bukhari Trust</h1><p>Content could not be loaded. Please refresh.</p></div>';
   });
 })();

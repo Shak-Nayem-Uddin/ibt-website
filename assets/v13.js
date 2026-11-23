@@ -37,7 +37,7 @@
     "academic-building": [["q_knowledge", "h_ilm"], "#main .page-hero", "afterend"],
     future: [["q_good"], "#main .page-hero", "afterend"],
     funds: [["h_jariyah"], "#main .page-hero", "afterend"],
-    donate: [["q_spend", "h_jariyah"], "#main .page-hero", "afterend"],
+    donate: [["h_jariyah"], "#main .page-hero", "afterend"],
     ask: [["q_ask", "h_fiqh"], "#main #askSeries", "afterend"],
     institutions: [["q_read", "h_quran"], "#main .page-hero", "afterend"],
     "inst-kulliyatul-quran": [["q_read", "h_quran"], "#main .page-hero", "afterend"],
