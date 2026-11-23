@@ -88,16 +88,21 @@
     // terrain, roads and trees
     var grassMat = M(pal.grass), lawnMat = M(pal.lawn), soilMat = M(pal.soil, { roughness: 1 }), roadMat = M(pal.road, { roughness: 0.95 }), walkMat = M(pal.walk), markMat = M(0xf3f1e6, { roughness: 0.6 });
     var ground = add(new THREE.Mesh(G(new THREE.PlaneGeometry(420, 300)), grassMat)); ground.rotation.x = -Math.PI / 2; ground.position.set(0, -0.01, -4);
-    var road = add(new THREE.Mesh(G(new THREE.BoxGeometry(150, 0.04, 3.2)), roadMat)); road.position.set(0, 0.02, -12.5);
-    [-10.55, -14.45].forEach(function (z) { var w = add(new THREE.Mesh(G(new THREE.BoxGeometry(150, 0.1, 0.7)), walkMat)); w.position.set(0, 0.05, z); });
-    var dashG = G(new THREE.BoxGeometry(1.4, 0.02, 0.12)); for (var dx = -72; dx <= 72; dx += 3.2) { var dm0 = new THREE.Mesh(dashG, markMat); dm0.position.set(dx, 0.05, -12.5); root.add(dm0); }
+    // roads of the master plan: four running across (front, both sides of the campus, back) and one along the right
+    var dashG = G(new THREE.BoxGeometry(1.4, 0.02, 0.12)), dashV = G(new THREE.BoxGeometry(0.12, 0.02, 1.4));
+    [[-12.35, 2.4, 150], [12.14, 2.0, 150], [-25.7, 2.0, 150], [26.2, 2.6, 150]].forEach(function (r) {
+      var rd = add(new THREE.Mesh(G(new THREE.BoxGeometry(r[2], 0.04, r[1])), roadMat)); rd.position.set(0, 0.02, r[0]);
+      for (var dx = -72; dx <= 72; dx += 3.2) { if (Math.abs(dx - 22.35) < 2) continue; var dm0 = new THREE.Mesh(dashG, markMat); dm0.position.set(dx, 0.05, r[0]); root.add(dm0); }
+    });
+    var vr = add(new THREE.Mesh(G(new THREE.BoxGeometry(3.0, 0.04, 70)), roadMat)); vr.position.set(22.35, 0.021, 0);
+    for (var dz = -33; dz <= 33; dz += 3.2) { var dv = new THREE.Mesh(dashV, markMat); dv.position.set(22.35, 0.05, dz); root.add(dv); }
     var trunkMat = M(pal.trunk), leafMats = pal.tree.map(function (c) { return M(c, { roughness: 0.95, flatShading: true }); });
     var trunkG = G(new THREE.CylinderGeometry(0.09, 0.13, 0.9, 6)), leafG = G(new THREE.IcosahedronGeometry(0.75, 0));
     function tree(x, z, s) {
       s = s || 1; var t0 = new THREE.Mesh(trunkG, trunkMat); t0.position.set(x, 0.45 * s, z); t0.scale.setScalar(s); add(t0, true);
       for (var q = 0; q < 3; q++) { var lf = new THREE.Mesh(leafG, leafMats[(((q + Math.round(x)) % 3) + 3) % 3]); var r = (0.75 + q * 0.12) * s; lf.scale.set(r, r * 0.95, r); lf.position.set(x + (q - 1) * 0.28 * s, (1.15 + q * 0.32) * s, z + ((q % 2) - 0.5) * 0.3 * s); lf.rotation.y = q; add(lf, true); }
     }
-    for (var t = -70; t <= 70; t += 4.6) { tree(t, -9.7, 0.95 + ((t * 7) % 3) * 0.06); tree(t + 2.3, -15.3, 0.9 + ((t * 5) % 4) * 0.05); }
+    for (var t = -70; t <= 70; t += 4.6) { if (Math.abs(t - 22.35) < 3) continue; tree(t, -9.7, 0.95 + ((t * 7) % 3) * 0.06); tree(t + 2.3, -15.3, 0.9 + ((t * 5) % 4) * 0.05); }
 
     // neighbourhood (context) as plastered blocks, one draw call
     var ctxMat = M(pal.ctxTint, { map: dayTex, emissiveMap: nightTex, emissive: lin(0xffffff), emissiveIntensity: pal.night * 0.55, roughness: 0.92 });

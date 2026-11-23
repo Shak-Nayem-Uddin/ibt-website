@@ -73,6 +73,25 @@
     return '<article class="dh rv"><span class="dh-ic">' + icon("school") + '</span><div><span class="chip warn"><span class="dot"></span>' + U("status_proposed") + "</span><h3>" + T(D.name) + "</h3><p>" + T(D.text) + '</p><div class="kq-d">' + D.subjects.map(function (x) { return "<span>" + T(x) + "</span>"; }).join("") + "</div></div></article>";
   }
 
+  /* ---------- reveal for parts added after the page was drawn ----------
+     app.js starts its reveal observer before the page hooks run, so anything added later
+     (verses, project facts, Q&A series ...) stayed transparent. Watch #main and reveal those too. */
+  (function () {
+    var main = document.getElementById("main"); if (!main || !window.MutationObserver) return;
+    var nomo = document.documentElement.classList.contains("nomotion") || (window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matches);
+    var io = !nomo && "IntersectionObserver" in window ? new IntersectionObserver(function (es) { es.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target); } }); }, { threshold: 0.08 }) : null;
+    function scan(root) {
+      var list = [];
+      if (root.classList && root.classList.contains("rv")) list.push(root);
+      if (root.querySelectorAll) list = list.concat([].slice.call(root.querySelectorAll(".rv:not(.in)")));
+      list.forEach(function (el) { if (el.classList.contains("in")) return; if (io) io.observe(el); else el.classList.add("in"); });
+    }
+    new MutationObserver(function (ms) { ms.forEach(function (m) { [].forEach.call(m.addedNodes, function (n) { if (n.nodeType === 1) scan(n); }); }); }).observe(main, { childList: true, subtree: true });
+    IBT.afterHooks.push(function () { scan(main); });
+    // safety net: anything still hidden a moment after it is on screen becomes visible
+    setInterval(function () { [].forEach.call(main.querySelectorAll(".rv:not(.in)"), function (el) { var r = el.getBoundingClientRect(); if (r.top < innerHeight) el.classList.add("in"); }); }, 1500);
+  })();
+
   /* ---------- placements ---------- */
   document.addEventListener("click", function (e) {
     var b = e.target.closest && e.target.closest("[data-igt]"); if (!b) return;
