@@ -87,17 +87,17 @@
 
     // terrain, roads and trees
     var grassMat = M(pal.grass), lawnMat = M(pal.lawn), soilMat = M(pal.soil, { roughness: 1 }), roadMat = M(pal.road, { roughness: 0.95 }), walkMat = M(pal.walk), markMat = M(0xf3f1e6, { roughness: 0.6 });
-    var ground = add(new THREE.Mesh(G(new THREE.PlaneGeometry(420, 300)), grassMat)); ground.rotation.x = -Math.PI / 2; ground.position.set(0, -0.01, 4);
-    var road = add(new THREE.Mesh(G(new THREE.BoxGeometry(150, 0.04, 3.2)), roadMat)); road.position.set(0, 0.02, 12.5);
-    [10.55, 14.45].forEach(function (z) { var w = add(new THREE.Mesh(G(new THREE.BoxGeometry(150, 0.1, 0.7)), walkMat)); w.position.set(0, 0.05, z); });
-    var dashG = G(new THREE.BoxGeometry(1.4, 0.02, 0.12)); for (var dx = -72; dx <= 72; dx += 3.2) { var dm0 = new THREE.Mesh(dashG, markMat); dm0.position.set(dx, 0.05, 12.5); root.add(dm0); }
+    var ground = add(new THREE.Mesh(G(new THREE.PlaneGeometry(420, 300)), grassMat)); ground.rotation.x = -Math.PI / 2; ground.position.set(0, -0.01, -4);
+    var road = add(new THREE.Mesh(G(new THREE.BoxGeometry(150, 0.04, 3.2)), roadMat)); road.position.set(0, 0.02, -12.5);
+    [-10.55, -14.45].forEach(function (z) { var w = add(new THREE.Mesh(G(new THREE.BoxGeometry(150, 0.1, 0.7)), walkMat)); w.position.set(0, 0.05, z); });
+    var dashG = G(new THREE.BoxGeometry(1.4, 0.02, 0.12)); for (var dx = -72; dx <= 72; dx += 3.2) { var dm0 = new THREE.Mesh(dashG, markMat); dm0.position.set(dx, 0.05, -12.5); root.add(dm0); }
     var trunkMat = M(pal.trunk), leafMats = pal.tree.map(function (c) { return M(c, { roughness: 0.95, flatShading: true }); });
     var trunkG = G(new THREE.CylinderGeometry(0.09, 0.13, 0.9, 6)), leafG = G(new THREE.IcosahedronGeometry(0.75, 0));
     function tree(x, z, s) {
       s = s || 1; var t0 = new THREE.Mesh(trunkG, trunkMat); t0.position.set(x, 0.45 * s, z); t0.scale.setScalar(s); add(t0, true);
       for (var q = 0; q < 3; q++) { var lf = new THREE.Mesh(leafG, leafMats[(((q + Math.round(x)) % 3) + 3) % 3]); var r = (0.75 + q * 0.12) * s; lf.scale.set(r, r * 0.95, r); lf.position.set(x + (q - 1) * 0.28 * s, (1.15 + q * 0.32) * s, z + ((q % 2) - 0.5) * 0.3 * s); lf.rotation.y = q; add(lf, true); }
     }
-    for (var t = -70; t <= 70; t += 4.6) { tree(t, 9.7, 0.95 + ((t * 7) % 3) * 0.06); tree(t + 2.3, 15.3, 0.9 + ((t * 5) % 4) * 0.05); }
+    for (var t = -70; t <= 70; t += 4.6) { tree(t, -9.7, 0.95 + ((t * 7) % 3) * 0.06); tree(t + 2.3, -15.3, 0.9 + ((t * 5) % 4) * 0.05); }
 
     // neighbourhood (context) as plastered blocks, one draw call
     var ctxMat = M(pal.ctxTint, { map: dayTex, emissiveMap: nightTex, emissive: lin(0xffffff), emissiveIntensity: pal.night * 0.55, roughness: 0.92 });
@@ -203,14 +203,14 @@
     var fontsReady = document.fonts && document.fonts.load ? Promise.all([document.fonts.load('700 40px "Hind Siliguri"', "অআ"), document.fonts.load('700 40px "Jakarta"', "Ab")]).catch(function () {}) : Promise.resolve();
     fontsReady.then(function () { roofs.forEach(roofText); });
     // a few site trees around the IBT plots
-    [[-26, -12], [-13, -12], [-27, 12.5 - 4], [-4, -12], [8, -11], [-31, 0]].forEach(function (q) { tree(q[0], q[1], 1.1); });
+    [[-26, -12], [-13, -12], [-27, 12.5 - 4], [-4, -12], [8, -11], [-31, 0]].forEach(function (q) { tree(q[0], -q[1], 1.1); });
 
     // frame the IBT buildings (not the whole neighbourhood)
     var bb = new THREE.Box3(), pad = 7; (opts.groups || []).forEach(function (gp) { gp.parts.forEach(function (p) { if (!(p.floors && p.floors.length)) return; bb.expandByPoint(new THREE.Vector3(p.x - p.w / 2 - pad, 0, p.z - p.d / 2 - pad)); bb.expandByPoint(new THREE.Vector3(p.x + p.w / 2 + pad, 10, p.z + p.d / 2 + pad)); }); });
     if (bb.isEmpty()) bb.set(new THREE.Vector3(-40, 0, -10), new THREE.Vector3(40, 10, 20));
     var target = new THREE.Vector3((bb.min.x + bb.max.x) / 2, 3, (bb.min.z + bb.max.z) / 2);
     var corners = []; [bb.min.x, bb.max.x].forEach(function (x) { [bb.min.y, bb.max.y].forEach(function (y) { [bb.min.z, bb.max.z].forEach(function (z) { corners.push(new THREE.Vector3(x, y, z)); }); }); });
-    var baseAz = opts.az != null ? opts.az : -0.5, az = baseAz, el = 0.52, dist = 120, rotT = 0, minD = 30, maxD = 200, autoRot = !reduced && !opts.snapshot, lastInteract = 0;
+    var baseAz = opts.az != null ? opts.az : 0.55, az = baseAz, el = 0.52, dist = 120, rotT = 0, minD = 30, maxD = 200, autoRot = !reduced && !opts.snapshot, lastInteract = 0;
     function placeCam() { camera.position.set(target.x + dist * Math.cos(el) * Math.sin(az), target.y + dist * Math.sin(el), target.z + dist * Math.cos(el) * Math.cos(az)); camera.lookAt(target); }
     var fitW = opts.fitWidth || 104, fitH = opts.fitHeight || 36, fitted = false;
     function resize() {
@@ -326,7 +326,7 @@
       },
       setSelected: function (id) { select(id, false); },
       zoom: zoomBy,
-      reset: function () { fitted = false; az = baseAz = opts.az != null ? opts.az : -0.5; el = 0.52; rotT = 0; resize(); },
+      reset: function () { fitted = false; az = baseAz = opts.az != null ? opts.az : 0.55; el = 0.52; rotT = 0; resize(); },
       render: function () { renderer.render(scene, camera); updateLabels(); },
       destroy: function () {
         cancelAnimationFrame(raf); raf = 0; visible = false; if (io) io.disconnect(); if (ro) ro.disconnect(); else window.removeEventListener("resize", resize);

@@ -358,7 +358,7 @@
     var now = new Date(), t0 = computeTimes(s, 0); if (!t0) return null;
     var order = ["fajr", "dhuhr", "asr", "maghrib", "isha"];
     for (var i = 0; i < order.length; i++) if (t0[order[i]] > now) return { name: order[i], at: t0[order[i]], times: t0 };
-    var t1 = computeTimes(s, 1); return { name: "fajr", at: t1.fajr, times: t0 };
+    var t1 = computeTimes(s, 1); return { name: "fajr", at: t1.fajr, times: t1, tomorrow: true };
   }
   function cd(ms) { var s = Math.max(0, Math.floor(ms / 1000)), hh = Math.floor(s / 3600), mm = Math.floor(s % 3600 / 60), ss = s % 60; return digits((hh ? hh + ":" : "") + String(mm).padStart(2, "0") + ":" + String(ss).padStart(2, "0")); }
   function ptLabel(s) { return s.geo ? Uraw("my_location") : cityLabel(s.cc, s.ci); }
@@ -406,7 +406,7 @@
         $("[data-loc]", nx).textContent = ptLabel(s) + " · " + fmtT(n.at, s.tz);
         $("[data-hijri]", nx).textContent = h.hijri(new Date().toISOString().slice(0, 10));
         var now = new Date();
-        var lh = PNAMES.map(function (k) { return '<div class="p ' + (k === n.name ? "next" : (n.times[k] < now && n.name !== "fajr" ? "past" : "")) + '"><span>' + U(k) + (k === "dhuhr" && dateInTz(s.tz).getDay() === 5 ? " / " + U("jumuah") : "") + "</span><b>" + esc(fmtT(n.times[k], s.tz)) + "</b></div>"; }).join("");
+        var lh = PNAMES.map(function (k) { return '<div class="p ' + (k === n.name ? "next" : (n.times[k] < now ? "past" : "")) + '"><span>' + U(k) + (k === "dhuhr" && dateInTz(s.tz).getDay() === 5 ? " / " + U("jumuah") : "") + "</span><b>" + esc(fmtT(n.times[k], s.tz)) + "</b></div>"; }).join("");
         var pl = $("#ptList"); if (pl.innerHTML !== lh) pl.innerHTML = lh;
       }
       function week() {
