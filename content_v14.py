@@ -109,3 +109,6 @@ for _d in ["img/design-birdseye-2026.webp", "img/design-night-ppt.webp"]:
     if _d not in _pj.get("design", []): _pj.setdefault("design", []).insert(0, _d)
 for _d in ["img/inaug-2023-group.webp", "img/inaug-2023-1.webp", "img/inaug-2023-briefing.webp", "img/construction-frame-a.webp", "img/construction-frame-b.webp", "img/construction-materials.webp"]:
     if _d not in _pj.get("gallery", []): _pj.setdefault("gallery", []).insert(0, _d)
+# office location supplied by IBT (Google Maps place "Imam Bukhari Trust", Uttara)
+C["settings"]["officeMapUrl"] = "https://maps.app.goo.gl/WEHLhscz7LoNbkbS9"
+C["settings"]["officeMapLL"] = "23.8632774,90.3903917"

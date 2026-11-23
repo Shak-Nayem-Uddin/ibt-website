@@ -108,7 +108,9 @@
   ],
   "joinUrl": "https://forms.gle/XkHeQR3oVGNRzpRh9",
   "askForm": "https://forms.gle/VQqVhNxSZoJL5nFG9",
-  "officeMapQuery": "House 17, Road 6/A, Sector 5, Uttara, Dhaka 1230, Bangladesh"
+  "officeMapQuery": "House 17, Road 6/A, Sector 5, Uttara, Dhaka 1230, Bangladesh",
+  "officeMapUrl": "https://maps.app.goo.gl/WEHLhscz7LoNbkbS9",
+  "officeMapLL": "23.8632774,90.3903917"
  },
  "home": {
   "heroEyebrow": {
