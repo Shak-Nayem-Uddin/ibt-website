@@ -690,6 +690,7 @@ exec(open("content_v9.py", encoding="utf-8").read())
 exec(open("content_v10.py", encoding="utf-8").read())
 exec(open("content_v11.py", encoding="utf-8").read())
 exec(open("content_v12.py", encoding="utf-8").read())
+exec(open("content_v13.py", encoding="utf-8").read())
 
 # serve WebP where a smaller WebP copy exists (originals stay in the repo)
 import os as _os

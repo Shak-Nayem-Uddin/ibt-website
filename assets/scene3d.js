@@ -109,6 +109,7 @@
     });
     if (cb.p.length) { add(new THREE.Mesh(G(cb.geo(THREE)), ctxMat), true); add(new THREE.Mesh(G(pads.geo(THREE)), walkMat)); }
 
+    var roofs = [];
     var FH = 0.85, groups = {}, pickables = [], groupMats = {}, labelAnchor = {}, partAnchor = [];
     var concrete = M(pal.concrete, { roughness: 0.95 }), ghost = M(pal.ghost, { transparent: true, opacity: pal.ghostOp, roughness: 0.15, metalness: 0.1, depthWrite: false }), ghostEdge = L(pal.ghostEdge, pal.ghostEdgeOp);
     var domeMat = M(pal.dome, { roughness: 0.35, metalness: 0.25 }), rebar = L(0x5a4a3a, 0.9), craneMat = M(0xd9a441, { roughness: 0.6, metalness: 0.3 });
@@ -139,6 +140,7 @@
         if (p.kind === "ground") {
           var f = new THREE.Mesh(G(new THREE.BoxGeometry(p.w * 0.92, 0.08, p.d * 0.92)), lawnMat); f.position.set(p.x, 0.04, p.z); f.receiveShadow = true; grp.add(pick(f, gp.id));
           var le = new THREE.LineSegments(G(new THREE.EdgesGeometry(new THREE.BoxGeometry(p.w * 0.62, 0.01, p.d * 0.62))), L(0xffffff, 0.85)); le.position.set(p.x, 0.1, p.z); grp.add(le);
+          roofs.push({ grp: grp, x: p.x, z: p.z, w: p.w * 0.6, d: p.d * 0.3, y: 0.1, name: p.name || "" });
           return;
         }
         if (p.floors && p.floors.length) {
@@ -162,6 +164,7 @@
           var rf = new THREE.Mesh(G(new THREE.BoxGeometry(p.w - (p.kind === "tower" ? 0.5 : 0) + 0.1, 0.12, p.d - (p.kind === "tower" ? 0.5 : 0) + 0.1)), concrete); rf.position.set(p.x, y + 0.06, p.z); grp.add(rf);
         }
         outline(grp, gp.id, p.w, y, p.d, p.x, p.z);
+        roofs.push({ grp: grp, x: p.x, z: p.z, w: p.w - (p.kind === "tower" ? 0.5 : 0), d: p.d - (p.kind === "tower" ? 0.5 : 0), y: y + (p.floors && p.floors.length ? 0.02 : 0.13), name: p.name || gp.label || "", masjid: p.kind === "masjid" });
         if (p.kind === "masjid") {
           var r = Math.min(p.w, p.d) * 0.26, finished = (p.floors || []).every(function (s) { return s === "done"; });
           var dm = new THREE.Mesh(G(new THREE.SphereGeometry(r, 40, 20, 0, Math.PI * 2, 0, Math.PI / 2)), finished ? domeMat : ghost); dm.position.set(p.x, y, p.z); dm.renderOrder = 2; grp.add(pick(dm, gp.id));
@@ -180,6 +183,25 @@
       });
       labelAnchor[gp.id] = new THREE.Vector3(top.x, top.y + 0.8, top.z);
     });
+
+    // names painted on the roofs (always visible), as on the marked-up master plan
+    function roofText(r) {
+      if (!r.name) return;
+      var tw = r.w * 0.9, td = r.masjid ? r.d * 0.2 : r.d * 0.86, cw = 768, ch = Math.max(140, Math.round(cw * td / tw));
+      var cv = document.createElement("canvas"); cv.width = cw; cv.height = ch; var cx = cv.getContext("2d");
+      var fam = '"Hind Siliguri","Noto Sans Bengali","Naskh","Jakarta",sans-serif', words = String(r.name).split(/\s+/), lines = [], fs = 64;
+      function wrap(size) { cx.font = "700 " + size + "px " + fam; var ls = [], cur = ""; words.forEach(function (w) { var t = cur ? cur + " " + w : w; if (cx.measureText(t).width > cw * 0.92 && cur) { ls.push(cur); cur = w; } else cur = t; }); if (cur) ls.push(cur); return ls; }
+      for (fs = 120; fs > 18; fs -= 4) { lines = wrap(fs); var wide = Math.max.apply(null, lines.map(function (l) { return cx.measureText(l).width; })); if (wide <= cw * 0.92 && lines.length * fs * 1.18 <= ch * 0.9) break; }
+      cx.font = "700 " + fs + "px " + fam; cx.textAlign = "center"; cx.textBaseline = "middle"; cx.fillStyle = "#0B2B26";
+      var y0 = ch / 2 - (lines.length - 1) * fs * 0.59;
+      lines.forEach(function (l, i) { cx.fillText(l, cw / 2, y0 + i * fs * 1.18); });
+      var tex = new THREE.CanvasTexture(cv); tex.anisotropy = 4; if (THREE.SRGBColorSpace) tex.colorSpace = THREE.SRGBColorSpace; texs.push(tex);
+      var mt = new THREE.MeshBasicMaterial({ map: tex, transparent: true, depthWrite: false }); mats.push(mt);
+      var m = new THREE.Mesh(G(new THREE.PlaneGeometry(tw, td)), mt); m.rotation.x = -Math.PI / 2;
+      m.position.set(r.x, r.y + 0.01, r.masjid ? r.z + r.d * 0.36 : r.z); m.renderOrder = 4; r.grp.add(m);
+    }
+    var fontsReady = document.fonts && document.fonts.load ? Promise.all([document.fonts.load('700 40px "Hind Siliguri"', "অআ"), document.fonts.load('700 40px "Jakarta"', "Ab")]).catch(function () {}) : Promise.resolve();
+    fontsReady.then(function () { roofs.forEach(roofText); });
     // a few site trees around the IBT plots
     [[-26, -12], [-13, -12], [-27, 12.5 - 4], [-4, -12], [8, -11], [-31, 0]].forEach(function (q) { tree(q[0], q[1], 1.1); });
 

@@ -26,7 +26,7 @@
   (function(){try{var t=localStorage.getItem("ibt_theme");if(t!=="light"&&t!=="dark"){t=matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light"}document.documentElement.setAttribute("data-theme",t);var l=localStorage.getItem("ibt_lang")||"bn";document.documentElement.lang=l;document.documentElement.dir=l==="ar"?"rtl":"ltr";if(sessionStorage.getItem("ibt_seen"))document.documentElement.classList.add("seen");sessionStorage.setItem("ibt_seen","1")}catch(e){}})();
 </script>
 <link rel="preload" href="fonts/kalpurush.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="preload" href="data/content.json?v=6.7" as="fetch" crossorigin>
+<link rel="preload" href="data/content.json?v=6.8" as="fetch" crossorigin>
 <link rel="preload" href="img/design-night-1.webp" as="image" fetchpriority="high">
 <style>
 #intro{position:fixed;inset:0;z-index:9999;display:grid;place-items:center;background:radial-gradient(70% 60% at 50% 45%,#F2F9F4,#DAF1DE);transition:opacity .45s ease,visibility .45s;animation:inGone .45s 1.9s ease forwards}
@@ -52,7 +52,7 @@ html.seen #intro{display:none}
 @keyframes pSpin{0%{transform:perspective(500px) rotateY(0) scale(.82)}50%{transform:perspective(500px) rotateY(180deg) scale(1)}100%{transform:perspective(500px) rotateY(360deg) scale(.82)}}
 @media (prefers-reduced-motion:reduce){.in-logo,#intro .in-halo,#intro .in-name{animation:none!important}#ptrans{display:none}}
 </style>
-<link rel="stylesheet" href="assets/app.css?v=6.7">
+<link rel="stylesheet" href="assets/app.css?v=6.8">
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"NGO","name":"Imam Bukhari Trust","alternateName":["IBT","ইমাম বুখারী ট্রাস্ট","وقف الإمام البخاري"],"url":"https://www.imambukharitrust.com/","foundingDate":"2017-10-01","address":{"@type":"PostalAddress","streetAddress":"House 17, Road 6/A, Sector 5, Uttara","addressLocality":"Dhaka","postalCode":"1230","addressCountry":"BD"},"email":"bukharimasjid.bd@gmail.com","sameAs":["https://www.facebook.com/imambukharitrustbd","https://www.youtube.com/channel/UCm8It2AWLRt3N22-fL89K_w","https://www.youtube.com/@kulliyatulquranbd"]}</script>
 <noscript><style>#intro{display:none}.rv{opacity:1!important;transform:none!important}</style></noscript>
 </head>
@@ -71,16 +71,17 @@ html.seen #intro{display:none}
 <div class="player" id="player" role="dialog" aria-modal="true" aria-label="Video"></div>
 <div class="mdonate" id="mdonate"></div>
 <div class="toast glass dense" id="toast" role="status" aria-live="polite"></div>
-<script src="assets/config.js?v=6.7"></script>
-<script src="assets/gas.js?v=6.7"></script>
-<script src="assets/gh.js?v=6.7"></script>
-<script src="assets/scene3d.js?v=6.7"></script>
-<script src="assets/app.js?v=6.7"></script>
-<script src="assets/pages.js?v=6.7"></script>
-<script src="assets/extras.js?v=6.7"></script>
-<script src="assets/ask.js?v=6.7"></script>
-<script src="assets/v8.js?v=6.7"></script><script src="assets/v11.js?v=6.7"></script>
-<script src="assets/v12.js?v=6.7"></script>
-<script src="assets/admin.js?v=6.7"></script>
+<script src="assets/config.js?v=6.8"></script>
+<script src="assets/gas.js?v=6.8"></script>
+<script src="assets/gh.js?v=6.8"></script>
+<script src="assets/scene3d.js?v=6.8"></script>
+<script src="assets/app.js?v=6.8"></script>
+<script src="assets/pages.js?v=6.8"></script>
+<script src="assets/extras.js?v=6.8"></script>
+<script src="assets/ask.js?v=6.8"></script>
+<script src="assets/v8.js?v=6.8"></script><script src="assets/v11.js?v=6.8"></script>
+<script src="assets/v12.js?v=6.8"></script>
+<script src="assets/v13.js?v=6.8"></script>
+<script src="assets/admin.js?v=6.8"></script>
 </body>
 </html>

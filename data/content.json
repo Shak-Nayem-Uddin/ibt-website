@@ -106,7 +106,9 @@
     "url": "https://www.youtube.com/@kulliyatulquranbd"
    }
   ],
-  "joinUrl": "https://forms.gle/XkHeQR3oVGNRzpRh9"
+  "joinUrl": "https://forms.gle/XkHeQR3oVGNRzpRh9",
+  "askForm": "https://forms.gle/VQqVhNxSZoJL5nFG9",
+  "officeMapQuery": "House 17, Road 6/A, Sector 5, Uttara, Dhaka 1230, Bangladesh"
  },
  "home": {
   "heroEyebrow": {
@@ -657,7 +659,8 @@
     "en": "Imam Bukhari Trust formally begins its work at Palashpur, on the bank of the Dhaleshwari.",
     "ar": "بدء أعمال وقف الإمام البخاري رسميًا في بلاشبور على ضفاف نهر دهاليشوري."
    },
-   "source": "imambukharitrust.com"
+   "source": "imambukharitrust.com",
+   "image": "img/first-prayer.webp"
   },
   {
    "date": "2021",
@@ -671,7 +674,8 @@
     "en": "Established in 2021 / 1442 AH as a higher Islamic education and research institution.",
     "ar": "تأسست عام 2021م / 1442هـ مؤسسةً للتعليم الإسلامي العالي والبحث."
    },
-   "source": "kulliyatulquran.com"
+   "source": "kulliyatulquran.com",
+   "image": "img/halaqa-class.webp"
   },
   {
    "date": "2022-07",
@@ -685,7 +689,8 @@
     "en": "Arabic language and Sanabiyyah classes begin at the temporary campus in Uttara.",
     "ar": "بدء دروس اللغة العربية والمرحلة الثانوية في الحرم المؤقت بأُتّرا."
    },
-   "source": "imambukharitrust.com"
+   "source": "imambukharitrust.com",
+   "image": "img/model-madrasa.webp"
   },
   {
    "date": "2023-01",
@@ -699,7 +704,8 @@
     "en": "Work begins on Kulliyatul Quran's permanent campus at New Dhaka City.",
     "ar": "بدء العمل في الحرم الدائم لكلية القرآن في مدينة دكا الجديدة."
    },
-   "source": "imambukharitrust.com"
+   "source": "imambukharitrust.com",
+   "image": "img/site-signboard.webp"
   },
   {
    "date": "2024",
@@ -713,7 +719,8 @@
     "en": "Piling begins for the masjid and academic building; Sunnah Conference Bangladesh 2024 is held.",
     "ar": "بدء أعمال الخوازيق للمسجد والمبنى الأكاديمي، وانعقاد مؤتمر السنة في بنغلاديش 2024."
    },
-   "source": "IBT Catalog 2026 · YouTube"
+   "source": "IBT Catalog 2026 · YouTube",
+   "image": "img/construction-piling.webp"
   },
   {
    "date": "2026",
@@ -727,7 +734,8 @@
     "en": "All 225 piles completed; the masjid's 1st- and 2nd-floor slabs cast (July 2026); prayers begin in the masjid under construction; the academic building's foundation nearly complete (November 2026).",
     "ar": "اكتمال 225 خازوقًا؛ صب سقفي الطابقين الأول والثاني للمسجد (يوليو 2026)؛ بدء الصلاة في المسجد قيد الإنشاء؛ أساسات المبنى الأكاديمي قاربت الاكتمال (نوفمبر 2026)."
    },
-   "source": "IBT Catalog 2026 · YouTube"
+   "source": "IBT Catalog 2026 · YouTube",
+   "image": "img/construction-masjid-2026-10.webp"
   }
  ],
  "institutions": [
@@ -4308,17 +4316,41 @@
   {
    "title": {
     "bn": "ইমাম বুখারী ট্রাস্ট ক্যাটালগ ২০২৬",
-    "en": "Imam Bukhari Trust Catalog 2026",
+    "en": "Imam Bukhari Trust Catalogue 2026",
     "ar": "كتيّب وقف الإمام البخاري 2026"
    },
    "type": "publication",
    "year": "2026",
    "url": "files/IBT_Catalog_2026.pdf",
-   "note": {
-    "bn": "PDF ডাউনলোড",
-    "en": "Download PDF",
-    "ar": "تحميل PDF"
-   }
+   "cover": "img/catalog-2026.webp",
+   "pages": 16,
+   "size": "13.5 MB"
+  },
+  {
+   "title": {
+    "bn": "ইমাম বুখারী ট্রাস্ট ক্যাটালগ ২০২৫",
+    "en": "Imam Bukhari Trust Catalogue 2025",
+    "ar": "كتيّب وقف الإمام البخاري 2025"
+   },
+   "type": "publication",
+   "year": "2025",
+   "url": "files/IBT_Catalog_2025.pdf",
+   "cover": "img/catalog-2025.webp",
+   "pages": 12,
+   "size": "12.9 MB"
+  },
+  {
+   "title": {
+    "bn": "ইমাম বুখারী ট্রাস্ট ক্যাটালগ ২০২৪",
+    "en": "Imam Bukhari Trust Catalogue 2024",
+    "ar": "كتيّب وقف الإمام البخاري 2024"
+   },
+   "type": "publication",
+   "year": "2024",
+   "url": "files/IBT_Catalog_2024.pdf",
+   "cover": "img/catalog-2024.webp",
+   "pages": 6,
+   "size": "2.2 MB"
   }
  ],
  "faqs": [
@@ -5971,6 +6003,31 @@
    "bn": "ডকুমেন্টারি",
    "en": "Documentaries",
    "ar": "الأفلام الوثائقية"
+  },
+  "nav_campus": {
+   "bn": "মাসজিদ ও একাডেমিক ক্যাম্পাস (চলমান)",
+   "en": "Masjid & academic campus (ongoing)",
+   "ar": "المسجد والحرم الأكاديمي (جارٍ)"
+  },
+  "nav_model_village": {
+   "bn": "মডেল ভিলেজ (প্রস্তাবিত)",
+   "en": "Model Village (proposed)",
+   "ar": "القرية النموذجية (مقترح)"
+  },
+  "ask_form_title": {
+   "bn": "আমাদের আলেমদের প্রশ্ন করুন",
+   "en": "Ask our scholars",
+   "ar": "اسأل علماءنا"
+  },
+  "ask_form_text": {
+   "bn": "আপনার প্রশ্নটি নিম্নের ফর্মটিতে লিখে পাঠান।",
+   "en": "Write your question in the form below and send it.",
+   "ar": "اكتب سؤالك في النموذج أدناه وأرسله."
+  },
+  "ask_form_btn": {
+   "bn": "প্রশ্ন পাঠানোর ফর্ম",
+   "en": "Open the question form",
+   "ar": "نموذج إرسال السؤال"
   }
  },
  "scholars": [
@@ -6081,8 +6138,8 @@
  ],
  "future": {
   "title": {
-   "bn": "ইমাম বুখারী ট্রাস্টের ভবিষ্যৎ প্রকল্প",
-   "en": "IBT future projects",
+   "bn": "আইবিটি ভবিষ্যৎ প্রকল্প",
+   "en": "IBT Future Projects",
    "ar": "مشاريع الوقف المستقبلية"
   },
   "intro": {
@@ -6132,24 +6189,24 @@
      {
       "name": {
        "bn": "সকাল ও সন্ধ্যার মক্তব",
-       "en": "Morning & Evening Maktab",
+       "en": "Morning & Evening Moktob",
        "ar": "الكتّاب الصباحي والمسائي"
       },
       "icon": "maktab"
      },
      {
       "name": {
-       "bn": "তাহফিযুল কুরআন",
-       "en": "Tahfizul Qur'an",
-       "ar": "تحفيظ القرآن"
+       "bn": "তাহফিযুল কুরআন মাদরাসা",
+       "en": "Tahfizul Quran Madrasah",
+       "ar": "مدرسة تحفيظ القرآن"
       },
       "icon": "quran"
      },
      {
       "name": {
-       "bn": "আইবিটি স্টুডিও",
-       "en": "IBT Studio",
-       "ar": "استوديو الوقف"
+       "bn": "আইবিটি ডিজিটাল স্টুডিও",
+       "en": "IBT Digital Studio",
+       "ar": "الاستوديو الرقمي للوقف"
       },
       "icon": "studio"
      }
@@ -6163,8 +6220,8 @@
     "color": "#DAF1DE",
     "fund": "academy",
     "name": {
-     "bn": "একাডেমিক কমপ্লেক্স ১",
-     "en": "Academic Complex 1",
+     "bn": "একাডেমিক কমপ্লেক্স ১ (আইবিটি একাডেমিক কমপ্লেক্স)",
+     "en": "Academic Complex 1 (IBT Academic Complex)",
      "ar": "المجمع الأكاديمي 1"
     },
     "statusText": {
@@ -6191,17 +6248,17 @@
      },
      {
       "name": {
-       "bn": "কুল্লিয়াতুল কুরআন উচ্চশিক্ষা",
-       "en": "Kulliyatul Quran Higher Education",
-       "ar": "كلية القرآن للتعليم العالي"
+       "bn": "কুল্লিয়াতুল কুরআনিল কারীম ওয়াদ-দিরাসাতিল ইসলামিয়্যাহ (বিএ, এমএ)",
+       "en": "Kulliyatul Quranil Kareem Waddirasatil Islamiyah (BA, MA)",
+       "ar": "كلية القرآن الكريم والدراسات الإسلامية (بكالوريوس، ماجستير)"
       },
       "icon": "education"
      },
      {
       "name": {
-       "bn": "আরবি ভাষা ক্লাব",
-       "en": "Arabic Language Club",
-       "ar": "نادي اللغة العربية"
+       "bn": "আরবি ভাষা ইনস্টিটিউট",
+       "en": "Arabic Language Institute",
+       "ar": "معهد اللغة العربية"
       },
       "icon": "arabic"
      },
@@ -6220,14 +6277,6 @@
        "ar": "برنامج كلية القرآن بعد المدرسة"
       },
       "icon": "clock"
-     },
-     {
-      "name": {
-       "bn": "খেলার মাঠ",
-       "en": "Playground",
-       "ar": "الملعب"
-      },
-      "icon": "youth"
      }
     ],
     "illustrative": false
@@ -6250,17 +6299,17 @@
     "items": [
      {
       "name": {
-       "bn": "কুল্লিয়াতুল কুরআন গার্লস মডেল মাদরাসা",
-       "en": "Kulliyatul Quran Girls' Model Madrasah",
-       "ar": "مدرسة كلية القرآن النموذجية للبنات"
+       "bn": "কুল্লিয়াতুল কুরআন মডেল মাদরাসা (গার্লস সেকশন)",
+       "en": "Kulliyatul Quran Model Madrasah (Girls' Section)",
+       "ar": "مدرسة كلية القرآن النموذجية (قسم البنات)"
       },
       "icon": "school"
      },
      {
       "name": {
-       "bn": "কুল্লিয়াতুল কুরআন গার্লস উচ্চতর বিভাগ",
-       "en": "Kulliyatul Quran Girls' Higher Section",
-       "ar": "القسم العالي للبنات"
+       "bn": "কুল্লিয়াতুল কুরআন গার্লস হায়ার সেকশন (ইসলামী আরবি বিশ্ববিদ্যালয়ের অধিভুক্ত হবে)",
+       "en": "Kulliyatul Quran Girls' Higher Section (to be affiliated with the Islamic Arabic University)",
+       "ar": "القسم العالي للبنات (سيُلحق بالجامعة الإسلامية العربية)"
       },
       "icon": "education"
      },
@@ -6274,8 +6323,8 @@
      },
      {
       "name": {
-       "bn": "ছাত্রী হোস্টেল",
-       "en": "Girls' hostel",
+       "bn": "গার্লস হোস্টেল",
+       "en": "Girls' Hostel",
        "ar": "سكن الطالبات"
       },
       "icon": "hostel"
@@ -6302,24 +6351,24 @@
      {
       "name": {
        "bn": "ছাত্র হোস্টেল",
-       "en": "Boys' hostel",
+       "en": "Boys' Hostel",
        "ar": "سكن الطلاب"
       },
       "icon": "hostel"
      },
      {
       "name": {
-       "bn": "ইংলিশ মিডিয়াম ইসলামিক স্কুল",
-       "en": "English-medium Islamic School",
-       "ar": "مدرسة إسلامية باللغة الإنجليزية"
+       "bn": "ইসলামিক স্কুল (ইংলিশ মিডিয়াম)",
+       "en": "Islamic School (English Medium)",
+       "ar": "مدرسة إسلامية (إنجليزية)"
       },
       "icon": "school"
      },
      {
       "name": {
-       "bn": "বাংলা মিডিয়াম স্কুল",
-       "en": "Bangla Medium School",
-       "ar": "مدرسة بالبنغالية"
+       "bn": "ইসলামিক স্কুল (এনসিটিবি)",
+       "en": "Islamic School (NCTB)",
+       "ar": "مدرسة إسلامية (المنهج الوطني)"
       },
       "icon": "school"
      },
@@ -6334,7 +6383,7 @@
      {
       "name": {
        "bn": "সিনিয়র সিটিজেন ক্লাব",
-       "en": "Senior Citizens' Club",
+       "en": "Senior Citizen Club",
        "ar": "نادي كبار السن"
       },
       "icon": "senior"
@@ -6342,7 +6391,7 @@
      {
       "name": {
        "bn": "সিনিয়র সিটিজেন হাউস",
-       "en": "Senior Citizens' House",
+       "en": "Senior Citizen House",
        "ar": "دار كبار السن"
       },
       "icon": "home"
@@ -6350,7 +6399,7 @@
      {
       "name": {
        "bn": "শিক্ষক ডরমিটরি",
-       "en": "Teachers' dormitory",
+       "en": "Teachers' Dormitory",
        "ar": "سكن المعلمين"
       },
       "icon": "hostel"
@@ -6376,14 +6425,6 @@
     "items": [
      {
       "name": {
-       "bn": "ইসলামিক মিউজিয়াম",
-       "en": "Islamic Museum",
-       "ar": "المتحف الإسلامي"
-      },
-      "icon": "museum"
-     },
-     {
-      "name": {
        "bn": "তাইবাহ একাডেমি",
        "en": "Taibah Academy",
        "ar": "أكاديمية طيبة"
@@ -6405,6 +6446,14 @@
        "ar": "طيبة لتقنية المعلومات"
       },
       "icon": "code"
+     },
+     {
+      "name": {
+       "bn": "ইসলামিক মিউজিয়াম",
+       "en": "Islamic Museum",
+       "ar": "المتحف الإسلامي"
+      },
+      "icon": "museum"
      }
     ],
     "illustrative": false
@@ -6413,9 +6462,9 @@
  },
  "masterplan": {
   "source": {
-   "bn": "মাস্টারপ্ল্যান: ইমাম বুখারী ট্রাস্ট, নিউ ঢাকা সিটি (২১ নভেম্বর ২০২৬)। ভবনের উচ্চতা ও আকৃতি আনুমানিক।",
-   "en": "Master plan: Imam Bukhari Trust, New Dhaka City (21 Nov 2026). Building heights and forms are indicative.",
-   "ar": "المخطط العام: وقف الإمام البخاري، مدينة دكا الجديدة (21 نوفمبر 2026). الارتفاعات والأشكال تقريبية."
+   "bn": "মাস্টারপ্ল্যান: ইমাম বুখারী ট্রাস্ট, নিউ ঢাকা সিটি (২৩ নভেম্বর ২০২৬ সংশোধিত)। মাসজিদ ৬ তলা, অন্য সব ভবন ১০ তলা; আকৃতি আনুমানিক।",
+   "en": "Master plan: Imam Bukhari Trust, New Dhaka City (revised 23 Nov 2026). Masjid 6 storeys, every other building 10 storeys; forms are indicative.",
+   "ar": "المخطط العام: وقف الإمام البخاري، مدينة دكا الجديدة (مراجعة 23 نوفمبر 2026). المسجد 6 طوابق وسائر المباني 10 طوابق؛ الأشكال تقريبية."
   },
   "context": [
    [
@@ -6503,20 +6552,6 @@
     2
    ],
    [
-    -41.01,
-    3.69,
-    3.72,
-    4.98,
-    5
-   ],
-   [
-    -41.12,
-    8.79,
-    3.48,
-    4.98,
-    4
-   ],
-   [
     -40.09,
     -30.47,
     3.48,
@@ -6580,13 +6615,6 @@
     3
    ],
    [
-    -37.07,
-    3.69,
-    3.78,
-    4.98,
-    2
-   ],
-   [
     -36.42,
     -30.47,
     3.53,
@@ -6606,13 +6634,6 @@
     3.48,
     4.98,
     3
-   ],
-   [
-    -31.82,
-    -3.44,
-    8.88,
-    4.98,
-    2
    ],
    [
     -33.34,
@@ -6643,13 +6664,6 @@
     2
    ],
    [
-    -33.18,
-    3.69,
-    3.78,
-    4.98,
-    5
-   ],
-   [
     -32.44,
     29.57,
     4.98,
@@ -6671,25 +6685,11 @@
     2
    ],
    [
-    -32.18,
-    -8.57,
-    3.12,
-    4.92,
-    5
-   ],
-   [
     -30.14,
     8.79,
     5.52,
     4.98,
     4
-   ],
-   [
-    -29.24,
-    3.69,
-    3.72,
-    4.98,
-    3
    ],
    [
     -29.06,
@@ -6725,13 +6725,6 @@
     4.98,
     5.47,
     2
-   ],
-   [
-    -28.94,
-    -8.57,
-    3.12,
-    4.92,
-    5
    ],
    [
     -27.34,
@@ -7316,24 +7309,10 @@
    ],
    [
     25.98,
-    3.69,
-    3.53,
-    4.98,
-    5
-   ],
-   [
-    25.98,
     8.79,
     3.53,
     4.98,
     4
-   ],
-   [
-    26.56,
-    16.19,
-    4.68,
-    5.52,
-    3
    ],
    [
     26.56,
@@ -7379,13 +7358,6 @@
    ],
    [
     29.44,
-    3.69,
-    3.12,
-    4.98,
-    4
-   ],
-   [
-    29.44,
     8.79,
     3.12,
     4.98,
@@ -7404,13 +7376,6 @@
     4.32,
     5.47,
     5
-   ],
-   [
-    31.24,
-    16.19,
-    4.32,
-    5.52,
-    4
    ],
    [
     31.24,
@@ -7449,13 +7414,6 @@
    ],
    [
     32.74,
-    3.69,
-    3.12,
-    4.98,
-    2
-   ],
-   [
-    32.74,
     8.79,
     3.12,
     4.98,
@@ -7474,13 +7432,6 @@
     4.98,
     5.47,
     3
-   ],
-   [
-    36.04,
-    16.19,
-    4.92,
-    5.52,
-    2
    ],
    [
     36.04,
@@ -7586,13 +7537,6 @@
     4.92,
     5.47,
     3
-   ],
-   [
-    41.18,
-    16.19,
-    4.98,
-    5.52,
-    2
    ],
    [
     41.18,
@@ -7776,9 +7720,9 @@
       "kind": "masjid",
       "status": "mosque",
       "name": {
-       "bn": "মাসজিদ",
-       "en": "Masjid",
-       "ar": "المسجد"
+       "bn": "ইমাম বুখারী জামে মাসজিদ কমপ্লেক্স",
+       "en": "Imam Bukhari Jame Masjid Complex",
+       "ar": "مجمع جامع الإمام البخاري"
       }
      }
     ]
@@ -7794,9 +7738,9 @@
       "key": "academic",
       "status": "academic",
       "name": {
-       "bn": "একাডেমিক ভবন",
-       "en": "Academic Building",
-       "ar": "المبنى الأكاديمي"
+       "bn": "আইবিটি একাডেমিক কমপ্লেক্স",
+       "en": "IBT Academic Complex",
+       "ar": "المجمع الأكاديمي للوقف"
       }
      },
      {
@@ -7818,7 +7762,7 @@
       "z": 16.19,
       "w": 4.92,
       "d": 5.52,
-      "ghostFloors": 5,
+      "ghostFloors": 10,
       "name": {
        "bn": "সায়েন্টিফিক রিসার্চ সেন্টার",
        "en": "Scientific Research Center",
@@ -7831,42 +7775,42 @@
     "id": "academic-2",
     "parts": [
      {
-      "key": "girls_hostel",
-      "x": -41.01,
-      "z": 3.69,
+      "key": "mm_girls",
+      "x": -41.06,
+      "z": 6.24,
       "w": 3.72,
-      "d": 4.98,
-      "ghostFloors": 7,
+      "d": 10.08,
+      "ghostFloors": 10,
       "name": {
-       "bn": "ছাত্রী হোস্টেল",
-       "en": "Girls' hostel",
-       "ar": "سكن الطالبات"
+       "bn": "মডেল মাদরাসা গার্লস সেকশন",
+       "en": "Model Madrasah Girls' Section",
+       "ar": "المدرسة النموذجية قسم البنات"
       }
      },
      {
-      "key": "girls_madrasha",
+      "key": "girls_hostel",
       "x": -37.07,
       "z": 3.69,
       "w": 3.78,
       "d": 4.98,
-      "ghostFloors": 6,
+      "ghostFloors": 10,
       "name": {
-       "bn": "গার্লস মাদরাসা",
-       "en": "Girls' madrasah",
-       "ar": "مدرسة البنات"
+       "bn": "গার্লস হোস্টেল",
+       "en": "Girls' Hostel",
+       "ar": "سكن الطالبات"
       }
      },
      {
-      "key": "girls_school",
+      "key": "kq_girls",
       "x": -33.18,
       "z": 3.69,
       "w": 3.78,
       "d": 4.98,
-      "ghostFloors": 5,
+      "ghostFloors": 10,
       "name": {
-       "bn": "গার্লস স্কুল",
-       "en": "Girls' school",
-       "ar": "مدرسة البنات النظامية"
+       "bn": "কুল্লিয়াতুল কুরআন গার্লস সেকশন",
+       "en": "Kulliyatul Quran Girls' Section",
+       "ar": "كلية القرآن قسم البنات"
       }
      },
      {
@@ -7875,7 +7819,7 @@
       "z": 16.19,
       "w": 4.32,
       "d": 5.52,
-      "ghostFloors": 6,
+      "ghostFloors": 10,
       "name": {
        "bn": "টিচার্স ট্রেনিং ইনস্টিটিউট",
        "en": "Teachers Training Institute",
@@ -7888,17 +7832,16 @@
     "id": "academic-3",
     "parts": [
      {
-      "key": "teachers_tower",
+      "key": "dormitory",
       "x": -29.24,
       "z": 3.69,
       "w": 3.72,
       "d": 4.98,
       "ghostFloors": 10,
-      "kind": "tower",
       "name": {
-       "bn": "টিচার্স টাওয়ার",
-       "en": "Teachers' Tower",
-       "ar": "برج المعلمين"
+       "bn": "শিক্ষক ডরমিটরি",
+       "en": "Teachers' Dormitory",
+       "ar": "سكن المعلمين"
       }
      },
      {
@@ -7907,10 +7850,10 @@
       "z": 3.69,
       "w": 3.12,
       "d": 4.98,
-      "ghostFloors": 7,
+      "ghostFloors": 10,
       "name": {
        "bn": "ছাত্র হোস্টেল",
-       "en": "Boys' hostel",
+       "en": "Boys' Hostel",
        "ar": "سكن الطلاب"
       }
      },
@@ -7920,11 +7863,11 @@
       "z": 16.19,
       "w": 4.68,
       "d": 5.52,
-      "ghostFloors": 6,
+      "ghostFloors": 10,
       "name": {
-       "bn": "ইংলিশ মিডিয়াম স্কুল",
-       "en": "English Medium School",
-       "ar": "مدرسة بالإنجليزية"
+       "bn": "ইসলামিক স্কুল (ইংলিশ মিডিয়াম)",
+       "en": "Islamic School (English Medium)",
+       "ar": "مدرسة إسلامية (إنجليزية)"
       }
      },
      {
@@ -7933,11 +7876,11 @@
       "z": 16.19,
       "w": 4.98,
       "d": 5.52,
-      "ghostFloors": 6,
+      "ghostFloors": 10,
       "name": {
-       "bn": "বাংলা মিডিয়াম স্কুল",
-       "en": "Bangla Medium School",
-       "ar": "مدرسة بالبنغالية"
+       "bn": "ইসলামিক স্কুল (এনসিটিবি)",
+       "en": "Islamic School (NCTB)",
+       "ar": "مدرسة إسلامية (المنهج الوطني)"
       }
      },
      {
@@ -7946,7 +7889,7 @@
       "z": 3.69,
       "w": 3.53,
       "d": 4.98,
-      "ghostFloors": 4,
+      "ghostFloors": 10,
       "name": {
        "bn": "সিনিয়র সিটিজেন ও ইয়ুথ ক্লাব",
        "en": "Senior Citizens' & Youth Club",
@@ -7960,11 +7903,11 @@
     "parts": [
      {
       "key": "taibah",
-      "x": -31.82,
-      "z": -3.44,
-      "w": 8.88,
-      "d": 4.98,
-      "ghostFloors": 15,
+      "x": -30.56,
+      "z": -5.99,
+      "w": 6.36,
+      "d": 10.08,
+      "ghostFloors": 10,
       "kind": "tower",
       "name": {
        "bn": "তাইবাহ একাডেমিক টাওয়ার",
@@ -7978,7 +7921,7 @@
       "z": 3.69,
       "w": 3.12,
       "d": 4.98,
-      "ghostFloors": 4,
+      "ghostFloors": 10,
       "name": {
        "bn": "ইসলামিক মিউজিয়াম",
        "en": "Islamic Museum",
@@ -8178,6 +8121,28 @@
     "ar": "وقف الإمام البخاري"
    },
    "file": "files/IBT_Catalog_2026.pdf"
+  },
+  {
+   "title": {
+    "bn": "ইমাম বুখারী ট্রাস্ট ক্যাটালগ ২০২৫",
+    "en": "Imam Bukhari Trust Catalogue 2025",
+    "ar": "كتيّب وقف الإمام البخاري 2025"
+   },
+   "file": "files/IBT_Catalog_2025.pdf",
+   "cat": "annual",
+   "status": "available",
+   "period": "2025"
+  },
+  {
+   "title": {
+    "bn": "ইমাম বুখারী ট্রাস্ট ক্যাটালগ ২০২৪",
+    "en": "Imam Bukhari Trust Catalogue 2024",
+    "ar": "كتيّب وقف الإمام البخاري 2024"
+   },
+   "file": "files/IBT_Catalog_2024.pdf",
+   "cat": "annual",
+   "status": "available",
+   "period": "2024"
   },
   {
    "cat": "annual",
@@ -8619,5 +8584,282 @@
     "ar": "حملات تشجير وصدقة منتظمة للفقراء."
    }
   }
- ]
+ ],
+ "verses": {
+  "q_masjid": {
+   "type": "quran",
+   "ar": "إِنَّمَا يَعْمُرُ مَسَـٰجِدَ ٱللَّهِ مَنْ ءَامَنَ بِٱللَّهِ وَٱلْيَوْمِ ٱلْـَٔاخِرِ",
+   "part": true,
+   "tr": {
+    "bn": "তারাই তো আল্লাহ্‌র মসজিদের আবাদ করবে, যারা ঈমান আনে আল্লাহ্‌ ও শেষ দিনের প্রতি …",
+    "en": "The mosques of Allāh are only to be maintained by those who believe in Allāh and the Last Day …",
+    "ar": ""
+   },
+   "ref": {
+    "bn": "সূরা আত-তাওবাহ ৯:১৮",
+    "en": "At-Tawbah 9:18",
+    "ar": "سورة التوبة 9:18"
+   }
+  },
+  "q_read": {
+   "type": "quran",
+   "ar": "ٱقْرَأْ بِٱسْمِ رَبِّكَ ٱلَّذِى خَلَقَ",
+   "part": false,
+   "tr": {
+    "bn": "পড়ুন আপনার রবের নামে, যিনি সৃষ্টি করেছেন।",
+    "en": "Recite in the name of your Lord who created.",
+    "ar": ""
+   },
+   "ref": {
+    "bn": "সূরা আল-আলাক ৯৬:১",
+    "en": "Al-ʿAlaq 96:1",
+    "ar": "سورة العلق 96:1"
+   }
+  },
+  "q_knowledge": {
+   "type": "quran",
+   "ar": "يَرْفَعِ ٱللَّهُ ٱلَّذِينَ ءَامَنُوا۟ مِنكُمْ وَٱلَّذِينَ أُوتُوا۟ ٱلْعِلْمَ دَرَجَـٰتٍ",
+   "part": true,
+   "tr": {
+    "bn": "তোমাদের মধ্যে যারা ঈমান এনেছে এবং যাদেরকে জ্ঞান দান করা হয়েছে আল্লাহ্‌ তাদেরকে মর্যাদায় উন্নত করবেন।",
+    "en": "Allāh will raise those who have believed among you and those who were given knowledge, by degrees.",
+    "ar": ""
+   },
+   "ref": {
+    "bn": "সূরা আল-মুজাদালাহ ৫৮:১১",
+    "en": "Al-Mujādilah 58:11",
+    "ar": "سورة المجادلة 58:11"
+   }
+  },
+  "q_dawah": {
+   "type": "quran",
+   "ar": "ٱدْعُ إِلَىٰ سَبِيلِ رَبِّكَ بِٱلْحِكْمَةِ وَٱلْمَوْعِظَةِ ٱلْحَسَنَةِ",
+   "part": true,
+   "tr": {
+    "bn": "আপনি মানুষকে দা’ওয়াত দিন আপনার রবের পথে হিকমত ও সদুপদেশ দ্বারা।",
+    "en": "Invite to the way of your Lord with wisdom and good instruction.",
+    "ar": ""
+   },
+   "ref": {
+    "bn": "সূরা আন-নাহল ১৬:১২৫",
+    "en": "An-Naḥl 16:125",
+    "ar": "سورة النحل 16:125"
+   }
+  },
+  "q_spend": {
+   "type": "quran",
+   "ar": "مَّثَلُ ٱلَّذِينَ يُنفِقُونَ أَمْوَٰلَهُمْ فِى سَبِيلِ ٱللَّهِ كَمَثَلِ حَبَّةٍ أَنۢبَتَتْ سَبْعَ سَنَابِلَ فِى كُلِّ سُنۢبُلَةٍ مِّا۟ئَةُ حَبَّةٍ",
+   "part": true,
+   "tr": {
+    "bn": "যারা নিজেদের ধন সম্পদ আল্লাহ্‌র পথে ব্যয় করে তাদের উপমা একটি বীজের মত, যা সাতটি শীষ উৎপাদন করে, প্রত্যেক শীষে একশ শস্যদানা।",
+    "en": "The example of those who spend their wealth in the way of Allāh is like a seed [of grain] which grows seven spikes; in each spike is a hundred grains.",
+    "ar": ""
+   },
+   "ref": {
+    "bn": "সূরা আল-বাকারাহ ২:২৬১",
+    "en": "Al-Baqarah 2:261",
+    "ar": "سورة البقرة 2:261"
+   }
+  },
+  "q_coop": {
+   "type": "quran",
+   "ar": "وَتَعَاوَنُوا۟ عَلَى ٱلْبِرِّ وَٱلتَّقْوَىٰ ۖ وَلَا تَعَاوَنُوا۟ عَلَى ٱلْإِثْمِ وَٱلْعُدْوَٰنِ",
+   "part": true,
+   "tr": {
+    "bn": "নেককাজ ও তাকওয়ায় তোমরা পরস্পর সাহায্য করবে এবং পাপ ও সীমালংঘনে একে অন্যের সাহায্য করবে না।",
+    "en": "And cooperate in righteousness and piety, but do not cooperate in sin and aggression.",
+    "ar": ""
+   },
+   "ref": {
+    "bn": "সূরা আল-মায়িদাহ ৫:২",
+    "en": "Al-Māʾidah 5:2",
+    "ar": "سورة المائدة 5:2"
+   }
+  },
+  "q_ask": {
+   "type": "quran",
+   "ar": "فَسْـَٔلُوٓا۟ أَهْلَ ٱلذِّكْرِ إِن كُنتُمْ لَا تَعْلَمُونَ",
+   "part": true,
+   "tr": {
+    "bn": "সুতরাং তোমরা জ্ঞানীদেরকে জিজ্ঞেস কর যদি না জান।",
+    "en": "So ask the people of the message if you do not know.",
+    "ar": ""
+   },
+   "ref": {
+    "bn": "সূরা আন-নাহল ১৬:৪৩",
+    "en": "An-Naḥl 16:43",
+    "ar": "سورة النحل 16:43"
+   }
+  },
+  "q_ilm": {
+   "type": "quran",
+   "ar": "وَقُل رَّبِّ زِدْنِى عِلْمًا",
+   "part": true,
+   "tr": {
+    "bn": "বলুন, ‘হে আমার রব! আমাকে জ্ঞানে সমৃদ্ধ করুন।’",
+    "en": "And say, “My Lord, increase me in knowledge.”",
+    "ar": ""
+   },
+   "ref": {
+    "bn": "সূরা ত্বা-হা ২০:১১৪",
+    "en": "Ṭā-Hā 20:114",
+    "ar": "سورة طه 20:114"
+   }
+  },
+  "q_khair": {
+   "type": "quran",
+   "ar": "وَلْتَكُن مِّنكُمْ أُمَّةٌ يَدْعُونَ إِلَى ٱلْخَيْرِ وَيَأْمُرُونَ بِٱلْمَعْرُوفِ وَيَنْهَوْنَ عَنِ ٱلْمُنكَرِ ۚ وَأُو۟لَـٰٓئِكَ هُمُ ٱلْمُفْلِحُونَ",
+   "part": false,
+   "tr": {
+    "bn": "আর তোমাদের মধ্যে এমন একটি দল যেন থাকে যারা কল্যাণের দিকে আহবান করবে এবং সৎকাজের নির্দেশ দেবে ও অসৎকাজে নিষেধ করবে; আর তারাই সফলকাম।",
+    "en": "And let there be [arising] from you a nation inviting to [all that is] good, enjoining what is right and forbidding what is wrong, and those will be the successful.",
+    "ar": ""
+   },
+   "ref": {
+    "bn": "সূরা আলে ইমরান ৩:১০৪",
+    "en": "Āl ʿImrān 3:104",
+    "ar": "سورة آل عمران 3:104"
+   }
+  },
+  "q_feed": {
+   "type": "quran",
+   "ar": "وَيُطْعِمُونَ ٱلطَّعَامَ عَلَىٰ حُبِّهِۦ مِسْكِينًا وَيَتِيمًا وَأَسِيرًا",
+   "part": false,
+   "tr": {
+    "bn": "আর তারা খাবারের প্রতি ভালোবাসা থাকা সত্ত্বেও অভাবগ্রস্ত, ইয়াতীম ও বন্দীকে খাবার দান করে।",
+    "en": "And they give food in spite of love for it to the needy, the orphan, and the captive.",
+    "ar": ""
+   },
+   "ref": {
+    "bn": "সূরা আল-ইনসান ৭৬:৮",
+    "en": "Al-Insān 76:8",
+    "ar": "سورة الإنسان 76:8"
+   }
+  },
+  "q_good": {
+   "type": "quran",
+   "ar": "وَمَا تُقَدِّمُوا۟ لِأَنفُسِكُم مِّنْ خَيْرٍ تَجِدُوهُ عِندَ ٱللَّهِ",
+   "part": true,
+   "tr": {
+    "bn": "তোমরা উত্তম কাজের যা কিছু নিজেদের জন্য পেশ করবে আল্লাহ্‌র কাছে তা পাবে।",
+    "en": "Whatever good you put forward for yourselves, you will find it with Allāh.",
+    "ar": ""
+   },
+   "ref": {
+    "bn": "সূরা আল-বাকারাহ ২:১১০",
+    "en": "Al-Baqarah 2:110",
+    "ar": "سورة البقرة 2:110"
+   }
+  },
+  "h_masjid": {
+   "type": "hadith",
+   "ar": "مَنْ بَنَى مَسْجِدًا لِلَّهِ بَنَى اللَّهُ لَهُ فِي الْجَنَّةِ مِثْلَهُ",
+   "part": false,
+   "tr": {
+    "bn": "যে ব্যক্তি আল্লাহর জন্য একটি মাসজিদ নির্মাণ করে, আল্লাহ জান্নাতে তার জন্য অনুরূপ একটি ঘর নির্মাণ করেন।",
+    "en": "He who built a mosque for Allah, Allah would build a house for him like it in Paradise.",
+    "ar": ""
+   },
+   "ref": {
+    "bn": "সহীহ মুসলিম ৫৩৩",
+    "en": "Sahih Muslim 533",
+    "ar": "صحيح مسلم 533"
+   }
+  },
+  "h_jariyah": {
+   "type": "hadith",
+   "ar": "إِذَا مَاتَ الإِنْسَانُ انْقَطَعَ عَنْهُ عَمَلُهُ إِلاَّ مِنْ ثَلاَثَةٍ إِلاَّ مِنْ صَدَقَةٍ جَارِيَةٍ أَوْ عِلْمٍ يُنْتَفَعُ بِهِ أَوْ وَلَدٍ صَالِحٍ يَدْعُو لَهُ",
+   "part": false,
+   "tr": {
+    "bn": "মানুষ মারা গেলে তার সব আমল বন্ধ হয়ে যায়, তিনটি ছাড়া: সাদাকায়ে জারিয়া, এমন জ্ঞান যা দ্বারা উপকার পাওয়া যায়, অথবা নেক সন্তান যে তার জন্য দু‘আ করে।",
+    "en": "When a man dies, his acts come to an end, but three: recurring charity, or knowledge by which people benefit, or a pious child who prays for him.",
+    "ar": ""
+   },
+   "ref": {
+    "bn": "সহীহ মুসলিম ১৬৩১",
+    "en": "Sahih Muslim 1631",
+    "ar": "صحيح مسلم 1631"
+   }
+  },
+  "h_ilm": {
+   "type": "hadith",
+   "ar": "وَمَنْ سَلَكَ طَرِيقًا يَلْتَمِسُ فِيهِ عِلْمًا سَهَّلَ اللَّهُ لَهُ بِهِ طَرِيقًا إِلَى الْجَنَّةِ",
+   "part": true,
+   "tr": {
+    "bn": "যে ব্যক্তি জ্ঞানের সন্ধানে কোনো পথে চলে, আল্লাহ এর বিনিময়ে তার জন্য জান্নাতের পথ সহজ করে দেন।",
+    "en": "He who treads the path in search of knowledge, Allah would make that path easy, leading to Paradise for him.",
+    "ar": ""
+   },
+   "ref": {
+    "bn": "সহীহ মুসলিম ২৬৯৯",
+    "en": "Sahih Muslim 2699",
+    "ar": "صحيح مسلم 2699"
+   }
+  },
+  "h_quran": {
+   "type": "hadith",
+   "ar": "خَيْرُكُمْ مَنْ تَعَلَّمَ الْقُرْآنَ وَعَلَّمَهُ",
+   "part": false,
+   "tr": {
+    "bn": "তোমাদের মধ্যে ঐ ব্যক্তি সবচেয়ে উত্তম যে কুরআন শিখে এবং অন্যকে শিখায়।",
+    "en": "The best among you are those who learn the Qur'an and teach it.",
+    "ar": ""
+   },
+   "ref": {
+    "bn": "সহীহ বুখারী ৫০২৭",
+    "en": "Sahih al-Bukhari 5027",
+    "ar": "صحيح البخاري 5027"
+   }
+  },
+  "h_convey": {
+   "type": "hadith",
+   "ar": "بَلِّغُوا عَنِّي وَلَوْ آيَةً",
+   "part": true,
+   "tr": {
+    "bn": "আমার কথা পৌঁছিয়ে দাও, যদি তা এক আয়াতও হয়।",
+    "en": "Convey (my teachings) to the people even if it were a single sentence.",
+    "ar": ""
+   },
+   "ref": {
+    "bn": "সহীহ বুখারী ৩৪৬১",
+    "en": "Sahih al-Bukhari 3461",
+    "ar": "صحيح البخاري 3461"
+   }
+  },
+  "h_body": {
+   "type": "hadith",
+   "ar": "مَثَلُ الْمُؤْمِنِينَ فِي تَوَادِّهِمْ وَتَرَاحُمِهِمْ وَتَعَاطُفِهِمْ مَثَلُ الْجَسَدِ إِذَا اشْتَكَى مِنْهُ عُضْوٌ تَدَاعَى لَهُ سَائِرُ الْجَسَدِ بِالسَّهَرِ وَالْحُمَّى",
+   "part": false,
+   "tr": {
+    "bn": "পারস্পরিক ভালোবাসা, দয়া ও সহানুভূতিতে মু’মিনদের দৃষ্টান্ত একটি দেহের মতো; দেহের কোনো অঙ্গ অসুস্থ হলে পুরো দেহ নিদ্রাহীনতা ও জ্বরে তার সঙ্গী হয়।",
+    "en": "The similitude of believers in regard to mutual love, affection and fellow-feeling is that of one body; when any limb of it aches, the whole body aches, because of sleeplessness and fever.",
+    "ar": ""
+   },
+   "ref": {
+    "bn": "সহীহ মুসলিম ২৫৮৬",
+    "en": "Sahih Muslim 2586",
+    "ar": "صحيح مسلم 2586"
+   }
+  },
+  "h_fiqh": {
+   "type": "hadith",
+   "ar": "مَنْ يُرِدِ اللَّهُ بِهِ خَيْرًا يُفَقِّهْهُ فِي الدِّينِ",
+   "part": true,
+   "tr": {
+    "bn": "আল্লাহ যার কল্যাণ চান, তাকে দ্বীনের গভীর জ্ঞান দান করেন।",
+    "en": "If Allah wants to do good to a person, He makes him comprehend the religion.",
+    "ar": ""
+   },
+   "ref": {
+    "bn": "সহীহ বুখারী ৭১",
+    "en": "Sahih al-Bukhari 71",
+    "ar": "صحيح البخاري 71"
+   }
+  }
+ },
+ "versesNote": {
+  "bn": "কুরআনের অনুবাদ: ড. আবু বকর মুহাম্মাদ যাকারিয়া",
+  "en": "Qur'an translation: Saheeh International",
+  "ar": ""
+ }
 }
