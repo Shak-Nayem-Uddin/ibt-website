@@ -254,6 +254,35 @@ D = {
 "Ask Dr Monzur E Elahi: প্রশ্নোত্তর পর্ব": "Ask Dr Monzur E Elahi: Q&A episodes",
 }
 
+# --- v16: save/publish feedback, GitHub connection ---
+D.update({
+"সেভ হচ্ছে…": "Saving…", "প্রকাশ হচ্ছে…": "Publishing…", "ড্রাফট বাতিল হয়েছে": "Draft discarded",
+"প্রকাশিত হয়েছে। ১–২ মিনিটের মধ্যে সাইটে দেখা যাবে।": "Published. It will show on the site within 1–2 minutes.",
+"কিছু বাকি নেই": "Nothing pending", "কোনো ড্রাফট নেই": "No drafts",
+"GitHub সংযোগ যাচাই হচ্ছে…": "Checking the GitHub connection…",
+"GitHub সংযুক্ত:": "GitHub connected:", "· সেভ ও প্রকাশ করা যাবে।": "· saving and publishing work.",
+"এই টোকেন দিয়ে সেভ বা প্রকাশ করা যাবে না: রিপোজিটরিতে লেখার অনুমতি (Contents: Read and write) নেই।": "This token cannot save or publish: it has no write permission on the repository (Contents: Read and write).",
+"GitHub সংযোগ যাচাই করা যায়নি (ইন্টারনেট দেখুন)।": "Could not check the GitHub connection (check the internet).",
+"ইন্টারনেট সংযোগ পাওয়া যায়নি।": "No internet connection.",
+"সেভ হয়নি: এই GitHub টোকেনে রিপোজিটরিতে লেখার অনুমতি নেই। টোকেনের Permissions-এ Contents: Read and write দিন (নিচের ধাপ দেখুন)।": "Not saved: this GitHub token has no write permission on the repository. Give the token Contents: Read and write (steps below).",
+"সেভ হয়নি: টোকেনটি সঠিক নয় বা মেয়াদ শেষ। আবার লগইন করুন।": "Not saved: the token is invalid or has expired. Please sign in again.",
+"সেভ হয়নি: টোকেনে এই রিপোজিটরির অ্যাক্সেস দেওয়া নেই (Repository access-এ ibt-website বাছুন)।": "Not saved: the token has no access to this repository (choose ibt-website under Repository access).",
+"সেভ হয়নি: একই সময়ে অন্য কেউ পরিবর্তন করেছেন। কয়েক সেকেন্ড পর আবার চেষ্টা করুন।": "Not saved: someone else changed it at the same time. Try again in a few seconds.",
+"সেভ হয়নি: GitHub-এর সীমা পূর্ণ হয়েছে। কিছুক্ষণ পর আবার চেষ্টা করুন।": "Not saved: the GitHub limit was reached. Try again a little later.",
+"সেভ হয়নি: ইন্টারনেট সংযোগ পাওয়া যায়নি। সংযোগ দেখে আবার চেষ্টা করুন।": "Not saved: no internet connection. Check it and try again.",
+"সেভ হয়নি: GitHub এখন সাড়া দিচ্ছে না। কিছুক্ষণ পর আবার চেষ্টা করুন।": "Not saved: GitHub is not responding. Try again a little later.",
+"সেভ হয়নি:": "Not saved:",
+"খুলে আপনার টোকেনে ক্লিক করুন, তারপর": "— open it, click your token, then",
+"।": ".",
+": Only select repositories →": ": Only select repositories →",
+"অংশে": "section:",
+"(অথবা Repository permissions) →": "(or Repository permissions) →",
+"বাছুন → Access:": "→ Access:",
+"সবশেষে": "Finally, press",
+"চাপুন। টোকেন একই থাকবে; এই পেজ রিফ্রেশ করে আবার সেভ করুন।": ". The token stays the same; refresh this page and save again.",
+"→ Access:": "→ Access:",
+})
+
 # months / weekdays used by toLocaleString fallbacks
 MONTHS = {"জানুয়ারী":"January","জানুয়ারি":"January","ফেব্রুয়ারী":"February","ফেব্রুয়ারি":"February","মার্চ":"March","এপ্রিল":"April","মে":"May","জুন":"June","জুলাই":"July","আগস্ট":"August","সেপ্টেম্বর":"September","অক্টোবর":"October","নভেম্বর":"November","ডিসেম্বর":"December"}
 

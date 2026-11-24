@@ -116,7 +116,7 @@
       case "sel":
         return '<div class="a-field">' + head + '<select class="input" id="' + id + '" data-p="' + pid(path) + '">' + sch.opts.map(function (o) { return '<option' + (o === val ? " selected" : "") + ">" + esc(o) + "</option>"; }).join("") + "</select></div>";
       case "img": case "file":
-        var u = IBT.img(val || "");
+        var u = /^asset:gh\//.test(val || "") && window.IBT_GH ? "https://raw.githubusercontent.com/" + window.IBT_GH.owner + "/" + window.IBT_GH.repo + "/" + window.IBT_GH.branch + "/" + String(val).slice(9) : IBT.img(val || "");
         return '<div class="a-field">' + head + '<div class="a-img">' + (val && sch.type === "img" ? '<img src="' + esc(u) + '" alt="">' : '<div class="a-noimg">' + (val ? icon("doc") : "—") + "</div>") + '<div class="a-img-ctl"><input class="input" data-p="' + pid(path) + '" value="' + esc(val || "") + '" dir="ltr" placeholder="img/... বা asset:..."><div class="a-btns"><button class="btn sm" data-upload="' + pid(path) + '" data-accept="' + (sch.type === "img" ? "image/*" : "application/pdf,image/*") + '">' + icon("ext") + "আপলোড</button>" + (sch.type === "img" ? '<button class="btn sm" data-pick="' + pid(path) + '">লাইব্রেরি</button>' : "") + '<button class="btn sm ghost" data-clear="' + pid(path) + '">মুছুন</button></div></div></div></div>';
       case "obj":
         return '<fieldset class="a-obj"><legend>' + esc(lbl(key)) + "</legend>" + Object.keys(sch.fields).map(function (k) { return field(k, sch.fields[k], (val || {})[k], path.concat([k])); }).join("") + "</fieldset>";
@@ -160,7 +160,7 @@
   function shell() {
     var cl = cloud();
     if (!cl.db) return '<div class="wrap section"><div class="glass" style="padding:28px;max-width:720px"><h1>অ্যাডমিন প্যানেল</h1><p class="muted">ব্যাকএন্ড সংযুক্ত নেই। claude.ai-তে Owner/Editor হিসেবে খুলুন, অথবা GitHub সংস্করণে <code>assets/config.js</code>-এ Apps Script URL বসান।</p><p class="faint">No backend in this view. Open on claude.ai as owner/editor, or set the Apps Script URL in assets/config.js.</p></div></div>';
-    if (!cl.canEdit && window.IBT_GH) return '<div class="wrap section"><form class="a-login glass form" id="ghLogin"><div class="a-brand"><span class="mark"></span><b>IBT CMS · লগইন</b></div><p class="muted" style="margin:0">ওয়েবসাইটের লেখা, ছবি, রেজিস্ট্রেশন, দানের তথ্য সবকিছু এখান থেকে বদলানো যায়। প্রবেশের জন্য GitHub অ্যাক্সেস টোকেন দিন।</p><div class="field"><label for="ghTok">GitHub টোকেন</label><input class="input" id="ghTok" type="password" required autocomplete="off" dir="ltr" placeholder="github_pat_…"></div><label class="chk"><input type="checkbox" id="ghKeep"> <span>এই ডিভাইসে মনে রাখো</span></label><button class="btn primary" type="submit">প্রবেশ করুন</button><div class="out"></div><details class="a-help"><summary>টোকেন কীভাবে পাবেন?</summary><ol><li>GitHub-এ লগইন করে <a href="https://github.com/settings/personal-access-tokens/new" target="_blank" rel="noopener">Fine-grained token</a> পেজ খুলুন।</li><li>Repository access: শুধু <b>' + esc(window.IBT_GH.owner + "/" + window.IBT_GH.repo) + '</b>।</li><li>Permissions → Repository → <b>Contents: Read and write</b>।</li><li>Generate করে টোকেনটি এখানে বসান। টোকেন শুধু আপনার ব্রাউজারে থাকে।</li></ol><p class="faint">প্রকাশ করার ১–২ মিনিট পর সাইটে পরিবর্তন দেখা যায়।</p></details></form></div>';
+    if (!cl.canEdit && window.IBT_GH) return '<div class="wrap section"><form class="a-login glass form" id="ghLogin"><div class="a-brand"><span class="mark"></span><b>IBT CMS · লগইন</b></div><p class="muted" style="margin:0">ওয়েবসাইটের লেখা, ছবি, রেজিস্ট্রেশন, দানের তথ্য সবকিছু এখান থেকে বদলানো যায়। প্রবেশের জন্য GitHub অ্যাক্সেস টোকেন দিন।</p><div class="field"><label for="ghTok">GitHub টোকেন</label><input class="input" id="ghTok" type="password" required autocomplete="off" dir="ltr" placeholder="github_pat_…"></div><label class="chk"><input type="checkbox" id="ghKeep"> <span>এই ডিভাইসে মনে রাখো</span></label><button class="btn primary" type="submit">প্রবেশ করুন</button><div class="out"></div><details class="a-help"><summary>টোকেন কীভাবে পাবেন?</summary><ol><li>GitHub-এ লগইন করে <a href="https://github.com/settings/personal-access-tokens/new" target="_blank" rel="noopener">Fine-grained token</a> পেজ খুলুন।</li><li>Repository access: শুধু <b>' + esc(window.IBT_GH.owner + "/" + window.IBT_GH.repo) + '</b>।</li><li><b>Permissions</b> অংশে <b>+ Add permissions</b> (অথবা Repository permissions) → <b>Contents</b> → Access: <b>Read and write</b>।</li><li>Generate করে টোকেনটি এখানে বসান। টোকেন শুধু আপনার ব্রাউজারে থাকে।</li></ol><p class="faint">প্রকাশ করার ১–২ মিনিট পর সাইটে পরিবর্তন দেখা যায়।</p></details></form></div>';
     if (!cl.canEdit && window.IBT_GAS) return '<div class="wrap section"><form class="glass form" id="gasLogin" style="padding:28px;max-width:440px;margin:0 auto"><div class="a-brand"><span class="mark"></span><b>IBT CMS · লগইন</b></div><div class="field"><label for="gName">আপনার নাম</label><input class="input" id="gName" required autocomplete="name"></div><div class="field"><label for="gPass">পাসওয়ার্ড</label><input class="input" id="gPass" type="password" required autocomplete="current-password"></div><button class="btn primary" type="submit">প্রবেশ করুন</button><div class="out"></div></form></div>';
     if (!cl.canEdit) return '<div class="wrap section"><div class="glass" style="padding:28px;max-width:720px"><h1>অ্যাডমিন প্যানেল</h1><p class="muted">এই অংশে প্রবেশের জন্য Editor বা Owner অনুমতি প্রয়োজন।</p></div></div>';
     return '<div class="admin"><aside class="a-side glass dense"><div class="a-brand"><span class="mark"></span><b>IBT CMS</b></div>' +
@@ -170,10 +170,10 @@
       GROUPS.map(function (g) { return '<div class="a-group">' + esc(g[1]) + "</div>" + Object.keys(SCHEMA).filter(function (k) { return SCHEMA[k].group === g[0]; }).map(function (k) { return '<button class="a-nav" data-key="' + k + '">' + esc(SCHEMA[k].label) + '<i class="a-flag" data-flag="' + k + '"></i></button>'; }).join(""); }).join("") +
       (window.IBT_GAS || window.IBT_GH ? '<button class="a-nav" data-a="logout">' + icon("x") + "লগআউট</button>" : "") +
       '<div class="a-group">টুলস</div><button class="a-nav" data-view="inbox">' + icon("mail") + 'ইনবক্স (ফর্ম জমা)</button><button class="a-nav" data-view="assets">' + icon("doc") + 'মিডিয়া লাইব্রেরি</button><button class="a-nav" data-view="audit">' + icon("cal") + 'অডিট লগ</button><button class="a-nav" data-view="io">' + icon("copy") + 'ইমপোর্ট / এক্সপোর্ট</button><button class="a-nav" data-view="help">' + icon("dawah") + "সহায়িকা</button>" +
-      '</aside><section class="a-main"><div class="a-top glass"><div><div class="a-title" id="aTitle"></div><div class="faint" id="aStatus"></div></div><div class="a-actions" id="aActions"></div></div><div id="aBody"></div></section></div><div class="a-modal" id="aModal"></div><input type="file" id="aFile" hidden>';
+      '</aside><section class="a-main"><div class="a-top glass"><div><div class="a-title" id="aTitle"></div><div class="faint" id="aStatus"></div></div><div class="a-actions" id="aActions"></div></div><div id="aErr" aria-live="assertive"></div><div id="aBody"></div></section></div><div class="a-modal" id="aModal"></div><input type="file" id="aFile" hidden>';
   }
   function setView(v, key) {
-    A.view = v; if (key) A.key = key;
+    A.view = v; if (key) A.key = key; var ex = $("#aErr", A.root); if (ex) ex.innerHTML = "";
     var pk = $("#aPick", A.root); if (pk) pk.value = v === "edit" ? "key:" + A.key : "view:" + v;
     $$(".a-nav", A.root).forEach(function (b) { b.classList.toggle("on", (v === "edit" && b.dataset.key === A.key) || b.dataset.view === v); });
     if (v === "edit") renderEditor(); else if (v === "inbox") renderInbox(); else if (v === "assets") renderAssets(); else if (v === "audit") renderAudit(); else if (v === "io") renderIO(); else if (v === "help") renderHelp(); else renderDash();
@@ -200,10 +200,18 @@
     $("#aTitle").textContent = "ড্যাশবোর্ড"; $("#aStatus").textContent = "সাইটের বর্তমান অবস্থা"; $("#aActions").innerHTML = '<a class="btn sm" href="#home">সাইট দেখুন</a>';
     var regsOpen = (c.registrations || []).filter(function (r) { return IBT.regStatus(r) === "open"; });
     var pending = Object.keys(SCHEMA).filter(function (k) { return A.drafts[k]; });
-    var rev = []; Object.keys(SCHEMA).forEach(function (k) { var v = c[k]; (Array.isArray(v) ? v : [v]).forEach(function (o) { if (o && o.review) rev.push(SCHEMA[k].label + ": " + (IBT.tr(o.name || o.title, "bn") || "")); }); });
-    $("#aBody").innerHTML = '<div class="grid g4">' + [["চলমান রেজিস্ট্রেশন", regsOpen.length], ["ড্রাফট (প্রকাশের অপেক্ষায়)", pending.length], ["অনুমোদন বাকি", rev.length], ["ভিডিও", (c.videos || []).length]].map(function (x) { return '<div class="glass" style="padding:18px"><div class="faint">' + x[0] + '</div><div style="font-size:2rem;font-weight:800">' + IBT.num(x[1]) + "</div></div>"; }).join("") + "</div>" +
-      '<div class="grid g2" style="margin-top:16px"><div class="glass" style="padding:18px"><h3>অনুমোদনের অপেক্ষায় (review)</h3><ul class="check">' + (rev.length ? rev.map(function (r) { return "<li>" + esc(r) + "</li>"; }).join("") : "<li>—</li>") + '</ul></div><div class="glass" style="padding:18px"><h3>ড্রাফট</h3><ul class="check">' + (pending.length ? pending.map(function (k) { return '<li><a href="#admin" data-key="' + k + '">' + esc(SCHEMA[k].label) + "</a> · " + when(A.drafts[k]) + "</li>"; }).join("") : "<li>—</li>") + "</ul></div></div>" +
+    var rev = []; Object.keys(SCHEMA).forEach(function (k) { var v = c[k]; (Array.isArray(v) ? v : [v]).forEach(function (o) { if (o && o.review) { var nm = IBT.tr(o.name || o.title, IBT.state.lang === "bn" ? "bn" : "en") || IBT.tr(o.name || o.title, "bn") || ""; rev.push([k, SCHEMA[k].label + (nm ? ": " + nm : "")]); } }); });
+    $("#aBody").innerHTML = '<div id="aConn"></div><div class="grid g4">' + [["চলমান রেজিস্ট্রেশন", regsOpen.length], ["ড্রাফট (প্রকাশের অপেক্ষায়)", pending.length], ["অনুমোদন বাকি", rev.length], ["ভিডিও", (c.videos || []).length]].map(function (x) { return '<div class="glass" style="padding:18px"><div class="faint">' + x[0] + '</div><div style="font-size:2rem;font-weight:800">' + IBT.num(x[1]) + "</div></div>"; }).join("") + "</div>" +
+      '<div class="grid g2" style="margin-top:16px"><div class="glass" style="padding:18px"><h3>অনুমোদনের অপেক্ষায় (review)</h3><ul class="check">' + (rev.length ? rev.map(function (r) { return '<li><a href="#admin" data-key="' + r[0] + '">' + esc(r[1]) + "</a></li>"; }).join("") : '<li class="a-none">কিছু বাকি নেই</li>') + '</ul></div><div class="glass" style="padding:18px"><h3>ড্রাফট</h3><ul class="check">' + (pending.length ? pending.map(function (k) { return '<li><a href="#admin" data-key="' + k + '">' + esc(SCHEMA[k].label) + "</a> · " + when(A.drafts[k]) + "</li>"; }).join("") : '<li class="a-none">কোনো ড্রাফট নেই</li>') + "</ul></div></div>" +
       '<div class="glass" style="padding:18px;margin-top:16px"><h3>দ্রুত কাজ</h3><div style="display:flex;gap:8px;flex-wrap:wrap"><button class="btn sm" data-key="registrations">+ নতুন রেজিস্ট্রেশন</button><button class="btn sm" data-key="news">+ সংবাদ</button><button class="btn sm" data-key="videos">+ ভিডিও</button><button class="btn sm" data-key="floors">নির্মাণ অগ্রগতি হালনাগাদ</button><button class="btn sm" data-view="inbox">ইনবক্স দেখুন</button></div></div>';
+    connCheck();
+  }
+  function connCheck() {
+    var box = $("#aConn", A.root); if (!box || !window.IBT_GH || !window.IBT_GH.check) return;
+    if (A.canWrite === undefined) { box.innerHTML = '<div class="notice info">GitHub সংযোগ যাচাই হচ্ছে…</div>'; window.IBT_GH.check().then(function (ok) { A.canWrite = ok; connCheck(); }, function () { A.canWrite = null; connCheck(); }); return; }
+    box.innerHTML = A.canWrite ? '<div class="notice ok a-conn">' + icon("check") + "<span>GitHub সংযুক্ত: <b>" + esc(window.IBT_GH.login_name() || "") + "</b> · সেভ ও প্রকাশ করা যাবে।</span></div>"
+      : A.canWrite === false ? '<div class="notice err a-errbox"><b>এই টোকেন দিয়ে সেভ বা প্রকাশ করা যাবে না: রিপোজিটরিতে লেখার অনুমতি (Contents: Read and write) নেই।</b>' + tokenSteps() + "</div>"
+      : '<div class="notice info">GitHub সংযোগ যাচাই করা যায়নি (ইন্টারনেট দেখুন)।</div>';
   }
   function renderHelp() {
     $("#aTitle").textContent = "সহায়িকা"; $("#aStatus").textContent = "কীভাবে ব্যবহার করবেন"; $("#aActions").innerHTML = "";
@@ -301,19 +309,23 @@
   }
 
   // ---------- actions ----------
+  function auditEntry(doc, action, key) { var day = new Date().toISOString().slice(0, 10), b = doc.audit[day] || { entries: [] }; b.entries = (b.entries || []).concat([{ at: new Date().toISOString(), by: A.uid || "editor", action: action, key: key }]).slice(-500); doc.audit[day] = b; }
   function saveDraft(key) {
-    var db = cloud().db; return db.doc("drafts/" + key).set({ data: W(key), at: new Date().toISOString(), by: A.uid || "" }).then(function () { A.drafts[key] = { data: IBT.clone(W(key)), at: new Date().toISOString() }; A.dirty[key] = false; audit("draft", key); if (IBT.state.preview) applyPreview(); });
+    var db = cloud().db, body = { data: W(key), at: new Date().toISOString(), by: A.uid || "" };
+    if (db.tx) return db.tx(function (d) { d.drafts[key] = body; auditEntry(d, "draft", key); }, "draft " + key).then(function () { A.drafts[key] = { data: IBT.clone(body.data), at: body.at }; A.dirty[key] = false; if (IBT.state.preview) applyPreview(); });
+    return db.doc("drafts/" + key).set({ data: W(key), at: new Date().toISOString(), by: A.uid || "" }).then(function () { A.drafts[key] = { data: IBT.clone(W(key)), at: new Date().toISOString() }; A.dirty[key] = false; audit("draft", key); if (IBT.state.preview) applyPreview(); });
   }
   function publish(key) {
     var db = cloud().db, body = { data: W(key), at: new Date().toISOString(), by: A.uid || "" };
+    if (db.tx) return db.tx(function (d) { d.cms[key] = body; delete d.drafts[key]; auditEntry(d, "publish", key); }, "publish " + key).then(function () { A.published[key] = body; A.dirty[key] = false; delete A.drafts[key]; });
     return db.doc("cms/" + key).set(body).then(function () { A.published[key] = body; A.dirty[key] = false; return db.doc("drafts/" + key).delete(); }).then(function () { delete A.drafts[key]; audit("publish", key); });
   }
   function applyPreview() { IBT.state.drafts = A.drafts; IBT.applyCloud(); }
   function act(a) {
     var key = A.key;
-    if (a === "save") return saveDraft(key).then(function () { IBT.toast("ড্রাফট সেভ হয়েছে"); renderEditor(); flags(); }, err);
-    if (a === "publish") return confirmBox("“" + SCHEMA[key].label + "” প্রকাশ করবেন? সবাই পরিবর্তন দেখতে পাবে।", function () { publish(key).then(function () { IBT.toast("প্রকাশিত হয়েছে"); IBT.published[key] = A.published[key]; IBT.applyCloud(); renderEditor(); flags(); }, err); });
-    if (a === "discard") return confirmBox("ড্রাফট বাতিল করবেন?", function () { cloud().db.doc("drafts/" + key).delete().then(function () { delete A.drafts[key]; delete A.work[key]; A.dirty[key] = false; audit("discard", key); renderEditor(); flags(); }, err); });
+    if (a === "save") { if (!busy("save", "সেভ হচ্ছে…")) return; return saveDraft(key).then(function () { done(); IBT.toast("ড্রাফট সেভ হয়েছে", "ok"); renderEditor(); flags(); }, function (e) { done(); err(e); }); }
+    if (a === "publish") return confirmBox("“" + SCHEMA[key].label + "” প্রকাশ করবেন? সবাই পরিবর্তন দেখতে পাবে।", function () { if (!busy("publish", "প্রকাশ হচ্ছে…")) return; publish(key).then(function () { done(); IBT.toast("প্রকাশিত হয়েছে। ১–২ মিনিটের মধ্যে সাইটে দেখা যাবে।", "ok"); IBT.published[key] = A.published[key]; IBT.applyCloud(); renderEditor(); flags(); }, function (e) { done(); err(e); }); });
+    if (a === "discard") return confirmBox("ড্রাফট বাতিল করবেন?", function () { var db = cloud().db; (db.tx ? db.tx(function (d) { delete d.drafts[key]; auditEntry(d, "discard", key); }, "discard " + key) : db.doc("drafts/" + key).delete().then(function () { audit("discard", key); })).then(function () { delete A.drafts[key]; delete A.work[key]; A.dirty[key] = false; IBT.toast("ড্রাফট বাতিল হয়েছে", "ok"); renderEditor(); flags(); }, err); });
     if (a === "reset") return confirmBox("মূল (ক্যাটালগ-ভিত্তিক) কনটেন্টে ফিরে যাবেন? এটি ড্রাফট হিসেবে লোড হবে।", function () { A.work[key] = IBT.clone(IBT.getDefaults()[key]); A.dirty[key] = true; renderEditor(); flags(); });
     if (a === "preview") { IBT.state.preview = !IBT.state.preview; applyPreview(); IBT.toast(IBT.state.preview ? "প্রিভিউ চালু: সাইটে ড্রাফট দেখা যাচ্ছে (শুধু আপনার জন্য)" : "প্রিভিউ বন্ধ"); return; }
     if (a === "logout") { A.loaded = false; (window.IBT_GAS || window.IBT_GH).logout(); IBT.refreshAuth().then(function () { window.IBTAdmin.render(A.root); }); return; }
@@ -325,7 +337,26 @@
       return keys.reduce(function (p, k) { return p.then(function () { A.work[k] = data[k]; return saveDraft(k); }); }, Promise.resolve()).then(function () { audit("import", "all"); IBT.toast(keys.length + "টি অংশ ড্রাফট হিসেবে ইমপোর্ট হয়েছে"); flags(); }, err);
     }
   }
-  function err(e) { IBT.toast("ব্যর্থ: " + ((e && (e.code || e.message)) || "অজানা ত্রুটি")); }
+  var A_busy = null;
+  function busy(a, label) { if (A_busy) return false; var b = $('[data-a="' + a + '"]', A.root); A_busy = { b: b, t: b && b.innerHTML }; $$("#aActions .btn", A.root).forEach(function (x) { x.disabled = true; }); if (b) b.innerHTML = '<span class="a-spin"></span>' + esc(label); return true; }
+  function done() { if (A_busy && A_busy.b && document.body.contains(A_busy.b)) A_busy.b.innerHTML = A_busy.t; $$("#aActions .btn", A.root).forEach(function (x) { x.disabled = false; }); A_busy = null; }
+  var ERRS = {
+    "no-write": "সেভ হয়নি: এই GitHub টোকেনে রিপোজিটরিতে লেখার অনুমতি নেই। টোকেনের Permissions-এ Contents: Read and write দিন (নিচের ধাপ দেখুন)।",
+    "token-invalid": "সেভ হয়নি: টোকেনটি সঠিক নয় বা মেয়াদ শেষ। আবার লগইন করুন।",
+    "not-found": "সেভ হয়নি: টোকেনে এই রিপোজিটরির অ্যাক্সেস দেওয়া নেই (Repository access-এ ibt-website বাছুন)।",
+    "conflict": "সেভ হয়নি: একই সময়ে অন্য কেউ পরিবর্তন করেছেন। কয়েক সেকেন্ড পর আবার চেষ্টা করুন।",
+    "rate-limit": "সেভ হয়নি: GitHub-এর সীমা পূর্ণ হয়েছে। কিছুক্ষণ পর আবার চেষ্টা করুন।",
+    "network": "সেভ হয়নি: ইন্টারনেট সংযোগ পাওয়া যায়নি। সংযোগ দেখে আবার চেষ্টা করুন।",
+    "github-down": "সেভ হয়নি: GitHub এখন সাড়া দিচ্ছে না। কিছুক্ষণ পর আবার চেষ্টা করুন।"
+  };
+  function err(e) {
+    var code = e && e.code, msg = ERRS[code] || ("সেভ হয়নি: " + ((e && e.message) || "অজানা ত্রুটি"));
+    IBT.toast(msg, "err");
+    var t = $("#aErr", A.root); if (t) { t.innerHTML = '<div class="notice err a-errbox"><b>' + esc(msg) + "</b>" + (code === "no-write" || code === "not-found" ? tokenSteps() : "") + '<button class="icon-btn" data-errx aria-label="বন্ধ">' + icon("x") + "</button></div>"; t.scrollIntoView({ block: "nearest" }); }
+  }
+  function tokenSteps() {
+    return '<ol class="a-steps"><li><a href="https://github.com/settings/personal-access-tokens" target="_blank" rel="noopener">GitHub → Settings → Developer settings → Fine-grained tokens</a> খুলে আপনার টোকেনে ক্লিক করুন, তারপর <b>Edit</b>।</li><li><b>Repository access</b>: Only select repositories → <b>' + esc(window.IBT_GH ? window.IBT_GH.owner + "/" + window.IBT_GH.repo : "") + '</b>।</li><li><b>Permissions</b> অংশে <b>+ Add permissions</b> (অথবা Repository permissions) → <b>Contents</b> বাছুন → Access: <b>Read and write</b>।</li><li>সবশেষে <b>Update</b> চাপুন। টোকেন একই থাকবে; এই পেজ রিফ্রেশ করে আবার সেভ করুন।</li></ol>';
+  }
   function modal(html) { var m = $("#aModal"); m.innerHTML = '<div class="a-modal-in glass dense">' + html + "</div>"; m.classList.add("open"); }
   function closeModal() { $("#aModal").classList.remove("open"); $("#aModal").innerHTML = ""; }
   function confirmBox(msg, ok) { modal("<p>" + esc(msg) + '</p><div style="display:flex;gap:8px"><button class="btn primary sm" data-ok>হ্যাঁ</button><button class="btn sm" data-close>না</button></div>'); A.okCb = ok; }
@@ -352,6 +383,7 @@
   }
   function onClick(e) {
     var t = e.target, b;
+    if (t.closest("[data-errx]")) { var ex = $("#aErr", A.root); if (ex) ex.innerHTML = ""; return; }
     if ((b = t.closest("[data-key]")) && A.root.contains(b)) { e.preventDefault(); setView("edit", b.dataset.key); return; }
     if ((b = t.closest("[data-view]"))) { setView(b.dataset.view); return; }
     if ((b = t.closest("[data-a]"))) { act(b.dataset.a); return; }
@@ -398,14 +430,14 @@
     render: function (root) { ensureSchema();
       if (!root) return; A.root = root; root.innerHTML = shell();
       var gl = $("#ghLogin", root);
-      if (gl) gl.addEventListener("submit", function (e) { e.preventDefault(); var out = $(".out", gl); out.innerHTML = '<div class="notice info">যাচাই হচ্ছে…</div>'; window.IBT_GH.login($("#ghTok").value, $("#ghKeep").checked).then(function () { return IBT.refreshAuth(); }).then(function () { window.IBTAdmin.render(root); }, function (er) { out.innerHTML = '<div class="notice err">' + (er && er.message === "no-write" ? "এই টোকেনে রিপোজিটরিতে লেখার অনুমতি নেই (Contents: Read and write দিন)।" : "টোকেন সঠিক নয় বা মেয়াদ শেষ।") + "</div>"; }); });
+      if (gl) gl.addEventListener("submit", function (e) { e.preventDefault(); var out = $(".out", gl); out.innerHTML = '<div class="notice info">যাচাই হচ্ছে…</div>'; window.IBT_GH.login($("#ghTok").value, $("#ghKeep").checked).then(function () { return IBT.refreshAuth(); }).then(function () { window.IBTAdmin.render(root); }, function (er) { out.innerHTML = er && er.message === "no-write" ? '<div class="notice err a-errbox" style="padding-inline-end:16px"><b>এই টোকেনে রিপোজিটরিতে লেখার অনুমতি নেই (Contents: Read and write দিন)।</b>' + tokenSteps() + "</div>" : '<div class="notice err">' + (er && er.code === "network" ? "ইন্টারনেট সংযোগ পাওয়া যায়নি।" : "টোকেন সঠিক নয় বা মেয়াদ শেষ।") + "</div>"; }); });
       var lf = $("#gasLogin", root);
       if (lf) lf.addEventListener("submit", function (e) { e.preventDefault(); var out = $(".out", lf); out.innerHTML = '<div class="notice info">যাচাই হচ্ছে…</div>'; window.IBT_GAS.login($("#gName").value, $("#gPass").value).then(function () { return IBT.refreshAuth(); }).then(function () { window.IBTAdmin.render(root); }, function (er) { out.innerHTML = '<div class="notice err">' + (er.code === "wrong_password" ? "পাসওয়ার্ড সঠিক নয়" : "লগইন ব্যর্থ: " + esc(er.message)) + "</div>"; }); });
       if (!cloud().db || !cloud().canEdit) return;
       Promise.resolve(cloud().user && cloud().user.id ? cloud().user.id() : null).then(function (id) { A.uid = id; });
       var fd = $("#aFind", root); if (fd) fd.addEventListener("input", function () { var q = fd.value.trim().toLowerCase(); $$(".a-side .a-nav[data-key]", root).forEach(function (b) { b.style.display = !q || (b.textContent + b.dataset.key).toLowerCase().indexOf(q) > -1 ? "" : "none"; }); });
       var pk = $("#aPick", root); if (pk) pk.addEventListener("change", function () { var v = pk.value.split(":"); if (v[0] === "key") setView("edit", v[1]); else setView(v[1]); window.scrollTo(0, 0); });
-      if (!A.bound) { document.addEventListener("input", function (e) { if (A.root && A.root.contains(e.target)) onInput(e); }); document.addEventListener("change", function (e) { if (A.root && A.root.contains(e.target) && (e.target.type === "checkbox" || e.target.tagName === "SELECT")) onInput(e); }); document.addEventListener("click", function (e) { if (A.root && document.body.contains(A.root) && (A.root.contains(e.target) || e.target.closest("#aModal"))) onClick(e); }); A.bound = true; }
+      if (!A.bound) { document.addEventListener("input", function (e) { if (A.root && A.root.contains(e.target)) onInput(e); }); document.addEventListener("change", function (e) { if (A.root && A.root.contains(e.target) && (e.target.type === "checkbox" || e.target.tagName === "SELECT")) onInput(e); }); document.addEventListener("click", function (e) { if (A.root && document.body.contains(A.root) && (A.root.contains(e.target) || e.target.closest("#aModal"))) onClick(e); }); var hb = function () { var h = document.querySelector("header"); if (h) document.documentElement.style.setProperty("--hdr-b", Math.max(0, Math.round(h.getBoundingClientRect().bottom)) + "px"); }; var hq = 0; window.addEventListener("scroll", function () { if (!hq) hq = requestAnimationFrame(function () { hq = 0; hb(); }); }, { passive: true }); window.addEventListener("resize", hb); setTimeout(hb, 50); document.addEventListener("keydown", function (e) { if ((e.ctrlKey || e.metaKey) && (e.key === "s" || e.key === "S") && A.root && document.body.contains(A.root) && A.view === "edit") { e.preventDefault(); act("save"); } }); A.bound = true; }
       $("#aBody", root).innerHTML = '<div class="glass" style="padding:18px">লোড হচ্ছে…</div>';
       var keep = A.loaded && A.view; (keep ? Promise.resolve() : loadAll()).then(function () { A.loaded = true; if (keep) setView(A.view, A.key); else setView("dash"); }, function () { $("#aBody", root).innerHTML = '<div class="notice err">ডাটাবেস লোড করা যায়নি।</div>'; });
     },

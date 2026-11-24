@@ -4,7 +4,7 @@
    Text typed into fields (inputs, textareas, JSON editors) is never touched. */
 (function () {
   var IBT = window.IBT; if (!IBT) return;
-  var BN = /[ঀ-৿]/;
+  var BN = /[\u0980-\u09FF\u0964\u0965]/;
   var D = window.IBT_ADMIN_EN || {}, MON = window.IBT_ADMIN_MON || {};
   var CM = null, CMsrc = null;
 
@@ -42,7 +42,7 @@
     if (k > 0) return s.split(" · ").map(function (p) { return BN.test(p) ? core(p) : p; }).join(" · ");
     var t = s;
     for (var mo in MON) if (t.indexOf(mo) >= 0) t = t.split(mo).join(MON[mo]);
-    return latin(t);
+    return latin(t).replace(/\u0964/g, ".");
   }
   function tx(s) {
     if (!s || !BN.test(s)) return s;

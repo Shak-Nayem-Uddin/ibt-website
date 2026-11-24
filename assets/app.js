@@ -53,7 +53,7 @@
     try { return new Intl.DateTimeFormat((state.lang === "en" ? "en" : state.lang === "bn" ? "bn" : "ar") + "-u-ca-islamic-umalqura", { day: "numeric", month: "long", year: "numeric" }).format(d).replace(/\s*যুগ$/, " হিজরি"); } catch (e) { return ""; }
   }
   IBT.fdate = fdate; IBT.num = num; IBT.hijri = hijri;
-  function toast(msg) { var t = $("#toast"); t.textContent = msg; t.classList.add("show"); clearTimeout(t._h); t._h = setTimeout(function () { t.classList.remove("show"); }, 2600); }
+  function toast(msg, type) { var t = $("#toast"); t.textContent = msg; t.className = "toast" + (type ? " t-" + type : "") + " show"; t.setAttribute("role", type === "err" ? "alert" : "status"); clearTimeout(t._h); t._h = setTimeout(function () { t.classList.remove("show"); }, type === "err" ? 7000 : Math.max(2600, Math.min(6000, String(msg).length * 70))); t.onclick = function () { t.classList.remove("show"); }; }
   IBT.toast = toast;
   function clone(o) { return JSON.parse(JSON.stringify(o)); }
   IBT.clone = clone;
@@ -810,7 +810,7 @@
   // a preloaded content.json can otherwise arrive while later scripts are still downloading
   var domReady = new Promise(function (res) { if (document.readyState !== "loading") res(); else document.addEventListener("DOMContentLoaded", res); });
   var vReq = fetch("data/videos.json?h=" + Math.floor(Date.now() / 36e5)).then(function (r) { return r.json(); }).then(function (d) { V = d || V; }, function () { });
-  fetch("data/content.json?v=7.6").then(function (r) { return r.json(); }).then(function (d) { return Promise.all([vReq, domReady]).then(function () { boot(d); }); }).catch(function () {
+  fetch("data/content.json?v=7.7").then(function (r) { return r.json(); }).then(function (d) { return Promise.all([vReq, domReady]).then(function () { boot(d); }); }).catch(function () {
     $("#main").innerHTML = '<div class="wrap section"><h1>Imam Bukhari Trust</h1><p>Content could not be loaded. Please refresh.</p></div>';
   });
 })();
