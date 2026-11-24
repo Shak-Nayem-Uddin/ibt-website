@@ -111,6 +111,399 @@
    },
    "at": "2026-11-24T03:11:03.469Z",
    "by": "gh:Shak-Nayem-Uddin"
+  },
+  "home": {
+   "data": {
+    "heroEyebrow": {
+     "bn": "ইমাম বুখারী ট্রাস্ট · উত্তরা, ঢাকা · ২০১৭ থেকে",
+     "en": "Imam Bukhari Trust · Uttara, Dhaka · since 2017",
+     "ar": "وقف الإمام البخاري · أُترا، دكا · منذ 2017"
+    },
+    "heroTitle": {
+     "bn": "ঈমান. ইলম. খিদমাহ",
+     "en": "Faith. Knowledge. Service.",
+     "ar": "إيمان. علم. خدمة."
+    },
+    "heroText": {
+     "bn": "কুরআন ও বিশুদ্ধ সুন্নাহর আলোকে একটি জ্ঞানভিত্তিক সমাজ গড়ার লক্ষ্যে শিক্ষা, গবেষণা, দাওয়াহ, মাসজিদকেন্দ্রিক কমিউনিটি ও সমাজকল্যাণে কাজ করছে ইমাম বুখারী ট্রাস্ট।",
+     "en": "Building a knowledge-based society through the Qur'an and authentic Sunnah: education, research, Dawah, a masjid-centred community and social welfare.",
+     "ar": "نحو مجتمع قائم على المعرفة في ضوء القرآن والسنة الصحيحة: تعليم وبحث ودعوة ومجتمع حول المسجد ورعاية اجتماعية."
+    },
+    "heroCta1": {
+     "bn": "আমাদের গল্প দেখুন",
+     "en": "Watch our story",
+     "ar": "شاهد قصتنا"
+    },
+    "heroCta2": {
+     "bn": "মাসজিদ নির্মাণে অংশ নিন",
+     "en": "Support the Masjid",
+     "ar": "ساهم في بناء المسجد"
+    },
+    "heroImage": "img/design-night-1.webp",
+    "heroSlides": [
+     {
+      "image": "img/design-night-1.webp",
+      "caption": {
+       "bn": "ইমাম বুখারী জামে মাসজিদ কমপ্লেক্স · স্থাপত্য নকশা",
+       "en": "Imam Bukhari Jame Masjid Complex · architectural design",
+       "ar": "مجمع جامع الإمام البخاري · التصميم المعماري"
+      },
+      "kind": "design"
+     },
+     {
+      "image": "img/first-prayer.webp",
+      "caption": {
+       "bn": "নির্মাণাধীন মাসজিদে সালাত",
+       "en": "Prayer in the masjid under construction",
+       "ar": "الصلاة في المسجد قيد الإنشاء"
+      },
+      "kind": "photo"
+     },
+     {
+      "image": "img/design-aerial.webp",
+      "caption": {
+       "bn": "মাসজিদ ও একাডেমিক ক্যাম্পাস · স্থাপত্য নকশা",
+       "en": "Masjid and academic campus · architectural design",
+       "ar": "المسجد والحرم الأكاديمي · التصميم المعماري"
+      },
+      "kind": "design"
+     },
+     {
+      "image": "img/winter-2024-distribution.webp",
+      "caption": {
+       "bn": "শীতবস্ত্র বিতরণ প্রকল্প ২০২৪",
+       "en": "Winter clothing distribution 2024",
+       "ar": "توزيع كسوة الشتاء 2024"
+      },
+      "kind": "photo"
+     },
+     {
+      "image": "img/halaqa-class.webp",
+      "caption": {
+       "bn": "কুল্লিয়াতুল কুরআনে ক্লাস",
+       "en": "A class at Kulliyatul Quran",
+       "ar": "درس في كلية القرآن"
+      },
+      "kind": "photo"
+     },
+     {
+      "image": "img/construction-structure.webp",
+      "caption": {
+       "bn": "নির্মাণকাজ, নিউ ঢাকা সিটি",
+       "en": "Construction at New Dhaka City",
+       "ar": "أعمال البناء في مدينة دكا الجديدة"
+      },
+      "kind": "photo"
+     }
+    ],
+    "heroGalleryNight": [
+     "img/design-night-1.webp",
+     "img/design-night-2.webp",
+     "img/design-night-3.webp",
+     "img/design-front.webp",
+     "img/design-aerial.webp",
+     "img/design-portal.webp",
+     "img/design-courtyard.webp",
+     "img/design-landscape.webp"
+    ],
+    "heroGallery": [
+     "img/design-front.webp",
+     "img/design-side.webp",
+     "img/design-aerial.webp",
+     "img/design-portal.webp",
+     "img/design-entrance.webp",
+     "img/design-courtyard.webp",
+     "img/design-plaza.webp",
+     "img/design-landscape.webp",
+     "img/design-night-1.webp"
+    ],
+    "heroStory": "ibjmc",
+    "aboutTitle": {
+     "bn": "ইমাম বুখারী ট্রাস্ট সম্পর্কে",
+     "en": "About Imam Bukhari Trust",
+     "ar": "عن وقف الإمام البخاري"
+    },
+    "aboutText": {
+     "bn": "ইমাম বুখারী ট্রাস্ট একটি অলাভজনক, বহুমুখী ইসলামী প্রতিষ্ঠান। কুরআন ও বিশুদ্ধ সুন্নাহর আলোকে শিক্ষা, গবেষণা, দাওয়াহ ও সমাজকল্যাণের মাধ্যমে আমরা ইসলামের প্রকৃত শিক্ষা মানুষের কাছে পৌঁছে দিতে, দৈনন্দিন জীবনে এর ব্যবহারিক প্রয়োগ দৃশ্যমান করতে এবং প্রতিটি প্রজন্মের কাছে ইসলামকে প্রাসঙ্গিক রাখতে কাজ করি। ১ অক্টোবর ২০১৭ ধলেশ্বরী নদীর তীরে ট্রাস্টের আনুষ্ঠানিক কার্যক্রম শুরু হয়।",
+     "en": "Imam Bukhari Trust is a non-profit, multi-disciplinary Islamic institution. Guided by the Qur'an and authentic Sunnah, it works through education, research, Dawah and social welfare to share the authentic teachings of Islam, make their practice visible in daily life and keep Islam relevant to every generation. The Trust formally began its work on 1 October 2017 on the bank of the Dhaleshwari River.",
+     "ar": "وقف الإمام البخاري مؤسسة إسلامية غير ربحية متعددة المجالات، تعمل في ضوء القرآن والسنة الصحيحة من خلال التعليم والبحث والدعوة والرعاية الاجتماعية، لنشر تعاليم الإسلام الصحيحة وإظهار تطبيقها في الحياة اليومية وإبقاء الإسلام حاضرًا لدى كل جيل. بدأ الوقف أعماله رسميًا في 1 أكتوبر 2017 على ضفة نهر دهاليشوري."
+    },
+    "aboutImage": "img/chairman-speech.webp",
+    "visionTitle": {
+     "bn": "আমাদের ভিশন",
+     "en": "Our vision",
+     "ar": "رؤيتنا"
+    },
+    "visionText": {
+     "bn": "এমন একটি জ্ঞানভিত্তিক সমাজ, যেখানে শিক্ষা, গবেষণা, গবেষণাভিত্তিক দাওয়াহ এবং সামাজিক ও শিক্ষামূলক উদ্যোগ মানুষকে কুরআন ও সুন্নাহর সঠিক উপলব্ধি, অনুশীলন ও নৈতিকতার পথে এগিয়ে নেবে।",
+     "en": "A knowledge-based society in which education, research, research-based Dawah and social and educational initiatives lead people to a sound understanding and practice of the Qur'an and Sunnah and to the ethics they teach.",
+     "ar": "مجتمع قائم على المعرفة، يقود فيه التعليم والبحث والدعوة القائمة على البحث والمبادرات الاجتماعية والتعليمية الناسَ إلى الفهم الصحيح للقرآن والسنة والعمل بهما والتخلق بأخلاقهما."
+    },
+    "pillars": [
+     {
+      "icon": "research",
+      "title": {
+       "bn": "গবেষণা",
+       "en": "Research",
+       "ar": "البحث"
+      },
+      "text": {
+       "bn": "সমকালীন বিষয়ে কুরআন-সুন্নাহভিত্তিক গবেষণা, সেমিনার ও নীতিনির্ধারণী সংলাপ।",
+       "en": "Qur'an-and-Sunnah-based research on contemporary issues, seminars and policy dialogue.",
+       "ar": "بحوث في القضايا المعاصرة على ضوء الكتاب والسنة، وندوات وحوار في السياسات."
+      },
+      "link": "#init-research",
+      "image": "img/sunnah-conference-2024.webp"
+     },
+     {
+      "icon": "education",
+      "title": {
+       "bn": "ইসলামী শিক্ষা",
+       "en": "Islamic Education",
+       "ar": "التعليم الإسلامي"
+      },
+      "text": {
+       "bn": "শিশু থেকে উচ্চশিক্ষা পর্যন্ত বিশুদ্ধ আকীদাভিত্তিক ও আরবি ভাষাকেন্দ্রিক শিক্ষা।",
+       "en": "Authentic, Arabic-centred Islamic education from childhood to higher studies.",
+       "ar": "تعليم إسلامي أصيل محوره اللغة العربية من الطفولة إلى الدراسات العليا."
+      },
+      "link": "#institutions",
+      "image": "img/halaqa-class.webp"
+     },
+     {
+      "icon": "dawah",
+      "title": {
+       "bn": "দাওয়াহ",
+       "en": "Dawah",
+       "ar": "الدعوة"
+      },
+      "text": {
+       "bn": "সাপ্তাহিক হালাকা, প্রশ্নোত্তর, কোর্স ও ডিজিটাল দাওয়াহর মাধ্যমে ইলম পৌঁছে দেওয়া।",
+       "en": "Weekly halaqa, Q&A, courses and digital Dawah that bring knowledge to people.",
+       "ar": "حلقات أسبوعية وأسئلة وأجوبة ودورات ودعوة رقمية لإيصال العلم إلى الناس."
+      },
+      "link": "#init-dawah",
+      "image": "img/chairman-speech.webp"
+     },
+     {
+      "icon": "masjid",
+      "title": {
+       "bn": "মাসজিদ কমপ্লেক্স",
+       "en": "Masjid Complex",
+       "ar": "مجمع المسجد"
+      },
+      "text": {
+       "bn": "মাসজিদ আন-নববীর আদলে মাসজিদকেন্দ্রিক দ্বীনি কমিউনিটি গড়ে তোলা।",
+       "en": "Building a masjid-centred community in the light of Masjid an-Nabawi.",
+       "ar": "بناء مجتمعٍ إيماني متمحورٍ حول المسجد على هدي المسجد النبوي."
+      },
+      "link": "#project-ibjmc",
+      "image": "img/first-prayer.webp"
+     },
+     {
+      "icon": "social",
+      "title": {
+       "bn": "সমাজকল্যাণ",
+       "en": "Social welfare",
+       "ar": "الرعاية الاجتماعية"
+      },
+      "text": {
+       "bn": "ত্রাণ, পুনর্বাসন, কুরবানি, ইফতার ও শীতবস্ত্রের মাধ্যমে ইসলামের সৌন্দর্য দৃশ্যমান করা।",
+       "en": "Relief, rehabilitation, Qurbani, iftar and winter support that make the beauty of Islam visible.",
+       "ar": "إغاثة وإعادة تأهيل وأضاحٍ وإفطار وكسوة شتاء تُظهر جمال الإسلام."
+      },
+      "link": "#init-welfare",
+      "image": "img/winter-2024-distribution.webp"
+     }
+    ],
+    "spotlightTitle": {
+     "bn": "ইমাম বুখারী জামে মাসজিদ কমপ্লেক্স",
+     "en": "Imam Bukhari Jame Masjid Complex",
+     "ar": "مجمع جامع الإمام البخاري"
+    },
+    "spotlightText": {
+     "bn": "“আল্লাহর কাছে সবচেয়ে প্রিয় স্থান মাসজিদ।” মদীনায় পৌঁছে রাসূলুল্লাহ ﷺ প্রথমেই মাসজিদ নির্মাণের কাজ শুরু করেছিলেন। এই অনুপ্রেরণায়, সুন্নাহর আলোকে একটি মাসজিদকেন্দ্রিক দ্বীনি কমিউনিটি গড়ার লক্ষ্যে কমপ্লেক্সটির নির্মাণকাজ চলছে। ইনশাআল্লাহ এটি হবে দাওয়াহ, শিক্ষা, সেবা ও তারবিয়াহর কেন্দ্র।",
+     "en": "“The most beloved places to Allah are the masjids.” On reaching Madinah, the Messenger of Allah ﷺ first began building a masjid. In that spirit, the complex is being built to form a masjid-centred community in the light of the Sunnah. In sha Allah it will be a centre for Dawah, education, service and tarbiyah.",
+     "ar": "المساجد أحب البقاع إلى الله كما أخبر النبي ﷺ، وأول ما بدأ به رسول الله ﷺ حين وصل المدينة بناء المسجد. وعلى هذا النهج يُبنى المجمع لتكوين مجتمع متمحور حول المسجد في ضوء السنة، ليكون بإذن الله مركزًا للدعوة والتعليم والخدمة والتربية."
+    },
+    "spotlightImage": "img/design-masjid-front.webp",
+    "quote": {
+     "text": {
+      "bn": "“যে ব্যক্তি আল্লাহর সন্তুষ্টির জন্য একটি মাসজিদ নির্মাণ করে, আল্লাহ তার জন্য জান্নাতে অনুরূপ একটি ঘর নির্মাণ করেন।”",
+      "en": "“Whoever builds a masjid seeking the pleasure of Allah, Allah will build for him a house like it in Paradise.”",
+      "ar": ""
+     },
+     "ref": {
+      "bn": "সহীহ বুখারী ৪৫০; সহীহ মুসলিম ৫৩৩",
+      "en": "Sahih al-Bukhari 450; Sahih Muslim 533",
+      "ar": "صحيح البخاري 450؛ صحيح مسلم 533"
+     },
+     "review": true
+    },
+    "facts": [
+     {
+      "value": "2017",
+      "plain": true,
+      "label": {
+       "bn": "সালে আনুষ্ঠানিক যাত্রা শুরু",
+       "en": "formal work began",
+       "ar": "انطلاق العمل رسميًا"
+      },
+      "asOf": "2026-02",
+      "source": {
+       "bn": "IBT ক্যাটালগ ২০২৬",
+       "en": "IBT Catalog 2026",
+       "ar": "كتالوج الوقف 2026"
+      },
+      "verified": true
+     },
+     {
+      "value": "225",
+      "label": {
+       "bn": "পাইলের কাজ সম্পন্ন (মাসজিদ ও একাডেমিক ভবন)",
+       "en": "piles completed (masjid & academic building)",
+       "ar": "خازوقًا مكتملًا (المسجد والمبنى الأكاديمي)"
+      },
+      "asOf": "2026-02",
+      "source": {
+       "bn": "IBT ক্যাটালগ ২০২৬",
+       "en": "IBT Catalog 2026",
+       "ar": "كتالوج الوقف 2026"
+      },
+      "verified": true
+     },
+     {
+      "value": "16800",
+      "label": {
+       "bn": "ঘণ্টা কুরআন-সুন্নাহভিত্তিক লেকচার ও দারস",
+       "en": "hours of Qur'an-and-Sunnah lectures",
+       "ar": "ساعة من الدروس والمحاضرات"
+      },
+      "asOf": "2026-02",
+      "source": {
+       "bn": "IBT ক্যাটালগ ২০২৬",
+       "en": "IBT Catalog 2026",
+       "ar": "كتالوج الوقف 2026"
+      },
+      "verified": true
+     },
+     {
+      "value": "6",
+      "label": {
+       "bn": "জন শিক্ষার্থী আন্তর্জাতিক বিশ্ববিদ্যালয়ে উচ্চশিক্ষায়",
+       "en": "students admitted to international universities",
+       "ar": "طلاب قُبلوا في جامعات دولية"
+      },
+      "asOf": "2026-02",
+      "source": {
+       "bn": "IBT ক্যাটালগ ২০২৬",
+       "en": "IBT Catalog 2026",
+       "ar": "كتالوج الوقف 2026"
+      },
+      "verified": true
+     }
+    ],
+    "factsSource": {
+     "bn": "",
+     "en": "",
+     "ar": ""
+    },
+    "impact2": {
+     "hero": {
+      "disp": {
+       "bn": "৩ কোটি+",
+       "en": "30M+",
+       "ar": "30 مليون+"
+      },
+      "label": {
+       "bn": "বার দেখা হয়েছে ফেসবুকে আমাদের ইসলামিক কনটেন্ট",
+       "en": "views of our Islamic content on Facebook",
+       "ar": "مشاهدة لمحتوانا الإسلامي على فيسبوك"
+      },
+      "sub": [
+       {
+        "bn": "২ লাখ ৩২ হাজার+ ইউটিউব ভিউ",
+        "en": "232K+ YouTube views",
+        "ar": "232 ألف+ مشاهدة على يوتيوب"
+       },
+       {
+        "bn": "৬৬০+ ভিডিও ও ডিজিটাল কনটেন্ট",
+        "en": "660+ videos and digital pieces",
+        "ar": "660+ فيديو ومحتوى رقمي"
+       },
+       {
+        "bn": "১৬টি সক্রিয় WhatsApp কমিউনিটি",
+        "en": "16 active WhatsApp communities",
+        "ar": "16 مجموعة واتساب نشطة"
+       }
+      ]
+     },
+     "items": [
+      {
+       "n": 16800,
+       "suf": "",
+       "icon": "clock",
+       "label": {
+        "bn": "ঘণ্টা কুরআন-সুন্নাহভিত্তিক লেকচার ও দারস",
+        "en": "hours of Qur'an-and-Sunnah lectures and dars",
+        "ar": "ساعة من الدروس والمحاضرات"
+       }
+      },
+      {
+       "n": 153,
+       "suf": "",
+       "icon": "dawah",
+       "label": {
+        "bn": "হালাকা, কোর্স ও আয়োজন (২০২২ থেকে)",
+        "en": "halaqas, courses and programmes since 2022",
+        "ar": "حلقة ودورة وبرنامجًا منذ 2022"
+       }
+      },
+      {
+       "n": 15300,
+       "suf": "+",
+       "icon": "family",
+       "label": {
+        "bn": "বার মানুষ অংশ নিয়েছেন আমাদের আয়োজনে",
+        "en": "recorded participations in our programmes",
+        "ar": "مشاركة مسجلة في برامجنا"
+       }
+      },
+      {
+       "n": 340,
+       "suf": "+",
+       "icon": "education",
+       "label": {
+        "bn": "জন ইসলামিক শর্ট-কোর্স সম্পন্ন করেছেন",
+        "en": "people completed Islamic short courses",
+        "ar": "أتموا دورات إسلامية قصيرة"
+       }
+      },
+      {
+       "n": 400,
+       "suf": "+",
+       "icon": "heart",
+       "label": {
+        "bn": "পরিবার পেয়েছে শীতবস্ত্র",
+        "en": "families received winter clothing",
+        "ar": "أسرة تلقت كسوة الشتاء"
+       }
+      },
+      {
+       "n": 6,
+       "suf": "",
+       "icon": "education",
+       "label": {
+        "bn": "জন শিক্ষার্থী আন্তর্জাতিক বিশ্ববিদ্যালয়ে",
+        "en": "students now at international universities",
+        "ar": "طلاب في جامعات دولية"
+       }
+      }
+     ]
+    }
+   },
+   "at": "2026-11-24T03:11:28.865Z",
+   "by": "gh:Shak-Nayem-Uddin"
   }
  },
  "drafts": {},
@@ -140,6 +533,12 @@
      "by": "gh:Shak-Nayem-Uddin",
      "action": "publish",
      "key": "settings"
+    },
+    {
+     "at": "2026-11-24T03:11:29.637Z",
+     "by": "gh:Shak-Nayem-Uddin",
+     "action": "publish",
+     "key": "home"
     }
    ]
   }
