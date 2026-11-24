@@ -109,7 +109,7 @@
     "officeMapUrl": "https://maps.app.goo.gl/WEHLhscz7LoNbkbS9",
     "officeMapLL": "23.8632774,90.3903917"
    },
-   "at": "2026-11-24T01:29:37.695Z",
+   "at": "2026-11-24T01:30:42.828Z",
    "by": "gh:Shak-Nayem-Uddin"
   }
  },
@@ -125,6 +125,12 @@
     },
     {
      "at": "2026-11-24T01:29:39.412Z",
+     "by": "gh:Shak-Nayem-Uddin",
+     "action": "publish",
+     "key": "settings"
+    },
+    {
+     "at": "2026-11-24T01:30:43.671Z",
      "by": "gh:Shak-Nayem-Uddin",
      "action": "publish",
      "key": "settings"
