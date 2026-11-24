@@ -137,7 +137,7 @@
       case "list":
         val = val || [];
         return '<div class="a-field"><div class="a-lbl">' + esc(lbl(key)) + ' <span class="chip muted">' + val.length + '</span></div><div class="a-sub">' + val.map(function (it, i) {
-          var tt = it && sch.title ? IBT.tr(it[sch.title], "bn") || IBT.tr(it[sch.title], "en") : "";
+          var tt = it && sch.title ? IBT.tr(it[sch.title], IBT.state.lang === "bn" ? "bn" : "en") || IBT.tr(it[sch.title], "bn") || IBT.tr(it[sch.title], "en") : "";
           return '<details class="a-item"' + (A.open && A.open === JSON.stringify(path.concat([i])) ? " open" : "") + '><summary><span class="a-num">' + (i + 1) + "</span><span>" + esc(tt || it.id || "(নতুন)") + "</span>" + listCtl(path, i) + '</summary><div class="a-item-body">' + Object.keys(sch.item).map(function (k) { return field(k, sch.item[k], (it || {})[k], path.concat([i, k])); }).join("") + "</div></details>";
         }).join("") + '<button class="btn sm" data-add="' + pid(path) + '">+ নতুন আইটেম</button></div></div>';
     }
@@ -180,7 +180,7 @@
     flags();
   }
   function flags() { Object.keys(SCHEMA).forEach(function (k) { var f = $('[data-flag="' + k + '"]', A.root); if (!f) return; f.className = "a-flag" + (A.dirty[k] ? " dirty" : A.drafts[k] ? " draft" : A.published[k] ? " pub" : ""); f.title = A.dirty[k] ? "অসংরক্ষিত পরিবর্তন" : A.drafts[k] ? "ড্রাফট আছে" : A.published[k] ? "প্রকাশিত" : "ডিফল্ট"; }); }
-  function when(o) { return o && o.at ? new Date(o.at).toLocaleString("bn-BD") : "—"; }
+  function when(o) { return o && o.at ? new Date(o.at).toLocaleString(IBT.state.lang === "bn" ? "bn-BD" : "en-GB") : "—"; }
   function renderEditor() {
     var key = A.key, sc = SCHEMA[key], w = W(key);
     $("#aTitle").textContent = sc.label;
@@ -316,7 +316,7 @@
     if (a === "discard") return confirmBox("ড্রাফট বাতিল করবেন?", function () { cloud().db.doc("drafts/" + key).delete().then(function () { delete A.drafts[key]; delete A.work[key]; A.dirty[key] = false; audit("discard", key); renderEditor(); flags(); }, err); });
     if (a === "reset") return confirmBox("মূল (ক্যাটালগ-ভিত্তিক) কনটেন্টে ফিরে যাবেন? এটি ড্রাফট হিসেবে লোড হবে।", function () { A.work[key] = IBT.clone(IBT.getDefaults()[key]); A.dirty[key] = true; renderEditor(); flags(); });
     if (a === "preview") { IBT.state.preview = !IBT.state.preview; applyPreview(); IBT.toast(IBT.state.preview ? "প্রিভিউ চালু: সাইটে ড্রাফট দেখা যাচ্ছে (শুধু আপনার জন্য)" : "প্রিভিউ বন্ধ"); return; }
-    if (a === "logout") { (window.IBT_GAS || window.IBT_GH).logout(); IBT.refreshAuth().then(function () { window.IBTAdmin.render(A.root); }); return; }
+    if (a === "logout") { A.loaded = false; (window.IBT_GAS || window.IBT_GH).logout(); IBT.refreshAuth().then(function () { window.IBTAdmin.render(A.root); }); return; }
     if (a === "csv") return csv();
     if (a === "reload-inbox") return renderInbox();
     if (a === "import") {
@@ -407,7 +407,7 @@
       var pk = $("#aPick", root); if (pk) pk.addEventListener("change", function () { var v = pk.value.split(":"); if (v[0] === "key") setView("edit", v[1]); else setView(v[1]); window.scrollTo(0, 0); });
       if (!A.bound) { document.addEventListener("input", function (e) { if (A.root && A.root.contains(e.target)) onInput(e); }); document.addEventListener("change", function (e) { if (A.root && A.root.contains(e.target) && (e.target.type === "checkbox" || e.target.tagName === "SELECT")) onInput(e); }); document.addEventListener("click", function (e) { if (A.root && document.body.contains(A.root) && (A.root.contains(e.target) || e.target.closest("#aModal"))) onClick(e); }); A.bound = true; }
       $("#aBody", root).innerHTML = '<div class="glass" style="padding:18px">লোড হচ্ছে…</div>';
-      loadAll().then(function () { setView("dash"); }, function () { $("#aBody", root).innerHTML = '<div class="notice err">ডাটাবেস লোড করা যায়নি।</div>'; });
+      var keep = A.loaded && A.view; (keep ? Promise.resolve() : loadAll()).then(function () { A.loaded = true; if (keep) setView(A.view, A.key); else setView("dash"); }, function () { $("#aBody", root).innerHTML = '<div class="notice err">ডাটাবেস লোড করা যায়নি।</div>'; });
     },
     onPublished: function (docs) { A.published = docs; if (A.root && document.body.contains(A.root)) flags(); }
   };
