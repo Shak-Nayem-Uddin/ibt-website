@@ -32,7 +32,7 @@
     var body = "";
     if (ln || (cl && (cl.youtube || cl.facebook))) {
       var vid = ln ? ln.videoId : ytId(cl && cl.youtube), title = ln ? ln.title : L((cl || {}).title) || Uraw("live_title");
-      var src = vid ? "https://www.youtube.com/embed/" + vid + "?autoplay=1&rel=0" : cl && cl.facebook ? fbEmbed(cl.facebook) : "https://www.youtube.com/embed/live_stream?channel=" + YT_CH + "&autoplay=1";
+      var src = vid ? "https://www.youtube-nocookie.com/embed/" + vid + "?autoplay=1&rel=0" : cl && cl.facebook ? fbEmbed(cl.facebook) : "https://www.youtube.com/embed/live_stream?channel=" + YT_CH + "&autoplay=1";
       body += '<div class="live-card"><div class="live-head"><span class="live-pill"><span></span>' + U("live_now") + '</span><h2 class="h-section" style="margin:0">' + esc(title) + "</h2></div>" + frame(src, title) +
         '<div class="live-acts">' + (vid ? '<a class="btn" target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=' + vid + '">' + icon("youtube") + U("watch_yt") + "</a>" : "") + (cl && cl.facebook ? '<a class="btn" target="_blank" rel="noopener" href="' + esc(cl.facebook) + '">' + icon("facebook") + U("watch_fb") + "</a>" : "") + (cl && cl.zoom ? zoomBtn(cl) : "") + "</div>" + (cl && L(cl.note) ? '<p class="muted">' + T(cl.note) + "</p>" : "") + "</div>";
     } else if (cl && cl.zoom) {
