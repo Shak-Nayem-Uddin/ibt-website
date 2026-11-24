@@ -1,1 +1,130 @@
-{"cms":{},"drafts":{},"audit":{},"inboxstate":{}}
+{
+ "cms": {
+  "settings": {
+   "data": {
+    "siteName": {
+     "bn": "ইমাম বুখারী ট্রাস্ট",
+     "en": "Imam Bukhari Trust",
+     "ar": "وقف الإمام البخاري"
+    },
+    "shortName": "IBT",
+    "tagline": {
+     "bn": "ঈমান · ইলম · খিদমাহ",
+     "en": "Faith · Knowledge · Service",
+     "ar": "إيمانٌ · علمٌ · خدمة"
+    },
+    "motto": {
+     "bn": "সুন্নাহর মহিমায়, ইসলামের অগ্রযাত্রায় একসাথে",
+     "en": "Together in the advancement of Islam, in the light of the Sunnah",
+     "ar": "معًا في مسيرة الإسلام على نور السنة"
+    },
+    "logo": "img/logo-mark.png",
+    "logoColor": "img/logo-color-mark.png",
+    "defaultLang": "bn",
+    "defaultTheme": "auto",
+    "announcement": {
+     "show": true,
+     "link": "#reg-get-together-2026",
+     "text": {
+      "bn": "১৬ ডিসেম্বর বার্ষিক দ্বীনি ফ্যামিলি গেট-টুগেদার · রেজিস্ট্রেশন চলছে",
+      "en": "16 Dec Family Get-Together · registration open",
+      "ar": "اللقاء العائلي 16 ديسمبر · التسجيل مفتوح"
+     }
+    },
+    "contact": {
+     "phones": [
+      "+880 1852-808554"
+     ],
+     "email": "bukharimasjid.bd@gmail.com",
+     "email2": "",
+     "office": {
+      "bn": "হাউস ১৭ (১ম তলা), রোড ৬/এ, সেক্টর ৫, উত্তরা, ঢাকা ১২৩০",
+      "en": "House 17 (1st Floor), Road 6/A, Sector 5, Uttara, Dhaka 1230",
+      "ar": "منزل 17، الطريق 6/أ، القطاع 5، أُتّرا، دكا 1230"
+     },
+     "site": {
+      "bn": "নিউ ঢাকা সিটি, পলাশপুর, ঢাকা–মাওয়া এক্সপ্রেসওয়ে সংলগ্ন, ঢাকা",
+      "en": "New Dhaka City, Palashpur, adjacent to the Dhaka–Mawa Expressway, Dhaka",
+      "ar": "مدينة دكا الجديدة، بلاشبور، بجوار طريق دكا–ماوا السريع، دكا"
+     },
+     "hours": {
+      "bn": "অফিস: শনি–বৃহস্পতি, সকাল ৯টা–বিকাল ৫টা",
+      "en": "Office: Saturday–Thursday, 9 am–5 pm",
+      "ar": "المكتب: السبت–الخميس، 9 صباحًا–5 مساءً"
+     }
+    },
+    "social": [
+     {
+      "name": "Facebook",
+      "url": "https://www.facebook.com/imambukharitrustbd",
+      "icon": "facebook"
+     },
+     {
+      "name": "YouTube",
+      "url": "https://www.youtube.com/channel/UCm8It2AWLRt3N22-fL89K_w",
+      "icon": "youtube"
+     }
+    ],
+    "relatedSites": [
+     {
+      "name": {
+       "bn": "কুল্লিয়াতুল কুরআন ওয়েবসাইট",
+       "en": "Kulliyatul Quran website",
+       "ar": "موقع كلية القرآن"
+      },
+      "url": "https://www.kulliyatulquran.com/"
+     },
+     {
+      "name": {
+       "bn": "কুল্লিয়াতুল কুরআন ইউটিউব",
+       "en": "Kulliyatul Quran YouTube",
+       "ar": "يوتيوب كلية القرآن"
+      },
+      "url": "https://www.youtube.com/@kulliyatulquranbd"
+     },
+     {
+      "name": {
+       "bn": "পুরনো ওয়েবসাইট",
+       "en": "Previous website",
+       "ar": "الموقع السابق"
+      },
+      "url": "https://www.imambukharitrust.com/"
+     }
+    ],
+    "youtubeChannels": [
+     {
+      "name": "Imam Bukhari Trust",
+      "channelId": "UCm8It2AWLRt3N22-fL89K_w",
+      "url": "https://www.youtube.com/channel/UCm8It2AWLRt3N22-fL89K_w"
+     },
+     {
+      "name": "Kulliyatul Quran BD",
+      "channelId": "UCBTHMWdAFuQ5ynEryDIWdRw",
+      "url": "https://www.youtube.com/@kulliyatulquranbd"
+     }
+    ],
+    "joinUrl": "https://forms.gle/XkHeQR3oVGNRzpRh9",
+    "askForm": "https://forms.gle/VQqVhNxSZoJL5nFG9",
+    "officeMapQuery": "House 17, Road 6/A, Sector 5, Uttara, Dhaka 1230, Bangladesh",
+    "officeMapUrl": "https://maps.app.goo.gl/WEHLhscz7LoNbkbS9",
+    "officeMapLL": "23.8632774,90.3903917"
+   },
+   "at": "2026-11-24T01:27:38.680Z",
+   "by": "gh:Shak-Nayem-Uddin"
+  }
+ },
+ "drafts": {},
+ "audit": {
+  "2026-11-24": {
+   "entries": [
+    {
+     "at": "2026-11-24T01:27:39.499Z",
+     "by": "gh:Shak-Nayem-Uddin",
+     "action": "publish",
+     "key": "settings"
+    }
+   ]
+  }
+ },
+ "inboxstate": {}
+}
