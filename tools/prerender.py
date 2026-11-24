@@ -6,6 +6,7 @@ Writes <route>/index.html for each route in ROUTES, plus sitemap.xml and robots.
 Each static page shows the real content immediately, then the normal site takes over
 (the address changes to /#route). Re-run after content changes that matter for search.
 """
+import base64, hashlib
 import asyncio, functools, http.server, json, os, re, threading
 from datetime import date
 from pathlib import Path
@@ -57,7 +58,15 @@ async def main():
             html = re.sub(r'<meta property="og:image" content="[^"]*">', f'<meta property="og:image" content="{esc(img)}">', html, 1)
             html = re.sub(r'<link rel="canonical" href="[^"]*">', f'<link rel="canonical" href="{url}">', html, 1)
             html = html.replace('<main id="main" tabindex="-1">', '<script>if(!location.hash)history.replaceState(null,"",document.baseURI+"#' + route + '");</script>\n<main id="main" tabindex="-1">', 1)
+            # the hero image is only used on the home page; never ship the build server's address
+            html = html.replace('<link rel="preload" href="img/design-night-1.webp" as="image" fetchpriority="high">\n', '')
+            # allow exactly this small inline script in the page's Content-Security-Policy
+            _js = 'if(!location.hash)history.replaceState(null,"",document.baseURI+"#' + route + '");'
+            _h = base64.b64encode(hashlib.sha256(_js.encode()).digest()).decode()
+            html = html.replace("script-src 'self' ", "script-src 'self' 'sha256-" + _h + "' ", 1)
             html = re.sub(r'(<main id="main" tabindex="-1">).*?(</main>)', lambda m: m.group(1) + data["main"] + m.group(2), html, 1, re.S)
+            html = re.sub(r"https?://(127\.0\.0\.1|localhost):\d+/index\.html", SITE, html)
+            html = re.sub(r"https?://(127\.0\.0\.1|localhost):\d+/", "/ibt-website/", html)
             out = ROOT / route / "index.html"; out.parent.mkdir(exist_ok=True); out.write_text(html, encoding="utf-8")
             print("ok", route, len(html) // 1024, "KB")
         # home: the root page carries the rendered home content too, so the first paint needs no script
@@ -65,6 +74,8 @@ async def main():
         main = await pg.evaluate("() => { document.querySelectorAll('#main .rv').forEach(e => e.classList.add('in')); document.querySelectorAll('#main [data-cd],#main [data-pt-next],#main #ptNext [data-n],#main #ptNext [data-loc],#main #ptNext [data-hijri]').forEach(e => e.textContent = '—'); document.querySelectorAll('#main #ptList,#main #ptWeek,#main [data-pt-times],#main #ptSet,#main .countdown').forEach(e => e.innerHTML = ''); return document.querySelector('#main').innerHTML; }")
         root = (ROOT / "index.html").read_text(encoding="utf-8")
         root = re.sub(r"(<main id=\"main\" tabindex=\"-1\">).*?(</main>)", lambda m: m.group(1) + main + m.group(2), root, 1, re.S)
+        root = re.sub(r"https?://(127\.0\.0\.1|localhost):\d+/index\.html", SITE, root)
+        root = re.sub(r"https?://(127\.0\.0\.1|localhost):\d+/", "/ibt-website/", root)
         (ROOT / "index.html").write_text(root, encoding="utf-8"); print("ok home (index.html)", len(root) // 1024, "KB")
         await b.close()
     today = date.today().isoformat()

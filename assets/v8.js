@@ -171,7 +171,9 @@
   IBT.afterHooks.push(function (route) {
     var site = L((C().settings || {}).siteName) || "Imam Bukhari Trust", h1 = ($("#main h1") || {}).textContent || "", lead = ($("#main .lead") || $("#main p") || {}).textContent || "";
     var title = route === "home" ? site + " · " + L({ bn: "ঈমান · ইলম · খিদমাহ", en: "Faith · Knowledge · Service", ar: "إيمان · علم · خدمة" }) : (h1.trim() || site) + " · " + site;
-    var desc = (lead || L(C().home.heroText)).replace(/\s+/g, " ").trim().slice(0, 158);
+    var desc = (lead || "").replace(/\s+/g, " ").trim();
+    if (desc.length < 60 || /^[\d০-৯٠-٩]/.test(desc)) desc = ((h1.trim() ? h1.trim() + ": " : "") + L(C().home.heroText)).replace(/\s+/g, " ").trim();
+    desc = desc.slice(0, 158);
     document.title = title; meta("description", desc); meta("og:title", title, true); meta("og:description", desc, true); meta("twitter:card", "summary_large_image"); meta("twitter:title", title); meta("twitter:description", desc);
     var img = ($("#main .hero-photo img, #main .photo img, #main img") || {}).src; meta("og:image", img || BASE + "img/og-cover.jpg", true); meta("twitter:image", img || BASE + "img/og-cover.jpg");
     meta("og:locale", { bn: "bn_BD", en: "en_US", ar: "ar_AR" }[st.lang], true);

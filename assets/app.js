@@ -55,6 +55,7 @@
   IBT.fdate = fdate; IBT.num = num; IBT.hijri = hijri;
   function toast(msg, type) { var t = $("#toast"); t.textContent = msg; t.className = "toast" + (type ? " t-" + type : "") + " show"; t.setAttribute("role", type === "err" ? "alert" : "status"); clearTimeout(t._h); t._h = setTimeout(function () { t.classList.remove("show"); }, type === "err" ? 7000 : Math.max(2600, Math.min(6000, String(msg).length * 70))); t.onclick = function () { t.classList.remove("show"); }; }
   IBT.toast = toast;
+  document.addEventListener("error", function (e) { var t = e.target; if (t && t.tagName === "IMG" && t.hasAttribute("data-hide-broken")) t.style.visibility = "hidden"; }, true);
   function clone(o) { return JSON.parse(JSON.stringify(o)); }
   IBT.clone = clone;
   function find(list, id) { return (list || []).filter(function (x) { return x.id === id; })[0]; }
@@ -166,7 +167,7 @@
       '<div class="hd-actions"><button class="icon-btn" id="searchBtn" aria-label="' + Uraw("search") + '">' + icon("search") + "</button>" + langSwitch() +
       '<div class="lang-mini" id="langMini"><button class="icon-btn" id="langMiniBtn" aria-haspopup="true" aria-label="' + ({ bn: "বাং", en: "EN", ar: "ع" })[state.lang] + ' · Language"><span>' + ({ bn: "বাং", en: "EN", ar: "ع" })[state.lang] + '</span></button><div class="lang-mini-menu">' + [["bn", "বাংলা"], ["en", "English"], ["ar", "العربية"]].map(function (l) { return '<button data-l="' + l[0] + '" lang="' + l[0] + '" aria-pressed="' + (state.lang === l[0]) + '">' + l[1] + "</button>"; }).join("") + "</div></div>" +
       '<button class="icon-btn theme-btn" id="themeBtn"></button>' + (cloud.canEdit ? '<a class="icon-btn" href="#admin" aria-label="' + Uraw("admin") + '" title="' + Uraw("admin") + '">' + icon("gear") + "</a>" : "") +
-      '<a class="btn primary sm donate-hd" href="#donate">' + icon("heart") + U("donate") + '</a><button class="icon-btn menu-btn" id="menuBtn" aria-label="' + Uraw("menu") + '">' + icon("menu") + "</button></div>" +
+      '<a class="btn primary sm donate-hd" href="#donate">' + icon("heart") + '<span class="dl">' + U("donate") + '</span></a><button class="icon-btn menu-btn" id="menuBtn" aria-label="' + Uraw("menu") + '">' + icon("menu") + "</button></div>" +
       "</div></div></header>";
     document.documentElement.classList.toggle("has-ann", !!ann);
     $("#drawer .panel").innerHTML = '<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px"><span class="brand"><span class="mark"></span><span class="bt"><b>' + T(S.siteName) + '</b></span></span><button class="icon-btn" data-act="close-drawer" aria-label="' + Uraw("close") + '">' + icon("x") + "</button></div>" + langSwitch() +
@@ -186,8 +187,11 @@
   // Priority nav: hide trailing items that do not fit (they stay in the drawer)
   function fitNav() {
     var nav = $(".header .nav"), hd = $(".header"); if (!nav || !hd) return;
-    hd.classList.remove("collapsed");
+    // tighten step by step (smaller padding, no tagline, icon-only donate) before falling back to the menu button
+    hd.classList.remove("collapsed", "t1", "t2", "t3", "t4");
     if (getComputedStyle(nav).display === "none") return;
+    var steps = ["t1", "t2", "t3", "t4"];
+    for (var i = 0; i < steps.length && nav.scrollWidth > nav.clientWidth + 1; i++) hd.classList.add(steps[i]);
     if (nav.scrollWidth > nav.clientWidth + 1) hd.classList.add("collapsed");
   }
   window.addEventListener("resize", function () { clearTimeout(fitNav._t); fitNav._t = setTimeout(fitNav, 120); });
@@ -385,7 +389,7 @@
       ((i.programs || []).length ? '<section class="section tight"><div class="wrap"><h2 class="h-section">' + U("programs") + '</h2><div class="grid g2" style="margin-top:16px">' + i.programs.map(function (p) { return '<div class="glass rv" style="padding:18px"><b>' + T(p.name) + '</b><p class="muted" style="margin:6px 0 0">' + T(p.text) + "</p></div>"; }).join("") + "</div></div></section>" : "") +
       (regs.length ? '<section class="section tight"><div class="wrap"><h2 class="h-section">' + U("nav_register") + '</h2><div class="grid" style="margin-top:16px">' + regs.map(regCard).join("") + "</div></div></section>" : "") +
       (vids.length ? '<section class="section tight"><div class="wrap"><h2 class="h-section">' + U("videos") + '</h2><div class="grid g4" style="margin-top:16px">' + vids.map(vcard).join("") + "</div></div></section>" : "") +
-      (i.id === "kulliyatul-quran" && (C.scholars || []).length ? '<section class="section tight"><div class="wrap"><h2 class="h-section">' + U("academic_committee") + '</h2><div class="people" style="margin-top:18px">' + C.scholars.map(function (p) { return '<div class="person rv"><img loading="lazy" src="' + esc(img(p.photo)) + '" alt="" onerror="this.style.visibility=\'hidden\'"><b>' + T(p.name) + "</b><small>" + T(p.role) + "</small></div>"; }).join("") + '</div></div></section>' : "");
+      (i.id === "kulliyatul-quran" && (C.scholars || []).length ? '<section class="section tight"><div class="wrap"><h2 class="h-section">' + U("academic_committee") + '</h2><div class="people" style="margin-top:18px">' + C.scholars.map(function (p) { return '<div class="person rv"><img loading="lazy" src="' + esc(img(p.photo)) + '" alt="" data-hide-broken><b>' + T(p.name) + "</b><small>" + T(p.role) + "</small></div>"; }).join("") + '</div></div></section>' : "");
   };
 
   P.projects = function () {
@@ -810,7 +814,7 @@
   // a preloaded content.json can otherwise arrive while later scripts are still downloading
   var domReady = new Promise(function (res) { if (document.readyState !== "loading") res(); else document.addEventListener("DOMContentLoaded", res); });
   var vReq = fetch("data/videos.json?h=" + Math.floor(Date.now() / 36e5)).then(function (r) { return r.json(); }).then(function (d) { V = d || V; }, function () { });
-  fetch("data/content.json?v=7.7").then(function (r) { return r.json(); }).then(function (d) { return Promise.all([vReq, domReady]).then(function () { boot(d); }); }).catch(function () {
+  fetch("data/content.json?v=7.8").then(function (r) { return r.json(); }).then(function (d) { return Promise.all([vReq, domReady]).then(function () { boot(d); }); }).catch(function () {
     $("#main").innerHTML = '<div class="wrap section"><h1>Imam Bukhari Trust</h1><p>Content could not be loaded. Please refresh.</p></div>';
   });
 })();

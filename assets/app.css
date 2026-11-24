@@ -200,7 +200,7 @@ html[lang="bn"] .brand .bt b{font-size:1.15rem}
 .menu-btn{display:none}
 .header.cramped .nav{display:none}
 .header.cramped .menu-btn{display:grid}
-@media (max-width:1180px){.nav{display:none}.menu-btn{display:grid}}
+@media (max-width:960px){.nav{display:none}.menu-btn{display:grid}}
 @media (max-width:720px){:root{--hdr:62px}.brand .bt small{display:none}.brand .mark{width:32px;height:36px}.hd-actions .lang-switch,.hd-actions .donate-hd,.hd-actions #searchBtn{display:none}.brand .bt b{font-size:1rem}html[lang="bn"] .brand .bt b{font-size:1.06rem}}
 .drawer{position:fixed;inset:0;z-index:80;display:none}
 .drawer.open{display:block}
@@ -2134,3 +2134,29 @@ section[id],article[id],div[id]{scroll-margin-top:96px}
 .a-top>*{min-width:0}
 @media (max-width:900px){.admin{grid-template-columns:minmax(0,1fr)!important}.a-main{grid-template-columns:minmax(0,1fr)}.a-top{top:calc(var(--hdr-b,98px) + 6px)}}
 @media (max-width:900px){.a-top{flex-wrap:nowrap}}
+
+/* v17: header keeps its menu on laptop widths */
+.header.t1 .bar{gap:10px}
+.header.t1 .gnav .ng-btn,.header.t1 .gnav .ng-top{padding:8px 7px;font-size:.9rem}
+.header.t2 .brand small{display:none}
+.header.t2 .donate-hd .dl{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+.header.t2 .donate-hd{padding-inline:12px;min-width:42px}
+.header.t3 .gnav .ng-btn svg{display:none}
+.header.t3 .gnav .ng-btn,.header.t3 .gnav .ng-top{padding:8px 6px;font-size:.86rem}
+.header.t3 .hd-actions{gap:4px}
+.header.t4 .brand .bt{display:none}
+@media (max-width:360px){.hd-actions{gap:2px}.hd-actions .icon-btn{width:38px;height:38px}.header .bar{gap:6px}}
+/* v17: small-screen safety */
+h1,h2,h3,h4,p,li,.lead{overflow-wrap:break-word}
+.ask-top{grid-template-columns:minmax(0,1fr)}
+@media (max-width:900px){.fbld{grid-template-columns:minmax(0,1fr)}}
+@media (max-width:520px){.chip,.stagec{white-space:normal;max-width:100%}.upd-top{flex-wrap:wrap}}
+@media (max-width:360px){.header .brand .bt b{font-size:.92rem}.header .brand small{display:none}.header .brand .mark{width:30px}.donate-hd{padding-inline:10px}}
+@media (max-width:520px){.gf-hero .btn{white-space:normal;text-align:center;height:auto}.lv b{white-space:normal}.fb-copy{justify-items:stretch}.fb-copy .h-section{font-size:clamp(1.3rem,6.4vw,1.8rem)}}
+.fb-copy{grid-template-columns:minmax(0,1fr)}@media (max-width:520px){.fb-copy .btn{white-space:normal;height:auto;text-align:center}}
+.ask-side{grid-template-columns:minmax(0,1fr)}.ask-card{grid-template-columns:minmax(0,1fr)}@media (max-width:520px){.gf-cta .btn{white-space:normal;height:auto;text-align:center}}
+.footer .cols{grid-template-columns:minmax(0,1.4fr) minmax(0,1fr) minmax(0,1fr) minmax(0,1.2fr)}
+@media (max-width:900px){.footer .cols{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}}
+@media (max-width:560px){.footer .cols{grid-template-columns:minmax(0,1fr)}}
+.footer .cols li,.footer .cols a{overflow-wrap:anywhere}
+.acc-c span a{text-decoration:underline;text-underline-offset:2px;font-weight:600}
