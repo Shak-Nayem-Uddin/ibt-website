@@ -1142,7 +1142,8 @@
      "registrations": [
       "model-madrasa-2027"
      ],
-     "review": true
+     "review": false,
+     "website": "https://www.kulliyatulquran.com/p/kulliyatul-quran-model-madrasah"
     },
     {
      "id": "after-school",
@@ -1362,7 +1363,7 @@
      ]
     }
    ],
-   "at": "2026-11-25T04:22:05.893Z",
+   "at": "2026-11-25T04:22:57.171Z",
    "by": "gh:Shak-Nayem-Uddin"
   }
  },
@@ -1430,6 +1431,12 @@
     },
     {
      "at": "2026-11-25T04:22:07.063Z",
+     "by": "gh:Shak-Nayem-Uddin",
+     "action": "publish",
+     "key": "institutions"
+    },
+    {
+     "at": "2026-11-25T04:22:58.078Z",
      "by": "gh:Shak-Nayem-Uddin",
      "action": "publish",
      "key": "institutions"
