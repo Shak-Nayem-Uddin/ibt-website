@@ -614,6 +614,310 @@
    },
    "at": "2026-11-25T04:19:16.140Z",
    "by": "gh:Shak-Nayem-Uddin"
+  },
+  "floors": {
+   "data": {
+    "asOf": "2026-11",
+    "source": {
+     "bn": "ইমাম বুখারী ট্রাস্ট, নভেম্বর ২০২৬",
+     "en": "Imam Bukhari Trust, November 2026",
+     "ar": "وقف الإمام البخاري، نوفمبر 2026"
+    },
+    "note": {
+     "bn": "",
+     "en": "",
+     "ar": ""
+    },
+    "mosque": [
+     {
+      "label": {
+       "bn": "ফাউন্ডেশন ও পাইলিং",
+       "en": "Foundation & piling",
+       "ar": "الأساسات والخوازيق"
+      },
+      "use": {
+       "bn": "৬৭টি পাইল",
+       "en": "67 piles",
+       "ar": "67 خازوقًا"
+      },
+      "status": "done"
+     },
+     {
+      "label": {
+       "bn": "১ম তলা",
+       "en": "1st floor",
+       "ar": "الطابق الأول"
+      },
+      "use": {
+       "bn": "মূল মাসজিদ",
+       "en": "Main prayer hall",
+       "ar": "قاعة الصلاة"
+      },
+      "status": "done",
+      "note": {
+       "bn": "ছাদ ঢালাই সম্পন্ন",
+       "en": "Roof slab cast",
+       "ar": "تم صب السقف"
+      }
+     },
+     {
+      "label": {
+       "bn": "২য় তলা",
+       "en": "2nd floor",
+       "ar": "الطابق الثاني"
+      },
+      "use": {
+       "bn": "মাসজিদ ও ই‘তিকাফ",
+       "en": "Prayer hall & i'tikaf",
+       "ar": "الصلاة والاعتكاف"
+      },
+      "status": "done",
+      "note": {
+       "bn": "ছাদ ঢালাই সম্পন্ন",
+       "en": "Roof slab cast",
+       "ar": "تم صب السقف"
+      }
+     },
+     {
+      "label": {
+       "bn": "৩য় তলা",
+       "en": "3rd floor",
+       "ar": "الطابق الثالث"
+      },
+      "use": {
+       "bn": "মাসজিদ",
+       "en": "Prayer hall",
+       "ar": "قاعة الصلاة"
+      },
+      "status": "planned"
+     },
+     {
+      "label": {
+       "bn": "৪র্থ তলা",
+       "en": "4th floor",
+       "ar": "الطابق الرابع"
+      },
+      "use": {
+       "bn": "মাসজিদ ও খাদেম কক্ষ",
+       "en": "Prayer hall & khadim room",
+       "ar": "الصلاة وغرفة الخادم"
+      },
+      "status": "planned"
+     },
+     {
+      "label": {
+       "bn": "৫ম তলা",
+       "en": "5th floor",
+       "ar": "الطابق الخامس"
+      },
+      "use": {
+       "bn": "লাইব্রেরি, ইমাম কক্ষ",
+       "en": "Library & imam's room",
+       "ar": "المكتبة وغرفة الإمام"
+      },
+      "status": "planned"
+     },
+     {
+      "label": {
+       "bn": "৬ষ্ঠ তলা",
+       "en": "6th floor",
+       "ar": "الطابق السادس"
+      },
+      "use": {
+       "bn": "ডাইনিং ও ছাদ-বারান্দা",
+       "en": "Dining & terrace",
+       "ar": "قاعة الطعام والشرفة"
+      },
+      "status": "planned"
+     }
+    ],
+    "academic": [
+     {
+      "label": {
+       "bn": "ফাউন্ডেশন ও পাইলিং",
+       "en": "Foundation & piling",
+       "ar": "الأساسات والخوازيق"
+      },
+      "use": {
+       "bn": "১৫৮টি পাইল · পাইল ক্যাপ ঢালাই চলমান",
+       "en": "158 piles · pile caps being cast",
+       "ar": "158 خازوقًا · صب رؤوس الخوازيق جارٍ"
+      },
+      "status": "progress",
+      "note": {
+       "bn": "ফাউন্ডেশনের কাজ প্রায় শেষ",
+       "en": "Foundation work nearly complete",
+       "ar": "أعمال الأساسات شارفت على الانتهاء"
+      }
+     },
+     {
+      "label": {
+       "bn": "১ম তলা",
+       "en": "1st floor",
+       "ar": "الطابق الأول"
+      },
+      "use": {
+       "bn": "অভিভাবক কক্ষ, ডিসপ্লে, ক্যান্টিন",
+       "en": "Parents' lounge, display, canteen",
+       "ar": "استراحة أولياء الأمور والمعرض والمقصف"
+      },
+      "status": "next",
+      "note": {
+       "bn": "ছাদ ঢালাইয়ের প্রস্তুতি চলছে",
+       "en": "Preparing for the roof slab",
+       "ar": "التحضير لصب السقف"
+      }
+     },
+     {
+      "label": {
+       "bn": "২য় তলা",
+       "en": "2nd floor",
+       "ar": "الطابق الثاني"
+      },
+      "use": {
+       "bn": "কনফারেন্স ও প্রশাসন",
+       "en": "Conference & administration",
+       "ar": "المؤتمرات والإدارة"
+      },
+      "status": "planned"
+     },
+     {
+      "label": {
+       "bn": "৩য় তলা",
+       "en": "3rd floor",
+       "ar": "الطابق الثالث"
+      },
+      "use": {
+       "bn": "শ্রেণিকক্ষ",
+       "en": "Classrooms",
+       "ar": "فصول"
+      },
+      "status": "planned"
+     },
+     {
+      "label": {
+       "bn": "৪র্থ তলা",
+       "en": "4th floor",
+       "ar": "الطابق الرابع"
+      },
+      "use": {
+       "bn": "শ্রেণিকক্ষ ও লাইব্রেরি",
+       "en": "Classrooms & library",
+       "ar": "فصول ومكتبة"
+      },
+      "status": "planned"
+     },
+     {
+      "label": {
+       "bn": "৫ম তলা",
+       "en": "5th floor",
+       "ar": "الطابق الخامس"
+      },
+      "use": {
+       "bn": "শ্রেণিকক্ষ",
+       "en": "Classrooms",
+       "ar": "فصول"
+      },
+      "status": "planned"
+     },
+     {
+      "label": {
+       "bn": "৬ষ্ঠ তলা",
+       "en": "6th floor",
+       "ar": "الطابق السادس"
+      },
+      "use": {
+       "bn": "শ্রেণিকক্ষ",
+       "en": "Classrooms",
+       "ar": "فصول"
+      },
+      "status": "planned"
+     },
+     {
+      "label": {
+       "bn": "৭ম তলা",
+       "en": "7th floor",
+       "ar": "الطابق السابع"
+      },
+      "use": {
+       "bn": "শ্রেণিকক্ষ",
+       "en": "Classrooms",
+       "ar": "فصول"
+      },
+      "status": "planned"
+     },
+     {
+      "label": {
+       "bn": "৮ম তলা",
+       "en": "8th floor",
+       "ar": "الطابق الثامن"
+      },
+      "use": {
+       "bn": "শ্রেণিকক্ষ",
+       "en": "Classrooms",
+       "ar": "فصول"
+      },
+      "status": "planned"
+     },
+     {
+      "label": {
+       "bn": "৯ম তলা",
+       "en": "9th floor",
+       "ar": "الطابق التاسع"
+      },
+      "use": {
+       "bn": "শ্রেণিকক্ষ",
+       "en": "Classrooms",
+       "ar": "فصول"
+      },
+      "status": "planned"
+     },
+     {
+      "label": {
+       "bn": "১০ম তলা",
+       "en": "10th floor",
+       "ar": "الطابق العاشر"
+      },
+      "use": {
+       "bn": "শ্রেণিকক্ষ",
+       "en": "Classrooms",
+       "ar": "فصول"
+      },
+      "status": "planned"
+     }
+    ],
+    "review": false,
+    "headline": {
+     "mosque": {
+      "bn": "১ম ও ২য় তলার ছাদ ঢালাই সম্পন্ন, আলহামদুলিল্লাহ",
+      "en": "1st and 2nd floor roof slabs cast, alhamdulillah",
+      "ar": "اكتمل صب سقفي الطابقين الأول والثاني، والحمد لله"
+     },
+     "academic": {
+      "bn": "ফাউন্ডেশনের কাজ প্রায় শেষ, এখন ছাদ ঢালাইয়ের প্রস্তুতি চলছে",
+      "en": "Foundation nearly complete; preparing for the first roof slab",
+      "ar": "الأساسات شارفت على الانتهاء، والتحضير لصب السقف جارٍ"
+     }
+    },
+    "photos": {
+     "mosque": "img/construction-masjid-2026-10.webp",
+     "academic": "img/construction-academic-2026-10.webp"
+    },
+    "specs": {
+     "mosque": {
+      "bn": "জি+৫ · ৬ তলা",
+      "en": "G+5 · 6 floors",
+      "ar": "أرضي+5 · 6 طوابق"
+     },
+     "academic": {
+      "bn": "জি+৯ · ১০ তলা · ৭০টি শ্রেণিকক্ষ · ২,১০০ শিক্ষার্থী",
+      "en": "G+9 · 10 floors · 70 classrooms · 2,100 students",
+      "ar": "أرضي+9 · 10 طوابق · 70 فصلًا · 2,100 طالب"
+     }
+    }
+   },
+   "at": "2026-11-25T04:20:01.124Z",
+   "by": "gh:Shak-Nayem-Uddin"
   }
  },
  "drafts": {},
@@ -671,6 +975,12 @@
      "by": "gh:Shak-Nayem-Uddin",
      "action": "publish",
      "key": "donateCopy"
+    },
+    {
+     "at": "2026-11-25T04:20:01.976Z",
+     "by": "gh:Shak-Nayem-Uddin",
+     "action": "publish",
+     "key": "floors"
     }
    ]
   }
