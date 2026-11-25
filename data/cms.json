@@ -918,6 +918,452 @@
    },
    "at": "2026-11-25T04:20:01.124Z",
    "by": "gh:Shak-Nayem-Uddin"
+  },
+  "institutions": {
+   "data": [
+    {
+     "id": "ibjmc",
+     "type": "masjid",
+     "status": "construction",
+     "name": {
+      "bn": "ইমাম বুখারী জামে মাসজিদ কমপ্লেক্স",
+      "en": "Imam Bukhari Jame Masjid Complex",
+      "ar": "مجمع جامع الإمام البخاري"
+     },
+     "summary": {
+      "bn": "মাসজিদ আন-নববীর আদলে মাসজিদকেন্দ্রিক দ্বীনি কমিউনিটির কেন্দ্র (নির্মাণাধীন)।",
+      "en": "The centre of a masjid-centred community modelled on Masjid an-Nabawi (under construction).",
+      "ar": "مركزٌ لمجتمعٍ متمحورٍ حول المسجد على هدي المسجد النبوي (قيد الإنشاء)."
+     },
+     "image": "img/render-mosque.webp",
+     "link": "#project-ibjmc",
+     "features": [
+      {
+       "bn": "সুন্নাহভিত্তিক প্রতিষ্ঠান: মাসজিদুল হারামের আদলে পরিকল্পনা ও নির্মাণ",
+       "en": "A Sunnah-based institution, planned in the spirit of Masjid al-Haram",
+       "ar": "مؤسسة على السنة، مخططة على هدي المسجد الحرام"
+      },
+      {
+       "bn": "দ্বীনি শিক্ষা: স্কলারদের সাহচর্যে দ্বীন শেখার সুযোগ",
+       "en": "Learning the deen in the company of scholars",
+       "ar": "تعلم الدين في صحبة العلماء"
+      },
+      {
+       "bn": "আন্তর্জাতিক মানের লাইব্রেরি: মাসজিদ আন-নববীর আদলে সমৃদ্ধ পাঠাগার",
+       "en": "An international-standard library modelled on Masjid an-Nabawi's",
+       "ar": "مكتبة بمستوى دولي على غرار مكتبة المسجد النبوي"
+      },
+      {
+       "bn": "আধুনিক প্রযুক্তির দাওয়াহ সেন্টার ও রেকর্ডিং স্টুডিও",
+       "en": "A technology-enabled Dawah centre and recording studio",
+       "ar": "مركز دعوة ومرسم تسجيل بتقنيات حديثة"
+      },
+      {
+       "bn": "তাহফীযুল কুরআন, শিশু ও বয়স্ক শিক্ষা",
+       "en": "Tahfiz al-Qur'an and learning for children and adults",
+       "ar": "تحفيظ القرآن وتعليم الصغار والكبار"
+      },
+      {
+       "bn": "ভাষা শিক্ষাকেন্দ্র, কর্মশালা, সেমিনার ও সিম্পোজিয়াম",
+       "en": "Language centre, workshops, seminars and symposia",
+       "ar": "مركز لغات وورش وندوات"
+      },
+      {
+       "bn": "বোনদের জন্য সালাত ও হালাকায় অংশগ্রহণের সুব্যবস্থা",
+       "en": "Proper facilities for sisters to join prayers and halaqas",
+       "ar": "مرافق مناسبة للأخوات للصلاة والحلقات"
+      },
+      {
+       "bn": "সুন্নাহ অনুযায়ী বিবাহ ও ওয়ালিমা আয়োজনের ব্যবস্থা",
+       "en": "Facilities for marriages and walimas according to the Sunnah",
+       "ar": "تيسير عقود الزواج والولائم على السنة"
+      }
+     ]
+    },
+    {
+     "id": "kulliyatul-quran",
+     "type": "higher",
+     "status": "running",
+     "name": {
+      "bn": "কুল্লিয়াতুল কুরআনিল কারীম ওয়াদ-দিরাসাতিল ইসলামিয়্যাহ",
+      "en": "Kulliyatul Quranil Kareem wad-Dirasatil Islamiyyah",
+      "ar": "كلية القرآن الكريم والدراسات الإسلامية"
+     },
+     "summary": {
+      "bn": "মদীনা বিশ্ববিদ্যালয়ের আদলে বিশুদ্ধ আকীদাভিত্তিক উচ্চতর ইসলামী শিক্ষা, গবেষণা ও দাওয়াহ প্রতিষ্ঠান।",
+      "en": "A higher Islamic education, research and Dawah institution on sound creed, modelled on the University of Madinah.",
+      "ar": "مؤسسة للتعليم الإسلامي العالي والبحث والدعوة على العقيدة الصحيحة، على غرار الجامعة الإسلامية بالمدينة."
+     },
+     "image": "img/halaqa-class.webp",
+     "body": {
+      "bn": "২০২১ খ্রি. / ১৪৪২ হি. প্রতিষ্ঠিত কুল্লিয়াতুল কুরআন ইমাম বুখারী ট্রাস্টের একটি একাডেমিক উদ্যোগ। এখানে উচ্চমাধ্যমিক (সানাবিয়্যাহ), ব্যাচেলর (কুল্লিয়া) ও মাস্টার্স পর্যায়ের শিক্ষা দেওয়া হবে। ঢাকার উত্তরায় অস্থায়ী ক্যাম্পাসে শিক্ষা কার্যক্রম চলমান; স্থায়ী ক্যাম্পাসের নির্মাণকাজ চলছে নিউ ঢাকা সিটি, পলাশপুরে।",
+      "en": "Founded in 2021 / 1442 AH, Kulliyatul Quran is an academic initiative of Imam Bukhari Trust offering higher-secondary (Sanabiyyah), bachelor's (Kulliya) and master's level education. Classes run at a temporary campus in Uttara, Dhaka, while the permanent campus is being built at New Dhaka City, Palashpur.",
+      "ar": "كلية القرآن مبادرة أكاديمية لوقف الإمام البخاري تأسست عام 2021م / 1442هـ، وتقدم التعليم في المرحلة الثانوية (السنابية) والبكالوريوس (الكلية) والماجستير. تجري الدراسة في حرمٍ مؤقت في أُتّرا بدكا، ويُبنى الحرم الدائم في مدينة دكا الجديدة."
+     },
+     "features": [
+      {
+       "bn": "মদীনা, আল-আযহারসহ শীর্ষ ইসলামী বিশ্ববিদ্যালয় থেকে ডিগ্রিপ্রাপ্ত শিক্ষকদের পাঠদান",
+       "en": "Teachers with degrees from Madinah, al-Azhar and other leading Islamic universities",
+       "ar": "أساتذة متخرجون في المدينة والأزهر وغيرهما من الجامعات الإسلامية الكبرى"
+      },
+      {
+       "bn": "আরবি ভাষায় দক্ষতা: বিদেশের নামকরা বিশ্ববিদ্যালয়ে উচ্চশিক্ষার প্রস্তুতি",
+       "en": "Arabic proficiency that prepares students for leading universities abroad",
+       "ar": "إتقان العربية استعدادًا للدراسة في الجامعات العالمية"
+      },
+      {
+       "bn": "আন্তর্জাতিক বিশ্ববিদ্যালয়ের সাথে একাডেমিক ইকুইভ্যালেন্স",
+       "en": "Academic equivalence with international universities",
+       "ar": "معادلة أكاديمية مع جامعات دولية"
+      },
+      {
+       "bn": "সৌদি আরব, মিশর, মালয়েশিয়া, মরক্কো ও ইন্দোনেশিয়ায় স্কলারশিপের প্রস্তুতি ও সহায়তা",
+       "en": "Preparation and support for scholarships in Saudi Arabia, Egypt, Malaysia, Morocco and Indonesia",
+       "ar": "إعداد ودعم للمنح في السعودية ومصر وماليزيا والمغرب وإندونيسيا"
+      },
+      {
+       "bn": "আরবি, ইংরেজি ও বাংলায় সমৃদ্ধ ফিজিক্যাল ও ডিজিটাল লাইব্রেরি",
+       "en": "A physical and digital library in Arabic, English and Bangla",
+       "ar": "مكتبة ورقية ورقمية بالعربية والإنجليزية والبنغالية"
+      },
+      {
+       "bn": "নারীদের জন্য পৃথক উচ্চশিক্ষার ব্যবস্থা",
+       "en": "Separate higher-education arrangements for women",
+       "ar": "ترتيبات منفصلة لتعليم المرأة العالي"
+      }
+     ],
+     "programs": [
+      {
+       "name": {
+        "bn": "কুল্লিয়া (ব্যাচেলর ইন ইসলামিক স্টাডিজ)",
+        "en": "Kulliya (Bachelor in Islamic Studies)",
+        "ar": "الكلية (بكالوريوس الدراسات الإسلامية)"
+       },
+       "text": {
+        "bn": "যোগ্যতা: সানাবিয়্যাহ, আলিম বা এইচএসসি পাস।",
+        "en": "Entry: Sanabiyyah, Alim or HSC.",
+        "ar": "شرط القبول: السنابية أو العالم أو الثانوية العامة."
+       }
+      },
+      {
+       "name": {
+        "bn": "সানাবিয়্যাহ (উচ্চমাধ্যমিক)",
+        "en": "Sanabiyyah (Higher Secondary)",
+        "ar": "السنابية (المرحلة الثانوية)"
+       },
+       "text": {
+        "bn": "যোগ্যতা: দাখিল, মিশকাত বা এসএসসি পাস। এসএসসি পাসদের জন্য আগে আরবি ভাষা কোর্স।",
+        "en": "Entry: Dakhil, Mishkat or SSC. SSC students first take the Arabic language courses.",
+        "ar": "شرط القبول: الداخل أو المشكاة أو الشهادة المتوسطة، ويسبقها مقرر اللغة العربية لحملة الشهادة المتوسطة."
+       }
+      },
+      {
+       "name": {
+        "bn": "একাডেমিক আরবি ভাষা কোর্স",
+        "en": "Academic Arabic Language Course",
+        "ar": "دورة اللغة العربية للأغراض الأكاديمية"
+       },
+       "text": {
+        "bn": "দাওরাতুল লুগাতিল আরাবিয়্যাহ লিল-আগরাদিল আকাদিমিয়্যাহ।",
+        "en": "Offered by the institute's Arabic Language Institute.",
+        "ar": "تقدمها معهد اللغة العربية التابع للكلية."
+       }
+      },
+      {
+       "name": {
+        "bn": "জেনারেল আরবি ভাষা কোর্স",
+        "en": "General Arabic Language Course",
+        "ar": "دورة اللغة العربية العامة"
+       },
+       "text": {
+        "bn": "সাধারণ শিক্ষার্থী ও ইংরেজি মাধ্যমের শিক্ষার্থীদের জন্য।",
+        "en": "For general learners and English-medium students.",
+        "ar": "للدارسين عمومًا وطلاب المدارس الإنجليزية."
+       }
+      }
+     ],
+     "website": "https://kulliyatulquran.com/",
+     "registrations": [
+      "kq-admission-2027"
+     ]
+    },
+    {
+     "id": "model-madrasa",
+     "type": "school",
+     "status": "running",
+     "name": {
+      "bn": "কুল্লিয়াতুল কুরআন মডেল মাদরাসা",
+      "en": "Kulliyatul Quran Model Madrasa",
+      "ar": "مدرسة كلية القرآن النموذجية"
+     },
+     "formerName": {
+      "bn": "পূর্বনাম: দারুল হাদীস অ্যারাবিক মাদরাসা",
+      "en": "Formerly: Darul Hadith Arabic Madrasa",
+      "ar": "الاسم السابق: مدرسة دار الحديث العربية"
+     },
+     "summary": {
+      "bn": "শৈশব থেকেই জ্ঞান, আদব ও নৈতিকতায় ইসলামকে ধারণ করা একটি প্রজন্ম গড়ার মাদরাসা; সাথে ইভিনিং মাদরাসা।",
+      "en": "A madrasa that raises children to hold Islam through knowledge, adab and character, with an Evening Madrasa.",
+      "ar": "مدرسة تربي الأطفال على حمل الإسلام علمًا وأدبًا وخلقًا، ومعها مدرسة مسائية."
+     },
+     "image": "img/model-madrasa.webp",
+     "body": {
+      "bn": "বাংলাদেশে দ্বীনের অগ্রযাত্রাকে টেকসই করতে শৈশব থেকেই এমন এক প্রজন্ম প্রয়োজন, যারা ইসলামকে কেবল আবেগে নয়, বরং জ্ঞান, আদব ও নৈতিকতায় ধারণ করবে। আধুনিক শিক্ষার চ্যালেঞ্জ ও ডিজিটাল ফিতনার ভিড়ে শিশুদের সঠিক তারবিয়াহ ও কুরআনি মূল্যবোধের সাথে সংযোগ ক্রমেই দুর্বল হয়ে পড়ছে। এই শূন্যতা পূরণে আমরা এমন একটি সমন্বিত কারিকুলাম ও পরিবেশ নিশ্চিত করছি, যেখানে শিশুরা সুন্নাহভিত্তিক শিষ্টাচার ও দ্বীনি আমানতদারিতার সাথে বেড়ে উঠবে।",
+      "en": "To make the progress of the deen in Bangladesh lasting, we need a generation that holds Islam not only through emotion but through knowledge, adab and character, from childhood. Amid the challenges of modern schooling and digital fitnah, children's link with proper tarbiyah and Qur'anic values keeps weakening. To fill this gap we provide an integrated curriculum and environment where children grow up with Sunnah-based manners and a sense of trust toward the deen.",
+      "ar": "لكي يدوم تقدم الدين في بنغلاديش لا بد من جيلٍ يحمل الإسلام علمًا وأدبًا وخلقًا لا عاطفةً فحسب. ومع تحديات التعليم الحديث والفتن الرقمية تضعف صلة الأطفال بالتربية الصحيحة وقيم القرآن، لذا نوفر منهجًا متكاملًا وبيئة ينشأ فيها الأطفال على آداب السنة والأمانة الدينية."
+     },
+     "features": [
+      {
+       "bn": "কুরআন, হিফয ও তা‘লীমুল কুরআন",
+       "en": "Qur'an, Hifz and Ta'limul Qur'an",
+       "ar": "القرآن والتحفيظ وتعليم القرآن"
+      },
+      {
+       "bn": "আরবি, ইংরেজি ও বাংলা ভাষায় গুরুত্ব",
+       "en": "Emphasis on Arabic, English and Bangla",
+       "ar": "عناية باللغات العربية والإنجليزية والبنغالية"
+      },
+      {
+       "bn": "ইসলামী শিক্ষা, গণিত, বিজ্ঞান ও সামাজিক বিজ্ঞান",
+       "en": "Islamic studies, mathematics, science and social science",
+       "ar": "التربية الإسلامية والرياضيات والعلوم والدراسات الاجتماعية"
+      },
+      {
+       "bn": "সুন্নাহভিত্তিক তারবিয়াহ ও সহশিক্ষা কার্যক্রম",
+       "en": "Sunnah-based tarbiyah and co-curricular activities",
+       "ar": "تربية على السنة وأنشطة لا صفية"
+      },
+      {
+       "bn": "ইভিনিং মাদরাসা: স্কুলগামী শিশুদের জন্য সন্ধ্যাকালীন দ্বীনি শিক্ষা",
+       "en": "Evening Madrasa: evening Islamic classes for school-going children",
+       "ar": "المدرسة المسائية: تعليم ديني مسائي لتلاميذ المدارس"
+      }
+     ],
+     "registrations": [
+      "model-madrasa-2027"
+     ],
+     "review": true
+    },
+    {
+     "id": "after-school",
+     "type": "school",
+     "status": "running",
+     "name": {
+      "bn": "কুল্লিয়াতুল কুরআন আফটার স্কুল",
+      "en": "Kulliyatul Quran After School",
+      "ar": "برنامج كلية القرآن بعد المدرسة"
+     },
+     "summary": {
+      "bn": "সাধারণ স্কুলে পড়া শিশুদের জন্য স্কুলের পর কুরআন, আরবি ও ইসলামী আদব শিক্ষা।",
+      "en": "Qur'an, Arabic and Islamic manners after school hours for children in general schools.",
+      "ar": "تعليم القرآن والعربية والآداب الإسلامية بعد الدوام لأطفال المدارس العامة."
+     },
+     "image": "img/program-women-children.webp",
+     "body": {
+      "bn": "যেসব শিশু সাধারণ বা ইংরেজি মাধ্যম স্কুলে পড়ে, তাদের জন্য স্কুলের পর নির্ধারিত সময়ে কুরআন তিলাওয়াত, হিফয, আরবি ভাষা, আকীদা, সীরাহ ও দৈনন্দিন সুন্নাহ শেখানোর কার্যক্রম। বয়সভিত্তিক ব্যাচ, সময়সূচি ও ফি বিস্তারিত রেজিস্ট্রেশন পেজে।",
+      "en": "For children in general or English-medium schools: Qur'an recitation, hifz, Arabic, aqeedah, seerah and everyday Sunnah, taught at set times after school. Age groups, timings and fees are on the registration page.",
+      "ar": "لأطفال المدارس العامة ومدارس اللغة الإنجليزية: تلاوة القرآن وحفظه والعربية والعقيدة والسيرة والسنن اليومية في أوقات محددة بعد المدرسة. الفئات العمرية والمواعيد والرسوم في صفحة التسجيل."
+     },
+     "features": [
+      {
+       "bn": "বয়সভিত্তিক ছোট ব্যাচ",
+       "en": "Small age-based batches",
+       "ar": "مجموعات صغيرة حسب العمر"
+      },
+      {
+       "bn": "কুরআন তিলাওয়াত ও হিফয",
+       "en": "Qur'an recitation and hifz",
+       "ar": "التلاوة والتحفيظ"
+      },
+      {
+       "bn": "আরবি ভাষার ভিত্তি",
+       "en": "Foundations of Arabic",
+       "ar": "أساسيات العربية"
+      },
+      {
+       "bn": "আকীদা, সীরাহ ও আদব",
+       "en": "Aqeedah, seerah and adab",
+       "ar": "العقيدة والسيرة والآداب"
+      }
+     ],
+     "registrations": [
+      "after-school-2027"
+     ],
+     "review": false,
+     "website": "https://www.kulliyatulquran.com/p/kulliyatul-quran-after-school"
+    },
+    {
+     "id": "courses",
+     "type": "courses",
+     "status": "running",
+     "name": {
+      "bn": "কোর্সসমূহ",
+      "en": "Courses",
+      "ar": "الدورات"
+     },
+     "summary": {
+      "bn": "আরবি ভাষা, ডিপ্লোমা-সার্টিফিকেট এবং ব্যবহারিক ইসলামী প্রশিক্ষণ কোর্স।",
+      "en": "Arabic language, diploma and certificate courses, and practical Islamic training.",
+      "ar": "دورات اللغة العربية والدبلومات والشهادات والتدريب الإسلامي العملي."
+     },
+     "image": "img/program-corporate.webp",
+     "body": {
+      "bn": "কুল্লিয়াতুল কুরআন ও ইমাম বুখারী ট্রাস্টের কোর্সগুলোতে আরবি ভাষা থেকে শুরু করে সালাত, হজ্জ-উমরাহ, যাকাত হিসাব, প্যারেন্টিং এবং মৃতের গোসল-কাফন-দাফনের মতো ব্যবহারিক বিষয় শেখানো হয়।",
+      "en": "Courses at Kulliyatul Quran and Imam Bukhari Trust range from Arabic language to practical subjects such as salah, Hajj and Umrah, zakat calculation, parenting and the ghusl, kafan and burial of the deceased.",
+      "ar": "تتنوع دورات كلية القرآن ووقف الإمام البخاري من اللغة العربية إلى الموضوعات العملية كالصلاة والحج والعمرة وحساب الزكاة والتربية الأسرية وتغسيل الميت وتكفينه ودفنه."
+     },
+     "programs": [
+      {
+       "name": {
+        "bn": "২ মাসের নিবিড় আরবি কোর্স (দাখিল পরীক্ষার্থীদের জন্য)",
+        "en": "2-month intensive Arabic (for Dakhil candidates)",
+        "ar": "دورة عربية مكثفة لشهرين (لطلاب الداخل)"
+       },
+       "text": {
+        "bn": "চলমান",
+        "en": "Ongoing",
+        "ar": "جارية"
+       }
+      },
+      {
+       "name": {
+        "bn": "জেনারেল ও একাডেমিক আরবি ভাষা কোর্স",
+        "en": "General and Academic Arabic courses",
+        "ar": "دورات العربية العامة والأكاديمية"
+       },
+       "text": {
+        "bn": "এক বছর মেয়াদি",
+        "en": "One year each",
+        "ar": "مدة كل منها عام"
+       }
+      },
+      {
+       "name": {
+        "bn": "ফিকহুস সালাত ও ফিকহুস সিয়াম",
+        "en": "Fiqh of Salah and Fiqh of Fasting",
+        "ar": "فقه الصلاة وفقه الصيام"
+       },
+       "text": {
+        "bn": "সংক্ষিপ্ত কোর্স",
+        "en": "Short courses",
+        "ar": "دورات قصيرة"
+       }
+      },
+      {
+       "name": {
+        "bn": "হজ্জ ও উমরাহ প্রশিক্ষণ",
+        "en": "Hajj and Umrah training",
+        "ar": "تدريب الحج والعمرة"
+       },
+       "text": {
+        "bn": "প্রতি বছর হজ্জের আগে",
+        "en": "Every year before Hajj",
+        "ar": "سنويًا قبل الحج"
+       }
+      },
+      {
+       "name": {
+        "bn": "যাকাত হিসাব ও ব্যবসায় যাকাত কর্মশালা",
+        "en": "Zakat calculation and Zakat on business workshop",
+        "ar": "ورشة حساب الزكاة وزكاة التجارة"
+       },
+       "text": {
+        "bn": "ব্যবসায়ী ও পেশাজীবীদের জন্য",
+        "en": "For business people and professionals",
+        "ar": "لرجال الأعمال والمهنيين"
+       }
+      },
+      {
+       "name": {
+        "bn": "প্যারেন্টিং ও পারিবারিক সমস্যা ব্যবস্থাপনা",
+        "en": "Parenting and family problem management",
+        "ar": "التربية الأسرية وحل المشكلات الأسرية"
+       },
+       "text": {
+        "bn": "কর্মশালা",
+        "en": "Workshops",
+        "ar": "ورش عمل"
+       }
+      },
+      {
+       "name": {
+        "bn": "মৃতের গোসল, কাফন ও দাফন প্রশিক্ষণ",
+        "en": "Ghusl, kafan and burial training",
+        "ar": "تدريب على تغسيل الميت وتكفينه ودفنه"
+       },
+       "text": {
+        "bn": "নারী ও পুরুষের জন্য আলাদা সেশন",
+        "en": "Separate sessions for men and women",
+        "ar": "جلسات منفصلة للرجال والنساء"
+       }
+      },
+      {
+       "name": {
+        "bn": "ডিপ্লোমা ও সার্টিফিকেট কোর্স",
+        "en": "Diploma and certificate courses",
+        "ar": "دبلومات وشهادات"
+       },
+       "text": {
+        "bn": "বিভিন্ন বিষয়ে",
+        "en": "Various subjects",
+        "ar": "في موضوعات متعددة"
+       }
+      }
+     ],
+     "registrations": [
+      "arabic-intensive",
+      "hajj-course-2027"
+     ]
+    },
+    {
+     "id": "teachers-training",
+     "type": "training",
+     "status": "establishing",
+     "name": {
+      "bn": "টিচার্স ট্রেনিং ইনস্টিটিউট",
+      "en": "Teachers Training Institute",
+      "ar": "معهد تدريب المعلمين"
+     },
+     "summary": {
+      "bn": "ইমাম ও শিক্ষকদের জ্ঞান, নেতৃত্ব, পাঠদান পদ্ধতি ও কমিউনিটি এনগেজমেন্টে দক্ষ করে গড়ে তোলা।",
+      "en": "Training imams and teachers in scholarship, leadership, teaching methods and community engagement.",
+      "ar": "إعداد الأئمة والمعلمين علمًا وقيادةً وطرقَ تدريسٍ وتواصلًا مع المجتمع."
+     },
+     "image": "img/teachers-training.webp",
+     "body": {
+      "bn": "সমাজের জন্য জ্ঞানী, দক্ষ ও দূরদর্শী নেতৃত্ব গড়তে ইমাম ও শিক্ষক প্রশিক্ষণ ইনস্টিটিউট প্রতিষ্ঠা করা হচ্ছে। ইতোমধ্যে টিচার্স ট্রেনিং কোর্স চলছে; যেমন ১৪ নভেম্বর ২০২৬-এ অনুষ্ঠিত দিনব্যাপী কর্মশালা “Effective Teaching: Integrating Modern and Islamic Perspectives”।",
+      "en": "The Imam and Teachers Training Institute is being established to develop knowledgeable, skilled and visionary leaders for the community. The Teachers Training Course is already running, for example the day-long workshop “Effective Teaching: Integrating Modern and Islamic Perspectives” held on 14 November 2026.",
+      "ar": "يُنشأ معهد تدريب الأئمة والمعلمين لإعداد قيادات عالمة ماهرة بعيدة النظر للمجتمع. وتجري حاليًا دورة تدريب المعلمين، ومنها ورشة «التدريس الفعّال: الدمج بين المنظورين الحديث والإسلامي» في 14 نوفمبر 2026."
+     },
+     "features": [
+      {
+       "bn": "কার্যকর পাঠদান পদ্ধতি",
+       "en": "Effective teaching methods",
+       "ar": "طرق التدريس الفعال"
+      },
+      {
+       "bn": "ইমামতি ও খুতবা প্রশিক্ষণ",
+       "en": "Imamate and khutbah training",
+       "ar": "تدريب الإمامة والخطابة"
+      },
+      {
+       "bn": "শ্রেণিকক্ষ ব্যবস্থাপনা ও মূল্যায়ন",
+       "en": "Classroom management and assessment",
+       "ar": "إدارة الصف والتقويم"
+      },
+      {
+       "bn": "দা‘ঈ প্রশিক্ষণ কর্মসূচি",
+       "en": "Da'i training programme",
+       "ar": "برنامج إعداد الدعاة"
+      }
+     ],
+     "registrations": [
+      "teachers-training"
+     ]
+    }
+   ],
+   "at": "2026-11-25T04:22:05.893Z",
+   "by": "gh:Shak-Nayem-Uddin"
   }
  },
  "drafts": {},
@@ -981,6 +1427,12 @@
      "by": "gh:Shak-Nayem-Uddin",
      "action": "publish",
      "key": "floors"
+    },
+    {
+     "at": "2026-11-25T04:22:07.063Z",
+     "by": "gh:Shak-Nayem-Uddin",
+     "action": "publish",
+     "key": "institutions"
     }
    ]
   }
