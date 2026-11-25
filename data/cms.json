@@ -549,6 +549,71 @@
    },
    "at": "2026-11-24T09:08:02.975Z",
    "by": "gh:Shak-Nayem-Uddin"
+  },
+  "donateCopy": {
+   "data": {
+    "motivations": [
+     {
+      "title": {
+       "bn": "জান্নাতে আপনার জন্য একটি ঘর",
+       "en": "A house for you in Paradise",
+       "ar": "بيتٌ لك في الجنة"
+      },
+      "text": {
+       "bn": "রাসূলুল্লাহ ﷺ বলেছেন: “যে ব্যক্তি আল্লাহর জন্য একটি মাসজিদ নির্মাণ করে, আল্লাহ তার জন্য জান্নাতে একটি ঘর নির্মাণ করেন।”",
+       "en": "The Prophet ﷺ said: “Whoever builds a masjid for Allah, Allah will build for him a house in Paradise.”",
+       "ar": ""
+      },
+      "ref": {
+       "bn": "সহীহ বুখারী ৪৫০; সহীহ মুসলিম ৫৩৩",
+       "en": "Sahih al-Bukhari 450; Sahih Muslim 533",
+       "ar": "صحيح البخاري 450؛ صحيح مسلم 533"
+      }
+     },
+     {
+      "title": {
+       "bn": "পিতামাতার জন্য স্থায়ী সওয়াব",
+       "en": "Lasting reward for your parents",
+       "ar": "أجرٌ دائمٌ لوالديك"
+      },
+      "text": {
+       "bn": "রাসূলুল্লাহ ﷺ বলেছেন: “মানুষ মারা গেলে তার সব আমল বন্ধ হয়ে যায়, তিনটি ছাড়া: সাদাকায়ে জারিয়াহ, উপকারী ইলম, অথবা নেক সন্তান যে তার জন্য দু‘আ করে।”",
+       "en": "The Prophet ﷺ said: “When a person dies, his deeds come to an end except for three: a continuing charity, beneficial knowledge, or a righteous child who prays for him.”",
+       "ar": ""
+      },
+      "ref": {
+       "bn": "সহীহ মুসলিম ১৬৩১",
+       "en": "Sahih Muslim 1631",
+       "ar": "صحيح مسلم 1631"
+      }
+     },
+     {
+      "title": {
+       "bn": "সওয়াবের বীজ বপন করুন",
+       "en": "Sow a seed of reward",
+       "ar": "ازرع بذرة الأجر"
+      },
+      "text": {
+       "bn": "আল্লাহর পথে যারা ব্যয় করে, তাদের উদাহরণ একটি শস্যদানার মতো, যা থেকে সাতটি শীষ জন্মায়, প্রতিটি শীষে একশত দানা।",
+       "en": "Those who spend in the way of Allah are like a grain that grows seven ears, with a hundred grains in each ear.",
+       "ar": ""
+      },
+      "ref": {
+       "bn": "সূরা আল-বাকারা ২:২৬১",
+       "en": "Surah al-Baqarah 2:261",
+       "ar": "سورة البقرة 2:261"
+      }
+     }
+    ],
+    "transparency": {
+     "bn": "দান করার সময় খাত (তহবিল) বেছে নিন। দান জানানোর ফরমে খাত ও ট্রানজেকশন আইডি দিলে হিসাব বিভাগ সেই খাতে লিপিবদ্ধ করে।",
+     "en": "Choose a fund when you give. When you report your donation with the fund and transaction ID, the accounts team records it against that fund.",
+     "ar": "اختر الصندوق عند التبرع. وعند إبلاغنا بالتبرع مع الصندوق ورقم العملية، يسجله قسم الحسابات في ذلك الصندوق."
+    },
+    "review": false
+   },
+   "at": "2026-11-25T04:19:16.140Z",
+   "by": "gh:Shak-Nayem-Uddin"
   }
  },
  "drafts": {},
@@ -596,6 +661,16 @@
      "by": "gh:Shak-Nayem-Uddin",
      "action": "publish",
      "key": "chairman"
+    }
+   ]
+  },
+  "2026-11-25": {
+   "entries": [
+    {
+     "at": "2026-11-25T04:19:16.951Z",
+     "by": "gh:Shak-Nayem-Uddin",
+     "action": "publish",
+     "key": "donateCopy"
     }
    ]
   }
